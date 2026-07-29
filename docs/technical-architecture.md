@@ -1,0 +1,156 @@
+# Technical architecture
+
+**Status:** Approved target architecture  
+**Implementation:** Not started
+
+## System context
+
+```mermaid
+flowchart LR
+    Visitor["Customer browser"] --> Web["DDA Silver Next.js"]
+    Editor["Trusted content admin"] --> Studio["Sanity Studio"]
+    Studio --> Lake["Sanity Content Lake"]
+    Web --> Lake
+    Web --> RatesAPI["DDAJewels rate API"]
+    Visitor --> RatesSSE["DDAJewels SSE feed"]
+    Web --> Identity["DDAJewels identity service"]
+    Web --> GA["Google Analytics 4"]
+    Search["Search engines"] --> Web
+    Cloudflare["Cloudflare (production only)"] --> Web
+    Vercel["Vercel preview/production runtime"] --> Web
+```
+
+## Runtime choices
+
+- Next.js App Router and TypeScript.
+- Server Components for content and initial rate rendering.
+- Client Components only for interactions such as filters, consent, image
+  galleries, live SSE updates, and session-aware controls.
+- Tailwind CSS plus CSS-variable design tokens.
+- Sanity Studio and Content Lake.
+- Vercel for preview and production runtime.
+- Cloudflare DNS/proxy only during an explicitly approved cutover.
+- A pinned package-manager lockfile and supported LTS Node.js version.
+
+No generic UI theme may supersede the selected design direction.
+
+## Proposed repository shape
+
+```text
+app/
+├── (site)/
+├── api/
+├── auth/
+├── products/
+├── category/
+├── collections/
+└── rates/
+components/
+├── catalog/
+├── consent/
+├── layout/
+├── rates/
+└── ui/
+lib/
+├── analytics/
+├── auth/
+├── rates/
+├── sanity/
+└── seo/
+sanity/
+├── schemaTypes/
+└── structure/
+tests/
+├── contract/
+├── e2e/
+├── fixtures/
+└── unit/
+```
+
+The exact `src/` prefix is an implementation convention, not a product
+decision.
+
+## Rendering and data access
+
+### Sanity content
+
+- Fetch published content on the server.
+- Use generated Sanity types for query results.
+- Enable Sanity CDN reads for published content.
+- Use a server-only token and draft perspective for preview mode.
+- Revalidate only affected routes after a signed Sanity webhook.
+- If Sanity is temporarily unavailable, render a controlled error or a
+  previously cached published response; never expose draft tokens or raw errors.
+
+### Rates
+
+- Server-render a validated initial snapshot from DDAJewels.
+- Connect the browser directly to the public SSE feed after hydration.
+- Use a short-lived personalized ticket for authenticated streams.
+- Keep catalog/content caching independent from rate freshness.
+- Never cache a live rate response as static page content.
+
+## Environment model
+
+Expected variable names:
+
+```text
+NEXT_PUBLIC_SITE_URL
+NEXT_PUBLIC_PREVIEW_MODE
+NEXT_PUBLIC_GA_MEASUREMENT_ID
+NEXT_PUBLIC_SANITY_PROJECT_ID
+NEXT_PUBLIC_SANITY_DATASET
+SANITY_API_READ_TOKEN
+SANITY_REVALIDATE_SECRET
+DDAJEWELS_ORIGIN
+DDAJEWELS_CLIENT_ID
+DDAJEWELS_CLIENT_SECRET
+AUTH_SESSION_SECRET
+AUTH_ALLOWED_REDIRECT_ORIGINS
+```
+
+Actual secret values must exist only in local ignored files or deployment
+secret stores. Preview and production values must be separate.
+
+## Preview isolation
+
+- Preview is publicly reachable only through an unlisted Vercel URL.
+- Every preview response sends `X-Robots-Tag: noindex, nofollow`.
+- Preview `robots.txt` disallows all crawling.
+- Preview canonical URLs must not point to `ddasilver.com`.
+- Preview analytics should use a separate GA property or remain disabled until
+  explicitly configured.
+- The stable preview origin must be separately allowlisted in DDAJewels CORS
+  and auth callback configuration.
+
+## Security boundaries
+
+- Sanity draft tokens are server-only.
+- DDAJewels client secrets are server-only.
+- Customer passwords are entered only on DDAJewels.
+- DDASilver stores only its own opaque or signed session cookie.
+- Auth codes are one-time, short-lived, and bound to state, nonce, PKCE, and an
+  exact callback.
+- Personalized stream tickets are short-lived, rate-scoped, and replay
+  resistant.
+- Logs must exclude authorization codes, stream tickets, cookies, passwords,
+  emails, and customer identifiers.
+- Security headers must include a deliberate CSP, HSTS in production,
+  `Referrer-Policy`, `X-Content-Type-Options`, and clickjacking protection.
+
+The CSP must explicitly allow required Sanity images, DDAJewels rate
+connections, Google consented analytics, maps, WhatsApp, and app-store links
+without using a broad wildcard.
+
+## Operational health
+
+Expose a non-sensitive health endpoint that verifies:
+
+- The application process responds.
+- Sanity configuration is present.
+- DDAJewels snapshot connectivity succeeds within a short timeout.
+- Build/version metadata is available.
+
+The health endpoint must not report secrets, user information, internal
+database details, or current personalized rates.
+

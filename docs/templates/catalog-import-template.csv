@@ -1,0 +1,2 @@
+title,slug,category,purity,idol_subcategory,coin_shape,collections,short_description,image_filenames,image_alt_text,featured,display_order,internal_reference
+Example Silver Coin,example-silver-coin,Coin,99.80,,Round,Festive Gifts,"A refined silver coin design for meaningful occasions.","example-silver-coin-front.jpg|example-silver-coin-back.jpg","Front of Example Silver Coin|Back of Example Silver Coin",true,10,DS-EXAMPLE-001

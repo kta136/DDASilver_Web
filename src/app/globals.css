@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f8f6f3;
+  --paper-strong: #ffffff;
+  --ink: #252321;
+  --ink-muted: #625d58;
+  --line: #ded9d3;
+  --line-strong: #bdb6ae;
+  --copper: #bd634f;
+  --copper-dark: #984a3a;
+  --sage: #5e8765;
+  --shadow-soft: 0 18px 55px rgb(46 39 32 / 0.12);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-strong: var(--paper-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-copper: var(--copper);
+  --color-copper-dark: var(--copper-dark);
+  --color-sage: var(--sage);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 12% 8%, rgb(189 99 79 / 0.06), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgb(189 99 79 / 0.22);
+}
+
+:focus-visible {
+  outline: 3px solid var(--copper);
+  outline-offset: 4px;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.brand-family-mark {
+  width: 62px;
+  height: 53.36px;
+}
+
+.brand-family-mark[data-compact="true"] {
+  width: 50px;
+  height: 43.03px;
+}
+
+.site-container {
+  width: min(100% - 2rem, 90rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 64rem) {
+  .site-container {
+    width: min(100% - 6rem, 90rem);
+  }
+
+  .home-hero-button {
+    min-height: 2.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .brand-family-mark:not([data-compact="true"]) {
+    width: 86px;
+    height: 74.05px;
+  }
+}
+
+.eyebrow {
+  color: var(--copper-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.button-primary,
+.button-secondary,
+.button-quiet {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.button-primary {
+  border: 1px solid var(--copper);
+  background: var(--copper);
+  color: white;
+}
+
+.button-primary:hover {
+  border-color: var(--copper-dark);
+  background: var(--copper-dark);
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  background: var(--ink);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.button-quiet {
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  color: var(--ink);
+}
+
+.button-quiet:hover {
+  border-color: var(--line-strong);
+  background: #f1eee9;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-shell {
+  padding-block: clamp(3rem, 4.5vw, 4.5rem);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(-180%);
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  padding: 0.8rem 1rem;
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 42rem) {
+  .site-container {
+    width: min(100% - 1.25rem, 90rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,176 @@
+# Sanity content model
+
+**Status:** Implemented and connected  
+**Implementation:** Product taxonomy and catalog fields are available in the
+local Studio
+
+## Operating model
+
+Sanity Studio is the editorial system for public catalog and page content.
+Start on the Sanity Free plan with 1–2 trusted administrators.
+
+The website must query published content only. Editors use drafts and preview
+before publishing.
+
+## Document schemas
+
+### `product`
+
+| Field | Type | Required | Rules |
+| --- | --- | --- | --- |
+| `title` | string | Yes | 2–100 characters |
+| `slug` | slug | Yes | Unique; generated from title but editable |
+| `shortDescription` | text | Yes | Plain text; concise customer description |
+| `gallery` | image array | Yes | At least one image; each image requires alt text |
+| `category` | reference | Yes | References one published category |
+| `purity` | string | Yes | `92.5` or `99.80`; displayed as 92.5% or 99.80% |
+| `idolConstruction` | string | For Idols | Hollow, Solid, or Semi Solid |
+| `coinShape` | string | For Coin | Round, Oval, Square, or Rectangle |
+| `collections` | reference array | No | Unique collection references |
+| `featured` | boolean | Yes | Defaults to false |
+| `displayOrder` | number | Yes | Integer; defaults to 100 |
+| `internalReference` | string | No | Internal/enquiry context; not indexed as price or stock |
+
+Do not add price, compare-at price, quantity, stock status, weight, variants,
+cart, tax, shipping, or checkout fields.
+
+### `category`
+
+| Field | Type | Required | Rules |
+| --- | --- | --- | --- |
+| `title` | string | Yes | Unique public label |
+| `slug` | slug | Yes | Unique |
+| `description` | text | Yes | Category introduction |
+| `image` | image | Yes | Alt text required |
+| `displayOrder` | number | Yes | Integer |
+
+Initial content taxonomy:
+
+- Jewellery
+- Coin
+- Idols
+- Gifts
+- Utensils
+
+Idols use an Idols-only subcategory field with Hollow, Solid, and Semi Solid
+options. Coin products use a Coin-only shape field with Round, Oval, Square,
+and Rectangle options. These specialized filters appear only after their
+relevant category is selected.
+
+Editors may rename, add, hide, or reorder categories without code changes.
+
+### `collection`
+
+| Field | Type | Required | Rules |
+| --- | --- | --- | --- |
+| `title` | string | Yes | Public collection name |
+| `slug` | slug | Yes | Unique |
+| `description` | text | Yes | Editorial introduction |
+| `heroImage` | image | Yes | Alt text required |
+| `products` | reference array | Yes | Unique product references |
+| `displayOrder` | number | Yes | Integer |
+
+Collections are optional editorial groupings. They do not imply stock,
+discount, price, or campaign validity.
+
+### `page`
+
+| Field | Type | Required | Rules |
+| --- | --- | --- | --- |
+| `title` | string | Yes | Editorial title |
+| `slug` | slug | Yes | Limited to supported editable pages |
+| `summary` | text | No | Metadata or page introduction |
+| `sections` | object array | Yes | Approved reusable content blocks |
+| `seo` | object | No | Metadata override |
+
+Reusable section types may include prose, image-with-copy, quote, values,
+contact details, app promotion, and linked callout. Avoid arbitrary HTML.
+
+### `siteSettings`
+
+Singleton fields:
+
+- Public brand name and logo.
+- Short brand description.
+- Primary navigation and footer navigation.
+- Phone and normalized `tel:` value.
+- WhatsApp display number and normalized international number.
+- Address.
+- Opening-hours structure with Monday closed.
+- Verified maps and Google Business Profile URLs.
+- Android and iOS URLs.
+- DDAJewels sister-brand URL.
+- Default SEO title, description, and social image.
+- Analytics and consent text.
+
+## Reusable objects
+
+### Image
+
+- Asset reference.
+- Required descriptive alt text.
+- Optional caption.
+- Sanity crop and hotspot.
+- Optional credit/source note for internal governance.
+
+Decorative images must use an empty alt value intentionally; the editor must
+choose “decorative” rather than omitting alt text.
+
+### SEO
+
+- Meta title.
+- Meta description.
+- Social image.
+- Optional canonical override restricted to approved same-site URLs.
+- Search exclusion flag reserved for legal or temporary content.
+
+## Content validation
+
+- Prevent duplicate slugs.
+- Prevent publishing a product without a category or image.
+- Require alt text for meaningful images.
+- Prevent WhatsApp, phone, map, and external URLs from using unexpected
+  protocols or hosts.
+- Enforce sane text lengths without truncating rendered copy.
+- Surface broken references in Studio.
+- Provide preview links for products, categories, collections, and pages.
+
+## Import workflow
+
+1. Duplicate the catalog CSV template.
+2. Assign one approved category and purity per product.
+3. For Idols, assign an idol subcategory; for Coin, assign a coin shape.
+4. Use collection names consistently.
+5. Match `image_filenames` to files in the asset delivery.
+6. Validate required columns and duplicates.
+7. Import product metadata as drafts.
+8. Upload, crop, and attach images manually.
+9. Review every product preview.
+10. Publish only after owner/catalog-admin approval.
+
+## Image standards
+
+- Use real product or showroom photography.
+- Do not use AI-generated products or visual placeholders in production.
+- Preserve sufficient resolution for responsive crops.
+- Avoid watermarks, screenshots, messaging-app compression, and inconsistent
+  colored backgrounds where possible.
+- Recommended catalog master: square or 4:5 portrait with safe central framing.
+- Recommended hero master: landscape with subject-safe space for responsive
+  crops.
+- Record missing, low-resolution, poorly lit, or duplicate images in the asset
+  inventory and targeted reshoot list.
+
+## Revalidation
+
+A signed Sanity webhook should send document type, document ID, and current
+slug. The website maps the change to affected paths:
+
+- Product: its product route, category routes, collection routes, products
+  index, sitemap, and homepage when featured.
+- Category: category route, products index, navigation where applicable, and
+  sitemap.
+- Collection: collection route, products index, homepage when featured, and
+  sitemap.
+- Page/settings: the direct page plus layouts or metadata that consume the
+  singleton.

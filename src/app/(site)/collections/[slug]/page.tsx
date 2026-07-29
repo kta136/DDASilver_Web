@@ -1,0 +1,95 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import {
+  getCatalog,
+  getCollection,
+  getPublishedCatalog,
+} from "@/sanity/lib/catalog";
+
+type CollectionPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  const { collections } = await getPublishedCatalog();
+  return collections.map((collection) => ({ slug: collection.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: CollectionPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const collection = await getCollection(slug);
+
+  return collection
+    ? {
+        title: collection.title,
+        description: collection.description,
+        alternates: { canonical: `/collections/${collection.slug}` },
+      }
+    : { title: "Collection not found" };
+}
+
+export default async function CollectionPage({ params }: CollectionPageProps) {
+  const { slug } = await params;
+  const [collection, catalog] = await Promise.all([
+    getCollection(slug),
+    getCatalog(),
+  ]);
+
+  if (!collection) {
+    notFound();
+  }
+
+  return (
+    <main id="main-content">
+      <section className="grid border-b border-line lg:min-h-[29rem] lg:grid-cols-2">
+        <div className="flex items-center px-5 py-10 sm:px-10 sm:py-12 lg:px-[max(3rem,calc((100vw-90rem)/2))]">
+          <div>
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Products", href: "/products" },
+                { label: collection.title },
+              ]}
+            />
+            <p className="eyebrow mt-7">Collection</p>
+            <h1 className="font-display mt-4 text-6xl font-semibold leading-[0.86] sm:text-7xl">
+              {collection.title}
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-8 text-ink-muted">
+              {collection.description}
+            </p>
+          </div>
+        </div>
+        <div className="relative min-h-[24rem] bg-[#e8e4df]">
+          <Image
+            src={collection.heroImage.src}
+            alt={collection.heroImage.alt}
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+            style={{
+              objectPosition: collection.heroImage.objectPosition ?? "center",
+            }}
+          />
+        </div>
+      </section>
+      <section className="section-shell">
+        <div className="site-container">
+          <CatalogBrowser
+            products={catalog.products}
+            categories={catalog.categories}
+            collections={catalog.collections}
+            initialCollection={collection.slug}
+          />
+        </div>
+      </section>
+    </main>
+  );
+}

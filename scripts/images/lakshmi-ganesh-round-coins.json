@@ -1,0 +1,40 @@
+{
+  "canvasSize": 1254,
+  "coinDiameter": 520,
+  "watermark": {
+    "width": 820,
+    "opacity": 0.105
+  },
+  "items": [
+    {
+      "weight": 10,
+      "output": "silver-coin-lakshmi-ganesh-10g-front-back-neutral-watermark.png",
+      "front": { "cx": 566, "cy": 147, "radius": 84 },
+      "back": { "cx": 528, "cy": 207, "radius": 77 }
+    },
+    {
+      "weight": 20,
+      "output": "silver-coin-lakshmi-ganesh-20g-front-back-neutral-watermark.png",
+      "front": { "cx": 568, "cy": 353, "radius": 97 },
+      "back": { "cx": 536, "cy": 404, "radius": 94 }
+    },
+    {
+      "weight": 50,
+      "output": "silver-coin-lakshmi-ganesh-50g-front-back-neutral-watermark.png",
+      "front": { "cx": 584, "cy": 604, "radius": 128 },
+      "back": { "cx": 536, "cy": 650, "radius": 122 }
+    },
+    {
+      "weight": 100,
+      "output": "silver-coin-lakshmi-ganesh-100g-front-back-neutral-watermark.png",
+      "front": { "cx": 593, "cy": 928, "radius": 156 },
+      "back": { "cx": 540, "cy": 952, "radius": 150 }
+    },
+    {
+      "weight": 250,
+      "output": "silver-coin-lakshmi-ganesh-250g-front-back-neutral-watermark.png",
+      "front": { "cx": 583, "cy": 1340, "radius": 201 },
+      "back": { "cx": 562, "cy": 1356, "radius": 192 }
+    }
+  ]
+}

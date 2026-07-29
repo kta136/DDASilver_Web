@@ -1,0 +1,181 @@
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+function getCategoryReference(document: unknown) {
+  if (!document || typeof document !== "object") {
+    return undefined;
+  }
+
+  const category = (document as { category?: unknown }).category;
+  if (!category || typeof category !== "object") {
+    return undefined;
+  }
+
+  const reference = (category as { _ref?: unknown })._ref;
+  return typeof reference === "string" ? reference : undefined;
+}
+
+export const productType = defineType({
+  name: "product",
+  title: "Product",
+  type: "document",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required().max(100),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "title", maxLength: 96 },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "shortDescription",
+      title: "Short description",
+      type: "text",
+      rows: 3,
+      validation: (rule) => rule.required().max(240),
+    }),
+    defineField({
+      name: "gallery",
+      title: "Image gallery",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alternative text",
+              type: "string",
+              description:
+                "Describe the visible product and important context. Do not repeat the product title alone.",
+              validation: (rule) => rule.required().min(12).max(180),
+            }),
+          ],
+        }),
+      ],
+      validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "purity",
+      title: "Purity",
+      type: "string",
+      options: {
+        list: [
+          { title: "92.5%", value: "92.5" },
+          { title: "99.80%", value: "99.80" },
+        ],
+        layout: "radio",
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "idolConstruction",
+      title: "Idol subcategory",
+      type: "string",
+      description: "Complete this field only for products in the Idols category.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-idols",
+      options: {
+        list: [
+          { title: "Hollow", value: "hollow" },
+          { title: "Solid", value: "solid" },
+          { title: "Semi Solid", value: "semi-solid" },
+        ],
+        layout: "radio",
+      },
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+
+          if (categoryReference === "category-idols") {
+            return value ? true : "Choose an Idols subcategory.";
+          }
+
+          return value
+            ? "Idol subcategory is only valid for the Idols category."
+            : true;
+        }),
+    }),
+    defineField({
+      name: "coinShape",
+      title: "Coin shape",
+      type: "string",
+      description: "Complete this field only for products in the Coin category.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-coin",
+      options: {
+        list: [
+          { title: "Round", value: "round" },
+          { title: "Oval", value: "oval" },
+          { title: "Square", value: "square" },
+          { title: "Rectangle", value: "rectangle" },
+        ],
+      },
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+
+          if (categoryReference === "category-coin") {
+            return value ? true : "Choose a Coin shape.";
+          }
+
+          return value
+            ? "Coin shape is only valid for the Coin category."
+            : true;
+        }),
+    }),
+    defineField({
+      name: "collections",
+      title: "Collections",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "collection" }] })],
+    }),
+    defineField({
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
+      name: "displayOrder",
+      title: "Display order",
+      type: "number",
+      initialValue: 100,
+      validation: (rule) => rule.required().integer().min(0),
+    }),
+    defineField({
+      name: "reference",
+      title: "Internal reference",
+      type: "string",
+      description: "Optional. Included in WhatsApp enquiries.",
+      validation: (rule) => rule.max(60),
+    }),
+  ],
+  orderings: [
+    {
+      title: "Display order",
+      name: "displayOrderAsc",
+      by: [{ field: "displayOrder", direction: "asc" }],
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      media: "gallery.0",
+      subtitle: "category.title",
+    },
+  },
+});
