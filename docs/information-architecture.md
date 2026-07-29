@@ -1,7 +1,8 @@
 # Information architecture and UX
 
 **Status:** Locked route and navigation model  
-**Implementation:** Not started
+**Implementation:** Implemented; final catalog content and external service
+validation remain
 
 ## Primary navigation
 
@@ -74,6 +75,9 @@ Query parameters:
 
 Unknown filter values are ignored, and an invalid combination renders a normal
 empty state rather than an error page.
+
+Search and supported filters are encoded in the URL so a filtered catalog can
+be bookmarked, shared, and restored after reload or browser navigation.
 
 ### Product detail
 
@@ -159,4 +163,3 @@ the closest relevant route. Do not redirect unrelated URLs to the homepage.
 - Rate connection changes use a polite live region and avoid announcing every
   price tick.
 - Respect `prefers-reduced-motion`.
-

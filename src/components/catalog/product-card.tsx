@@ -29,7 +29,6 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <Link
         href={`/products/${product.slug}`}
         className="block no-underline"
-        data-analytics="product_view"
       >
         <div className="relative aspect-[4/5] overflow-hidden bg-[#ece8e3]">
           {image ? (

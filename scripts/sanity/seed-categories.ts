@@ -4,6 +4,7 @@ import { basename, resolve } from "node:path";
 import { getCliClient } from "sanity/cli";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
+const applyChanges = process.argv.includes("--apply");
 
 const categories = [
   {
@@ -83,6 +84,28 @@ async function getOrUploadImage(imagePath: string, title: string) {
 }
 
 async function main() {
+  const { projectId, dataset } = client.config();
+  if (!applyChanges) {
+    console.log(
+      `Dry run only: would seed ${categories.length} categories into ${projectId}/${dataset}.`,
+    );
+    console.log("Re-run with --apply after confirming the target.");
+    return;
+  }
+
+  if (
+    process.env.SANITY_EXPECTED_PROJECT_ID &&
+    process.env.SANITY_EXPECTED_PROJECT_ID !== projectId
+  ) {
+    throw new Error("Sanity project does not match SANITY_EXPECTED_PROJECT_ID");
+  }
+  if (
+    process.env.SANITY_EXPECTED_DATASET &&
+    process.env.SANITY_EXPECTED_DATASET !== dataset
+  ) {
+    throw new Error("Sanity dataset does not match SANITY_EXPECTED_DATASET");
+  }
+
   for (const category of categories) {
     const assetId = await getOrUploadImage(category.imagePath, category.title);
 

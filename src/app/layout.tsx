@@ -6,6 +6,7 @@ import { AnalyticsEvents } from "@/components/consent/analytics-events";
 import { AnalyticsGate } from "@/components/consent/analytics-gate";
 import { ConsentManager } from "@/components/consent/consent-manager";
 import { isProductionSite, siteConfig } from "@/lib/site";
+import { defaultSocialImage, toAbsoluteUrl } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -25,23 +26,40 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "DDA Silver | Silver jewellery, gifts & live rates in Agra",
+    default: "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
     template: "%s | DDA Silver",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  alternates: { canonical: "/" },
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Silver jewellery",
   openGraph: {
     type: "website",
+    locale: "en_IN",
     siteName: siteConfig.name,
-    title: "DDA Silver",
+    title: "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
     description: siteConfig.description,
     url: siteConfig.url,
+    images: [
+      {
+        url: toAbsoluteUrl(defaultSocialImage.src),
+        width: defaultSocialImage.width,
+        height: defaultSocialImage.height,
+        alt: defaultSocialImage.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DDA Silver",
+    title: "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
     description: siteConfig.description,
+    images: [
+      {
+        url: toAbsoluteUrl(defaultSocialImage.src),
+        alt: defaultSocialImage.alt,
+      },
+    ],
   },
   robots: {
     index: isProductionSite,
@@ -49,8 +67,18 @@ export const metadata: Metadata = {
     googleBot: {
       index: isProductionSite,
       follow: isProductionSite,
+      ...(isProductionSite
+        ? {
+            "max-image-preview": "large" as const,
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          }
+        : {}),
     },
   },
+  verification: siteConfig.googleSiteVerification
+    ? { google: siteConfig.googleSiteVerification }
+    : undefined,
 };
 
 export const viewport: Viewport = {
@@ -72,35 +100,56 @@ const consentDefaults = `
   });
 `;
 
+const businessId = `${toAbsoluteUrl("/")}#business`;
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "JewelryStore",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  telephone: siteConfig.phoneDisplay,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "MG Road, opposite Nagar Nigam",
-    addressLocality: "Agra",
-    addressRegion: "Uttar Pradesh",
-    addressCountry: "IN",
-  },
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
+      "@type": "JewelryStore",
+      "@id": businessId,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      url: toAbsoluteUrl("/"),
+      logo: toAbsoluteUrl("/brand/dda-family-mark.png"),
+      image: toAbsoluteUrl(defaultSocialImage.src),
+      telephone: siteConfig.phoneHref.replace("tel:", ""),
+      hasMap: siteConfig.mapUrl,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "MG Road, opposite Nagar Nigam",
+        addressLocality: "Agra",
+        addressRegion: "Uttar Pradesh",
+        addressCountry: "IN",
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "12:00",
+          closes: "20:00",
+        },
       ],
-      opens: "12:00",
-      closes: "20:00",
+      sameAs: siteConfig.googleBusinessUrl
+        ? [siteConfig.googleBusinessUrl]
+        : undefined,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${toAbsoluteUrl("/")}#website`,
+      url: toAbsoluteUrl("/"),
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: "en-IN",
+      publisher: { "@id": businessId },
     },
   ],
-  sameAs: [siteConfig.sisterBrandUrl],
 };
 
 export default function RootLayout({
@@ -110,7 +159,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       data-scroll-behavior="smooth"
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
@@ -123,7 +172,7 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
         >
-          {JSON.stringify(localBusinessSchema)}
+          {JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c")}
         </Script>
         {children}
         <ConsentManager />

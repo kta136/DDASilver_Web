@@ -5,38 +5,41 @@ import {
   PhoneIcon,
   WhatsappLogoIcon,
 } from "@phosphor-icons/react/ssr";
-import type { Metadata } from "next";
 
+import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata = createPageMetadata({
+  title: "Contact Our Agra Showroom",
   description:
-    "Call, WhatsApp, or visit DDA Silver opposite Nagar Nigam on MG Road in Agra.",
-  alternates: { canonical: "/contact" },
-};
+    "Contact DDA Silver by phone or WhatsApp, get directions to our showroom opposite Nagar Nigam on MG Road in Agra and check current opening hours.",
+  path: "/contact",
+});
 
 const contactRows = [
   {
     label: "Phone",
     value: siteConfig.phoneDisplay,
     href: siteConfig.phoneHref,
-    analytics: "phone_contact",
+    analytics: "phone_click",
+    placement: "contact",
     icon: PhoneIcon,
   },
   {
     label: "WhatsApp",
     value: siteConfig.whatsappDisplay,
     href: buildGeneralWhatsAppUrl(),
-    analytics: "whatsapp_contact",
+    analytics: "whatsapp_click",
+    placement: "contact",
     icon: WhatsappLogoIcon,
   },
   {
     label: "Showroom",
     value: siteConfig.address,
     href: siteConfig.mapUrl,
-    analytics: "map_contact",
+    analytics: "map_click",
+    placement: "contact",
     icon: MapPinIcon,
   },
 ];
@@ -68,6 +71,7 @@ export default function ContactPage() {
                   rel={row.href.startsWith("http") ? "noreferrer" : undefined}
                   className="group grid gap-4 py-6 no-underline sm:grid-cols-[8rem_1fr_auto] sm:items-center"
                   data-analytics={row.analytics}
+                  data-analytics-placement={row.placement}
                 >
                   <span className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                     {row.label}
@@ -100,7 +104,8 @@ export default function ContactPage() {
                 target="_blank"
                 rel="noreferrer"
                 className="mt-7 inline-flex items-center gap-2 text-sm font-bold no-underline hover:text-copper-dark"
-                data-analytics="google_business"
+                data-analytics="map_click"
+                data-analytics-placement="contact_google_profile"
               >
                 Google Business Profile
                 <ArrowSquareOutIcon size={17} aria-hidden="true" />

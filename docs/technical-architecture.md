@@ -1,7 +1,8 @@
 # Technical architecture
 
 **Status:** Approved target architecture  
-**Implementation:** Not started
+**Implementation:** Web application and safe integration boundaries
+implemented; external staging connectivity remains
 
 ## System context
 
@@ -96,17 +97,22 @@ Expected variable names:
 
 ```text
 NEXT_PUBLIC_SITE_URL
-NEXT_PUBLIC_PREVIEW_MODE
-NEXT_PUBLIC_GA_MEASUREMENT_ID
+NEXT_PUBLIC_SITE_ENV
+NEXT_PUBLIC_GA_ID
 NEXT_PUBLIC_SANITY_PROJECT_ID
 NEXT_PUBLIC_SANITY_DATASET
 SANITY_API_READ_TOKEN
+SANITY_PREVIEW_SECRET
 SANITY_REVALIDATE_SECRET
-DDAJEWELS_ORIGIN
-DDAJEWELS_CLIENT_ID
-DDAJEWELS_CLIENT_SECRET
-AUTH_SESSION_SECRET
-AUTH_ALLOWED_REDIRECT_ORIGINS
+NEXT_PUBLIC_DDAJEWELS_RATES_SNAPSHOT_URL
+NEXT_PUBLIC_DDAJEWELS_RATES_STREAM_URL
+DDAJEWELS_RATE_TICKET_URL
+DDAJEWELS_SERVICE_TOKEN
+DDAJEWELS_AUTH_AUTHORIZE_URL
+DDAJEWELS_AUTH_TOKEN_URL
+DDAJEWELS_AUTH_CLIENT_ID
+DDAJEWELS_AUTH_CLIENT_SECRET
+AUTH_COOKIE_SECRET
 ```
 
 Actual secret values must exist only in local ignored files or deployment
@@ -154,3 +160,6 @@ Expose a non-sensitive health endpoint that verifies:
 The health endpoint must not report secrets, user information, internal
 database details, or current personalized rates.
 
+`/api/health` implements this contract. It returns a degraded `503` when a
+configured dependency is unavailable or when required preview integrations are
+not configured, and it never returns rate values or credentials.

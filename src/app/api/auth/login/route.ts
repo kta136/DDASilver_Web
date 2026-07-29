@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import {
   authConfig,
+  authOrigin,
   authTransactionCookie,
   isAuthConfigured,
 } from "@/lib/auth/config";
@@ -36,7 +37,7 @@ export async function GET(request: Request) {
   const returnTo = isSafeReturnTo(requestUrl.searchParams.get("returnTo"));
   const transaction = createAuthTransaction(returnTo);
   const challenge = createPkceChallenge(transaction.verifier);
-  const callbackUrl = new URL("/auth/callback", requestUrl.origin);
+  const callbackUrl = new URL("/auth/callback", authOrigin);
   const authorizeUrl = new URL(authConfig.authorizeUrl);
 
   authorizeUrl.searchParams.set("response_type", "code");

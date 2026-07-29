@@ -21,8 +21,9 @@ import {
   extractRateValue,
   extractNumberLike,
   feedStatusEventSchema,
+  isRateSnapshotFresh,
   normalizeFeedStatus,
-  normalizedRateId,
+  normalizeRateIdentifier,
   rateEventSchema,
   rateSnapshotSchema,
   sourceEventSchema,
@@ -36,34 +37,75 @@ import {
 } from "@/lib/rates/definitions";
 import { formatIndianNumber, formatRateTime } from "@/lib/rates/format";
 import { initialRateState, rateReducer } from "@/lib/rates/reducer";
+import { trackAnalyticsEvent } from "@/lib/analytics-client";
 import { siteConfig } from "@/lib/site";
 
 const snapshotUrl =
   process.env.NEXT_PUBLIC_DDAJEWELS_RATES_SNAPSHOT_URL ?? "";
 const streamUrl = process.env.NEXT_PUBLIC_DDAJEWELS_RATES_STREAM_URL ?? "";
 const staleThresholdMs = 90_000;
+const maximumEventBytes = 64_000;
+const maximumSnapshotBytes = 1_000_000;
+
+function resolveRateEndpoint(value: string) {
+  try {
+    const url = new URL(value);
+    const isDdaJewels =
+      url.protocol === "https:" &&
+      (url.hostname === "ddajewels.com" ||
+        url.hostname.endsWith(".ddajewels.com"));
+    const isLocalDevelopment =
+      process.env.NODE_ENV === "development" &&
+      (url.hostname === "localhost" || url.hostname === "127.0.0.1") &&
+      (url.protocol === "http:" || url.protocol === "https:");
+    return isDdaJewels || isLocalDevelopment ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+async function readBoundedJson(response: Response, maximumBytes: number) {
+  const contentLength = Number(response.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > maximumBytes) {
+    throw new Error("Rate response is too large");
+  }
+
+  const body = await response.text();
+  if (new TextEncoder().encode(body).byteLength > maximumBytes) {
+    throw new Error("Rate response is too large");
+  }
+  return JSON.parse(body) as unknown;
+}
 
 async function addPersonalizedTicket(url: string) {
+  const allowedUrl = resolveRateEndpoint(url);
+  if (!allowedUrl) {
+    return null;
+  }
+
   try {
     const response = await fetch("/api/rates/ticket", {
       method: "POST",
       headers: { Accept: "application/json" },
       cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
     });
     if (!response.ok) {
-      return url;
+      return allowedUrl;
     }
 
-    const payload = (await response.json()) as { ticket?: unknown };
+    const payload = (await readBoundedJson(response, 16_000)) as {
+      ticket?: unknown;
+    };
     if (typeof payload.ticket !== "string" || payload.ticket.length < 20) {
-      return url;
+      return allowedUrl;
     }
 
-    const ticketedUrl = new URL(url);
+    const ticketedUrl = new URL(allowedUrl);
     ticketedUrl.searchParams.set("ticket", payload.ticket);
     return ticketedUrl.toString();
   } catch {
-    return url;
+    return allowedUrl;
   }
 }
 
@@ -71,9 +113,14 @@ function findMatchingRate<T extends RateItem>(
   values: Record<string, T>,
   aliases: readonly string[],
 ) {
+  const normalizedAliases = new Set(
+    aliases.map((alias) => normalizeRateIdentifier(alias)),
+  );
   return Object.values(values).find((item) => {
-    const normalized = normalizedRateId(item);
-    return aliases.some((alias) => normalized.includes(alias));
+    return [item.id, item.name, item.label].some(
+      (value) =>
+        value && normalizedAliases.has(normalizeRateIdentifier(value)),
+    );
   });
 }
 
@@ -146,6 +193,9 @@ export function RateExperience() {
       event: MessageEvent<string>,
       handler: (payload: unknown) => void,
     ) {
+      if (event.data.length > maximumEventBytes) {
+        return;
+      }
       try {
         handler(JSON.parse(event.data));
       } catch {
@@ -160,7 +210,13 @@ export function RateExperience() {
 
       dispatch({ type: "connecting" });
       const resolvedStreamUrl = await addPersonalizedTicket(streamUrl);
-      if (cancelled) {
+      if (cancelled || !resolvedStreamUrl) {
+        if (!cancelled) {
+          dispatch({
+            type: "unavailable",
+            message: "The configured rate stream endpoint is not allowed.",
+          });
+        }
         return;
       }
       eventSource = new EventSource(resolvedStreamUrl);
@@ -172,7 +228,14 @@ export function RateExperience() {
       eventSource.addEventListener("snapshot", (event) =>
         parseEvent(event as MessageEvent<string>, (payload) => {
           const parsed = rateSnapshotSchema.safeParse(payload);
-          if (parsed.success) {
+          if (
+            parsed.success &&
+            isRateSnapshotFresh(
+              parsed.data.serverTime,
+              receivedAt(),
+              staleThresholdMs,
+            )
+          ) {
             dispatch({
               type: "snapshot",
               snapshot: parsed.data,
@@ -189,11 +252,7 @@ export function RateExperience() {
             return;
           }
           const item = parsed.data.item ?? parsed.data;
-          const itemParsed = rateEventSchema.safeParse({
-            ...item,
-            sequence: parsed.data.sequence,
-          });
-          if (itemParsed.success && "id" in item) {
+          if ("id" in item) {
             dispatch({
               type: "rate",
               item: item as RateItem,
@@ -253,33 +312,57 @@ export function RateExperience() {
 
       eventSource.onerror = () => {
         eventSource?.close();
-        dispatch({ type: "reconnecting" });
-        const attempt = Math.min(reconnectAttempt.current + 1, 6);
-        reconnectAttempt.current = attempt;
-        const delay = Math.min(1_000 * 2 ** attempt, 30_000);
-        reconnectTimer = setTimeout(() => void connect(), delay);
+        scheduleReconnect();
       };
     }
 
-    async function loadSnapshot() {
+    function scheduleReconnect() {
+      if (cancelled) {
+        return;
+      }
+      dispatch({ type: "reconnecting" });
+      const attempt = Math.min(reconnectAttempt.current + 1, 6);
+      reconnectAttempt.current = attempt;
+      const delay = Math.min(1_000 * 2 ** attempt, 30_000);
+      reconnectTimer = setTimeout(
+        () => void loadSnapshot(true),
+        delay,
+      );
+    }
+
+    async function loadSnapshot(isReconnect = false) {
       dispatch({ type: "connecting" });
       try {
         const resolvedSnapshotUrl = await addPersonalizedTicket(snapshotUrl);
+        if (!resolvedSnapshotUrl) {
+          throw new Error("Snapshot endpoint is not allowed");
+        }
         const response = await fetch(resolvedSnapshotUrl, {
           cache: "no-store",
           headers: { Accept: "application/json" },
+          signal: AbortSignal.timeout(10_000),
         });
         if (!response.ok) {
           throw new Error("Snapshot unavailable");
         }
-        const parsed = rateSnapshotSchema.safeParse(await response.json());
-        if (!parsed.success) {
+        const now = receivedAt();
+        const parsed = rateSnapshotSchema.safeParse(
+          await readBoundedJson(response, maximumSnapshotBytes),
+        );
+        if (
+          !parsed.success ||
+          !isRateSnapshotFresh(
+            parsed.data.serverTime,
+            now,
+            staleThresholdMs,
+          )
+        ) {
           throw new Error("Snapshot contract rejected");
         }
         dispatch({
           type: "snapshot",
           snapshot: parsed.data,
-          receivedAt: receivedAt(),
+          receivedAt: now,
         });
         void connect();
       } catch {
@@ -288,6 +371,9 @@ export function RateExperience() {
           message:
             "No valid rate snapshot is available. Values are intentionally not shown.",
         });
+        if (isReconnect) {
+          scheduleReconnect();
+        }
       }
     }
 
@@ -350,6 +436,7 @@ export function RateExperience() {
         next.delete(key);
       } else {
         next.add(key);
+        trackAnalyticsEvent("rate_expand", { source_name: key });
       }
       return next;
     });
@@ -530,7 +617,6 @@ export function RateExperience() {
           target="_blank"
           rel="noreferrer"
           className="button-secondary no-underline"
-          data-analytics="rates_tv"
         >
           Open DDAJewels TV display
           <ArrowSquareOutIcon size={18} aria-hidden="true" />

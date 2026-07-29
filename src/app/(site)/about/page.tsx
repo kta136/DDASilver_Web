@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "About",
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "About Our Agra Silver Showroom",
   description:
-    "Learn about DDA Silver, its Agra roots, and its place within the wider DDA family.",
-  alternates: { canonical: "/about" },
-};
+    "Learn about DDA Silver, our Agra roots, dedicated silver showroom and relationship with the wider DDA family of jewellery and precious-metal brands.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

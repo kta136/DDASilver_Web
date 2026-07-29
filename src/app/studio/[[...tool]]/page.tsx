@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-
 import { Studio } from "@/components/studio/studio";
+import { createPageMetadata } from "@/lib/seo";
 import { isSanityConfigured } from "@/sanity/env";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Content Studio",
-  robots: { index: false, follow: false },
-};
+  description: "Private content-management workspace for DDA Silver editors.",
+  path: "/studio",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function StudioPage() {
   if (!isSanityConfigured) {

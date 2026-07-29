@@ -1,12 +1,17 @@
 import { cache } from "react";
 import { draftMode } from "next/headers";
+import { z } from "zod";
 
 import {
   fallbackCategories,
   fallbackCollections,
   fallbackProducts,
 } from "@/data/catalog";
-import { isSanityConfigured } from "@/sanity/env";
+import {
+  isSanityConfigured,
+  sanityDataset,
+  sanityProjectId,
+} from "@/sanity/env";
 import {
   sanityClient,
   sanityPreviewClient,
@@ -25,6 +30,75 @@ type Catalog = {
   source: "sanity" | "fallback";
 };
 
+const boundedText = z.string().trim().min(1).max(500);
+const slug = z.string().trim().min(1).max(120).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const updatedAt = z.string().datetime({ offset: true }).optional();
+const sanityImageUrlPrefix = `https://cdn.sanity.io/images/${sanityProjectId}/${sanityDataset}/`;
+const catalogImageSchema = z.object({
+  src: z
+    .string()
+    .url()
+    .refine((value) => value.startsWith(sanityImageUrlPrefix)),
+  alt: z.string().trim().max(240),
+  width: z.number().int().positive().max(20_000),
+  height: z.number().int().positive().max(20_000),
+  objectPosition: z
+    .enum(["left center", "right center", "center center"])
+    .optional(),
+});
+const categorySchema = z.object({
+  title: boundedText,
+  slug,
+  description: boundedText,
+  image: catalogImageSchema,
+  displayOrder: z.number().int().min(0).max(100_000),
+  updatedAt,
+});
+const collectionSchema = z.object({
+  title: boundedText,
+  slug,
+  description: boundedText,
+  heroImage: catalogImageSchema,
+  productSlugs: z.array(slug).max(1_000),
+  displayOrder: z.number().int().min(0).max(100_000),
+  updatedAt,
+});
+const productSchema = z.object({
+  title: boundedText,
+  slug,
+  shortDescription: boundedText,
+  images: z.array(catalogImageSchema).min(1).max(20),
+  categorySlug: slug,
+  collectionSlugs: z.array(slug).max(100),
+  featured: z.boolean(),
+  displayOrder: z.number().int().min(0).max(100_000),
+  reference: z
+    .string()
+    .trim()
+    .min(1)
+    .max(80)
+    .nullish()
+    .transform((value) => value ?? undefined),
+  purity: z
+    .enum(["92.5", "99.80"])
+    .nullish()
+    .transform((value) => value ?? undefined),
+  idolConstruction: z
+    .enum(["hollow", "solid", "semi-solid"])
+    .nullish()
+    .transform((value) => value ?? undefined),
+  coinShape: z
+    .enum(["round", "oval", "square", "rectangle"])
+    .nullish()
+    .transform((value) => value ?? undefined),
+  updatedAt,
+});
+const catalogSchema = z.object({
+  products: z.array(productSchema).max(1_000),
+  categories: z.array(categorySchema).max(100),
+  collections: z.array(collectionSchema).max(100),
+});
+
 function getFallbackCatalog(): Catalog {
   return {
     products: fallbackProducts,
@@ -38,34 +112,43 @@ async function fetchCatalog(
   client: typeof sanityClient,
 ): Promise<Catalog> {
   const [products, categories, collections] = await Promise.all([
-    client.fetch<Product[]>(
+    client.fetch<unknown>(
       productsQuery,
       {},
       { next: { tags: ["product"] } },
     ),
-    client.fetch<Category[]>(
+    client.fetch<unknown>(
       categoriesQuery,
       {},
       { next: { tags: ["category"] } },
     ),
-    client.fetch<Collection[]>(
+    client.fetch<unknown>(
       collectionsQuery,
       {},
       { next: { tags: ["collection"] } },
     ),
   ]);
+  const parsed = catalogSchema.safeParse({
+    products,
+    categories,
+    collections,
+  });
 
   // Keep the private preview usable while the new DDA Silver dataset is being
   // populated. Sanity becomes authoritative as soon as it has both products
   // and categories; collections may remain empty because they are optional.
-  if (products.length === 0 || categories.length === 0) {
+  if (
+    !parsed.success ||
+    parsed.data.products.length === 0 ||
+    parsed.data.categories.length === 0
+  ) {
     return getFallbackCatalog();
   }
 
   return {
-    products,
-    categories,
-    collections,
+    products: parsed.data.products,
+    categories: parsed.data.categories,
+    collections: parsed.data.collections,
     source: "sanity",
   };
 }

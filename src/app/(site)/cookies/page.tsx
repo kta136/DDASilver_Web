@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-
 import { EditorialPage } from "@/components/editorial-page";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookies",
-  robots: { index: false, follow: false },
-};
+export const metadata = createPageMetadata({
+  title: "Cookie Policy",
+  description:
+    "Learn how DDA Silver uses essential browser storage, consent preferences, security controls and optional analytics on this website.",
+  path: "/cookies",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function CookiesPage() {
   return (

@@ -20,7 +20,6 @@ export function CategoryIndex({ categories }: CategoryIndexProps) {
               <Link
                 href={`/category/${category.slug}`}
                 className="group flex min-h-32 items-center gap-5 px-4 py-5 no-underline min-[90rem]:min-h-40 min-[90rem]:gap-6 min-[90rem]:px-5"
-                data-analytics="category_view"
               >
                 <span className="relative size-20 shrink-0 overflow-hidden rounded-full bg-[#ebe7e2] min-[90rem]:size-28">
                   <Image

@@ -12,6 +12,7 @@ export type Category = {
   description: string;
   image: CatalogImage;
   displayOrder: number;
+  updatedAt?: string;
 };
 
 export type Collection = {
@@ -21,6 +22,7 @@ export type Collection = {
   heroImage: CatalogImage;
   productSlugs: string[];
   displayOrder: number;
+  updatedAt?: string;
 };
 
 export type ProductPurity = "92.5" | "99.80";
@@ -40,4 +42,5 @@ export type Product = {
   purity?: ProductPurity;
   idolConstruction?: IdolConstruction;
   coinShape?: CoinShape;
+  updatedAt?: string;
 };

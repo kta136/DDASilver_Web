@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-
 import { EditorialPage } from "@/components/editorial-page";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy",
-  robots: { index: false, follow: false },
-};
+export const metadata = createPageMetadata({
+  title: "Privacy Policy",
+  description:
+    "Read the draft DDA Silver privacy policy covering website analytics, consent, customer-account boundaries and contact interactions.",
+  path: "/privacy",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function PrivacyPage() {
   return (

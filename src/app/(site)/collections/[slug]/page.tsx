@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { createPageMetadata } from "@/lib/seo";
 import {
   getCatalog,
   getCollection,
@@ -21,17 +21,25 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: CollectionPageProps): Promise<Metadata> {
+}: CollectionPageProps) {
   const { slug } = await params;
   const collection = await getCollection(slug);
 
   return collection
-    ? {
-        title: collection.title,
-        description: collection.description,
-        alternates: { canonical: `/collections/${collection.slug}` },
-      }
-    : { title: "Collection not found" };
+    ? createPageMetadata({
+        title: `${collection.title} Silver Collection`,
+        description: `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`,
+        path: `/collections/${collection.slug}`,
+        image: collection.heroImage,
+      })
+    : createPageMetadata({
+        title: "Collection Not Found",
+        description:
+          "The requested DDA Silver collection could not be found in the current catalog.",
+        path: `/collections/${slug}`,
+        canonical: false,
+        noIndex: true,
+      });
 }
 
 export default async function CollectionPage({ params }: CollectionPageProps) {

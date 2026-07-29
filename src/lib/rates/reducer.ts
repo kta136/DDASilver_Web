@@ -18,6 +18,8 @@ export type RateState = {
   serverTime: string | null;
   items: Record<string, RateItem>;
   sources: Record<string, SourceItem>;
+  itemUpdatedAt: Record<string, number>;
+  sourceUpdatedAt: Record<string, number>;
   feedStatus: FeedStatus | null;
   connection: RateConnection;
   isStale: boolean;
@@ -31,6 +33,8 @@ export const initialRateState: RateState = {
   serverTime: null,
   items: {},
   sources: {},
+  itemUpdatedAt: {},
+  sourceUpdatedAt: {},
   feedStatus: null,
   connection: "idle",
   isStale: false,
@@ -69,6 +73,21 @@ function mapById<T extends { id: string }>(items: T[]) {
   return Object.fromEntries(items.map((item) => [item.id, item]));
 }
 
+function mapUpdatedAt<T extends { id: string }>(items: T[], receivedAt: number) {
+  return Object.fromEntries(items.map((item) => [item.id, receivedAt]));
+}
+
+function oldestFinancialUpdate(
+  itemUpdatedAt: Record<string, number>,
+  sourceUpdatedAt: Record<string, number>,
+) {
+  const timestamps = [
+    ...Object.values(itemUpdatedAt),
+    ...Object.values(sourceUpdatedAt),
+  ];
+  return timestamps.length > 0 ? Math.min(...timestamps) : null;
+}
+
 function shouldIgnoreSequence(state: RateState, sequence: number) {
   return sequence <= state.sequence;
 }
@@ -94,6 +113,14 @@ export function rateReducer(
         serverTime: action.snapshot.serverTime,
         items: mapById(action.snapshot.items),
         sources: mapById(action.snapshot.sources),
+        itemUpdatedAt: mapUpdatedAt(
+          action.snapshot.items,
+          action.receivedAt,
+        ),
+        sourceUpdatedAt: mapUpdatedAt(
+          action.snapshot.sources,
+          action.receivedAt,
+        ),
         feedStatus: action.snapshot.feedStatus,
         connection: "live",
         isStale: false,
@@ -104,39 +131,60 @@ export function rateReducer(
       if (shouldIgnoreSequence(state, action.sequence)) {
         return state;
       }
+      const nextItemUpdatedAt = {
+        ...state.itemUpdatedAt,
+        [action.item.id]: action.receivedAt,
+      };
       return {
         ...state,
         sequence: action.sequence,
         items: { ...state.items, [action.item.id]: action.item },
+        itemUpdatedAt: nextItemUpdatedAt,
         connection: "live",
-        isStale: false,
-        lastValidEventAt: action.receivedAt,
+        lastValidEventAt: oldestFinancialUpdate(
+          nextItemUpdatedAt,
+          state.sourceUpdatedAt,
+        ),
         announcement: `${action.item.label ?? action.item.name ?? "A customer rate"} updated.`,
       };
     case "source-snapshot":
       if (shouldIgnoreSequence(state, action.sequence)) {
         return state;
       }
+      const nextSourceSnapshotUpdatedAt = mapUpdatedAt(
+        action.sources,
+        action.receivedAt,
+      );
       return {
         ...state,
         sequence: action.sequence,
         sources: mapById(action.sources),
+        sourceUpdatedAt: nextSourceSnapshotUpdatedAt,
         connection: "live",
-        isStale: false,
-        lastValidEventAt: action.receivedAt,
+        lastValidEventAt: oldestFinancialUpdate(
+          state.itemUpdatedAt,
+          nextSourceSnapshotUpdatedAt,
+        ),
         announcement: "Market rates updated.",
       };
     case "source":
       if (shouldIgnoreSequence(state, action.sequence)) {
         return state;
       }
+      const nextSourceUpdatedAt = {
+        ...state.sourceUpdatedAt,
+        [action.source.id]: action.receivedAt,
+      };
       return {
         ...state,
         sequence: action.sequence,
         sources: { ...state.sources, [action.source.id]: action.source },
+        sourceUpdatedAt: nextSourceUpdatedAt,
         connection: "live",
-        isStale: false,
-        lastValidEventAt: action.receivedAt,
+        lastValidEventAt: oldestFinancialUpdate(
+          state.itemUpdatedAt,
+          nextSourceUpdatedAt,
+        ),
         announcement: `${action.source.label ?? action.source.name ?? "A market rate"} updated.`,
       };
     case "feed-status":
@@ -149,8 +197,6 @@ export function rateReducer(
         serverTime: action.serverTime ?? state.serverTime,
         feedStatus: action.feedStatus,
         connection: "live",
-        isStale: false,
-        lastValidEventAt: action.receivedAt,
         announcement: "Rate feed status updated.",
       };
     case "reconnecting":

@@ -6,6 +6,23 @@ type Entry = {
 };
 
 const buckets = new Map<string, Entry>();
+const maximumBuckets = 2_048;
+
+function pruneBuckets(now: number) {
+  for (const [key, entry] of buckets) {
+    if (entry.resetAt <= now) {
+      buckets.delete(key);
+    }
+  }
+
+  while (buckets.size >= maximumBuckets) {
+    const oldestKey = buckets.keys().next().value;
+    if (typeof oldestKey !== "string") {
+      break;
+    }
+    buckets.delete(oldestKey);
+  }
+}
 
 export function checkRateLimit(
   request: Request,
@@ -19,6 +36,7 @@ export function checkRateLimit(
     .update(`${scope}:${address}`)
     .digest("hex");
   const now = Date.now();
+  pruneBuckets(now);
   const entry = buckets.get(key);
 
   if (!entry || entry.resetAt <= now) {

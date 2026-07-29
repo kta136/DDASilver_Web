@@ -58,4 +58,32 @@ describe("rate reducer", () => {
 
     expect(stale.isStale).toBe(true);
   });
+
+  it("does not refresh every rate when one item or feed status changes", () => {
+    const hydrated = rateReducer(initialRateState, {
+      type: "snapshot",
+      snapshot,
+      receivedAt: 1_000,
+    });
+    const oneRateUpdated = rateReducer(hydrated, {
+      type: "rate",
+      item: { id: "silver-bank", value: 102500 },
+      sequence: 11,
+      receivedAt: 80_000,
+    });
+    const statusUpdated = rateReducer(oneRateUpdated, {
+      type: "feed-status",
+      feedStatus: "live",
+      sequence: 12,
+      receivedAt: 85_000,
+    });
+    const stale = rateReducer(statusUpdated, {
+      type: "stale",
+      now: 92_000,
+      thresholdMs: 90_000,
+    });
+
+    expect(statusUpdated.lastValidEventAt).toBe(1_000);
+    expect(stale.isStale).toBe(true);
+  });
 });

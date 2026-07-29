@@ -16,9 +16,9 @@ website.
 
 | Area | Status |
 | --- | --- |
-| Application and responsive UI | In progress |
-| Catalog and editorial routes | Implemented with fallback content |
-| Sanity schemas and Studio | Implemented; credentials required |
+| Application and responsive UI | Implemented; manual UAT remains |
+| Catalog and editorial routes | Implemented; catalog expansion intentionally pending |
+| Sanity schemas and Studio | Implemented; 22 published product routes verified read-only |
 | DDAJewels rates and authentication | Client contracts implemented; staging integration pending |
 | Preview deployment | Not created |
 | Production launch | Not authorized |
@@ -38,6 +38,7 @@ changed without explicit owner approval to go live on `ddasilver.com`.
 - Authorization-code and PKCE scaffolding for shared DDA account access.
 - Consent-aware analytics, preview crawler blocking, metadata, sitemap, and
   structured business data.
+- Non-sensitive dependency readiness at `/api/health`.
 - Accessible navigation, focus states, reduced-motion handling, and responsive
   layouts.
 - Unit tests with Vitest and browser tests with Playwright.
@@ -117,6 +118,8 @@ files other than `.env.example` are excluded from Git.
 | `npm run test:run` | Run the unit test suite once |
 | `npm run test:e2e` | Run desktop and mobile Playwright tests |
 | `npm run check` | Run linting, type checks, unit tests, and a build |
+| `npm run sanity:seed-categories` | Preview category seeding without writes |
+| `npm run sanity:seed-categories:apply` | Apply category seeding to the asserted dataset |
 
 The Sanity catalog import utilities are defined in `package.json` and documented
 under [`scripts/images`](scripts/images/README.md). Commands ending in `:apply`

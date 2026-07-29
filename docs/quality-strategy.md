@@ -1,7 +1,8 @@
 # Analytics, SEO, accessibility, and testing
 
 **Status:** Approved quality requirements  
-**Implementation:** Not started
+**Implementation:** Automated foundation implemented; external and manual
+release gates remain
 
 ## Analytics and consent
 
@@ -177,3 +178,21 @@ The launch-review package should contain:
 - Redirect inventory.
 - Rollback verification.
 
+### Current automated evidence
+
+Verified on 29 July 2026:
+
+- ESLint and TypeScript checks pass.
+- 38 Vitest unit tests pass across 12 test files.
+- The Next.js production build completes and renders the configured 22
+  published Sanity product paths.
+- 14 Playwright journeys pass in desktop and mobile Chromium.
+- Preview responses return `X-Robots-Tag: noindex, nofollow`, and preview
+  `robots.txt` disallows all.
+- Catalog query/filter state survives reload through a shareable URL.
+- Analytics tests cover consent gating, approved event names, and allowed
+  public parameters.
+
+Still required for launch evidence: DDAJewels staging contract tests, owner
+content/UAT approval, legal review, real-device Safari/iOS and Android checks,
+screen-reader review, Lighthouse/Web Vitals evidence, and rollback rehearsal.

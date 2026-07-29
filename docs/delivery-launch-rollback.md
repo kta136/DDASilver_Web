@@ -3,6 +3,10 @@
 **Status:** Hard operational control  
 **Production authority:** Not granted
 
+**29 July 2026 evidence:** local production build and desktop/mobile browser
+journeys pass with preview noindex controls. No DNS, domain, production alias,
+or indexing change has been made.
+
 ## Absolute launch gate
 
 No DNS, nameserver, custom-domain, production-alias, current-server, live
@@ -177,4 +181,3 @@ The legacy server may be decommissioned only after:
 - Redirect and Search Console review.
 - Backup retention confirmed.
 - No rollback dependency remains.
-

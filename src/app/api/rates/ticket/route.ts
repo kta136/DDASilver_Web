@@ -2,6 +2,10 @@ import { cookies } from "next/headers";
 import { z } from "zod";
 
 import { sessionCookie } from "@/lib/auth/config";
+import {
+  isAllowedDdaJewelsUrl,
+  readBoundedJson,
+} from "@/lib/security/external-service";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 import { isSameOriginRequest } from "@/lib/security/same-origin";
 
@@ -35,26 +39,35 @@ export async function POST(request: Request) {
     return Response.json({ error: "Not authenticated." }, { status: 401 });
   }
 
-  if (!ticketUrl || !serviceToken) {
+  if (!isAllowedDdaJewelsUrl(ticketUrl) || !serviceToken) {
     return Response.json(
       { error: "Personalized rate tickets are not configured." },
       { status: 503 },
     );
   }
 
-  const ticketResponse = await fetch(ticketUrl, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${serviceToken}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      sessionToken,
-      scope: "rates",
-    }),
-    cache: "no-store",
-  });
+  let ticketResponse: Response;
+  try {
+    ticketResponse = await fetch(ticketUrl, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${serviceToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sessionToken,
+        scope: "rates",
+      }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
+  } catch {
+    return Response.json(
+      { error: "DDAJewels did not issue a rate ticket." },
+      { status: 502 },
+    );
+  }
 
   if (!ticketResponse.ok) {
     return Response.json(
@@ -63,7 +76,16 @@ export async function POST(request: Request) {
     );
   }
 
-  const parsed = ticketResponseSchema.safeParse(await ticketResponse.json());
+  let ticketPayload: unknown;
+  try {
+    ticketPayload = await readBoundedJson(ticketResponse, 16_000);
+  } catch {
+    return Response.json(
+      { error: "The rate ticket response failed validation." },
+      { status: 502 },
+    );
+  }
+  const parsed = ticketResponseSchema.safeParse(ticketPayload);
   if (!parsed.success) {
     return Response.json(
       { error: "The rate ticket response failed validation." },

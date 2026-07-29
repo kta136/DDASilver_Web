@@ -10,9 +10,18 @@ import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
 import { RateTeaser } from "@/components/home/rate-teaser";
+import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { getCatalog } from "@/sanity/lib/catalog";
+
+export const metadata = createPageMetadata({
+  title: "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
+  description:
+    "Discover silver jewellery, coins, idols, gifts and homeware at DDA Silver in Agra, view live silver rates and plan your showroom visit.",
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default async function HomePage() {
   const { categories, products } = await getCatalog();
@@ -43,7 +52,6 @@ export default async function HomePage() {
                 <Link
                   href="/products"
                   className="button-primary home-hero-button no-underline"
-                  data-analytics="hero_products"
                 >
                   Explore products
                   <ArrowRightIcon size={18} aria-hidden="true" />
@@ -51,7 +59,6 @@ export default async function HomePage() {
                 <Link
                   href="/rates"
                   className="button-secondary home-hero-button no-underline"
-                  data-analytics="hero_rates"
                 >
                   View live rates
                   <ArrowRightIcon size={18} aria-hidden="true" />
@@ -125,7 +132,8 @@ export default async function HomePage() {
                 target="_blank"
                 rel="noreferrer"
                 className="button-primary no-underline"
-                data-analytics="whatsapp_home"
+                data-analytics="whatsapp_click"
+                data-analytics-placement="home_visit"
               >
                 <WhatsappLogoIcon size={20} aria-hidden="true" />
                 Enquire on WhatsApp
@@ -135,7 +143,8 @@ export default async function HomePage() {
                 target="_blank"
                 rel="noreferrer"
                 className="button-secondary no-underline"
-                data-analytics="map_home"
+                data-analytics="map_click"
+                data-analytics-placement="home_visit"
               >
                 <MapPinIcon size={20} aria-hidden="true" />
                 Get directions
@@ -163,7 +172,8 @@ export default async function HomePage() {
                 <a
                   href={siteConfig.phoneHref}
                   className="no-underline"
-                  data-analytics="phone_home"
+                  data-analytics="phone_click"
+                  data-analytics-placement="home_visit"
                 >
                   {siteConfig.phoneDisplay}
                 </a>
@@ -181,7 +191,8 @@ export default async function HomePage() {
         rel="noreferrer"
         aria-label="Confirm availability on WhatsApp"
         className="fixed right-4 bottom-4 z-30 inline-flex min-h-14 items-center gap-3 rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink no-underline shadow-[0_12px_35px_rgba(37,35,33,0.18)] transition-transform hover:-translate-y-0.5 sm:right-6 sm:bottom-6 sm:px-5"
-        data-analytics="whatsapp_floating"
+        data-analytics="whatsapp_click"
+        data-analytics-placement="floating"
       >
         <span className="inline-flex size-8 items-center justify-center rounded-full bg-[#35b85a] text-white">
           <WhatsappLogoIcon size={20} weight="fill" aria-hidden="true" />

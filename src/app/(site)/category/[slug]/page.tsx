@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { createPageMetadata } from "@/lib/seo";
 import {
   getCatalog,
   getCategory,
@@ -20,17 +20,25 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: CategoryPageProps): Promise<Metadata> {
+}: CategoryPageProps) {
   const { slug } = await params;
   const category = await getCategory(slug);
 
   return category
-    ? {
-        title: category.title,
-        description: category.description,
-        alternates: { canonical: `/category/${category.slug}` },
-      }
-    : { title: "Category not found" };
+    ? createPageMetadata({
+        title: `Explore ${category.title} in Agra`,
+        description: `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`,
+        path: `/category/${category.slug}`,
+        image: category.image,
+      })
+    : createPageMetadata({
+        title: "Category Not Found",
+        description:
+          "The requested DDA Silver product category could not be found.",
+        path: `/category/${slug}`,
+        canonical: false,
+        noIndex: true,
+      });
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

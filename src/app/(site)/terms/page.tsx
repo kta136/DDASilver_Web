@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-
 import { EditorialPage } from "@/components/editorial-page";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms",
-  robots: { index: false, follow: false },
-};
+export const metadata = createPageMetadata({
+  title: "Website Terms",
+  description:
+    "Read the draft terms for browsing the DDA Silver website, viewing reference rates and sending product availability enquiries.",
+  path: "/terms",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

@@ -12,34 +12,37 @@ const imageProjection = `{
   )
 }`;
 
-export const productsQuery = defineQuery(`*[_type == "product"] | order(displayOrder asc) {
+export const productsQuery = defineQuery(`*[_type == "product"] | order(displayOrder asc)[0...1000] {
   title,
   "slug": slug.current,
   shortDescription,
-  "images": gallery[] ${imageProjection},
+  "images": coalesce(gallery[] ${imageProjection}, []),
   "categorySlug": category->slug.current,
-  "collectionSlugs": collections[]->slug.current,
+  "collectionSlugs": coalesce(collections[]->slug.current, []),
   featured,
   displayOrder,
   reference,
   purity,
   idolConstruction,
-  coinShape
+  coinShape,
+  "updatedAt": _updatedAt
 }`);
 
-export const categoriesQuery = defineQuery(`*[_type == "category"] | order(displayOrder asc) {
+export const categoriesQuery = defineQuery(`*[_type == "category"] | order(displayOrder asc)[0...100] {
   title,
   "slug": slug.current,
   description,
   "image": image ${imageProjection},
-  displayOrder
+  displayOrder,
+  "updatedAt": _updatedAt
 }`);
 
-export const collectionsQuery = defineQuery(`*[_type == "collection"] | order(displayOrder asc) {
+export const collectionsQuery = defineQuery(`*[_type == "collection"] | order(displayOrder asc)[0...100] {
   title,
   "slug": slug.current,
   description,
   "heroImage": heroImage ${imageProjection},
-  "productSlugs": products[]->slug.current,
-  displayOrder
+  "productSlugs": coalesce(products[]->slug.current, []),
+  displayOrder,
+  "updatedAt": _updatedAt
 }`);

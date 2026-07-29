@@ -9,38 +9,33 @@ const staticRoutes = [
   "/rates",
   "/about",
   "/contact",
-  "/privacy",
-  "/terms",
-  "/rates-disclaimer",
-  "/cookies",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { products, categories, collections } = await getPublishedCatalog();
-  const now = new Date();
 
   return [
     ...staticRoutes.map((route) => ({
       url: new URL(route || "/", siteConfig.url).toString(),
-      lastModified: now,
-      changeFrequency: route === "/rates" ? ("daily" as const) : ("monthly" as const),
+      changeFrequency:
+        route === "/rates" ? ("daily" as const) : ("monthly" as const),
       priority: route === "" ? 1 : 0.7,
     })),
     ...products.map((product) => ({
       url: new URL(`/products/${product.slug}`, siteConfig.url).toString(),
-      lastModified: now,
+      ...(product.updatedAt ? { lastModified: product.updatedAt } : {}),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
     ...categories.map((category) => ({
       url: new URL(`/category/${category.slug}`, siteConfig.url).toString(),
-      lastModified: now,
+      ...(category.updatedAt ? { lastModified: category.updatedAt } : {}),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     })),
     ...collections.map((collection) => ({
       url: new URL(`/collections/${collection.slug}`, siteConfig.url).toString(),
-      lastModified: now,
+      ...(collection.updatedAt ? { lastModified: collection.updatedAt } : {}),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     })),

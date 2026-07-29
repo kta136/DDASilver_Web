@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import { rateSnapshotSchema } from "@/lib/rates/contract";
+import {
+  extractNumberLike,
+  isRateSnapshotFresh,
+  rateEventSchema,
+  rateSnapshotSchema,
+} from "@/lib/rates/contract";
 
 const validSnapshot = {
   schemaVersion: 1,
@@ -34,6 +39,53 @@ describe("rate contract", () => {
   it("rejects malformed sequences", () => {
     expect(
       rateSnapshotSchema.safeParse({ ...validSnapshot, sequence: -1 }).success,
+    ).toBe(false);
+  });
+
+  it("rejects duplicate identifiers and invalid financial values", () => {
+    expect(
+      rateSnapshotSchema.safeParse({
+        ...validSnapshot,
+        items: [
+          { id: "silver-bank", value: 10 },
+          { id: "silver-bank", value: 11 },
+        ],
+      }).success,
+    ).toBe(false);
+    expect(
+      rateSnapshotSchema.safeParse({
+        ...validSnapshot,
+        items: [{ id: "silver-bank", value: "   " }],
+      }).success,
+    ).toBe(false);
+    expect(
+      rateSnapshotSchema.safeParse({
+        ...validSnapshot,
+        items: [{ id: "silver-bank", value: -1 }],
+      }).success,
+    ).toBe(false);
+    expect(extractNumberLike("   " as never)).toBeNull();
+  });
+
+  it("requires a supported schema version on incremental events", () => {
+    expect(
+      rateEventSchema.safeParse({
+        sequence: 11,
+        item: { id: "silver-bank", value: 102100 },
+      }).success,
+    ).toBe(false);
+  });
+
+  it("validates snapshot freshness with a bounded clock skew", () => {
+    const now = Date.parse("2026-07-28T10:01:00Z");
+    expect(
+      isRateSnapshotFresh("2026-07-28T10:00:00Z", now),
+    ).toBe(true);
+    expect(
+      isRateSnapshotFresh("2026-07-28T09:00:00Z", now),
+    ).toBe(false);
+    expect(
+      isRateSnapshotFresh("2026-07-28T10:02:00Z", now),
     ).toBe(false);
   });
 });

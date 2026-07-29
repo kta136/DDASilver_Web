@@ -20,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/studio/", "/api/", "/auth/"],
       },
     ],
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: new URL("/sitemap.xml", siteConfig.url).toString(),
+    host: new URL(siteConfig.url).origin,
   };
 }

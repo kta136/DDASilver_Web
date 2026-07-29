@@ -1,16 +1,17 @@
 import { WhatsappLogoIcon } from "@phosphor-icons/react/ssr";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/catalog/product-card";
+import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
 import {
   coinShapeLabels,
   idolConstructionLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
+import { createPageMetadata, toAbsoluteUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import {
@@ -30,24 +31,27 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: ProductPageProps): Promise<Metadata> {
+}: ProductPageProps) {
   const { slug } = await params;
   const product = await getProduct(slug);
 
   if (!product) {
-    return { title: "Product not found" };
+    return createPageMetadata({
+      title: "Product Not Found",
+      description:
+        "The requested DDA Silver product could not be found in the current catalog.",
+      path: `/products/${slug}`,
+      canonical: false,
+      noIndex: true,
+    });
   }
 
-  return {
-    title: product.title,
-    description: product.shortDescription,
-    alternates: { canonical: `/products/${product.slug}` },
-    openGraph: {
-      title: product.title,
-      description: product.shortDescription,
-      images: product.images[0]?.src ? [product.images[0].src] : [],
-    },
-  };
+  return createPageMetadata({
+    title: `${product.title} in Agra`,
+    description: `${product.title} at DDA Silver in Agra. ${product.shortDescription}`,
+    path: `/products/${product.slug}`,
+    image: product.images[0],
+  });
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
@@ -74,17 +78,30 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${toAbsoluteUrl(`/products/${product.slug}`)}#product`,
     name: product.title,
     description: product.shortDescription,
-    image: product.images.map(
-      (image) => new URL(image.src, siteConfig.url).toString(),
-    ),
+    image: product.images.map((image) => toAbsoluteUrl(image.src)),
+    brand: {
+      "@type": "Brand",
+      name: siteConfig.name,
+    },
+    material: "Silver",
     category: category?.title,
-    url: new URL(`/products/${product.slug}`, siteConfig.url).toString(),
+    sku: product.reference,
+    url: toAbsoluteUrl(`/products/${product.slug}`),
+    mainEntityOfPage: toAbsoluteUrl(`/products/${product.slug}`),
   };
 
   return (
     <main id="main-content">
+      <AnalyticsBeacon
+        eventName="product_view"
+        parameters={{
+          product_slug: product.slug,
+          category_slug: product.categorySlug,
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -199,7 +216,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
             target="_blank"
             rel="noreferrer"
             className="button-primary mt-8 w-full no-underline sm:w-auto"
-            data-analytics="whatsapp_product"
+            data-analytics="whatsapp_click"
+            data-analytics-placement="product_detail"
+            data-analytics-product-slug={product.slug}
           >
             <WhatsappLogoIcon size={20} aria-hidden="true" />
             Confirm availability on WhatsApp

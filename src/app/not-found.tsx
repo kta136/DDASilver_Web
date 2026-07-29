@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Page Not Found",
+  description:
+    "The requested DDA Silver page could not be found. Return to the silver catalog or use the main navigation to continue.",
+  path: "/",
+  canonical: false,
+  noIndex: true,
+});
+
 export default function NotFound() {
   return (
     <main className="site-container flex min-h-[55vh] items-center py-14">

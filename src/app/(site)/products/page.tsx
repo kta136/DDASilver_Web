@@ -1,17 +1,35 @@
-import type { Metadata } from "next";
-
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { parseCatalogSearchParams } from "@/lib/catalog-url";
+import { createPageMetadata } from "@/lib/seo";
 import { getCatalog } from "@/sanity/lib/catalog";
 
-export const metadata: Metadata = {
-  title: "Products",
+export const metadata = createPageMetadata({
+  title: "Silver Products in Agra",
   description:
-    "Browse DDA Silver jewellery, coins, pooja pieces, gifts, and homeware. Enquire on WhatsApp to confirm availability.",
-  alternates: { canonical: "/products" },
+    "Explore silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp for availability.",
+  path: "/products",
+});
+
+type ProductsPageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default async function ProductsPage() {
+export default async function ProductsPage({
+  searchParams,
+}: ProductsPageProps) {
   const { products, categories, collections } = await getCatalog();
+  const rawSearchParams = await searchParams;
+  const normalizedSearchParams = new URLSearchParams();
+  for (const [key, value] of Object.entries(rawSearchParams)) {
+    const firstValue = Array.isArray(value) ? value[0] : value;
+    if (firstValue) {
+      normalizedSearchParams.set(key, firstValue);
+    }
+  }
+  const initialFilters = parseCatalogSearchParams(normalizedSearchParams, {
+    categorySlugs: categories.map((item) => item.slug),
+    collectionSlugs: collections.map((item) => item.slug),
+  });
 
   return (
     <main id="main-content" className="section-shell">
@@ -33,6 +51,8 @@ export default async function ProductsPage() {
             products={products}
             categories={categories}
             collections={collections}
+            initialFilters={initialFilters}
+            syncUrl
           />
         </div>
       </div>

@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
-
 import { AppPromo } from "@/components/home/app-promo";
 import { RateExperience } from "@/components/rates/rate-experience";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Live Rates",
+export const metadata = createPageMetadata({
+  title: "Live Silver Rates in Agra",
   description:
-    "View DDA Silver customer and market reference rates supplied by DDAJewels.",
-  alternates: { canonical: "/rates" },
-};
+    "Check live silver customer and market reference rates for DDA Silver in Agra, supplied by DDAJewels and updated automatically when available.",
+  path: "/rates",
+});
 
 export default function RatesPage() {
   return (

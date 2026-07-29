@@ -1,7 +1,8 @@
 # Product requirements
 
 **Status:** Locked product brief  
-**Implementation:** Not started
+**Implementation:** Core web experience implemented; catalog/content and
+external service completion remain
 
 ## Product statement
 
@@ -150,4 +151,3 @@ The replacement is ready for owner launch review only when:
   mobile and desktop devices.
 - Accessibility, performance, SEO, analytics-consent, security, and rollback
   checks pass.
-

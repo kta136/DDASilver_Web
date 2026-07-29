@@ -3,17 +3,18 @@ import {
   ArrowSquareOutIcon,
   ShieldCheckIcon,
 } from "@phosphor-icons/react/ssr";
-import type { Metadata } from "next";
-
 import { isAuthConfigured } from "@/lib/auth/config";
+import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Customer login",
+export const metadata = createPageMetadata({
+  title: "Customer Login",
   description:
     "Continue securely to DDAJewels to use your existing shared customer account.",
-  robots: { index: false, follow: false },
-};
+  path: "/login",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function LoginPage() {
   return (
@@ -46,7 +47,8 @@ export default function LoginPage() {
             <a
               href="/api/auth/login?returnTo=%2Frates"
               className="button-primary mt-7 w-full no-underline"
-              data-analytics="login_continue"
+              data-analytics="login_start"
+              data-analytics-placement="login_page"
             >
               Continue securely
               <ArrowRightIcon size={18} aria-hidden="true" />

@@ -2,11 +2,24 @@
 
 import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
-import { useDeferredValue, useMemo, useState } from "react";
+import {
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import { ProductCard } from "@/components/catalog/product-card";
-import { readConsent } from "@/components/consent/consent";
-import { filterProducts } from "@/lib/catalog-filter";
+import {
+  filterProducts,
+  type CatalogFilters,
+} from "@/lib/catalog-filter";
+import { trackAnalyticsEvent } from "@/lib/analytics-client";
+import {
+  parseCatalogSearchParams,
+  serializeCatalogFilters,
+  type CatalogUrlState,
+} from "@/lib/catalog-url";
 import type {
   Category,
   CoinShape,
@@ -22,6 +35,8 @@ type CatalogBrowserProps = {
   collections: Collection[];
   initialCategory?: string;
   initialCollection?: string;
+  initialFilters?: CatalogUrlState;
+  syncUrl?: boolean;
 };
 
 export function CatalogBrowser({
@@ -30,15 +45,34 @@ export function CatalogBrowser({
   collections,
   initialCategory = "",
   initialCollection = "",
+  initialFilters,
+  syncUrl = false,
 }: CatalogBrowserProps) {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState(initialCategory);
-  const [collection, setCollection] = useState(initialCollection);
-  const [purity, setPurity] = useState<ProductPurity | "">("");
+  const [query, setQuery] = useState(initialFilters?.query ?? "");
+  const [category, setCategory] = useState(
+    initialFilters?.category ?? initialCategory,
+  );
+  const [collection, setCollection] = useState(
+    initialFilters?.collection ?? initialCollection,
+  );
+  const [purity, setPurity] = useState<ProductPurity | "">(
+    initialFilters?.purity ?? "",
+  );
   const [idolConstruction, setIdolConstruction] =
-    useState<IdolConstruction | "">("");
-  const [coinShape, setCoinShape] = useState<CoinShape | "">("");
+    useState<IdolConstruction | "">(
+      initialFilters?.idolConstruction ?? "",
+    );
+  const [coinShape, setCoinShape] = useState<CoinShape | "">(
+    initialFilters?.coinShape ?? "",
+  );
   const deferredQuery = useDeferredValue(query);
+  const urlOptions = useMemo(
+    () => ({
+      categorySlugs: categories.map((item) => item.slug),
+      collectionSlugs: collections.map((item) => item.slug),
+    }),
+    [categories, collections],
+  );
 
   const visibleProducts = useMemo(
     () =>
@@ -61,12 +95,63 @@ export function CatalogBrowser({
     ],
   );
 
-  function trackFilter(eventName: string) {
-    if (readConsent()?.analytics && window.gtag) {
-      window.gtag("event", eventName, {
-        page_path: window.location.pathname,
-      });
+  useEffect(() => {
+    if (!syncUrl) {
+      return;
     }
+
+    const onPopState = () => {
+      const next = parseCatalogSearchParams(
+        new URLSearchParams(window.location.search),
+        urlOptions,
+      );
+      setQuery(next.query);
+      setCategory(next.category);
+      setCollection(next.collection);
+      setPurity(next.purity);
+      setIdolConstruction(next.idolConstruction);
+      setCoinShape(next.coinShape);
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [syncUrl, urlOptions]);
+
+  useEffect(() => {
+    if (!syncUrl) {
+      return;
+    }
+
+    const filters: CatalogFilters = {
+      query,
+      category,
+      collection,
+      purity,
+      idolConstruction,
+      coinShape,
+    };
+    const next = serializeCatalogFilters(
+      filters,
+      new URLSearchParams(window.location.search),
+    );
+    const search = next.toString();
+    const nextUrl = `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`;
+    window.history.replaceState(null, "", nextUrl);
+  }, [
+    category,
+    coinShape,
+    collection,
+    idolConstruction,
+    purity,
+    query,
+    syncUrl,
+  ]);
+
+  function trackFilter(filterType: string, publicSlug: string) {
+    trackAnalyticsEvent("catalog_filter", {
+      filter_type: filterType,
+      public_slug: publicSlug || "all",
+    });
   }
 
   return (
@@ -92,7 +177,10 @@ export function CatalogBrowser({
             onChange={(event) => setQuery(event.target.value)}
             onBlur={() => {
               if (query.trim()) {
-                trackFilter("catalog_search");
+                trackAnalyticsEvent("catalog_search", {
+                  query_length: query.trim().length,
+                  result_count: visibleProducts.length,
+                });
               }
             }}
             placeholder="Search designs"
@@ -113,7 +201,7 @@ export function CatalogBrowser({
               if (nextCategory !== "coin") {
                 setCoinShape("");
               }
-              trackFilter("catalog_category_filter");
+              trackFilter("category", nextCategory);
             }}
             className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
           >
@@ -131,8 +219,9 @@ export function CatalogBrowser({
           <select
             value={purity}
             onChange={(event) => {
-              setPurity(event.target.value as ProductPurity | "");
-              trackFilter("catalog_purity_filter");
+              const nextPurity = event.target.value as ProductPurity | "";
+              setPurity(nextPurity);
+              trackFilter("purity", nextPurity);
             }}
             className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
           >
@@ -148,10 +237,10 @@ export function CatalogBrowser({
             <select
               value={idolConstruction}
               onChange={(event) => {
-                setIdolConstruction(
-                  event.target.value as IdolConstruction | "",
-                );
-                trackFilter("catalog_idol_subcategory_filter");
+                const nextIdolConstruction = event.target
+                  .value as IdolConstruction | "";
+                setIdolConstruction(nextIdolConstruction);
+                trackFilter("idol_construction", nextIdolConstruction);
               }}
               className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
@@ -169,8 +258,9 @@ export function CatalogBrowser({
             <select
               value={coinShape}
               onChange={(event) => {
-                setCoinShape(event.target.value as CoinShape | "");
-                trackFilter("catalog_coin_shape_filter");
+                const nextCoinShape = event.target.value as CoinShape | "";
+                setCoinShape(nextCoinShape);
+                trackFilter("coin_shape", nextCoinShape);
               }}
               className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
@@ -188,8 +278,9 @@ export function CatalogBrowser({
           <select
             value={collection}
             onChange={(event) => {
-              setCollection(event.target.value);
-              trackFilter("catalog_collection_filter");
+              const nextCollection = event.target.value;
+              setCollection(nextCollection);
+              trackFilter("collection", nextCollection);
             }}
             className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
           >

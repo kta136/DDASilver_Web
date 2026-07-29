@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-
 import { EditorialPage } from "@/components/editorial-page";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Rates disclaimer",
-  robots: { index: false, follow: false },
-};
+export const metadata = createPageMetadata({
+  title: "Silver Rates Disclaimer",
+  description:
+    "Read how DDA Silver presents live customer and market reference rates supplied by DDAJewels and why showroom confirmation remains essential.",
+  path: "/rates-disclaimer",
+  canonical: false,
+  noIndex: true,
+});
 
 export default function RatesDisclaimerPage() {
   return (

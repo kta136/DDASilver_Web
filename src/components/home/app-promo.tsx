@@ -28,7 +28,9 @@ export function AppPromo() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex min-h-14 items-center gap-3 rounded-full border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
-            data-analytics="app_android"
+            data-analytics="app_store_click"
+            data-analytics-platform="android"
+            data-analytics-placement="home_app_promo"
           >
             <AndroidLogoIcon size={24} aria-hidden="true" />
             Android app
@@ -39,7 +41,9 @@ export function AppPromo() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex min-h-14 items-center gap-3 rounded-full border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
-            data-analytics="app_ios"
+            data-analytics="app_store_click"
+            data-analytics-platform="ios"
+            data-analytics-placement="home_app_promo"
           >
             <AppleLogoIcon size={24} aria-hidden="true" />
             iPhone app

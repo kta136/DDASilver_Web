@@ -19,6 +19,14 @@ const typeTags: Record<z.infer<typeof webhookBodySchema>["_type"], string[]> = {
 };
 
 export async function POST(request: NextRequest) {
+  const contentLength = Number(request.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > 1_000_000) {
+    return Response.json(
+      { error: "Webhook body is too large." },
+      { status: 413 },
+    );
+  }
+
   const rateLimit = checkRateLimit(request, "sanity-webhook", 60, 60_000);
   if (!rateLimit.allowed) {
     return Response.json(

@@ -9,6 +9,7 @@ import {
   parseConsentSnapshot,
   subscribeToConsent,
 } from "@/components/consent/consent";
+import { normalizeGoogleAnalyticsId } from "@/lib/analytics";
 
 type AnalyticsGateProps = {
   gaId?: string;
@@ -21,15 +22,16 @@ export function AnalyticsGate({ gaId }: AnalyticsGateProps) {
     getConsentServerSnapshot,
   );
   const enabled = parseConsentSnapshot(snapshot)?.analytics ?? false;
+  const measurementId = normalizeGoogleAnalyticsId(gaId);
 
-  if (!gaId || !enabled) {
+  if (!measurementId || !enabled) {
     return null;
   }
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
         strategy="afterInteractive"
       />
       <Script id="dda-ga-init" strategy="afterInteractive">
@@ -37,7 +39,7 @@ export function AnalyticsGate({ gaId }: AnalyticsGateProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${gaId}', { anonymize_ip: true });
+          gtag('config', ${JSON.stringify(measurementId)}, { anonymize_ip: true });
         `}
       </Script>
     </>

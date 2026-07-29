@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const isDevelopment = process.env.NODE_ENV === "development";
+const isProductionSite =
+  process.env.NEXT_PUBLIC_SITE_ENV === "production";
+const sanityProjectId = /^[a-z0-9-]+$/.test(
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "",
+)
+  ? process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+  : null;
+const sanityDataset = /^[a-z0-9_-]+$/.test(
+  process.env.NEXT_PUBLIC_SANITY_DATASET ?? "",
+)
+  ? process.env.NEXT_PUBLIC_SANITY_DATASET
+  : null;
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -20,13 +32,16 @@ const contentSecurityPolicy = [
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-        pathname: "/images/**",
-      },
-    ],
+    remotePatterns:
+      sanityProjectId && sanityDataset
+        ? [
+            {
+              protocol: "https",
+              hostname: "cdn.sanity.io",
+              pathname: `/images/${sanityProjectId}/${sanityDataset}/**`,
+            },
+          ]
+        : [],
   },
   async headers() {
     return [
@@ -41,6 +56,17 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=(), payment=()",
           },
+          ...(isProductionSite
+            ? [
+                {
+                  key: "Strict-Transport-Security",
+                  value: "max-age=63072000; includeSubDomains; preload",
+                },
+              ]
+            : []),
+          ...(!isProductionSite
+            ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
+            : []),
         ],
       },
     ];

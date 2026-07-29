@@ -33,7 +33,6 @@ export function SiteFooter() {
             className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink no-underline hover:text-copper-dark"
             target="_blank"
             rel="noreferrer"
-            data-analytics="sister_brand"
           >
             Visit sister brand DDAJewels
             <ArrowSquareOutIcon size={17} aria-hidden="true" />
@@ -49,7 +48,8 @@ export function SiteFooter() {
               <a
                 href={siteConfig.phoneHref}
                 className="inline-flex items-start gap-3 no-underline hover:text-ink"
-                data-analytics="phone"
+                data-analytics="phone_click"
+                data-analytics-placement="footer"
               >
                 <PhoneIcon className="mt-0.5 shrink-0" size={18} />
                 {siteConfig.phoneDisplay}
@@ -61,7 +61,8 @@ export function SiteFooter() {
                 className="inline-flex items-start gap-3 no-underline hover:text-ink"
                 target="_blank"
                 rel="noreferrer"
-                data-analytics="whatsapp_general"
+                data-analytics="whatsapp_click"
+                data-analytics-placement="footer"
               >
                 <WhatsappLogoIcon className="mt-0.5 shrink-0" size={18} />
                 {siteConfig.whatsappDisplay}
@@ -73,7 +74,8 @@ export function SiteFooter() {
                 className="inline-flex items-start gap-3 no-underline hover:text-ink"
                 target="_blank"
                 rel="noreferrer"
-                data-analytics="map"
+                data-analytics="map_click"
+                data-analytics-placement="footer"
               >
                 <MapPinIcon className="mt-0.5 shrink-0" size={18} />
                 {siteConfig.address}
@@ -107,7 +109,8 @@ export function SiteFooter() {
               <Link
                 href="/login"
                 className="text-sm text-ink-muted no-underline hover:text-ink"
-                data-analytics="login"
+                data-analytics="login_start"
+                data-analytics-placement="footer"
               >
                 Customer login
               </Link>

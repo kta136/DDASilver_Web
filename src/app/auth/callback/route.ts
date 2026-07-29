@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import {
   authConfig,
+  authOrigin,
   authTransactionCookie,
   isAuthConfigured,
   sessionCookie,
@@ -13,6 +14,7 @@ import {
   verifyAuthTransaction,
 } from "@/lib/auth/transaction";
 import { checkRateLimit } from "@/lib/security/rate-limit";
+import { readBoundedJson } from "@/lib/security/external-service";
 
 const tokenResponseSchema = z.object({
   session_token: z.string().min(20),
@@ -65,23 +67,33 @@ export async function GET(request: Request) {
     );
   }
 
-  const callbackUrl = new URL("/auth/callback", requestUrl.origin);
-  const tokenResponse = await fetch(authConfig.tokenUrl, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      grant_type: "authorization_code",
-      code,
-      redirect_uri: callbackUrl.toString(),
-      client_id: authConfig.clientId,
-      client_secret: authConfig.clientSecret,
-      code_verifier: transaction.verifier,
-    }),
-    cache: "no-store",
-  });
+  const callbackUrl = new URL("/auth/callback", authOrigin);
+  let tokenResponse: Response;
+  try {
+    tokenResponse = await fetch(authConfig.tokenUrl, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        grant_type: "authorization_code",
+        code,
+        redirect_uri: callbackUrl.toString(),
+        client_id: authConfig.clientId,
+        client_secret: authConfig.clientSecret,
+        code_verifier: transaction.verifier,
+      }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
+  } catch {
+    cookieStore.delete(authTransactionCookie);
+    return Response.json(
+      { error: "DDAJewels login is temporarily unavailable." },
+      { status: 502 },
+    );
+  }
 
   if (!tokenResponse.ok) {
     cookieStore.delete(authTransactionCookie);
@@ -91,7 +103,17 @@ export async function GET(request: Request) {
     );
   }
 
-  const parsed = tokenResponseSchema.safeParse(await tokenResponse.json());
+  let tokenPayload: unknown;
+  try {
+    tokenPayload = await readBoundedJson(tokenResponse);
+  } catch {
+    cookieStore.delete(authTransactionCookie);
+    return Response.json(
+      { error: "The DDAJewels token response failed validation." },
+      { status: 502 },
+    );
+  }
+  const parsed = tokenResponseSchema.safeParse(tokenPayload);
   if (
     !parsed.success ||
     !safeEqual(parsed.data.nonce, transaction.nonce)
@@ -112,5 +134,5 @@ export async function GET(request: Request) {
     maxAge: parsed.data.expires_in,
   });
 
-  return NextResponse.redirect(new URL(transaction.returnTo, requestUrl.origin));
+  return NextResponse.redirect(new URL(transaction.returnTo, authOrigin));
 }
