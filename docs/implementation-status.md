@@ -1,7 +1,7 @@
 # Implementation status
 
 **Updated:** 29 July 2026
-**Environment:** Local production build plus linked, undeployed Vercel project
+**Environment:** Local production build plus protected Vercel Preview
 **Production authorization:** Not granted
 
 ## Implemented
@@ -53,7 +53,9 @@
 - Non-sensitive `/api/health` readiness reporting for application, Sanity,
   DDAJewels snapshot connectivity, and build version.
 - Vercel project `dda-silver-web` linked to `kta136/DDASilver_Web`, with
-  automatic Git deployments disabled until a deliberate preview deployment.
+  automatic Git deployments disabled and a deliberate Preview deployed from
+  commit `13c9025` at
+  `https://dda-silver-preview-13c9025.vercel.app`.
 - Read-only Sanity integration verified against 22 published product routes.
   No catalog records or assets were changed during the 29 July quality pass.
 - Desktop design comparison and remediation against the selected option, with
@@ -76,7 +78,7 @@
 - Verified Google Business Profile link.
 - Final product catalog, approved copy, legal approval, and complete image set.
 - Real product and showroom photography to replace every concept image.
-- Stable Vercel preview deployment and owner UAT.
+- Owner UAT on the stable, protected Vercel Preview.
 - Upstream dependency patches or documented risk acceptance for the residual
   findings recorded in `docs/security-dependency-audit.md`.
 

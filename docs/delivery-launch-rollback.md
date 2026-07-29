@@ -5,8 +5,11 @@
 
 **29 July 2026 evidence:** local production build and desktop/mobile browser
 journeys pass with preview noindex controls. The `dda-silver-web` Vercel
-project is Git-linked with automatic deployments disabled. No deployment,
-custom domain, DNS, production alias, or indexing change is active.
+project is Git-linked with automatic deployments disabled. A protected Preview
+from commit `13c9025` is ready at
+`https://dda-silver-preview-13c9025.vercel.app`. Vercel reports the project as
+not live, with one Preview deployment, no production deployment, no custom
+domain, no DNS change, and no indexing change.
 
 ## Absolute launch gate
 
@@ -81,7 +84,7 @@ Do not attach or route the live domain during preparation.
 ## Preview policy
 
 - Unlisted Vercel URL only.
-- Publicly reachable to reviewers with the link.
+- Reachable to authorized Vercel reviewers with the link.
 - `noindex, nofollow` header.
 - Robots disallow all.
 - Separate/non-production secrets.
