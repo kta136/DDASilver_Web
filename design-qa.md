@@ -1,89 +1,92 @@
 # Design QA
 
-**Date:** 28 July 2026  
-**Target:** Selected homepage option 1  
-**Browser:** Google Chrome  
-**State:** Local production preview, consent already resolved  
+**Date:** 29 July 2026
+**Target:** Reuse the live-rates experience from `https://ddajewels.com/rates`
+inside the DDA Silver website
+**Browser:** Codex in-app browser
+**State:** Local production build, essential-only consent already resolved
 **final result: passed**
 
 ## Comparison evidence
 
-- Source visual: `docs/design/selected-homepage-option-1.png`
-- Source size: 1536 × 1024 px
-- Normalized source: `docs/design/source-homepage-chrome-normalized.png`
-- Final implementation: `docs/design/implementation-homepage-chrome-1536-final.png`
-- Browser CSS viewport: 1536 × 1024 px
-- Captured page area: 1521 × 1014 px at device-pixel ratio 1
-- Side-by-side comparison:
-  `docs/design/homepage-comparison-chrome-final-painted.png`
-- Mockup asset reviews:
-  `docs/design/mockup-category-assets-review.png` and
-  `docs/design/mockup-featured-assets-review.png`
+- Desktop source:
+  `docs/design/source-ddajewels-desktop.png`
+- Desktop implementation:
+  `docs/design/implementation-dda-silver-desktop.png`
+- Desktop side-by-side:
+  `docs/design/comparison-desktop.png`
+- Mobile source:
+  `docs/design/source-ddajewels-mobile.png`
+- Mobile implementation with the Silver MCX high/low row expanded:
+  `docs/design/implementation-dda-silver-mobile.png`
+- Mobile side-by-side:
+  `docs/design/comparison-mobile.png`
 
-The normalized source and final Chrome capture were reviewed together at the
-same visible page size. The source is on the left and the implementation is on
-the right in the comparison file.
+Both desktop captures use a 1440 × 1000 CSS viewport and produce a
+1425 × 990 page image. Both mobile captures use a 390 × 844 CSS viewport and
+produce a 375 × 811 page image. The source is on the left and the implementation
+is on the right in each comparison.
 
-## Chrome coverage
+## Intended reuse
 
-- Desktop: homepage, About, Contact, Products, Live Rates, Privacy, Everyday
-  Silver collection, and Braided Silver Bracelet product detail.
-- Mobile: homepage, About, Contact, Products, Live Rates, Privacy, and product
-  detail at a 390 × 844 CSS viewport.
-- Core interactions checked: mobile navigation, catalog search and filtering,
-  product discovery, product WhatsApp URL construction, and safe unavailable
-  rate rendering.
-- No actual horizontal scrolling remains on the tested mobile routes.
+The DDA Silver page preserves the DDAJewels rate experience:
+
+- Four customer rows: Gold 999, Silver Bank, Agra Mohar, and Silver Coin 10gm.
+- The customer value and movement presentation.
+- Five market rows: Silver MCX, Gold MCX, Gold ($), Silver ($), and INR.
+- Commodity, bid, ask, high, and low market values.
+- Live connection state and automatic updates.
+
+The shell, typography, spacing, navigation, labels, and supporting content use
+the existing DDA Silver design system, as requested. The larger branded intro is
+an intentional DDA Silver template difference, not a missed source element.
+
+## Browser coverage
+
+- Desktop: internal `/rates` route, DDA Silver page identity, customer table,
+  market table, live status, timestamp, and internal Live Rates navigation.
+- Mobile: compact customer and market tables at 390 px, no page-level horizontal
+  overflow, and the high/low disclosure control.
+- Live data: the same-origin snapshot rewrite returned four customer items; the
+  stream rewrite delivered snapshot, feed-status, source-snapshot, source, and
+  rate events.
+- Runtime: no framework overlay and no browser console warnings or errors.
 
 ## Findings and fixes
 
-1. **P2 — first-screen proportions were too tall.** The desktop header, hero,
-   category rail, and featured/rates transition were aligned to the selected
-   1536 × 1024 visual.
-2. **P2 — temporary photography did not match the approved direction.** All
-   visible provisional product imagery now comes from the mockup-matched
-   concept asset set under `public/images/mockup`.
-3. **P2 — missing mockup details.** Featured ordering, rate teaser copy, and
-   the floating WhatsApp action were aligned with the visual target.
-4. **P2 — catalog search matched text inside unrelated words.** Search now
-   uses word-prefix matching, so “ring” no longer matches “earrings.”
-5. **P2 — wide vertical gaps across content pages.** Shared section padding
-   was reduced from as much as 128 px per edge to a 72 px maximum, with a
-   48 px mobile value. About and collection heroes, legal/editorial sections,
-   catalog spacing, rates, contact, product detail, footer, and empty states
-   were compacted consistently.
-6. **P2 — hidden rate-table labels enlarged the mobile document width.**
-   Equivalent accessible names now use `aria-label`, preserving screen-reader
-   meaning while removing the overflow.
+1. **P2 — the first mobile implementation inherited desktop minimum table
+   widths.** Customer values and market values were clipped and a horizontal
+   scrollbar appeared. Both tables now use fixed mobile column proportions,
+   compact spacing, and responsive type sizes.
+2. **P2 — the obsolete portal flow redirected visitors away from DDA Silver.**
+   All DDA Silver Live Rates links now point to the local `/rates` route.
+3. **P2 — the earlier adapter expected an older internal rate shape.** It now
+   normalizes the public DDAJewels snapshot and live event families without
+   fabricating missing values.
+
+All P2 findings were corrected and recaptured before the final comparison.
 
 ## Final review
 
 | Area | Result | Notes |
 | --- | --- | --- |
-| Header and navigation | Pass | Family mark, SILVER label, nav rhythm, active rule, and page insets align with the target. |
-| Homepage geometry | Pass | Hero split, section height, category rail, featured grid, and rate panel align at the comparison viewport. |
-| Image direction | Pass | Only the selected mockup-derived/generated concept set is used for visible provisional product imagery. |
-| Inner-page spacing | Pass | Desktop and mobile sections use a tighter, consistent rhythm without large empty bands. |
-| Catalog and enquiry | Pass | Search/filter flow, product navigation, and WhatsApp enquiry path work without price or stock claims. |
-| Rates | Pass | Unconfigured data renders as unavailable, never zero; mobile tables remain locally scrollable without page overflow. |
-| Responsive layout | Pass | No actual horizontal overflow was observed from 390 px upward on tested routes. |
-| Runtime | Pass | Lint, TypeScript, 19 unit tests, and the 39-route production build pass. |
-
-## Accepted preview constraints
-
-- The mockup includes a `925` purity claim that is not published until the
-  owner verifies it.
-- The live-rate panel reports a pending/unavailable state because the
-  DDAJewels endpoints are not configured in this local preview.
-- Every generated concept image is temporary and must be replaced with
-  owner-approved real photography before launch.
-- The mouse cursor visible in some Chrome screenshots is capture tooling, not
-  part of the website.
+| Page identity | Pass | URL remains `/rates`; title, header, copy, and footer are DDA Silver. |
+| Customer rates | Pass | Four source-defined rows render live values and movement amounts. |
+| Market data | Pass | Five source-defined rows render bid, ask, high, and low values. |
+| Responsive layout | Pass | No page-level horizontal overflow at 390 px. |
+| Mobile disclosure | Pass | Silver MCX high/low expands, reports `aria-expanded=true`, and can collapse again. |
+| Navigation | Pass | Both audited Live Rates links use `/rates`; no redirect or iframe is used. |
+| Data authority | Pass | Values come from DDAJewels through fixed same-origin server rewrites. |
+| Runtime | Pass | Production build and browser runtime checks pass without warnings or overlays. |
 
 ## Severity summary
 
 - P0: 0
 - P1: 0
 - P2: 0
-- Deferred launch prerequisites: verified real photography, approved claims
-  and legal copy, and configured DDAJewels shared services
+
+## Launch boundary
+
+This QA covers the local production build and a protected Vercel Preview.
+`ddasilver.com`, production aliases, indexing, and production deployment remain
+untouched until the owner explicitly says: `Go live on ddasilver.com.`

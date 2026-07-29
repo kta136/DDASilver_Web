@@ -14,13 +14,46 @@ const sanityDataset = /^[a-z0-9_-]+$/.test(
   ? process.env.NEXT_PUBLIC_SANITY_DATASET
   : null;
 
+function ddaJewelsEndpoint(value: string | undefined, pathname: string) {
+  if (!value) {
+    return null;
+  }
+
+  try {
+    const url = new URL(value);
+    const allowedHost =
+      url.hostname === "ddajewels.com" ||
+      url.hostname.endsWith(".ddajewels.com");
+    return url.protocol === "https:" &&
+      allowedHost &&
+      url.pathname === pathname &&
+      !url.username &&
+      !url.password &&
+      !url.search &&
+      !url.hash
+      ? url.toString()
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+const ratesSnapshotEndpoint = ddaJewelsEndpoint(
+  process.env.DDAJEWELS_RATES_SNAPSHOT_URL,
+  "/api/v1/rates/current",
+);
+const ratesStreamEndpoint = ddaJewelsEndpoint(
+  process.env.DDAJEWELS_RATES_STREAM_URL,
+  "/sse/rates",
+);
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' blob: data: https://cdn.sanity.io https://www.google-analytics.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://ddajewels.com https://www.ddajewels.com https://*.sanity.io wss://*.sanity.io https://www.google-analytics.com",
+  "connect-src 'self' https://*.sanity.io wss://*.sanity.io https://www.google-analytics.com",
   "frame-src 'self' https://www.google.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
@@ -69,6 +102,26 @@ const nextConfig: NextConfig = {
             : []),
         ],
       },
+    ];
+  },
+  async rewrites() {
+    return [
+      ...(ratesSnapshotEndpoint
+        ? [
+            {
+              source: "/api/rates/snapshot",
+              destination: ratesSnapshotEndpoint,
+            },
+          ]
+        : []),
+      ...(ratesStreamEndpoint
+        ? [
+            {
+              source: "/api/rates/stream",
+              destination: ratesStreamEndpoint,
+            },
+          ]
+        : []),
     ];
   },
   async redirects() {

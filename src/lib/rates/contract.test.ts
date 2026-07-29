@@ -2,9 +2,12 @@ import { describe, expect, it } from "vitest";
 
 import {
   extractNumberLike,
+  feedStatusEventSchema,
   isRateSnapshotFresh,
   rateEventSchema,
   rateSnapshotSchema,
+  sourceEventSchema,
+  sourceSnapshotEventSchema,
 } from "@/lib/rates/contract";
 
 const validSnapshot = {
@@ -74,6 +77,115 @@ describe("rate contract", () => {
         item: { id: "silver-bank", value: 102100 },
       }).success,
     ).toBe(false);
+  });
+
+  it("normalizes the current DDAJewels snapshot contract", () => {
+    const parsed = rateSnapshotSchema.safeParse({
+      schemaVersion: 1,
+      view: "default",
+      serverTime: "2026-07-29T13:45:39.402Z",
+      sequence: 3483183,
+      items: [
+        {
+          itemId: "gold-999-id",
+          name: "Gold 999",
+          unit: "PER_10_GRAM",
+          finalRate: 146370,
+          movementValue: 442,
+          movementDirection: "DOWN",
+        },
+      ],
+      feedStatus: {
+        status: "live",
+        marketState: { label: "Live feed" },
+      },
+    });
+
+    expect(parsed.success).toBe(true);
+    if (parsed.success) {
+      expect(parsed.data.items[0]).toMatchObject({
+        id: "gold-999-id",
+        name: "Gold 999",
+        value: 146370,
+        change: -442,
+        direction: "down",
+      });
+      expect(parsed.data.sources).toEqual([]);
+      expect(parsed.data.feedStatus).toBe("live");
+    }
+  });
+
+  it("normalizes DDAJewels rate and market SSE batches", () => {
+    const rate = rateEventSchema.safeParse({
+      schemaVersion: 1,
+      view: "default",
+      sequence: 3483193,
+      items: [
+        {
+          itemId: "silver-bank-id",
+          finalRate: 222882,
+          movementValue: 618,
+          movementDirection: "DOWN",
+        },
+      ],
+    });
+    const sources = sourceSnapshotEventSchema.safeParse({
+      schemaVersion: 1,
+      sources: [
+        {
+          sourceId: "silver-mcx-id",
+          name: "Silver MCX",
+          unit: "PER_KG",
+          sortOrder: 0,
+          bid: 215271,
+          ask: 215385,
+          high: 219000,
+          low: 214783,
+          sourceTimestamp: "2026-07-29T13:45:31.000Z",
+          calculatedAt: "2026-07-29T13:45:44.611Z",
+          sourceState: { freshness: "live", flags: [] },
+        },
+      ],
+    });
+    const sourceDelta = sourceEventSchema.safeParse({
+      schemaVersion: 1,
+      sources: [
+        {
+          sourceId: "silver-mcx-id",
+          name: "Silver MCX",
+          unit: "PER_KG",
+          sortOrder: 0,
+          bid: 215280,
+          ask: 215376,
+          high: 219000,
+          low: 214783,
+          sourceTimestamp: "2026-07-29T13:45:44.000Z",
+          calculatedAt: "2026-07-29T13:45:48.501Z",
+        },
+      ],
+    });
+    const status = feedStatusEventSchema.safeParse({
+      schemaVersion: 1,
+      status: "live",
+      marketState: { label: "Live feed" },
+    });
+
+    expect(rate.success && rate.data.items[0]).toMatchObject({
+      id: "silver-bank-id",
+      value: 222882,
+      direction: "down",
+    });
+    expect(sources.success && sources.data.sources[0]).toMatchObject({
+      id: "silver-mcx-id",
+      bid: 215271,
+      ask: 215385,
+      high: 219000,
+      low: 214783,
+    });
+    expect(sourceDelta.success && sourceDelta.data.sources[0]?.ask).toBe(
+      215376,
+    );
+    expect(status.success && status.data.feedStatus).toBe("live");
   });
 
   it("validates snapshot freshness with a bounded clock skew", () => {

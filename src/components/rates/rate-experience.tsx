@@ -29,7 +29,6 @@ import {
   sourceEventSchema,
   sourceSnapshotEventSchema,
   type RateItem,
-  type SourceItem,
 } from "@/lib/rates/contract";
 import {
   customerRateDefinitions,
@@ -40,29 +39,11 @@ import { initialRateState, rateReducer } from "@/lib/rates/reducer";
 import { trackAnalyticsEvent } from "@/lib/analytics-client";
 import { siteConfig } from "@/lib/site";
 
-const snapshotUrl =
-  process.env.NEXT_PUBLIC_DDAJEWELS_RATES_SNAPSHOT_URL ?? "";
-const streamUrl = process.env.NEXT_PUBLIC_DDAJEWELS_RATES_STREAM_URL ?? "";
+const snapshotUrl = "/api/rates/snapshot";
+const streamUrl = "/api/rates/stream";
 const staleThresholdMs = 90_000;
 const maximumEventBytes = 64_000;
 const maximumSnapshotBytes = 1_000_000;
-
-function resolveRateEndpoint(value: string) {
-  try {
-    const url = new URL(value);
-    const isDdaJewels =
-      url.protocol === "https:" &&
-      (url.hostname === "ddajewels.com" ||
-        url.hostname.endsWith(".ddajewels.com"));
-    const isLocalDevelopment =
-      process.env.NODE_ENV === "development" &&
-      (url.hostname === "localhost" || url.hostname === "127.0.0.1") &&
-      (url.protocol === "http:" || url.protocol === "https:");
-    return isDdaJewels || isLocalDevelopment ? url.toString() : null;
-  } catch {
-    return null;
-  }
-}
 
 async function readBoundedJson(response: Response, maximumBytes: number) {
   const contentLength = Number(response.headers.get("content-length"));
@@ -75,38 +56,6 @@ async function readBoundedJson(response: Response, maximumBytes: number) {
     throw new Error("Rate response is too large");
   }
   return JSON.parse(body) as unknown;
-}
-
-async function addPersonalizedTicket(url: string) {
-  const allowedUrl = resolveRateEndpoint(url);
-  if (!allowedUrl) {
-    return null;
-  }
-
-  try {
-    const response = await fetch("/api/rates/ticket", {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      cache: "no-store",
-      signal: AbortSignal.timeout(10_000),
-    });
-    if (!response.ok) {
-      return allowedUrl;
-    }
-
-    const payload = (await readBoundedJson(response, 16_000)) as {
-      ticket?: unknown;
-    };
-    if (typeof payload.ticket !== "string" || payload.ticket.length < 20) {
-      return allowedUrl;
-    }
-
-    const ticketedUrl = new URL(allowedUrl);
-    ticketedUrl.searchParams.set("ticket", payload.ticket);
-    return ticketedUrl.toString();
-  } catch {
-    return allowedUrl;
-  }
 }
 
 function findMatchingRate<T extends RateItem>(
@@ -124,6 +73,10 @@ function findMatchingRate<T extends RateItem>(
   });
 }
 
+function formatRupee(value: number | null) {
+  return value === null ? "—" : `₹${formatIndianNumber(value)}`;
+}
+
 function Movement({ item }: { item?: RateItem }) {
   const direction =
     item?.direction ??
@@ -133,14 +86,21 @@ function Movement({ item }: { item?: RateItem }) {
         ? "down"
         : "flat");
 
+  const change =
+    typeof item?.change === "number" && Number.isFinite(item.change)
+      ? Math.abs(item.change)
+      : null;
+  const amount = formatRupee(change);
+
   if (direction === "up") {
     return (
       <span
-        className="inline-flex items-center gap-1 text-sage"
+        className="inline-flex items-center justify-end gap-2 text-sage"
         role="img"
-        aria-label="Up"
+        aria-label={`Up ${amount}`}
       >
         <ArrowUpIcon size={15} aria-hidden="true" />
+        <span className="tabular-nums">{amount}</span>
       </span>
     );
   }
@@ -148,22 +108,24 @@ function Movement({ item }: { item?: RateItem }) {
   if (direction === "down") {
     return (
       <span
-        className="inline-flex items-center gap-1 text-copper-dark"
+        className="inline-flex items-center justify-end gap-2 text-copper-dark"
         role="img"
-        aria-label="Down"
+        aria-label={`Down ${amount}`}
       >
         <ArrowDownIcon size={15} aria-hidden="true" />
+        <span className="tabular-nums">{amount}</span>
       </span>
     );
   }
 
   return (
     <span
-      className="inline-flex items-center gap-1 text-ink-muted"
+      className="inline-flex items-center justify-end gap-2 text-ink-muted"
       role="img"
-      aria-label="No movement"
+      aria-label={`No movement ${amount}`}
     >
       <MinusIcon size={15} aria-hidden="true" />
+      <span className="tabular-nums">{amount}</span>
     </span>
   );
 }
@@ -174,15 +136,6 @@ export function RateExperience() {
   const reconnectAttempt = useRef(0);
 
   useEffect(() => {
-    if (!snapshotUrl || !streamUrl) {
-      dispatch({
-        type: "unavailable",
-        message:
-          "The DDAJewels rate endpoints have not been connected in this preview.",
-      });
-      return;
-    }
-
     let eventSource: EventSource | null = null;
     let reconnectTimer: ReturnType<typeof setTimeout> | null = null;
     let cancelled = false;
@@ -209,17 +162,7 @@ export function RateExperience() {
       }
 
       dispatch({ type: "connecting" });
-      const resolvedStreamUrl = await addPersonalizedTicket(streamUrl);
-      if (cancelled || !resolvedStreamUrl) {
-        if (!cancelled) {
-          dispatch({
-            type: "unavailable",
-            message: "The configured rate stream endpoint is not allowed.",
-          });
-        }
-        return;
-      }
-      eventSource = new EventSource(resolvedStreamUrl);
+      eventSource = new EventSource(streamUrl);
 
       eventSource.addEventListener("open", () => {
         reconnectAttempt.current = 0;
@@ -227,18 +170,12 @@ export function RateExperience() {
 
       eventSource.addEventListener("snapshot", (event) =>
         parseEvent(event as MessageEvent<string>, (payload) => {
-          const parsed = rateSnapshotSchema.safeParse(payload);
-          if (
-            parsed.success &&
-            isRateSnapshotFresh(
-              parsed.data.serverTime,
-              receivedAt(),
-              staleThresholdMs,
-            )
-          ) {
+          const parsed = rateEventSchema.safeParse(payload);
+          if (parsed.success) {
             dispatch({
-              type: "snapshot",
-              snapshot: parsed.data,
+              type: "rate-batch",
+              items: parsed.data.items,
+              sequence: parsed.data.sequence,
               receivedAt: receivedAt(),
             });
           }
@@ -251,15 +188,12 @@ export function RateExperience() {
           if (!parsed.success) {
             return;
           }
-          const item = parsed.data.item ?? parsed.data;
-          if ("id" in item) {
-            dispatch({
-              type: "rate",
-              item: item as RateItem,
-              sequence: parsed.data.sequence,
-              receivedAt: receivedAt(),
-            });
-          }
+          dispatch({
+            type: "rate-batch",
+            items: parsed.data.items,
+            sequence: parsed.data.sequence,
+            receivedAt: receivedAt(),
+          });
         }),
       );
 
@@ -270,7 +204,9 @@ export function RateExperience() {
             dispatch({
               type: "source-snapshot",
               sources: parsed.data.sources,
-              sequence: parsed.data.sequence,
+              ...(parsed.data.sequence !== undefined
+                ? { sequence: parsed.data.sequence }
+                : {}),
               receivedAt: receivedAt(),
             });
           }
@@ -283,15 +219,14 @@ export function RateExperience() {
           if (!parsed.success) {
             return;
           }
-          const source = parsed.data.source ?? parsed.data;
-          if ("id" in source) {
-            dispatch({
-              type: "source",
-              source: source as SourceItem,
-              sequence: parsed.data.sequence,
-              receivedAt: receivedAt(),
-            });
-          }
+          dispatch({
+            type: "source-batch",
+            sources: parsed.data.sources,
+            ...(parsed.data.sequence !== undefined
+              ? { sequence: parsed.data.sequence }
+              : {}),
+            receivedAt: receivedAt(),
+          });
         }),
       );
 
@@ -302,8 +237,12 @@ export function RateExperience() {
             dispatch({
               type: "feed-status",
               feedStatus: parsed.data.feedStatus,
-              sequence: parsed.data.sequence,
-              serverTime: parsed.data.serverTime,
+              ...(parsed.data.sequence !== undefined
+                ? { sequence: parsed.data.sequence }
+                : {}),
+              ...(parsed.data.serverTime
+                ? { serverTime: parsed.data.serverTime }
+                : {}),
               receivedAt: receivedAt(),
             });
           }
@@ -333,11 +272,7 @@ export function RateExperience() {
     async function loadSnapshot(isReconnect = false) {
       dispatch({ type: "connecting" });
       try {
-        const resolvedSnapshotUrl = await addPersonalizedTicket(snapshotUrl);
-        if (!resolvedSnapshotUrl) {
-          throw new Error("Snapshot endpoint is not allowed");
-        }
-        const response = await fetch(resolvedSnapshotUrl, {
+        const response = await fetch(snapshotUrl, {
           cache: "no-store",
           headers: { Accept: "application/json" },
           signal: AbortSignal.timeout(10_000),
@@ -472,27 +407,35 @@ export function RateExperience() {
         </div>
       ) : null}
 
-      <section className="mt-10">
+      <section className="mt-10" aria-labelledby="customer-rates-heading">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow">Customer rates</p>
-            <h2 className="font-display mt-3 text-5xl font-semibold">
-              Your rate view
+            <h2
+              id="customer-rates-heading"
+              className="font-display mt-3 text-5xl font-semibold"
+            >
+              Today&apos;s rates
             </h2>
           </div>
           <p className="max-w-md text-sm leading-6 text-ink-muted">
-            Sign in through DDAJewels when personalized rate visibility is
-            enabled for your account.
+            Current showroom reference rates from the authoritative DDAJewels
+            feed.
           </p>
         </div>
 
-        <div className="mt-7 overflow-x-auto border-y border-line">
-          <table className="w-full min-w-[36rem] border-collapse text-left">
+        <div className="mt-7 overflow-hidden border border-line bg-white">
+          <table className="w-full table-fixed border-collapse text-left sm:table-auto">
+            <colgroup>
+              <col className="w-[38%] sm:w-auto" />
+              <col className="w-[39%] sm:w-auto" />
+              <col className="w-[23%] sm:w-32" />
+            </colgroup>
             <thead className="sr-only">
               <tr>
                 <th>Rate</th>
-                <th>Movement</th>
                 <th>Current value</th>
+                <th>Movement</th>
               </tr>
             </thead>
             <tbody>
@@ -500,18 +443,15 @@ export function RateExperience() {
                 <tr key={row.key} className="border-b border-line last:border-b-0">
                   <th
                     scope="row"
-                    className="py-5 pr-5 text-base font-bold"
+                    className="px-3 py-4 text-base font-bold sm:px-5 sm:py-5 sm:text-lg"
                   >
                     {row.label}
                   </th>
-                  <td className="w-20 py-5 text-center">
-                    <Movement item={row.item} />
+                  <td className="px-2 py-4 text-right font-display text-xl font-semibold tabular-nums sm:px-5 sm:py-5 sm:text-3xl">
+                    {formatRupee(extractRateValue(row.item))}
                   </td>
-                  <td className="py-5 text-right font-display text-3xl font-semibold tabular-nums">
-                    {formatIndianNumber(
-                      extractRateValue(row.item),
-                      row.item?.unit,
-                    )}
+                  <td className="w-auto px-3 py-4 text-right text-xs font-semibold sm:w-32 sm:px-5 sm:py-5 sm:text-sm">
+                    <Movement item={row.item} />
                   </td>
                 </tr>
               ))}
@@ -520,19 +460,63 @@ export function RateExperience() {
         </div>
       </section>
 
-      <section className="mt-12">
-        <p className="eyebrow">Market reference</p>
-        <h2 className="font-display mt-3 text-5xl font-semibold">
-          Source markets
-        </h2>
-        <div className="mt-7 overflow-x-auto border-y border-line">
-          <table className="w-full min-w-[42rem] border-collapse text-left">
-            <thead className="sr-only">
-              <tr>
-                <th>Market</th>
-                <th>Movement</th>
-                <th>Value</th>
-                <th>Details</th>
+      <section className="mt-12" aria-labelledby="market-data-heading">
+        <div className="flex items-end justify-between gap-5">
+          <div>
+            <p className="eyebrow">Market reference</p>
+            <h2
+              id="market-data-heading"
+              className="font-display mt-3 text-5xl font-semibold"
+            >
+              Market data
+            </h2>
+          </div>
+          <span
+            className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] ${
+              statusLabel === "Live" ? "text-sage" : "text-copper-dark"
+            }`}
+          >
+            <span
+              className={`size-2 rounded-full ${
+                statusLabel === "Live" ? "bg-sage" : "bg-copper"
+              }`}
+              aria-hidden="true"
+            />
+            {statusLabel}
+          </span>
+        </div>
+        <div className="mt-7 overflow-hidden border border-line bg-white">
+          <table className="w-full table-fixed border-collapse text-left sm:table-auto">
+            <colgroup>
+              <col className="w-[40%] sm:w-auto" />
+              <col className="w-[30%] sm:w-auto" />
+              <col className="w-[30%] sm:w-auto" />
+              <col className="sm:w-auto" />
+              <col className="sm:w-auto" />
+            </colgroup>
+            <thead className="bg-[#f6f3ef] text-xs font-bold uppercase tracking-[0.14em] text-ink-muted">
+              <tr className="border-b border-line">
+                <th scope="col" className="px-3 py-4 sm:px-4">
+                  Commodity
+                </th>
+                <th scope="col" className="px-2 py-4 text-right sm:px-4">
+                  Bid
+                </th>
+                <th scope="col" className="px-2 py-4 text-right sm:px-4">
+                  Ask
+                </th>
+                <th
+                  scope="col"
+                  className="hidden px-4 py-4 text-right sm:table-cell"
+                >
+                  High
+                </th>
+                <th
+                  scope="col"
+                  className="hidden px-4 py-4 text-right sm:table-cell"
+                >
+                  Low
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -541,42 +525,56 @@ export function RateExperience() {
                 return (
                   <Fragment key={row.key}>
                     <tr className="border-b border-line">
-                      <th scope="row" className="py-5 pr-5 font-bold">
-                        {row.label}
-                      </th>
-                      <td className="w-20 py-5 text-center">
-                        <Movement item={row.item} />
-                      </td>
-                      <td className="py-5 text-right font-display text-3xl font-semibold tabular-nums">
-                        {formatIndianNumber(
-                          extractRateValue(row.item),
-                          row.item?.unit,
-                        )}
-                      </td>
-                      <td className="w-20 py-5 text-right">
+                      <th
+                        scope="row"
+                        className="px-3 py-4 text-sm font-bold sm:px-4 sm:py-5 sm:text-base"
+                      >
+                        <span>{row.label}</span>
                         <button
                           type="button"
-                          className="inline-flex size-11 items-center justify-center rounded-full border border-line"
+                          className="ml-1 inline-flex size-7 items-center justify-center rounded-full border border-line align-middle sm:hidden"
                           aria-expanded={expanded}
                           aria-controls={`market-detail-${row.key}`}
                           aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
                           onClick={() => toggleRow(row.key)}
                         >
                           {expanded ? (
-                            <CaretUpIcon size={18} aria-hidden="true" />
+                            <CaretUpIcon size={16} aria-hidden="true" />
                           ) : (
-                            <CaretDownIcon size={18} aria-hidden="true" />
+                            <CaretDownIcon size={16} aria-hidden="true" />
                           )}
                         </button>
+                      </th>
+                      <td className="px-2 py-4 text-right font-display text-base font-semibold tabular-nums sm:px-4 sm:py-5 sm:text-2xl">
+                        {formatIndianNumber(
+                          extractNumberLike(row.item?.bid) ??
+                            extractRateValue(row.item),
+                        )}
+                      </td>
+                      <td className="px-2 py-4 text-right font-display text-base font-semibold tabular-nums sm:px-4 sm:py-5 sm:text-2xl">
+                        {formatIndianNumber(
+                          extractNumberLike(row.item?.ask) ??
+                            extractRateValue(row.item),
+                        )}
+                      </td>
+                      <td className="hidden px-4 py-5 text-right font-display text-2xl text-ink-muted tabular-nums sm:table-cell">
+                        {formatIndianNumber(
+                          extractNumberLike(row.item?.high),
+                        )}
+                      </td>
+                      <td className="hidden px-4 py-5 text-right font-display text-2xl text-ink-muted tabular-nums sm:table-cell">
+                        {formatIndianNumber(
+                          extractNumberLike(row.item?.low),
+                        )}
                       </td>
                     </tr>
                     {expanded ? (
                       <tr
                         id={`market-detail-${row.key}`}
-                        className="border-b border-line bg-white"
+                        className="border-b border-line bg-[#f6f3ef] sm:hidden"
                       >
-                        <td colSpan={4} className="px-5 py-5">
-                          <dl className="grid grid-cols-2 gap-5 sm:max-w-md">
+                        <td colSpan={3} className="px-5 py-5">
+                          <dl className="grid grid-cols-2 gap-5">
                             <div>
                               <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                                 High
@@ -584,7 +582,6 @@ export function RateExperience() {
                               <dd className="mt-2 font-display text-2xl">
                                 {formatIndianNumber(
                                   extractNumberLike(row.item?.high),
-                                  row.item?.unit,
                                 )}
                               </dd>
                             </div>
@@ -595,7 +592,6 @@ export function RateExperience() {
                               <dd className="mt-2 font-display text-2xl">
                                 {formatIndianNumber(
                                   extractNumberLike(row.item?.low),
-                                  row.item?.unit,
                                 )}
                               </dd>
                             </div>

@@ -86,4 +86,44 @@ describe("rate reducer", () => {
     expect(statusUpdated.lastValidEventAt).toBe(1_000);
     expect(stale.isStale).toBe(true);
   });
+
+  it("merges DDAJewels rate and source batches without losing row labels", () => {
+    const hydrated = rateReducer(initialRateState, {
+      type: "snapshot",
+      snapshot,
+      receivedAt: 1_000,
+    });
+    const ratesUpdated = rateReducer(hydrated, {
+      type: "rate-batch",
+      items: [{ id: "silver-bank", value: 102700, change: 250 }],
+      sequence: 11,
+      receivedAt: 2_000,
+    });
+    const sourcesUpdated = rateReducer(ratesUpdated, {
+      type: "source-batch",
+      sources: [
+        {
+          id: "silver-mcx",
+          name: "Silver MCX",
+          bid: 101600,
+          ask: 101700,
+          high: 102200,
+          low: 100900,
+        },
+      ],
+      receivedAt: 2_100,
+    });
+
+    expect(ratesUpdated.items["silver-bank"]).toMatchObject({
+      id: "silver-bank",
+      value: 102700,
+      change: 250,
+    });
+    expect(sourcesUpdated.sources["silver-mcx"]).toMatchObject({
+      name: "Silver MCX",
+      bid: 101600,
+      ask: 101700,
+    });
+    expect(sourcesUpdated.sequence).toBe(11);
+  });
 });

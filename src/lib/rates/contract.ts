@@ -30,10 +30,13 @@ export const rateItemSchema = z.object({
 });
 
 export const sourceItemSchema = rateItemSchema.extend({
+  bid: numberLike.optional(),
+  ask: numberLike.optional(),
   high: numberLike.optional(),
   low: numberLike.optional(),
   open: numberLike.optional(),
   previousClose: numberLike.optional(),
+  sortOrder: z.number().int().optional(),
 });
 
 export const feedStatusSchema = z.union([
@@ -45,7 +48,7 @@ export const feedStatusSchema = z.union([
   }),
 ]);
 
-export const rateSnapshotSchema = z
+const legacyRateSnapshotSchema = z
   .object({
     schemaVersion,
     view: identifier,
@@ -74,30 +77,239 @@ export const rateSnapshotSchema = z
     }
   });
 
-export const rateEventSchema = z.object({
-  schemaVersion,
-  sequence,
-  item: rateItemSchema.optional(),
-}).and(rateItemSchema.partial());
-
-export const sourceSnapshotEventSchema = z.object({
-  schemaVersion,
-  sequence,
-  sources: z.array(sourceItemSchema).max(100),
+const ddaJewelsUnitSchema = z.enum([
+  "PER_GRAM",
+  "PER_10_GRAM",
+  "PER_KG",
+]);
+const ddaJewelsDirectionSchema = z.enum(["UP", "DOWN", "FLAT"]);
+const ddaJewelsMovementValueSchema = z
+  .number()
+  .finite()
+  .nonnegative()
+  .max(1_000_000_000_000);
+const ddaJewelsRateItemSchema = z.object({
+  itemId: identifier,
+  name: boundedText.optional(),
+  unit: ddaJewelsUnitSchema.optional(),
+  finalRate: monetaryNumber,
+  movementValue: ddaJewelsMovementValueSchema,
+  movementDirection: ddaJewelsDirectionSchema,
+});
+const ddaJewelsSourceItemSchema = z.object({
+  sourceId: identifier,
+  name: boundedText,
+  unit: ddaJewelsUnitSchema,
+  sortOrder: z.number().int(),
+  bid: numberLike,
+  ask: numberLike,
+  high: numberLike,
+  low: numberLike,
+  sourceTimestamp: z.string().datetime({ offset: true }).nullable(),
+  calculatedAt: z.string().datetime({ offset: true }).nullable(),
+});
+const ddaJewelsFeedStatusSchema = z.object({
+  status: z.enum(["live", "stale", "closed", "unavailable"]).nullable(),
 });
 
-export const sourceEventSchema = z.object({
-  schemaVersion,
-  sequence,
-  source: sourceItemSchema.optional(),
-}).and(sourceItemSchema.partial());
+function normalizeDdaJewelsDirection(
+  direction: z.infer<typeof ddaJewelsDirectionSchema>,
+) {
+  return direction.toLocaleLowerCase("en-IN") as
+    | "up"
+    | "down"
+    | "flat";
+}
 
-export const feedStatusEventSchema = z.object({
-  schemaVersion,
-  sequence,
-  feedStatus: feedStatusSchema,
-  serverTime: z.string().datetime({ offset: true }).optional(),
-});
+function normalizeDdaJewelsRateItem(
+  item: z.infer<typeof ddaJewelsRateItemSchema>,
+): RateItem {
+  const direction = normalizeDdaJewelsDirection(item.movementDirection);
+  const signedChange =
+    direction === "down"
+      ? -item.movementValue
+      : direction === "up"
+        ? item.movementValue
+        : 0;
+  return {
+    id: item.itemId,
+    ...(item.name ? { name: item.name } : {}),
+    ...(item.unit ? { unit: item.unit } : {}),
+    value: item.finalRate,
+    change: signedChange,
+    direction,
+  };
+}
+
+function normalizeDdaJewelsSourceItem(
+  source: z.infer<typeof ddaJewelsSourceItemSchema>,
+): SourceItem {
+  return {
+    id: source.sourceId,
+    name: source.name,
+    unit: source.unit,
+    sortOrder: source.sortOrder,
+    bid: source.bid,
+    ask: source.ask,
+    high: source.high,
+    low: source.low,
+    value: source.ask,
+  };
+}
+
+const ddaJewelsCurrentSnapshotSchema = z
+  .object({
+    schemaVersion,
+    view: identifier,
+    serverTime: z.string().datetime({ offset: true }),
+    sequence,
+    items: z.array(ddaJewelsRateItemSchema).max(100),
+    feedStatus: ddaJewelsFeedStatusSchema,
+  })
+  .superRefine((snapshot, context) => {
+    const seen = new Set<string>();
+    for (const item of snapshot.items) {
+      if (seen.has(item.itemId)) {
+        context.addIssue({
+          code: "custom",
+          message: "Duplicate items id",
+          path: ["items", item.itemId],
+        });
+      }
+      seen.add(item.itemId);
+    }
+  })
+  .transform((snapshot) => ({
+    schemaVersion: snapshot.schemaVersion,
+    view: snapshot.view,
+    serverTime: snapshot.serverTime,
+    sequence: snapshot.sequence,
+    items: snapshot.items.map(normalizeDdaJewelsRateItem),
+    sources: [] as SourceItem[],
+    feedStatus: snapshot.feedStatus.status ?? ("unavailable" as const),
+  }));
+
+export const rateSnapshotSchema = z.union([
+  legacyRateSnapshotSchema,
+  ddaJewelsCurrentSnapshotSchema,
+]);
+
+const legacyNestedRateEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+    item: rateItemSchema,
+  })
+  .transform((event) => ({
+    sequence: event.sequence,
+    items: [event.item],
+  }));
+const legacyInlineRateEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+  })
+  .and(rateItemSchema)
+  .transform((event) => ({
+    sequence: event.sequence,
+    items: [event],
+  }));
+const ddaJewelsRateEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+    items: z.array(ddaJewelsRateItemSchema).max(100),
+  })
+  .transform((event) => ({
+    sequence: event.sequence,
+    items: event.items.map(normalizeDdaJewelsRateItem),
+  }));
+
+export const rateEventSchema = z.union([
+  legacyNestedRateEventSchema,
+  legacyInlineRateEventSchema,
+  ddaJewelsRateEventSchema,
+]);
+
+const legacySourceSnapshotEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+    sources: z.array(sourceItemSchema).max(100),
+  })
+  .transform((event) => ({
+    sequence: event.sequence as number | undefined,
+    sources: event.sources,
+  }));
+const ddaJewelsSourceBatchEventSchema = z
+  .object({
+    schemaVersion,
+    sources: z.array(ddaJewelsSourceItemSchema).max(100),
+  })
+  .transform((event) => ({
+    sequence: undefined as number | undefined,
+    sources: event.sources.map(normalizeDdaJewelsSourceItem),
+  }));
+
+export const sourceSnapshotEventSchema = z.union([
+  legacySourceSnapshotEventSchema,
+  ddaJewelsSourceBatchEventSchema,
+]);
+
+const legacyNestedSourceEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+    source: sourceItemSchema,
+  })
+  .transform((event) => ({
+    sequence: event.sequence as number | undefined,
+    sources: [event.source],
+  }));
+const legacyInlineSourceEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+  })
+  .and(sourceItemSchema)
+  .transform((event) => ({
+    sequence: event.sequence as number | undefined,
+    sources: [event],
+  }));
+
+export const sourceEventSchema = z.union([
+  legacyNestedSourceEventSchema,
+  legacyInlineSourceEventSchema,
+  ddaJewelsSourceBatchEventSchema,
+]);
+
+const legacyFeedStatusEventSchema = z
+  .object({
+    schemaVersion,
+    sequence,
+    feedStatus: feedStatusSchema,
+    serverTime: z.string().datetime({ offset: true }).optional(),
+  })
+  .transform((event) => ({
+    sequence: event.sequence as number | undefined,
+    feedStatus: event.feedStatus,
+    serverTime: event.serverTime,
+  }));
+const ddaJewelsFeedStatusEventSchema = z
+  .object({
+    schemaVersion,
+    status: z.enum(["live", "stale", "closed", "unavailable"]).nullable(),
+  })
+  .transform((event) => ({
+    sequence: undefined as number | undefined,
+    feedStatus: event.status ?? ("unavailable" as const),
+    serverTime: undefined as string | undefined,
+  }));
+
+export const feedStatusEventSchema = z.union([
+  legacyFeedStatusEventSchema,
+  ddaJewelsFeedStatusEventSchema,
+]);
 
 export type RateItem = z.infer<typeof rateItemSchema>;
 export type SourceItem = z.infer<typeof sourceItemSchema>;

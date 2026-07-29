@@ -1,33 +1,19 @@
-# Live-rates portal integration
+# Live-rates integration
 
-**Status:** Simplified same-origin experience implemented
+**Status:** DDA Silver page and protected Preview integration implemented;
+production configuration pending approval
 **Source of truth:** DDAJewels
 
-## Active customer experience
+## Customer experience
 
-DDA Silver does not host, proxy, frame, or reproduce the live-rates
-application. Every customer-facing “Live Rates” link resolves through the
-public environment variable:
+Every customer-facing “Live Rates” link remains on DDA Silver and opens
+`/rates`. The page uses the DDA Silver site header, footer, typography, colour
+tokens, spacing, and responsive templates.
 
-```text
-NEXT_PUBLIC_RATES_PORTAL_URL=https://ddajewels.com/silver-rates
-```
-
-The value is accepted only when it uses HTTPS, is hosted on `ddajewels.com` or
-one of its subdomains, and targets `/silver-rates` without credentials, query
-parameters, or a fragment. Missing or invalid configuration falls back to the
-retained local `/rates` scaffold rather than navigating to an untrusted site.
-
-The destination is a DDA Silver-branded route inside the DDAJewels
-application. DDAJewels owns:
-
-- user sign-in and the safe post-login return to `/silver-rates`;
-- sessions, approval state, group entitlements, and buying-rate visibility;
-- the current rate snapshot and same-origin SSE connection;
-- silver-only presentation after the authorized rate set has been resolved.
-
-No iframe, cross-domain OAuth exchange, CORS allowance, service-token exposure,
-or rate-stream ticket is required for this path.
+DDAJewels remains authoritative for rate values, market state, account
+approval, and personalized visibility. DDA Silver validates and presents those
+values but never calculates, fabricates, or silently substitutes them. A
+missing value is shown as unavailable rather than zero.
 
 ## Data flow
 
@@ -35,32 +21,52 @@ or rate-stream ticket is required for this path.
 sequenceDiagram
     participant Browser as Customer browser
     participant Silver as DDA Silver website
-    participant Jewels as DDAJewels application
+    participant Jewels as DDAJewels rates service
 
-    Browser->>Silver: Open website
-    Browser->>Jewels: Follow configured /silver-rates link
-    Jewels->>Jewels: Resolve existing DDAJewels session
-    Jewels-->>Browser: Existing login flow when unauthenticated
-    Browser->>Jewels: Return to /silver-rates after login
-    Jewels->>Jewels: Apply existing entitlements to snapshot and SSE
-    Jewels-->>Browser: Same-origin snapshot and SSE updates
-    Browser->>Browser: Render only silver-related rows
+    Browser->>Silver: GET /rates
+    Silver-->>Browser: DDA Silver-branded rates page
+    Browser->>Silver: GET /api/rates/snapshot
+    Silver->>Jewels: Fixed HTTPS snapshot rewrite
+    Jewels-->>Silver: Customer and market rates
+    Silver-->>Browser: Validated snapshot
+    Browser->>Silver: Connect /api/rates/stream
+    Silver->>Jewels: Fixed HTTPS SSE rewrite
+    Jewels-->>Silver: Live updates
+    Silver-->>Browser: Live updates
+    Browser->>Browser: Update the DDA Silver rate view
 ```
 
-## Health and operations
+## Required configuration
+
+```text
+DDAJEWELS_RATES_SNAPSHOT_URL=https://ddajewels.com/api/v1/rates/current
+DDAJEWELS_RATES_STREAM_URL=https://ddajewels.com/sse/rates
+DDAJEWELS_RATE_TICKET_URL=
+DDAJEWELS_SERVICE_TOKEN=
+```
+
+Only the two fixed HTTPS `ddajewels.com` paths above are accepted. Next.js
+rewrites them behind same-origin DDA Silver paths so browsers remain on the DDA
+Silver origin and do not require a cross-origin exception. The browser receives
+no service token. Personalized streams use a short-lived opaque ticket issued
+by the server-side ticket route.
+
+## Page behavior
+
+- Customer and market-reference rows follow the approved deterministic order.
+- Movement is conveyed by an icon and accessible label, not colour alone.
+- Market rows expose expandable high and low values.
+- Valid snapshots remain visible during brief reconnects.
+- Stale, disconnected, and unavailable states are explicit.
+- Unknown schemas and malformed or oversized payloads are rejected.
+- Mobile tables fit the viewport and disclosure controls remain
+  keyboard-operable.
+
+## Health and launch operations
 
 The DDA Silver `/api/health` endpoint checks the website application and Sanity
-configuration only. The rates portal is an outbound destination and is not a
-critical dependency of the DDA Silver runtime health response.
+configuration. Rate connectivity is verified separately against an approved
+DDAJewels staging environment before launch.
 
-Setting or changing `NEXT_PUBLIC_RATES_PORTAL_URL` in a production environment,
-deploying either application, or changing DNS still requires explicit
-production approval.
-
-## Retained legacy scaffold
-
-The existing DDA Silver `/rates` page, snapshot/SSE client contracts,
-`/api/rates/ticket`, and shared-account authorization scaffold remain in the
-repository. Primary navigation no longer depends on them, but they must not be
-removed until repository evidence proves they are unused and removal is
-covered by focused tests.
+Setting production rate endpoints, deploying either application to Production,
+or changing DNS still requires explicit production approval.

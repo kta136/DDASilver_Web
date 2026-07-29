@@ -47,21 +47,33 @@ export type RateAction =
   | { type: "snapshot"; snapshot: RateSnapshot; receivedAt: number }
   | { type: "rate"; item: RateItem; sequence: number; receivedAt: number }
   | {
+      type: "rate-batch";
+      items: RateItem[];
+      sequence: number;
+      receivedAt: number;
+    }
+  | {
       type: "source-snapshot";
       sources: SourceItem[];
-      sequence: number;
+      sequence?: number;
       receivedAt: number;
     }
   | {
       type: "source";
       source: SourceItem;
-      sequence: number;
+      sequence?: number;
+      receivedAt: number;
+    }
+  | {
+      type: "source-batch";
+      sources: SourceItem[];
+      sequence?: number;
       receivedAt: number;
     }
   | {
       type: "feed-status";
       feedStatus: FeedStatus;
-      sequence: number;
+      sequence?: number;
       serverTime?: string;
       receivedAt: number;
     }
@@ -75,6 +87,17 @@ function mapById<T extends { id: string }>(items: T[]) {
 
 function mapUpdatedAt<T extends { id: string }>(items: T[], receivedAt: number) {
   return Object.fromEntries(items.map((item) => [item.id, receivedAt]));
+}
+
+function mergeById<T extends { id: string }>(
+  existing: Record<string, T>,
+  items: T[],
+) {
+  const next = { ...existing };
+  for (const item of items) {
+    next[item.id] = { ...next[item.id], ...item };
+  }
+  return next;
 }
 
 function oldestFinancialUpdate(
@@ -138,7 +161,7 @@ export function rateReducer(
       return {
         ...state,
         sequence: action.sequence,
-        items: { ...state.items, [action.item.id]: action.item },
+        items: mergeById(state.items, [action.item]),
         itemUpdatedAt: nextItemUpdatedAt,
         connection: "live",
         lastValidEventAt: oldestFinancialUpdate(
@@ -147,8 +170,32 @@ export function rateReducer(
         ),
         announcement: `${action.item.label ?? action.item.name ?? "A customer rate"} updated.`,
       };
-    case "source-snapshot":
+    case "rate-batch": {
       if (shouldIgnoreSequence(state, action.sequence)) {
+        return state;
+      }
+      const batchUpdatedAt = {
+        ...state.itemUpdatedAt,
+        ...mapUpdatedAt(action.items, action.receivedAt),
+      };
+      return {
+        ...state,
+        sequence: action.sequence,
+        items: mergeById(state.items, action.items),
+        itemUpdatedAt: batchUpdatedAt,
+        connection: "live",
+        lastValidEventAt: oldestFinancialUpdate(
+          batchUpdatedAt,
+          state.sourceUpdatedAt,
+        ),
+        announcement: "Customer rates updated.",
+      };
+    }
+    case "source-snapshot":
+      if (
+        action.sequence !== undefined &&
+        shouldIgnoreSequence(state, action.sequence)
+      ) {
         return state;
       }
       const nextSourceSnapshotUpdatedAt = mapUpdatedAt(
@@ -157,7 +204,7 @@ export function rateReducer(
       );
       return {
         ...state,
-        sequence: action.sequence,
+        sequence: action.sequence ?? state.sequence,
         sources: mapById(action.sources),
         sourceUpdatedAt: nextSourceSnapshotUpdatedAt,
         connection: "live",
@@ -168,7 +215,10 @@ export function rateReducer(
         announcement: "Market rates updated.",
       };
     case "source":
-      if (shouldIgnoreSequence(state, action.sequence)) {
+      if (
+        action.sequence !== undefined &&
+        shouldIgnoreSequence(state, action.sequence)
+      ) {
         return state;
       }
       const nextSourceUpdatedAt = {
@@ -177,8 +227,8 @@ export function rateReducer(
       };
       return {
         ...state,
-        sequence: action.sequence,
-        sources: { ...state.sources, [action.source.id]: action.source },
+        sequence: action.sequence ?? state.sequence,
+        sources: mergeById(state.sources, [action.source]),
         sourceUpdatedAt: nextSourceUpdatedAt,
         connection: "live",
         lastValidEventAt: oldestFinancialUpdate(
@@ -187,13 +237,40 @@ export function rateReducer(
         ),
         announcement: `${action.source.label ?? action.source.name ?? "A market rate"} updated.`,
       };
+    case "source-batch": {
+      if (
+        action.sequence !== undefined &&
+        shouldIgnoreSequence(state, action.sequence)
+      ) {
+        return state;
+      }
+      const sourceBatchUpdatedAt = {
+        ...state.sourceUpdatedAt,
+        ...mapUpdatedAt(action.sources, action.receivedAt),
+      };
+      return {
+        ...state,
+        sequence: action.sequence ?? state.sequence,
+        sources: mergeById(state.sources, action.sources),
+        sourceUpdatedAt: sourceBatchUpdatedAt,
+        connection: "live",
+        lastValidEventAt: oldestFinancialUpdate(
+          state.itemUpdatedAt,
+          sourceBatchUpdatedAt,
+        ),
+        announcement: "Market rates updated.",
+      };
+    }
     case "feed-status":
-      if (shouldIgnoreSequence(state, action.sequence)) {
+      if (
+        action.sequence !== undefined &&
+        shouldIgnoreSequence(state, action.sequence)
+      ) {
         return state;
       }
       return {
         ...state,
-        sequence: action.sequence,
+        sequence: action.sequence ?? state.sequence,
         serverTime: action.serverTime ?? state.serverTime,
         feedStatus: action.feedStatus,
         connection: "live",

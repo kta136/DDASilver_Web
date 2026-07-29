@@ -189,8 +189,9 @@ unverified links, or production launch.
 
 ## Rates disclaimer draft
 
-The rates implementation is being simplified to reuse the DDAJewels-hosted
-silver rates experience. This wording must be rechecked after that work lands.
+The rates experience is presented inside the DDA Silver website using DDA
+Silver branding and templates, while DDAJewels remains the authoritative data
+source.
 
 **Source and timing**
 
@@ -218,7 +219,6 @@ silver rates experience. This wording must be rechecked after that work lands.
 - [ ] Privacy policy approved by owner/legal reviewer.
 - [ ] Website terms approved by owner/legal reviewer.
 - [ ] Cookie policy approved by owner/legal reviewer.
-- [ ] Rates disclaimer rechecked after the DDAJewels rates-page change and
-  approved by owner/legal reviewer.
+- [ ] Rates disclaimer approved by owner/legal reviewer.
 - [ ] Structured business facts approved after the missing facts above are
   supplied.
