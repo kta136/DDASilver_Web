@@ -66,8 +66,7 @@ secrets.
 ## Business facts
 
 - [x] Public brand: DDA Silver.
-- [ ] Heritage year resolved: earlier brief says 1978; current DDA Silver
-  logo/social material says 1977.
+- [x] Heritage year resolved as 1977 by the owner on 29 July 2026.
 - [x] Phone: 0562-4100044.
 - [x] WhatsApp: +91 7060001491.
 - [x] Location description: MG Road, opposite Nagar Nigam, Agra.

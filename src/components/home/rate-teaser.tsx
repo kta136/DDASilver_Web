@@ -1,13 +1,9 @@
 import {
   ArrowRightIcon,
   BroadcastIcon,
-  CircleNotchIcon,
 } from "@phosphor-icons/react/ssr";
-import Link from "next/link";
 
-const rateFeedConfigured = Boolean(
-  process.env.NEXT_PUBLIC_DDAJEWELS_RATES_SNAPSHOT_URL,
-);
+import { RatesPortalLink } from "@/components/rates-portal-link";
 
 export function RateTeaser() {
   return (
@@ -21,24 +17,14 @@ export function RateTeaser() {
           className="flex items-center gap-3 text-sm text-ink-muted"
           aria-live="polite"
         >
-          {rateFeedConfigured ? (
-            <BroadcastIcon size={18} className="text-sage" aria-hidden="true" />
-          ) : (
-            <CircleNotchIcon
-              size={18}
-              className="text-copper"
-              aria-hidden="true"
-            />
-          )}
-          {rateFeedConfigured
-            ? "Connecting to the DDAJewels live feed."
-            : "Live feed configuration is pending."}
+          <BroadcastIcon size={18} className="text-sage" aria-hidden="true" />
+          Opens the secure DDAJewels live-rates portal.
         </p>
       </div>
-      <Link href="/rates" className="button-secondary mt-7 no-underline">
+      <RatesPortalLink className="button-secondary mt-7 no-underline">
         View live rates
         <ArrowRightIcon size={18} aria-hidden="true" />
-      </Link>
+      </RatesPortalLink>
     </aside>
   );
 }

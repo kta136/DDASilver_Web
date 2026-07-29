@@ -12,10 +12,16 @@ import type { Product } from "@/types/catalog";
 type ProductCardProps = {
   product: Product;
   priority?: boolean;
+  headingLevel?: 2 | 3;
 };
 
-export function ProductCard({ product, priority = false }: ProductCardProps) {
+export function ProductCard({
+  product,
+  priority = false,
+  headingLevel = 3,
+}: ProductCardProps) {
   const image = product.images[0];
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.idolConstruction
@@ -49,9 +55,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         </div>
         <div className="flex items-start justify-between gap-4 border-b border-line py-4">
           <div>
-            <h3 className="font-display text-2xl font-semibold leading-tight">
+            <Heading className="font-display text-2xl font-semibold leading-tight">
               {product.title}
-            </h3>
+            </Heading>
             <p className="mt-1 text-xs uppercase tracking-[0.16em] text-ink-muted">
               {details.length > 0 ? details.join(" · ") : "Enquire for details"}
             </p>

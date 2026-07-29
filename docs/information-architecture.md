@@ -111,7 +111,7 @@ be bookmarked, shared, and restored after reload or browser navigation.
 
 ### About
 
-- DDA family heritage since 1978.
+- DDA family heritage since 1977.
 - DDA Silver’s distinct role and approach.
 - Showroom and craft photography.
 - Owner-approved claims only.

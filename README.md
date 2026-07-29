@@ -19,7 +19,7 @@ website.
 | Application and responsive UI | Implemented; manual UAT remains |
 | Catalog and editorial routes | Implemented; catalog expansion intentionally pending |
 | Sanity schemas and Studio | Implemented; 22 published product routes verified read-only |
-| DDAJewels rates and authentication | Client contracts implemented; staging integration pending |
+| DDAJewels rates and authentication | External `/silver-rates` portal link implemented; production environment approval pending |
 | Preview deployment | [Ready on Vercel](https://dda-silver-preview-13c9025.vercel.app); automatic Git deploys disabled |
 | Production launch | Not authorized |
 
@@ -34,8 +34,9 @@ changed without explicit owner approval to go live on `ddasilver.com`.
 - Product enquiries through prefilled WhatsApp links.
 - Sanity Studio schemas for products, categories, collections, pages, and site
   settings.
-- Validated snapshot and server-sent event contracts for DDAJewels live rates.
-- Authorization-code and PKCE scaffolding for shared DDA account access.
+- Validated outbound links to the DDAJewels-hosted `/silver-rates` experience.
+- Retained snapshot/SSE and authorization-code scaffolding for compatibility
+  until its removal is separately proven safe and test-covered.
 - Consent-aware analytics, preview crawler blocking, metadata, sitemap, and
   structured business data.
 - Non-sensitive dependency readiness at `/api/health`.
@@ -98,7 +99,8 @@ The available variables and safe defaults are documented in
 
 - Site URL and preview behavior
 - Sanity project access and webhook secrets
-- DDAJewels rate snapshot and event-stream endpoints
+- DDAJewels silver-rates portal destination
+- Retained DDAJewels rate snapshot and event-stream endpoints
 - Shared-account authorization
 - Optional Google Business and Analytics destinations
 

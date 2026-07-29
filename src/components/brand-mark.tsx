@@ -10,7 +10,6 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
     <Link
       href="/"
       className="inline-flex items-center gap-3 no-underline"
-      aria-label="DDA Silver home"
     >
       <Image
         src="/brand/dda-family-mark.png"
@@ -26,7 +25,6 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
         className={`flex min-w-0 flex-col justify-center border-l border-line text-ink ${
           compact ? "gap-0.5 pl-2.5" : "gap-1 pl-3"
         }`}
-        aria-hidden="true"
       >
         <span
           className={`whitespace-nowrap font-semibold leading-none tracking-[0.2em] ${

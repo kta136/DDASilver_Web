@@ -10,6 +10,7 @@ import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
 import { RateTeaser } from "@/components/home/rate-teaser";
+import { RatesPortalLink } from "@/components/rates-portal-link";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
@@ -56,13 +57,12 @@ export default async function HomePage() {
                   Explore products
                   <ArrowRightIcon size={18} aria-hidden="true" />
                 </Link>
-                <Link
-                  href="/rates"
+                <RatesPortalLink
                   className="button-secondary home-hero-button no-underline"
                 >
                   View live rates
                   <ArrowRightIcon size={18} aria-hidden="true" />
-                </Link>
+                </RatesPortalLink>
               </div>
             </div>
           </div>

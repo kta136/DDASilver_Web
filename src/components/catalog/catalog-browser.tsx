@@ -329,6 +329,7 @@ export function CatalogBrowser({
               key={product.slug}
               product={product}
               priority={index < 4}
+              headingLevel={2}
             />
           ))}
         </div>

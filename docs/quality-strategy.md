@@ -183,7 +183,7 @@ The launch-review package should contain:
 Verified on 29 July 2026:
 
 - ESLint and TypeScript checks pass.
-- 38 Vitest unit tests pass across 12 test files.
+- 47 Vitest unit tests pass across 16 test files.
 - The Next.js production build completes and renders the configured 22
   published Sanity product paths.
 - 14 Playwright journeys pass in desktop and mobile Chromium.
@@ -192,7 +192,23 @@ Verified on 29 July 2026:
 - Catalog query/filter state survives reload through a shareable URL.
 - Analytics tests cover consent gating, approved event names, and allowed
   public parameters.
+- Automated axe scans pass with zero violations on the homepage, About,
+  Products, Contact, Privacy, Terms, Cookies, and Rates Disclaimer routes after
+  correcting primary-button contrast, brand-link naming, and catalog heading
+  order.
+- Lighthouse mobile lab runs on the local production build score 94
+  Performance, 100 Accessibility, and 100 Best Practices. The 69 SEO score is
+  expected in preview mode because indexing is deliberately blocked.
+- The Lighthouse median LCP is 3.1 seconds, above the 2.5-second launch target;
+  CLS is 0 and total blocking time is 20–29 milliseconds. LCP remains an open
+  performance finding.
+- Recursive local route/fragment validation passes on the build's canonical
+  local origin. The public Maps, WhatsApp, Android, iOS, DDAJewels, and
+  DDAJewels TV destinations each return HTTP 200.
 
 Still required for launch evidence: DDAJewels staging contract tests, owner
 content/UAT approval, legal review, real-device Safari/iOS and Android checks,
-screen-reader review, Lighthouse/Web Vitals evidence, and rollback rehearsal.
+screen-reader review, production Web Vitals evidence, LCP remediation or
+explicit performance acceptance, and rollback rehearsal. No Android device or
+cloud-device service was connected during this pass, so Pixel 7 Playwright
+coverage is recorded as emulation rather than real-device evidence.

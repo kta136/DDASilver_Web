@@ -23,9 +23,8 @@
   per the owner’s 28 July 2026 direction.
 - Identify the sister brand with a separate “SILVER” label and its own visual
   system; do not redraw or recolor the family mark.
-- Do not publish a numeric heritage year in replacement-site copy until the
-  owner resolves the discrepancy between the earlier 1978 brief and current
-  DDA Silver brand materials that say 1977.
+- Use 1977 for the DDA family heritage year. The owner resolved the earlier
+  1978/1977 discrepancy in favor of 1977 on 29 July 2026.
 - Visual direction is modern and approachable.
 - Homepage leads with brand story.
 - English first.

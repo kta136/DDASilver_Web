@@ -7,11 +7,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
+import { RatesPortalLink } from "@/components/rates-portal-link";
 
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
-  { label: "Live Rates", href: "/rates" },
+  { label: "Live Rates", href: "/rates", ratesPortal: true },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -29,28 +30,42 @@ export function SiteHeader() {
           <ul className="flex items-center gap-9">
             {navigation.map((item) => {
               const isActive =
-                item.href === "/"
+                item.ratesPortal
+                  ? false
+                  : item.href === "/"
                   ? pathname === "/"
                   : pathname.startsWith(item.href);
+              const linkClassName = clsx(
+                "relative py-3 text-sm font-semibold no-underline transition-colors hover:text-copper-dark",
+                isActive ? "text-ink" : "text-ink-muted",
+              );
+              const content = (
+                <>
+                  {item.label}
+                  {isActive ? (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-0 bottom-1 h-px bg-copper"
+                    />
+                  ) : null}
+                </>
+              );
 
               return (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive ? "page" : undefined}
-                    className={clsx(
-                      "relative py-3 text-sm font-semibold no-underline transition-colors hover:text-copper-dark",
-                      isActive ? "text-ink" : "text-ink-muted",
-                    )}
-                  >
-                    {item.label}
-                    {isActive ? (
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-x-0 bottom-1 h-px bg-copper"
-                      />
-                    ) : null}
-                  </Link>
+                  {item.ratesPortal ? (
+                    <RatesPortalLink className={linkClassName}>
+                      {content}
+                    </RatesPortalLink>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
+                      className={linkClassName}
+                    >
+                      {content}
+                    </Link>
+                  )}
                 </li>
               );
             })}
@@ -80,14 +95,24 @@ export function SiteHeader() {
         <ul className="site-container grid">
           {navigation.map((item) => (
             <li key={item.href} className="border-b border-line last:border-b-0">
-              <Link
-                href={item.href}
-                className="flex min-h-14 items-center justify-between py-3 font-semibold no-underline"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-                <span aria-hidden="true">→</span>
-              </Link>
+              {item.ratesPortal ? (
+                <RatesPortalLink
+                  className="flex min-h-14 items-center justify-between py-3 font-semibold no-underline"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                  <span aria-hidden="true">→</span>
+                </RatesPortalLink>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="flex min-h-14 items-center justify-between py-3 font-semibold no-underline"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </li>
           ))}
         </ul>

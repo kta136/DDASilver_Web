@@ -1,8 +1,9 @@
 # Dependency security audit
 
 **Audited:** 29 July 2026
+**Re-audited:** 29 July 2026 after the release-readiness QA pass
 **Command:** `npm audit --omit=dev`  
-**Launch status:** residual prerequisite
+**Launch status:** residual prerequisite; risk not accepted
 
 ## Current result
 
@@ -19,6 +20,8 @@ The production dependency tree currently reports:
 The full dependency tree, including development tooling, reports 35 findings:
 28 high and 7 moderate.
 
+The re-audit produced the same totals. It found no critical or low findings.
+
 ## Triage
 
 Most production findings are transitive dependencies in the current Sanity
@@ -32,6 +35,18 @@ installs a nested Sharp 0.34.5, so the related advisory cannot be described as
 upgraded away. The runtime image allowlist is now restricted to the configured
 DDA Silver Sanity project and dataset path, removing arbitrary Sanity projects
 as remote optimizer inputs.
+
+The current high-severity paths include Next.js-owned nested Sharp 0.34.5 and
+PostCSS 8.4.31, plus denial-of-service and parsing advisories inherited mainly
+through the Sanity CLI/workbench dependency graph. The audit returned 11
+distinct advisory records across the 28 affected production package nodes.
+
+`npm outdated --json` confirms that Next.js, Sanity, next-sanity,
+`@sanity/vision`, and the remaining direct runtime packages are already at the
+latest registry versions allowed by the current dependency ranges. The only
+direct packages with newer registry releases are major-version development
+updates for `@types/node`, ESLint, and TypeScript; those are not safe automatic
+remediations for the production findings.
 
 `npm audit fix` found no non-breaking update. `npm audit fix --force` proposes
 major downgrades, including Next.js 9.3.3 and Sanity 5.14.1. Those changes
@@ -56,6 +71,10 @@ remediation pass:
 The dependency audit totals remain unchanged after compatible updates and npm
 deduplication. They are a separate residual supply-chain risk and still need
 upstream patches or explicit risk acceptance before launch.
+
+No risk acceptance was recorded during this pass. The findings remain a launch
+blocker until patched compatible releases are validated or the owner and
+security reviewer explicitly accept the documented residual exposure.
 
 ## Required before launch approval
 

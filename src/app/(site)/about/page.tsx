@@ -63,9 +63,9 @@ export default function AboutPage() {
                 WhatsApp or by phone.
               </p>
               <p>
-                The exact heritage year is intentionally omitted from the draft
-                site copy until the owner resolves the difference between
-                existing brand materials.
+                The DDA family heritage dates to 1977. DDA Silver carries that
+                legacy forward through a focused silver showroom shaped for
+                today&apos;s customers.
               </p>
             </div>
             <Link href="/contact" className="button-primary mt-8 no-underline">

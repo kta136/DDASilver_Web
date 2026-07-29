@@ -10,6 +10,8 @@
   npm lockfile.
 - Selected visual option 1 translated into the homepage shell.
 - Official DDA Jewels family mark with a DDA Silver sister-brand lockup.
+- Owner-confirmed DDA family heritage year of 1977, reflected in the About
+  page and project decision records.
 - Temporary mockup-matched concept imagery, isolated under
   `public/images/mockup` and documented for replacement before launch.
 - Responsive navigation, footer, focus treatments, skip navigation, and
@@ -65,8 +67,16 @@
 - Chrome desktop and mobile route checks, including shareable catalog state,
   product enquiry, unavailable-rate behavior, analytics events, preview
   crawler controls, and mobile navigation.
-- Current automated evidence: ESLint passed, TypeScript passed, 38 unit tests
+- Current automated evidence: ESLint passed, TypeScript passed, 47 unit tests
   passed, production build passed, and 14 Playwright journeys passed.
+- Eight representative routes pass automated axe checks with zero violations
+  after button-contrast, brand-link naming, and catalog-heading remediation.
+- Local production Lighthouse evidence scores 94 Performance, 100
+  Accessibility, and 100 Best Practices. Preview-only noindex controls produce
+  the expected reduced SEO score, while a 3.1-second lab LCP remains open
+  against the 2.5-second launch target.
+- Internal links/fragments pass validation, and the six primary external
+  destinations return HTTP 200.
 
 ## Intentionally unavailable until prerequisites arrive
 

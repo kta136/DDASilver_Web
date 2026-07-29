@@ -1,37 +1,8 @@
-import { rateSnapshotSchema } from "@/lib/rates/contract";
-import {
-  isAllowedDdaJewelsUrl,
-  readBoundedJson,
-} from "@/lib/security/external-service";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 
 export const dynamic = "force-dynamic";
 
-type CheckState = "ok" | "not_configured" | "unavailable" | "invalid";
-
-async function checkRates(): Promise<CheckState> {
-  const snapshotUrl =
-    process.env.NEXT_PUBLIC_DDAJEWELS_RATES_SNAPSHOT_URL;
-  if (!isAllowedDdaJewelsUrl(snapshotUrl)) {
-    return "not_configured";
-  }
-
-  try {
-    const response = await fetch(snapshotUrl, {
-      cache: "no-store",
-      headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(3_000),
-    });
-    if (!response.ok) {
-      return "unavailable";
-    }
-
-    const payload = await readBoundedJson(response, 1_000_000);
-    return rateSnapshotSchema.safeParse(payload).success ? "ok" : "invalid";
-  } catch {
-    return "unavailable";
-  }
-}
+type CheckState = "ok" | "not_configured";
 
 function isSanityConfigured() {
   return (
@@ -70,8 +41,7 @@ export async function GET(request: Request) {
   const sanity: CheckState = isSanityConfigured()
     ? "ok"
     : "not_configured";
-  const rates = await checkRates();
-  const status = sanity === "ok" && rates === "ok" ? "ok" : "degraded";
+  const status = sanity === "ok" ? "ok" : "degraded";
 
   return Response.json(
     {
@@ -80,7 +50,6 @@ export async function GET(request: Request) {
       checks: {
         application: "ok",
         sanity,
-        rates,
       },
     },
     {

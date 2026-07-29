@@ -62,7 +62,7 @@ gifts, and home or tableware products.
 
 - Public name: **DDA Silver**
 - Relationship: distinct sister brand to DDAJewels
-- Heritage claim: DDA family heritage since 1978
+- Heritage claim: DDA family heritage since 1977
 - Visual character: modern and approachable
 - Homepage emphasis: brand and family story first
 - Logo: retain the existing mark
