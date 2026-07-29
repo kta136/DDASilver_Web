@@ -1,106 +1,153 @@
-# DDA Silver Web Replacement
+# DDA Silver
 
-Implementation foundation for the future replacement of
+The Next.js application for the future replacement of
 [ddasilver.com](https://www.ddasilver.com/).
+
+DDA Silver is being built as a modern, mobile-first digital showroom for
+customers across India. Visitors can browse silver products and collections,
+view live-rate experiences when integrations are available, and enquire through
+WhatsApp. The site intentionally has no checkout, inventory promises, or public
+product pricing.
 
 ## Project status
 
-**Phase:** Local implementation and integration scaffolding  
-**Application code:** In progress  
-**Preview deployment:** Not created  
-**Production changes:** Not authorized
+This repository contains an active implementation. It is not the production
+website.
 
-The existing DDASilver website, DNS, hosting, redirects, and integrations must
-remain untouched until the owner gives the exact instruction:
+| Area | Status |
+| --- | --- |
+| Application and responsive UI | In progress |
+| Catalog and editorial routes | Implemented with fallback content |
+| Sanity schemas and Studio | Implemented; credentials required |
+| DDAJewels rates and authentication | Client contracts implemented; staging integration pending |
+| Preview deployment | Not created |
+| Production launch | Not authorized |
 
-> Go live on ddasilver.com.
+No production domain, DNS, hosting, redirect, or upstream integration may be
+changed without explicit owner approval to go live on `ddasilver.com`.
 
-Creating source code, local previews, Vercel preview deployments, Sanity
-schemas, or test environments does not grant production-launch authority.
+## Highlights
 
-## Approved direction
+- Responsive homepage, catalog, product, category, collection, rates, and
+  editorial pages.
+- Search and product filtering without exposing price or inventory data.
+- Product enquiries through prefilled WhatsApp links.
+- Sanity Studio schemas for products, categories, collections, pages, and site
+  settings.
+- Validated snapshot and server-sent event contracts for DDAJewels live rates.
+- Authorization-code and PKCE scaffolding for shared DDA account access.
+- Consent-aware analytics, preview crawler blocking, metadata, sitemap, and
+  structured business data.
+- Accessible navigation, focus states, reduced-motion handling, and responsive
+  layouts.
+- Unit tests with Vitest and browser tests with Playwright.
 
-- Modern, approachable digital showroom for retail customers across India.
-- DDA Silver remains a distinct sister brand to DDAJewels.
-- Use the official DDA Jewels family mark on DDA Silver, per the owner’s latest
-  direction, and distinguish the sister brand with the “SILVER” label and its
-  own visual system.
-- English-first, mobile-first, and WCAG 2.2 AA.
-- Editorial catalog of approximately 50–200 products.
-- Browse and enquire through WhatsApp; no prices, stock promises, checkout, or
-  e-commerce.
-- Sanity Studio for catalog and page content.
-- DDAJewels remains authoritative for live rates, users, and personalized-rate
-  visibility.
-- Next.js and TypeScript on Vercel, with Cloudflare introduced only during an
-  approved production cutover.
+## Technology
 
-## Documentation
+- Next.js 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- Sanity
+- Zod
+- Vitest, Testing Library, and Playwright
 
-1. [Product requirements](docs/product-requirements.md)
-2. [Information architecture and UX](docs/information-architecture.md)
-3. [Technical architecture](docs/technical-architecture.md)
-4. [Sanity content model](docs/content-model.md)
-5. [Live-rates integration](docs/rates-integration.md)
-6. [Shared-account authentication](docs/authentication.md)
-7. [Analytics, SEO, accessibility, and testing](docs/quality-strategy.md)
-8. [Delivery, launch, and rollback](docs/delivery-launch-rollback.md)
-9. [Prerequisites and content intake](docs/prerequisites.md)
-10. [Locked decisions](docs/decisions.md)
-11. [Implementation status](docs/implementation-status.md)
-12. [Photography and brand asset audit](docs/asset-audit.md)
-13. [Dependency security audit](docs/security-dependency-audit.md)
-14. [Design QA](design-qa.md)
+## Getting started
 
-Content intake templates:
+### Requirements
 
-- [Catalog import template](docs/templates/catalog-import-template.csv)
-- [Asset inventory template](docs/templates/asset-inventory-template.csv)
+- Node.js 20.9 or newer
+- npm
 
-## Intended implementation order
-
-1. [x] Produce exactly three visual concepts and obtain owner selection.
-2. [x] Select option 1 as the visual target.
-3. [x] Scaffold the Next.js application, Sanity schemas, and test tooling.
-4. [x] Build catalog and editorial route foundations using temporary
-   mockup-matched concept imagery.
-5. [x] Scaffold the validated public-rate snapshot/SSE consumer.
-6. [x] Scaffold the redirected DDA account handoff and rate-ticket route.
-7. [ ] Connect DDAJewels staging endpoints and Sanity credentials.
-8. [ ] Import the approved catalog and replace provisional copy/assets.
-9. [ ] Complete accessibility review, integration testing, and owner UAT.
-10. [ ] Prepare—but do not execute—the launch and rollback runbook.
-
-## Local development
+### Installation
 
 ```bash
-npm install
+git clone https://github.com/kta136/DDASilver_Web.git
+cd DDASilver_Web
+npm ci
+```
+
+Create a local environment file from the committed template:
+
+```bash
+cp .env.example .env.local
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+The application starts safely without integration secrets. It uses fallback
+catalog data, while rates, authentication, and CMS-dependent experiences show
+their unavailable or preview states.
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Copy `.env.example` to `.env.local` and add only the integrations available
-for the current environment. With no secrets configured, the catalog uses the
-official-photo fallback data and rates/auth show safe unavailable states.
+Open [http://localhost:3000](http://localhost:3000).
 
-Quality commands:
+## Environment configuration
 
-```bash
-npm run lint
-npm run typecheck
-npm run test:run
-npm run build
+The available variables and safe defaults are documented in
+[`.env.example`](.env.example). They cover:
+
+- Site URL and preview behavior
+- Sanity project access and webhook secrets
+- DDAJewels rate snapshot and event-stream endpoints
+- Shared-account authorization
+- Optional Google Business and Analytics destinations
+
+Keep real credentials in `.env.local` or an approved secret manager. Environment
+files other than `.env.example` are excluded from Git.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run a completed production build |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Check TypeScript types |
+| `npm run test` | Run Vitest in watch mode |
+| `npm run test:run` | Run the unit test suite once |
+| `npm run test:e2e` | Run desktop and mobile Playwright tests |
+| `npm run check` | Run linting, type checks, unit tests, and a build |
+
+The Sanity catalog import utilities are defined in `package.json` and documented
+under [`scripts/images`](scripts/images/README.md). Commands ending in `:apply`
+write to the configured Sanity dataset and should only be used with the intended
+project and credentials.
+
+## Project structure
+
+```text
+src/app/          App Router pages, layouts, and route handlers
+src/components/   Shared UI and feature components
+src/lib/          Authentication, catalog, rates, security, and utility logic
+src/sanity/       Sanity client configuration, queries, and schemas
+public/           Brand, catalog, and presentation assets
+scripts/          Image preparation and Sanity import utilities
+tests/e2e/        Playwright browser tests
+docs/             Product, architecture, integration, and launch documentation
 ```
 
-## External systems
+## Documentation
 
-- Public reference: [DDAJewels live rates](https://ddajewels.com/rates)
-- Existing TV display: [DDAJewels TV view](https://ddajewels.com/tv)
-- Android app:
-  [Google Play](https://play.google.com/store/apps/details?id=lmx.dda.bullion)
-- iOS app:
-  [Apple App Store](https://apps.apple.com/in/app/dda-silver/id1565809906)
-- Sanity:
-  [pricing](https://www.sanity.io/pricing?lang=en) and
-  [roles](https://www.sanity.io/docs/user-guides/roles)
-- Google:
-  [Consent Mode](https://developers.google.com/tag-platform/security/guides/consent)
+- [Product requirements](docs/product-requirements.md)
+- [Information architecture and UX](docs/information-architecture.md)
+- [Technical architecture](docs/technical-architecture.md)
+- [Sanity content model](docs/content-model.md)
+- [Live-rates integration](docs/rates-integration.md)
+- [Shared-account authentication](docs/authentication.md)
+- [Quality strategy](docs/quality-strategy.md)
+- [Delivery, launch, and rollback](docs/delivery-launch-rollback.md)
+- [Prerequisites and content intake](docs/prerequisites.md)
+- [Implementation status](docs/implementation-status.md)
+- [Design QA](design-qa.md)
+
+See the [documentation index](docs/README.md) for the complete project record.
