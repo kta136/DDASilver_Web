@@ -1,0 +1,488 @@
+.pageShell {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 4rem;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.rateSection {
+  --rate-card-bg: var(--paper-strong);
+  --rate-card-border: #eae4da;
+  --rate-row-divider: #f1ece2;
+  --rate-name-color: var(--ink);
+  --rate-value-color: var(--ink);
+  --rate-muted-color: var(--ink-muted);
+  --rate-cell-py: 0.9rem;
+  --rate-cell-px: 1.1rem;
+  --rate-name-size: clamp(1.1rem, 2.2vw, 1.43rem);
+  --rate-value-size: clamp(1.375rem, 2.75vw, 1.815rem);
+  --rate-move-size: clamp(0.935rem, 1.65vw, 1.1rem);
+  --rate-value-col-width: clamp(118px, 30%, 180px);
+  --rate-move-col-width: 120px;
+
+  display: flex;
+  width: min(100%, 920px);
+  align-self: center;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rateTableFrame {
+  width: 100%;
+  overflow: visible;
+  border-radius: 10px;
+}
+
+.rateTable {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--rate-card-border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  background: var(--rate-card-bg);
+  box-shadow: 0 1px 3px rgba(15, 15, 14, 0.06);
+  table-layout: fixed;
+}
+
+.rateNameColumn {
+  width: auto;
+}
+
+.rateValueColumn {
+  width: var(--rate-value-col-width);
+}
+
+.rateMovementColumn {
+  width: var(--rate-move-col-width);
+}
+
+.rateCell {
+  border-top: 1px solid var(--rate-row-divider);
+  vertical-align: middle;
+}
+
+.rateRow:first-child .rateCell {
+  border-top: 0;
+}
+
+.rateName {
+  width: auto;
+  min-width: 0;
+  padding: var(--rate-cell-py) 0 var(--rate-cell-py) var(--rate-cell-px);
+  color: var(--rate-name-color);
+  font-size: var(--rate-name-size);
+  font-weight: 600;
+  text-align: left;
+}
+
+.rateNameText {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rateValue {
+  padding: var(--rate-cell-py) 1rem var(--rate-cell-py) 0.75rem;
+  color: var(--rate-value-color);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: var(--rate-value-size);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  overflow: hidden;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.rateMovement {
+  width: var(--rate-move-col-width);
+  min-width: 92px;
+  padding: var(--rate-cell-py) var(--rate-cell-px) var(--rate-cell-py) 0.75rem;
+  color: var(--rate-move-color);
+  font-size: var(--rate-move-size);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.rateMovement[data-direction="up"] {
+  --rate-move-color: var(--sage);
+}
+
+.rateMovement[data-direction="down"] {
+  --rate-move-color: var(--copper-dark);
+}
+
+.rateMovement[data-direction="flat"] {
+  --rate-move-color: var(--ink-muted);
+}
+
+.movementArrow {
+  display: inline-block;
+  width: 0.7em;
+  margin-right: 0.35rem;
+  font-size: 2em;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  vertical-align: -4px;
+}
+
+.movementAmount {
+  display: inline-block;
+  min-width: 4.8ch;
+  text-align: left;
+}
+
+.flatMovement {
+  color: var(--rate-muted-color);
+}
+
+.flashRate,
+.sourceFlashNumber {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+  contain: paint;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  transition:
+    background-color 700ms ease-out,
+    color 700ms ease-out;
+}
+
+.flashRate {
+  min-width: 8.5ch;
+  margin: -2px -6px;
+  padding: 2px 6px;
+  text-align: right;
+}
+
+.sourceFlashNumber {
+  margin: -2px -5px;
+  padding: 2px 5px;
+}
+
+.flashRate[data-flash="up"],
+.sourceFlashNumber[data-flash="up"] {
+  background-color: rgba(94, 135, 101, 0.42);
+}
+
+.flashRate[data-flash="down"],
+.sourceFlashNumber[data-flash="down"] {
+  background-color: rgba(181, 91, 72, 0.34);
+}
+
+.marketSection {
+  --source-ink: var(--ink);
+  --source-ink-2: var(--ink-muted);
+  --source-muted: #8a8580;
+  --source-hairline: #eae4da;
+  --source-hairline-soft: #f1ece2;
+  --source-surface: var(--paper-strong);
+  --source-up: var(--sage);
+  --source-down: var(--copper-dark);
+  --source-delayed: #a16207;
+  --source-closed: #5f7f76;
+  --source-accent: var(--copper-dark);
+  --source-table-font-scale: 0.82;
+
+  width: min(100%, 920px);
+  align-self: center;
+  margin-top: 12px;
+}
+
+.marketHeadingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.marketHeading {
+  margin: 0;
+  color: var(--source-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.marketStatus {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 6px;
+  color: var(--source-muted);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marketStatusDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: currentColor;
+}
+
+.marketStatus[data-state="live"] {
+  color: var(--source-up);
+}
+
+.marketStatus[data-state="live"] .marketStatusDot {
+  animation: liveDotPulse 1.6s ease-out infinite;
+}
+
+.marketStatus[data-state="delayed"] {
+  color: var(--source-delayed);
+}
+
+.marketStatus[data-state="paused"] {
+  color: var(--source-down);
+}
+
+.marketStatus[data-state="closed"] {
+  color: var(--source-closed);
+}
+
+.marketTable {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--source-hairline);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  background: var(--source-surface);
+  color: var(--source-ink);
+  table-layout: fixed;
+}
+
+.marketTable thead th {
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--source-hairline);
+  background: color-mix(in srgb, var(--source-ink) 4%, var(--source-surface));
+  color: var(--source-muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.marketTable thead .marketNameColumn {
+  text-align: left;
+}
+
+.marketNameColumn,
+.marketNumberColumn {
+  width: 20%;
+}
+
+.marketRow + .marketRow .marketName,
+.marketRow + .marketRow .marketNumber {
+  border-top: 1px solid var(--source-hairline-soft);
+}
+
+.marketName {
+  padding: calc(0.68rem * var(--source-table-font-scale)) 0.65rem;
+  color: var(--source-ink);
+  font-size: clamp(
+    calc(1.188rem * var(--source-table-font-scale)),
+    calc(1.8vw * var(--source-table-font-scale)),
+    calc(1.45rem * var(--source-table-font-scale))
+  );
+  font-weight: 600;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marketNameButton {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marketNameButton:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--source-accent);
+  outline-offset: 2px;
+}
+
+.marketNumber {
+  padding: calc(0.68rem * var(--source-table-font-scale)) 0.65rem;
+  color: var(--source-ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: clamp(
+    calc(1.342rem * var(--source-table-font-scale)),
+    calc(2.35vw * var(--source-table-font-scale)),
+    calc(1.875rem * var(--source-table-font-scale))
+  );
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  text-align: right;
+}
+
+.marketRange {
+  color: var(--source-ink-2);
+}
+
+.marketInlineRange {
+  display: none;
+  margin-top: 2px;
+  color: var(--source-ink-2);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: calc(1.045rem * var(--source-table-font-scale));
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  text-align: right;
+}
+
+.marketInlineLabel {
+  margin-right: 4px;
+  color: var(--source-muted);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.unavailable {
+  width: min(100%, 920px);
+  align-self: center;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--copper) 35%, transparent);
+  border-radius: 8px;
+  background: #fff7f4;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+@keyframes liveDotPulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageShell {
+    padding: 1rem 0.875rem 2.5rem;
+  }
+
+  .rateSection {
+    --rate-cell-py: 0.6rem;
+    --rate-name-size: 1rem;
+    --rate-value-size: 1.16rem;
+    --rate-move-size: 0.78rem;
+    --rate-value-col-width: 140px;
+    --rate-move-col-width: 92px;
+  }
+
+  .rateName {
+    padding-left: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .rateNameText {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .rateValue {
+    padding-right: 0.55rem;
+    padding-left: 0.35rem;
+  }
+
+  .rateMovement {
+    min-width: 0;
+    padding-right: 0.75rem;
+    padding-left: 0.3rem;
+  }
+
+  .movementArrow {
+    font-size: 1.6em;
+  }
+
+  .flashRate {
+    min-width: 7.8ch;
+  }
+}
+
+@media (max-width: 559px) {
+  .marketTable {
+    table-layout: auto;
+  }
+
+  .marketTable thead th:nth-child(4),
+  .marketTable thead th:nth-child(5),
+  .marketTable tbody td:nth-child(4),
+  .marketTable tbody td:nth-child(5) {
+    display: none;
+  }
+
+  .marketName,
+  .marketNumber {
+    padding-block: 0.85rem;
+  }
+
+  .marketNameColumn {
+    width: 40%;
+  }
+
+  .marketNumberColumn {
+    width: 30%;
+  }
+
+  .marketInlineRange {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketStatusDot {
+    animation: none;
+  }
+
+  .flashRate,
+  .sourceFlashNumber {
+    transition: none;
+  }
+}

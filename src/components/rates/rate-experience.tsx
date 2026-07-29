@@ -1,25 +1,10 @@
 "use client";
 
-import {
-  ArrowDownIcon,
-  ArrowSquareOutIcon,
-  ArrowUpIcon,
-  CaretDownIcon,
-  CaretUpIcon,
-  MinusIcon,
-} from "@phosphor-icons/react";
-import {
-  Fragment,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import {
-  extractRateValue,
   extractNumberLike,
+  extractRateValue,
   feedStatusEventSchema,
   isRateSnapshotFresh,
   normalizeFeedStatus,
@@ -34,10 +19,11 @@ import {
   customerRateDefinitions,
   marketRateDefinitions,
 } from "@/lib/rates/definitions";
-import { formatIndianNumber, formatRateTime } from "@/lib/rates/format";
+import { formatIndianNumber } from "@/lib/rates/format";
 import { initialRateState, rateReducer } from "@/lib/rates/reducer";
 import { trackAnalyticsEvent } from "@/lib/analytics-client";
-import { siteConfig } from "@/lib/site";
+
+import styles from "./rate-experience.module.css";
 
 const snapshotUrl = "/api/rates/snapshot";
 const streamUrl = "/api/rates/stream";
@@ -77,55 +63,89 @@ function formatRupee(value: number | null) {
   return value === null ? "—" : `₹${formatIndianNumber(value)}`;
 }
 
-function Movement({ item }: { item?: RateItem }) {
-  const direction =
+function movementDirection(item?: RateItem) {
+  return (
     item?.direction ??
     (item?.change && item.change > 0
       ? "up"
       : item?.change && item.change < 0
         ? "down"
-        : "flat");
+        : "flat")
+  );
+}
+
+function FlashValue({
+  formatter,
+  value,
+  variant,
+}: {
+  formatter: (value: number | null) => string;
+  value: number | null;
+  variant: "customer" | "market";
+}) {
+  const [direction, setDirection] = useState<"none" | "up" | "down">(
+    "none",
+  );
+  const previous = useRef<number | null | undefined>(undefined);
+
+  useEffect(() => {
+    const last = previous.current;
+    previous.current = value;
+    if (
+      last === undefined ||
+      last === null ||
+      value === null ||
+      last === value
+    ) {
+      return;
+    }
+
+    setDirection(value > last ? "up" : "down");
+    const timer = setTimeout(() => setDirection("none"), 700);
+    return () => clearTimeout(timer);
+  }, [value]);
+
+  return (
+    <span
+      className={
+        variant === "customer" ? styles.flashRate : styles.sourceFlashNumber
+      }
+      data-flash={direction}
+    >
+      {formatter(value)}
+    </span>
+  );
+}
+
+function Movement({ item }: { item?: RateItem }) {
+  const direction = movementDirection(item);
 
   const change =
     typeof item?.change === "number" && Number.isFinite(item.change)
       ? Math.abs(item.change)
       : null;
   const amount = formatRupee(change);
-
-  if (direction === "up") {
-    return (
-      <span
-        className="inline-flex items-center justify-end gap-2 text-sage"
-        role="img"
-        aria-label={`Up ${amount}`}
-      >
-        <ArrowUpIcon size={15} aria-hidden="true" />
-        <span className="tabular-nums">{amount}</span>
-      </span>
-    );
-  }
-
-  if (direction === "down") {
-    return (
-      <span
-        className="inline-flex items-center justify-end gap-2 text-copper-dark"
-        role="img"
-        aria-label={`Down ${amount}`}
-      >
-        <ArrowDownIcon size={15} aria-hidden="true" />
-        <span className="tabular-nums">{amount}</span>
-      </span>
-    );
-  }
+  const label =
+    direction === "up"
+      ? `Up ${amount}`
+      : direction === "down"
+        ? `Down ${amount}`
+        : `No change ${amount}`;
 
   return (
-    <span
-      className="inline-flex items-center justify-end gap-2 text-ink-muted"
-      role="img"
-      aria-label={`No movement ${amount}`}
-    >
-      <MinusIcon size={15} aria-hidden="true" />
-      <span className="tabular-nums">{amount}</span>
+    <span role="img" aria-label={label}>
+      {direction === "flat" ? (
+        <span className={styles.flatMovement} aria-hidden="true">
+          &mdash;
+        </span>
+      ) : (
+        <>
+          <span className={styles.movementArrow} aria-hidden="true">
+            {direction === "up" ? "↑" : "↓"}
+          </span>
+          <span className={styles.movementAmount}>{amount}</span>
+        </>
+      )}
     </span>
   );
 }
@@ -346,6 +366,22 @@ export function RateExperience() {
         : state.connection === "connecting"
           ? "Connecting"
           : "Unavailable";
+  const marketStatusState =
+    statusLabel === "Live"
+      ? "live"
+      : statusLabel === "Market closed"
+        ? "closed"
+        : statusLabel === "Unavailable"
+          ? "paused"
+          : "delayed";
+  const marketStatusLabel =
+    statusLabel === "Live"
+      ? "Live data"
+      : statusLabel === "Market closed"
+        ? "Closed"
+        : statusLabel === "Unavailable"
+          ? "Paused"
+          : "Delayed";
 
   const customerRows = useMemo(
     () =>
@@ -378,79 +414,58 @@ export function RateExperience() {
   }
 
   return (
-    <div>
+    <div className={styles.pageShell}>
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {state.announcement}
       </p>
 
-      <div className="flex flex-col gap-4 border-y border-line py-5 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
-          <span
-            className={`size-2.5 rounded-full ${
-              statusLabel === "Live" ? "bg-sage" : "bg-copper"
-            }`}
-            aria-hidden="true"
-          />
-          <p className="text-sm font-bold">{statusLabel}</p>
-        </div>
-        <p className="text-sm text-ink-muted">
-          Last updated: {formatRateTime(state.serverTime)}
-        </p>
-      </div>
-
       {state.connection === "unavailable" ? (
-        <div
-          className="mt-6 border border-copper/35 bg-[#fff7f4] p-5 text-sm leading-6 text-ink-muted"
-          role="status"
-        >
+        <p className={styles.unavailable} role="status">
           {state.announcement}
-        </div>
+        </p>
       ) : null}
 
-      <section className="mt-10" aria-labelledby="customer-rates-heading">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="eyebrow">Customer rates</p>
-            <h2
-              id="customer-rates-heading"
-              className="font-display mt-3 text-5xl font-semibold"
-            >
-              Today&apos;s rates
-            </h2>
-          </div>
-          <p className="max-w-md text-sm leading-6 text-ink-muted">
-            Current showroom reference rates from the authoritative DDAJewels
-            feed.
-          </p>
-        </div>
-
-        <div className="mt-7 overflow-hidden border border-line bg-white">
-          <table className="w-full table-fixed border-collapse text-left sm:table-auto">
+      <section className={styles.rateSection} aria-label="Live rates">
+        <div className={styles.rateTableFrame}>
+          <table
+            className={styles.rateTable}
+            aria-label="Live rates"
+            aria-live="off"
+          >
+            <caption className="sr-only">Live silver rates</caption>
             <colgroup>
-              <col className="w-[38%] sm:w-auto" />
-              <col className="w-[39%] sm:w-auto" />
-              <col className="w-[23%] sm:w-32" />
+              <col className={styles.rateNameColumn} />
+              <col className={styles.rateValueColumn} />
+              <col className={styles.rateMovementColumn} />
             </colgroup>
             <thead className="sr-only">
               <tr>
-                <th>Rate</th>
-                <th>Current value</th>
-                <th>Movement</th>
+                <th scope="col">Item</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Movement</th>
               </tr>
             </thead>
             <tbody>
               {customerRows.map((row) => (
-                <tr key={row.key} className="border-b border-line last:border-b-0">
+                <tr key={row.key} className={styles.rateRow}>
                   <th
                     scope="row"
-                    className="px-3 py-4 text-base font-bold sm:px-5 sm:py-5 sm:text-lg"
+                    title={row.label}
+                    className={`${styles.rateCell} ${styles.rateName}`}
                   >
-                    {row.label}
+                    <span className={styles.rateNameText}>{row.label}</span>
                   </th>
-                  <td className="px-2 py-4 text-right font-display text-xl font-semibold tabular-nums sm:px-5 sm:py-5 sm:text-3xl">
-                    {formatRupee(extractRateValue(row.item))}
+                  <td className={`${styles.rateCell} ${styles.rateValue}`}>
+                    <FlashValue
+                      value={extractRateValue(row.item)}
+                      formatter={formatRupee}
+                      variant="customer"
+                    />
                   </td>
-                  <td className="w-auto px-3 py-4 text-right text-xs font-semibold sm:w-32 sm:px-5 sm:py-5 sm:text-sm">
+                  <td
+                    className={`${styles.rateCell} ${styles.rateMovement}`}
+                    data-direction={movementDirection(row.item)}
+                  >
                     <Movement item={row.item} />
                   </td>
                 </tr>
@@ -460,170 +475,121 @@ export function RateExperience() {
         </div>
       </section>
 
-      <section className="mt-12" aria-labelledby="market-data-heading">
-        <div className="flex items-end justify-between gap-5">
-          <div>
-            <p className="eyebrow">Market reference</p>
-            <h2
-              id="market-data-heading"
-              className="font-display mt-3 text-5xl font-semibold"
-            >
-              Market data
-            </h2>
-          </div>
+      <section
+        className={styles.marketSection}
+        aria-labelledby="market-data-heading"
+      >
+        <div className={styles.marketHeadingRow}>
+          <h2 id="market-data-heading" className={styles.marketHeading}>
+            Market data
+          </h2>
           <span
-            className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] ${
-              statusLabel === "Live" ? "text-sage" : "text-copper-dark"
-            }`}
+            className={styles.marketStatus}
+            data-state={marketStatusState}
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
           >
-            <span
-              className={`size-2 rounded-full ${
-                statusLabel === "Live" ? "bg-sage" : "bg-copper"
-              }`}
-              aria-hidden="true"
-            />
-            {statusLabel}
+            <span className={styles.marketStatusDot} aria-hidden="true" />
+            <span>{marketStatusLabel}</span>
           </span>
         </div>
-        <div className="mt-7 overflow-hidden border border-line bg-white">
-          <table className="w-full table-fixed border-collapse text-left sm:table-auto">
-            <colgroup>
-              <col className="w-[40%] sm:w-auto" />
-              <col className="w-[30%] sm:w-auto" />
-              <col className="w-[30%] sm:w-auto" />
-              <col className="sm:w-auto" />
-              <col className="sm:w-auto" />
-            </colgroup>
-            <thead className="bg-[#f6f3ef] text-xs font-bold uppercase tracking-[0.14em] text-ink-muted">
-              <tr className="border-b border-line">
-                <th scope="col" className="px-3 py-4 sm:px-4">
-                  Commodity
-                </th>
-                <th scope="col" className="px-2 py-4 text-right sm:px-4">
-                  Bid
-                </th>
-                <th scope="col" className="px-2 py-4 text-right sm:px-4">
-                  Ask
-                </th>
-                <th
-                  scope="col"
-                  className="hidden px-4 py-4 text-right sm:table-cell"
-                >
-                  High
-                </th>
-                <th
-                  scope="col"
-                  className="hidden px-4 py-4 text-right sm:table-cell"
-                >
-                  Low
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {marketRows.map((row) => {
-                const expanded = expandedRows.has(row.key);
-                return (
-                  <Fragment key={row.key}>
-                    <tr className="border-b border-line">
-                      <th
-                        scope="row"
-                        className="px-3 py-4 text-sm font-bold sm:px-4 sm:py-5 sm:text-base"
-                      >
-                        <span>{row.label}</span>
-                        <button
-                          type="button"
-                          className="ml-1 inline-flex size-7 items-center justify-center rounded-full border border-line align-middle sm:hidden"
-                          aria-expanded={expanded}
-                          aria-controls={`market-detail-${row.key}`}
-                          aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
-                          onClick={() => toggleRow(row.key)}
-                        >
-                          {expanded ? (
-                            <CaretUpIcon size={16} aria-hidden="true" />
-                          ) : (
-                            <CaretDownIcon size={16} aria-hidden="true" />
-                          )}
-                        </button>
-                      </th>
-                      <td className="px-2 py-4 text-right font-display text-base font-semibold tabular-nums sm:px-4 sm:py-5 sm:text-2xl">
-                        {formatIndianNumber(
-                          extractNumberLike(row.item?.bid) ??
-                            extractRateValue(row.item),
-                        )}
-                      </td>
-                      <td className="px-2 py-4 text-right font-display text-base font-semibold tabular-nums sm:px-4 sm:py-5 sm:text-2xl">
-                        {formatIndianNumber(
-                          extractNumberLike(row.item?.ask) ??
-                            extractRateValue(row.item),
-                        )}
-                      </td>
-                      <td className="hidden px-4 py-5 text-right font-display text-2xl text-ink-muted tabular-nums sm:table-cell">
+
+        <table className={styles.marketTable} aria-label="Market data table">
+          <caption className="sr-only">Live MCX market data</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={styles.marketNameColumn}>
+                Commodity
+              </th>
+              <th scope="col" className={styles.marketNumberColumn}>
+                Bid
+              </th>
+              <th scope="col" className={styles.marketNumberColumn}>
+                Ask
+              </th>
+              <th scope="col" className={styles.marketNumberColumn}>
+                High
+              </th>
+              <th scope="col" className={styles.marketNumberColumn}>
+                Low
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {marketRows.map((row) => {
+              const expanded = expandedRows.has(row.key);
+              const bid =
+                extractNumberLike(row.item?.bid) ??
+                extractRateValue(row.item);
+              const ask =
+                extractNumberLike(row.item?.ask) ??
+                extractRateValue(row.item);
+
+              return (
+                <tr key={row.key} className={styles.marketRow}>
+                  <th scope="row" className={styles.marketName}>
+                    <button
+                      type="button"
+                      className={styles.marketNameButton}
+                      aria-expanded={expanded}
+                      aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
+                      title={row.label}
+                      onClick={() => toggleRow(row.key)}
+                    >
+                      {row.label}
+                    </button>
+                  </th>
+                  <td className={styles.marketNumber}>
+                    <FlashValue
+                      value={bid}
+                      formatter={formatIndianNumber}
+                      variant="market"
+                    />
+                    {expanded ? (
+                      <span className={styles.marketInlineRange}>
+                        <span className={styles.marketInlineLabel}>H</span>
                         {formatIndianNumber(
                           extractNumberLike(row.item?.high),
                         )}
-                      </td>
-                      <td className="hidden px-4 py-5 text-right font-display text-2xl text-ink-muted tabular-nums sm:table-cell">
+                      </span>
+                    ) : null}
+                  </td>
+                  <td className={styles.marketNumber}>
+                    <FlashValue
+                      value={ask}
+                      formatter={formatIndianNumber}
+                      variant="market"
+                    />
+                    {expanded ? (
+                      <span className={styles.marketInlineRange}>
+                        <span className={styles.marketInlineLabel}>L</span>
                         {formatIndianNumber(
                           extractNumberLike(row.item?.low),
                         )}
-                      </td>
-                    </tr>
-                    {expanded ? (
-                      <tr
-                        id={`market-detail-${row.key}`}
-                        className="border-b border-line bg-[#f6f3ef] sm:hidden"
-                      >
-                        <td colSpan={3} className="px-5 py-5">
-                          <dl className="grid grid-cols-2 gap-5">
-                            <div>
-                              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
-                                High
-                              </dt>
-                              <dd className="mt-2 font-display text-2xl">
-                                {formatIndianNumber(
-                                  extractNumberLike(row.item?.high),
-                                )}
-                              </dd>
-                            </div>
-                            <div>
-                              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
-                                Low
-                              </dt>
-                              <dd className="mt-2 font-display text-2xl">
-                                {formatIndianNumber(
-                                  extractNumberLike(row.item?.low),
-                                )}
-                              </dd>
-                            </div>
-                          </dl>
-                        </td>
-                      </tr>
+                      </span>
                     ) : null}
-                  </Fragment>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                  </td>
+                  <td
+                    className={`${styles.marketNumber} ${styles.marketRange}`}
+                  >
+                    {formatIndianNumber(
+                      extractNumberLike(row.item?.high),
+                    )}
+                  </td>
+                  <td
+                    className={`${styles.marketNumber} ${styles.marketRange}`}
+                  >
+                    {formatIndianNumber(
+                      extractNumberLike(row.item?.low),
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </section>
-
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-        <a
-          href={siteConfig.tvUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="button-secondary no-underline"
-        >
-          Open DDAJewels TV display
-          <ArrowSquareOutIcon size={18} aria-hidden="true" />
-        </a>
-        <a
-          href="/rates-disclaimer"
-          className="button-quiet no-underline"
-        >
-          Read the rates disclaimer
-        </a>
-      </div>
     </div>
   );
 }

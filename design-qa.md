@@ -17,7 +17,7 @@ inside the DDA Silver website
   `docs/design/comparison-desktop.png`
 - Mobile source:
   `docs/design/source-ddajewels-mobile.png`
-- Mobile implementation with the Silver MCX high/low row expanded:
+- Mobile implementation in the same collapsed market-row state as the source:
   `docs/design/implementation-dda-silver-mobile.png`
 - Mobile side-by-side:
   `docs/design/comparison-mobile.png`
@@ -37,14 +37,15 @@ The DDA Silver page preserves the DDAJewels rate experience:
 - Commodity, bid, ask, high, and low market values.
 - Live connection state and automatic updates.
 
-The shell, typography, spacing, navigation, labels, and supporting content use
-the existing DDA Silver design system, as requested. The larger branded intro is
-an intentional DDA Silver template difference, not a missed source element.
+The rate-card and market-table structure, proportions, responsive rules, flash
+states, and mobile high/low disclosure were ported from the `Live Rates`
+repository implementation. The surrounding header, footer, logo, typography,
+and colour tokens use the existing DDA Silver design system, as requested.
 
 ## Browser coverage
 
-- Desktop: internal `/rates` route, DDA Silver page identity, customer table,
-  market table, live status, timestamp, and internal Live Rates navigation.
+- Desktop: internal `/rates` route, DDA Silver page identity, compact customer
+  card, market table, live status, and internal Live Rates navigation.
 - Mobile: compact customer and market tables at 390 px, no page-level horizontal
   overflow, and the high/low disclosure control.
 - Live data: the same-origin snapshot rewrite returned four customer items; the
@@ -63,6 +64,10 @@ an intentional DDA Silver template difference, not a missed source element.
 3. **P2 — the earlier adapter expected an older internal rate shape.** It now
    normalizes the public DDAJewels snapshot and live event families without
    fabricating missing values.
+4. **P2 — the initial DDA Silver presentation approximated the source instead
+   of porting it.** The oversized rates hero and app promo were removed; the
+   compact customer card, market heading, desktop columns, mobile column rules,
+   update flashes, and H/L disclosure now follow the `Live Rates` source.
 
 All P2 findings were corrected and recaptured before the final comparison.
 
@@ -70,9 +75,10 @@ All P2 findings were corrected and recaptured before the final comparison.
 
 | Area | Result | Notes |
 | --- | --- | --- |
-| Page identity | Pass | URL remains `/rates`; title, header, copy, and footer are DDA Silver. |
+| Page identity | Pass | URL remains `/rates`; header, logo, navigation, and footer are DDA Silver. |
 | Customer rates | Pass | Four source-defined rows render live values and movement amounts. |
 | Market data | Pass | Five source-defined rows render bid, ask, high, and low values. |
+| Source fidelity | Pass | Compact geometry and responsive behavior match the `Live Rates` implementation at both comparison viewports. |
 | Responsive layout | Pass | No page-level horizontal overflow at 390 px. |
 | Mobile disclosure | Pass | Silver MCX high/low expands, reports `aria-expanded=true`, and can collapse again. |
 | Navigation | Pass | Both audited Live Rates links use `/rates`; no redirect or iframe is used. |
@@ -87,6 +93,7 @@ All P2 findings were corrected and recaptured before the final comparison.
 
 ## Launch boundary
 
-This QA covers the local production build and a protected Vercel Preview.
+This QA covers the local production build. The protected Vercel Preview is
+verified separately after its manual deployment.
 `ddasilver.com`, production aliases, indexing, and production deployment remain
 untouched until the owner explicitly says: `Go live on ddasilver.com.`
