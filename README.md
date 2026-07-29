@@ -56,7 +56,7 @@ changed without explicit owner approval to go live on `ddasilver.com`.
 
 ### Requirements
 
-- Node.js 20.9 or newer
+- Node.js 24.15 or newer
 - npm
 
 ### Installation
