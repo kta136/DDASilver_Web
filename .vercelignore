@@ -1,0 +1,16 @@
+.git
+.next
+.preview-logs
+.vercel
+node_modules
+
+coverage
+playwright-report
+test-results
+blob-report
+
+.env*
+!.env.example
+
+*.log
+*.tsbuildinfo
