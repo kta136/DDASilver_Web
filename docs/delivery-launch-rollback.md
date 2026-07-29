@@ -4,8 +4,9 @@
 **Production authority:** Not granted
 
 **29 July 2026 evidence:** local production build and desktop/mobile browser
-journeys pass with preview noindex controls. No DNS, domain, production alias,
-or indexing change has been made.
+journeys pass with preview noindex controls. The `dda-silver-web` Vercel
+project is Git-linked with automatic deployments disabled. No deployment,
+custom domain, DNS, production alias, or indexing change is active.
 
 ## Absolute launch gate
 

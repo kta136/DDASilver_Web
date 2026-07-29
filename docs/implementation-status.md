@@ -1,7 +1,7 @@
 # Implementation status
 
 **Updated:** 29 July 2026
-**Environment:** Local production build and noindex preview verification
+**Environment:** Local production build plus linked, undeployed Vercel project
 **Production authorization:** Not granted
 
 ## Implemented
@@ -52,6 +52,8 @@
   payloads, rate limiting, and runtime catalog validation.
 - Non-sensitive `/api/health` readiness reporting for application, Sanity,
   DDAJewels snapshot connectivity, and build version.
+- Vercel project `dda-silver-web` linked to `kta136/DDASilver_Web`, with
+  automatic Git deployments disabled until a deliberate preview deployment.
 - Read-only Sanity integration verified against 22 published product routes.
   No catalog records or assets were changed during the 29 July quality pass.
 - Desktop design comparison and remediation against the selected option, with

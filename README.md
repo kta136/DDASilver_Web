@@ -20,7 +20,7 @@ website.
 | Catalog and editorial routes | Implemented; catalog expansion intentionally pending |
 | Sanity schemas and Studio | Implemented; 22 published product routes verified read-only |
 | DDAJewels rates and authentication | Client contracts implemented; staging integration pending |
-| Preview deployment | Not created |
+| Preview deployment | Vercel project linked; automatic Git deploys disabled; preview not created |
 | Production launch | Not authorized |
 
 No production domain, DNS, hosting, redirect, or upstream integration may be
