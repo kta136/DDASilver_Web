@@ -12,9 +12,15 @@ import {
 import { ProductCard } from "@/components/catalog/product-card";
 import {
   filterProducts,
+  getCatalogFilterAvailability,
   type CatalogFilters,
 } from "@/lib/catalog-filter";
 import { trackAnalyticsEvent } from "@/lib/analytics-client";
+import {
+  coinShapeLabels,
+  idolConstructionLabels,
+  purityLabels,
+} from "@/lib/catalog-labels";
 import {
   parseCatalogSearchParams,
   serializeCatalogFilters,
@@ -23,18 +29,28 @@ import {
 import type {
   Category,
   CoinShape,
-  Collection,
   IdolConstruction,
   Product,
   ProductPurity,
 } from "@/types/catalog";
 
+const productPurityOptions = Object.entries(purityLabels) as [
+  ProductPurity,
+  string,
+][];
+const idolConstructionOptions = Object.entries(idolConstructionLabels) as [
+  IdolConstruction,
+  string,
+][];
+const coinShapeOptions = Object.entries(coinShapeLabels) as [
+  CoinShape,
+  string,
+][];
+
 type CatalogBrowserProps = {
   products: Product[];
   categories: Category[];
-  collections: Collection[];
   initialCategory?: string;
-  initialCollection?: string;
   initialFilters?: CatalogUrlState;
   syncUrl?: boolean;
 };
@@ -42,9 +58,7 @@ type CatalogBrowserProps = {
 export function CatalogBrowser({
   products,
   categories,
-  collections,
   initialCategory = "",
-  initialCollection = "",
   initialFilters,
   syncUrl = false,
 }: CatalogBrowserProps) {
@@ -52,34 +66,84 @@ export function CatalogBrowser({
   const [category, setCategory] = useState(
     initialFilters?.category ?? initialCategory,
   );
-  const [collection, setCollection] = useState(
-    initialFilters?.collection ?? initialCollection,
-  );
-  const [purity, setPurity] = useState<ProductPurity | "">(
-    initialFilters?.purity ?? "",
-  );
-  const [idolConstruction, setIdolConstruction] =
-    useState<IdolConstruction | "">(
-      initialFilters?.idolConstruction ?? "",
+  const initialCategoryValue = initialFilters?.category ?? initialCategory;
+  const [purity, setPurity] = useState<ProductPurity | "">(() => {
+    const initialPurity = initialFilters?.purity ?? "";
+    const availability = getCatalogFilterAvailability(
+      products,
+      initialCategoryValue,
     );
-  const [coinShape, setCoinShape] = useState<CoinShape | "">(
-    initialFilters?.coinShape ?? "",
-  );
+    return initialPurity && availability.purities.has(initialPurity)
+      ? initialPurity
+      : "";
+  });
+  const [idolConstruction, setIdolConstruction] =
+    useState<IdolConstruction | "">(() => {
+      const initialIdolConstruction =
+        initialFilters?.idolConstruction ?? "";
+      const availability = getCatalogFilterAvailability(
+        products,
+        initialCategoryValue,
+      );
+      return initialIdolConstruction &&
+        availability.idolConstructions.has(initialIdolConstruction)
+        ? initialIdolConstruction
+        : "";
+    });
+  const [coinShape, setCoinShape] = useState<CoinShape | "">(() => {
+    const initialCoinShape = initialFilters?.coinShape ?? "";
+    const availability = getCatalogFilterAvailability(
+      products,
+      initialCategoryValue,
+    );
+    return initialCoinShape && availability.coinShapes.has(initialCoinShape)
+      ? initialCoinShape
+      : "";
+  });
   const deferredQuery = useDeferredValue(query);
   const urlOptions = useMemo(
     () => ({
       categorySlugs: categories.map((item) => item.slug),
-      collectionSlugs: collections.map((item) => item.slug),
     }),
-    [categories, collections],
+    [categories],
   );
+  const filterAvailability = useMemo(
+    () => getCatalogFilterAvailability(products, category),
+    [products, category],
+  );
+  const availableCategories = useMemo(
+    () =>
+      categories.filter((item) =>
+        filterAvailability.categorySlugs.has(item.slug),
+      ),
+    [categories, filterAvailability],
+  );
+  const availablePurityOptions = productPurityOptions.filter(([value]) =>
+    filterAvailability.purities.has(value),
+  );
+  const availableIdolConstructionOptions =
+    idolConstructionOptions.filter(([value]) =>
+      filterAvailability.idolConstructions.has(value),
+    );
+  const availableCoinShapeOptions = coinShapeOptions.filter(([value]) =>
+    filterAvailability.coinShapes.has(value),
+  );
+  const filterControlCount =
+    2 +
+    (availablePurityOptions.length > 0 ? 1 : 0) +
+    (category === "idols" &&
+    availableIdolConstructionOptions.length > 0
+      ? 1
+      : 0) +
+    (category === "coin" && availableCoinShapeOptions.length > 0
+      ? 1
+      : 0);
 
   const visibleProducts = useMemo(
     () =>
       filterProducts(products, {
         query: deferredQuery,
         category,
-        collection,
         purity,
         idolConstruction,
         coinShape,
@@ -88,7 +152,6 @@ export function CatalogBrowser({
       products,
       deferredQuery,
       category,
-      collection,
       purity,
       idolConstruction,
       coinShape,
@@ -105,17 +168,33 @@ export function CatalogBrowser({
         new URLSearchParams(window.location.search),
         urlOptions,
       );
+      const availability = getCatalogFilterAvailability(
+        products,
+        next.category,
+      );
       setQuery(next.query);
       setCategory(next.category);
-      setCollection(next.collection);
-      setPurity(next.purity);
-      setIdolConstruction(next.idolConstruction);
-      setCoinShape(next.coinShape);
+      setPurity(
+        next.purity && availability.purities.has(next.purity)
+          ? next.purity
+          : "",
+      );
+      setIdolConstruction(
+        next.idolConstruction &&
+          availability.idolConstructions.has(next.idolConstruction)
+          ? next.idolConstruction
+          : "",
+      );
+      setCoinShape(
+        next.coinShape && availability.coinShapes.has(next.coinShape)
+          ? next.coinShape
+          : "",
+      );
     };
 
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [syncUrl, urlOptions]);
+  }, [products, syncUrl, urlOptions]);
 
   useEffect(() => {
     if (!syncUrl) {
@@ -125,7 +204,6 @@ export function CatalogBrowser({
     const filters: CatalogFilters = {
       query,
       category,
-      collection,
       purity,
       idolConstruction,
       coinShape,
@@ -140,7 +218,6 @@ export function CatalogBrowser({
   }, [
     category,
     coinShape,
-    collection,
     idolConstruction,
     purity,
     query,
@@ -159,9 +236,11 @@ export function CatalogBrowser({
       <div
         className={clsx(
           "grid gap-3 border-y border-line py-5 md:grid-cols-2",
-          category === "idols" || category === "coin"
-            ? "lg:grid-cols-[minmax(16rem,1fr)_repeat(4,minmax(9rem,11rem))]"
-            : "lg:grid-cols-[minmax(16rem,1fr)_repeat(3,minmax(10rem,13rem))]",
+          filterControlCount === 4 &&
+            "lg:grid-cols-[minmax(16rem,1fr)_repeat(3,minmax(9rem,11rem))]",
+          filterControlCount === 3 &&
+            "lg:grid-cols-[minmax(16rem,1fr)_repeat(2,minmax(10rem,13rem))]",
+          filterControlCount === 2 && "lg:grid-cols-2",
         )}
       >
         <label className="relative">
@@ -194,7 +273,17 @@ export function CatalogBrowser({
             value={category}
             onChange={(event) => {
               const nextCategory = event.target.value;
+              const nextAvailability = getCatalogFilterAvailability(
+                products,
+                nextCategory,
+              );
               setCategory(nextCategory);
+              setPurity((currentPurity) =>
+                currentPurity &&
+                !nextAvailability.purities.has(currentPurity)
+                  ? ""
+                  : currentPurity,
+              );
               if (nextCategory !== "idols") {
                 setIdolConstruction("");
               }
@@ -206,7 +295,7 @@ export function CatalogBrowser({
             className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
           >
             <option value="">All categories</option>
-            {categories.map((item) => (
+            {availableCategories.map((item) => (
               <option key={item.slug} value={item.slug}>
                 {item.title}
               </option>
@@ -214,24 +303,30 @@ export function CatalogBrowser({
           </select>
         </label>
 
-        <label>
-          <span className="sr-only">Filter by purity</span>
-          <select
-            value={purity}
-            onChange={(event) => {
-              const nextPurity = event.target.value as ProductPurity | "";
-              setPurity(nextPurity);
-              trackFilter("purity", nextPurity);
-            }}
-            className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
-          >
-            <option value="">All purities</option>
-            <option value="92.5">92.5%</option>
-            <option value="99.80">99.80%</option>
-          </select>
-        </label>
+        {availablePurityOptions.length > 0 ? (
+          <label>
+            <span className="sr-only">Filter by purity</span>
+            <select
+              value={purity}
+              onChange={(event) => {
+                const nextPurity = event.target.value as ProductPurity | "";
+                setPurity(nextPurity);
+                trackFilter("purity", nextPurity);
+              }}
+              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+            >
+              <option value="">All purities</option>
+              {availablePurityOptions.map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
 
-        {category === "idols" ? (
+        {category === "idols" &&
+        availableIdolConstructionOptions.length > 0 ? (
           <label>
             <span className="sr-only">Filter by idol subcategory</span>
             <select
@@ -245,14 +340,16 @@ export function CatalogBrowser({
               className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All idol types</option>
-              <option value="hollow">Hollow</option>
-              <option value="solid">Solid</option>
-              <option value="semi-solid">Semi Solid</option>
+              {availableIdolConstructionOptions.map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
             </select>
           </label>
         ) : null}
 
-        {category === "coin" ? (
+        {category === "coin" && availableCoinShapeOptions.length > 0 ? (
           <label>
             <span className="sr-only">Filter by coin shape</span>
             <select
@@ -265,33 +362,14 @@ export function CatalogBrowser({
               className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All shapes</option>
-              <option value="round">Round</option>
-              <option value="oval">Oval</option>
-              <option value="square">Square</option>
-              <option value="rectangle">Rectangle</option>
+              {availableCoinShapeOptions.map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
             </select>
           </label>
         ) : null}
-
-        <label>
-          <span className="sr-only">Filter by collection</span>
-          <select
-            value={collection}
-            onChange={(event) => {
-              const nextCollection = event.target.value;
-              setCollection(nextCollection);
-              trackFilter("collection", nextCollection);
-            }}
-            className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
-          >
-            <option value="">All collections</option>
-            {collections.map((item) => (
-              <option key={item.slug} value={item.slug}>
-                {item.title}
-              </option>
-            ))}
-          </select>
-        </label>
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-5">
@@ -301,7 +379,6 @@ export function CatalogBrowser({
         </p>
         {query ||
         category ||
-        collection ||
         purity ||
         idolConstruction ||
         coinShape ? (
@@ -311,7 +388,6 @@ export function CatalogBrowser({
             onClick={() => {
               setQuery("");
               setCategory("");
-              setCollection("");
               setPurity("");
               setIdolConstruction("");
               setCoinShape("");
@@ -330,6 +406,7 @@ export function CatalogBrowser({
               product={product}
               priority={index < 4}
               headingLevel={2}
+              compactImage
             />
           ))}
         </div>

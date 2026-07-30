@@ -5,7 +5,7 @@ import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
 
-const client = getCliClient({ apiVersion: "2026-07-28" });
+const client = getCliClient({ apiVersion: "2026-07-30" });
 
 const categoryId = "category-coin";
 const applyChanges = process.argv.includes("--apply");
@@ -17,12 +17,22 @@ const seriesArgument = process.argv.find((argument) =>
   argument.startsWith("--series="),
 );
 
-type ManagedCoinShape = "round" | "oval" | "rectangle";
-type ManagedCoinSeries = "classic" | "lakshmi-ganesh";
+type ManagedCoinShape = "round" | "oval" | "square" | "rectangle";
+type ManagedCoinSeries = "classic" | "lakshmi-ganesh" | "design-10g";
+type ManagedCoinDesign = {
+  id: string;
+  key: string;
+  title: string;
+  slug: string;
+  reference: string;
+  description: string;
+  alt: string;
+};
 type CoinProduct = {
   weight: number;
   shape: ManagedCoinShape;
   series?: ManagedCoinSeries;
+  design?: ManagedCoinDesign;
   displayOrder: number;
   imagePath: string;
 };
@@ -187,6 +197,204 @@ const coinProducts = [
     imagePath:
       "public/images/silver-coins/silver-coin-lakshmi-ganesh-250g-front-back-neutral-watermark.png",
   },
+  {
+    weight: 10,
+    shape: "square",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-square-lakshmi-ganesh-silver-coin",
+      key: "square-lakshmi-ganesh",
+      title: "DDA 10 Gram Square Lakshmi Ganesh Silver Coin",
+      slug: "dda-10-gram-square-lakshmi-ganesh-silver-coin",
+      reference: "DDA-COIN-10G-SQUARE-LAKSHMI-GANESH",
+      description:
+        "A 10 gram square DDA silver coin in 99.80% purity, featuring Lakshmi and Ganesh on the front and a Tree of Life reverse.",
+      alt: "Front and reverse views of the square 10 gram DDA Lakshmi Ganesh silver coin",
+    },
+    displayOrder: 230,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-square-lakshmi-ganesh-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-tree-of-life-silver-coin",
+      key: "round-tree-of-life",
+      title: "DDA 10 Gram Round Tree of Life Silver Coin",
+      slug: "dda-10-gram-round-tree-of-life-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-TREE-OF-LIFE",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring a Tree of Life design with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Tree of Life silver coin",
+    },
+    displayOrder: 240,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-tree-of-life-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "oval",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-oval-radha-krishna-silver-coin",
+      key: "oval-radha-krishna",
+      title: "DDA 10 Gram Oval Radha Krishna Silver Coin",
+      slug: "dda-10-gram-oval-radha-krishna-silver-coin",
+      reference: "DDA-COIN-10G-OVAL-RADHA-KRISHNA",
+      description:
+        "A 10 gram oval DDA silver coin in 99.80% purity, featuring Radha and Krishna with its ornamental reverse.",
+      alt: "Front and reverse views of the oval 10 gram DDA Radha Krishna silver coin",
+    },
+    displayOrder: 250,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-oval-radha-krishna-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "oval",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-oval-bal-krishna-silver-coin",
+      key: "oval-bal-krishna",
+      title: "DDA 10 Gram Oval Bal Krishna Silver Coin",
+      slug: "dda-10-gram-oval-bal-krishna-silver-coin",
+      reference: "DDA-COIN-10G-OVAL-BAL-KRISHNA",
+      description:
+        "A 10 gram oval DDA silver coin in 99.80% purity, featuring Bal Krishna with its ornamental reverse.",
+      alt: "Front and reverse views of the oval 10 gram DDA Bal Krishna silver coin",
+    },
+    displayOrder: 260,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-oval-bal-krishna-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "oval",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-oval-anniversary-silver-coin",
+      key: "oval-anniversary",
+      title: "DDA 10 Gram Oval Anniversary Silver Coin",
+      slug: "dda-10-gram-oval-anniversary-silver-coin",
+      reference: "DDA-COIN-10G-OVAL-ANNIVERSARY",
+      description:
+        "A 10 gram oval DDA silver coin in 99.80% purity, featuring a couple and Happy Anniversary design with its reverse.",
+      alt: "Front and reverse views of the oval 10 gram DDA Happy Anniversary silver coin",
+    },
+    displayOrder: 270,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-oval-anniversary-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-shiva-parvati-silver-coin",
+      key: "round-shiva-parvati",
+      title: "DDA 10 Gram Round Shiva Parvati Silver Coin",
+      slug: "dda-10-gram-round-shiva-parvati-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-SHIVA-PARVATI",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring Shiva and Parvati with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Shiva Parvati silver coin",
+    },
+    displayOrder: 280,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-shiva-parvati-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-ganesha-silver-coin",
+      key: "round-ganesha",
+      title: "DDA 10 Gram Round Ganesha Silver Coin",
+      slug: "dda-10-gram-round-ganesha-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-GANESHA",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring Ganesha with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Ganesha silver coin",
+    },
+    displayOrder: 290,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-ganesha-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-hanuman-silver-coin",
+      key: "round-hanuman",
+      title: "DDA 10 Gram Round Hanuman Silver Coin",
+      slug: "dda-10-gram-round-hanuman-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-HANUMAN",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring Hanuman with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Hanuman silver coin",
+    },
+    displayOrder: 300,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-hanuman-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-guru-nanak-silver-coin",
+      key: "round-guru-nanak",
+      title: "DDA 10 Gram Round Guru Nanak Silver Coin",
+      slug: "dda-10-gram-round-guru-nanak-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-GURU-NANAK",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring Guru Nanak with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Guru Nanak silver coin",
+    },
+    displayOrder: 310,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-guru-nanak-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-seated-shiva-silver-coin",
+      key: "round-seated-shiva",
+      title: "DDA 10 Gram Round Seated Shiva Silver Coin",
+      slug: "dda-10-gram-round-seated-shiva-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-SEATED-SHIVA",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring a seated Shiva design with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA seated Shiva silver coin",
+    },
+    displayOrder: 320,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-shiva-seated-10g-front-back-neutral-watermark.png",
+  },
+  {
+    weight: 10,
+    shape: "round",
+    series: "design-10g",
+    design: {
+      id: "product-dda-10g-round-mahavir-silver-coin",
+      key: "round-mahavir",
+      title: "DDA 10 Gram Round Mahavir Silver Coin",
+      slug: "dda-10-gram-round-mahavir-silver-coin",
+      reference: "DDA-COIN-10G-ROUND-MAHAVIR",
+      description:
+        "A 10 gram round DDA silver coin in 99.80% purity, featuring Mahavir with its branded reverse.",
+      alt: "Front and reverse views of the round 10 gram DDA Mahavir silver coin",
+    },
+    displayOrder: 330,
+    imagePath:
+      "public/images/silver-coins/new-10g-designs-2026-07-30/silver-coin-round-mahavir-10g-front-back-neutral-watermark.png",
+  },
 ] satisfies readonly CoinProduct[];
 
 type ExistingDocument = {
@@ -213,9 +421,14 @@ function getRequestedShape(): ManagedCoinShape | undefined {
   }
 
   const shape = shapeArgument.slice("--shape=".length);
-  if (shape !== "round" && shape !== "oval" && shape !== "rectangle") {
+  if (
+    shape !== "round" &&
+    shape !== "oval" &&
+    shape !== "square" &&
+    shape !== "rectangle"
+  ) {
     throw new Error(
-      `Unsupported shape "${shape}". Expected --shape=round, --shape=oval, or --shape=rectangle.`,
+      `Unsupported shape "${shape}". Expected --shape=round, --shape=oval, --shape=square, or --shape=rectangle.`,
     );
   }
 
@@ -228,9 +441,13 @@ function getRequestedSeries(): ManagedCoinSeries | undefined {
   }
 
   const series = seriesArgument.slice("--series=".length);
-  if (series !== "classic" && series !== "lakshmi-ganesh") {
+  if (
+    series !== "classic" &&
+    series !== "lakshmi-ganesh" &&
+    series !== "design-10g"
+  ) {
     throw new Error(
-      `Unsupported series "${series}". Expected --series=classic or --series=lakshmi-ganesh.`,
+      `Unsupported series "${series}". Expected --series=classic, --series=lakshmi-ganesh, or --series=design-10g.`,
     );
   }
 
@@ -242,6 +459,10 @@ function getSeries(product: CoinProduct): ManagedCoinSeries {
 }
 
 function getProductId(product: CoinProduct) {
+  if (product.design) {
+    return product.design.id;
+  }
+
   if (getSeries(product) === "lakshmi-ganesh") {
     return `product-dda-lakshmi-ganesh-silver-coin-${product.weight}g`;
   }
@@ -254,6 +475,10 @@ function getProductId(product: CoinProduct) {
 }
 
 function getProductTitle(product: CoinProduct) {
+  if (product.design) {
+    return product.design.title;
+  }
+
   if (getSeries(product) === "lakshmi-ganesh") {
     return `DDA ${product.weight} Gram Lakshmi Ganesh Silver Coin`;
   }
@@ -268,6 +493,10 @@ function getProductTitle(product: CoinProduct) {
 }
 
 function getProductSlug(product: CoinProduct) {
+  if (product.design) {
+    return product.design.slug;
+  }
+
   if (getSeries(product) === "lakshmi-ganesh") {
     return `dda-${product.weight}-gram-lakshmi-ganesh-silver-coin`;
   }
@@ -280,6 +509,10 @@ function getProductSlug(product: CoinProduct) {
 }
 
 function getProductReference(product: CoinProduct) {
+  if (product.design) {
+    return product.design.reference;
+  }
+
   if (getSeries(product) === "lakshmi-ganesh") {
     return `DDA-COIN-LAKSHMI-GANESH-${product.weight}G`;
   }
@@ -292,6 +525,10 @@ function getProductReference(product: CoinProduct) {
 }
 
 function getGalleryKey(product: CoinProduct) {
+  if (product.design) {
+    return `coin-${product.design.key}-${product.weight}g-front-back`;
+  }
+
   if (getSeries(product) === "lakshmi-ganesh") {
     return `coin-lakshmi-ganesh-${product.weight}g-front-back`;
   }
@@ -308,6 +545,10 @@ function getShapeDescription(product: CoinProduct) {
 }
 
 function getProductDescription(product: CoinProduct) {
+  if (product.design) {
+    return product.design.description;
+  }
+
   const design =
     getSeries(product) === "lakshmi-ganesh"
       ? " featuring Lakshmi and Ganesh"
@@ -317,6 +558,10 @@ function getProductDescription(product: CoinProduct) {
 }
 
 function getImageAlt(product: CoinProduct) {
+  if (product.design) {
+    return product.design.alt;
+  }
+
   const design =
     getSeries(product) === "lakshmi-ganesh" ? " Lakshmi Ganesh" : "";
 
@@ -369,6 +614,53 @@ async function getOrUploadImage(
   return asset._id;
 }
 
+function validateProductDefinitions(products: readonly CoinProduct[]) {
+  const ids = new Set<string>();
+  const slugs = new Set<string>();
+  const references = new Set<string>();
+
+  for (const product of products) {
+    const id = getProductId(product);
+    const title = getProductTitle(product);
+    const slug = getProductSlug(product);
+    const reference = getProductReference(product);
+    const description = getProductDescription(product);
+    const alt = getImageAlt(product);
+
+    if (getSeries(product) === "design-10g" && !product.design) {
+      throw new Error(`Design metadata is required for ${id}.`);
+    }
+    if (getSeries(product) !== "design-10g" && product.design) {
+      throw new Error(`Design metadata is only valid for design-10g: ${id}.`);
+    }
+    if (ids.has(id)) {
+      throw new Error(`Duplicate product ID: ${id}`);
+    }
+    if (slugs.has(slug)) {
+      throw new Error(`Duplicate product slug: ${slug}`);
+    }
+    if (references.has(reference)) {
+      throw new Error(`Duplicate product reference: ${reference}`);
+    }
+    if (title.length > 100) {
+      throw new Error(`Product title exceeds 100 characters: ${title}`);
+    }
+    if (description.length > 240) {
+      throw new Error(`Product description exceeds 240 characters: ${id}`);
+    }
+    if (alt.length < 12 || alt.length > 180) {
+      throw new Error(`Product image alt text is invalid: ${id}`);
+    }
+    if (reference.length > 60) {
+      throw new Error(`Product reference exceeds 60 characters: ${reference}`);
+    }
+
+    ids.add(id);
+    slugs.add(slug);
+    references.add(reference);
+  }
+}
+
 async function validateInputs(products: readonly CoinProduct[]) {
   const category = await client.fetch<{ _id: string; title: string } | null>(
     `*[_id == $categoryId && _type == "category"][0]{_id, title}`,
@@ -394,6 +686,8 @@ async function validateInputs(products: readonly CoinProduct[]) {
 }
 
 async function main() {
+  validateProductDefinitions(coinProducts);
+
   const requestedShape = getRequestedShape();
   const requestedSeries = getRequestedSeries();
   const selectedProducts = coinProducts.filter(
@@ -401,6 +695,10 @@ async function main() {
       (!requestedShape || product.shape === requestedShape) &&
       (!requestedSeries || getSeries(product) === requestedSeries),
   );
+
+  if (selectedProducts.length === 0) {
+    throw new Error("The requested filters did not match any coin products.");
+  }
 
   await validateInputs(selectedProducts);
 
@@ -415,11 +713,15 @@ async function main() {
 
   if (!applyChanges) {
     const commandName =
-      requestedSeries === "lakshmi-ganesh"
+      requestedSeries === "design-10g"
+        ? "sanity:upload-new-10g-coins"
+        : requestedSeries === "lakshmi-ganesh"
         ? "sanity:upload-lakshmi-ganesh-coins"
         : requestedShape === "oval"
         ? "sanity:upload-oval-coins"
-        : requestedShape === "rectangle"
+        : requestedShape === "square"
+          ? "sanity:upload-square-coins"
+          : requestedShape === "rectangle"
           ? "sanity:upload-rectangle-coins"
           : "sanity:upload-coins";
 

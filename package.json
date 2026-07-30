@@ -23,12 +23,18 @@
     "sanity:upload-oval-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=oval",
     "sanity:upload-oval-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=oval --apply",
     "sanity:upload-oval-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=oval --apply --overwrite",
+    "sanity:upload-square-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=square",
+    "sanity:upload-square-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=square --apply",
+    "sanity:upload-square-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=square --apply --overwrite",
     "sanity:upload-rectangle-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=rectangle",
     "sanity:upload-rectangle-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=rectangle --apply",
     "sanity:upload-rectangle-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --shape=rectangle --apply --overwrite",
     "sanity:upload-lakshmi-ganesh-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=lakshmi-ganesh",
     "sanity:upload-lakshmi-ganesh-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=lakshmi-ganesh --apply",
     "sanity:upload-lakshmi-ganesh-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=lakshmi-ganesh --apply --overwrite",
+    "sanity:upload-new-10g-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g",
+    "sanity:upload-new-10g-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g --apply",
+    "sanity:upload-new-10g-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g --apply --overwrite",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build"
   },
   "dependencies": {

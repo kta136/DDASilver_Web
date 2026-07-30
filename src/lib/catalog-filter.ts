@@ -8,11 +8,52 @@ import type {
 export type CatalogFilters = {
   query?: string;
   category?: string;
-  collection?: string;
   purity?: ProductPurity | "";
   idolConstruction?: IdolConstruction | "";
   coinShape?: CoinShape | "";
 };
+
+export type CatalogFilterAvailability = {
+  categorySlugs: ReadonlySet<string>;
+  purities: ReadonlySet<ProductPurity>;
+  idolConstructions: ReadonlySet<IdolConstruction>;
+  coinShapes: ReadonlySet<CoinShape>;
+};
+
+export function getCatalogFilterAvailability(
+  products: Product[],
+  category = "",
+): CatalogFilterAvailability {
+  const categorySlugs = new Set<string>();
+  const purities = new Set<ProductPurity>();
+  const idolConstructions = new Set<IdolConstruction>();
+  const coinShapes = new Set<CoinShape>();
+
+  for (const product of products) {
+    categorySlugs.add(product.categorySlug);
+
+    if (category && product.categorySlug !== category) {
+      continue;
+    }
+
+    if (product.purity) {
+      purities.add(product.purity);
+    }
+    if (product.idolConstruction) {
+      idolConstructions.add(product.idolConstruction);
+    }
+    if (product.coinShape) {
+      coinShapes.add(product.coinShape);
+    }
+  }
+
+  return {
+    categorySlugs,
+    purities,
+    idolConstructions,
+    coinShapes,
+  };
+}
 
 export function filterProducts(
   products: Product[],
@@ -24,13 +65,6 @@ export function filterProducts(
   return products
     .filter((product) => {
       if (filters.category && product.categorySlug !== filters.category) {
-        return false;
-      }
-
-      if (
-        filters.collection &&
-        !product.collectionSlugs.includes(filters.collection)
-      ) {
         return false;
       }
 

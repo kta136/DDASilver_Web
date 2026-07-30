@@ -17,7 +17,7 @@ type ProductsPageProps = {
 export default async function ProductsPage({
   searchParams,
 }: ProductsPageProps) {
-  const { products, categories, collections } = await getCatalog();
+  const { products, categories } = await getCatalog();
   const rawSearchParams = await searchParams;
   const normalizedSearchParams = new URLSearchParams();
   for (const [key, value] of Object.entries(rawSearchParams)) {
@@ -28,7 +28,6 @@ export default async function ProductsPage({
   }
   const initialFilters = parseCatalogSearchParams(normalizedSearchParams, {
     categorySlugs: categories.map((item) => item.slug),
-    collectionSlugs: collections.map((item) => item.slug),
   });
 
   return (
@@ -50,7 +49,6 @@ export default async function ProductsPage({
           <CatalogBrowser
             products={products}
             categories={categories}
-            collections={collections}
             initialFilters={initialFilters}
             syncUrl
           />

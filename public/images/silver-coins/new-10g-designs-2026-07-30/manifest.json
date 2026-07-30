@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "createdAt": "2026-07-30",
+  "sourceDirectory": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-07-30 at 3.02.45 PM",
+  "projectOutputDirectory": "D:/Projects/DDASilver_Web/public/images/silver-coins/new-10g-designs-2026-07-30",
+  "desktopOutputDirectory": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-07-30 at 3.02.45 PM/Processed",
+  "generationMode": "built-in image_gen edits plus deterministic DDA watermark composition",
+  "sharedPrompt": "Use case: compositing. Asset type: square ecommerce catalog image. Remove the green fabric and camera glare, clean dust, and improve crisp silver detail. Arrange exactly two coins—front left and reverse right—upright, equal visual size, side by side on pure white with generous margins and a very soft grounding shadow. Preserve the exact physical coin shape, edge, artwork, DDA mark, inscriptions, numerals, weight, and purity from the supplied references. Do not invent, mirror, rewrite, crop, duplicate, or omit details. No logo, watermark, captions, extra text, props, border, hands, or colored tint.",
+  "watermark": {
+    "source": "D:/Projects/DDASilver_Web/public/brand/dda-family-mark.png",
+    "tint": "#8f8b87",
+    "width": 820,
+    "opacity": 0.105
+  },
+  "exports": [
+    {
+      "id": "coin-square-lakshmi-ganesh",
+      "title": "Square Lakshmi–Ganesh 10 g",
+      "output": "silver-coin-square-lakshmi-ganesh-10g-front-back-neutral-watermark.png",
+      "sourceFront": "square-lakshmi-ganesh-front.png",
+      "sourceBack": "square-tree-back.png",
+      "generatedIntermediate": "coin-square-lakshmi-ganesh.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "33b9f2cfb14cfc24b86d21bf82228f2f284c6811c0f80b16de76dc4a70d23f5b"
+    },
+    {
+      "id": "coin-round-tree-of-life",
+      "title": "Round Tree of Life 10 g",
+      "output": "silver-coin-round-tree-of-life-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-tree-front.png",
+      "sourceBack": "round-tree-back.png",
+      "generatedIntermediate": "coin-round-tree-of-life.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "8cf11276c59af0a514b929171ead1a8aa5eeca2bbb7572d5da89541b954052fb"
+    },
+    {
+      "id": "coin-oval-radha-krishna",
+      "title": "Oval Radha–Krishna 10 g",
+      "output": "silver-coin-oval-radha-krishna-10g-front-back-neutral-watermark.png",
+      "sourceFront": "oval-radha-krishna-front.png",
+      "sourceBack": "oval-radha-krishna-back.png",
+      "generatedIntermediate": "coin-oval-radha-krishna.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "db8c20968b4f61df35ecf0c3876abb059910f3820d4863bc0174a0d32b97b9b4"
+    },
+    {
+      "id": "coin-oval-bal-krishna",
+      "title": "Oval Bal Krishna 10 g",
+      "output": "silver-coin-oval-bal-krishna-10g-front-back-neutral-watermark.png",
+      "sourceFront": "oval-bal-krishna-front.png",
+      "sourceBack": "oval-bal-krishna-back.png",
+      "generatedIntermediate": "coin-oval-bal-krishna.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1df7aa3fbf56034568168f430b7c57895df3d3d867b26614bf93057d5d69a7af"
+    },
+    {
+      "id": "coin-oval-anniversary",
+      "title": "Oval Anniversary 10 g",
+      "output": "silver-coin-oval-anniversary-10g-front-back-neutral-watermark.png",
+      "sourceFront": "oval-anniversary-front.png",
+      "sourceBack": "oval-anniversary-back.png",
+      "generatedIntermediate": "coin-oval-anniversary.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bff75346eef187b5acf2a24cff1c7309ca085d1458918a2529cc8a0d3443963b"
+    },
+    {
+      "id": "coin-round-shiva-parvati",
+      "title": "Round Shiva–Parvati 10 g",
+      "output": "silver-coin-round-shiva-parvati-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-shiva-parvati-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-shiva-parvati.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "855d9264c1fec261aa3190a03e94b4c93837f32828a3ba3506a936930cf43af0"
+    },
+    {
+      "id": "coin-round-ganesha",
+      "title": "Round Ganesha 10 g",
+      "output": "silver-coin-round-ganesha-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-ganesha-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-ganesha.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1333836d46e90cff36297ca633eda2ff512b7b6b0c5fe9235416a5d42d19b0e4"
+    },
+    {
+      "id": "coin-round-hanuman",
+      "title": "Round Hanuman 10 g",
+      "output": "silver-coin-round-hanuman-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-hanuman-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-hanuman.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2b48064b3a953409ded011a52cecd2e590f7debb1cdd43541b0f0816832f197d"
+    },
+    {
+      "id": "coin-round-guru-nanak",
+      "title": "Round Guru Nanak 10 g",
+      "output": "silver-coin-round-guru-nanak-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-guru-nanak-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-guru-nanak.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f440da116056066b933074baa4799330c110bfab7cb1014f1945b72cd3c7fbf8"
+    },
+    {
+      "id": "coin-round-shiva-seated",
+      "title": "Round Seated Shiva 10 g",
+      "output": "silver-coin-round-shiva-seated-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-shiva-seated-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-shiva-seated.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "6a62f3fd6a2d4a83a5beef01cb62c88094ffc79dab2264e228d7eb487860ab57"
+    },
+    {
+      "id": "coin-round-mahavir",
+      "title": "Round Mahavir 10 g",
+      "output": "silver-coin-round-mahavir-10g-front-back-neutral-watermark.png",
+      "sourceFront": "round-mahavir-front.png",
+      "sourceBack": "round-generic-back.png",
+      "generatedIntermediate": "coin-round-mahavir.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "06748de52187d506e0e656521ac0abd3bf286c46a5c4366e88ac58f3f3aa30b6"
+    }
+  ]
+}

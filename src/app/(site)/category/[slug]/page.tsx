@@ -75,7 +75,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <CatalogBrowser
             products={catalog.products}
             categories={catalog.categories}
-            collections={catalog.collections}
             initialCategory={category.slug}
           />
         </div>

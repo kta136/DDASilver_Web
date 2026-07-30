@@ -13,12 +13,14 @@ type ProductCardProps = {
   product: Product;
   priority?: boolean;
   headingLevel?: 2 | 3;
+  compactImage?: boolean;
 };
 
 export function ProductCard({
   product,
   priority = false,
   headingLevel = 3,
+  compactImage = false,
 }: ProductCardProps) {
   const image = product.images[0];
   const Heading = headingLevel === 2 ? "h2" : "h3";
@@ -36,7 +38,11 @@ export function ProductCard({
         href={`/products/${product.slug}`}
         className="block no-underline"
       >
-        <div className="relative aspect-[4/5] overflow-hidden bg-[#ece8e3]">
+        <div
+          className={`relative overflow-hidden bg-[#ece8e3] ${
+            compactImage ? "aspect-[4/3]" : "aspect-[4/5]"
+          }`}
+        >
           {image ? (
             <Image
               src={image.src}
@@ -46,7 +52,9 @@ export function ProductCard({
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className={
                 product.coinShape
-                  ? "object-contain transition duration-500"
+                  ? `${
+                      compactImage ? "object-cover" : "object-contain"
+                    } transition duration-500`
                   : "object-cover transition duration-500 group-hover:scale-[1.025]"
               }
               style={{ objectPosition: image.objectPosition ?? "center" }}

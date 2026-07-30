@@ -7,7 +7,6 @@ import {
 
 const options = {
   categorySlugs: ["jewellery", "coin", "idols"],
-  collectionSlugs: ["heritage"],
 };
 
 describe("catalog URL state", () => {
@@ -22,7 +21,6 @@ describe("catalog URL state", () => {
     expect(parsed).toEqual({
       query: "bracelet",
       category: "idols",
-      collection: "",
       purity: "92.5",
       idolConstruction: "solid",
       coinShape: "",
@@ -36,7 +34,7 @@ describe("catalog URL state", () => {
         category: "coin",
         coinShape: "round",
       },
-      new URLSearchParams("ref=home"),
+      new URLSearchParams("ref=home&collection=heritage"),
     );
 
     expect(serialized.toString()).toBe(

@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { fallbackProducts } from "@/data/catalog";
-import { filterProducts } from "@/lib/catalog-filter";
+import {
+  filterProducts,
+  getCatalogFilterAvailability,
+} from "@/lib/catalog-filter";
 
 describe("catalog filtering", () => {
   it("searches title and description case-insensitively", () => {
@@ -18,12 +21,12 @@ describe("catalog filtering", () => {
     ]);
   });
 
-  it("combines category and collection filters", () => {
+  it("combines category and purity filters", () => {
     const results = filterProducts(fallbackProducts, {
       category: "jewellery",
-      collection: "celebration-edit",
+      purity: "92.5",
     });
-    expect(results).toHaveLength(2);
+    expect(results).toHaveLength(4);
     expect(results.every((product) => product.categorySlug === "jewellery")).toBe(
       true,
     );
@@ -54,6 +57,17 @@ describe("catalog filtering", () => {
     expect(results.map((product) => product.slug)).toEqual([
       "classic-silver-coin",
     ]);
+  });
+
+  it("only exposes filter values backed by products in the category", () => {
+    const availability = getCatalogFilterAvailability(
+      fallbackProducts,
+      "coin",
+    );
+
+    expect([...availability.purities]).toEqual(["99.80"]);
+    expect([...availability.coinShapes]).toEqual(["round"]);
+    expect([...availability.idolConstructions]).toEqual([]);
   });
 
   it("preserves editorial display order", () => {

@@ -91,10 +91,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       <section className="section-shell">
         <div className="site-container">
           <CatalogBrowser
-            products={catalog.products}
+            products={catalog.products.filter((product) =>
+              product.collectionSlugs.includes(collection.slug),
+            )}
             categories={catalog.categories}
-            collections={catalog.collections}
-            initialCollection={collection.slug}
           />
         </div>
       </section>
