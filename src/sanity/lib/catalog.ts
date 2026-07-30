@@ -63,6 +63,10 @@ const collectionSchema = z.object({
   displayOrder: z.number().int().min(0).max(100_000),
   updatedAt,
 });
+const deitySchema = z.object({
+  title: boundedText,
+  slug,
+});
 const productSchema = z.object({
   title: boundedText,
   slug,
@@ -87,6 +91,7 @@ const productSchema = z.object({
     .enum(["hollow", "solid", "semi-solid"])
     .nullish()
     .transform((value) => value ?? undefined),
+  deities: z.array(deitySchema).max(50),
   coinShape: z
     .enum(["round", "oval", "square", "rectangle"])
     .nullish()

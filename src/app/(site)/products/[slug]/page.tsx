@@ -165,6 +165,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ) : null}
           {product.purity ||
           product.idolConstruction ||
+          product.deities.length > 0 ||
           product.coinShape ? (
             <dl className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-line pt-5">
               {product.purity ? (
@@ -180,10 +181,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.idolConstruction ? (
                 <div>
                   <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                    Idol type
+                    Idol Construction
                   </dt>
                   <dd className="mt-1 text-sm font-semibold">
                     {idolConstructionLabels[product.idolConstruction]}
+                  </dd>
+                </div>
+              ) : null}
+              {product.deities.length > 0 ? (
+                <div>
+                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                    {product.deities.length === 1 ? "Deity" : "Deities"}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold">
+                    {product.deities
+                      .map((deity) => deity.title)
+                      .join(", ")}
                   </dd>
                 </div>
               ) : null}

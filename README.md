@@ -121,6 +121,11 @@ files other than `.env.example` are excluded from Git.
 | `npm run check` | Run linting, type checks, unit tests, and a build |
 | `npm run sanity:seed-categories` | Preview category seeding without writes |
 | `npm run sanity:seed-categories:apply` | Apply category seeding to the asserted dataset |
+| `npm run sanity:seed-deities` | Preview Deity taxonomy seeding without writes |
+| `npm run sanity:seed-deities:apply` | Apply Deity taxonomy seeding to the asserted dataset |
+| `npm run sanity:upload-idols` | Preview the 19-product idol import without writes |
+| `npm run sanity:upload-idols:apply` | Upload and publish missing idol products |
+| `npm run sanity:upload-idols:overwrite` | Replace existing script-managed idol products |
 
 The Sanity catalog import utilities are defined in `package.json` and documented
 under [`scripts/images`](scripts/images/README.md). Commands ending in `:apply`
@@ -146,6 +151,7 @@ docs/             Product, architecture, integration, and launch documentation
 - [Information architecture and UX](docs/information-architecture.md)
 - [Technical architecture](docs/technical-architecture.md)
 - [Sanity content model](docs/content-model.md)
+- [Idol item-code terminology](docs/idol-item-codes.md)
 - [Live-rates integration](docs/rates-integration.md)
 - [Shared-account authentication](docs/authentication.md)
 - [Quality strategy](docs/quality-strategy.md)

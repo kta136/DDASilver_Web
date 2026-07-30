@@ -1,6 +1,6 @@
 # Implementation status
 
-**Updated:** 29 July 2026
+**Updated:** 30 July 2026
 **Environment:** Local production build plus protected Vercel Preview
 **Production authorization:** Not granted
 
@@ -21,8 +21,11 @@
 - Search, category, collection, and purity filtering with reloadable,
   shareable URL state and no price or inventory fields.
 - Initial Jewellery, Coin, Idols, Gifts, and Utensils taxonomy, including
-  Idols-only Hollow/Solid/Semi Solid filtering and Coin-only
+  Idols-only Idol Construction and Deity filtering and Coin-only
   Round/Oval/Square/Rectangle filtering.
+- Approved hollow-idol Item Name and reference terminology using
+  `HM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>`, documented with the 19 current item
+  assignments.
 - WhatsApp enquiry links that include product title, optional reference, and
   canonical URL.
 - Sanity document schemas for product, category, collection, page, and site

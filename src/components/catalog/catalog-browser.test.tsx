@@ -66,4 +66,38 @@ describe("<CatalogBrowser />", () => {
       within(shapeFilter).queryByRole("option", { name: "Oval" }),
     ).not.toBeInTheDocument();
   });
+
+  it("shows deity names backed by products in the Idols category", () => {
+    const idol = fallbackProducts.find(
+      (product) => product.categorySlug === "idols",
+    )!;
+
+    render(
+      <CatalogBrowser
+        products={[
+          {
+            ...idol,
+            title: "Shiva Family",
+            slug: "shiva-family",
+            deities: [
+              { title: "Shiva", slug: "shiva" },
+              { title: "Parvati", slug: "parvati" },
+            ],
+          },
+        ]}
+        categories={fallbackCategories}
+        initialCategory="idols"
+      />,
+    );
+
+    const deityFilter = screen.getByRole("combobox", {
+      name: "Filter by deity",
+    });
+    expect(
+      within(deityFilter).getByRole("option", { name: "Parvati" }),
+    ).toBeInTheDocument();
+    expect(
+      within(deityFilter).getByRole("option", { name: "Shiva" }),
+    ).toBeInTheDocument();
+  });
 });

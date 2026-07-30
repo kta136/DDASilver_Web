@@ -31,3 +31,6 @@ project until superseded by an approved decision record.
 5. Examples must use placeholder values rather than current customer or
    personalized-rate data.
 
+## Catalog terminology
+
+- [Idol item-code terminology](idol-item-codes.md)

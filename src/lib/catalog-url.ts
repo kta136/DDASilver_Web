@@ -22,6 +22,7 @@ const coinShapes = new Set<CoinShape>([
 
 export type CatalogUrlOptions = {
   categorySlugs: readonly string[];
+  deitySlugs?: readonly string[];
 };
 
 export type CatalogUrlState = {
@@ -29,6 +30,7 @@ export type CatalogUrlState = {
   category: string;
   purity: ProductPurity | "";
   idolConstruction: IdolConstruction | "";
+  deitySlug: string;
   coinShape: CoinShape | "";
 };
 
@@ -44,6 +46,7 @@ export function parseCatalogSearchParams(
   options: CatalogUrlOptions,
 ): CatalogUrlState {
   const categorySlugs = new Set(options.categorySlugs);
+  const deitySlugs = new Set(options.deitySlugs ?? []);
   const category = allowedValue(searchParams.get("category"), categorySlugs);
 
   return {
@@ -53,6 +56,10 @@ export function parseCatalogSearchParams(
     idolConstruction:
       category === "idols"
         ? allowedValue(searchParams.get("idol"), idolConstructions)
+        : "",
+    deitySlug:
+      category === "idols"
+        ? allowedValue(searchParams.get("deity"), deitySlugs)
         : "",
     coinShape:
       category === "coin"
@@ -72,6 +79,7 @@ export function serializeCatalogFilters(
     collection: "",
     purity: filters.purity ?? "",
     idol: filters.idolConstruction ?? "",
+    deity: filters.deitySlug ?? "",
     shape: filters.coinShape ?? "",
   };
 

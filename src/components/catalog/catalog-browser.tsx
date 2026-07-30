@@ -90,6 +90,16 @@ export function CatalogBrowser({
         ? initialIdolConstruction
         : "";
     });
+  const [deitySlug, setDeitySlug] = useState(() => {
+    const initialDeitySlug = initialFilters?.deitySlug ?? "";
+    const availability = getCatalogFilterAvailability(
+      products,
+      initialCategoryValue,
+    );
+    return initialDeitySlug && availability.deities.has(initialDeitySlug)
+      ? initialDeitySlug
+      : "";
+  });
   const [coinShape, setCoinShape] = useState<CoinShape | "">(() => {
     const initialCoinShape = initialFilters?.coinShape ?? "";
     const availability = getCatalogFilterAvailability(
@@ -115,8 +125,15 @@ export function CatalogBrowser({
   const urlOptions = useMemo(
     () => ({
       categorySlugs: availableCategories.map((item) => item.slug),
+      deitySlugs: [
+        ...new Set(
+          products.flatMap((product) =>
+            product.deities.map((deity) => deity.slug),
+          ),
+        ),
+      ],
     }),
-    [availableCategories],
+    [availableCategories, products],
   );
   const availablePurityOptions = productPurityOptions.filter(([value]) =>
     filterAvailability.purities.has(value),
@@ -125,6 +142,10 @@ export function CatalogBrowser({
     idolConstructionOptions.filter(([value]) =>
       filterAvailability.idolConstructions.has(value),
     );
+  const availableDeityOptions = [...filterAvailability.deities].toSorted(
+    ([, firstTitle], [, secondTitle]) =>
+      firstTitle.localeCompare(secondTitle, "en-IN"),
+  );
   const availableCoinShapeOptions = coinShapeOptions.filter(([value]) =>
     filterAvailability.coinShapes.has(value),
   );
@@ -135,6 +156,7 @@ export function CatalogBrowser({
     availableIdolConstructionOptions.length > 0
       ? 1
       : 0) +
+    (category === "idols" && availableDeityOptions.length > 0 ? 1 : 0) +
     (category === "coin" && availableCoinShapeOptions.length > 0
       ? 1
       : 0);
@@ -146,6 +168,7 @@ export function CatalogBrowser({
         category,
         purity,
         idolConstruction,
+        deitySlug,
         coinShape,
       }),
     [
@@ -154,6 +177,7 @@ export function CatalogBrowser({
       category,
       purity,
       idolConstruction,
+      deitySlug,
       coinShape,
     ],
   );
@@ -185,6 +209,11 @@ export function CatalogBrowser({
           ? next.idolConstruction
           : "",
       );
+      setDeitySlug(
+        next.deitySlug && availability.deities.has(next.deitySlug)
+          ? next.deitySlug
+          : "",
+      );
       setCoinShape(
         next.coinShape && availability.coinShapes.has(next.coinShape)
           ? next.coinShape
@@ -206,6 +235,7 @@ export function CatalogBrowser({
       category,
       purity,
       idolConstruction,
+      deitySlug,
       coinShape,
     };
     const next = serializeCatalogFilters(
@@ -218,6 +248,7 @@ export function CatalogBrowser({
   }, [
     category,
     coinShape,
+    deitySlug,
     idolConstruction,
     purity,
     query,
@@ -236,6 +267,8 @@ export function CatalogBrowser({
       <div
         className={clsx(
           "grid gap-3 border-y border-line py-5 md:grid-cols-2",
+          filterControlCount === 5 &&
+            "lg:grid-cols-3 xl:grid-cols-[minmax(14rem,1fr)_repeat(4,minmax(8.5rem,11rem))]",
           filterControlCount === 4 &&
             "lg:grid-cols-[minmax(16rem,1fr)_repeat(3,minmax(9rem,11rem))]",
           filterControlCount === 3 &&
@@ -286,6 +319,7 @@ export function CatalogBrowser({
               );
               if (nextCategory !== "idols") {
                 setIdolConstruction("");
+                setDeitySlug("");
               }
               if (nextCategory !== "coin") {
                 setCoinShape("");
@@ -328,7 +362,7 @@ export function CatalogBrowser({
         {category === "idols" &&
         availableIdolConstructionOptions.length > 0 ? (
           <label>
-            <span className="sr-only">Filter by idol subcategory</span>
+            <span className="sr-only">Filter by idol construction</span>
             <select
               value={idolConstruction}
               onChange={(event) => {
@@ -339,10 +373,32 @@ export function CatalogBrowser({
               }}
               className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
-              <option value="">All idol types</option>
+              <option value="">All constructions</option>
               {availableIdolConstructionOptions.map(([value, label]) => (
                 <option key={value} value={value}>
                   {label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+
+        {category === "idols" && availableDeityOptions.length > 0 ? (
+          <label>
+            <span className="sr-only">Filter by deity</span>
+            <select
+              value={deitySlug}
+              onChange={(event) => {
+                const nextDeitySlug = event.target.value;
+                setDeitySlug(nextDeitySlug);
+                trackFilter("deity", nextDeitySlug);
+              }}
+              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+            >
+              <option value="">All deities</option>
+              {availableDeityOptions.map(([slug, title]) => (
+                <option key={slug} value={slug}>
+                  {title}
                 </option>
               ))}
             </select>
@@ -381,6 +437,7 @@ export function CatalogBrowser({
         category ||
         purity ||
         idolConstruction ||
+        deitySlug ||
         coinShape ? (
           <button
             type="button"
@@ -390,6 +447,7 @@ export function CatalogBrowser({
               setCategory("");
               setPurity("");
               setIdolConstruction("");
+              setDeitySlug("");
               setCoinShape("");
             }}
           >

@@ -24,12 +24,13 @@ before publishing.
 | `gallery` | image array | Yes | At least one image; each image requires alt text |
 | `category` | reference | Yes | References one published category |
 | `purity` | string | Yes | `92.5` or `99.80`; displayed as 92.5% or 99.80% |
-| `idolConstruction` | string | For Idols | Hollow, Solid, or Semi Solid |
+| `idolConstruction` | string | For Idols | Hollow, Solid, or Semi-solid |
+| `deities` | reference array | For Idols | One or more references to the Deities taxonomy |
 | `coinShape` | string | For Coin | Round, Oval, Square, or Rectangle |
 | `collections` | reference array | No | Unique collection references |
 | `featured` | boolean | Yes | Defaults to false |
 | `displayOrder` | number | Yes | Integer; defaults to 100 |
-| `internalReference` | string | No | Internal/enquiry context; not indexed as price or stock |
+| `reference` | string | No | Canonical item code and enquiry context |
 
 Do not add price, compare-at price, quantity, stock status, weight, variants,
 cart, tax, shipping, or checkout fields.
@@ -52,10 +53,16 @@ Initial content taxonomy:
 - Gifts
 - Utensils
 
-Idols use an Idols-only subcategory field with Hollow, Solid, and Semi Solid
-options. Coin products use a Coin-only shape field with Round, Oval, Square,
-and Rectangle options. These specialized filters appear only after their
-relevant category is selected.
+Idols use the **Idol Construction** field with Hollow, Solid, and Semi-solid
+options, plus the **Deities** taxonomy for God-name filtering. Coin products
+use a Coin-only shape field with Round, Oval, Square, and Rectangle options.
+These specialized filters appear only after their relevant category is
+selected.
+
+Hollow-idol Item Names and references follow the approved
+[idol item-code terminology](idol-item-codes.md). The canonical format is
+`HM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>`, and weight and height remain in the
+description rather than the Item Name.
 
 Editors may rename, add, hide, or reorder categories without code changes.
 
@@ -139,7 +146,8 @@ choose “decorative” rather than omitting alt text.
 
 1. Duplicate the catalog CSV template.
 2. Assign one approved category and purity per product.
-3. For Idols, assign an idol subcategory; for Coin, assign a coin shape.
+3. For Idols, assign Idol Construction, all represented deities, and the next
+   approved item code; for Coin, assign a coin shape.
 4. Use collection names consistently.
 5. Match `image_filenames` to files in the asset delivery.
 6. Validate required columns and duplicates.

@@ -24,6 +24,10 @@ export const productsQuery = defineQuery(`*[_type == "product"] | order(displayO
   reference,
   purity,
   idolConstruction,
+  "deities": coalesce(deities[]->{
+    title,
+    "slug": slug.current
+  }, []),
   coinShape,
   "updatedAt": _updatedAt
 }`);

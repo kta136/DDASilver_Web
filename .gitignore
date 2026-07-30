@@ -50,3 +50,10 @@ next-env.d.ts
 
 # graphify
 /graphify-out/
+
+# Product imagery is uploaded to Sanity and kept out of GitHub
+/public/images/product-backgrounds/
+/public/images/silver-idols/**/*.png
+/public/images/silver-idols/**/*.jpg
+/public/images/silver-idols/**/*.jpeg
+/public/images/silver-idols/**/*.webp

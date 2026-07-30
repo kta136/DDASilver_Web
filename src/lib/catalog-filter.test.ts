@@ -49,6 +49,36 @@ describe("catalog filtering", () => {
     ]);
   });
 
+  it("filters idols by any referenced deity", () => {
+    const idol = fallbackProducts.find(
+      (product) => product.categorySlug === "idols",
+    )!;
+    const products = [
+      {
+        ...idol,
+        title: "Shiva Family",
+        slug: "shiva-family",
+        deities: [
+          { title: "Shiva", slug: "shiva" },
+          { title: "Parvati", slug: "parvati" },
+        ],
+      },
+      {
+        ...idol,
+        title: "Bal Krishna",
+        slug: "bal-krishna",
+        deities: [{ title: "Krishna", slug: "krishna" }],
+      },
+    ];
+
+    const results = filterProducts(products, {
+      category: "idols",
+      deitySlug: "parvati",
+    });
+
+    expect(results.map((product) => product.slug)).toEqual(["shiva-family"]);
+  });
+
   it("filters coin shape within the coin category", () => {
     const results = filterProducts(fallbackProducts, {
       category: "coin",
@@ -68,6 +98,7 @@ describe("catalog filtering", () => {
     expect([...availability.purities]).toEqual(["99.80"]);
     expect([...availability.coinShapes]).toEqual(["round"]);
     expect([...availability.idolConstructions]).toEqual([]);
+    expect([...availability.deities]).toEqual([]);
   });
 
   it("preserves editorial display order", () => {

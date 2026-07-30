@@ -111,6 +111,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 1,
     reference: "DS-J-001",
     purity: "92.5",
+    deities: [],
   },
   {
     title: "Delicate Silver Chain",
@@ -124,6 +125,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 4,
     reference: "DS-J-002",
     purity: "92.5",
+    deities: [],
   },
   {
     title: "Floral Silver Stud Earrings",
@@ -137,6 +139,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 3,
     reference: "DS-J-003",
     purity: "92.5",
+    deities: [],
   },
   {
     title: "Classic Silver Coin",
@@ -150,6 +153,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 4,
     reference: "DS-C-001",
     purity: "99.80",
+    deities: [],
     coinShape: "round",
   },
   {
@@ -165,6 +169,7 @@ export const fallbackProducts: Product[] = [
     reference: "DS-P-001",
     purity: "92.5",
     idolConstruction: "semi-solid",
+    deities: [],
   },
   {
     title: "Silver Gift Box",
@@ -178,6 +183,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 6,
     reference: "DS-G-001",
     purity: "92.5",
+    deities: [],
   },
   {
     title: "Engraved Silver Bowl",
@@ -191,6 +197,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 7,
     reference: "DS-H-001",
     purity: "92.5",
+    deities: [],
   },
   {
     title: "Engraved Silver Ring",
@@ -204,6 +211,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 2,
     reference: "DS-J-004",
     purity: "92.5",
+    deities: [],
   },
 ];
 

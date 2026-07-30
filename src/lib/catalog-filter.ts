@@ -10,6 +10,7 @@ export type CatalogFilters = {
   category?: string;
   purity?: ProductPurity | "";
   idolConstruction?: IdolConstruction | "";
+  deitySlug?: string;
   coinShape?: CoinShape | "";
 };
 
@@ -17,6 +18,7 @@ export type CatalogFilterAvailability = {
   categorySlugs: ReadonlySet<string>;
   purities: ReadonlySet<ProductPurity>;
   idolConstructions: ReadonlySet<IdolConstruction>;
+  deities: ReadonlyMap<string, string>;
   coinShapes: ReadonlySet<CoinShape>;
 };
 
@@ -27,6 +29,7 @@ export function getCatalogFilterAvailability(
   const categorySlugs = new Set<string>();
   const purities = new Set<ProductPurity>();
   const idolConstructions = new Set<IdolConstruction>();
+  const deities = new Map<string, string>();
   const coinShapes = new Set<CoinShape>();
 
   for (const product of products) {
@@ -42,6 +45,9 @@ export function getCatalogFilterAvailability(
     if (product.idolConstruction) {
       idolConstructions.add(product.idolConstruction);
     }
+    for (const deity of product.deities) {
+      deities.set(deity.slug, deity.title);
+    }
     if (product.coinShape) {
       coinShapes.add(product.coinShape);
     }
@@ -51,6 +57,7 @@ export function getCatalogFilterAvailability(
     categorySlugs,
     purities,
     idolConstructions,
+    deities,
     coinShapes,
   };
 }
@@ -79,6 +86,13 @@ export function filterProducts(
         return false;
       }
 
+      if (
+        filters.deitySlug &&
+        !product.deities.some((deity) => deity.slug === filters.deitySlug)
+      ) {
+        return false;
+      }
+
       if (filters.coinShape && product.coinShape !== filters.coinShape) {
         return false;
       }
@@ -87,7 +101,8 @@ export function filterProducts(
         return true;
       }
 
-      const words = `${product.title} ${product.shortDescription}`
+      const words =
+        `${product.title} ${product.shortDescription} ${product.deities.map((deity) => deity.title).join(" ")}`
         .toLocaleLowerCase("en-IN")
         .split(/[^\p{L}\p{N}]+/u)
         .filter(Boolean);

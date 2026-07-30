@@ -12,7 +12,7 @@ export const purityLabels: Record<ProductPurity, string> = {
 export const idolConstructionLabels: Record<IdolConstruction, string> = {
   hollow: "Hollow",
   solid: "Solid",
-  "semi-solid": "Semi Solid",
+  "semi-solid": "Semi-solid",
 };
 
 export const coinShapeLabels: Record<CoinShape, string> = {

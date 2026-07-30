@@ -7,13 +7,14 @@ import {
 
 const options = {
   categorySlugs: ["jewellery", "coin", "idols"],
+  deitySlugs: ["shiva"],
 };
 
 describe("catalog URL state", () => {
   it("accepts known filters and ignores unknown values", () => {
     const parsed = parseCatalogSearchParams(
       new URLSearchParams(
-        "q=bracelet&category=idols&collection=unknown&purity=92.5&idol=solid&shape=round",
+        "q=bracelet&category=idols&collection=unknown&purity=92.5&idol=solid&deity=shiva&shape=round",
       ),
       options,
     );
@@ -23,6 +24,7 @@ describe("catalog URL state", () => {
       category: "idols",
       purity: "92.5",
       idolConstruction: "solid",
+      deitySlug: "shiva",
       coinShape: "",
     });
   });

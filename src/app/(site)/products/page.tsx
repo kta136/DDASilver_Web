@@ -30,6 +30,13 @@ export default async function ProductsPage({
     categorySlugs: [
       ...new Set(products.map((product) => product.categorySlug)),
     ],
+    deitySlugs: [
+      ...new Set(
+        products.flatMap((product) =>
+          product.deities.map((deity) => deity.slug),
+        ),
+      ),
+    ],
   });
 
   return (

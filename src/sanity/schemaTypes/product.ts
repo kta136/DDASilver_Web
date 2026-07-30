@@ -83,16 +83,17 @@ export const productType = defineType({
     }),
     defineField({
       name: "idolConstruction",
-      title: "Idol subcategory",
+      title: "Idol Construction",
       type: "string",
-      description: "Complete this field only for products in the Idols category.",
+      description:
+        "Choose how the idol is constructed. Complete this only for products in the Idols category.",
       hidden: ({ document }) =>
         getCategoryReference(document) !== "category-idols",
       options: {
         list: [
           { title: "Hollow", value: "hollow" },
           { title: "Solid", value: "solid" },
-          { title: "Semi Solid", value: "semi-solid" },
+          { title: "Semi-solid", value: "semi-solid" },
         ],
         layout: "radio",
       },
@@ -105,7 +106,37 @@ export const productType = defineType({
           }
 
           return value
-            ? "Idol subcategory is only valid for the Idols category."
+            ? "Idol Construction is only valid for the Idols category."
+            : true;
+        }),
+    }),
+    defineField({
+      name: "deities",
+      title: "Deities",
+      type: "array",
+      description:
+        "Choose every God or deity represented by this idol. This powers the customer-facing Deity filter.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-idols",
+      of: [
+        defineArrayMember({
+          type: "reference",
+          to: [{ type: "deity" }],
+        }),
+      ],
+      validation: (rule) =>
+        rule.unique().custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+          const hasDeities = Array.isArray(value) && value.length > 0;
+
+          if (categoryReference === "category-idols") {
+            return hasDeities
+              ? true
+              : "Choose at least one deity for an Idol product.";
+          }
+
+          return hasDeities
+            ? "Deities are only valid for the Idols category."
             : true;
         }),
     }),
