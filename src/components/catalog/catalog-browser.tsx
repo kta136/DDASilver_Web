@@ -101,12 +101,6 @@ export function CatalogBrowser({
       : "";
   });
   const deferredQuery = useDeferredValue(query);
-  const urlOptions = useMemo(
-    () => ({
-      categorySlugs: categories.map((item) => item.slug),
-    }),
-    [categories],
-  );
   const filterAvailability = useMemo(
     () => getCatalogFilterAvailability(products, category),
     [products, category],
@@ -117,6 +111,12 @@ export function CatalogBrowser({
         filterAvailability.categorySlugs.has(item.slug),
       ),
     [categories, filterAvailability],
+  );
+  const urlOptions = useMemo(
+    () => ({
+      categorySlugs: availableCategories.map((item) => item.slug),
+    }),
+    [availableCategories],
   );
   const availablePurityOptions = productPurityOptions.filter(([value]) =>
     filterAvailability.purities.has(value),

@@ -27,7 +27,9 @@ export default async function ProductsPage({
     }
   }
   const initialFilters = parseCatalogSearchParams(normalizedSearchParams, {
-    categorySlugs: categories.map((item) => item.slug),
+    categorySlugs: [
+      ...new Set(products.map((product) => product.categorySlug)),
+    ],
   });
 
   return (
