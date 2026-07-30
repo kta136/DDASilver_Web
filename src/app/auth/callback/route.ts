@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import {
   authConfig,
+  authCookiesSecure,
   authOrigin,
   authTransactionCookie,
   isAuthConfigured,
@@ -25,13 +26,7 @@ const tokenResponseSchema = z.object({
 export async function GET(request: Request) {
   const rateLimit = checkRateLimit(request, "auth-callback", 20, 60_000);
   if (!rateLimit.allowed) {
-    return Response.json(
-      { error: "Too many callback attempts." },
-      {
-        status: 429,
-        headers: { "Retry-After": String(rateLimit.retryAfter) },
-      },
-    );
+    return loginFailure("temporarily_unavailable");
   }
 
   if (
@@ -40,10 +35,7 @@ export async function GET(request: Request) {
     !authConfig.clientId ||
     !authConfig.clientSecret
   ) {
-    return Response.json(
-      { error: "Shared account login is not configured." },
-      { status: 503 },
-    );
+    return loginFailure("not_configured");
   }
 
   const requestUrl = new URL(request.url);
@@ -61,10 +53,7 @@ export async function GET(request: Request) {
     !safeEqual(state, transaction.state)
   ) {
     cookieStore.delete(authTransactionCookie);
-    return Response.json(
-      { error: "The login handoff is invalid or has expired." },
-      { status: 400 },
-    );
+    return loginFailure("handoff_failed");
   }
 
   const callbackUrl = new URL("/auth/callback", authOrigin);
@@ -89,18 +78,12 @@ export async function GET(request: Request) {
     });
   } catch {
     cookieStore.delete(authTransactionCookie);
-    return Response.json(
-      { error: "DDAJewels login is temporarily unavailable." },
-      { status: 502 },
-    );
+    return loginFailure("temporarily_unavailable");
   }
 
   if (!tokenResponse.ok) {
     cookieStore.delete(authTransactionCookie);
-    return Response.json(
-      { error: "DDAJewels rejected or could not complete the login handoff." },
-      { status: 502 },
-    );
+    return loginFailure("handoff_failed");
   }
 
   let tokenPayload: unknown;
@@ -108,10 +91,7 @@ export async function GET(request: Request) {
     tokenPayload = await readBoundedJson(tokenResponse);
   } catch {
     cookieStore.delete(authTransactionCookie);
-    return Response.json(
-      { error: "The DDAJewels token response failed validation." },
-      { status: 502 },
-    );
+    return loginFailure("handoff_failed");
   }
   const parsed = tokenResponseSchema.safeParse(tokenPayload);
   if (
@@ -119,20 +99,25 @@ export async function GET(request: Request) {
     !safeEqual(parsed.data.nonce, transaction.nonce)
   ) {
     cookieStore.delete(authTransactionCookie);
-    return Response.json(
-      { error: "The DDAJewels token response failed validation." },
-      { status: 502 },
-    );
+    return loginFailure("handoff_failed");
   }
 
   cookieStore.delete(authTransactionCookie);
   cookieStore.set(sessionCookie, parsed.data.session_token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: authCookiesSecure,
     sameSite: "lax",
     path: "/",
     maxAge: parsed.data.expires_in,
   });
 
   return NextResponse.redirect(new URL(transaction.returnTo, authOrigin));
+}
+
+function loginFailure(
+  error: "handoff_failed" | "not_configured" | "temporarily_unavailable",
+) {
+  const url = new URL("/login", authOrigin);
+  url.searchParams.set("error", error);
+  return NextResponse.redirect(url);
 }

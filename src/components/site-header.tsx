@@ -1,10 +1,16 @@
 "use client";
 
-import { ListIcon, XIcon } from "@phosphor-icons/react";
+import {
+  CaretDownIcon,
+  ListIcon,
+  SignOutIcon,
+  UserCircleIcon,
+  XIcon,
+} from "@phosphor-icons/react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
 
@@ -16,46 +22,109 @@ const navigation = [
   { label: "Contact", href: "/contact" },
 ];
 
+type AccountState =
+  | { status: "guest" }
+  | { status: "user"; name: string; authStatus: string };
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [account, setAccount] = useState<AccountState>({ status: "guest" });
+
+  useEffect(() => {
+    let active = true;
+    async function loadAccount() {
+      try {
+        const response = await fetch("/api/auth/me", {
+          credentials: "include",
+          cache: "no-store",
+        });
+        if (!response.ok) return;
+        const payload = (await response.json()) as {
+          user?: { name?: unknown; authStatus?: unknown } | null;
+        };
+        if (!active) return;
+        const name =
+          typeof payload.user?.name === "string"
+            ? payload.user.name.trim()
+            : "";
+        if (!name) {
+          setAccount({ status: "guest" });
+          return;
+        }
+        setAccount({
+          status: "user",
+          name,
+          authStatus:
+            typeof payload.user?.authStatus === "string"
+              ? payload.user.authStatus
+              : "approved",
+        });
+      } catch {
+        // The public website remains usable while account status is unavailable.
+      }
+    }
+    void loadAccount();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function logout() {
+    try {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+    } finally {
+      setAccount({ status: "guest" });
+      setIsOpen(false);
+    }
+  }
 
   return (
     <header className="relative z-40 border-b border-line bg-paper/95 backdrop-blur">
       <div className="site-container flex min-h-20 items-center justify-between gap-6 min-[90rem]:min-h-[6.25rem]">
         <BrandMark />
 
-        <nav aria-label="Primary navigation" className="hidden lg:block">
-          <ul className="flex items-center gap-9">
-            {navigation.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+        <div className="hidden items-center gap-7 lg:flex">
+          <nav aria-label="Primary navigation">
+            <ul className="flex items-center gap-9">
+              {navigation.map((item) => {
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
 
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive ? "page" : undefined}
-                    className={clsx(
-                      "relative py-3 text-sm font-semibold no-underline transition-colors hover:text-copper-dark",
-                      isActive ? "text-ink" : "text-ink-muted",
-                    )}
-                  >
-                    {item.label}
-                    {isActive ? (
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-x-0 bottom-1 h-px bg-copper"
-                      />
-                    ) : null}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
+                      className={clsx(
+                        "relative py-3 text-sm font-semibold no-underline transition-colors hover:text-copper-dark",
+                        isActive ? "text-ink" : "text-ink-muted",
+                      )}
+                    >
+                      {item.label}
+                      {isActive ? (
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-x-0 bottom-1 h-px bg-copper"
+                        />
+                      ) : null}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+          <DesktopAccount
+            account={account}
+            pathname={pathname}
+            onLogout={logout}
+          />
+        </div>
 
         <button
           type="button"
@@ -78,6 +147,14 @@ export function SiteHeader() {
         )}
       >
         <ul className="site-container grid">
+          <li className="border-b border-line pb-4">
+            <MobileAccount
+              account={account}
+              pathname={pathname}
+              onLogin={() => setIsOpen(false)}
+              onLogout={logout}
+            />
+          </li>
           {navigation.map((item) => (
             <li key={item.href} className="border-b border-line last:border-b-0">
               <Link
@@ -94,4 +171,135 @@ export function SiteHeader() {
       </nav>
     </header>
   );
+}
+
+function DesktopAccount({
+  account,
+  pathname,
+  onLogout,
+}: {
+  account: AccountState;
+  pathname: string;
+  onLogout: () => Promise<void>;
+}) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function closeMenu(event: PointerEvent) {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("pointerdown", closeMenu);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("pointerdown", closeMenu);
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
+  if (account.status === "guest") {
+    return (
+      <a
+        href={loginHref(pathname)}
+        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-copper px-5 py-2 text-sm font-bold text-ink no-underline transition-colors hover:bg-copper hover:text-white"
+        data-analytics="login_start"
+        data-analytics-placement="header"
+      >
+        <UserCircleIcon size={19} aria-hidden="true" />
+        Login
+      </a>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className="relative">
+      <button
+        type="button"
+        className="inline-flex min-h-11 max-w-48 items-center gap-2 rounded-full border border-copper px-4 py-2 text-sm font-bold text-ink"
+        aria-label={`Account menu for ${account.name}`}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((current) => !current)}
+      >
+        <UserCircleIcon size={19} aria-hidden="true" />
+        <span className="truncate">{account.name}</span>
+        <CaretDownIcon size={14} aria-hidden="true" />
+      </button>
+      {open ? (
+        <div
+          role="menu"
+          className="absolute right-0 top-[calc(100%+0.65rem)] min-w-56 border border-line bg-paper p-2 shadow-[0_18px_35px_rgba(36,32,28,0.14)]"
+        >
+          <p className="px-3 py-2 text-xs text-ink-muted">
+            Signed in through DDAJewels
+          </p>
+          <button
+            type="button"
+            role="menuitem"
+            className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-sm font-semibold hover:bg-paper-strong"
+            onClick={() => void onLogout()}
+          >
+            <SignOutIcon size={18} aria-hidden="true" />
+            Logout
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function MobileAccount({
+  account,
+  pathname,
+  onLogin,
+  onLogout,
+}: {
+  account: AccountState;
+  pathname: string;
+  onLogin: () => void;
+  onLogout: () => Promise<void>;
+}) {
+  if (account.status === "guest") {
+    return (
+      <a
+        href={loginHref(pathname)}
+        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-copper px-5 py-3 font-bold text-white no-underline"
+        data-analytics="login_start"
+        data-analytics-placement="mobile_menu"
+        onClick={onLogin}
+      >
+        <UserCircleIcon size={20} aria-hidden="true" />
+        Login
+      </a>
+    );
+  }
+
+  return (
+    <div className="grid gap-3 border-t border-line pt-4">
+      <p className="flex items-center gap-2 font-semibold">
+        <UserCircleIcon size={20} aria-hidden="true" />
+        <span className="truncate">{account.name}</span>
+      </p>
+      <button
+        type="button"
+        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-copper px-5 py-3 font-bold text-ink"
+        onClick={() => void onLogout()}
+      >
+        <SignOutIcon size={19} aria-hidden="true" />
+        Logout
+      </button>
+    </div>
+  );
+}
+
+function loginHref(pathname: string) {
+  const returnTo =
+    pathname.startsWith("/") && !pathname.startsWith("//") ? pathname : "/";
+  return `/api/auth/login?returnTo=${encodeURIComponent(returnTo)}`;
 }

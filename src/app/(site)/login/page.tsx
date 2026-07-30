@@ -16,7 +16,24 @@ export const metadata = createPageMetadata({
   noIndex: true,
 });
 
-export default function LoginPage() {
+type LoginPageProps = {
+  searchParams: Promise<{ error?: string | string[] }>;
+};
+
+const loginErrors: Record<string, string> = {
+  handoff_failed:
+    "The secure login handoff could not be completed. Please try again.",
+  not_configured: "Shared login is not configured for this environment.",
+  temporarily_unavailable:
+    "DDAJewels login is temporarily unavailable. Please try again shortly.",
+};
+
+export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const params = await searchParams;
+  const errorCode =
+    typeof params.error === "string" ? params.error : params.error?.[0];
+  const errorMessage = errorCode ? loginErrors[errorCode] : undefined;
+
   return (
     <main id="main-content" className="section-shell">
       <div className="site-container grid gap-8 lg:grid-cols-[1fr_30rem] lg:items-start">
@@ -43,6 +60,14 @@ export default function LoginPage() {
             Your existing DDAJewels account is preserved. DDA Silver never
             stores your password.
           </p>
+          {errorMessage ? (
+            <div
+              role="alert"
+              className="mt-5 border border-copper/35 bg-[#fff7f4] p-4 text-sm leading-6 text-ink-muted"
+            >
+              {errorMessage}
+            </div>
+          ) : null}
           {isAuthConfigured ? (
             <a
               href="/api/auth/login?returnTo=%2Frates"

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import {
   authConfig,
+  authCookiesSecure,
   authOrigin,
   authTransactionCookie,
   isAuthConfigured,
@@ -54,7 +55,7 @@ export async function GET(request: Request) {
     signAuthTransaction(transaction),
     {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: authCookiesSecure,
       sameSite: "lax",
       path: "/",
       maxAge: 10 * 60,
