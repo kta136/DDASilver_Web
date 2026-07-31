@@ -8,8 +8,11 @@ import { getCliClient } from "sanity/cli";
 const client = getCliClient({ apiVersion: "2026-07-30" });
 
 const categoryId = "category-idols";
-const applyChanges = process.argv.includes("--apply");
-const overwriteExisting = process.argv.includes("--overwrite");
+const applyChanges =
+  process.argv.includes("--apply") || process.env.SANITY_IDOL_APPLY === "1";
+const overwriteExisting =
+  process.argv.includes("--overwrite") ||
+  process.env.SANITY_IDOL_OVERWRITE === "1";
 
 type IdolProduct = {
   number: number;
@@ -26,7 +29,7 @@ type IdolProduct = {
   imagePath: string;
 };
 
-const idolProducts = [
+const staticIdolProducts: readonly IdolProduct[] = [
   {
     number: 1,
     id: "product-dda-idol-01-bal-krishna-laddu-gopal",
@@ -336,7 +339,239 @@ const idolProducts = [
     imagePath:
       "public/images/silver-idols/new-designs-2026-07-30/idol-19-seated-kuber-15g-2in.png",
   },
-] satisfies readonly IdolProduct[];
+  {
+    number: 20,
+    id: "product-dda-idol-20-bal-krishna-butter-pot",
+    codeFamily: "BK",
+    assignedItemCode: "HM-BK-6",
+    title: "Bal Krishna Silver Idol with Butter Pot",
+    slug: "bal-krishna-silver-idol-with-butter-pot",
+    description:
+      "A hollow 99.80% pure silver Bal Krishna idol seated beside a butter pot.",
+    alt: "Bal Krishna silver idol with a butter pot on a warm ivory DDA Silver background",
+    weightGrams: 32,
+    heightInches: 3,
+    deityIds: ["deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-20-bal-krishna-butter-pot-32g-3in.png",
+  },
+  {
+    number: 21,
+    id: "product-dda-idol-21-guru-nanak-seated",
+    codeFamily: "NK",
+    assignedItemCode: "HM-NK-1",
+    title: "Seated Guru Nanak Silver Idol",
+    slug: "seated-guru-nanak-silver-idol",
+    description:
+      "A hollow 99.80% pure silver Guru Nanak idol in a seated blessing pose.",
+    alt: "Seated Guru Nanak silver idol on a warm ivory DDA Silver background",
+    weightGrams: 14,
+    heightInches: 3,
+    deityIds: ["deity-guru-nanak"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-21-guru-nanak-seated-14g-3in.png",
+  },
+  {
+    number: 22,
+    id: "product-dda-idol-22-radha-krishna-peacock",
+    codeFamily: "RK",
+    assignedItemCode: "HM-RK-1",
+    title: "Radha Krishna Silver Idol with Peacock",
+    slug: "radha-krishna-silver-idol-with-peacock",
+    description:
+      "A hollow 99.80% pure silver Radha Krishna idol group with a peacock.",
+    alt: "Radha Krishna silver idol with a peacock on a warm ivory DDA Silver background",
+    weightGrams: 15,
+    heightInches: 2,
+    deityIds: ["deity-radha", "deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-22-radha-krishna-peacock-15g-2in.png",
+  },
+  {
+    number: 23,
+    id: "product-dda-idol-23-bal-krishna-painted",
+    codeFamily: "BK",
+    assignedItemCode: "HM-BK-7",
+    title: "Painted Bal Krishna Silver Idol with Butter Pot",
+    slug: "painted-bal-krishna-silver-idol-with-butter-pot",
+    description:
+      "A hollow 99.80% pure silver Bal Krishna idol with hand-painted details and a butter pot.",
+    alt: "Painted Bal Krishna silver idol with a butter pot on a warm ivory DDA Silver background",
+    weightGrams: 15,
+    heightInches: 2.5,
+    deityIds: ["deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-23-bal-krishna-painted-15g-2-5in.png",
+  },
+  {
+    number: 24,
+    id: "product-dda-idol-24-radha-krishna-painted-peacock",
+    codeFamily: "RK",
+    assignedItemCode: "HM-RK-2",
+    title: "Painted Radha Krishna Silver Idol with Peacock",
+    slug: "painted-radha-krishna-silver-idol-with-peacock",
+    description:
+      "A hollow 99.80% pure silver Radha Krishna idol group with hand-painted details and a peacock.",
+    alt: "Painted Radha Krishna silver idol with a peacock on a warm ivory DDA Silver background",
+    weightGrams: 15,
+    heightInches: 2,
+    deityIds: ["deity-radha", "deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-24-radha-krishna-painted-peacock-15g-2in.png",
+  },
+  {
+    number: 25,
+    id: "product-dda-idol-25-durga-lion-painted",
+    codeFamily: "DG",
+    assignedItemCode: "HM-DG-1",
+    title: "Painted Durga Silver Idol on Lion",
+    slug: "painted-durga-silver-idol-on-lion",
+    description:
+      "A hollow 99.80% pure silver Durga idol riding a lion with hand-painted devotional details.",
+    alt: "Painted Durga silver idol riding a lion on a warm ivory DDA Silver background",
+    weightGrams: 17,
+    heightInches: 2.5,
+    deityIds: ["deity-durga"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-25-durga-lion-painted-17g-2-5in.png",
+  },
+  {
+    number: 26,
+    id: "product-dda-idol-26-jagannath-trio-painted",
+    codeFamily: "JG",
+    assignedItemCode: "HM-JG-1",
+    title: "Painted Jagannath Balabhadra Subhadra Silver Idol",
+    slug: "painted-jagannath-balabhadra-subhadra-silver-idol",
+    description:
+      "A hollow 99.80% pure silver Jagannath, Balabhadra, and Subhadra idol trio with hand-painted details.",
+    alt: "Painted Jagannath Balabhadra and Subhadra silver idol trio on a warm ivory DDA Silver background",
+    weightGrams: 40,
+    heightInches: 2.5,
+    deityIds: ["deity-jagannath", "deity-balabhadra", "deity-subhadra"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-26-jagannath-trio-painted-40g-2-5in.png",
+  },
+  {
+    number: 27,
+    id: "product-dda-idol-27-kamdhenu-om-painted",
+    codeFamily: "KM",
+    assignedItemCode: "HM-KM-1",
+    title: "Painted Kamdhenu Silver Idol with Om Blanket",
+    slug: "painted-kamdhenu-silver-idol-with-om-blanket",
+    description:
+      "A hollow 99.80% pure silver Kamdhenu cow and calf idol with a hand-painted Om blanket.",
+    alt: "Painted Kamdhenu cow and calf silver idol with an Om blanket on a warm ivory DDA Silver background",
+    weightGrams: 35,
+    heightInches: 2.5,
+    deityIds: ["deity-kamdhenu"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-27-kamdhenu-om-calf-painted-35g-2-5in.png",
+  },
+  {
+    number: 28,
+    id: "product-dda-idol-28-shivling-cobra",
+    codeFamily: "SH",
+    assignedItemCode: "HM-SH-4",
+    title: "Shivling Silver Idol with Cobra",
+    slug: "shivling-silver-idol-with-cobra",
+    description:
+      "A hollow 99.80% pure silver Shivling idol with a cobra rising behind the lingam.",
+    alt: "Shivling silver idol with a cobra on a warm ivory DDA Silver background",
+    weightGrams: 15,
+    heightInches: 2.5,
+    deityIds: ["deity-shiva"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-28-shivling-cobra-15g-2-5in.png",
+  },
+  {
+    number: 29,
+    id: "product-dda-idol-29-saraswati-lotus-veena",
+    codeFamily: "SR",
+    assignedItemCode: "HM-SR-2",
+    title: "Saraswati Silver Idol on Lotus with Veena",
+    slug: "saraswati-silver-idol-on-lotus-with-veena",
+    description:
+      "A hollow 99.80% pure silver Saraswati idol seated on a lotus with a veena.",
+    alt: "Saraswati silver idol seated on a lotus with a veena on a warm ivory DDA Silver background",
+    weightGrams: 55,
+    heightInches: 3.5,
+    deityIds: ["deity-saraswati"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-29-saraswati-lotus-veena-55g-3-5in.png",
+  },
+  {
+    number: 30,
+    id: "product-dda-idol-30-radha-krishna-standing-painted",
+    codeFamily: "RK",
+    assignedItemCode: "HM-RK-3",
+    title: "Painted Standing Radha Krishna Silver Idol",
+    slug: "painted-standing-radha-krishna-silver-idol",
+    description:
+      "A hollow 99.80% pure silver standing Radha Krishna idol group with hand-painted details.",
+    alt: "Painted standing Radha Krishna silver idol on a warm ivory DDA Silver background",
+    weightGrams: 15,
+    heightInches: 3,
+    deityIds: ["deity-radha", "deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-30-radha-krishna-standing-painted-15g-3in.png",
+  },
+  {
+    number: 31,
+    id: "product-dda-idol-31-crawling-bal-krishna-large",
+    codeFamily: "BK",
+    assignedItemCode: "HM-BK-8",
+    title: "Large Crawling Bal Krishna Silver Idol",
+    slug: "large-crawling-bal-krishna-silver-idol",
+    description:
+      "A hollow 99.80% pure silver crawling Bal Krishna idol with hand-painted devotional details.",
+    alt: "Large crawling Bal Krishna silver idol on a warm ivory DDA Silver background",
+    weightGrams: 65,
+    heightInches: 5,
+    deityIds: ["deity-krishna"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-31-crawling-bal-krishna-large-65g-5in.png",
+  },
+  {
+    number: 32,
+    id: "product-dda-idol-32-lakshmi-narayan-standing-painted",
+    codeFamily: "LN",
+    assignedItemCode: "HM-LN-2",
+    title: "Painted Standing Lakshmi Narayan Silver Idol Set",
+    slug: "painted-standing-lakshmi-narayan-silver-idol-set",
+    description:
+      "A hollow 99.80% pure silver standing Lakshmi Narayan idol set with hand-painted details.",
+    alt: "Painted standing Lakshmi Narayan silver idol set on a warm ivory DDA Silver background",
+    weightGrams: 35,
+    heightInches: 3.5,
+    deityIds: ["deity-lakshmi", "deity-vishnu"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-32-lakshmi-narayan-standing-painted-35g-3-5in.png",
+  },
+  {
+    number: 33,
+    id: "product-dda-idol-33-kamdhenu-yellow-blanket-painted",
+    codeFamily: "KM",
+    assignedItemCode: "HM-KM-2",
+    title: "Painted Kamdhenu Silver Idol with Yellow Blanket",
+    slug: "painted-kamdhenu-silver-idol-with-yellow-blanket",
+    description:
+      "A hollow 99.80% pure silver Kamdhenu cow and calf idol with a hand-painted yellow blanket.",
+    alt: "Painted Kamdhenu cow and calf silver idol with a yellow blanket on a warm ivory DDA Silver background",
+    weightGrams: 40,
+    heightInches: 2.5,
+    deityIds: ["deity-kamdhenu"],
+    imagePath:
+      "public/images/silver-idols/new-designs-2026-07-31/idol-33-kamdhenu-yellow-blanket-painted-40g-2-5in.png",
+  },
+];
+
+type IdolManifest = {
+  categoryId?: string;
+  purity?: string;
+  idolConstruction?: string;
+  readyForUpload?: boolean;
+  products?: unknown;
+};
 
 type ExistingDocument = {
   _id: string;
@@ -360,6 +595,60 @@ type Summary = {
 };
 
 const itemCodePattern = /^HM-([A-Z]{2})-([1-9][0-9]*)$/;
+const assetUploadConcurrency = 3;
+
+function getManifestPath() {
+  const argument = process.argv.find((value) => value.startsWith("--manifest="));
+  return (
+    process.env.SANITY_IDOL_MANIFEST ??
+    argument?.slice("--manifest=".length)
+  );
+}
+
+async function loadIdolProducts() {
+  const manifestPath = getManifestPath();
+  if (!manifestPath) {
+    return {
+      products: staticIdolProducts,
+      source: "built-in 33-product catalog",
+      expectedCount: staticIdolProducts.length,
+    };
+  }
+
+  const absolutePath = resolve(process.cwd(), manifestPath);
+  const manifest = JSON.parse(
+    await readFile(absolutePath, "utf8"),
+  ) as IdolManifest;
+
+  if (manifest.categoryId && manifest.categoryId !== categoryId) {
+    throw new Error(
+      `Manifest category must be "${categoryId}", received "${manifest.categoryId}".`,
+    );
+  }
+  if (manifest.purity && manifest.purity !== "99.80") {
+    throw new Error('Manifest purity must be "99.80".');
+  }
+  if (
+    manifest.idolConstruction &&
+    manifest.idolConstruction !== "hollow"
+  ) {
+    throw new Error('Manifest idolConstruction must be "hollow".');
+  }
+  if (manifest.readyForUpload === false) {
+    throw new Error(
+      "Manifest is marked as not ready for upload. Resolve its review items first.",
+    );
+  }
+  if (!Array.isArray(manifest.products) || manifest.products.length === 0) {
+    throw new Error("Manifest must contain a non-empty products array.");
+  }
+
+  return {
+    products: manifest.products as IdolProduct[],
+    source: absolutePath,
+    expectedCount: manifest.products.length,
+  };
+}
 
 function getItemName(product: IdolProduct, itemCode: string) {
   return `${itemCode} — ${product.title}`;
@@ -558,16 +847,29 @@ async function getOrUploadImage(
 function validateProductDefinitions(products: readonly IdolProduct[]) {
   const ids = new Set<string>();
   const slugs = new Set<string>();
+  const numbers = new Set<number>();
 
-  if (products.length !== 19) {
-    throw new Error(`Expected 19 idol products, received ${products.length}.`);
+  if (products.length === 0) {
+    throw new Error("At least one idol product is required.");
   }
 
   for (const product of products) {
     const description = getProductDescription(product);
 
+    if (!Number.isInteger(product.number) || product.number < 1) {
+      throw new Error(`Product number must be a positive integer: ${product.id}`);
+    }
+    if (numbers.has(product.number)) {
+      throw new Error(`Duplicate product number: ${product.number}`);
+    }
     if (ids.has(product.id)) {
       throw new Error(`Duplicate product ID: ${product.id}`);
+    }
+    if (!Number.isFinite(product.weightGrams) || product.weightGrams <= 0) {
+      throw new Error(`Product weight is invalid: ${product.id}`);
+    }
+    if (!Number.isFinite(product.heightInches) || product.heightInches <= 0) {
+      throw new Error(`Product height is invalid: ${product.id}`);
     }
     if (slugs.has(product.slug)) {
       throw new Error(`Duplicate product slug: ${product.slug}`);
@@ -597,9 +899,38 @@ function validateProductDefinitions(products: readonly IdolProduct[]) {
     if (product.deityIds.length === 0) {
       throw new Error(`At least one deity is required: ${product.id}`);
     }
+    numbers.add(product.number);
     ids.add(product.id);
     slugs.add(product.slug);
   }
+}
+
+async function mapWithConcurrency<TInput, TOutput>(
+  items: readonly TInput[],
+  concurrency: number,
+  operation: (item: TInput, index: number) => Promise<TOutput>,
+) {
+  const results = new Array<TOutput>(items.length);
+  let nextIndex = 0;
+
+  async function worker() {
+    while (true) {
+      const index = nextIndex;
+      nextIndex += 1;
+      if (index >= items.length) {
+        return;
+      }
+      results[index] = await operation(items[index], index);
+    }
+  }
+
+  await Promise.all(
+    Array.from(
+      { length: Math.min(concurrency, items.length) },
+      () => worker(),
+    ),
+  );
+  return results;
 }
 
 async function assertConfiguredTarget() {
@@ -683,7 +1014,17 @@ async function validateInputs(products: readonly IdolProduct[]) {
 }
 
 async function main() {
+  const {
+    products: idolProducts,
+    source,
+    expectedCount,
+  } = await loadIdolProducts();
   validateProductDefinitions(idolProducts);
+  if (idolProducts.length !== expectedCount) {
+    throw new Error(
+      `Expected ${expectedCount} idol products, received ${idolProducts.length}.`,
+    );
+  }
   const { projectId, dataset } = await assertConfiguredTarget();
   await validateInputs(idolProducts);
 
@@ -700,6 +1041,7 @@ async function main() {
   validateItemCodeAllocation(idolProducts, itemCodeByProductId);
 
   console.log(`Target: ${projectId}/${dataset}`);
+  console.log(`Product source: ${source}`);
 
   if (!applyChanges) {
     console.log("\nDry run only. No assets or documents will be written.");
@@ -744,6 +1086,13 @@ async function main() {
     skippedProducts: 0,
   };
 
+  const uploadActions: Array<{
+    product: IdolProduct;
+    existingProduct?: ExistingDocument;
+    itemCode: string;
+    itemName: string;
+  }> = [];
+
   for (const product of idolProducts) {
     const existingProduct = existingById.get(product.id);
     const itemCode = itemCodeByProductId.get(product.id);
@@ -760,49 +1109,67 @@ async function main() {
       continue;
     }
 
-    const absolutePath = resolve(process.cwd(), product.imagePath);
-    const assetId = await getOrUploadImage(
-      absolutePath,
-      itemName,
-      summary,
-    );
+    uploadActions.push({ product, existingProduct, itemCode, itemName });
+  }
 
-    await client.createOrReplace({
-      _id: product.id,
-      _type: "product",
-      title: itemName,
-      slug: {
-        _type: "slug",
-        current: product.slug,
-      },
-      shortDescription: getProductDescription(product),
-      gallery: [
-        {
-          _key: getGalleryKey(product),
-          _type: "image",
-          asset: {
-            _type: "reference",
-            _ref: assetId,
-          },
-          alt: product.alt,
+  const productDocuments = await mapWithConcurrency(
+    uploadActions,
+    assetUploadConcurrency,
+    async ({ product, itemCode, itemName }) => {
+      const absolutePath = resolve(process.cwd(), product.imagePath);
+      const assetId = await getOrUploadImage(
+        absolutePath,
+        itemName,
+        summary,
+      );
+
+      return {
+        _id: product.id,
+        _type: "product" as const,
+        title: itemName,
+        slug: {
+          _type: "slug" as const,
+          current: product.slug,
         },
-      ],
-      category: {
-        _type: "reference",
-        _ref: categoryId,
-      },
-      purity: "99.80",
-      idolConstruction: "hollow",
-      deities: product.deityIds.map((deityId) => ({
-        _key: deityId,
-        _type: "reference",
-        _ref: deityId,
-      })),
-      featured: false,
-      displayOrder: 390 + product.number * 10,
-      reference: itemCode,
-    });
+        shortDescription: getProductDescription(product),
+        gallery: [
+          {
+            _key: getGalleryKey(product),
+            _type: "image" as const,
+            asset: {
+              _type: "reference" as const,
+              _ref: assetId,
+            },
+            alt: product.alt,
+          },
+        ],
+        category: {
+          _type: "reference" as const,
+          _ref: categoryId,
+        },
+        purity: "99.80",
+        idolConstruction: "hollow",
+        deities: product.deityIds.map((deityId) => ({
+          _key: deityId,
+          _type: "reference" as const,
+          _ref: deityId,
+        })),
+        featured: false,
+        displayOrder: 390 + product.number * 10,
+        reference: itemCode,
+      };
+    },
+  );
 
+  if (productDocuments.length > 0) {
+    let transaction = client.transaction();
+    for (const document of productDocuments) {
+      transaction = transaction.createOrReplace(document);
+    }
+    await transaction.commit();
+  }
+
+  for (const { product, existingProduct, itemName } of uploadActions) {
     if (existingProduct) {
       summary.replacedProducts += 1;
       console.log(`Replaced ${itemName} (${product.id})`);

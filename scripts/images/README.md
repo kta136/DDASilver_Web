@@ -28,3 +28,12 @@ The manifest defines the output canvas and one crop for each weight:
 The script validates every crop against its source image before writing any
 files. Adjust the manifest for a new coin series, then add that series to
 `scripts/sanity/upload-coin-products.ts`.
+
+## Idol image workflow
+
+Use `process-idol-batch.mjs` for idol photos. It extracts measurements with
+OCR, removes backgrounds through one reusable local rembg session, composites
+the cutouts onto the fixed DDA Silver template, and writes an upload-ready
+Sanity manifest.
+
+See `docs/idol-image-pipeline.md` for the catalog format and commands.

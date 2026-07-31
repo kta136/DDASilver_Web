@@ -1,0 +1,17 @@
+{
+  "batchId": "new-designs-2026-08-01",
+  "startingNumber": 34,
+  "products": [
+    {
+      "sourceFilename": "photo-01.jpeg",
+      "codeFamily": "GN",
+      "title": "Ganesha Silver Idol",
+      "slug": "ganesha-silver-idol",
+      "description": "A hollow 99.80% pure silver Ganesha idol for devotional display.",
+      "alt": "Ganesha silver idol on a warm ivory DDA Silver background",
+      "deityIds": [
+        "deity-ganesha"
+      ]
+    }
+  ]
+}

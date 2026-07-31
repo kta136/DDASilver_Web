@@ -27,12 +27,54 @@ test("discovers a product and opens its enquiry path", async ({ page }) => {
   await page
     .getByRole("searchbox", { name: "Search products" })
     .fill("silver");
+  await expect(page).toHaveURL(/\/products\?q=silver$/);
+  const catalogUrl = page.url();
   const firstProduct = page.locator('article a[href^="/products/"]').first();
+  const productPath = await firstProduct.getAttribute("href");
   await expect(firstProduct).toBeVisible();
   await firstProduct.click();
+
+  await expect(page).toHaveURL(new RegExp(`${productPath}$`));
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Confirm availability on WhatsApp" }),
+    dialog.getByRole("link", { name: "Confirm availability on WhatsApp" }),
   ).toHaveAttribute("href", /wa\.me/);
+  await expect(
+    page.getByRole("searchbox", { name: "Search products" }),
+  ).toHaveValue("silver");
+
+  await page.getByRole("button", { name: "Close product details" }).click();
+  await expect(page).toHaveURL(catalogUrl);
+  await expect(dialog).not.toBeVisible();
+
+  await firstProduct.click();
+  await expect(dialog).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL(catalogUrl);
+  await expect(dialog).not.toBeVisible();
+
+  await page.goForward();
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(catalogUrl);
+  await expect(dialog).not.toBeVisible();
+});
+
+test("product detail overlay fits a phone viewport", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/products");
+  await page.locator('article a[href^="/products/"]').first().click();
+
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  const box = await dialog.boundingBox();
+
+  expect(box).not.toBeNull();
+  expect(box!.x).toBeGreaterThanOrEqual(0);
+  expect(box!.y).toBeGreaterThanOrEqual(0);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(390);
+  expect(box!.y + box!.height).toBeLessThanOrEqual(844);
 });
 
 test("keeps catalog filters in a reloadable share URL", async ({ page }) => {

@@ -31,6 +31,50 @@ const deities = [
     slug: "kartikeya",
     displayOrder: 12,
   },
+  { _id: "deity-radha", title: "Radha", slug: "radha", displayOrder: 13 },
+  { _id: "deity-durga", title: "Durga", slug: "durga", displayOrder: 14 },
+  {
+    _id: "deity-guru-nanak",
+    title: "Guru Nanak",
+    slug: "guru-nanak",
+    displayOrder: 15,
+  },
+  {
+    _id: "deity-jagannath",
+    title: "Jagannath",
+    slug: "jagannath",
+    displayOrder: 16,
+  },
+  {
+    _id: "deity-balabhadra",
+    title: "Balabhadra",
+    slug: "balabhadra",
+    displayOrder: 17,
+  },
+  {
+    _id: "deity-subhadra",
+    title: "Subhadra",
+    slug: "subhadra",
+    displayOrder: 18,
+  },
+  {
+    _id: "deity-kamdhenu",
+    title: "Kamdhenu",
+    slug: "kamdhenu",
+    displayOrder: 19,
+  },
+  {
+    _id: "deity-laughing-buddha",
+    title: "Laughing Buddha",
+    slug: "laughing-buddha",
+    displayOrder: 20,
+  },
+  {
+    _id: "deity-maharaja-agrasen",
+    title: "Maharaja Agrasen",
+    slug: "maharaja-agrasen",
+    displayOrder: 21,
+  },
 ] as const;
 
 async function main() {

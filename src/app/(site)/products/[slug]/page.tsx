@@ -1,16 +1,11 @@
-import { WhatsappLogoIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/catalog/product-card";
+import { ProductDetails } from "@/components/catalog/product-details";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
-import {
-  coinShapeLabels,
-  idolConstructionLabels,
-  purityLabels,
-} from "@/lib/catalog-labels";
 import {
   createPageMetadata,
   getProductSeoName,
@@ -18,7 +13,6 @@ import {
   toAbsoluteUrl,
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import {
   getCatalog,
   getProduct,
@@ -163,91 +157,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div className="lg:sticky lg:top-10 lg:self-start">
-          <p className="eyebrow">{category?.title ?? "DDA Silver"}</p>
-          <h1 className="font-display text-balance mt-4 text-6xl font-semibold leading-[0.9] sm:text-7xl">
-            {product.title}
-          </h1>
-          {product.reference ? (
-            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-ink-muted">
-              Reference {product.reference}
-            </p>
-          ) : null}
-          {product.purity ||
-          product.idolConstruction ||
-          product.deities.length > 0 ||
-          product.coinShape ? (
-            <dl className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-line pt-5">
-              {product.purity ? (
-                <div>
-                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                    Purity
-                  </dt>
-                  <dd className="mt-1 text-sm font-semibold">
-                    {purityLabels[product.purity]}
-                  </dd>
-                </div>
-              ) : null}
-              {product.idolConstruction ? (
-                <div>
-                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                    Idol Construction
-                  </dt>
-                  <dd className="mt-1 text-sm font-semibold">
-                    {idolConstructionLabels[product.idolConstruction]}
-                  </dd>
-                </div>
-              ) : null}
-              {product.deities.length > 0 ? (
-                <div>
-                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                    {product.deities.length === 1 ? "Deity" : "Deities"}
-                  </dt>
-                  <dd className="mt-1 text-sm font-semibold">
-                    {product.deities
-                      .map((deity) => deity.title)
-                      .join(", ")}
-                  </dd>
-                </div>
-              ) : null}
-              {product.coinShape ? (
-                <div>
-                  <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                    Shape
-                  </dt>
-                  <dd className="mt-1 text-sm font-semibold">
-                    {coinShapeLabels[product.coinShape]}
-                  </dd>
-                </div>
-              ) : null}
-            </dl>
-          ) : null}
-          <p className="mt-7 text-lg leading-8 text-ink-muted">
-            {product.shortDescription}
-          </p>
-
-          <div className="mt-9 border-y border-line py-6">
-            <p className="text-sm font-bold">Browse and enquire</p>
-            <p className="mt-2 text-sm leading-6 text-ink-muted">
-              Product pricing and availability are not shown online. Confirm
-              availability on WhatsApp with the showroom team.
-            </p>
-          </div>
-
-          <a
-            href={buildWhatsAppProductUrl(product)}
-            target="_blank"
-            rel="noreferrer"
-            className="button-primary mt-8 w-full no-underline sm:w-auto"
-            data-analytics="whatsapp_click"
-            data-analytics-placement="product_detail"
-            data-analytics-product-slug={product.slug}
-          >
-            <WhatsappLogoIcon size={20} aria-hidden="true" />
-            Confirm availability on WhatsApp
-          </a>
-          <p className="mt-4 text-xs leading-5 text-ink-muted">
-            Your message includes this product title, reference, and page link.
-          </p>
+          <ProductDetails
+            product={product}
+            categoryTitle={category?.title}
+            headingLevel={1}
+            presentation="page"
+          />
         </div>
       </section>
 

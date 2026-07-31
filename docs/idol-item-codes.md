@@ -35,7 +35,16 @@ only in the product description.
 | `LN` | Lakshmi Narayan | Lakshmi Narayan group designs |
 | `SR` | Saraswati | All Saraswati designs |
 | `KB` | Kuber | All Kuber designs |
+| `NK` | Guru Nanak | All Guru Nanak designs |
+| `RK` | Radha Krishna | All Radha Krishna group designs |
+| `DG` | Durga | All Durga designs |
+| `JG` | Jagannath | Jagannath designs, including Balabhadra and Subhadra groups |
+| `KM` | Kamdhenu | All Kamdhenu cow-and-calf designs |
 | `LG` | Lakshmi Ganesh | Reserved for Lakshmi Ganesh group designs |
+| `LB` | Laughing Buddha | All Laughing Buddha designs |
+| `MA` | Maharaja Agrasen | All Maharaja Agrasen designs |
+| `EL` | Auspicious Elephant | All auspicious elephant designs |
+| `OW` | Auspicious Owl | All auspicious owl designs |
 
 `HN` is the only Hanuman code. Do not create separate codes for Panchmukhi,
 standing, seated, or other Hanuman forms.
@@ -57,7 +66,7 @@ other Shiva forms.
 Examples:
 
 - The next Ganesha item after `HM-GN-3` is `HM-GN-4`.
-- The next Shiva item after `HM-SH-3` is `HM-SH-4`.
+- The next Shiva item after `HM-SH-4` is `HM-SH-5`.
 - The next Hanuman item after `HM-HN-2` is `HM-HN-3`.
 - The first future Lakshmi Ganesh item is `HM-LG-1`.
 
@@ -84,6 +93,51 @@ Examples:
 | 17 | `HM-SR-1` | HM-SR-1 — Saraswati Silver Idol with Veena |
 | 18 | `HM-BK-5` | HM-BK-5 — Crawling Bal Krishna Silver Idol |
 | 19 | `HM-KB-1` | HM-KB-1 — Seated Kuber Silver Idol |
+| 20 | `HM-BK-6` | HM-BK-6 — Bal Krishna Silver Idol with Butter Pot |
+| 21 | `HM-NK-1` | HM-NK-1 — Seated Guru Nanak Silver Idol |
+| 22 | `HM-RK-1` | HM-RK-1 — Radha Krishna Silver Idol with Peacock |
+| 23 | `HM-BK-7` | HM-BK-7 — Painted Bal Krishna Silver Idol with Butter Pot |
+| 24 | `HM-RK-2` | HM-RK-2 — Painted Radha Krishna Silver Idol with Peacock |
+| 25 | `HM-DG-1` | HM-DG-1 — Painted Durga Silver Idol on Lion |
+| 26 | `HM-JG-1` | HM-JG-1 — Painted Jagannath Balabhadra Subhadra Silver Idol |
+| 27 | `HM-KM-1` | HM-KM-1 — Painted Kamdhenu Silver Idol with Om Blanket |
+| 28 | `HM-SH-4` | HM-SH-4 — Shivling Silver Idol with Cobra |
+| 29 | `HM-SR-2` | HM-SR-2 — Saraswati Silver Idol on Lotus with Veena |
+| 30 | `HM-RK-3` | HM-RK-3 — Painted Standing Radha Krishna Silver Idol |
+| 31 | `HM-BK-8` | HM-BK-8 — Large Crawling Bal Krishna Silver Idol |
+| 32 | `HM-LN-2` | HM-LN-2 — Painted Standing Lakshmi Narayan Silver Idol Set |
+| 33 | `HM-KM-2` | HM-KM-2 — Painted Kamdhenu Silver Idol with Yellow Blanket |
+| 34 | `HM-GN-4` | HM-GN-4 — Painted Four-Arm Ganesha Silver Idol on Lotus |
+| 35 | `HM-GN-5` | HM-GN-5 — Painted Ganesha Silver Idol with Pink Turban |
+| 36 | `HM-GN-6` | HM-GN-6 — Ganesha Silver Idol with Silver Turban |
+| 37 | `HM-GN-7` | HM-GN-7 — Painted Ganesha Silver Idol on Lotus with Orange Dhoti |
+| 38 | `HM-GN-8` | HM-GN-8 — Painted Seated Ganesha Silver Idol with Yellow Dhoti |
+| 39 | `HM-GN-9` | HM-GN-9 — Four-Arm Ganesha Silver Idol on Lotus |
+| 40 | `HM-GN-10` | HM-GN-10 — Painted Four-Arm Ganesha Silver Idol with Yellow Dhoti |
+| 41 | `HM-GN-11` | HM-GN-11 — Painted Four-Arm Ganesha Silver Idol with Red Stole |
+| 42 | `HM-GN-12` | HM-GN-12 — Painted Ganesha Silver Idol on Mushak |
+| 43 | `HM-GN-13` | HM-GN-13 — Five Ganesha Silver Idol Set |
+| 44 | `HM-LB-1` | HM-LB-1 — Painted Laughing Buddha Silver Idol |
+| 45 | `HM-SH-5` | HM-SH-5 — Painted Shiva Family Silver Idol with Nandi |
+| 46 | `HM-MA-1` | HM-MA-1 — Maharaja Agrasen Silver Idol on Throne |
+| 47 | `HM-BK-9` | HM-BK-9 — Painted Crawling Bal Krishna Silver Idol |
+| 48 | `HM-BK-10` | HM-BK-10 — Yashoda with Bal Krishna Silver Idol |
+| 49 | `HM-EL-1` | HM-EL-1 — Auspicious Elephant Silver Idol |
+| 50 | `HM-LN-3` | HM-LN-3 — Painted Lakshmi Narayan Silver Idol on Sheshnag |
+| 51 | `HM-SR-3` | HM-SR-3 — Saraswati Silver Idol on Swan with Veena |
+| 52 | `HM-OW-1` | HM-OW-1 — Auspicious Owl Silver Idol |
+| 53 | `HM-GN-14` | HM-GN-14 — Ganesha Silver Idol Riding Mushak |
+| 54 | `HM-GN-15` | HM-GN-15 — Painted Ganesha Silver Idol Worshipping Shivling |
+| 55 | `HM-RK-4` | HM-RK-4 — Radha Krishna Silver Idol with Flute |
+| 56 | `HM-RK-5` | HM-RK-5 — Painted Radha Krishna Silver Idol with Flute |
+| 57 | `HM-RK-6` | HM-RK-6 — Painted Standing Radha Krishna Silver Idol in Yellow |
+| 58 | `HM-RK-7` | HM-RK-7 — Painted Standing Radha Krishna Silver Idol in Red and Green |
+| 59 | `HM-RK-8` | HM-RK-8 — Radha Krishna Silver Idol with Cow |
+| 60 | `HM-RK-9` | HM-RK-9 — Radha Krishna Silver Idol with Flute on Lotus |
+| 61 | `HM-RK-10` | HM-RK-10 — Painted Seated Radha Krishna Silver Idol |
+| 62 | `HM-RK-11` | HM-RK-11 — Painted Standing Radha Krishna Silver Idol on Lotus |
+| 63 | `HM-RK-12` | HM-RK-12 — Painted Radha Krishna Silver Idol Pair |
+| 64 | `HM-RK-13` | HM-RK-13 — Seated Radha Krishna Silver Idol |
 
 ## Sanity implementation
 

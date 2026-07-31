@@ -1,0 +1,848 @@
+{
+  "schemaVersion": 1,
+  "batchId": "batch-new-folder-2",
+  "generatedAt": "2026-07-31T08:42:43.893Z",
+  "sourceDirectory": "C:\\Users\\kk\\Desktop\\New folder (2)",
+  "categoryId": "category-idols",
+  "purity": "99.80",
+  "idolConstruction": "hollow",
+  "processing": {
+    "backgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+    "model": "u2net",
+    "modelOverrides": [
+      {
+        "sourceFilename": "WhatsApp Image 2026-07-31 at 12.56.58 PM.jpeg",
+        "model": "isnet-general-use"
+      }
+    ],
+    "device": "gpu",
+    "concurrency": 4,
+    "alphaMatting": false
+  },
+  "readyForUpload": true,
+  "review": [
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.42.12 PM.jpeg",
+      "outputFilename": "idol-34-whatsapp-image-2026-07-31-at-12-42-12-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.44.57 PM.jpeg",
+      "outputFilename": "idol-35-whatsapp-image-2026-07-31-at-12-44-57-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.45.24 PM.jpeg",
+      "outputFilename": "idol-36-whatsapp-image-2026-07-31-at-12-45-24-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.46.13 PM.jpeg",
+      "outputFilename": "idol-37-whatsapp-image-2026-07-31-at-12-46-13-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.47.49 PM.jpeg",
+      "outputFilename": "idol-38-whatsapp-image-2026-07-31-at-12-47-49-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.49.21 PM.jpeg",
+      "outputFilename": "idol-39-whatsapp-image-2026-07-31-at-12-49-21-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.50.39 PM.jpeg",
+      "outputFilename": "idol-40-whatsapp-image-2026-07-31-at-12-50-39-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.51.47 PM.jpeg",
+      "outputFilename": "idol-41-whatsapp-image-2026-07-31-at-12-51-47-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.52.37 PM.jpeg",
+      "outputFilename": "idol-42-whatsapp-image-2026-07-31-at-12-52-37-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.56.58 PM.jpeg",
+      "outputFilename": "idol-43-whatsapp-image-2026-07-31-at-12-56-58-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 12.59.04 PM.jpeg",
+      "outputFilename": "idol-44-whatsapp-image-2026-07-31-at-12-59-04-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.00.46 PM.jpeg",
+      "outputFilename": "idol-45-whatsapp-image-2026-07-31-at-1-00-46-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.02.04 PM.jpeg",
+      "outputFilename": "idol-46-whatsapp-image-2026-07-31-at-1-02-04-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.04.48 PM.jpeg",
+      "outputFilename": "idol-47-whatsapp-image-2026-07-31-at-1-04-48-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.05.40 PM.jpeg",
+      "outputFilename": "idol-48-whatsapp-image-2026-07-31-at-1-05-40-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.07.01 PM.jpeg",
+      "outputFilename": "idol-49-whatsapp-image-2026-07-31-at-1-07-01-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.08.05 PM.jpeg",
+      "outputFilename": "idol-50-whatsapp-image-2026-07-31-at-1-08-05-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.09.40 PM.jpeg",
+      "outputFilename": "idol-51-whatsapp-image-2026-07-31-at-1-09-40-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.12.05 PM.jpeg",
+      "outputFilename": "idol-52-whatsapp-image-2026-07-31-at-1-12-05-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.32.35 PM.jpeg",
+      "outputFilename": "idol-53-whatsapp-image-2026-07-31-at-1-32-35-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.33.28 PM.jpeg",
+      "outputFilename": "idol-54-whatsapp-image-2026-07-31-at-1-33-28-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.36.12 PM.jpeg",
+      "outputFilename": "idol-55-whatsapp-image-2026-07-31-at-1-36-12-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.37.37 PM.jpeg",
+      "outputFilename": "idol-56-whatsapp-image-2026-07-31-at-1-37-37-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.39.14 PM.jpeg",
+      "outputFilename": "idol-57-whatsapp-image-2026-07-31-at-1-39-14-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.40.29 PM.jpeg",
+      "outputFilename": "idol-58-whatsapp-image-2026-07-31-at-1-40-29-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.41.26 PM.jpeg",
+      "outputFilename": "idol-59-whatsapp-image-2026-07-31-at-1-41-26-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.42.18 PM.jpeg",
+      "outputFilename": "idol-60-whatsapp-image-2026-07-31-at-1-42-18-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.43.03 PM.jpeg",
+      "outputFilename": "idol-61-whatsapp-image-2026-07-31-at-1-43-03-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.44.02 PM.jpeg",
+      "outputFilename": "idol-62-whatsapp-image-2026-07-31-at-1-44-02-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.45.52 PM.jpeg",
+      "outputFilename": "idol-63-whatsapp-image-2026-07-31-at-1-45-52-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 1.46.58 PM.jpeg",
+      "outputFilename": "idol-64-whatsapp-image-2026-07-31-at-1-46-58-pm.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    }
+  ],
+  "products": [
+    {
+      "number": 34,
+      "id": "product-dda-idol-34-painted-four-arm-ganesha-silver-idol-on-lotus",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-4",
+      "title": "Painted Four-Arm Ganesha Silver Idol on Lotus",
+      "slug": "painted-four-arm-ganesha-silver-idol-on-lotus",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol seated on a lotus with hand-painted devotional details.",
+      "alt": "Painted four-arm Ganesha silver idol seated on a lotus on a warm ivory DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-34-whatsapp-image-2026-07-31-at-12-42-12-pm.png"
+    },
+    {
+      "number": 35,
+      "id": "product-dda-idol-35-painted-ganesha-silver-idol-with-pink-turban",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-5",
+      "title": "Painted Ganesha Silver Idol with Pink Turban",
+      "slug": "painted-ganesha-silver-idol-with-pink-turban",
+      "description": "A hollow 99.80% pure silver seated Ganesha idol with a hand-painted pink turban and yellow dhoti.",
+      "alt": "Painted Ganesha silver idol with a pink turban on a warm ivory DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-35-whatsapp-image-2026-07-31-at-12-44-57-pm.png"
+    },
+    {
+      "number": 36,
+      "id": "product-dda-idol-36-ganesha-silver-idol-with-silver-turban",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-6",
+      "title": "Ganesha Silver Idol with Silver Turban",
+      "slug": "ganesha-silver-idol-with-silver-turban",
+      "description": "A hollow 99.80% pure silver seated Ganesha idol wearing an engraved silver turban.",
+      "alt": "Ganesha silver idol with an engraved silver turban on a warm ivory DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-36-whatsapp-image-2026-07-31-at-12-45-24-pm.png"
+    },
+    {
+      "number": 37,
+      "id": "product-dda-idol-37-painted-ganesha-silver-idol-on-lotus-orange-dhoti",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-7",
+      "title": "Painted Ganesha Silver Idol on Lotus with Orange Dhoti",
+      "slug": "painted-ganesha-silver-idol-on-lotus-orange-dhoti",
+      "description": "A hollow 99.80% pure silver Ganesha idol seated on a lotus with an orange dhoti and hand-painted details.",
+      "alt": "Painted Ganesha silver idol on a lotus with an orange dhoti on a warm ivory DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-37-whatsapp-image-2026-07-31-at-12-46-13-pm.png"
+    },
+    {
+      "number": 38,
+      "id": "product-dda-idol-38-painted-seated-ganesha-silver-idol-yellow-dhoti",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-8",
+      "title": "Painted Seated Ganesha Silver Idol with Yellow Dhoti",
+      "slug": "painted-seated-ganesha-silver-idol-yellow-dhoti",
+      "description": "A hollow 99.80% pure silver seated Ganesha idol with an ornate crown, yellow dhoti, and painted accents.",
+      "alt": "Painted seated Ganesha silver idol with a yellow dhoti on a warm ivory DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-38-whatsapp-image-2026-07-31-at-12-47-49-pm.png"
+    },
+    {
+      "number": 39,
+      "id": "product-dda-idol-39-four-arm-ganesha-silver-idol-on-lotus",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-9",
+      "title": "Four-Arm Ganesha Silver Idol on Lotus",
+      "slug": "four-arm-ganesha-silver-idol-on-lotus",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol seated on an engraved lotus pedestal.",
+      "alt": "Four-arm Ganesha silver idol seated on a lotus on a warm ivory DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-39-whatsapp-image-2026-07-31-at-12-49-21-pm.png"
+    },
+    {
+      "number": 40,
+      "id": "product-dda-idol-40-painted-four-arm-ganesha-silver-idol-yellow-dhoti",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-10",
+      "title": "Painted Four-Arm Ganesha Silver Idol with Yellow Dhoti",
+      "slug": "painted-four-arm-ganesha-silver-idol-yellow-dhoti",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol with a yellow dhoti and colorful hand-painted necklace.",
+      "alt": "Painted four-arm Ganesha silver idol with a yellow dhoti on a warm ivory DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-40-whatsapp-image-2026-07-31-at-12-50-39-pm.png"
+    },
+    {
+      "number": 41,
+      "id": "product-dda-idol-41-painted-four-arm-ganesha-silver-idol-red-stole",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-11",
+      "title": "Painted Four-Arm Ganesha Silver Idol with Red Stole",
+      "slug": "painted-four-arm-ganesha-silver-idol-red-stole",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol seated on a lotus with a red stole and yellow dhoti.",
+      "alt": "Painted four-arm Ganesha silver idol with a red stole on a warm ivory DDA Silver background",
+      "weightGrams": 50,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-41-whatsapp-image-2026-07-31-at-12-51-47-pm.png"
+    },
+    {
+      "number": 42,
+      "id": "product-dda-idol-42-painted-ganesha-silver-idol-on-mushak",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-12",
+      "title": "Painted Ganesha Silver Idol on Mushak",
+      "slug": "painted-ganesha-silver-idol-on-mushak",
+      "description": "A hollow 99.80% pure silver Ganesha idol seated on Mushak with yellow and gold hand-painted details.",
+      "alt": "Painted Ganesha silver idol seated on Mushak on a warm ivory DDA Silver background",
+      "weightGrams": 65,
+      "heightInches": 4.5,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-42-whatsapp-image-2026-07-31-at-12-52-37-pm.png"
+    },
+    {
+      "number": 43,
+      "id": "product-dda-idol-43-five-ganesha-silver-idol-set",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-13",
+      "title": "Five Ganesha Silver Idol Set",
+      "slug": "five-ganesha-silver-idol-set",
+      "description": "A hollow 99.80% pure silver set of five seated Ganesha idols in complementary devotional poses.",
+      "alt": "Set of five Ganesha silver idols on a warm ivory DDA Silver background",
+      "weightGrams": 105,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-43-whatsapp-image-2026-07-31-at-12-56-58-pm.png"
+    },
+    {
+      "number": 44,
+      "id": "product-dda-idol-44-painted-laughing-buddha-silver-idol",
+      "codeFamily": "LB",
+      "assignedItemCode": "HM-LB-1",
+      "title": "Painted Laughing Buddha Silver Idol",
+      "slug": "painted-laughing-buddha-silver-idol",
+      "description": "A hollow 99.80% pure silver Laughing Buddha idol with a prosperity sack and hand-painted robes.",
+      "alt": "Painted Laughing Buddha silver idol on a warm ivory DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-laughing-buddha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-44-whatsapp-image-2026-07-31-at-12-59-04-pm.png"
+    },
+    {
+      "number": 45,
+      "id": "product-dda-idol-45-painted-shiva-family-silver-idol-with-nandi",
+      "codeFamily": "SH",
+      "assignedItemCode": "HM-SH-5",
+      "title": "Painted Shiva Family Silver Idol with Nandi",
+      "slug": "painted-shiva-family-silver-idol-with-nandi",
+      "description": "A hollow 99.80% pure silver Shiva Family idol group with Parvati, Ganesha, Kartikeya, Nandi, and painted details.",
+      "alt": "Painted Shiva Family silver idol group with Nandi on a warm ivory DDA Silver background",
+      "weightGrams": 105,
+      "heightInches": 4.5,
+      "deityIds": [
+        "deity-shiva",
+        "deity-parvati",
+        "deity-ganesha",
+        "deity-kartikeya"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-45-whatsapp-image-2026-07-31-at-1-00-46-pm.png"
+    },
+    {
+      "number": 46,
+      "id": "product-dda-idol-46-maharaja-agrasen-silver-idol-on-throne",
+      "codeFamily": "MA",
+      "assignedItemCode": "HM-MA-1",
+      "title": "Maharaja Agrasen Silver Idol on Throne",
+      "slug": "maharaja-agrasen-silver-idol-on-throne",
+      "description": "A hollow 99.80% pure silver Maharaja Agrasen idol seated beneath a royal canopy on a lion-flanked throne.",
+      "alt": "Maharaja Agrasen silver idol seated on a lion-flanked throne on a warm ivory DDA Silver background",
+      "weightGrams": 125,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-maharaja-agrasen"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-46-whatsapp-image-2026-07-31-at-1-02-04-pm.png"
+    },
+    {
+      "number": 47,
+      "id": "product-dda-idol-47-painted-crawling-bal-krishna-silver-idol-250g",
+      "codeFamily": "BK",
+      "assignedItemCode": "HM-BK-9",
+      "title": "Painted Crawling Bal Krishna Silver Idol",
+      "slug": "painted-crawling-bal-krishna-silver-idol-250g",
+      "description": "A hollow 99.80% pure silver crawling Bal Krishna idol with hand-painted facial and necklace details.",
+      "alt": "Painted crawling Bal Krishna silver idol on a warm ivory DDA Silver background",
+      "weightGrams": 250,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-47-whatsapp-image-2026-07-31-at-1-04-48-pm.png"
+    },
+    {
+      "number": 48,
+      "id": "product-dda-idol-48-yashoda-with-bal-krishna-silver-idol",
+      "codeFamily": "BK",
+      "assignedItemCode": "HM-BK-10",
+      "title": "Yashoda with Bal Krishna Silver Idol",
+      "slug": "yashoda-with-bal-krishna-silver-idol",
+      "description": "A hollow 99.80% pure silver Yashoda and Bal Krishna idol showing Yashoda carrying Krishna and balancing a pot.",
+      "alt": "Yashoda carrying Bal Krishna with a pot balanced overhead on a warm ivory DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-48-whatsapp-image-2026-07-31-at-1-05-40-pm.png"
+    },
+    {
+      "number": 49,
+      "id": "product-dda-idol-49-auspicious-elephant-silver-idol",
+      "codeFamily": "EL",
+      "assignedItemCode": "HM-EL-1",
+      "title": "Auspicious Elephant Silver Idol",
+      "slug": "auspicious-elephant-silver-idol",
+      "description": "A hollow 99.80% pure silver auspicious elephant idol with an intricately engraved ceremonial blanket.",
+      "alt": "Auspicious elephant silver idol with an engraved blanket on a warm ivory DDA Silver background",
+      "weightGrams": 140,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-49-whatsapp-image-2026-07-31-at-1-07-01-pm.png"
+    },
+    {
+      "number": 50,
+      "id": "product-dda-idol-50-painted-lakshmi-narayan-silver-idol-on-sheshnag-125g",
+      "codeFamily": "LN",
+      "assignedItemCode": "HM-LN-3",
+      "title": "Painted Lakshmi Narayan Silver Idol on Sheshnag",
+      "slug": "painted-lakshmi-narayan-silver-idol-on-sheshnag-125g",
+      "description": "A hollow 99.80% pure silver Lakshmi Narayan idol seated on Sheshnag with colorful hand-painted details.",
+      "alt": "Painted Lakshmi Narayan silver idol seated on Sheshnag on a warm ivory DDA Silver background",
+      "weightGrams": 125,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-vishnu"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-50-whatsapp-image-2026-07-31-at-1-08-05-pm.png"
+    },
+    {
+      "number": 51,
+      "id": "product-dda-idol-51-saraswati-silver-idol-on-swan-with-veena",
+      "codeFamily": "SR",
+      "assignedItemCode": "HM-SR-3",
+      "title": "Saraswati Silver Idol on Swan with Veena",
+      "slug": "saraswati-silver-idol-on-swan-with-veena",
+      "description": "A hollow 99.80% pure silver Saraswati idol seated on a swan and lotus while playing the veena.",
+      "alt": "Saraswati silver idol seated on a swan with a veena on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-saraswati"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-51-whatsapp-image-2026-07-31-at-1-09-40-pm.png"
+    },
+    {
+      "number": 52,
+      "id": "product-dda-idol-52-auspicious-owl-silver-idol",
+      "codeFamily": "OW",
+      "assignedItemCode": "HM-OW-1",
+      "title": "Auspicious Owl Silver Idol",
+      "slug": "auspicious-owl-silver-idol",
+      "description": "A hollow 99.80% pure silver auspicious owl idol, traditionally associated with Goddess Lakshmi.",
+      "alt": "Auspicious owl silver idol on a warm ivory DDA Silver background",
+      "weightGrams": 25,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-lakshmi"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-52-whatsapp-image-2026-07-31-at-1-12-05-pm.png"
+    },
+    {
+      "number": 53,
+      "id": "product-dda-idol-53-ganesha-silver-idol-riding-mushak",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-14",
+      "title": "Ganesha Silver Idol Riding Mushak",
+      "slug": "ganesha-silver-idol-riding-mushak",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol riding Mushak on an engraved round pedestal.",
+      "alt": "Four-arm Ganesha silver idol riding Mushak on a warm ivory DDA Silver background",
+      "weightGrams": 25,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-53-whatsapp-image-2026-07-31-at-1-32-35-pm.png"
+    },
+    {
+      "number": 54,
+      "id": "product-dda-idol-54-painted-ganesha-silver-idol-worshipping-shivling",
+      "codeFamily": "GN",
+      "assignedItemCode": "HM-GN-15",
+      "title": "Painted Ganesha Silver Idol Worshipping Shivling",
+      "slug": "painted-ganesha-silver-idol-worshipping-shivling",
+      "description": "A hollow 99.80% pure silver Ganesha idol seated beside a Shivling with green and yellow hand-painted details.",
+      "alt": "Painted Ganesha silver idol worshipping a Shivling on a warm ivory DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-ganesha",
+        "deity-shiva"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-54-whatsapp-image-2026-07-31-at-1-33-28-pm.png"
+    },
+    {
+      "number": 55,
+      "id": "product-dda-idol-55-radha-krishna-silver-idol-with-flute-15g",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-4",
+      "title": "Radha Krishna Silver Idol with Flute",
+      "slug": "radha-krishna-silver-idol-with-flute-15g",
+      "description": "A hollow 99.80% pure silver standing Radha Krishna idol group with Krishna playing the flute.",
+      "alt": "Standing Radha Krishna silver idol with flute on a warm ivory DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-55-whatsapp-image-2026-07-31-at-1-36-12-pm.png"
+    },
+    {
+      "number": 56,
+      "id": "product-dda-idol-56-painted-radha-krishna-silver-idol-with-flute-15g",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-5",
+      "title": "Painted Radha Krishna Silver Idol with Flute",
+      "slug": "painted-radha-krishna-silver-idol-with-flute-15g",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol group with a flute and delicate hand-painted details.",
+      "alt": "Painted Radha Krishna silver idol with flute on a warm ivory DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-56-whatsapp-image-2026-07-31-at-1-37-37-pm.png"
+    },
+    {
+      "number": 57,
+      "id": "product-dda-idol-57-painted-standing-radha-krishna-silver-idol-yellow",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-6",
+      "title": "Painted Standing Radha Krishna Silver Idol in Yellow",
+      "slug": "painted-standing-radha-krishna-silver-idol-yellow",
+      "description": "A hollow 99.80% pure silver standing Radha Krishna idol group with yellow garments and a flute.",
+      "alt": "Painted standing Radha Krishna silver idol in yellow on a warm ivory DDA Silver background",
+      "weightGrams": 25,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-57-whatsapp-image-2026-07-31-at-1-39-14-pm.png"
+    },
+    {
+      "number": 58,
+      "id": "product-dda-idol-58-painted-standing-radha-krishna-silver-idol-red-green",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-7",
+      "title": "Painted Standing Radha Krishna Silver Idol in Red and Green",
+      "slug": "painted-standing-radha-krishna-silver-idol-red-green",
+      "description": "A hollow 99.80% pure silver standing Radha Krishna idol group with a flute and red, green, and yellow painted garments.",
+      "alt": "Painted standing Radha Krishna silver idol in red and green on a warm ivory DDA Silver background",
+      "weightGrams": 35,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-58-whatsapp-image-2026-07-31-at-1-40-29-pm.png"
+    },
+    {
+      "number": 59,
+      "id": "product-dda-idol-59-radha-krishna-silver-idol-with-cow",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-8",
+      "title": "Radha Krishna Silver Idol with Cow",
+      "slug": "radha-krishna-silver-idol-with-cow",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol group with Krishna playing the flute beside a cow.",
+      "alt": "Radha Krishna silver idol with a cow on a warm ivory DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-59-whatsapp-image-2026-07-31-at-1-41-26-pm.png"
+    },
+    {
+      "number": 60,
+      "id": "product-dda-idol-60-radha-krishna-silver-idol-with-flute-on-lotus",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-9",
+      "title": "Radha Krishna Silver Idol with Flute on Lotus",
+      "slug": "radha-krishna-silver-idol-with-flute-on-lotus",
+      "description": "A hollow 99.80% pure silver standing Radha Krishna idol group with Krishna playing the flute on a lotus base.",
+      "alt": "Radha Krishna silver idol with flute on a lotus base on a warm ivory DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-60-whatsapp-image-2026-07-31-at-1-42-18-pm.png"
+    },
+    {
+      "number": 61,
+      "id": "product-dda-idol-61-painted-seated-radha-krishna-silver-idol",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-10",
+      "title": "Painted Seated Radha Krishna Silver Idol",
+      "slug": "painted-seated-radha-krishna-silver-idol",
+      "description": "A hollow 99.80% pure silver seated Radha Krishna idol group with colorful hand-painted devotional details.",
+      "alt": "Painted seated Radha Krishna silver idol on a warm ivory DDA Silver background",
+      "weightGrams": 65,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-61-whatsapp-image-2026-07-31-at-1-43-03-pm.png"
+    },
+    {
+      "number": 62,
+      "id": "product-dda-idol-62-painted-standing-radha-krishna-silver-idol-on-lotus",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-11",
+      "title": "Painted Standing Radha Krishna Silver Idol on Lotus",
+      "slug": "painted-standing-radha-krishna-silver-idol-on-lotus",
+      "description": "A hollow 99.80% pure silver standing Radha Krishna idol group on a lotus base with hand-painted details.",
+      "alt": "Painted standing Radha Krishna silver idol on a lotus base on a warm ivory DDA Silver background",
+      "weightGrams": 11,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-62-whatsapp-image-2026-07-31-at-1-44-02-pm.png"
+    },
+    {
+      "number": 63,
+      "id": "product-dda-idol-63-painted-radha-krishna-silver-idol-pair",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-12",
+      "title": "Painted Radha Krishna Silver Idol Pair",
+      "slug": "painted-radha-krishna-silver-idol-pair",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol pair with vibrant red, yellow, green, and gold painted details.",
+      "alt": "Painted Radha Krishna silver idol pair on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-63-whatsapp-image-2026-07-31-at-1-45-52-pm.png"
+    },
+    {
+      "number": 64,
+      "id": "product-dda-idol-64-seated-radha-krishna-silver-idol-20g",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-13",
+      "title": "Seated Radha Krishna Silver Idol",
+      "slug": "seated-radha-krishna-silver-idol-20g",
+      "description": "A hollow 99.80% pure silver seated Radha Krishna idol group with engraved devotional details.",
+      "alt": "Seated Radha Krishna silver idol on a warm ivory DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-radha",
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-2/idol-64-whatsapp-image-2026-07-31-at-1-46-58-pm.png"
+    }
+  ]
+}
