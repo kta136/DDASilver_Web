@@ -7,6 +7,11 @@ const MAX_PAGE_TITLE_LENGTH = 48;
 const MAX_ABSOLUTE_TITLE_LENGTH = 65;
 const MAX_DESCRIPTION_LENGTH = 160;
 
+export const productSocialImageSize = {
+  width: 1200,
+  height: 630,
+} as const;
+
 export const defaultSocialImage: CatalogImage = {
   src: "/images/mockup/hero-silver-bowl.png",
   alt: "Ornate engraved silver bowl representing DDA Silver in Agra",
@@ -26,6 +31,33 @@ type PageMetadataOptions = {
 
 export function toAbsoluteUrl(path: string) {
   return new URL(path, siteConfig.url).toString();
+}
+
+export function getProductSeoName(title: string, reference?: string) {
+  const normalizedTitle = title.replace(/\s+/g, " ").trim();
+  const normalizedReference = reference?.trim();
+
+  if (!normalizedReference || !normalizedTitle.startsWith(normalizedReference)) {
+    return normalizedTitle;
+  }
+
+  const descriptiveTitle = normalizedTitle
+    .slice(normalizedReference.length)
+    .replace(/^\s*[\-–—:]\s*/u, "")
+    .trim();
+
+  return descriptiveTitle || normalizedTitle;
+}
+
+export function getProductSocialImage(
+  slug: string,
+  productName: string,
+): CatalogImage {
+  return {
+    src: `/api/og/product/${encodeURIComponent(slug)}`,
+    alt: `${productName} from DDA Silver`,
+    ...productSocialImageSize,
+  };
 }
 
 export function truncateSeoText(value: string, maxLength: number) {

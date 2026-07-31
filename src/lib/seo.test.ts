@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   createPageMetadata,
+  getProductSeoName,
+  getProductSocialImage,
   toAbsoluteUrl,
   truncateSeoText,
 } from "@/lib/seo";
@@ -48,5 +50,34 @@ describe("SEO helpers", () => {
 
   it("resolves same-site URLs against the configured preview origin", () => {
     expect(toAbsoluteUrl("/contact")).toBe("http://localhost:3000/contact");
+  });
+
+  it("removes an internal item code from a product SEO name", () => {
+    expect(
+      getProductSeoName(
+        "HM-GN-1 — Ganesha Silver Idol with Arch",
+        "HM-GN-1",
+      ),
+    ).toBe("Ganesha Silver Idol with Arch");
+  });
+
+  it("keeps a product title unchanged when the reference is not its prefix", () => {
+    expect(getProductSeoName("Silver Coin 10g", "COIN-10G")).toBe(
+      "Silver Coin 10g",
+    );
+  });
+
+  it("builds a 1200 by 630 product social image descriptor", () => {
+    expect(
+      getProductSocialImage(
+        "ganesha-silver-idol-with-arch",
+        "Ganesha Silver Idol with Arch",
+      ),
+    ).toEqual({
+      src: "/api/og/product/ganesha-silver-idol-with-arch",
+      alt: "Ganesha Silver Idol with Arch from DDA Silver",
+      width: 1200,
+      height: 630,
+    });
   });
 });

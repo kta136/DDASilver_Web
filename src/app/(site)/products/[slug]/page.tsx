@@ -11,7 +11,12 @@ import {
   idolConstructionLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
-import { createPageMetadata, toAbsoluteUrl } from "@/lib/seo";
+import {
+  createPageMetadata,
+  getProductSeoName,
+  getProductSocialImage,
+  toAbsoluteUrl,
+} from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import {
@@ -46,11 +51,13 @@ export async function generateMetadata({
     });
   }
 
+  const productName = getProductSeoName(product.title, product.reference);
+
   return createPageMetadata({
-    title: `${product.title} in Agra`,
-    description: `${product.title} at DDA Silver in Agra. ${product.shortDescription}`,
+    title: `${productName} in Agra`,
+    description: `${productName} at DDA Silver in Agra. ${product.shortDescription}`,
     path: `/products/${product.slug}`,
-    image: product.images[0],
+    image: getProductSocialImage(product.slug, productName),
   });
 }
 
@@ -64,6 +71,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) {
     notFound();
   }
+
+  const productName = getProductSeoName(product.title, product.reference);
 
   const category = catalog.categories.find(
     (item) => item.slug === product.categorySlug,
@@ -79,7 +88,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${toAbsoluteUrl(`/products/${product.slug}`)}#product`,
-    name: product.title,
+    name: productName,
     description: product.shortDescription,
     image: product.images.map((image) => toAbsoluteUrl(image.src)),
     brand: {
