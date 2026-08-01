@@ -36,6 +36,10 @@ describe("rate history chart", () => {
       240,
     );
     expect(chart.paths).toHaveLength(2);
+    expect(chart.points).toEqual([
+      expect.objectContaining({ x: 24, snapshotAt: "2026-07-30T10:00:00.000Z" }),
+      expect.objectContaining({ x: 696, snapshotAt: "2026-07-30T10:01:00.000Z" }),
+    ]);
     expect(chart.minimum).toBe(100);
     expect(chart.maximum).toBe(102);
   });

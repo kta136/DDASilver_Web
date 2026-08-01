@@ -44,6 +44,11 @@ export type ChartPoint = {
   quality?: "ASK" | "LTP_FALLBACK";
 };
 
+export type PositionedChartPoint = ChartPoint & {
+  x: number;
+  y: number;
+};
+
 export function historyIntervalForIstDates(fromDate: string, toDate: string) {
   const datePattern = /^\d{4}-\d{2}-\d{2}$/;
   if (!datePattern.test(fromDate) || !datePattern.test(toDate)) return null;
@@ -125,7 +130,7 @@ export function buildChartPaths(
   padding = 24,
 ) {
   if (points.length === 0) {
-    return { paths: [], minimum: 0, maximum: 0 };
+    return { paths: [], points: [], minimum: 0, maximum: 0 };
   }
   const times = points.map((point) => Date.parse(point.snapshotAt));
   const values = points.map((point) => point.value);
@@ -143,16 +148,27 @@ export function buildChartPaths(
   const y = (value: number) =>
     height - padding - ((value - minimum) / valueSpan) * (height - padding * 2);
 
+  const positionedPoints: PositionedChartPoint[] = points.map((point) => ({
+    ...point,
+    x: Number(x(Date.parse(point.snapshotAt)).toFixed(2)),
+    y: Number(y(point.value).toFixed(2)),
+  }));
+
   const paths: string[] = [];
   let path = "";
-  points.forEach((point, index) => {
+  positionedPoints.forEach((point, index) => {
     const command = index === 0 || point.gapBefore ? "M" : "L";
     if (point.gapBefore && path) {
       paths.push(path);
       path = "";
     }
-    path += `${command}${x(Date.parse(point.snapshotAt)).toFixed(2)},${y(point.value).toFixed(2)} `;
+    path += `${command}${point.x.toFixed(2)},${point.y.toFixed(2)} `;
   });
   if (path) paths.push(path);
-  return { paths, minimum: rawMinimum, maximum: rawMaximum };
+  return {
+    paths,
+    points: positionedPoints,
+    minimum: rawMinimum,
+    maximum: rawMaximum,
+  };
 }

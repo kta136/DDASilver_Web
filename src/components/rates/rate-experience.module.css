@@ -453,6 +453,10 @@ div.historyState {
   margin-top: 0.25rem;
 }
 
+.historyPlot {
+  position: relative;
+}
+
 .historySummary {
   padding: 0.35rem 0.2rem 0;
   color: var(--ink-muted);
@@ -488,10 +492,88 @@ div.historyState {
   vector-effect: non-scaling-stroke;
 }
 
+.chartPoint {
+  cursor: pointer;
+  outline: none;
+}
+
+.chartPointHitArea {
+  fill: transparent;
+}
+
+.chartPointDot {
+  fill: var(--paper);
+  stroke: var(--copper-dark);
+  stroke-width: 1.75;
+  transition: fill 140ms ease, stroke-width 140ms ease;
+  vector-effect: non-scaling-stroke;
+}
+
+.chartPoint:hover .chartPointDot,
+.chartPoint:focus-visible .chartPointDot,
+.chartPoint[data-active] .chartPointDot {
+  fill: var(--copper-dark);
+  stroke: var(--paper);
+  stroke-width: 2.5;
+}
+
+.historyTooltip {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  min-width: 8.75rem;
+  gap: 0.15rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--copper-dark) 55%, white);
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--ink) 94%, transparent);
+  box-shadow: 0 0.45rem 1.25rem rgb(45 37 30 / 18%);
+  color: var(--paper);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  pointer-events: none;
+}
+
+.historyTooltip strong {
+  font-size: 0.88rem;
+}
+
+.historyTooltip[data-align="start"][data-placement="top"] {
+  transform: translate(0, calc(-100% - 0.7rem));
+}
+
+.historyTooltip[data-align="center"][data-placement="top"] {
+  transform: translate(-50%, calc(-100% - 0.7rem));
+}
+
+.historyTooltip[data-align="end"][data-placement="top"] {
+  transform: translate(-100%, calc(-100% - 0.7rem));
+}
+
+.historyTooltip[data-align="start"][data-placement="bottom"] {
+  transform: translate(0, 0.7rem);
+}
+
+.historyTooltip[data-align="center"][data-placement="bottom"] {
+  transform: translate(-50%, 0.7rem);
+}
+
+.historyTooltip[data-align="end"][data-placement="bottom"] {
+  transform: translate(-100%, 0.7rem);
+}
+
 .historyAxis {
   color: var(--ink-muted);
   font-size: 0.66rem;
   font-variant-numeric: tabular-nums;
+}
+
+.historyChartHint {
+  margin: 0.45rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.68rem;
+  text-align: center;
 }
 
 .rateMovement {

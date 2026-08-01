@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 import type { RateItem } from "@/lib/rates/contract";
 import { formatIndianNumber } from "@/lib/rates/format";
@@ -19,7 +19,17 @@ import {
 import styles from "./rate-experience.module.css";
 
 const ranges = ["1H", "24H", "7D", "30D", "6M", "1Y"] as const;
+const maximumAutomaticRetries = 1;
 type HistoryRange = (typeof ranges)[number];
+
+class RetryableHistoryError extends Error {
+  constructor(
+    message: string,
+    readonly retryDelayMs: number,
+  ) {
+    super(message);
+  }
+}
 
 type HistoryTarget = {
   key: string;
@@ -57,6 +67,7 @@ export function RateHistory({
   );
   const [customError, setCustomError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
+  const automaticRetry = useRef({ scopeKey: "", attempts: 0 });
   const [historyResult, setHistoryResult] = useState<{
     requestKey: string;
     points: ChartPoint[];
@@ -85,16 +96,21 @@ export function RateHistory({
   const selected = targets.find(
     (target) => target.key === effectiveSelectedKey,
   );
+  const selectedId = selected?.id;
+  const selectedKind = selected?.kind;
   const intervalKey =
     mode === "preset"
       ? `preset:${range}`
       : customInterval
         ? `custom:${customInterval.from}:${customInterval.to}`
         : "";
-  const requestKey =
+  const requestScopeKey =
     open && authorized && selected && intervalKey
-      ? `${selected.key}:${intervalKey}:${retryCount}`
+      ? `${selected.key}:${intervalKey}`
       : "";
+  const requestKey = requestScopeKey
+    ? `${requestScopeKey}:${retryCount}`
+    : "";
   const loading = Boolean(
     requestKey && historyResult.requestKey !== requestKey,
   );
@@ -132,10 +148,14 @@ export function RateHistory({
   }, [authorized, open]);
 
   useEffect(() => {
-    if (!requestKey || !selected) return;
+    if (!requestKey || !selectedId || !selectedKind) return;
     const controller = new AbortController();
+    let automaticRetryTimer: ReturnType<typeof setTimeout> | undefined;
+    if (automaticRetry.current.scopeKey !== requestScopeKey) {
+      automaticRetry.current = { scopeKey: requestScopeKey, attempts: 0 };
+    }
     const query = new URLSearchParams();
-    query.set(selected.kind === "rate" ? "itemId" : "sourceId", selected.id);
+    query.set(selectedKind === "rate" ? "itemId" : "sourceId", selectedId);
     if (mode === "custom" && customInterval) {
       query.set("mode", "custom");
       query.set("from", customInterval.from);
@@ -145,7 +165,7 @@ export function RateHistory({
       query.set("range", range);
     }
     const endpoint =
-      selected.kind === "rate"
+      selectedKind === "rate"
         ? "/api/rates/history"
         : "/api/rates/source-history";
 
@@ -158,16 +178,31 @@ export function RateHistory({
         if (response.status === 404) {
           throw new Error("Chart not available for this item.");
         }
+        if (response.status === 429) {
+          throw new RetryableHistoryError(
+            "History requests were temporarily limited.",
+            retryDelayFrom(response, 15_000),
+          );
+        }
+        if ([502, 503, 504].includes(response.status)) {
+          throw new RetryableHistoryError(
+            "Rate history is temporarily unavailable.",
+            retryDelayFrom(response, 5_000),
+          );
+        }
         if (!response.ok) throw new Error("Rate history is unavailable.");
         const payload = await response.json();
         const parsed =
-          selected.kind === "rate"
+          selectedKind === "rate"
             ? rateHistoryResponseSchema.safeParse(payload)
             : sourceHistoryResponseSchema.safeParse(payload);
         if (!parsed.success) throw new Error("Rate history is unavailable.");
         return normalizeChartPoints(parsed.data.points);
       })
       .then((nextPoints) => {
+        if (automaticRetry.current.scopeKey === requestScopeKey) {
+          automaticRetry.current.attempts = 0;
+        }
         setHistoryResult({
           requestKey,
           points: nextPoints,
@@ -176,17 +211,38 @@ export function RateHistory({
       })
       .catch((reason: unknown) => {
         if (controller.signal.aborted) return;
+        const canRetryAutomatically =
+          reason instanceof RetryableHistoryError &&
+          automaticRetry.current.scopeKey === requestScopeKey &&
+          automaticRetry.current.attempts < maximumAutomaticRetries;
+        if (canRetryAutomatically) {
+          automaticRetry.current.attempts += 1;
+          automaticRetryTimer = setTimeout(() => {
+            setRetryCount((current) => current + 1);
+          }, reason.retryDelayMs);
+        }
         setHistoryResult({
           requestKey,
           points: [],
           error:
             reason instanceof Error
-              ? reason.message
+              ? `${reason.message}${canRetryAutomatically ? " Retrying automatically…" : ""}`
               : "Rate history is unavailable.",
         });
       });
-    return () => controller.abort();
-  }, [customInterval, mode, range, requestKey, selected]);
+    return () => {
+      controller.abort();
+      if (automaticRetryTimer) clearTimeout(automaticRetryTimer);
+    };
+  }, [
+    customInterval,
+    mode,
+    range,
+    requestKey,
+    requestScopeKey,
+    selectedId,
+    selectedKind,
+  ]);
 
   if (!authorized || !open) return null;
 
@@ -333,6 +389,7 @@ export function RateHistory({
                 />
               </div>
               <HistorySvg
+                key={`${selected.key}:${rangeLabel}`}
                 label={`${selected.label} history for ${rangeLabel}`}
                 points={points}
               />
@@ -372,24 +429,112 @@ function HistorySvg({
   const width = 720;
   const height = 240;
   const chart = buildChartPaths(points, width, height);
+  const [selectedTimestamp, setSelectedTimestamp] = useState<string | null>(
+    null,
+  );
+  const selectedPoint = chart.points.find(
+    (point) => point.snapshotAt === selectedTimestamp,
+  );
+  const markerStep = Math.max(Math.ceil(chart.points.length / 48), 1);
+  const markerPoints = chart.points.filter(
+    (_, index) =>
+      index === 0 ||
+      index === chart.points.length - 1 ||
+      index % markerStep === 0,
+  );
   const first = points[0];
   const latest = points.at(-1);
 
   return (
     <div className={styles.historyChartFrame}>
-      <svg
-        className={styles.historyChart}
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-label={label}
-      >
-        <line x1="24" y1="24" x2="24" y2="216" className={styles.chartGrid} />
-        <line x1="24" y1="216" x2="696" y2="216" className={styles.chartGrid} />
-        <line x1="24" y1="120" x2="696" y2="120" className={styles.chartGrid} />
-        {chart.paths.map((path, index) => (
-          <path key={index} d={path} className={styles.chartLine} />
-        ))}
-      </svg>
+      <div className={styles.historyPlot}>
+        <svg
+          className={styles.historyChart}
+          viewBox={`0 0 ${width} ${height}`}
+          role="group"
+          aria-roledescription="interactive rate chart"
+          aria-label={label}
+        >
+          <line
+            x1="24"
+            y1="24"
+            x2="24"
+            y2="216"
+            className={styles.chartGrid}
+          />
+          <line
+            x1="24"
+            y1="216"
+            x2="696"
+            y2="216"
+            className={styles.chartGrid}
+          />
+          <line
+            x1="24"
+            y1="120"
+            x2="696"
+            y2="120"
+            className={styles.chartGrid}
+          />
+          {chart.paths.map((path, index) => (
+            <path key={index} d={path} className={styles.chartLine} />
+          ))}
+          {markerPoints.map((point) => {
+            const active = point.snapshotAt === selectedPoint?.snapshotAt;
+            const accessibleLabel = `Rate ${formatIndianNumber(point.value)} at ${formatTimestamp(point.snapshotAt)} IST`;
+            return (
+              <g
+                key={point.snapshotAt}
+                className={styles.chartPoint}
+                role="button"
+                tabIndex={0}
+                aria-label={accessibleLabel}
+                aria-pressed={active}
+                data-active={active || undefined}
+                onClick={() => setSelectedTimestamp(point.snapshotAt)}
+                onFocus={() => setSelectedTimestamp(point.snapshotAt)}
+                onMouseEnter={() => setSelectedTimestamp(point.snapshotAt)}
+                onKeyDown={(event) => {
+                  if (event.key !== "Enter" && event.key !== " ") return;
+                  event.preventDefault();
+                  setSelectedTimestamp(point.snapshotAt);
+                }}
+              >
+                <circle
+                  cx={point.x}
+                  cy={point.y}
+                  r="10"
+                  className={styles.chartPointHitArea}
+                />
+                <circle
+                  cx={point.x}
+                  cy={point.y}
+                  r={active ? 4.75 : 3.25}
+                  className={styles.chartPointDot}
+                />
+              </g>
+            );
+          })}
+        </svg>
+        {selectedPoint ? (
+          <div
+            className={styles.historyTooltip}
+            role="status"
+            aria-live="polite"
+            data-align={tooltipAlignment(selectedPoint.x, width)}
+            data-placement={selectedPoint.y < 82 ? "bottom" : "top"}
+            style={{
+              left: `${(selectedPoint.x / width) * 100}%`,
+              top: `${(selectedPoint.y / height) * 100}%`,
+            }}
+          >
+            <strong>{formatIndianNumber(selectedPoint.value)}</strong>
+            <time dateTime={selectedPoint.snapshotAt}>
+              {formatTimestamp(selectedPoint.snapshotAt)} IST
+            </time>
+          </div>
+        ) : null}
+      </div>
       <div className={styles.historyAxis} aria-hidden="true">
         <span>{first ? formatTimestamp(first.snapshotAt) : "—"}</span>
         <span>
@@ -397,8 +542,31 @@ function HistorySvg({
         </span>
         <span>{latest ? formatTimestamp(latest.snapshotAt) : "—"}</span>
       </div>
+      {chart.points.length > 0 ? (
+        <p className={styles.historyChartHint}>
+          Click or focus a point to see its rate and time.
+        </p>
+      ) : null}
     </div>
   );
+}
+
+function tooltipAlignment(x: number, width: number) {
+  if (x < width * 0.2) return "start";
+  if (x > width * 0.8) return "end";
+  return "center";
+}
+
+function retryDelayFrom(response: Response, fallbackMs: number) {
+  const retryAfter = response.headers.get("retry-after");
+  if (!retryAfter) return fallbackMs;
+
+  const seconds = Number(retryAfter);
+  const parsedMs = Number.isFinite(seconds)
+    ? seconds * 1_000
+    : Date.parse(retryAfter) - Date.now();
+  if (!Number.isFinite(parsedMs)) return fallbackMs;
+  return Math.min(Math.max(parsedMs, 1_000), 60_000);
 }
 
 function formatTimestamp(value: string) {
