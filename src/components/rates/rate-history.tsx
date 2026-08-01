@@ -19,7 +19,9 @@ import {
 import styles from "./rate-experience.module.css";
 
 const ranges = ["1H", "24H", "7D", "30D", "6M", "1Y"] as const;
-const maximumAutomaticRetries = 1;
+const maximumAutomaticRetries = 5;
+const maximumBackoffDelayMs = 60_000;
+const maximumServerRetryDelayMs = 5 * 60_000;
 type HistoryRange = (typeof ranges)[number];
 
 class RetryableHistoryError extends Error {
@@ -154,6 +156,7 @@ export function RateHistory({
     if (automaticRetry.current.scopeKey !== requestScopeKey) {
       automaticRetry.current = { scopeKey: requestScopeKey, attempts: 0 };
     }
+    const retryAttempt = automaticRetry.current.attempts;
     const query = new URLSearchParams();
     query.set(selectedKind === "rate" ? "itemId" : "sourceId", selectedId);
     if (mode === "custom" && customInterval) {
@@ -179,15 +182,17 @@ export function RateHistory({
           throw new Error("Chart not available for this item.");
         }
         if (response.status === 429) {
+          const fallbackDelayMs = retryBackoff(10_000, retryAttempt);
           throw new RetryableHistoryError(
             "History requests were temporarily limited.",
-            retryDelayFrom(response, 15_000),
+            retryDelayFrom(response, fallbackDelayMs, fallbackDelayMs),
           );
         }
         if ([502, 503, 504].includes(response.status)) {
+          const fallbackDelayMs = retryBackoff(5_000, retryAttempt);
           throw new RetryableHistoryError(
             "Rate history is temporarily unavailable.",
-            retryDelayFrom(response, 5_000),
+            retryDelayFrom(response, fallbackDelayMs),
           );
         }
         if (!response.ok) throw new Error("Rate history is unavailable.");
@@ -255,6 +260,11 @@ export function RateHistory({
     setCustomError(null);
     setCustomInterval(interval);
     setMode("custom");
+  }
+
+  function retryHistory() {
+    automaticRetry.current = { scopeKey: requestScopeKey, attempts: 0 };
+    setRetryCount((current) => current + 1);
   }
 
   const rangeLabel =
@@ -372,7 +382,7 @@ export function RateHistory({
               <button
                 type="button"
                 className={styles.toolbarButton}
-                onClick={() => setRetryCount((current) => current + 1)}
+                onClick={retryHistory}
               >
                 Retry
               </button>
@@ -557,7 +567,15 @@ function tooltipAlignment(x: number, width: number) {
   return "center";
 }
 
-function retryDelayFrom(response: Response, fallbackMs: number) {
+function retryBackoff(baseDelayMs: number, retryAttempt: number) {
+  return Math.min(baseDelayMs * 2 ** retryAttempt, maximumBackoffDelayMs);
+}
+
+function retryDelayFrom(
+  response: Response,
+  fallbackMs: number,
+  minimumMs = 1_000,
+) {
   const retryAfter = response.headers.get("retry-after");
   if (!retryAfter) return fallbackMs;
 
@@ -566,7 +584,10 @@ function retryDelayFrom(response: Response, fallbackMs: number) {
     ? seconds * 1_000
     : Date.parse(retryAfter) - Date.now();
   if (!Number.isFinite(parsedMs)) return fallbackMs;
-  return Math.min(Math.max(parsedMs, 1_000), 60_000);
+  return Math.min(
+    Math.max(parsedMs, minimumMs),
+    maximumServerRetryDelayMs,
+  );
 }
 
 function formatTimestamp(value: string) {

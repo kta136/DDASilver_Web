@@ -140,7 +140,7 @@ describe("RateHistory", () => {
       }
       if (url.includes("/api/rates/history?")) {
         historyAttempts += 1;
-        if (historyAttempts === 1) {
+        if (historyAttempts <= 3) {
           return Response.json(
             { error: "Too many requests." },
             { status: 429, headers: { "Retry-After": "2" } },
@@ -181,7 +181,7 @@ describe("RateHistory", () => {
     expect(historyRequestCount()).toBe(1);
 
     await act(async () => {
-      await vi.advanceTimersByTimeAsync(1_999);
+      await vi.advanceTimersByTimeAsync(9_999);
     });
     expect(historyRequestCount()).toBe(1);
 
@@ -191,6 +191,30 @@ describe("RateHistory", () => {
     await flushMicrotasks();
 
     expect(historyRequestCount()).toBe(2);
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(19_999);
+    });
+    expect(historyRequestCount()).toBe(2);
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1);
+    });
+    await flushMicrotasks();
+
+    expect(historyRequestCount()).toBe(3);
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(39_999);
+    });
+    expect(historyRequestCount()).toBe(3);
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1);
+    });
+    await flushMicrotasks();
+
+    expect(historyRequestCount()).toBe(4);
     expect(
       screen.getByRole("group", { name: "Silver Bank history for 7D" }),
     ).toBeVisible();
