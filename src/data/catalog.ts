@@ -25,6 +25,12 @@ const mockupImages = {
     width: 1254,
     height: 1254,
   },
+  purse: {
+    src: "/images/mockup/category-gifts.png",
+    alt: "Concept image representing an ornate silver purse",
+    width: 1254,
+    height: 1254,
+  },
   necklace: {
     src: "/images/mockup/featured-chain.png",
     alt: "Concept image of a delicate silver chain on pale stone",
@@ -82,11 +88,19 @@ export const fallbackCategories: Category[] = [
     displayOrder: 3,
   },
   {
+    title: "Purse",
+    slug: "purse",
+    description:
+      "Ornate 92.5% silver purses and clutches for celebrations and gifting.",
+    image: mockupImages.purse,
+    displayOrder: 4,
+  },
+  {
     title: "Gifts",
     slug: "gifts",
     description: "Memorable silver gifts for families, celebrations, and milestones.",
     image: mockupImages.gift,
-    displayOrder: 4,
+    displayOrder: 5,
   },
   {
     title: "Utensils",
@@ -94,7 +108,7 @@ export const fallbackCategories: Category[] = [
     description:
       "Silver dining, serving, and home utensils for meaningful everyday use.",
     image: mockupImages.tableware,
-    displayOrder: 5,
+    displayOrder: 6,
   },
 ];
 

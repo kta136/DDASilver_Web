@@ -36,11 +36,30 @@ describe("<ProductDetails />", () => {
     ).toHaveAttribute("href", expect.stringMatching(/^https:\/\/wa\.me\//));
   });
 
+  it("renders a product weight when Sanity provides one", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      weightGrams: 400,
+    };
+
+    render(
+      <ProductDetails
+        product={product}
+        headingLevel={1}
+        presentation="page"
+      />,
+    );
+
+    expect(screen.getByText("Weight")).toBeInTheDocument();
+    expect(screen.getByText("400 g")).toBeInTheDocument();
+  });
+
   it("omits optional attributes that are absent", () => {
     const product = {
       ...fallbackProducts[0]!,
       reference: undefined,
       purity: undefined,
+      weightGrams: undefined,
       idolConstruction: undefined,
       deities: [],
       coinShape: undefined,
@@ -56,6 +75,7 @@ describe("<ProductDetails />", () => {
 
     expect(screen.queryByText(/^Reference /)).not.toBeInTheDocument();
     expect(screen.queryByText("Purity")).not.toBeInTheDocument();
+    expect(screen.queryByText("Weight")).not.toBeInTheDocument();
     expect(screen.queryByText("Shape")).not.toBeInTheDocument();
   });
 });

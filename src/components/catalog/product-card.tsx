@@ -26,6 +26,7 @@ export function ProductCard({
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
+    product.weightGrams ? `${product.weightGrams} g` : null,
     product.deities.length > 0
       ? product.deities.map((deity) => deity.title).join(", ")
       : null,

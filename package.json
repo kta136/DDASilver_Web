@@ -43,6 +43,9 @@
     "sanity:upload-new-10g-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g",
     "sanity:upload-new-10g-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g --apply",
     "sanity:upload-new-10g-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --series=design-10g --apply --overwrite",
+    "sanity:upload-purses": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token",
+    "sanity:upload-purses:apply": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token -- --apply",
+    "sanity:upload-purses:overwrite": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token -- --apply --overwrite",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build"
   },
   "dependencies": {

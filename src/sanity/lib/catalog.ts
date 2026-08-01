@@ -87,6 +87,12 @@ const productSchema = z.object({
     .enum(["92.5", "99.80"])
     .nullish()
     .transform((value) => value ?? undefined),
+  weightGrams: z
+    .number()
+    .positive()
+    .max(100_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
   idolConstruction: z
     .enum(["hollow", "solid", "semi-solid"])
     .nullish()

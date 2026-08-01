@@ -47,6 +47,7 @@ export function ProductDetails({
         </p>
       ) : null}
       {product.purity ||
+      product.weightGrams ||
       product.idolConstruction ||
       product.deities.length > 0 ||
       product.coinShape ? (
@@ -58,6 +59,16 @@ export function ProductDetails({
               </dt>
               <dd className="mt-1 text-sm font-semibold">
                 {purityLabels[product.purity]}
+              </dd>
+            </div>
+          ) : null}
+          {product.weightGrams ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Weight
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {product.weightGrams} g
               </dd>
             </div>
           ) : null}

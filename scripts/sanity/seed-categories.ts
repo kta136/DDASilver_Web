@@ -38,12 +38,23 @@ const categories = [
     alt: "Concept image of a small devotional silver diya lamp",
   },
   {
+    _id: "category-purse",
+    title: "Purse",
+    slug: "purse",
+    description:
+      "Ornate 92.5% silver purses and clutches for celebrations and gifting.",
+    displayOrder: 4,
+    imagePath:
+      "public/images/silver-purses/ai-cleaned-2026-08-01/purse-01-ornate-elephant-floral-400g.png",
+    alt: "Ornate 92.5% silver purse with raised elephant and floral motifs",
+  },
+  {
     _id: "category-gifts",
     title: "Gifts",
     slug: "gifts",
     description:
       "Memorable silver gifts for families, celebrations, and milestones.",
-    displayOrder: 4,
+    displayOrder: 5,
     imagePath: "public/images/mockup/category-gifts.png",
     alt: "Concept image of an elegant silver gift box",
   },
@@ -53,7 +64,7 @@ const categories = [
     slug: "utensils",
     description:
       "Silver dining, serving, and home utensils for meaningful everyday use.",
-    displayOrder: 5,
+    displayOrder: 6,
     imagePath: "public/images/mockup/category-tableware.png",
     alt: "Concept image of an engraved silver serving bowl",
   },
@@ -76,7 +87,7 @@ async function getOrUploadImage(imagePath: string, title: string) {
     createReadStream(absolutePath),
     {
       filename,
-      title: `${title} temporary mockup`,
+      title: `${title} category image`,
     },
   );
 

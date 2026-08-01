@@ -60,3 +60,7 @@ next-env.d.ts
 /public/images/silver-idols/**/*.jpg
 /public/images/silver-idols/**/*.jpeg
 /public/images/silver-idols/**/*.webp
+/public/images/silver-purses/**/*.png
+/public/images/silver-purses/**/*.jpg
+/public/images/silver-purses/**/*.jpeg
+/public/images/silver-purses/**/*.webp

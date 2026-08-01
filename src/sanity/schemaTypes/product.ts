@@ -82,6 +82,25 @@ export const productType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "weightGrams",
+      title: "Weight (grams)",
+      type: "number",
+      description:
+        "Enter the product weight in grams. This is required for products in the Purse category.",
+      validation: (rule) =>
+        rule.min(1).max(100_000).custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+
+          if (categoryReference === "category-purse") {
+            return typeof value === "number" && Number.isFinite(value)
+              ? true
+              : "Enter the purse weight in grams.";
+          }
+
+          return true;
+        }),
+    }),
+    defineField({
       name: "idolConstruction",
       title: "Idol Construction",
       type: "string",

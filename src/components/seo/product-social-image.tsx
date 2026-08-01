@@ -25,6 +25,7 @@ export function ProductSocialImage({ product }: ProductSocialImageProps) {
   const fontSize = productName.length > 52 ? 45 : productName.length > 36 ? 52 : 60;
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
+    product.weightGrams ? `${product.weightGrams} g` : null,
     product.idolConstruction
       ? idolConstructionLabels[product.idolConstruction]
       : null,
