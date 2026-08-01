@@ -24,6 +24,9 @@ export function ProductCard({
 }: ProductCardProps) {
   const image = product.images[0];
   const Heading = headingLevel === 2 ? "h2" : "h3";
+  const containImage =
+    product.categorySlug === "purse" ||
+    (Boolean(product.coinShape) && !compactImage);
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.weightGrams ? `${product.weightGrams} g` : null,
@@ -55,10 +58,10 @@ export function ProductCard({
               priority={priority}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className={
-                product.coinShape
-                  ? `${
-                      compactImage ? "object-cover" : "object-contain"
-                    } transition duration-500`
+                containImage
+                  ? "object-contain transition duration-500"
+                  : product.coinShape
+                    ? "object-cover transition duration-500"
                   : "object-cover transition duration-500 group-hover:scale-[1.025]"
               }
               style={{ objectPosition: image.objectPosition ?? "center" }}

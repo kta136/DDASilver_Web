@@ -148,7 +148,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     : "(max-width: 640px) 100vw, 29vw"
                 }
                 className={
-                  product.coinShape ? "object-contain" : "object-cover"
+                  product.coinShape || product.categorySlug === "purse"
+                    ? "object-contain"
+                    : "object-cover"
                 }
                 style={{ objectPosition: image.objectPosition ?? "center" }}
               />

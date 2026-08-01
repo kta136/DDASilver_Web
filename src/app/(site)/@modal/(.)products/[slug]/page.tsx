@@ -42,7 +42,9 @@ export default async function ProductModalPage({
         <div className="grid max-h-[calc(100dvh-1rem)] overflow-y-auto sm:max-h-[calc(100dvh-3rem)] lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
           <ProductGallery
             images={product.images}
-            containImages={Boolean(product.coinShape)}
+            containImages={
+              Boolean(product.coinShape) || product.categorySlug === "purse"
+            }
             priority
           />
           <div className="px-5 py-8 sm:px-8 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto lg:px-10 lg:py-12">

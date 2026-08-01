@@ -42,6 +42,14 @@ describe("<ProductGallery />", () => {
     expect(screen.getByAltText("Bracelet front")).toBeInTheDocument();
   });
 
+  it("can preserve the full product frame without cropping", () => {
+    render(<ProductGallery images={images.slice(0, 1)} containImages />);
+
+    expect(screen.getByAltText("Bracelet front")).toHaveClass(
+      "object-contain",
+    );
+  });
+
   it("moves between photos with accessible controls", () => {
     render(<ProductGallery images={images} />);
     const scroller = screen.getByAltText("Bracelet front").parentElement!
