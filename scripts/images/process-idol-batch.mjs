@@ -558,6 +558,9 @@ function buildProductRecord(item, index, startingNumber, outputDirectory) {
   if (!/^[A-Z]{2}$/.test(catalogProduct.codeFamily ?? "")) {
     reviewReasons.push("two-letter code family missing");
   }
+  if (catalogProduct.codeStatus === "provisional") {
+    reviewReasons.push("item code family pending approval");
+  }
   if (deityIds.length === 0) {
     reviewReasons.push("deity IDs missing");
   }
@@ -747,11 +750,43 @@ function erodeAlphaEdge(data, width, height, channels, passes = 3) {
   }
 }
 
-async function cleanTransparentCutout(inputPath) {
+function fadeCutoutBelowRatio(data, width, height, channels, cutoffRatio) {
+  if (cutoffRatio === undefined) {
+    return;
+  }
+  if (
+    !Number.isFinite(cutoffRatio) ||
+    cutoffRatio < 0.5 ||
+    cutoffRatio > 1
+  ) {
+    throw new Error(
+      `cutoutBottomRatio must be between 0.5 and 1; received ${cutoffRatio}`,
+    );
+  }
+
+  const fadeStart = Math.min(height - 1, Math.round(height * cutoffRatio));
+  const fadeHeight = Math.min(8, height - fadeStart);
+  for (let y = fadeStart; y < height; y += 1) {
+    const opacity = Math.max(0, 1 - (y - fadeStart) / fadeHeight);
+    for (let x = 0; x < width; x += 1) {
+      const alphaIndex = (y * width + x) * channels + 3;
+      data[alphaIndex] = Math.round(data[alphaIndex] * opacity);
+    }
+  }
+}
+
+async function cleanTransparentCutout(inputPath, cutoutBottomRatio) {
   const { data, info } = await sharp(inputPath)
     .ensureAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
+  fadeCutoutBelowRatio(
+    data,
+    info.width,
+    info.height,
+    info.channels,
+    cutoutBottomRatio,
+  );
   const fullAlpha = Buffer.alloc(info.width * info.height);
 
   for (let pixel = 0; pixel < fullAlpha.length; pixel += 1) {
@@ -882,6 +917,7 @@ async function composeProduct({
   backgroundPath,
   outputPath,
   subjectScale = 1,
+  cutoutBottomRatio,
 }) {
   const backgroundMetadata = await sharp(backgroundPath).metadata();
   const canvasWidth = backgroundMetadata.width;
@@ -890,7 +926,10 @@ async function composeProduct({
     throw new Error(`Could not read background dimensions: ${backgroundPath}`);
   }
 
-  const cleaned = await cleanTransparentCutout(transparentPath);
+  const cleaned = await cleanTransparentCutout(
+    transparentPath,
+    cutoutBottomRatio,
+  );
   const maxWidth = Math.round(canvasWidth * 0.68 * subjectScale);
   const maxHeight = Math.round(canvasHeight * 0.61 * subjectScale);
   const { data: subject, info } = await sharp(cleaned)
@@ -1434,6 +1473,7 @@ async function main() {
             backgroundPath,
             outputPath: product.outputPath,
             subjectScale: catalogProduct?.subjectScale ?? 1,
+            cutoutBottomRatio: catalogProduct?.cutoutBottomRatio,
           });
           console.log(
             `  [${index + 1}/${pendingProducts.length}] wrote ${product.outputFilename}`,

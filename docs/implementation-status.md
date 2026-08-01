@@ -1,6 +1,6 @@
 # Implementation status
 
-**Updated:** 30 July 2026
+**Updated:** 31 July 2026
 **Environment:** Local production build plus protected Vercel Preview
 **Production authorization:** Not granted
 
@@ -43,6 +43,11 @@
 - Validated and bounded v1 live-rate snapshot and SSE event schemas, sequence
   handling, conservative stale detection, full-snapshot reconnection,
   semantic rate tables, and unavailable states.
+- Same-origin authenticated snapshot, SSE, rate-history, and source-history
+  proxies that translate the separate DDA Silver SSO session into the regular
+  DDAJewels session accepted by its authoritative rates service.
+- Complete server-authorized item rendering, authorized buying-rate fields,
+  persistent row rearranging/hiding, and authorized rate/market history charts.
 - Authorization-code/PKCE handoff routes, state/nonce checks, secure session
   cookies, logout, and personalized rate-ticket route boundaries.
 - Consent Mode defaults, persistent preference controls, consent-gated
@@ -85,8 +90,9 @@
 
 - Catalog expansion, copy approval, and production photography. This work was
   explicitly left out of the 29 July implementation pass.
-- DDAJewels rate snapshot/SSE connection and personalized visibility.
-- DDAJewels shared-account login and code exchange.
+- Production/preview DDAJewels rate and shared-account endpoint configuration;
+  the application code paths are implemented but local `.env.local` does not
+  contain those production-owned values.
 - GA4 reporting and Search Console verification.
 - Verified Google Business Profile link.
 - Final product catalog, approved copy, legal approval, and complete image set.
@@ -95,15 +101,13 @@
 - Upstream dependency patches or documented risk acceptance for the residual
   findings recorded in `docs/security-dependency-audit.md`.
 
-## External backend work still required
+## External configuration still required
 
-- Extend the DDAJewels v1 snapshot response with the agreed fields.
-- Confirm exact payload field names for all five SSE event types.
-- Add narrow CORS rules for the final stable preview origin.
-- Implement the authorization-code exchange contract expected by DDASilver.
-- Implement single-use rate tickets with short expiry and rates-only scope.
-- Provide staging endpoints and test credentials that contain no production
-  customer data.
+- Configure the existing DDAJewels SSO, snapshot, and SSE endpoint values on
+  the stable preview and later production deployment.
+- Register the exact stable preview/production callback URLs in DDAJewels.
+- Provide non-production test accounts for public, approved, buying-rate, and
+  chart-enabled visibility scenarios.
 
 ## Launch protection
 

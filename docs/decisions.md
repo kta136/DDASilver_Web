@@ -57,9 +57,15 @@
 ## Rates
 
 - Same rate data and behavior as DDAJewels, inside DDA Silver styling.
-- Preserve four customer rows and five market rows.
-- No independent history charting.
-- Public direct SSE after server-rendered snapshot.
+- Render every item returned by DDAJewels for the viewer's effective groups;
+  the former four customer rows and five market rows remain public defaults,
+  not a visibility ceiling.
+- Approved viewers can rearrange or hide their visible rows, with preferences
+  kept separate from server-controlled authorization.
+- Reuse DDAJewels-authorized rate and market-reference history. DDA Silver
+  does not calculate rates or own a separate history store.
+- Proxy the public or authenticated snapshot and SSE through same-origin DDA
+  Silver routes so the DDA Silver session never reaches browser JavaScript.
 - DDAJewels remains authoritative.
 - Link to DDAJewels TV instead of building a DDA Silver TV route.
 

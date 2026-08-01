@@ -126,4 +126,60 @@ describe("rate reducer", () => {
     });
     expect(sourcesUpdated.sequence).toBe(11);
   });
+
+  it("replaces no-longer-authorized rows on a stream snapshot", () => {
+    const approved = rateReducer(initialRateState, {
+      type: "snapshot",
+      snapshot: {
+        ...snapshot,
+        items: [
+          { id: "silver-bank", value: 102000 },
+          { id: "approved-only", value: 110000 },
+        ],
+      },
+      receivedAt: 1_000,
+    });
+    const publicOnly = rateReducer(approved, {
+      type: "rate-snapshot",
+      items: [{ id: "silver-bank", value: 102100 }],
+      sequence: 10,
+      receivedAt: 2_000,
+    });
+
+    expect(publicOnly.items).toEqual({
+      "silver-bank": { id: "silver-bank", value: 102100 },
+    });
+  });
+
+  it("clears a stale premium breakdown when a rate only updates its total", () => {
+    const hydrated = rateReducer(initialRateState, {
+      type: "snapshot",
+      snapshot: {
+        ...snapshot,
+        items: [
+          {
+            id: "silver-bank",
+            value: 102000,
+            premiumTotal: 500,
+            premiumBreakdown: {
+              unit: "PER_KG" as const,
+              l1: 300,
+              l2: 200,
+              total: 500,
+            },
+          },
+        ],
+      },
+      receivedAt: 1_000,
+    });
+    const updated = rateReducer(hydrated, {
+      type: "rate-batch",
+      items: [{ id: "silver-bank", value: 102100, premiumTotal: -250 }],
+      sequence: 11,
+      receivedAt: 2_000,
+    });
+
+    expect(updated.items["silver-bank"]?.premiumTotal).toBe(-250);
+    expect(updated.items["silver-bank"]).not.toHaveProperty("premiumBreakdown");
+  });
 });

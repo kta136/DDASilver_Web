@@ -41,6 +41,7 @@ only in the product description.
 | `JG` | Jagannath | Jagannath designs, including Balabhadra and Subhadra groups |
 | `KM` | Kamdhenu | All Kamdhenu cow-and-calf designs |
 | `LG` | Lakshmi Ganesh | Reserved for Lakshmi Ganesh group designs |
+| `RM` | Rama | All Lord Rama and Ram Mandir designs |
 | `LB` | Laughing Buddha | All Laughing Buddha designs |
 | `MA` | Maharaja Agrasen | All Maharaja Agrasen designs |
 | `EL` | Auspicious Elephant | All auspicious elephant designs |
@@ -138,6 +139,37 @@ Examples:
 | 62 | `HM-RK-11` | HM-RK-11 — Painted Standing Radha Krishna Silver Idol on Lotus |
 | 63 | `HM-RK-12` | HM-RK-12 — Painted Radha Krishna Silver Idol Pair |
 | 64 | `HM-RK-13` | HM-RK-13 — Seated Radha Krishna Silver Idol |
+| 65 | `HM-LG-1` | HM-LG-1 — Lakshmi Ganesha Silver Idol Pair on Round Pedestals |
+| 66 | `HM-LG-2` | HM-LG-2 — Lakshmi Ganesha Silver Idol Pair on Lotus Bases |
+| 67 | `HM-LG-3` | HM-LG-3 — Painted Lakshmi Ganesha Silver Idol Pair on Lotus Bases |
+| 68 | `HM-LG-4` | HM-LG-4 — Lakshmi Ganesha Silver Idol Pair with Floral Arches |
+| 69 | `HM-LG-5` | HM-LG-5 — Painted Lakshmi Ganesha Silver Idol Pair on Miniature Thrones |
+| 70 | `HM-LG-6` | HM-LG-6 — Lakshmi Ganesha Silver Idol Pair on Compact Lotus Bases |
+| 71 | `HM-LG-7` | HM-LG-7 — Painted Miniature Lakshmi Ganesha Silver Idol Pair |
+| 72 | `HM-LG-8` | HM-LG-8 — Lakshmi Ganesha Silver Idol Pair with Beaded Halos |
+| 73 | `HM-LG-9` | HM-LG-9 — Painted Lakshmi Ganesha Silver Idol Pair in Yellow |
+| 74 | `HM-LG-10` | HM-LG-10 — Painted Lakshmi Ganesha Silver Idol Pair in Red |
+| 75 | `HM-LG-11` | HM-LG-11 — Painted Lakshmi Ganesha Silver Idol Pair in Orange |
+| 76 | `HM-LG-12` | HM-LG-12 — Painted Lakshmi Ganesha Silver Idol Pair in Golden Yellow |
+| 77 | `HM-LG-13` | HM-LG-13 — Lakshmi Ganesha Silver Idol Pair with Painted Garlands |
+| 78 | `HM-LG-14` | HM-LG-14 — Painted Lakshmi Ganesha Silver Idol Pair in Green and Yellow |
+| 79 | `HM-LG-15` | HM-LG-15 — Large Lakshmi Ganesha Silver Idol Pair on Tiered Lotus Bases |
+| 80 | `HM-LG-16` | HM-LG-16 — Painted Lakshmi Ganesha Silver Idol Pair in Mint Green |
+| 81 | `HM-LG-17` | HM-LG-17 — Painted Lakshmi Ganesha Silver Idol Pair in Crimson Red |
+| 82 | `HM-LG-18` | HM-LG-18 — Lakshmi Ganesha Silver Idol Pair on Ornate Thrones |
+| 83 | `HM-LG-19` | HM-LG-19 — Lakshmi Ganesha Silver Idol Pair on Tall Lotus Pedestals |
+| 84 | `HM-LG-20` | HM-LG-20 — Lakshmi Ganesha Silver Idol Pair with Owl and Mouse |
+| 85 | `HM-LG-21` | HM-LG-21 — Lakshmi Ganesha Silver Idol Pair with Modak |
+| 86 | `HM-LG-22` | HM-LG-22 — Lakshmi Ganesha Silver Idol Pair with Red and Green Garlands |
+| 87 | `HM-LG-23` | HM-LG-23 — Painted Lakshmi Ganesha Silver Idol Pair with Owl and Mouse |
+| 88 | `HM-LG-24` | HM-LG-24 — Painted Lakshmi Ganesha Silver Idol Pair on Round Pedestals |
+| 89 | `HM-DG-2` | HM-DG-2 — Durga Silver Idol on Tiger beneath Decorative Arch |
+| 90 | `HM-LG-25` | HM-LG-25 — Lakshmi Ganesha Silver Idol Pair Riding Elephants |
+| 91 | `HM-LG-26` | HM-LG-26 — Lakshmi Ganesha Silver Idol Pair with Circular Halos |
+| 92 | `HM-GN-16` | HM-GN-16 — Ganesha Silver Idol with Cobra Hood |
+| 93 | `HM-RM-1` | HM-RM-1 — Lord Rama Silver Idol with Ram Mandir |
+| 94 | `HM-SH-6` | HM-SH-6 — Shiva Family Silver Idol with Arch and Shivling |
+| 95 | `HM-DG-3` | HM-DG-3 — Painted Durga Silver Idol on Lion |
 
 ## Sanity implementation
 

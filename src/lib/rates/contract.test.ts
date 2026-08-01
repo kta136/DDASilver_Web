@@ -93,6 +93,14 @@ describe("rate contract", () => {
           finalRate: 146370,
           movementValue: 442,
           movementDirection: "DOWN",
+          buyingRate: 145000,
+          premiumTotal: -1200,
+          premiumBreakdown: {
+            unit: "PER_10_GRAM",
+            l1: -1000,
+            l2: -200,
+            total: -1200,
+          },
         },
       ],
       feedStatus: {
@@ -109,6 +117,9 @@ describe("rate contract", () => {
         value: 146370,
         change: -442,
         direction: "down",
+        buyingRate: 145000,
+        premiumTotal: -1200,
+        premiumBreakdown: { total: -1200 },
       });
       expect(parsed.data.sources).toEqual([]);
       expect(parsed.data.feedStatus).toBe("live");

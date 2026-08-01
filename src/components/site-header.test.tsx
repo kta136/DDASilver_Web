@@ -9,15 +9,16 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
-}));
+const { pathnameMock } = vi.hoisted(() => ({ pathnameMock: vi.fn() }));
+
+vi.mock("next/navigation", () => ({ usePathname: pathnameMock }));
 
 import { SiteHeader } from "@/components/site-header";
 
 const fetchMock = vi.fn();
 
 beforeEach(() => {
+  pathnameMock.mockReturnValue("/");
   fetchMock.mockReset();
   fetchMock.mockResolvedValue({
     ok: true,
@@ -82,5 +83,23 @@ describe("<SiteHeader />", () => {
     expect(await screen.findAllByRole("link", { name: "Login" })).toHaveLength(
       2,
     );
+  });
+
+  it("places the rates action slot beside the desktop account", async () => {
+    pathnameMock.mockReturnValue("/rates");
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({
+        user: { id: "user_1", name: "Asha", authStatus: "approved" },
+      }),
+    });
+
+    render(<SiteHeader />);
+
+    const accountButton = await screen.findByRole("button", {
+      name: "Account menu for Asha",
+    });
+    const slot = screen.getByTestId("rates-header-actions-desktop");
+    expect(slot.parentElement).toContainElement(accountButton);
   });
 });

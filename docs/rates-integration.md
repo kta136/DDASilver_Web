@@ -25,15 +25,19 @@ sequenceDiagram
 
     Browser->>Silver: GET /rates
     Silver-->>Browser: DDA Silver-branded rates page
-    Browser->>Silver: GET /api/rates/snapshot
-    Silver->>Jewels: Fixed HTTPS snapshot rewrite
-    Jewels-->>Silver: Customer and market rates
+    Browser->>Silver: GET /api/rates/snapshot (Silver cookie)
+    Silver->>Jewels: HTTPS snapshot proxy (translated DDA session)
+    Jewels-->>Silver: Viewer-authorized customer rates
     Silver-->>Browser: Validated snapshot
     Browser->>Silver: Connect /api/rates/stream
-    Silver->>Jewels: Fixed HTTPS SSE rewrite
+    Silver->>Jewels: HTTPS SSE proxy (translated DDA session)
     Jewels-->>Silver: Live updates
     Silver-->>Browser: Live updates
     Browser->>Browser: Update the DDA Silver rate view
+    Browser->>Silver: GET /api/rates/history
+    Silver->>Jewels: Authorized history request
+    Jewels-->>Silver: Final-rate history or neutral denial
+    Silver-->>Browser: Validated chart points
 ```
 
 ## Required configuration
@@ -41,19 +45,23 @@ sequenceDiagram
 ```text
 DDAJEWELS_RATES_SNAPSHOT_URL=https://ddajewels.com/api/v1/rates/current
 DDAJEWELS_RATES_STREAM_URL=https://ddajewels.com/sse/rates
-DDAJEWELS_RATE_TICKET_URL=
-DDAJEWELS_SERVICE_TOKEN=
 ```
 
-Only the two fixed HTTPS `ddajewels.com` paths above are accepted. Next.js
-rewrites them behind same-origin DDA Silver paths so browsers remain on the DDA
-Silver origin and do not require a cross-origin exception. The browser receives
-no service token. Personalized streams use a short-lived opaque ticket issued
-by the server-side ticket route.
+Only fixed HTTPS `ddajewels.com` hosts are accepted. Next.js route handlers
+proxy them behind same-origin DDA Silver paths so browsers remain on the DDA
+Silver origin and do not require a cross-origin exception. For signed-in
+customers, the server translates the separate DDA Silver cookie to the regular
+DDAJewels session cookie accepted by the authoritative rate service. The
+session value is never exposed to browser JavaScript or placed in a URL.
 
 ## Page behavior
 
-- Customer and market-reference rows follow the approved deterministic order.
+- Customer and market-reference rows follow the complete server-authorized
+  item set and deterministic upstream order.
+- Approved customers can drag, move, hide, restore, and reset rows. New items
+  authorized later are appended without reviving no-longer-authorized items.
+- Chart controls appear only for approved, verified customers with chart
+  permission. DDAJewels rechecks group and item visibility for every request.
 - Movement is conveyed by an icon and accessible label, not colour alone.
 - Market rows expose expandable high and low values.
 - Valid snapshots remain visible during brief reconnects.

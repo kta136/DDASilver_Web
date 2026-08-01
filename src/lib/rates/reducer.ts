@@ -53,6 +53,12 @@ export type RateAction =
       receivedAt: number;
     }
   | {
+      type: "rate-snapshot";
+      items: RateItem[];
+      sequence: number;
+      receivedAt: number;
+    }
+  | {
       type: "source-snapshot";
       sources: SourceItem[];
       sequence?: number;
@@ -96,6 +102,24 @@ function mergeById<T extends { id: string }>(
   const next = { ...existing };
   for (const item of items) {
     next[item.id] = { ...next[item.id], ...item };
+  }
+  return next;
+}
+
+function mergeRateItems(
+  existing: Record<string, RateItem>,
+  items: RateItem[],
+) {
+  const next = { ...existing };
+  for (const item of items) {
+    const merged = { ...next[item.id], ...item };
+    if (
+      Object.prototype.hasOwnProperty.call(item, "premiumTotal") &&
+      !Object.prototype.hasOwnProperty.call(item, "premiumBreakdown")
+    ) {
+      delete merged.premiumBreakdown;
+    }
+    next[item.id] = merged;
   }
   return next;
 }
@@ -161,7 +185,7 @@ export function rateReducer(
       return {
         ...state,
         sequence: action.sequence,
-        items: mergeById(state.items, [action.item]),
+        items: mergeRateItems(state.items, [action.item]),
         itemUpdatedAt: nextItemUpdatedAt,
         connection: "live",
         lastValidEventAt: oldestFinancialUpdate(
@@ -181,7 +205,7 @@ export function rateReducer(
       return {
         ...state,
         sequence: action.sequence,
-        items: mergeById(state.items, action.items),
+        items: mergeRateItems(state.items, action.items),
         itemUpdatedAt: batchUpdatedAt,
         connection: "live",
         lastValidEventAt: oldestFinancialUpdate(
@@ -189,6 +213,27 @@ export function rateReducer(
           state.sourceUpdatedAt,
         ),
         announcement: "Customer rates updated.",
+      };
+    }
+    case "rate-snapshot": {
+      if (action.sequence < state.sequence) {
+        return state;
+      }
+      const snapshotUpdatedAt = mapUpdatedAt(
+        action.items,
+        action.receivedAt,
+      );
+      return {
+        ...state,
+        sequence: action.sequence,
+        items: mapById(action.items),
+        itemUpdatedAt: snapshotUpdatedAt,
+        connection: "live",
+        lastValidEventAt: oldestFinancialUpdate(
+          snapshotUpdatedAt,
+          state.sourceUpdatedAt,
+        ),
+        announcement: "Customer rates refreshed.",
       };
     }
     case "source-snapshot":

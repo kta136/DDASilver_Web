@@ -119,11 +119,23 @@ export function SiteHeader() {
               })}
             </ul>
           </nav>
-          <DesktopAccount
-            account={account}
-            pathname={pathname}
-            onLogout={logout}
-          />
+          <div className="flex items-center gap-2">
+            {pathname.startsWith("/rates") ? (
+              <div
+                data-rates-header-actions="desktop"
+                data-testid="rates-header-actions-desktop"
+                className={clsx(
+                  "flex items-center gap-1",
+                  account.status === "guest" && "hidden",
+                )}
+              />
+            ) : null}
+            <DesktopAccount
+              account={account}
+              pathname={pathname}
+              onLogout={logout}
+            />
+          </div>
         </div>
 
         <button
@@ -148,12 +160,25 @@ export function SiteHeader() {
       >
         <ul className="site-container grid">
           <li className="border-b border-line pb-4">
-            <MobileAccount
-              account={account}
-              pathname={pathname}
-              onLogin={() => setIsOpen(false)}
-              onLogout={logout}
-            />
+            <div className="flex items-start gap-3">
+              <div className="min-w-0 flex-1">
+                <MobileAccount
+                  account={account}
+                  pathname={pathname}
+                  onLogin={() => setIsOpen(false)}
+                  onLogout={logout}
+                />
+              </div>
+              {pathname.startsWith("/rates") ? (
+                <div
+                  data-rates-header-actions="mobile"
+                  className={clsx(
+                    "flex shrink-0 items-center gap-1",
+                    account.status === "guest" && "hidden",
+                  )}
+                />
+              ) : null}
+            </div>
           </li>
           {navigation.map((item) => (
             <li key={item.href} className="border-b border-line last:border-b-0">

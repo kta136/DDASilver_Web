@@ -14,8 +14,20 @@ const decimalString = z
   .max(32)
   .regex(/^\d+(?:\.\d+)?$/);
 const monetaryNumber = z.number().finite().nonnegative().max(1_000_000_000_000);
+const signedMonetaryNumber = z
+  .number()
+  .finite()
+  .min(-1_000_000_000_000)
+  .max(1_000_000_000_000);
 const numberLike = z.union([monetaryNumber, decimalString]).nullable();
 const sequence = z.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER);
+
+const premiumBreakdownSchema = z.object({
+  unit: z.enum(["PER_GRAM", "PER_10_GRAM", "PER_KG"]),
+  l1: signedMonetaryNumber,
+  l2: signedMonetaryNumber,
+  total: signedMonetaryNumber,
+});
 
 export const rateItemSchema = z.object({
   id: identifier,
@@ -26,6 +38,9 @@ export const rateItemSchema = z.object({
   displayValue: numberLike.optional(),
   change: z.number().finite().min(-1_000_000_000_000).max(1_000_000_000_000).optional(),
   direction: z.enum(["up", "down", "flat"]).optional(),
+  buyingRate: numberLike.optional(),
+  premiumTotal: signedMonetaryNumber.nullable().optional(),
+  premiumBreakdown: premiumBreakdownSchema.nullable().optional(),
   unit: z.string().trim().max(32).optional(),
 });
 
@@ -95,6 +110,9 @@ const ddaJewelsRateItemSchema = z.object({
   finalRate: monetaryNumber,
   movementValue: ddaJewelsMovementValueSchema,
   movementDirection: ddaJewelsDirectionSchema,
+  buyingRate: numberLike.optional(),
+  premiumTotal: signedMonetaryNumber.nullable().optional(),
+  premiumBreakdown: premiumBreakdownSchema.nullable().optional(),
 });
 const ddaJewelsSourceItemSchema = z.object({
   sourceId: identifier,
@@ -138,6 +156,15 @@ function normalizeDdaJewelsRateItem(
     value: item.finalRate,
     change: signedChange,
     direction,
+    ...(item.buyingRate !== undefined
+      ? { buyingRate: item.buyingRate }
+      : {}),
+    ...(item.premiumTotal !== undefined
+      ? { premiumTotal: item.premiumTotal }
+      : {}),
+    ...(item.premiumBreakdown !== undefined
+      ? { premiumBreakdown: item.premiumBreakdown }
+      : {}),
   };
 }
 

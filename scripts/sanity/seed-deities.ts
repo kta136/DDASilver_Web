@@ -75,6 +75,7 @@ const deities = [
     slug: "maharaja-agrasen",
     displayOrder: 21,
   },
+  { _id: "deity-rama", title: "Rama", slug: "rama", displayOrder: 22 },
 ] as const;
 
 async function main() {

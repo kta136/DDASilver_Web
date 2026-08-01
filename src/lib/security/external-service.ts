@@ -5,10 +5,15 @@ export function isAllowedDdaJewelsUrl(value?: string): value is string {
 
   try {
     const url = new URL(value);
+    const isDevelopmentLoopback =
+      process.env.NODE_ENV === "development" &&
+      url.protocol === "http:" &&
+      (url.hostname === "localhost" || url.hostname === "127.0.0.1");
     return (
-      url.protocol === "https:" &&
-      (url.hostname === "ddajewels.com" ||
-        url.hostname.endsWith(".ddajewels.com"))
+      isDevelopmentLoopback ||
+      (url.protocol === "https:" &&
+        (url.hostname === "ddajewels.com" ||
+          url.hostname.endsWith(".ddajewels.com")))
     );
   } catch {
     return false;

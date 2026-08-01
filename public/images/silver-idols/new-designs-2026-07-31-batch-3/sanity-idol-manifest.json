@@ -1,0 +1,914 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-designs-2026-07-31-batch-3",
+  "generatedAt": "2026-07-31T12:47:15.849Z",
+  "sourceDirectory": "C:\\Users\\kk\\Desktop\\New folder (2)",
+  "categoryId": "category-idols",
+  "purity": "99.80",
+  "idolConstruction": "hollow",
+  "processing": {
+    "backgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+    "model": "u2net",
+    "modelOverrides": [
+      {
+        "sourceFilename": "WhatsApp Image 2026-07-31 at 5.48.09 PM.jpeg",
+        "model": "isnet-general-use"
+      },
+      {
+        "sourceFilename": "WhatsApp Image 2026-07-31 at 5.54.54 PM.jpeg",
+        "model": "isnet-general-use"
+      },
+      {
+        "sourceFilename": "WhatsApp Image 2026-07-31 at 5.56.01 PM.jpeg",
+        "model": "isnet-general-use"
+      }
+    ],
+    "device": "reused",
+    "concurrency": 4,
+    "alphaMatting": false
+  },
+  "readyForUpload": true,
+  "review": [
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.06.59 PM.jpeg",
+      "outputFilename": "idol-65-lakshmi-ganesha-silver-idol-pair-round-pedestals.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 92,
+        "text": "Weight 100gm Height 3.5inch",
+        "weightGrams": 100,
+        "heightInches": 3.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.09.39 PM.jpeg",
+      "outputFilename": "idol-66-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 90,
+        "text": "Weight 40gm I Height inch | Weight 40gm Height 3inch",
+        "weightGrams": 40,
+        "heightInches": 3
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.13.40 PM.jpeg",
+      "outputFilename": "idol-67-painted-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.16.10 PM.jpeg",
+      "outputFilename": "idol-68-lakshmi-ganesha-silver-idol-pair-floral-arches.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.18.06 PM.jpeg",
+      "outputFilename": "idol-69-painted-lakshmi-ganesha-silver-idol-pair-miniature-thrones-15g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 68,
+        "text": "#8 Weight 15gm I Height 1.5inch",
+        "weightGrams": 15,
+        "heightInches": 1.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.19.35 PM.jpeg",
+      "outputFilename": "idol-70-lakshmi-ganesha-silver-idol-pair-compact-lotus-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.21.53 PM.jpeg",
+      "outputFilename": "idol-71-painted-miniature-lakshmi-ganesha-silver-idol-pair.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.24.29 PM.jpeg",
+      "outputFilename": "idol-72-lakshmi-ganesha-silver-idol-pair-beaded-halos.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 12gm Height 1.5inch",
+        "weightGrams": 12,
+        "heightInches": 1.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.25.58 PM.jpeg",
+      "outputFilename": "idol-73-painted-lakshmi-ganesha-silver-idol-pair-yellow-20g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 78,
+        "text": "i £5 o£ I ON ON Ll LT Cc DD iO OQ =I | I Weight 20gm B Bl Height 2inch",
+        "weightGrams": 20,
+        "heightInches": 2
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.27.46 PM.jpeg",
+      "outputFilename": "idol-74-painted-lakshmi-ganesha-silver-idol-pair-red-35g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 92,
+        "text": "Weight 35gm Height 2.5inch",
+        "weightGrams": 35,
+        "heightInches": 2.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.28.56 PM.jpeg",
+      "outputFilename": "idol-75-painted-lakshmi-ganesha-silver-idol-pair-orange-35g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 86,
+        "text": "Height 2.5inch £ 1 O LO ™ cd k= 1.9 o BE | I Weight 35gm Height 2.5inch",
+        "weightGrams": 35,
+        "heightInches": 2.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.30.23 PM.jpeg",
+      "outputFilename": "idol-76-painted-lakshmi-ganesha-silver-idol-pair-golden-yellow.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 64,
+        "text": "BREEN \\\\cight 47gm JE BE Height 2.5inch JE",
+        "weightGrams": 47,
+        "heightInches": 2.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.32.02 PM.jpeg",
+      "outputFilename": "idol-77-lakshmi-ganesha-silver-idol-pair-painted-garlands-55g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 76,
+        "text": "h c £5 0 CS jLO Mm dr ft L Cc Rex) QO =I | Weight 55gm BB I Height 3inch",
+        "weightGrams": 55,
+        "heightInches": 3
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 4.39.29 PM.jpeg",
+      "outputFilename": "idol-78-painted-lakshmi-ganesha-silver-idol-pair-green-yellow-130g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.26.06 PM.jpeg",
+      "outputFilename": "idol-79-large-lakshmi-ganesha-silver-idol-pair-tiered-lotus-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 500gm Height 7inch",
+        "weightGrams": 500,
+        "heightInches": 7
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.28.43 PM.jpeg",
+      "outputFilename": "idol-80-painted-lakshmi-ganesha-silver-idol-pair-mint-green.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.30.02 PM.jpeg",
+      "outputFilename": "idol-81-painted-lakshmi-ganesha-silver-idol-pair-crimson-red.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Height 4inch S o Qo o La Lod L Koy = | Weight 100gm Height 4inch",
+        "weightGrams": 100,
+        "heightInches": 4
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.31.38 PM.jpeg",
+      "outputFilename": "idol-82-lakshmi-ganesha-silver-idol-pair-ornate-thrones.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 200gm Height 5inch",
+        "weightGrams": 200,
+        "heightInches": 5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.36.19 PM.jpeg",
+      "outputFilename": "idol-83-lakshmi-ganesha-silver-idol-pair-tall-lotus-pedestals.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 92,
+        "text": "Weight 125gm Height 5inch",
+        "weightGrams": 125,
+        "heightInches": 5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.38.33 PM.jpeg",
+      "outputFilename": "idol-84-lakshmi-ganesha-silver-idol-pair-owl-mouse-105g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 92,
+        "text": "Weight 105gm Height 4inch",
+        "weightGrams": 105,
+        "heightInches": 4
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.40.44 PM.jpeg",
+      "outputFilename": "idol-85-lakshmi-ganesha-silver-idol-pair-modak.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 88,
+        "text": "Weight 110gm Height 4inch",
+        "weightGrams": 110,
+        "heightInches": 4
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.42.31 PM.jpeg",
+      "outputFilename": "idol-86-lakshmi-ganesha-silver-idol-pair-red-green-garlands.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 130gm Height 5inch",
+        "weightGrams": 130,
+        "heightInches": 5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.43.54 PM.jpeg",
+      "outputFilename": "idol-87-painted-lakshmi-ganesha-silver-idol-pair-owl-mouse.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 100gm Height 3.5inch",
+        "weightGrams": 100,
+        "heightInches": 3.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.45.10 PM.jpeg",
+      "outputFilename": "idol-88-painted-lakshmi-ganesha-silver-idol-pair-round-pedestals.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 100gm Height 3.5inch",
+        "weightGrams": 100,
+        "heightInches": 3.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.48.09 PM.jpeg",
+      "outputFilename": "idol-89-durga-silver-idol-tiger-decorative-arch.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.49.57 PM.jpeg",
+      "outputFilename": "idol-90-lakshmi-ganesha-silver-idol-pair-riding-elephants.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 92,
+        "text": "Weight 120gm Height 4.5inch",
+        "weightGrams": 120,
+        "heightInches": 4.5
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.52.07 PM.jpeg",
+      "outputFilename": "idol-91-lakshmi-ganesha-silver-idol-pair-circular-halos.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "Weight 75gm Height 3inch",
+        "weightGrams": 75,
+        "heightInches": 3
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.53.23 PM.jpeg",
+      "outputFilename": "idol-92-ganesha-silver-idol-cobra-hood.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 79,
+        "text": "Weight 50gm Ly Height 4inch",
+        "weightGrams": 50,
+        "heightInches": 4
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.54.54 PM.jpeg",
+      "outputFilename": "idol-93-lord-rama-silver-idol-ram-mandir.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.56.01 PM.jpeg",
+      "outputFilename": "idol-94-shiva-family-silver-idol-arch-shivling.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 95,
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-07-31 at 5.59.29 PM.jpeg",
+      "outputFilename": "idol-95-painted-durga-silver-idol-lion-160g.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "confidence": 91,
+        "text": "inch £ [@)] oO © — ra) L 2 QO = Height 6 | Weight 160gm Height 6inch",
+        "weightGrams": 160,
+        "heightInches": 6
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    }
+  ],
+  "products": [
+    {
+      "number": 65,
+      "id": "product-dda-idol-65-lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Round Pedestals",
+      "slug": "lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on matching engraved round pedestals.",
+      "alt": "Lakshmi and Ganesha silver idol pair on round pedestals on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-65-lakshmi-ganesha-silver-idol-pair-round-pedestals.png"
+    },
+    {
+      "number": 66,
+      "id": "product-dda-idol-66-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Lotus Bases",
+      "slug": "lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on matching lotus bases.",
+      "alt": "Lakshmi and Ganesha silver idol pair on lotus bases on a warm ivory DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-66-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g.png"
+    },
+    {
+      "number": 67,
+      "id": "product-dda-idol-67-painted-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair on Lotus Bases",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with orange, red, pink, and gold hand-painted details.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair on lotus bases on a warm ivory DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-67-painted-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g.png"
+    },
+    {
+      "number": 68,
+      "id": "product-dda-idol-68-lakshmi-ganesha-silver-idol-pair-floral-arches",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Floral Arches",
+      "slug": "lakshmi-ganesha-silver-idol-pair-floral-arches",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on lotus bases within floral arches.",
+      "alt": "Lakshmi and Ganesha silver idol pair with floral arches on a warm ivory DDA Silver background",
+      "weightGrams": 12,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-68-lakshmi-ganesha-silver-idol-pair-floral-arches.png"
+    },
+    {
+      "number": 69,
+      "id": "product-dda-idol-69-painted-lakshmi-ganesha-silver-idol-pair-miniature-thrones-15g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair on Miniature Thrones",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-miniature-thrones-15g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on miniature thrones with pink, green, yellow, and gold painted accents.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair on miniature thrones on a warm ivory DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-69-painted-lakshmi-ganesha-silver-idol-pair-miniature-thrones-15g.png"
+    },
+    {
+      "number": 70,
+      "id": "product-dda-idol-70-lakshmi-ganesha-silver-idol-pair-compact-lotus-bases",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Compact Lotus Bases",
+      "slug": "lakshmi-ganesha-silver-idol-pair-compact-lotus-bases",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair in a compact seated design on lotus bases.",
+      "alt": "Compact Lakshmi and Ganesha silver idol pair on lotus bases on a warm ivory DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-70-lakshmi-ganesha-silver-idol-pair-compact-lotus-bases.png"
+    },
+    {
+      "number": 71,
+      "id": "product-dda-idol-71-painted-miniature-lakshmi-ganesha-silver-idol-pair",
+      "codeFamily": "LG",
+      "title": "Painted Miniature Lakshmi Ganesha Silver Idol Pair",
+      "slug": "painted-miniature-lakshmi-ganesha-silver-idol-pair",
+      "description": "A hollow 99.80% pure silver miniature Lakshmi Ganesha idol pair with pink, green, and yellow hand-painted accents.",
+      "alt": "Painted miniature Lakshmi and Ganesha silver idol pair on a warm ivory DDA Silver background",
+      "weightGrams": 5,
+      "heightInches": 1,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-71-painted-miniature-lakshmi-ganesha-silver-idol-pair.png"
+    },
+    {
+      "number": 72,
+      "id": "product-dda-idol-72-lakshmi-ganesha-silver-idol-pair-beaded-halos",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Beaded Halos",
+      "slug": "lakshmi-ganesha-silver-idol-pair-beaded-halos",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on lotus bases with matching beaded halos.",
+      "alt": "Lakshmi and Ganesha silver idol pair with beaded halos on a warm ivory DDA Silver background",
+      "weightGrams": 12,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-72-lakshmi-ganesha-silver-idol-pair-beaded-halos.png"
+    },
+    {
+      "number": 73,
+      "id": "product-dda-idol-73-painted-lakshmi-ganesha-silver-idol-pair-yellow-20g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Yellow",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-yellow-20g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with yellow, green, orange, and gold painted attire.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in yellow on a warm ivory DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-73-painted-lakshmi-ganesha-silver-idol-pair-yellow-20g.png"
+    },
+    {
+      "number": 74,
+      "id": "product-dda-idol-74-painted-lakshmi-ganesha-silver-idol-pair-red-35g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Red",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-red-35g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with red, green, pink, and gold painted attire.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in red on a warm ivory DDA Silver background",
+      "weightGrams": 35,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-74-painted-lakshmi-ganesha-silver-idol-pair-red-35g.png"
+    },
+    {
+      "number": 75,
+      "id": "product-dda-idol-75-painted-lakshmi-ganesha-silver-idol-pair-orange-35g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Orange",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-orange-35g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with orange, green, pink, and gold painted attire.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in orange on a warm ivory DDA Silver background",
+      "weightGrams": 35,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-75-painted-lakshmi-ganesha-silver-idol-pair-orange-35g.png"
+    },
+    {
+      "number": 76,
+      "id": "product-dda-idol-76-painted-lakshmi-ganesha-silver-idol-pair-golden-yellow",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Golden Yellow",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-golden-yellow",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair with bright golden-yellow garments and restrained red painted accents.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in golden yellow on a warm ivory DDA Silver background",
+      "weightGrams": 47,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-76-painted-lakshmi-ganesha-silver-idol-pair-golden-yellow.png"
+    },
+    {
+      "number": 77,
+      "id": "product-dda-idol-77-lakshmi-ganesha-silver-idol-pair-painted-garlands-55g",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Painted Garlands",
+      "slug": "lakshmi-ganesha-silver-idol-pair-painted-garlands-55g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with red, green, and yellow painted garlands.",
+      "alt": "Lakshmi and Ganesha silver idol pair with painted garlands on a warm ivory DDA Silver background",
+      "weightGrams": 55,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-77-lakshmi-ganesha-silver-idol-pair-painted-garlands-55g.png"
+    },
+    {
+      "number": 78,
+      "id": "product-dda-idol-78-painted-lakshmi-ganesha-silver-idol-pair-green-yellow-130g",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Green and Yellow",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-green-yellow-130g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with green, yellow, pink, and gold painted details.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in green and yellow on a warm ivory DDA Silver background",
+      "weightGrams": 130,
+      "heightInches": 4.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-78-painted-lakshmi-ganesha-silver-idol-pair-green-yellow-130g.png"
+    },
+    {
+      "number": 79,
+      "id": "product-dda-idol-79-large-lakshmi-ganesha-silver-idol-pair-tiered-lotus-bases",
+      "codeFamily": "LG",
+      "title": "Large Lakshmi Ganesha Silver Idol Pair on Tiered Lotus Bases",
+      "slug": "large-lakshmi-ganesha-silver-idol-pair-tiered-lotus-bases",
+      "description": "A hollow 99.80% pure silver large-format Lakshmi Ganesha idol pair seated on tall tiered lotus bases with engraved halos.",
+      "alt": "Large Lakshmi and Ganesha silver idol pair on tiered lotus bases on a warm ivory DDA Silver background",
+      "weightGrams": 500,
+      "heightInches": 7,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-79-large-lakshmi-ganesha-silver-idol-pair-tiered-lotus-bases.png"
+    },
+    {
+      "number": 80,
+      "id": "product-dda-idol-80-painted-lakshmi-ganesha-silver-idol-pair-mint-green",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Mint Green",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-mint-green",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with mint-green, yellow, pink, and gold painted attire.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in mint green on a warm ivory DDA Silver background",
+      "weightGrams": 105,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-80-painted-lakshmi-ganesha-silver-idol-pair-mint-green.png"
+    },
+    {
+      "number": 81,
+      "id": "product-dda-idol-81-painted-lakshmi-ganesha-silver-idol-pair-crimson-red",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair in Crimson Red",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-crimson-red",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with crimson-red, green, pink, and gold painted attire.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair in crimson red on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-81-painted-lakshmi-ganesha-silver-idol-pair-crimson-red.png"
+    },
+    {
+      "number": 82,
+      "id": "product-dda-idol-82-lakshmi-ganesha-silver-idol-pair-ornate-thrones",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Ornate Thrones",
+      "slug": "lakshmi-ganesha-silver-idol-pair-ornate-thrones",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on matching ornate thrones with engraved backrests.",
+      "alt": "Lakshmi and Ganesha silver idol pair on ornate thrones on a warm ivory DDA Silver background",
+      "weightGrams": 200,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-82-lakshmi-ganesha-silver-idol-pair-ornate-thrones.png"
+    },
+    {
+      "number": 83,
+      "id": "product-dda-idol-83-lakshmi-ganesha-silver-idol-pair-tall-lotus-pedestals",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Tall Lotus Pedestals",
+      "slug": "lakshmi-ganesha-silver-idol-pair-tall-lotus-pedestals",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on tall layered lotus pedestals.",
+      "alt": "Lakshmi and Ganesha silver idol pair on tall lotus pedestals on a warm ivory DDA Silver background",
+      "weightGrams": 125,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-83-lakshmi-ganesha-silver-idol-pair-tall-lotus-pedestals.png"
+    },
+    {
+      "number": 84,
+      "id": "product-dda-idol-84-lakshmi-ganesha-silver-idol-pair-owl-mouse-105g",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Owl and Mouse",
+      "slug": "lakshmi-ganesha-silver-idol-pair-owl-mouse-105g",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on layered lotus bases accompanied by an owl and Mushak.",
+      "alt": "Lakshmi and Ganesha silver idol pair with an owl and mouse on a warm ivory DDA Silver background",
+      "weightGrams": 105,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-84-lakshmi-ganesha-silver-idol-pair-owl-mouse-105g.png"
+    },
+    {
+      "number": 85,
+      "id": "product-dda-idol-85-lakshmi-ganesha-silver-idol-pair-modak",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Modak",
+      "slug": "lakshmi-ganesha-silver-idol-pair-modak",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with Ganesha holding a bowl of modak.",
+      "alt": "Lakshmi and Ganesha silver idol pair with a bowl of modak on a warm ivory DDA Silver background",
+      "weightGrams": 110,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-85-lakshmi-ganesha-silver-idol-pair-modak.png"
+    },
+    {
+      "number": 86,
+      "id": "product-dda-idol-86-lakshmi-ganesha-silver-idol-pair-red-green-garlands",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Red and Green Garlands",
+      "slug": "lakshmi-ganesha-silver-idol-pair-red-green-garlands",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on lotus bases with red and green painted garlands and Mushak at Ganesha's feet.",
+      "alt": "Lakshmi and Ganesha silver idol pair with red and green garlands on a warm ivory DDA Silver background",
+      "weightGrams": 130,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-86-lakshmi-ganesha-silver-idol-pair-red-green-garlands.png"
+    },
+    {
+      "number": 87,
+      "id": "product-dda-idol-87-painted-lakshmi-ganesha-silver-idol-pair-owl-mouse",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair with Owl and Mouse",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-owl-mouse",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on layered lotus bases with orange, green, pink, and gold details, accompanied by an owl and Mushak.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair with an owl and mouse on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-87-painted-lakshmi-ganesha-silver-idol-pair-owl-mouse.png"
+    },
+    {
+      "number": 88,
+      "id": "product-dda-idol-88-painted-lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "codeFamily": "LG",
+      "title": "Painted Lakshmi Ganesha Silver Idol Pair on Round Pedestals",
+      "slug": "painted-lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair on matching engraved round pedestals with yellow, green, pink, and gold painted details.",
+      "alt": "Painted Lakshmi and Ganesha silver idol pair on round pedestals on a warm ivory DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-88-painted-lakshmi-ganesha-silver-idol-pair-round-pedestals.png"
+    },
+    {
+      "number": 89,
+      "id": "product-dda-idol-89-durga-silver-idol-tiger-decorative-arch",
+      "codeFamily": "DG",
+      "title": "Durga Silver Idol on Tiger beneath Decorative Arch",
+      "slug": "durga-silver-idol-tiger-decorative-arch",
+      "description": "A hollow 99.80% pure silver multi-arm Durga idol seated on a tiger beneath a freestanding decorative arch.",
+      "alt": "Durga silver idol seated on a tiger beneath a decorative arch on a warm ivory DDA Silver background",
+      "weightGrams": 265,
+      "heightInches": 7.5,
+      "deityIds": [
+        "deity-durga"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-89-durga-silver-idol-tiger-decorative-arch.png"
+    },
+    {
+      "number": 90,
+      "id": "product-dda-idol-90-lakshmi-ganesha-silver-idol-pair-riding-elephants",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair Riding Elephants",
+      "slug": "lakshmi-ganesha-silver-idol-pair-riding-elephants",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair, each deity seated above a finely detailed elephant.",
+      "alt": "Lakshmi and Ganesha silver idol pair riding elephants on a warm ivory DDA Silver background",
+      "weightGrams": 120,
+      "heightInches": 4.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-90-lakshmi-ganesha-silver-idol-pair-riding-elephants.png"
+    },
+    {
+      "number": 91,
+      "id": "product-dda-idol-91-lakshmi-ganesha-silver-idol-pair-circular-halos",
+      "codeFamily": "LG",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Circular Halos",
+      "slug": "lakshmi-ganesha-silver-idol-pair-circular-halos",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on lotus bases with engraved circular halos.",
+      "alt": "Lakshmi and Ganesha silver idol pair with circular halos on a warm ivory DDA Silver background",
+      "weightGrams": 75,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-91-lakshmi-ganesha-silver-idol-pair-circular-halos.png"
+    },
+    {
+      "number": 92,
+      "id": "product-dda-idol-92-ganesha-silver-idol-cobra-hood",
+      "codeFamily": "GN",
+      "title": "Ganesha Silver Idol with Cobra Hood",
+      "slug": "ganesha-silver-idol-cobra-hood",
+      "description": "A hollow 99.80% pure silver four-arm Ganesha idol crowned by a raised cobra hood with engraved devotional details.",
+      "alt": "Four-arm Ganesha silver idol with a raised cobra hood on a warm ivory DDA Silver background",
+      "weightGrams": 50,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-92-ganesha-silver-idol-cobra-hood.png"
+    },
+    {
+      "number": 93,
+      "id": "product-dda-idol-93-lord-rama-silver-idol-ram-mandir",
+      "codeFamily": "RM",
+      "title": "Lord Rama Silver Idol with Ram Mandir",
+      "slug": "lord-rama-silver-idol-ram-mandir",
+      "description": "A hollow 99.80% pure silver standing Lord Rama idol holding a bow beside a detailed Ram Mandir model.",
+      "alt": "Lord Rama silver idol with a detailed Ram Mandir model on a warm ivory DDA Silver background",
+      "weightGrams": 315,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-rama"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-93-lord-rama-silver-idol-ram-mandir.png"
+    },
+    {
+      "number": 94,
+      "id": "product-dda-idol-94-shiva-family-silver-idol-arch-shivling",
+      "codeFamily": "SH",
+      "title": "Shiva Family Silver Idol with Arch and Shivling",
+      "slug": "shiva-family-silver-idol-arch-shivling",
+      "description": "A hollow 99.80% pure silver Shiva Family idol group beneath an ornate arch with Parvati, Ganesha, Kartikeya, a Shivling, Nandi, and a lion.",
+      "alt": "Shiva Family silver idol with an arch, Shivling, Nandi, and lion on a warm ivory DDA Silver background",
+      "weightGrams": 400,
+      "heightInches": 8.5,
+      "deityIds": [
+        "deity-shiva",
+        "deity-parvati",
+        "deity-ganesha",
+        "deity-kartikeya"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-94-shiva-family-silver-idol-arch-shivling.png"
+    },
+    {
+      "number": 95,
+      "id": "product-dda-idol-95-painted-durga-silver-idol-lion-160g",
+      "codeFamily": "DG",
+      "title": "Painted Durga Silver Idol on Lion",
+      "slug": "painted-durga-silver-idol-lion-160g",
+      "description": "A hollow 99.80% pure silver multi-arm Durga idol seated on a lion with red, pink, green, yellow, and gold hand-painted devotional details.",
+      "alt": "Painted Durga silver idol seated on a lion on a warm ivory DDA Silver background",
+      "weightGrams": 160,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-durga"
+      ],
+      "imagePath": "public/images/silver-idols/new-designs-2026-07-31-batch-3/idol-95-painted-durga-silver-idol-lion-160g.png"
+    }
+  ]
+}

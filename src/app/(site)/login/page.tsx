@@ -69,6 +69,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </div>
           ) : null}
           {isAuthConfigured ? (
+            // A same-origin API navigation must perform a full document redirect.
+            // eslint-disable-next-line @next/next/no-html-link-for-pages
             <a
               href="/api/auth/login?returnTo=%2Frates"
               className="button-primary mt-7 w-full no-underline"

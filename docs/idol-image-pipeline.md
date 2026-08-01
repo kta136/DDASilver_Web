@@ -72,6 +72,11 @@ optional. When it is omitted, the Sanity uploader allocates the next available
 Use `subjectScale` only when an unusually wide or tall idol needs a small
 manual scale adjustment, for example `0.92`.
 
+Catalogue tiles that include a floor reflection can set `cutoutBottomRatio`
+to the point where the real idol ends, expressed as a fraction of source-image
+height (for example `0.845`). The cutout fades out over the next eight source
+pixels before normal edge cleanup. Leave it unset for standard product photos.
+
 The default `u2net` model is the fastest and cleanest choice for normal
 single-subject photos. A difficult multi-piece source can set
 `"backgroundModel": "isnet-general-use"` on that catalog product. Products are
