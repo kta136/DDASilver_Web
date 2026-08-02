@@ -34,3 +34,6 @@ project until superseded by an approved decision record.
 ## Catalog terminology
 
 - [Idol item-code terminology](idol-item-codes.md)
+- [Product gallery ingestion](product-gallery-ingestion.md) — required
+  end-to-end image and Sanity-metadata workflow for folder-based catalog
+  requests.

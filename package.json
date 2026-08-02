@@ -17,6 +17,7 @@
     "images:build-coin-pairs": "node scripts/images/build-coin-pairs.mjs",
     "idols:setup": "node scripts/images/process-idol-batch.mjs --prepare",
     "idols:process": "node scripts/images/process-idol-batch.mjs",
+    "utensils:process": "node scripts/images/process-utensil-batch.mjs",
     "sanity:seed-categories": "sanity exec scripts/sanity/seed-categories.ts --with-user-token",
     "sanity:seed-categories:apply": "sanity exec scripts/sanity/seed-categories.ts --with-user-token -- --apply",
     "sanity:seed-deities": "sanity exec scripts/sanity/seed-deities.ts --with-user-token",
@@ -25,6 +26,8 @@
     "sanity:upload-idols:apply": "node scripts/sanity/run-idol-upload.mjs --apply",
     "sanity:upload-idols:overwrite": "node scripts/sanity/run-idol-upload.mjs --apply --overwrite",
     "sanity:upload-idol-manifest": "node scripts/sanity/run-idol-upload.mjs",
+    "sanity:sync-idol-measurements": "node scripts/sanity/sync-idol-measurements.mjs",
+    "sanity:sync-idol-measurements:apply": "node scripts/sanity/sync-idol-measurements.mjs --apply",
     "sanity:upload-coins": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token",
     "sanity:upload-coins:apply": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --apply",
     "sanity:upload-coins:overwrite": "sanity exec scripts/sanity/upload-coin-products.ts --with-user-token -- --apply --overwrite",
@@ -46,6 +49,9 @@
     "sanity:upload-purses": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token",
     "sanity:upload-purses:apply": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token -- --apply",
     "sanity:upload-purses:overwrite": "sanity exec scripts/sanity/upload-purse-products.ts --with-user-token -- --apply --overwrite",
+    "sanity:upload-utensils": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token",
+    "sanity:upload-utensils:apply": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token -- --apply",
+    "sanity:upload-utensils:overwrite": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token -- --apply --overwrite",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build"
   },
   "dependencies": {

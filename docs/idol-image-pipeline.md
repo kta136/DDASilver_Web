@@ -64,10 +64,11 @@ Required upload metadata:
 - `alt`: accessible image description
 - `deityIds`: one or more existing Sanity deity document IDs
 
-`weightGrams` and `heightInches` are optional. OCR reads them from the photo
-label; catalog values override OCR when supplied. `assignedItemCode` is also
-optional. When it is omitted, the Sanity uploader allocates the next available
-`HM-<family>-<number>` code.
+`weightGrams` and `heightInches` may be omitted from the initial catalog when
+OCR can read them from the photo label; catalog values override OCR when
+supplied. Both values are required in the upload-ready manifest.
+`assignedItemCode` is optional. When it is omitted, the Sanity uploader
+allocates the next available `HM-<family>-<number>` code.
 
 Use `subjectScale` only when an unusually wide or tall idol needs a small
 manual scale adjustment, for example `0.92`.
@@ -135,6 +136,25 @@ The direct command above is a Sanity dry run. Add `--apply` after its manifest
 argument to upload. Asset uploads use concurrency three, and all product
 documents are published together in one Sanity transaction. Use `--overwrite`
 only when existing matching product documents should be replaced.
+
+The uploader stores verified `weightGrams`, `heightInches`, and optional
+`widthInches` values in their dedicated product fields. To synchronize those
+fields onto all existing script-managed idol products without replacing the
+documents or touching their images, first run the catalog-wide dry run:
+
+```powershell
+npm run sanity:sync-idol-measurements
+```
+
+After reviewing the reported patches, apply them with:
+
+```powershell
+npm run sanity:sync-idol-measurements:apply
+```
+
+The sync requires every manifest product to exist and stops before writing if
+an ID is missing. It patches only verified measurement fields. A width remains
+absent when the source manifest does not contain one.
 
 ## Useful controls
 

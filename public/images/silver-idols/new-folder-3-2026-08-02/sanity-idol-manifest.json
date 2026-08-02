@@ -1,0 +1,1323 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-3-2026-08-02",
+  "generatedAt": "2026-08-02T10:55:41.593Z",
+  "sourceDirectory": "C:\\Users\\kk\\Desktop\\New folder (3)",
+  "categoryId": "category-idols",
+  "purity": "99.80",
+  "idolConstruction": "hollow",
+  "processing": {
+    "backgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+    "model": "u2net",
+    "modelOverrides": [],
+    "device": "reused",
+    "concurrency": 4,
+    "alphaMatting": false
+  },
+  "readyForUpload": true,
+  "review": [
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 12.39.29 PM.jpeg",
+      "outputFilename": "idol-96-painted-kamdhenu-silver-idol-crimson-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 12.41.09 PM.jpeg",
+      "outputFilename": "idol-97-miniature-kamdhenu-silver-idol-textured-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 12.42.25 PM.jpeg",
+      "outputFilename": "idol-98-kamdhenu-silver-idol-golden-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 12.43.14 PM.jpeg",
+      "outputFilename": "idol-99-kamdhenu-silver-idol-diamond-pattern-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 12.43.53 PM.jpeg",
+      "outputFilename": "idol-100-kamdhenu-silver-idol-ornate-gold-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.16.18 PM.jpeg",
+      "outputFilename": "idol-101-painted-kamdhenu-silver-idol-red-saddle-cloth.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.17.26 PM.jpeg",
+      "outputFilename": "idol-102-mini-kamdhenu-silver-idol-floral-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.18.30 PM.jpeg",
+      "outputFilename": "idol-103-mini-kamdhenu-silver-idol-gold-saddle-cloth.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.19.38 PM.jpeg",
+      "outputFilename": "idol-104-kamdhenu-silver-idol-beaded-blanket-bells.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.20.51 PM.jpeg",
+      "outputFilename": "idol-105-painted-kamdhenu-silver-idol-green-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.21.50 PM.jpeg",
+      "outputFilename": "idol-106-kamdhenu-silver-idol-woven-texture-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.23.11 PM.jpeg",
+      "outputFilename": "idol-107-painted-kamdhenu-silver-idol-cloud-base.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.23.54 PM.jpeg",
+      "outputFilename": "idol-108-kamdhenu-silver-idol-sculpted-cloud-base.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.25.25 PM.jpeg",
+      "outputFilename": "idol-109-painted-kamdhenu-silver-idol-floral-om-blanket-large.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.26.44 PM.jpeg",
+      "outputFilename": "idol-110-grand-painted-kamdhenu-silver-idol-floral-om-blanket.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.29.20 PM.jpeg",
+      "outputFilename": "idol-111-painted-ram-darbar-silver-idol-set-yellow-compact.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.32.03 PM.jpeg",
+      "outputFilename": "idol-112-ram-darbar-silver-idol-set-golden-highlights.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.33.16 PM.jpeg",
+      "outputFilename": "idol-113-painted-ram-darbar-silver-idol-set-round-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.38.18 PM.jpeg",
+      "outputFilename": "idol-114-large-ram-darbar-silver-idol-set-lotus-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.39.46 PM.jpeg",
+      "outputFilename": "idol-115-large-painted-ram-darbar-silver-idol-set-lotus-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.45.10 PM.jpeg",
+      "outputFilename": "idol-116-grand-painted-ram-darbar-silver-idol-set.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.49.31 PM.jpeg",
+      "outputFilename": "idol-117-durga-silver-idol-lion-golden-highlights-large.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.51.14 PM.jpeg",
+      "outputFilename": "idol-118-painted-durga-silver-idol-lion-red-green.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.52.28 PM.jpeg",
+      "outputFilename": "idol-119-seated-rama-sita-silver-idol-pair.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.53.42 PM.jpeg",
+      "outputFilename": "idol-120-ram-darbar-silver-idol-set-rectangular-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.55.16 PM.jpeg",
+      "outputFilename": "idol-121-painted-ram-darbar-silver-idol-set-red-yellow.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 2.58.22 PM.jpeg",
+      "outputFilename": "idol-122-radha-krishna-silver-idol-flute-gold-accents.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.00.20 PM.jpeg",
+      "outputFilename": "idol-123-large-radha-krishna-silver-idol-pair-lotus-bases.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.01.10 PM.jpeg",
+      "outputFilename": "idol-124-tall-radha-krishna-silver-idol-pair-peacock.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.37.48 PM.jpeg",
+      "outputFilename": "idol-125-painted-radha-krishna-silver-idol-yellow-pink-tall.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.38.38 PM.jpeg",
+      "outputFilename": "idol-126-tall-radha-krishna-silver-idol-flute-lotus.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.39.36 PM.jpeg",
+      "outputFilename": "idol-127-painted-radha-krishna-silver-idol-red-yellow.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.40.26 PM.jpeg",
+      "outputFilename": "idol-128-painted-radha-krishna-silver-idol-cow-yellow.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.42.21 PM.jpeg",
+      "outputFilename": "idol-129-painted-radha-krishna-silver-idol-layered-lotus.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.42.58 PM.jpeg",
+      "outputFilename": "idol-130-radha-krishna-silver-idol-flute-double-lotus.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.43.57 PM.jpeg",
+      "outputFilename": "idol-131-compact-radha-krishna-silver-idol-flute.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.48.20 PM.jpeg",
+      "outputFilename": "idol-132-lakshmi-ganesha-silver-idol-pair-lotus-bases-large.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.50.57 PM.jpeg",
+      "outputFilename": "idol-133-lakshmi-ganesha-silver-idol-pair-square-seats.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.52.29 PM.jpeg",
+      "outputFilename": "idol-134-lakshmi-ganesha-silver-idol-pair-drum-seats.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.55.38 PM.jpeg",
+      "outputFilename": "idol-135-shiva-family-silver-idol-nandi-shivling.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.56.15 PM.jpeg",
+      "outputFilename": "idol-136-painted-shiva-family-silver-idol-nandi-shivling.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.57.17 PM.jpeg",
+      "outputFilename": "idol-137-painted-kuber-silver-idol-throne-yellow.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.59.03 PM.jpeg",
+      "outputFilename": "idol-138-standing-hanuman-silver-idol-mace.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 3.59.55 PM.jpeg",
+      "outputFilename": "idol-139-kneeling-hanuman-silver-idol-mace.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.00.33 PM.jpeg",
+      "outputFilename": "idol-140-seated-hanuman-silver-idol-mace-compact.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.01.30 PM.jpeg",
+      "outputFilename": "idol-141-miniature-hanuman-silver-idol-trio.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.02.38 PM.jpeg",
+      "outputFilename": "idol-142-saraswati-silver-idol-veena-round-base.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.04.27 PM.jpeg",
+      "outputFilename": "idol-143-painted-bal-krishna-silver-idol-butter-pot-large.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.05.53 PM.jpeg",
+      "outputFilename": "idol-144-auspicious-fish-silver-figurine.png",
+      "measurementSource": "catalog",
+      "ocr": {
+        "text": ""
+      },
+      "readyForUpload": true,
+      "reviewReasons": []
+    }
+  ],
+  "products": [
+    {
+      "number": 96,
+      "id": "product-dda-idol-96-painted-kamdhenu-silver-idol-crimson-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-3",
+      "title": "Painted Kamdhenu Silver Idol with Crimson Blanket",
+      "slug": "painted-kamdhenu-silver-idol-crimson-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a painted crimson blanket and gold-toned details.",
+      "alt": "Painted Kamdhenu cow-and-calf silver idol with crimson blanket on the DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-96-painted-kamdhenu-silver-idol-crimson-blanket.png"
+    },
+    {
+      "number": 97,
+      "id": "product-dda-idol-97-miniature-kamdhenu-silver-idol-textured-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-4",
+      "title": "Miniature Kamdhenu Silver Idol with Textured Blanket",
+      "slug": "miniature-kamdhenu-silver-idol-textured-blanket",
+      "description": "A compact hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a finely textured blanket.",
+      "alt": "Miniature Kamdhenu cow-and-calf silver idol with textured blanket on the DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 1,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-97-miniature-kamdhenu-silver-idol-textured-blanket.png"
+    },
+    {
+      "number": 98,
+      "id": "product-dda-idol-98-kamdhenu-silver-idol-golden-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-5",
+      "title": "Kamdhenu Silver Idol with Golden Blanket",
+      "slug": "kamdhenu-silver-idol-golden-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol accented with a patterned golden blanket.",
+      "alt": "Kamdhenu cow-and-calf silver idol with patterned golden blanket on the DDA Silver background",
+      "weightGrams": 25,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-98-kamdhenu-silver-idol-golden-blanket.png"
+    },
+    {
+      "number": 99,
+      "id": "product-dda-idol-99-kamdhenu-silver-idol-diamond-pattern-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-6",
+      "title": "Kamdhenu Silver Idol with Diamond-Pattern Blanket",
+      "slug": "kamdhenu-silver-idol-diamond-pattern-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with an engraved diamond-pattern blanket.",
+      "alt": "Kamdhenu cow-and-calf silver idol with diamond-pattern blanket on the DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-99-kamdhenu-silver-idol-diamond-pattern-blanket.png"
+    },
+    {
+      "number": 100,
+      "id": "product-dda-idol-100-kamdhenu-silver-idol-ornate-gold-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-7",
+      "title": "Kamdhenu Silver Idol with Ornate Gold Blanket",
+      "slug": "kamdhenu-silver-idol-ornate-gold-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with an ornate gold-toned blanket and bells.",
+      "alt": "Kamdhenu cow-and-calf silver idol with ornate gold blanket and bells on the DDA Silver background",
+      "weightGrams": 35,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-100-kamdhenu-silver-idol-ornate-gold-blanket.png"
+    },
+    {
+      "number": 101,
+      "id": "product-dda-idol-101-painted-kamdhenu-silver-idol-red-saddle-cloth",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-8",
+      "title": "Painted Kamdhenu Silver Idol with Red Saddle Cloth",
+      "slug": "painted-kamdhenu-silver-idol-red-saddle-cloth",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a bright red painted saddle cloth.",
+      "alt": "Painted Kamdhenu cow-and-calf silver idol with red saddle cloth on the DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-101-painted-kamdhenu-silver-idol-red-saddle-cloth.png"
+    },
+    {
+      "number": 102,
+      "id": "product-dda-idol-102-mini-kamdhenu-silver-idol-floral-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-9",
+      "title": "Mini Kamdhenu Silver Idol with Floral Blanket",
+      "slug": "mini-kamdhenu-silver-idol-floral-blanket",
+      "description": "A miniature hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a floral-textured blanket.",
+      "alt": "Mini Kamdhenu cow-and-calf silver idol with floral blanket on the DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 1,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-102-mini-kamdhenu-silver-idol-floral-blanket.png"
+    },
+    {
+      "number": 103,
+      "id": "product-dda-idol-103-mini-kamdhenu-silver-idol-gold-saddle-cloth",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-10",
+      "title": "Mini Kamdhenu Silver Idol with Gold Saddle Cloth",
+      "slug": "mini-kamdhenu-silver-idol-gold-saddle-cloth",
+      "description": "A miniature hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a gold-toned saddle cloth.",
+      "alt": "Mini Kamdhenu cow-and-calf silver idol with gold saddle cloth on the DDA Silver background",
+      "weightGrams": 15,
+      "heightInches": 1,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-103-mini-kamdhenu-silver-idol-gold-saddle-cloth.png"
+    },
+    {
+      "number": 104,
+      "id": "product-dda-idol-104-kamdhenu-silver-idol-beaded-blanket-bells",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-11",
+      "title": "Kamdhenu Silver Idol with Beaded Blanket and Bells",
+      "slug": "kamdhenu-silver-idol-beaded-blanket-bells",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a beaded blanket, collar, and hanging bells.",
+      "alt": "Kamdhenu cow-and-calf silver idol with beaded blanket and bells on the DDA Silver background",
+      "weightGrams": 50,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-104-kamdhenu-silver-idol-beaded-blanket-bells.png"
+    },
+    {
+      "number": 105,
+      "id": "product-dda-idol-105-painted-kamdhenu-silver-idol-green-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-12",
+      "title": "Painted Kamdhenu Silver Idol with Green Blanket",
+      "slug": "painted-kamdhenu-silver-idol-green-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a vivid green painted blanket.",
+      "alt": "Painted Kamdhenu cow-and-calf silver idol with green blanket on the DDA Silver background",
+      "weightGrams": 45,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-105-painted-kamdhenu-silver-idol-green-blanket.png"
+    },
+    {
+      "number": 106,
+      "id": "product-dda-idol-106-kamdhenu-silver-idol-woven-texture-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-13",
+      "title": "Kamdhenu Silver Idol with Woven-Texture Blanket",
+      "slug": "kamdhenu-silver-idol-woven-texture-blanket",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a woven-texture blanket and detailed coat.",
+      "alt": "Kamdhenu cow-and-calf silver idol with woven-texture blanket on the DDA Silver background",
+      "weightGrams": 70,
+      "heightInches": 2.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-106-kamdhenu-silver-idol-woven-texture-blanket.png"
+    },
+    {
+      "number": 107,
+      "id": "product-dda-idol-107-painted-kamdhenu-silver-idol-cloud-base",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-14",
+      "title": "Painted Kamdhenu Silver Idol on Cloud Base",
+      "slug": "painted-kamdhenu-silver-idol-cloud-base",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a painted red blanket on a sculpted cloud base.",
+      "alt": "Painted Kamdhenu cow-and-calf silver idol with red blanket on cloud base on the DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-107-painted-kamdhenu-silver-idol-cloud-base.png"
+    },
+    {
+      "number": 108,
+      "id": "product-dda-idol-108-kamdhenu-silver-idol-sculpted-cloud-base",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-15",
+      "title": "Kamdhenu Silver Idol on Sculpted Cloud Base",
+      "slug": "kamdhenu-silver-idol-sculpted-cloud-base",
+      "description": "A hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a detailed coat on a sculpted cloud base.",
+      "alt": "Kamdhenu cow-and-calf silver idol with detailed coat on cloud base on the DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-108-kamdhenu-silver-idol-sculpted-cloud-base.png"
+    },
+    {
+      "number": 109,
+      "id": "product-dda-idol-109-painted-kamdhenu-silver-idol-floral-om-blanket-large",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-16",
+      "title": "Painted Kamdhenu Silver Idol with Floral Om Blanket",
+      "slug": "painted-kamdhenu-silver-idol-floral-om-blanket-large",
+      "description": "A large hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a painted floral Om blanket.",
+      "alt": "Large painted Kamdhenu cow-and-calf silver idol with floral Om blanket on the DDA Silver background",
+      "weightGrams": 225,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-109-painted-kamdhenu-silver-idol-floral-om-blanket-large.png"
+    },
+    {
+      "number": 110,
+      "id": "product-dda-idol-110-grand-painted-kamdhenu-silver-idol-floral-om-blanket",
+      "codeFamily": "KM",
+      "assignedItemCode": "HM-KM-17",
+      "title": "Grand Painted Kamdhenu Silver Idol with Floral Om Blanket",
+      "slug": "grand-painted-kamdhenu-silver-idol-floral-om-blanket",
+      "description": "A grand hollow 99.80% pure silver Kamdhenu cow-and-calf idol with a multicolour floral Om blanket.",
+      "alt": "Grand painted Kamdhenu cow-and-calf silver idol with floral Om blanket on the DDA Silver background",
+      "weightGrams": 600,
+      "heightInches": 5.5,
+      "deityIds": [
+        "deity-kamdhenu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-110-grand-painted-kamdhenu-silver-idol-floral-om-blanket.png"
+    },
+    {
+      "number": 111,
+      "id": "product-dda-idol-111-painted-ram-darbar-silver-idol-set-yellow-compact",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-2",
+      "title": "Painted Ram Darbar Silver Idol Set in Yellow",
+      "slug": "painted-ram-darbar-silver-idol-set-yellow-compact",
+      "description": "A hollow 99.80% pure silver Ram Darbar set with Rama, Sita, Lakshmana, and Hanuman in yellow painted attire.",
+      "alt": "Painted Ram Darbar silver idol set with Rama Sita Lakshmana and Hanuman on the DDA Silver background",
+      "weightGrams": 50,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-111-painted-ram-darbar-silver-idol-set-yellow-compact.png"
+    },
+    {
+      "number": 112,
+      "id": "product-dda-idol-112-ram-darbar-silver-idol-set-golden-highlights",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-3",
+      "title": "Ram Darbar Silver Idol Set with Golden Highlights",
+      "slug": "ram-darbar-silver-idol-set-golden-highlights",
+      "description": "A hollow 99.80% pure silver Ram Darbar set with Rama, Sita, Lakshmana, and Hanuman accented in gold tone.",
+      "alt": "Ram Darbar silver idol set with golden highlights on the DDA Silver background",
+      "weightGrams": 65,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-112-ram-darbar-silver-idol-set-golden-highlights.png"
+    },
+    {
+      "number": 113,
+      "id": "product-dda-idol-113-painted-ram-darbar-silver-idol-set-round-bases",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-4",
+      "title": "Painted Ram Darbar Silver Idol Set on Round Bases",
+      "slug": "painted-ram-darbar-silver-idol-set-round-bases",
+      "description": "A hollow 99.80% pure silver Ram Darbar set with Rama, Sita, Lakshmana, and Hanuman on individual round bases.",
+      "alt": "Painted Ram Darbar silver idol set on individual round bases on the DDA Silver background",
+      "weightGrams": 90,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-113-painted-ram-darbar-silver-idol-set-round-bases.png"
+    },
+    {
+      "number": 114,
+      "id": "product-dda-idol-114-large-ram-darbar-silver-idol-set-lotus-bases",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-5",
+      "title": "Large Ram Darbar Silver Idol Set on Lotus Bases",
+      "slug": "large-ram-darbar-silver-idol-set-lotus-bases",
+      "description": "A large hollow 99.80% pure silver Ram Darbar set with detailed gold-toned accents on lotus bases.",
+      "alt": "Large Ram Darbar silver idol set with gold-toned accents on lotus bases on the DDA Silver background",
+      "weightGrams": 550,
+      "heightInches": 7.5,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-114-large-ram-darbar-silver-idol-set-lotus-bases.png"
+    },
+    {
+      "number": 115,
+      "id": "product-dda-idol-115-large-painted-ram-darbar-silver-idol-set-lotus-bases",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-6",
+      "title": "Large Painted Ram Darbar Silver Idol Set on Lotus Bases",
+      "slug": "large-painted-ram-darbar-silver-idol-set-lotus-bases",
+      "description": "A large hollow 99.80% pure silver Ram Darbar set in bright multicolour attire on individual lotus bases.",
+      "alt": "Large painted Ram Darbar silver idol set on individual lotus bases on the DDA Silver background",
+      "weightGrams": 500,
+      "heightInches": 7.5,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-115-large-painted-ram-darbar-silver-idol-set-lotus-bases.png"
+    },
+    {
+      "number": 116,
+      "id": "product-dda-idol-116-grand-painted-ram-darbar-silver-idol-set",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-7",
+      "title": "Grand Painted Ram Darbar Silver Idol Set",
+      "slug": "grand-painted-ram-darbar-silver-idol-set",
+      "description": "A grand hollow 99.80% pure silver Ram Darbar set with Rama, Sita, Lakshmana, and Hanuman in red and black attire.",
+      "alt": "Grand painted Ram Darbar silver idol set with Rama Sita Lakshmana and Hanuman on the DDA Silver background",
+      "weightGrams": 850,
+      "heightInches": 10,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-116-grand-painted-ram-darbar-silver-idol-set.png"
+    },
+    {
+      "number": 117,
+      "id": "product-dda-idol-117-durga-silver-idol-lion-golden-highlights-large",
+      "codeFamily": "DG",
+      "assignedItemCode": "HM-DG-4",
+      "title": "Durga Silver Idol on Lion with Golden Highlights",
+      "slug": "durga-silver-idol-lion-golden-highlights-large",
+      "description": "A large hollow 99.80% pure silver Durga idol seated on a lion with gold-toned weapon and garment highlights.",
+      "alt": "Large Durga silver idol seated on lion with golden highlights on the DDA Silver background",
+      "weightGrams": 450,
+      "heightInches": 8.5,
+      "deityIds": [
+        "deity-durga"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-117-durga-silver-idol-lion-golden-highlights-large.png"
+    },
+    {
+      "number": 118,
+      "id": "product-dda-idol-118-painted-durga-silver-idol-lion-red-green",
+      "codeFamily": "DG",
+      "assignedItemCode": "HM-DG-5",
+      "title": "Painted Durga Silver Idol on Lion in Red and Green",
+      "slug": "painted-durga-silver-idol-lion-red-green",
+      "description": "A hollow 99.80% pure silver Durga idol seated on a lion in painted red and green attire with gold-toned details.",
+      "alt": "Painted Durga silver idol seated on lion in red and green on the DDA Silver background",
+      "weightGrams": 250,
+      "heightInches": 7.5,
+      "deityIds": [
+        "deity-durga"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-118-painted-durga-silver-idol-lion-red-green.png"
+    },
+    {
+      "number": 119,
+      "id": "product-dda-idol-119-seated-rama-sita-silver-idol-pair",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-8",
+      "title": "Seated Rama and Sita Silver Idol Pair",
+      "slug": "seated-rama-sita-silver-idol-pair",
+      "description": "A hollow 99.80% pure silver Rama and Sita idol pair with painted garlands and Rama holding a bow.",
+      "alt": "Seated Rama and Sita silver idol pair with painted garlands on the DDA Silver background",
+      "weightGrams": 70,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-rama"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-119-seated-rama-sita-silver-idol-pair.png"
+    },
+    {
+      "number": 120,
+      "id": "product-dda-idol-120-ram-darbar-silver-idol-set-rectangular-bases",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-9",
+      "title": "Ram Darbar Silver Idol Set with Rectangular Bases",
+      "slug": "ram-darbar-silver-idol-set-rectangular-bases",
+      "description": "A hollow 99.80% pure silver Ram Darbar set with gold-toned highlights on individual rectangular bases.",
+      "alt": "Ram Darbar silver idol set with golden highlights on rectangular bases on the DDA Silver background",
+      "weightGrams": 200,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-120-ram-darbar-silver-idol-set-rectangular-bases.png"
+    },
+    {
+      "number": 121,
+      "id": "product-dda-idol-121-painted-ram-darbar-silver-idol-set-red-yellow",
+      "codeFamily": "RM",
+      "assignedItemCode": "HM-RM-10",
+      "title": "Painted Ram Darbar Silver Idol Set in Red and Yellow",
+      "slug": "painted-ram-darbar-silver-idol-set-red-yellow",
+      "description": "A hollow 99.80% pure silver Ram Darbar set with Rama, Sita, Lakshmana, and Hanuman in red and yellow attire.",
+      "alt": "Painted Ram Darbar silver idol set in red and yellow on the DDA Silver background",
+      "weightGrams": 200,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-rama",
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-121-painted-ram-darbar-silver-idol-set-red-yellow.png"
+    },
+    {
+      "number": 122,
+      "id": "product-dda-idol-122-radha-krishna-silver-idol-flute-gold-accents",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-14",
+      "title": "Radha Krishna Silver Idol with Flute and Gold Accents",
+      "slug": "radha-krishna-silver-idol-flute-gold-accents",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute and restrained gold-toned accents.",
+      "alt": "Radha Krishna silver idol with flute and gold accents on the DDA Silver background",
+      "weightGrams": 80,
+      "heightInches": 5.5,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-122-radha-krishna-silver-idol-flute-gold-accents.png"
+    },
+    {
+      "number": 123,
+      "id": "product-dda-idol-123-large-radha-krishna-silver-idol-pair-lotus-bases",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-15",
+      "title": "Large Radha Krishna Silver Idol Pair on Lotus Bases",
+      "slug": "large-radha-krishna-silver-idol-pair-lotus-bases",
+      "description": "A large hollow 99.80% pure silver Radha Krishna pair with Krishna playing the flute on sculpted lotus bases.",
+      "alt": "Large Radha Krishna silver idol pair with flute on lotus bases on the DDA Silver background",
+      "weightGrams": 570,
+      "heightInches": 8,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-123-large-radha-krishna-silver-idol-pair-lotus-bases.png"
+    },
+    {
+      "number": 124,
+      "id": "product-dda-idol-124-tall-radha-krishna-silver-idol-pair-peacock",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-16",
+      "title": "Tall Radha Krishna Silver Idol Pair with Peacock",
+      "slug": "tall-radha-krishna-silver-idol-pair-peacock",
+      "description": "A tall hollow 99.80% pure silver Radha Krishna pair with painted garlands, a flute, and a peacock at the base.",
+      "alt": "Tall Radha Krishna silver idol pair with flute garlands and peacock on the DDA Silver background",
+      "weightGrams": 500,
+      "heightInches": 10,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-124-tall-radha-krishna-silver-idol-pair-peacock.png"
+    },
+    {
+      "number": 125,
+      "id": "product-dda-idol-125-painted-radha-krishna-silver-idol-yellow-pink-tall",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-17",
+      "title": "Painted Radha Krishna Silver Idol in Yellow and Pink",
+      "slug": "painted-radha-krishna-silver-idol-yellow-pink-tall",
+      "description": "A tall hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute in yellow and pink attire.",
+      "alt": "Tall painted Radha Krishna silver idol in yellow and pink on the DDA Silver background",
+      "weightGrams": 400,
+      "heightInches": 10,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-125-painted-radha-krishna-silver-idol-yellow-pink-tall.png"
+    },
+    {
+      "number": 126,
+      "id": "product-dda-idol-126-tall-radha-krishna-silver-idol-flute-lotus",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-18",
+      "title": "Tall Radha Krishna Silver Idol with Flute on Lotus",
+      "slug": "tall-radha-krishna-silver-idol-flute-lotus",
+      "description": "A tall hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute on a broad lotus pedestal.",
+      "alt": "Tall Radha Krishna silver idol with flute on broad lotus pedestal on the DDA Silver background",
+      "weightGrams": 400,
+      "heightInches": 10,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-126-tall-radha-krishna-silver-idol-flute-lotus.png"
+    },
+    {
+      "number": 127,
+      "id": "product-dda-idol-127-painted-radha-krishna-silver-idol-red-yellow",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-19",
+      "title": "Painted Radha Krishna Silver Idol in Red and Yellow",
+      "slug": "painted-radha-krishna-silver-idol-red-yellow",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute in painted red and yellow attire.",
+      "alt": "Painted Radha Krishna silver idol in red and yellow with flute on the DDA Silver background",
+      "weightGrams": 200,
+      "heightInches": 7,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-127-painted-radha-krishna-silver-idol-red-yellow.png"
+    },
+    {
+      "number": 128,
+      "id": "product-dda-idol-128-painted-radha-krishna-silver-idol-cow-yellow",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-20",
+      "title": "Painted Radha Krishna Silver Idol with Cow",
+      "slug": "painted-radha-krishna-silver-idol-cow-yellow",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute beside a cow in yellow attire.",
+      "alt": "Painted Radha Krishna silver idol with flute and cow on the DDA Silver background",
+      "weightGrams": 150,
+      "heightInches": 6,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-128-painted-radha-krishna-silver-idol-cow-yellow.png"
+    },
+    {
+      "number": 129,
+      "id": "product-dda-idol-129-painted-radha-krishna-silver-idol-layered-lotus",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-21",
+      "title": "Painted Radha Krishna Silver Idol on Layered Lotus",
+      "slug": "painted-radha-krishna-silver-idol-layered-lotus",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol with painted garlands and yellow attire on a layered lotus base.",
+      "alt": "Painted Radha Krishna silver idol with garlands on layered lotus base on the DDA Silver background",
+      "weightGrams": 125,
+      "heightInches": 7,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-129-painted-radha-krishna-silver-idol-layered-lotus.png"
+    },
+    {
+      "number": 130,
+      "id": "product-dda-idol-130-radha-krishna-silver-idol-flute-double-lotus",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-22",
+      "title": "Radha Krishna Silver Idol with Flute on Double Lotus",
+      "slug": "radha-krishna-silver-idol-flute-double-lotus",
+      "description": "A hollow 99.80% pure silver Radha Krishna idol with a flute and gold-toned details on a double lotus pedestal.",
+      "alt": "Radha Krishna silver idol with flute and gold accents on double lotus pedestal on the DDA Silver background",
+      "weightGrams": 150,
+      "heightInches": 7,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-130-radha-krishna-silver-idol-flute-double-lotus.png"
+    },
+    {
+      "number": 131,
+      "id": "product-dda-idol-131-compact-radha-krishna-silver-idol-flute",
+      "codeFamily": "RK",
+      "assignedItemCode": "HM-RK-23",
+      "title": "Compact Radha Krishna Silver Idol with Flute",
+      "slug": "compact-radha-krishna-silver-idol-flute",
+      "description": "A compact hollow 99.80% pure silver Radha Krishna idol with Krishna playing the flute and gold-toned accents.",
+      "alt": "Compact Radha Krishna silver idol with flute and gold accents on the DDA Silver background",
+      "weightGrams": 35,
+      "heightInches": 3.5,
+      "deityIds": [
+        "deity-krishna",
+        "deity-radha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-131-compact-radha-krishna-silver-idol-flute.png"
+    },
+    {
+      "number": 132,
+      "id": "product-dda-idol-132-lakshmi-ganesha-silver-idol-pair-lotus-bases-large",
+      "codeFamily": "LG",
+      "assignedItemCode": "HM-LG-27",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Lotus Bases",
+      "slug": "lakshmi-ganesha-silver-idol-pair-lotus-bases-large",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on broad lotus bases with subtle painted tilaks.",
+      "alt": "Lakshmi and Ganesha silver idol pair seated on broad lotus bases on the DDA Silver background",
+      "weightGrams": 150,
+      "heightInches": 4.5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-132-lakshmi-ganesha-silver-idol-pair-lotus-bases-large.png"
+    },
+    {
+      "number": 133,
+      "id": "product-dda-idol-133-lakshmi-ganesha-silver-idol-pair-square-seats",
+      "codeFamily": "LG",
+      "assignedItemCode": "HM-LG-28",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Square Seats",
+      "slug": "lakshmi-ganesha-silver-idol-pair-square-seats",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on compact square seats with detailed crowns.",
+      "alt": "Lakshmi and Ganesha silver idol pair seated on square seats on the DDA Silver background",
+      "weightGrams": 100,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-133-lakshmi-ganesha-silver-idol-pair-square-seats.png"
+    },
+    {
+      "number": 134,
+      "id": "product-dda-idol-134-lakshmi-ganesha-silver-idol-pair-drum-seats",
+      "codeFamily": "LG",
+      "assignedItemCode": "HM-LG-29",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Drum Seats",
+      "slug": "lakshmi-ganesha-silver-idol-pair-drum-seats",
+      "description": "A hollow 99.80% pure silver Lakshmi Ganesha idol pair seated on ornate drum-shaped seats with mouse detail.",
+      "alt": "Lakshmi and Ganesha silver idol pair on ornate drum seats on the DDA Silver background",
+      "weightGrams": 200,
+      "heightInches": 5,
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-134-lakshmi-ganesha-silver-idol-pair-drum-seats.png"
+    },
+    {
+      "number": 135,
+      "id": "product-dda-idol-135-shiva-family-silver-idol-nandi-shivling",
+      "codeFamily": "SH",
+      "assignedItemCode": "HM-SH-7",
+      "title": "Shiva Family Silver Idol with Nandi and Shivling",
+      "slug": "shiva-family-silver-idol-nandi-shivling",
+      "description": "A hollow 99.80% pure silver Shiva family idol with Parvati, Ganesha, Kartikeya, Nandi, and a Shivling.",
+      "alt": "Shiva family silver idol with Parvati Ganesha Kartikeya Nandi and Shivling on the DDA Silver background",
+      "weightGrams": 150,
+      "heightInches": 5.5,
+      "deityIds": [
+        "deity-shiva",
+        "deity-parvati",
+        "deity-ganesha",
+        "deity-kartikeya"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-135-shiva-family-silver-idol-nandi-shivling.png"
+    },
+    {
+      "number": 136,
+      "id": "product-dda-idol-136-painted-shiva-family-silver-idol-nandi-shivling",
+      "codeFamily": "SH",
+      "assignedItemCode": "HM-SH-8",
+      "title": "Painted Shiva Family Silver Idol with Nandi and Shivling",
+      "slug": "painted-shiva-family-silver-idol-nandi-shivling",
+      "description": "A hollow 99.80% pure silver Shiva family idol with painted Parvati, Ganesha, Kartikeya, Nandi, and a Shivling.",
+      "alt": "Painted Shiva family silver idol with Parvati Ganesha Kartikeya Nandi and Shivling on the DDA Silver background",
+      "weightGrams": 150,
+      "heightInches": 5.5,
+      "deityIds": [
+        "deity-shiva",
+        "deity-parvati",
+        "deity-ganesha",
+        "deity-kartikeya"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-136-painted-shiva-family-silver-idol-nandi-shivling.png"
+    },
+    {
+      "number": 137,
+      "id": "product-dda-idol-137-painted-kuber-silver-idol-throne-yellow",
+      "codeFamily": "KB",
+      "assignedItemCode": "HM-KB-3",
+      "title": "Painted Kuber Silver Idol on Throne",
+      "slug": "painted-kuber-silver-idol-throne-yellow",
+      "description": "A hollow 99.80% pure silver Kuber idol seated on a compact throne in painted yellow attire with wealth symbols.",
+      "alt": "Painted Kuber silver idol seated on throne with wealth symbols on the DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-kuber"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-137-painted-kuber-silver-idol-throne-yellow.png"
+    },
+    {
+      "number": 138,
+      "id": "product-dda-idol-138-standing-hanuman-silver-idol-mace",
+      "codeFamily": "HN",
+      "assignedItemCode": "HM-HN-3",
+      "title": "Standing Hanuman Silver Idol with Mace",
+      "slug": "standing-hanuman-silver-idol-mace",
+      "description": "A hollow 99.80% pure silver standing Hanuman idol holding a mace with restrained gold-toned highlights.",
+      "alt": "Standing Hanuman silver idol holding mace with gold highlights on the DDA Silver background",
+      "weightGrams": 25,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-138-standing-hanuman-silver-idol-mace.png"
+    },
+    {
+      "number": 139,
+      "id": "product-dda-idol-139-kneeling-hanuman-silver-idol-mace",
+      "codeFamily": "HN",
+      "assignedItemCode": "HM-HN-4",
+      "title": "Kneeling Hanuman Silver Idol with Mace",
+      "slug": "kneeling-hanuman-silver-idol-mace",
+      "description": "A hollow 99.80% pure silver kneeling Hanuman idol holding a mace with a raised blessing hand.",
+      "alt": "Kneeling Hanuman silver idol holding mace with raised blessing hand on the DDA Silver background",
+      "weightGrams": 40,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-139-kneeling-hanuman-silver-idol-mace.png"
+    },
+    {
+      "number": 140,
+      "id": "product-dda-idol-140-seated-hanuman-silver-idol-mace-compact",
+      "codeFamily": "HN",
+      "assignedItemCode": "HM-HN-5",
+      "title": "Seated Hanuman Silver Idol with Mace",
+      "slug": "seated-hanuman-silver-idol-mace-compact",
+      "description": "A compact hollow 99.80% pure silver seated Hanuman idol holding a mace with a raised blessing hand.",
+      "alt": "Compact seated Hanuman silver idol holding mace on the DDA Silver background",
+      "weightGrams": 20,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-140-seated-hanuman-silver-idol-mace-compact.png"
+    },
+    {
+      "number": 141,
+      "id": "product-dda-idol-141-miniature-hanuman-silver-idol-trio",
+      "codeFamily": "HN",
+      "assignedItemCode": "HM-HN-6",
+      "title": "Miniature Hanuman Silver Idol Trio",
+      "slug": "miniature-hanuman-silver-idol-trio",
+      "description": "A hollow 99.80% pure silver trio of miniature Hanuman idols with varied painted and gold-toned details.",
+      "alt": "Three miniature Hanuman silver idols with varied painted details on the DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 2,
+      "deityIds": [
+        "deity-hanuman"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-141-miniature-hanuman-silver-idol-trio.png"
+    },
+    {
+      "number": 142,
+      "id": "product-dda-idol-142-saraswati-silver-idol-veena-round-base",
+      "codeFamily": "SR",
+      "assignedItemCode": "HM-SR-4",
+      "title": "Saraswati Silver Idol with Veena on Round Base",
+      "slug": "saraswati-silver-idol-veena-round-base",
+      "description": "A hollow 99.80% pure silver Saraswati idol seated with a veena on a detailed round pedestal.",
+      "alt": "Saraswati silver idol seated with veena on round pedestal on the DDA Silver background",
+      "weightGrams": 30,
+      "heightInches": 3,
+      "deityIds": [
+        "deity-saraswati"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-142-saraswati-silver-idol-veena-round-base.png"
+    },
+    {
+      "number": 143,
+      "id": "product-dda-idol-143-painted-bal-krishna-silver-idol-butter-pot-large",
+      "codeFamily": "BK",
+      "assignedItemCode": "HM-BK-11",
+      "title": "Painted Bal Krishna Silver Idol with Butter Pot",
+      "slug": "painted-bal-krishna-silver-idol-butter-pot-large",
+      "description": "A hollow 99.80% pure silver Bal Krishna idol reaching into a painted butter pot with floral details.",
+      "alt": "Painted Bal Krishna silver idol reaching into decorated butter pot on the DDA Silver background",
+      "weightGrams": 45,
+      "heightInches": 4,
+      "deityIds": [
+        "deity-krishna"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-143-painted-bal-krishna-silver-idol-butter-pot-large.png"
+    },
+    {
+      "number": 144,
+      "id": "product-dda-idol-144-auspicious-fish-silver-figurine",
+      "codeFamily": "FS",
+      "assignedItemCode": "HM-FS-1",
+      "title": "Auspicious Fish Silver Figurine",
+      "slug": "auspicious-fish-silver-figurine",
+      "description": "A hollow 99.80% pure silver fish figurine with engraved scales and gold-toned fins.",
+      "alt": "Silver fish figurine with engraved scales and gold-toned fins on the DDA Silver background",
+      "weightGrams": 10,
+      "heightInches": 1.5,
+      "deityIds": [
+        "deity-vishnu"
+      ],
+      "imagePath": "public/images/silver-idols/new-folder-3-2026-08-02/idol-144-auspicious-fish-silver-figurine.png"
+    }
+  ]
+}

@@ -46,6 +46,7 @@ only in the product description.
 | `MA` | Maharaja Agrasen | All Maharaja Agrasen designs |
 | `EL` | Auspicious Elephant | All auspicious elephant designs |
 | `OW` | Auspicious Owl | All auspicious owl designs |
+| `FS` | Auspicious Fish | All auspicious fish figurine designs |
 
 `HN` is the only Hanuman code. Do not create separate codes for Panchmukhi,
 standing, seated, or other Hanuman forms.
@@ -170,6 +171,55 @@ Examples:
 | 93 | `HM-RM-1` | HM-RM-1 — Lord Rama Silver Idol with Ram Mandir |
 | 94 | `HM-SH-6` | HM-SH-6 — Shiva Family Silver Idol with Arch and Shivling |
 | 95 | `HM-DG-3` | HM-DG-3 — Painted Durga Silver Idol on Lion |
+| 96 | `HM-KM-3` | HM-KM-3 — Painted Kamdhenu Silver Idol with Crimson Blanket |
+| 97 | `HM-KM-4` | HM-KM-4 — Miniature Kamdhenu Silver Idol with Textured Blanket |
+| 98 | `HM-KM-5` | HM-KM-5 — Kamdhenu Silver Idol with Golden Blanket |
+| 99 | `HM-KM-6` | HM-KM-6 — Kamdhenu Silver Idol with Diamond-Pattern Blanket |
+| 100 | `HM-KM-7` | HM-KM-7 — Kamdhenu Silver Idol with Ornate Gold Blanket |
+| 101 | `HM-KM-8` | HM-KM-8 — Painted Kamdhenu Silver Idol with Red Saddle Cloth |
+| 102 | `HM-KM-9` | HM-KM-9 — Mini Kamdhenu Silver Idol with Floral Blanket |
+| 103 | `HM-KM-10` | HM-KM-10 — Mini Kamdhenu Silver Idol with Gold Saddle Cloth |
+| 104 | `HM-KM-11` | HM-KM-11 — Kamdhenu Silver Idol with Beaded Blanket and Bells |
+| 105 | `HM-KM-12` | HM-KM-12 — Painted Kamdhenu Silver Idol with Green Blanket |
+| 106 | `HM-KM-13` | HM-KM-13 — Kamdhenu Silver Idol with Woven-Texture Blanket |
+| 107 | `HM-KM-14` | HM-KM-14 — Painted Kamdhenu Silver Idol on Cloud Base |
+| 108 | `HM-KM-15` | HM-KM-15 — Kamdhenu Silver Idol on Sculpted Cloud Base |
+| 109 | `HM-KM-16` | HM-KM-16 — Painted Kamdhenu Silver Idol with Floral Om Blanket |
+| 110 | `HM-KM-17` | HM-KM-17 — Grand Painted Kamdhenu Silver Idol with Floral Om Blanket |
+| 111 | `HM-RM-2` | HM-RM-2 — Painted Ram Darbar Silver Idol Set in Yellow |
+| 112 | `HM-RM-3` | HM-RM-3 — Ram Darbar Silver Idol Set with Golden Highlights |
+| 113 | `HM-RM-4` | HM-RM-4 — Painted Ram Darbar Silver Idol Set on Round Bases |
+| 114 | `HM-RM-5` | HM-RM-5 — Large Ram Darbar Silver Idol Set on Lotus Bases |
+| 115 | `HM-RM-6` | HM-RM-6 — Large Painted Ram Darbar Silver Idol Set on Lotus Bases |
+| 116 | `HM-RM-7` | HM-RM-7 — Grand Painted Ram Darbar Silver Idol Set |
+| 117 | `HM-DG-4` | HM-DG-4 — Durga Silver Idol on Lion with Golden Highlights |
+| 118 | `HM-DG-5` | HM-DG-5 — Painted Durga Silver Idol on Lion in Red and Green |
+| 119 | `HM-RM-8` | HM-RM-8 — Seated Rama and Sita Silver Idol Pair |
+| 120 | `HM-RM-9` | HM-RM-9 — Ram Darbar Silver Idol Set with Rectangular Bases |
+| 121 | `HM-RM-10` | HM-RM-10 — Painted Ram Darbar Silver Idol Set in Red and Yellow |
+| 122 | `HM-RK-14` | HM-RK-14 — Radha Krishna Silver Idol with Flute and Gold Accents |
+| 123 | `HM-RK-15` | HM-RK-15 — Large Radha Krishna Silver Idol Pair on Lotus Bases |
+| 124 | `HM-RK-16` | HM-RK-16 — Tall Radha Krishna Silver Idol Pair with Peacock |
+| 125 | `HM-RK-17` | HM-RK-17 — Painted Radha Krishna Silver Idol in Yellow and Pink |
+| 126 | `HM-RK-18` | HM-RK-18 — Tall Radha Krishna Silver Idol with Flute on Lotus |
+| 127 | `HM-RK-19` | HM-RK-19 — Painted Radha Krishna Silver Idol in Red and Yellow |
+| 128 | `HM-RK-20` | HM-RK-20 — Painted Radha Krishna Silver Idol with Cow |
+| 129 | `HM-RK-21` | HM-RK-21 — Painted Radha Krishna Silver Idol on Layered Lotus |
+| 130 | `HM-RK-22` | HM-RK-22 — Radha Krishna Silver Idol with Flute on Double Lotus |
+| 131 | `HM-RK-23` | HM-RK-23 — Compact Radha Krishna Silver Idol with Flute |
+| 132 | `HM-LG-27` | HM-LG-27 — Lakshmi Ganesha Silver Idol Pair on Lotus Bases |
+| 133 | `HM-LG-28` | HM-LG-28 — Lakshmi Ganesha Silver Idol Pair on Square Seats |
+| 134 | `HM-LG-29` | HM-LG-29 — Lakshmi Ganesha Silver Idol Pair on Drum Seats |
+| 135 | `HM-SH-7` | HM-SH-7 — Shiva Family Silver Idol with Nandi and Shivling |
+| 136 | `HM-SH-8` | HM-SH-8 — Painted Shiva Family Silver Idol with Nandi and Shivling |
+| 137 | `HM-KB-3` | HM-KB-3 — Painted Kuber Silver Idol on Throne |
+| 138 | `HM-HN-3` | HM-HN-3 — Standing Hanuman Silver Idol with Mace |
+| 139 | `HM-HN-4` | HM-HN-4 — Kneeling Hanuman Silver Idol with Mace |
+| 140 | `HM-HN-5` | HM-HN-5 — Seated Hanuman Silver Idol with Mace |
+| 141 | `HM-HN-6` | HM-HN-6 — Miniature Hanuman Silver Idol Trio |
+| 142 | `HM-SR-4` | HM-SR-4 — Saraswati Silver Idol with Veena on Round Base |
+| 143 | `HM-BK-11` | HM-BK-11 — Painted Bal Krishna Silver Idol with Butter Pot |
+| 144 | `HM-FS-1` | HM-FS-1 — Auspicious Fish Silver Figurine |
 
 ## Sanity implementation
 
@@ -177,7 +227,10 @@ Examples:
 - Display the Item Name as `<item code> — <product title>`.
 - Keep the slug descriptive and stable; do not add the item code to the slug.
 - Keep image titles free of weight and height.
-- Store weight and height only in `shortDescription`.
+- Store verified weight and height in the dedicated `weightGrams` and
+  `heightInches` fields and repeat them naturally in `shortDescription`.
+- Store `widthInches` only when a verified width is supplied. Product cards
+  hide height or width independently when the corresponding field is absent.
 - Keep the product category, purity, idol construction, and deity references in
   their dedicated Sanity fields.
 - Validate item codes against

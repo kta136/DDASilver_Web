@@ -1,0 +1,253 @@
+{
+  "batchId": "ai-enhanced-utensils-2026-08-02",
+  "products": [
+    {
+      "sourceFilename": "01-silver-tumbler-10g-1.5in.png",
+      "title": "Fine-Line Mini Silver Tumbler",
+      "design": "A compact fine-line",
+      "utensilType": "tumbler",
+      "weightGrams": 10,
+      "heightInches": 1.5
+    },
+    {
+      "sourceFilename": "02-silver-tumbler-20g-2in.png",
+      "title": "Double-Band Silver Tumbler",
+      "design": "A double-band",
+      "utensilType": "tumbler",
+      "weightGrams": 20,
+      "heightInches": 2
+    },
+    {
+      "sourceFilename": "03-silver-tumbler-30g-2.5in.png",
+      "title": "Triple-Band Silver Tumbler",
+      "design": "A triple-band",
+      "utensilType": "tumbler",
+      "weightGrams": 30,
+      "heightInches": 2.5
+    },
+    {
+      "sourceFilename": "04-silver-tumbler-40g-3in.png",
+      "title": "Polished-Rim Silver Tumbler",
+      "design": "A polished-rim",
+      "utensilType": "tumbler",
+      "weightGrams": 40,
+      "heightInches": 3
+    },
+    {
+      "sourceFilename": "05-silver-tumbler-50g-3.5in.png",
+      "title": "Brushed Linear Silver Tumbler",
+      "design": "A brushed linear",
+      "utensilType": "tumbler",
+      "weightGrams": 50,
+      "heightInches": 3.5
+    },
+    {
+      "sourceFilename": "06-silver-tumbler-50g-3.5in-alt.png",
+      "title": "Multi-Ring Silver Tumbler",
+      "design": "A multi-ring",
+      "utensilType": "tumbler",
+      "weightGrams": 50,
+      "heightInches": 3.5
+    },
+    {
+      "sourceFilename": "07-silver-tumbler-60g-4in.png",
+      "title": "Minimal-Band Silver Tumbler",
+      "design": "A minimal-band",
+      "utensilType": "tumbler",
+      "weightGrams": 60,
+      "heightInches": 4
+    },
+    {
+      "sourceFilename": "08-silver-tumbler-70g-4in.png",
+      "title": "Twin-Line Silver Tumbler",
+      "design": "A twin-line",
+      "utensilType": "tumbler",
+      "weightGrams": 70,
+      "heightInches": 4
+    },
+    {
+      "sourceFilename": "09-silver-tumbler-80g-4in.png",
+      "title": "Classic Brushed Silver Tumbler",
+      "design": "A classic brushed",
+      "utensilType": "tumbler",
+      "weightGrams": 80,
+      "heightInches": 4
+    },
+    {
+      "sourceFilename": "10-silver-tumbler-100g-4.3in.png",
+      "title": "Straight-Rim Silver Tumbler",
+      "design": "A straight-rim",
+      "utensilType": "tumbler",
+      "weightGrams": 100,
+      "heightInches": 4.3
+    },
+    {
+      "sourceFilename": "11-silver-tumbler-125g-4in.png",
+      "title": "Satin Silver Tumbler",
+      "design": "A satin-finish",
+      "utensilType": "tumbler",
+      "weightGrams": 125,
+      "heightInches": 4
+    },
+    {
+      "sourceFilename": "12-silver-tumbler-150g-5in.png",
+      "title": "Tall Brushed Silver Tumbler",
+      "design": "A tall brushed",
+      "utensilType": "tumbler",
+      "weightGrams": 150,
+      "heightInches": 5
+    },
+    {
+      "sourceFilename": "13-silver-tumbler-150g-4.5in-alt.png",
+      "title": "Mid-Band Silver Tumbler",
+      "design": "A mid-band",
+      "utensilType": "tumbler",
+      "weightGrams": 150,
+      "heightInches": 4.5
+    },
+    {
+      "sourceFilename": "14-silver-tumbler-200g-5.5in.png",
+      "title": "Tall Classic Silver Tumbler",
+      "design": "A tall classic",
+      "utensilType": "tumbler",
+      "weightGrams": 200,
+      "heightInches": 5.5
+    },
+    {
+      "sourceFilename": "15-silver-bowl-10g-2in.png",
+      "title": "Mini Linear Silver Bowl",
+      "design": "A compact linear",
+      "utensilType": "bowl",
+      "weightGrams": 10,
+      "diameterInches": 2
+    },
+    {
+      "sourceFilename": "16-silver-bowl-20g-2.5in.png",
+      "title": "Double-Line Mini Silver Bowl",
+      "design": "A double-line mini",
+      "utensilType": "bowl",
+      "weightGrams": 20,
+      "diameterInches": 2.5
+    },
+    {
+      "sourceFilename": "17-silver-bowl-30g-3in.png",
+      "title": "Brushed-Rim Silver Bowl",
+      "design": "A brushed-rim",
+      "utensilType": "bowl",
+      "weightGrams": 30,
+      "diameterInches": 3
+    },
+    {
+      "sourceFilename": "18-silver-bowl-40g-3.5in.png",
+      "title": "Fine-Band Silver Bowl",
+      "design": "A fine-band",
+      "utensilType": "bowl",
+      "weightGrams": 40,
+      "diameterInches": 3.5
+    },
+    {
+      "sourceFilename": "19-silver-bowl-50g-3.5in.png",
+      "title": "Classic Silver Bowl",
+      "design": "A classic rounded",
+      "utensilType": "bowl",
+      "weightGrams": 50,
+      "diameterInches": 3.5
+    },
+    {
+      "sourceFilename": "20-silver-bowl-50g-4in.png",
+      "title": "Wide Linear Silver Bowl",
+      "design": "A wide linear",
+      "utensilType": "bowl",
+      "weightGrams": 50,
+      "diameterInches": 4
+    },
+    {
+      "sourceFilename": "21-silver-bowl-60g-4.5in.png",
+      "title": "Polished-Rim Silver Bowl",
+      "design": "A polished-rim",
+      "utensilType": "bowl",
+      "weightGrams": 60,
+      "diameterInches": 4.5
+    },
+    {
+      "sourceFilename": "22-silver-bowl-55g-5in.png",
+      "title": "Wide Silver Bowl",
+      "design": "A wide-profile",
+      "utensilType": "bowl",
+      "weightGrams": 55,
+      "diameterInches": 5
+    },
+    {
+      "sourceFilename": "23-silver-bowl-70g-5in.png",
+      "title": "Deep Silver Bowl",
+      "design": "A deep-profile",
+      "utensilType": "bowl",
+      "weightGrams": 70,
+      "diameterInches": 5
+    },
+    {
+      "sourceFilename": "24-silver-bowl-100g-5in.png",
+      "title": "Twin-Line Silver Bowl",
+      "design": "A twin-line",
+      "utensilType": "bowl",
+      "weightGrams": 100,
+      "diameterInches": 5
+    },
+    {
+      "sourceFilename": "25-silver-bowl-125g-6in.png",
+      "title": "Classic Serving Silver Bowl",
+      "design": "A classic serving",
+      "utensilType": "bowl",
+      "weightGrams": 125,
+      "diameterInches": 6
+    },
+    {
+      "sourceFilename": "26-silver-bowl-150g-7in.png",
+      "title": "Wide Serving Silver Bowl",
+      "design": "A wide serving",
+      "utensilType": "bowl",
+      "weightGrams": 150,
+      "diameterInches": 7
+    },
+    {
+      "sourceFilename": "27-silver-bowl-200g-8in.png",
+      "title": "Large Serving Silver Bowl",
+      "design": "A large serving",
+      "utensilType": "bowl",
+      "weightGrams": 200,
+      "diameterInches": 8
+    },
+    {
+      "sourceFilename": "28-silver-bowl-30g-3in-alt.png",
+      "title": "Straight-Sided Mini Silver Bowl",
+      "design": "A straight-sided mini",
+      "utensilType": "bowl",
+      "weightGrams": 30,
+      "diameterInches": 3
+    },
+    {
+      "sourceFilename": "29-silver-bowl-40g-3in-alt.png",
+      "title": "Triple-Line Mini Silver Bowl",
+      "design": "A triple-line mini",
+      "utensilType": "bowl",
+      "weightGrams": 40,
+      "diameterInches": 3
+    },
+    {
+      "sourceFilename": "30-silver-bowl-50g-3.3in-alt.png",
+      "title": "Straight-Sided Silver Bowl",
+      "design": "A straight-sided",
+      "utensilType": "bowl",
+      "weightGrams": 50,
+      "diameterInches": 3.3
+    },
+    {
+      "sourceFilename": "31-silver-bowl-60g-3.5in-alt.png",
+      "title": "Deep Straight-Sided Silver Bowl",
+      "design": "A deep straight-sided",
+      "utensilType": "bowl",
+      "weightGrams": 60,
+      "diameterInches": 3.5
+    }
+  ]
+}

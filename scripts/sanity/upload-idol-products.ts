@@ -13,6 +13,9 @@ const applyChanges =
 const overwriteExisting =
   process.argv.includes("--overwrite") ||
   process.env.SANITY_IDOL_OVERWRITE === "1";
+const measurementsOnly =
+  process.argv.includes("--measurements-only") ||
+  process.env.SANITY_IDOL_MEASUREMENTS_ONLY === "1";
 
 type IdolProduct = {
   number: number;
@@ -25,6 +28,7 @@ type IdolProduct = {
   alt: string;
   weightGrams: number;
   heightInches: number;
+  widthInches?: number;
   deityIds: readonly string[];
   imagePath: string;
 };
@@ -577,6 +581,9 @@ type ExistingDocument = {
   _id: string;
   title: string;
   reference?: string;
+  weightGrams?: number;
+  heightInches?: number;
+  widthInches?: number;
 };
 
 type ExistingAsset = {
@@ -783,7 +790,82 @@ function validateItemCodeAllocation(
 }
 
 function getProductDescription(product: IdolProduct) {
-  return `${product.description} Weight: ${product.weightGrams} g. Height: ${product.heightInches} in.`;
+  const width = product.widthInches
+    ? ` Width: ${product.widthInches} in.`
+    : "";
+  return `${product.description} Weight: ${product.weightGrams} g. Height: ${product.heightInches} in.${width}`;
+}
+
+function getProductMeasurements(product: IdolProduct) {
+  return {
+    weightGrams: product.weightGrams,
+    heightInches: product.heightInches,
+    ...(product.widthInches
+      ? { widthInches: product.widthInches }
+      : {}),
+  };
+}
+
+async function syncProductMeasurements(
+  products: readonly IdolProduct[],
+  existingById: ReadonlyMap<string, ExistingDocument>,
+) {
+  const missingProductIds = products
+    .filter((product) => !existingById.has(product.id))
+    .map((product) => product.id);
+
+  if (missingProductIds.length > 0) {
+    throw new Error(
+      `Measurement-only sync requires every product to exist: ${missingProductIds.join(", ")}`,
+    );
+  }
+
+  const changes = products.flatMap((product) => {
+    const existingProduct = existingById.get(product.id)!;
+    const measurements = getProductMeasurements(product);
+    const changedFields = Object.entries(measurements)
+      .filter(
+        ([field, value]) =>
+          existingProduct[field as keyof ExistingDocument] !== value,
+      )
+      .map(([field]) => field);
+
+    return changedFields.length > 0
+      ? [{ product, measurements, changedFields }]
+      : [];
+  });
+
+  for (const { product, changedFields } of changes) {
+    const width = product.widthInches
+      ? `; width ${product.widthInches} in`
+      : "";
+    console.log(
+      `PATCH ${product.id}: ${product.weightGrams} g; height ${product.heightInches} in${width}; fields=${changedFields.join("+")}`,
+    );
+  }
+
+  console.log(
+    `${changes.length} of ${products.length} existing products require measurement updates.`,
+  );
+
+  if (!applyChanges) {
+    console.log("Dry run only. No Sanity documents were written.");
+    return;
+  }
+
+  if (changes.length === 0) {
+    console.log("All existing product measurements are already current.");
+    return;
+  }
+
+  let transaction = client.transaction();
+  for (const { product, measurements } of changes) {
+    transaction = transaction.patch(product.id, (patch) =>
+      patch.set(measurements),
+    );
+  }
+  await transaction.commit();
+  console.log(`Updated measurements on ${changes.length} existing products.`);
 }
 
 function getGalleryKey(product: IdolProduct) {
@@ -870,6 +952,12 @@ function validateProductDefinitions(products: readonly IdolProduct[]) {
     }
     if (!Number.isFinite(product.heightInches) || product.heightInches <= 0) {
       throw new Error(`Product height is invalid: ${product.id}`);
+    }
+    if (
+      product.widthInches !== undefined &&
+      (!Number.isFinite(product.widthInches) || product.widthInches <= 0)
+    ) {
+      throw new Error(`Product width is invalid: ${product.id}`);
     }
     if (slugs.has(product.slug)) {
       throw new Error(`Duplicate product slug: ${product.slug}`);
@@ -1029,19 +1117,32 @@ async function main() {
   await validateInputs(idolProducts);
 
   const existingDocuments = await client.fetch<ExistingDocument[]>(
-    `*[_type == "product" && defined(reference)]{_id, title, reference}`,
+    `*[_type == "product"]{
+      _id,
+      title,
+      reference,
+      weightGrams,
+      heightInches,
+      widthInches
+    }`,
   );
   const existingById = new Map(
     existingDocuments.map((document) => [document._id, document]),
   );
+
+  console.log(`Target: ${projectId}/${dataset}`);
+  console.log(`Product source: ${source}`);
+
+  if (measurementsOnly) {
+    await syncProductMeasurements(idolProducts, existingById);
+    return;
+  }
+
   const itemCodeByProductId = allocateItemCodes(
     idolProducts,
     existingDocuments,
   );
   validateItemCodeAllocation(idolProducts, itemCodeByProductId);
-
-  console.log(`Target: ${projectId}/${dataset}`);
-  console.log(`Product source: ${source}`);
 
   if (!applyChanges) {
     console.log("\nDry run only. No assets or documents will be written.");
@@ -1148,6 +1249,7 @@ async function main() {
           _ref: categoryId,
         },
         purity: "99.80",
+        ...getProductMeasurements(product),
         idolConstruction: "hollow",
         deities: product.deityIds.map((deityId) => ({
           _key: deityId,

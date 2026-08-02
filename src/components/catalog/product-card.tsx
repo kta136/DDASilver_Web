@@ -30,6 +30,8 @@ export function ProductCard({
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.weightGrams ? `${product.weightGrams} g` : null,
+    product.heightInches ? `Height ${product.heightInches} in` : null,
+    product.widthInches ? `Width ${product.widthInches} in` : null,
     product.deities.length > 0
       ? product.deities.map((deity) => deity.title).join(", ")
       : null,

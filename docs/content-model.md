@@ -24,6 +24,10 @@ before publishing.
 | `gallery` | image array | Yes | At least one image; each image requires alt text |
 | `category` | reference | Yes | References one published category |
 | `purity` | string | Yes | `92.5` or `99.80`; displayed as 92.5% or 99.80% |
+| `weightGrams` | number | When supplied/category-required | Positive product weight in grams |
+| `heightInches` | number | When supplied | Verified positive product height in inches |
+| `widthInches` | number | When supplied | Verified positive product width in inches |
+| `diameterInches` | number | When supplied | Verified positive diameter for round products |
 | `idolConstruction` | string | For Idols | Hollow, Solid, or Semi-solid |
 | `deities` | reference array | For Idols | One or more references to the Deities taxonomy |
 | `coinShape` | string | For Coin | Round, Oval, Square, or Rectangle |
@@ -32,8 +36,16 @@ before publishing.
 | `displayOrder` | number | Yes | Integer; defaults to 100 |
 | `reference` | string | No | Canonical item code and enquiry context |
 
-Do not add price, compare-at price, quantity, stock status, weight, variants,
-cart, tax, shipping, or checkout fields.
+Do not add price, compare-at price, quantity, stock status, variants, cart,
+tax, shipping, or checkout fields. Record an owner-supplied product weight in
+`weightGrams`. Store verified dimensions in the applicable separate field:
+`heightInches`, `widthInches`, or `diameterInches`. Round bowls use diameter,
+while tumblers use height unless a verified width is also supplied.
+
+Product cards append `Height <value> in` and `Width <value> in` to their
+metadata line independently. Each label is rendered only when its matching
+dedicated Sanity field has a value; the website does not parse dimensions from
+the title or description.
 
 ### `category`
 
@@ -144,6 +156,11 @@ choose “decorative” rather than omitting alt text.
 
 ## Import workflow
 
+Folder-based product gallery requests follow the end-to-end
+[product gallery ingestion workflow](product-gallery-ingestion.md). That
+workflow produces both approved-background images and matching metadata; image
+cleanup and catalog preparation are not separate deliveries.
+
 1. Duplicate the catalog CSV template.
 2. Assign one approved category and purity per product.
 3. For Idols, assign Idol Construction, all represented deities, and the next
@@ -152,18 +169,24 @@ choose “decorative” rather than omitting alt text.
 5. Match `image_filenames` to files in the asset delivery.
 6. Validate required columns and duplicates.
 7. Import product metadata as drafts.
-8. Upload, crop, and attach images manually.
+8. Use the approved gallery outputs and attach their matching images; do not
+   substitute generic-background intermediates.
 9. Review every product preview.
 10. Publish only after owner/catalog-admin approval.
 
 ## Image standards
 
 - Use real product or showroom photography.
-- Do not use AI-generated products or visual placeholders in production.
+- Do not use invented or geometry-altering AI product imagery in production.
+  AI-assisted background compositing and restrained retouching are allowed
+  when the real source photograph remains the sole source of truth.
 - Preserve sufficient resolution for responsive crops.
 - Avoid watermarks, screenshots, messaging-app compression, and inconsistent
   colored backgrounds where possible.
 - Recommended catalog master: square or 4:5 portrait with safe central framing.
+- For folder-based gallery ingestion, use the approved DDA Silver background at
+  `public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png`
+  and deliver 1254 x 1254 PNGs.
 - Recommended hero master: landscape with subject-safe space for responsive
   crops.
 - Record missing, low-resolution, poorly lit, or duplicate images in the asset

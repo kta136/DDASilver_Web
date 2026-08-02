@@ -1,0 +1,120 @@
+# Product gallery ingestion
+
+This is the default workflow for a folder of product photographs that must be
+prepared for the DDA Silver gallery or Sanity. It applies to utensils and is
+the baseline for other product categories unless a category-specific pipeline
+defines stricter rules.
+
+## Definition of done
+
+A gallery-preparation request is one end-to-end delivery. The first pass must
+include all of the following unless the requester explicitly excludes a step:
+
+- one approved-background gallery image for every source photograph;
+- stable, upload-friendly filenames;
+- a unique product title, short description, and image alt text for every item;
+- purity, weight, and the applicable height, width, or diameter;
+- a validated Sanity manifest and a human-review CSV;
+- an explicit list of publish blockers, including missing measurements or
+  schema fields.
+
+Returning only cleaned or neutral-background PNGs is incomplete.
+
+## Image workflow
+
+Use the approved 1254 x 1254 DDA Silver gallery background:
+
+`public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png`
+
+The original product photograph is the sole source of truth. AI-assisted
+compositing is allowed for background replacement and restrained photographic
+cleanup. Preserve the product's exact silhouette, proportions, rim, base,
+surface finish, engraving, decorative bands, component count, and handmade
+character. Do not invent hallmarks, accessories, text, logos, or product
+details. Remove measurement stickers and unwanted photographer/camera
+reflections from the image; retain those measurements as metadata.
+
+Output requirements:
+
+- 1254 x 1254 PNG;
+- complete product visible with consistent central framing and safe padding;
+- lighting and contact shadow matched to the approved background;
+- neutral, believable silver colour without clipped highlights;
+- no overlaid product text, watermark added by the editor, or borders;
+- source files remain unchanged.
+
+If an approved background is present, do not substitute a generic white or
+neutral studio background in the first pass.
+
+## Metadata workflow
+
+Create metadata at the same time as each image. For utensils use
+`category-utensils` and the confirmed purity supplied with the batch.
+
+Required per-item values:
+
+| Value | Rule |
+| --- | --- |
+| `number` | Stable sequence matching the output filename |
+| `id` | Stable Sanity document ID |
+| `title` | Customer-facing name; do not use the source filename |
+| `slug` | Unique, lowercase, hyphenated slug |
+| `shortDescription` | Unique plain-text description, 20–240 characters |
+| `alt` | Visible-product description, 12–180 characters |
+| `purity` | Sanity value such as `99.80` |
+| `weightGrams` | Positive numeric weight from the source label or owner |
+| physical dimension | Use the applicable `heightInches`, `widthInches`, or `diameterInches` |
+| `imagePath` | Repository-relative path to the final PNG |
+| `reference` | Stable internal item code when an approved code family exists |
+
+Descriptions should identify the utensil type and visible design, state the
+confirmed purity naturally, and include the supplied measurements without
+making unsupported quality, price, stock, or availability claims. Similar
+sizes still need distinct, accurate descriptions based on their visible band,
+rim, finish, or profile.
+
+For round bowls, record `diameterInches` rather than an ambiguous width. For
+tumblers and cups, record `heightInches`; include `widthInches` only when a
+verified width is supplied. Never infer an unlabelled physical measurement
+from image pixels.
+
+## Sanity readiness
+
+The delivery manifest must declare its status rather than implying it is ready:
+
+```json
+{
+  "schemaVersion": 1,
+  "batchId": "descriptive-batch-id",
+  "categoryId": "category-utensils",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": false,
+  "publishBlockers": [],
+  "products": []
+}
+```
+
+Run the relevant uploader in dry-run mode before calling the batch ready. Do
+not upload or publish until the user authorizes that external write.
+
+The product schema supports `weightGrams`, `heightInches`, `widthInches`, and
+`diameterInches`. Keep the supplied measurement in both the applicable Sanity
+field and the customer-facing `shortDescription`. Never infer an unavailable
+measurement from pixels or copy a diameter into width.
+
+Catalog item cards display height and width independently when their dedicated
+fields are present. A missing field stays hidden; do not insert placeholder or
+inferred values merely to fill the card metadata line.
+
+## Final validation
+
+Before handoff, confirm:
+
+1. source count, final-image count, and manifest product count match;
+2. every image uses the approved background and opens successfully;
+3. every filename, product number, image path, title, slug, and alt text maps to
+   the same source item;
+4. purity and measurements match the source label or owner-provided values;
+5. titles, slugs, references, and descriptions are unique;
+6. all schema limitations or missing owner decisions appear in
+   `publishBlockers`.

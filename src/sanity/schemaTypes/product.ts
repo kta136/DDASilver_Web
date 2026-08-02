@@ -101,6 +101,28 @@ export const productType = defineType({
         }),
     }),
     defineField({
+      name: "heightInches",
+      title: "Height (inches)",
+      type: "number",
+      description: "Verified physical height supplied with the product.",
+      validation: (rule) => rule.positive().max(1_000).precision(2),
+    }),
+    defineField({
+      name: "widthInches",
+      title: "Width (inches)",
+      type: "number",
+      description: "Verified physical width supplied with the product.",
+      validation: (rule) => rule.positive().max(1_000).precision(2),
+    }),
+    defineField({
+      name: "diameterInches",
+      title: "Diameter (inches)",
+      type: "number",
+      description:
+        "Verified diameter for round products such as bowls; use this instead of width.",
+      validation: (rule) => rule.positive().max(1_000).precision(2),
+    }),
+    defineField({
       name: "idolConstruction",
       title: "Idol Construction",
       type: "string",

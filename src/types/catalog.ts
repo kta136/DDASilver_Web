@@ -46,6 +46,9 @@ export type Product = {
   reference?: string;
   purity?: ProductPurity;
   weightGrams?: number;
+  heightInches?: number;
+  widthInches?: number;
+  diameterInches?: number;
   idolConstruction?: IdolConstruction;
   deities: Deity[];
   coinShape?: CoinShape;

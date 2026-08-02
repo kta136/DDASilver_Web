@@ -24,6 +24,9 @@ export const productsQuery = defineQuery(`*[_type == "product"] | order(displayO
   reference,
   purity,
   weightGrams,
+  heightInches,
+  widthInches,
+  diameterInches,
   idolConstruction,
   "deities": coalesce(deities[]->{
     title,

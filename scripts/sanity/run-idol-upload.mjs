@@ -9,6 +9,7 @@ function parseArgs(argv) {
   const options = {
     apply: false,
     overwrite: false,
+    measurementsOnly: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -18,6 +19,8 @@ function parseArgs(argv) {
     } else if (argument === "--overwrite") {
       options.overwrite = true;
       options.apply = true;
+    } else if (argument === "--measurements-only") {
+      options.measurementsOnly = true;
     } else if (argument.startsWith("--manifest=")) {
       options.manifest = argument.slice("--manifest=".length);
     } else if (argument === "--manifest") {
@@ -34,6 +37,10 @@ function parseArgs(argv) {
     }
   }
 
+  if (options.measurementsOnly && options.overwrite) {
+    throw new Error("--measurements-only cannot be combined with --overwrite");
+  }
+
   return options;
 }
 
@@ -46,6 +53,7 @@ Usage:
   npm run sanity:upload-idols:apply
   npm run sanity:upload-idols:overwrite
   npm run sanity:upload-idol-manifest -- -- --manifest=FILE [--apply] [--overwrite]
+  node scripts/sanity/run-idol-upload.mjs --measurements-only [--manifest=FILE] [--apply]
 
 The uploader is a dry run unless --apply is enabled.
 `);
@@ -72,6 +80,7 @@ async function main() {
         ...process.env,
         SANITY_IDOL_APPLY: options.apply ? "1" : "0",
         SANITY_IDOL_OVERWRITE: options.overwrite ? "1" : "0",
+        SANITY_IDOL_MEASUREMENTS_ONLY: options.measurementsOnly ? "1" : "0",
         ...(options.manifest
           ? { SANITY_IDOL_MANIFEST: resolve(repoRoot, options.manifest) }
           : {}),

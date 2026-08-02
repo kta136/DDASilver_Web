@@ -93,6 +93,24 @@ const productSchema = z.object({
     .max(100_000)
     .nullish()
     .transform((value) => value ?? undefined),
+  heightInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
+  widthInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
+  diameterInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
   idolConstruction: z
     .enum(["hollow", "solid", "semi-solid"])
     .nullish()

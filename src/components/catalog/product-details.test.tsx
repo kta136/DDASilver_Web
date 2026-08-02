@@ -54,12 +54,39 @@ describe("<ProductDetails />", () => {
     expect(screen.getByText("400 g")).toBeInTheDocument();
   });
 
+  it("renders verified product dimensions when Sanity provides them", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      heightInches: 4.5,
+      widthInches: 3,
+      diameterInches: 5,
+    };
+
+    render(
+      <ProductDetails
+        product={product}
+        headingLevel={1}
+        presentation="page"
+      />,
+    );
+
+    expect(screen.getByText("Height")).toBeInTheDocument();
+    expect(screen.getByText("4.5 in")).toBeInTheDocument();
+    expect(screen.getByText("Width")).toBeInTheDocument();
+    expect(screen.getByText("3 in")).toBeInTheDocument();
+    expect(screen.getByText("Diameter")).toBeInTheDocument();
+    expect(screen.getByText("5 in")).toBeInTheDocument();
+  });
+
   it("omits optional attributes that are absent", () => {
     const product = {
       ...fallbackProducts[0]!,
       reference: undefined,
       purity: undefined,
       weightGrams: undefined,
+      heightInches: undefined,
+      widthInches: undefined,
+      diameterInches: undefined,
       idolConstruction: undefined,
       deities: [],
       coinShape: undefined,
