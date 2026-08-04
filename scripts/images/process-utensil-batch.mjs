@@ -146,6 +146,10 @@ function dimensionText(product) {
   return `diameter of ${product.diameterInches} in`;
 }
 
+function publicUtensilName(product) {
+  return product.utensilType === "tumbler" ? "glass" : product.utensilType;
+}
+
 function validateCatalog(catalog) {
   if (!catalog || typeof catalog !== "object" || !Array.isArray(catalog.products)) {
     throw new Error("Catalog must contain a products array.");
@@ -344,7 +348,7 @@ async function composeProduct({ transparentPath, backgroundPath, outputPath, typ
 
 function productRecord(product, index, outputDirectory) {
   const number = index + 1;
-  const slug = slugify(product.title);
+  const slug = product.slug ?? slugify(product.title);
   const outputFilename = `${String(number).padStart(2, "0")}-${slug}.png`;
   const measurement = dimensionText(product);
   return {
@@ -352,7 +356,7 @@ function productRecord(product, index, outputDirectory) {
     id: `product-dda-utensil-${String(number).padStart(2, "0")}`,
     title: product.title,
     slug,
-    shortDescription: `${product.design} ${product.utensilType} in confirmed 99.80% pure silver, with a supplied weight of ${product.weightGrams} g and ${measurement}.`,
+    shortDescription: `${product.design} ${publicUtensilName(product)} in confirmed 99.80% pure silver, with a supplied weight of ${product.weightGrams} g and ${measurement}.`,
     alt: `${product.title} centered on the warm ivory DDA Silver gallery background`,
     utensilType: product.utensilType,
     purity: "99.80",

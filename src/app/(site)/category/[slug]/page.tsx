@@ -53,7 +53,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <main id="main-content" className="section-shell">
+    <main id="main-content" className="pt-6 pb-12 sm:pt-8 sm:pb-14 lg:pt-9">
       <div className="site-container">
         <Breadcrumbs
           items={[
@@ -62,16 +62,18 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             { label: category.title },
           ]}
         />
-        <p className="eyebrow mt-8">Category</p>
-        <div className="mt-4 grid gap-7 lg:grid-cols-[1fr_28rem] lg:items-end">
-          <h1 className="font-display text-7xl font-semibold leading-[0.9] sm:text-8xl">
-            {category.title}
-          </h1>
-          <p className="text-base leading-8 text-ink-muted">
+        <header className="mt-6 grid gap-4 border-l-2 border-copper pl-5 sm:mt-7 sm:pl-7 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)] lg:items-end lg:gap-12">
+          <div>
+            <p className="eyebrow">Category</p>
+            <h1 className="font-display mt-2 text-5xl font-semibold leading-[0.88] sm:text-6xl lg:text-7xl">
+              {category.title}
+            </h1>
+          </div>
+          <p className="max-w-[34rem] text-sm leading-7 text-ink-muted sm:text-base lg:justify-self-end">
             {category.description}
           </p>
-        </div>
-        <div className="mt-9">
+        </header>
+        <div className="mt-7">
           <CatalogBrowser
             products={catalog.products}
             categories={catalog.categories}

@@ -3,115 +3,129 @@
   "products": [
     {
       "sourceFilename": "01-silver-tumbler-10g-1.5in.png",
-      "title": "Fine-Line Mini Silver Tumbler",
+      "title": "Fine-Line Mini Silver Glass",
       "design": "A compact fine-line",
       "utensilType": "tumbler",
       "weightGrams": 10,
-      "heightInches": 1.5
+      "heightInches": 1.5,
+      "slug": "fine-line-mini-silver-tumbler"
     },
     {
       "sourceFilename": "02-silver-tumbler-20g-2in.png",
-      "title": "Double-Band Silver Tumbler",
+      "title": "Double-Band Silver Glass",
       "design": "A double-band",
       "utensilType": "tumbler",
       "weightGrams": 20,
-      "heightInches": 2
+      "heightInches": 2,
+      "slug": "double-band-silver-tumbler"
     },
     {
       "sourceFilename": "03-silver-tumbler-30g-2.5in.png",
-      "title": "Triple-Band Silver Tumbler",
+      "title": "Triple-Band Silver Glass",
       "design": "A triple-band",
       "utensilType": "tumbler",
       "weightGrams": 30,
-      "heightInches": 2.5
+      "heightInches": 2.5,
+      "slug": "triple-band-silver-tumbler"
     },
     {
       "sourceFilename": "04-silver-tumbler-40g-3in.png",
-      "title": "Polished-Rim Silver Tumbler",
+      "title": "Polished-Rim Silver Glass",
       "design": "A polished-rim",
       "utensilType": "tumbler",
       "weightGrams": 40,
-      "heightInches": 3
+      "heightInches": 3,
+      "slug": "polished-rim-silver-tumbler"
     },
     {
       "sourceFilename": "05-silver-tumbler-50g-3.5in.png",
-      "title": "Brushed Linear Silver Tumbler",
+      "title": "Brushed Linear Silver Glass",
       "design": "A brushed linear",
       "utensilType": "tumbler",
       "weightGrams": 50,
-      "heightInches": 3.5
+      "heightInches": 3.5,
+      "slug": "brushed-linear-silver-tumbler"
     },
     {
       "sourceFilename": "06-silver-tumbler-50g-3.5in-alt.png",
-      "title": "Multi-Ring Silver Tumbler",
+      "title": "Multi-Ring Silver Glass",
       "design": "A multi-ring",
       "utensilType": "tumbler",
       "weightGrams": 50,
-      "heightInches": 3.5
+      "heightInches": 3.5,
+      "slug": "multi-ring-silver-tumbler"
     },
     {
       "sourceFilename": "07-silver-tumbler-60g-4in.png",
-      "title": "Minimal-Band Silver Tumbler",
+      "title": "Minimal-Band Silver Glass",
       "design": "A minimal-band",
       "utensilType": "tumbler",
       "weightGrams": 60,
-      "heightInches": 4
+      "heightInches": 4,
+      "slug": "minimal-band-silver-tumbler"
     },
     {
       "sourceFilename": "08-silver-tumbler-70g-4in.png",
-      "title": "Twin-Line Silver Tumbler",
+      "title": "Twin-Line Silver Glass",
       "design": "A twin-line",
       "utensilType": "tumbler",
       "weightGrams": 70,
-      "heightInches": 4
+      "heightInches": 4,
+      "slug": "twin-line-silver-tumbler"
     },
     {
       "sourceFilename": "09-silver-tumbler-80g-4in.png",
-      "title": "Classic Brushed Silver Tumbler",
+      "title": "Classic Brushed Silver Glass",
       "design": "A classic brushed",
       "utensilType": "tumbler",
       "weightGrams": 80,
-      "heightInches": 4
+      "heightInches": 4,
+      "slug": "classic-brushed-silver-tumbler"
     },
     {
       "sourceFilename": "10-silver-tumbler-100g-4.3in.png",
-      "title": "Straight-Rim Silver Tumbler",
+      "title": "Straight-Rim Silver Glass",
       "design": "A straight-rim",
       "utensilType": "tumbler",
       "weightGrams": 100,
-      "heightInches": 4.3
+      "heightInches": 4.3,
+      "slug": "straight-rim-silver-tumbler"
     },
     {
       "sourceFilename": "11-silver-tumbler-125g-4in.png",
-      "title": "Satin Silver Tumbler",
+      "title": "Satin Silver Glass",
       "design": "A satin-finish",
       "utensilType": "tumbler",
       "weightGrams": 125,
-      "heightInches": 4
+      "heightInches": 4,
+      "slug": "satin-silver-tumbler"
     },
     {
       "sourceFilename": "12-silver-tumbler-150g-5in.png",
-      "title": "Tall Brushed Silver Tumbler",
+      "title": "Tall Brushed Silver Glass",
       "design": "A tall brushed",
       "utensilType": "tumbler",
       "weightGrams": 150,
-      "heightInches": 5
+      "heightInches": 5,
+      "slug": "tall-brushed-silver-tumbler"
     },
     {
       "sourceFilename": "13-silver-tumbler-150g-4.5in-alt.png",
-      "title": "Mid-Band Silver Tumbler",
+      "title": "Mid-Band Silver Glass",
       "design": "A mid-band",
       "utensilType": "tumbler",
       "weightGrams": 150,
-      "heightInches": 4.5
+      "heightInches": 4.5,
+      "slug": "mid-band-silver-tumbler"
     },
     {
       "sourceFilename": "14-silver-tumbler-200g-5.5in.png",
-      "title": "Tall Classic Silver Tumbler",
+      "title": "Tall Classic Silver Glass",
       "design": "A tall classic",
       "utensilType": "tumbler",
       "weightGrams": 200,
-      "heightInches": 5.5
+      "heightInches": 5.5,
+      "slug": "tall-classic-silver-tumbler"
     },
     {
       "sourceFilename": "15-silver-bowl-10g-2in.png",
