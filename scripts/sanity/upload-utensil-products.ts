@@ -6,17 +6,20 @@ import { basename, resolve } from "node:path";
 import { getCliClient } from "sanity/cli";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
-const applyChanges = process.argv.includes("--apply");
-const overwriteExisting = process.argv.includes("--overwrite");
+const applyChanges =
+  process.argv.includes("--apply") || process.env.SANITY_GALLERY_APPLY === "1";
+const overwriteExisting =
+  process.argv.includes("--overwrite") ||
+  process.env.SANITY_GALLERY_OVERWRITE === "1";
 const manifestArgument = process.argv.find((argument) =>
   argument.startsWith("--manifest="),
 );
 const manifestPath = resolve(
   process.cwd(),
   manifestArgument?.slice("--manifest=".length) ??
+    process.env.SANITY_GALLERY_MANIFEST ??
     "public/images/silver-utensils/ai-gallery-2026-08-02/sanity-utensil-manifest.json",
 );
-const expectedProductCount = 31;
 const assetUploadConcurrency = 3;
 
 type UtensilProduct = {
@@ -26,19 +29,20 @@ type UtensilProduct = {
   slug: string;
   shortDescription: string;
   alt: string;
-  utensilType: "tumbler" | "bowl";
+  utensilType: "tumbler" | "bowl" | "spoon" | "figurine";
   purity: "99.80";
   weightGrams: number;
   heightInches?: number;
   widthInches?: number;
   diameterInches?: number;
   imagePath: string;
+  reference?: string;
 };
 
 type UtensilManifest = {
   schemaVersion: number;
   batchId: string;
-  categoryId: "category-utensils";
+  categoryId: "category-utensils" | "category-gifts";
   readyForSanityAssetUpload: boolean;
   readyForProductPublish: boolean;
   publishBlockers: string[];
@@ -75,8 +79,8 @@ function validateManifest(manifest: UtensilManifest) {
   if (manifest.schemaVersion !== 1) {
     throw new Error(`Unsupported manifest schema: ${manifest.schemaVersion}`);
   }
-  if (manifest.categoryId !== "category-utensils") {
-    throw new Error(`Unexpected utensil category: ${manifest.categoryId}`);
+  if (!["category-utensils", "category-gifts"].includes(manifest.categoryId)) {
+    throw new Error(`Unexpected gallery category: ${manifest.categoryId}`);
   }
   if (!manifest.readyForSanityAssetUpload || !manifest.readyForProductPublish) {
     throw new Error("Utensil manifest is not marked ready for upload and publishing.");
@@ -86,10 +90,8 @@ function validateManifest(manifest: UtensilManifest) {
       `Utensil manifest has publish blockers: ${manifest.publishBlockers.join(", ")}`,
     );
   }
-  if (manifest.products.length !== expectedProductCount) {
-    throw new Error(
-      `Expected ${expectedProductCount} utensils, received ${manifest.products.length}.`,
-    );
+  if (manifest.products.length === 0) {
+    throw new Error("Gallery manifest must contain at least one product.");
   }
 
   const ids = new Set<string>();
@@ -105,8 +107,17 @@ function validateManifest(manifest: UtensilManifest) {
     if (!Number.isFinite(product.weightGrams) || product.weightGrams <= 0) {
       throw new Error(`${product.title} has an invalid weight.`);
     }
+    const allowedTypes =
+      manifest.categoryId === "category-utensils"
+        ? ["tumbler", "bowl", "spoon"]
+        : ["figurine"];
+    if (!allowedTypes.includes(product.utensilType)) {
+      throw new Error(
+        `${product.title} has invalid type ${product.utensilType} for ${manifest.categoryId}.`,
+      );
+    }
     if (
-      product.utensilType === "tumbler" &&
+      ["tumbler", "spoon", "figurine"].includes(product.utensilType) &&
       (!Number.isFinite(product.heightInches) || product.heightInches! <= 0)
     ) {
       throw new Error(`${product.title} requires a verified height.`);
@@ -132,6 +143,9 @@ function validateManifest(manifest: UtensilManifest) {
     }
     if (product.alt.length < 12 || product.alt.length > 180) {
       throw new Error(`${product.title} has invalid alt text.`);
+    }
+    if (product.reference && product.reference.length > 60) {
+      throw new Error(`${product.title} has an invalid reference.`);
     }
     if (ids.has(product.id) || slugs.has(product.slug)) {
       throw new Error(`${product.title} duplicates an ID or slug.`);
@@ -183,7 +197,7 @@ async function validateInputs(manifest: UtensilManifest) {
   }
   if (conflicts.length > 0) {
     throw new Error(
-      `Utensil slugs conflict with existing products: ${conflicts
+      `Gallery slugs conflict with existing products: ${conflicts
         .map((document) => `${document.title} (${document._id})`)
         .join(", ")}`,
     );
@@ -192,7 +206,7 @@ async function validateInputs(manifest: UtensilManifest) {
     const absolutePath = resolve(process.cwd(), product.imagePath);
     const fileStats = await stat(absolutePath);
     if (!fileStats.isFile()) {
-      throw new Error(`Utensil image path is not a file: ${absolutePath}`);
+      throw new Error(`Gallery image path is not a file: ${absolutePath}`);
     }
   }
   console.log(`Using category ${category.title} (${category._id})`);
@@ -268,15 +282,15 @@ async function main() {
   console.log(`Manifest: ${manifestPath}`);
   if (!applyChanges) {
     console.log("\nDry run only. No assets or product documents will be written.");
-    console.log("Run `npm run sanity:upload-utensils:apply` to upload and publish.\n");
+    console.log("Re-run this manifest with --apply after review to upload and publish.\n");
     for (const product of manifest.products) {
       const imagePath = resolve(process.cwd(), product.imagePath);
       const existingAsset = await findExistingAsset(imagePath);
       const action = existingById.has(product.id) ? "SKIP" : "CREATE";
       const dimension =
-        product.utensilType === "tumbler"
-          ? `${product.heightInches} in high`
-          : `${product.diameterInches} in diameter`;
+        product.utensilType === "bowl"
+          ? `${product.diameterInches} in diameter`
+          : `${product.heightInches} in high`;
       console.log(
         `${action} ${product.title}; ${product.weightGrams} g; ${dimension}; image ${
           existingAsset ? "already uploaded" : "would be uploaded"
@@ -315,7 +329,7 @@ async function main() {
         shortDescription: product.shortDescription,
         gallery: [
           {
-            _key: `utensil-${String(product.number).padStart(2, "0")}-primary`,
+            _key: `catalog-${String(product.number).padStart(2, "0")}-primary`,
             _type: "image" as const,
             asset: { _type: "reference" as const, _ref: assetId },
             alt: product.alt,
@@ -329,6 +343,7 @@ async function main() {
         ...(product.diameterInches
           ? { diameterInches: product.diameterInches }
           : {}),
+        ...(product.reference ? { reference: product.reference } : {}),
         featured: false,
         displayOrder: 4000 + product.number * 10,
       };

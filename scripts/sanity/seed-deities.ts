@@ -1,7 +1,15 @@
 import { getCliClient } from "sanity/cli";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
-const applyChanges = process.argv.includes("--apply");
+const applyChanges =
+  process.argv.includes("--apply") ||
+  process.env.SANITY_SEED_DEITIES_APPLY === "1";
+const idsArgument = process.argv.find((argument) =>
+  argument.startsWith("--ids="),
+);
+const idsValue =
+  idsArgument?.slice("--ids=".length) ??
+  process.env.SANITY_SEED_DEITIES_IDS;
 
 const deities = [
   { _id: "deity-krishna", title: "Krishna", slug: "krishna", displayOrder: 1 },
@@ -76,17 +84,41 @@ const deities = [
     displayOrder: 21,
   },
   { _id: "deity-rama", title: "Rama", slug: "rama", displayOrder: 22 },
+  { _id: "deity-sita", title: "Sita", slug: "sita", displayOrder: 23 },
+  {
+    _id: "deity-mahavir",
+    title: "Mahavir",
+    slug: "mahavir",
+    displayOrder: 24,
+  },
+  { _id: "deity-buddha", title: "Buddha", slug: "buddha", displayOrder: 25 },
 ] as const;
+
+const requestedIds = idsValue
+  ?.split(",")
+  .map((id) => id.trim())
+  .filter(Boolean);
+const selectedDeities = requestedIds?.length
+  ? deities.filter((deity) => requestedIds.includes(deity._id))
+  : deities;
+
+if (requestedIds?.length) {
+  const foundIds = new Set<string>(selectedDeities.map((deity) => deity._id));
+  const unknownIds = requestedIds.filter((id) => !foundIds.has(id));
+  if (unknownIds.length > 0) {
+    throw new Error(`Unknown deity IDs: ${unknownIds.join(", ")}`);
+  }
+}
 
 async function main() {
   const { projectId, dataset } = client.config();
 
   if (!applyChanges) {
     console.log(
-      `Dry run only: would seed ${deities.length} deities into ${projectId}/${dataset}.`,
+      `Dry run only: would seed ${selectedDeities.length} deities into ${projectId}/${dataset}.`,
     );
     console.table(
-      deities.map(({ title, slug, displayOrder }) => ({
+      selectedDeities.map(({ title, slug, displayOrder }) => ({
         title,
         slug,
         displayOrder,
@@ -109,7 +141,7 @@ async function main() {
     throw new Error("Sanity dataset does not match SANITY_EXPECTED_DATASET");
   }
 
-  for (const deity of deities) {
+  for (const deity of selectedDeities) {
     await client.createOrReplace({
       _id: deity._id,
       _type: "deity",

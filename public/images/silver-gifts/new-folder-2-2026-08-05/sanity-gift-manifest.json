@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2-gifts-2026-08-05",
+  "categoryId": "category-gifts",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "publishBlockers": [],
+  "products": [
+    {
+      "sourceSequence": 4,
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.11.46 PM.jpeg",
+      "number": 1,
+      "id": "product-dda-gift-01-br-ambedkar-silver-figurine-book",
+      "title": "B. R. Ambedkar Silver Figurine with Book",
+      "slug": "br-ambedkar-silver-figurine-book",
+      "shortDescription": "A 99.80% pure silver B. R. Ambedkar figurine standing on a round pedestal with a raised hand and book. Weight: 50 g. Height: 4.5 in.",
+      "alt": "B. R. Ambedkar silver figurine with raised hand and book on the warm ivory DDA Silver background",
+      "utensilType": "figurine",
+      "purity": "99.80",
+      "weightGrams": 50,
+      "heightInches": 4.5,
+      "reference": "DDA-GF-BA-01",
+      "imagePath": "public/images/silver-gifts/new-folder-2-2026-08-05/gift-01-br-ambedkar-silver-figurine.png"
+    },
+    {
+      "sourceSequence": 5,
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.12.51 PM.jpeg",
+      "number": 2,
+      "id": "product-dda-gift-02-painted-br-ambedkar-silver-figurine-book",
+      "title": "Painted B. R. Ambedkar Silver Figurine with Book",
+      "slug": "painted-br-ambedkar-silver-figurine-book",
+      "shortDescription": "A 99.80% pure silver B. R. Ambedkar figurine with a raised hand, book, round pedestal, and painted formal attire. Weight: 50 g. Height: 4.5 in.",
+      "alt": "Painted B. R. Ambedkar silver figurine with raised hand and book on the DDA Silver background",
+      "utensilType": "figurine",
+      "purity": "99.80",
+      "weightGrams": 50,
+      "heightInches": 4.5,
+      "reference": "DDA-GF-BA-02",
+      "imagePath": "public/images/silver-gifts/new-folder-2-2026-08-05/gift-02-painted-br-ambedkar-silver-figurine.png"
+    },
+    {
+      "sourceSequence": 30,
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.12.53 PM.jpeg",
+      "number": 3,
+      "id": "product-dda-gift-03-silver-jain-temple-miniature-red-flag",
+      "title": "Silver Jain Temple Miniature with Red Flag",
+      "slug": "silver-jain-temple-miniature-red-flag",
+      "shortDescription": "A 99.80% pure silver Jain temple miniature with a stepped approach, clustered shrines, tall central spire, and red flag. Weight: 100 g. Height: 4.5 in.",
+      "alt": "Silver Jain temple miniature with stepped shrines central spire and red flag on the DDA Silver background",
+      "utensilType": "figurine",
+      "purity": "99.80",
+      "weightGrams": 100,
+      "heightInches": 4.5,
+      "reference": "DDA-GF-JT-03",
+      "imagePath": "public/images/silver-gifts/new-folder-2-2026-08-05/gift-03-silver-jain-temple-miniature-red-flag.png"
+    }
+  ]
+}

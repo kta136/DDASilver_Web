@@ -1,0 +1,123 @@
+{
+  "batchId": "new-folder-2-spoons-2026-08-05",
+  "startingNumber": 33,
+  "products": [
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.32.44 PM.jpeg",
+      "number": 33,
+      "outputFilename": "33-ornate-floral-mini-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Ornate Floral Mini Silver Spoon",
+      "slug": "ornate-floral-mini-silver-spoon",
+      "description": "A miniature floral-handled spoon in 99.80% pure silver, with a supplied weight of 5 g and height of 3 in.",
+      "alt": "Miniature silver spoon with ornate floral handle on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 5,
+      "heightInches": 3
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.34.02 PM.jpeg",
+      "number": 34,
+      "outputFilename": "34-beaded-scroll-mini-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Beaded Scroll Mini Silver Spoon",
+      "slug": "beaded-scroll-mini-silver-spoon",
+      "description": "A compact scroll-handled spoon in 99.80% pure silver, with a supplied weight of 10 g and height of 3.5 in.",
+      "alt": "Compact silver spoon with lined handle and scroll tip on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 10,
+      "heightInches": 3.5
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.35.11 PM.jpeg",
+      "number": 35,
+      "outputFilename": "35-linear-scroll-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Linear Scroll Silver Spoon",
+      "slug": "linear-scroll-silver-spoon",
+      "description": "A polished linear-pattern spoon in 99.80% pure silver, with a supplied weight of 15 g and height of 4 in.",
+      "alt": "Polished silver spoon with linear engraved handle and scroll tip on the DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 15,
+      "heightInches": 4
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.36.31 PM.jpeg",
+      "number": 36,
+      "outputFilename": "36-classic-scroll-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Classic Scroll Silver Spoon",
+      "slug": "classic-scroll-silver-spoon",
+      "description": "A classic polished spoon with a lined scroll handle in 99.80% pure silver, supplied at 20 g and 5 in high.",
+      "alt": "Classic polished silver spoon with lined scroll handle on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 20,
+      "heightInches": 5
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.37.05 PM.jpeg",
+      "number": 37,
+      "outputFilename": "37-floral-engraved-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Floral-Engraved Silver Spoon",
+      "slug": "floral-engraved-silver-spoon",
+      "description": "A polished floral-engraved spoon in 99.80% pure silver, with a supplied weight of 25 g and height of 5.5 in.",
+      "alt": "Polished silver spoon with floral and sweeping engraved handle on the DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 25,
+      "heightInches": 5.5
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.37.58 PM.jpeg",
+      "number": 38,
+      "outputFilename": "38-smooth-rounded-handle-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Smooth Rounded-Handle Silver Spoon",
+      "slug": "smooth-rounded-handle-silver-spoon",
+      "description": "A polished spoon with a smooth rounded handle in 99.80% pure silver, supplied at 30 g and 5.5 in high.",
+      "alt": "Polished silver spoon with smooth rounded handle on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 30,
+      "heightInches": 5.5
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.38.43 PM.jpeg",
+      "number": 39,
+      "outputFilename": "39-broad-tapered-handle-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Broad Tapered-Handle Silver Spoon",
+      "slug": "broad-tapered-handle-silver-spoon",
+      "description": "A polished spoon with a broad tapered handle in 99.80% pure silver, with a supplied weight of 40 g and height of 6 in.",
+      "alt": "Polished silver spoon with broad tapered handle on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 40,
+      "heightInches": 6
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.39.49 PM.jpeg",
+      "number": 40,
+      "outputFilename": "40-classic-rounded-handle-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Classic Rounded-Handle Silver Spoon",
+      "slug": "classic-rounded-handle-silver-spoon",
+      "description": "A classic polished spoon with a rounded handle in 99.80% pure silver, supplied at 50 g and 6 in high.",
+      "alt": "Classic polished silver spoon with rounded handle on the warm ivory DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 50,
+      "heightInches": 6
+    },
+    {
+      "sourceFilename": "WhatsApp Image 2026-08-04 at 4.40.34 PM.jpeg",
+      "number": 41,
+      "outputFilename": "41-wide-serving-silver-spoon.png",
+      "codeFamily": "SP",
+      "title": "Wide Serving Silver Spoon",
+      "slug": "wide-serving-silver-spoon",
+      "description": "A wide polished serving spoon with a smooth rounded handle in 99.80% pure silver, supplied at 60 g and 6.5 in high.",
+      "alt": "Wide polished serving spoon with smooth rounded handle on the DDA Silver background",
+      "deityIds": [],
+      "weightGrams": 60,
+      "heightInches": 6.5
+    }
+  ]
+}
