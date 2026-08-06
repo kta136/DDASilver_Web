@@ -92,6 +92,12 @@ const deities = [
     displayOrder: 24,
   },
   { _id: "deity-buddha", title: "Buddha", slug: "buddha", displayOrder: 25 },
+  {
+    _id: "deity-br-ambedkar",
+    title: "B. R. Ambedkar",
+    slug: "br-ambedkar",
+    displayOrder: 26,
+  },
 ] as const;
 
 const requestedIds = idsValue

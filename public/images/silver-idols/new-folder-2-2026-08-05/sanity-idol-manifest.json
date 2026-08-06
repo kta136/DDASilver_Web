@@ -888,6 +888,50 @@
       "shortDescription": "A hollow 99.80% pure silver Shivling idol with painted tripundra marks, an elongated yoni base, and gold-toned engraved bands. Weight: 20 g. Height: 2.5 in.",
       "purity": "99.80",
       "reference": "HM-SH-9"
+    },
+    {
+      "sourceSequence": 4,
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.11.46 PM.jpeg",
+      "number": 173,
+      "id": "product-dda-gift-01-br-ambedkar-silver-figurine-book",
+      "title": "B. R. Ambedkar Silver Figurine with Book",
+      "slug": "br-ambedkar-silver-figurine-book",
+      "description": "A hollow 99.80% pure silver B. R. Ambedkar figurine standing on a round pedestal with a raised hand and book.",
+      "shortDescription": "A hollow 99.80% pure silver B. R. Ambedkar figurine standing on a round pedestal with a raised hand and book. Weight: 50 g. Height: 4.5 in.",
+      "alt": "B. R. Ambedkar silver figurine with raised hand and book on the warm ivory DDA Silver background",
+      "codeFamily": "BR",
+      "assignedItemCode": "HM-BR-1",
+      "idolConstruction": "hollow",
+      "deityIds": [
+        "deity-br-ambedkar"
+      ],
+      "purity": "99.80",
+      "weightGrams": 50,
+      "heightInches": 4.5,
+      "reference": "HM-BR-1",
+      "imagePath": "public/images/silver-gifts/new-folder-2-2026-08-05/gift-01-br-ambedkar-silver-figurine.png"
+    },
+    {
+      "sourceSequence": 5,
+      "sourceFilename": "WhatsApp Image 2026-08-02 at 4.12.51 PM.jpeg",
+      "number": 174,
+      "id": "product-dda-gift-02-painted-br-ambedkar-silver-figurine-book",
+      "title": "Painted B. R. Ambedkar Silver Figurine with Book",
+      "slug": "painted-br-ambedkar-silver-figurine-book",
+      "description": "A hollow 99.80% pure silver B. R. Ambedkar figurine with a raised hand, book, round pedestal, and painted formal attire.",
+      "shortDescription": "A hollow 99.80% pure silver B. R. Ambedkar figurine with a raised hand, book, round pedestal, and painted formal attire. Weight: 50 g. Height: 4.5 in.",
+      "alt": "Painted B. R. Ambedkar silver figurine with raised hand and book on the DDA Silver background",
+      "codeFamily": "BR",
+      "assignedItemCode": "HM-BR-2",
+      "idolConstruction": "hollow",
+      "deityIds": [
+        "deity-br-ambedkar"
+      ],
+      "purity": "99.80",
+      "weightGrams": 50,
+      "heightInches": 4.5,
+      "reference": "HM-BR-2",
+      "imagePath": "public/images/silver-gifts/new-folder-2-2026-08-05/gift-02-painted-br-ambedkar-silver-figurine.png"
     }
   ],
   "readyForSanityAssetUpload": true,

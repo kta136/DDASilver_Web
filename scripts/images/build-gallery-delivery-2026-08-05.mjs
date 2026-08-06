@@ -62,9 +62,14 @@ const idolManifestPath = join(idolDirectory, "sanity-idol-manifest.json");
 const remoteDeitiesSeeded = process.argv.includes("--remote-deities-seeded");
 const missingRemoteDeityIds = remoteDeitiesSeeded
   ? []
-  : ["deity-sita", "deity-mahavir", "deity-buddha"];
+  : [
+      "deity-sita",
+      "deity-mahavir",
+      "deity-buddha",
+      "deity-br-ambedkar",
+    ];
 const missingRemoteDeityBlocker =
-  "Seed deity-sita, deity-mahavir, and deity-buddha in Sanity before publishing the Rama Sita pair, Mahavir idol, and Buddha idol.";
+  "Seed deity-sita, deity-mahavir, deity-buddha, and deity-br-ambedkar in Sanity before publishing the matching idol products.";
 
 function pathForManifest(absolutePath) {
   const repoRelative = relative(repoRoot, absolutePath);
@@ -120,24 +125,82 @@ async function readJson(filePath) {
 }
 
 async function main() {
-  const [idolCatalog, giftCatalog, spoonCatalog, processorIdolManifest] =
+  const [
+    idolCatalog,
+    giftCatalog,
+    spoonCatalog,
+    processorIdolManifest,
+    previousMasterManifest,
+  ] =
     await Promise.all([
       readJson(idolCatalogPath),
       readJson(giftCatalogPath),
       readJson(spoonCatalogPath),
       readJson(idolManifestPath),
+      readJson(join(deliveryDirectory, "sanity-gallery-manifest.json")),
     ]);
-  const sourceFilenames = (await readdir(sourceDirectory))
-    .filter((filename) => /\.(?:jpe?g|png)$/i.test(filename))
-    .sort((left, right) => left.localeCompare(right, "en-IN"));
-  const sourceSequence = new Map(
-    sourceFilenames.map((filename, index) => [filename, index + 1]),
+  const expectedSourceFilenames = new Set([
+    ...idolCatalog.products.map((product) => product.sourceFilename),
+    ...giftCatalog.products.map((product) => product.sourceFilename),
+    ...spoonCatalog.products.map((product) => product.sourceFilename),
+    ...excludedSources.map((source) => source.sourceFilename),
+  ]);
+  const availableSourceFilenames = (await readdir(sourceDirectory)).filter(
+    (filename) => /\.(?:jpe?g|png)$/i.test(filename),
   );
+  const availableSourceSet = new Set(availableSourceFilenames);
+  const missingSourceFilenames = [...expectedSourceFilenames].filter(
+    (filename) => !availableSourceSet.has(filename),
+  );
+  let sourceFilenames;
+  let sourceSequence;
+  if (missingSourceFilenames.length === 0) {
+    sourceFilenames = availableSourceFilenames
+      .filter((filename) => expectedSourceFilenames.has(filename))
+      .sort((left, right) => left.localeCompare(right, "en-IN"));
+    sourceSequence = new Map(
+      sourceFilenames.map((filename, index) => [filename, index + 1]),
+    );
+  } else {
+    sourceSequence = new Map(
+      previousMasterManifest.products.map((product) => [
+        product.sourceFilename,
+        product.sourceSequence,
+      ]),
+    );
+    const usedSequences = new Set(sourceSequence.values());
+    const unusedSequences = Array.from(
+      { length: expectedSourceFilenames.size },
+      (_, index) => index + 1,
+    ).filter((sequence) => !usedSequences.has(sequence));
+    for (const [index, excludedSource] of excludedSources.entries()) {
+      if (!sourceSequence.has(excludedSource.sourceFilename)) {
+        sourceSequence.set(
+          excludedSource.sourceFilename,
+          unusedSequences[index],
+        );
+      }
+    }
+    const missingStoredSequences = [...expectedSourceFilenames].filter(
+      (filename) => !sourceSequence.has(filename),
+    );
+    if (missingStoredSequences.length > 0) {
+      throw new Error(
+        `Cannot recover source ordering for: ${missingStoredSequences.join(", ")}`,
+      );
+    }
+    sourceFilenames = [...expectedSourceFilenames].sort(
+      (left, right) => sourceSequence.get(left) - sourceSequence.get(right),
+    );
+    console.warn(
+      `Using the preserved source sequence because ${missingSourceFilenames.length} original batch photographs are no longer in ${sourceDirectory}.`,
+    );
+  }
 
   const idolProductByNumber = new Map(
     processorIdolManifest.products.map((product) => [product.number, product]),
   );
-  const idolProducts = idolCatalog.products.map((catalogProduct) => {
+  const processedIdolProducts = idolCatalog.products.map((catalogProduct) => {
     const generated = idolProductByNumber.get(catalogProduct.number);
     if (!generated) {
       throw new Error(`Missing generated idol product ${catalogProduct.number}.`);
@@ -152,22 +215,55 @@ async function main() {
     };
   });
 
-  const giftProducts = giftCatalog.products.map((product) => ({
-    sourceSequence: sourceSequence.get(product.sourceFilename),
-    sourceFilename: product.sourceFilename,
-    number: product.number,
-    id: `product-dda-gift-${String(product.number).padStart(2, "0")}-${product.slug}`,
-    title: product.title,
-    slug: product.slug,
-    shortDescription: shortDescription(product),
-    alt: product.alt,
-    utensilType: "figurine",
-    purity: "99.80",
-    weightGrams: product.weightGrams,
-    heightInches: product.heightInches,
-    reference: `DDA-GF-${product.codeFamily}-${String(product.number).padStart(2, "0")}`,
-    imagePath: pathForManifest(join(giftDirectory, product.outputFilename)),
-  }));
+  const classifiedGiftProducts = giftCatalog.products.map((product) => {
+    const categoryId = product.categoryId ?? "category-gifts";
+    const isIdol = categoryId === "category-idols";
+    return {
+      sourceSequence: sourceSequence.get(product.sourceFilename),
+      sourceFilename: product.sourceFilename,
+      number: isIdol ? product.idolNumber : product.number,
+      id: `product-dda-gift-${String(product.number).padStart(2, "0")}-${product.slug}`,
+      title: product.title,
+      slug: product.slug,
+      description: product.description,
+      shortDescription: shortDescription(product),
+      alt: product.alt,
+      ...(isIdol
+        ? {
+            codeFamily: product.codeFamily,
+            assignedItemCode: product.assignedItemCode,
+            idolConstruction: product.idolConstruction,
+            deityIds: product.deityIds,
+          }
+        : { utensilType: "figurine" }),
+      purity: "99.80",
+      weightGrams: product.weightGrams,
+      heightInches: product.heightInches,
+      reference: isIdol
+        ? product.assignedItemCode
+        : `DDA-GF-${product.codeFamily}-${String(product.number).padStart(2, "0")}`,
+      imagePath: pathForManifest(join(giftDirectory, product.outputFilename)),
+      categoryId,
+    };
+  });
+  const reclassifiedIdolProducts = classifiedGiftProducts
+    .filter((product) => product.categoryId === "category-idols")
+    .map((product) =>
+      Object.fromEntries(
+        Object.entries(product).filter(([field]) => field !== "categoryId"),
+      ),
+    );
+  const giftProducts = classifiedGiftProducts
+    .filter((product) => product.categoryId === "category-gifts")
+    .map((product) =>
+      Object.fromEntries(
+        Object.entries(product).filter(([field]) => field !== "categoryId"),
+      ),
+    );
+  const idolProducts = [
+    ...processedIdolProducts,
+    ...reclassifiedIdolProducts,
+  ];
 
   const spoonProducts = spoonCatalog.products.map((product) => ({
     sourceSequence: sourceSequence.get(product.sourceFilename),
@@ -241,6 +337,22 @@ async function main() {
     readyForProductPublish: true,
     publishBlockers: [],
     products: giftProducts,
+  };
+  const ambedkarIdolManifest = {
+    schemaVersion: 1,
+    batchId: "ambedkar-idols-2026-08-06",
+    categoryId: "category-idols",
+    purity: "99.80",
+    idolConstruction: "hollow",
+    readyForUpload: missingRemoteDeityIds.length === 0,
+    readyForSanityAssetUpload: true,
+    readyForProductPublish: missingRemoteDeityIds.length === 0,
+    publishBlockers:
+      missingRemoteDeityIds.length === 0 ? [] : [missingRemoteDeityBlocker],
+    requiredDeityIds: missingRemoteDeityIds.filter(
+      (deityId) => deityId === "deity-br-ambedkar",
+    ),
+    products: reclassifiedIdolProducts,
   };
   const utensilManifest = {
     schemaVersion: 1,
@@ -402,6 +514,10 @@ async function main() {
     writeFile(
       join(idolDirectory, "sanity-idol-review.csv"),
       toCsv([reviewHeader, ...reviewRows.filter((row) => row[2] === "category-idols")]),
+    ),
+    writeFile(
+      join(idolDirectory, "sanity-ambedkar-idol-manifest.json"),
+      `${JSON.stringify(ambedkarIdolManifest, null, 2)}\n`,
     ),
     writeFile(
       join(giftDirectory, "sanity-gift-manifest.json"),
