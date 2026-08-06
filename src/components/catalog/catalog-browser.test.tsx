@@ -2,6 +2,7 @@
 
 import {
   cleanup,
+  fireEvent,
   render,
   screen,
   within,
@@ -99,5 +100,47 @@ describe("<CatalogBrowser />", () => {
     expect(
       within(deityFilter).getByRole("option", { name: "Shiva" }),
     ).toBeInTheDocument();
+  });
+
+  it("filters utensils by bowl or plate", () => {
+    const bowl = fallbackProducts.find(
+      (product) => product.categorySlug === "utensils",
+    )!;
+    const plate = {
+      ...bowl,
+      title: "Concentric-Line Silver Plate",
+      slug: "concentric-line-silver-plate",
+      utensilType: "plate" as const,
+    };
+
+    render(
+      <CatalogBrowser
+        products={[bowl, plate]}
+        categories={fallbackCategories}
+        initialCategory="utensils"
+      />,
+    );
+
+    const itemTypeFilter = screen.getByRole("combobox", {
+      name: "Filter by utensil item type",
+    });
+    expect(
+      within(itemTypeFilter).getByRole("option", { name: "Bowl" }),
+    ).toBeInTheDocument();
+    expect(
+      within(itemTypeFilter).getByRole("option", { name: "Plate" }),
+    ).toBeInTheDocument();
+    expect(
+      within(itemTypeFilter).queryByRole("option", { name: "Jug" }),
+    ).not.toBeInTheDocument();
+
+    fireEvent.change(itemTypeFilter, { target: { value: "plate" } });
+
+    expect(
+      screen.getByRole("heading", { name: "Concentric-Line Silver Plate" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: bowl.title }),
+    ).not.toBeInTheDocument();
   });
 });

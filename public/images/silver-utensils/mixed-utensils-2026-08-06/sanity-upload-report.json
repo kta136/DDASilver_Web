@@ -1,0 +1,43 @@
+{
+  "batchId": "mixed-utensils-2026-08-06",
+  "uploadedAt": "2026-08-06T16:02:56.2750080+05:30",
+  "target": {
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "categoryId": "category-utensils"
+  },
+  "upload": {
+    "uploadedAssets": 47,
+    "reusedAssets": 0,
+    "createdProducts": 47,
+    "replacedProducts": 0,
+    "skippedProducts": 0
+  },
+  "verification": {
+    "documentsFound": 47,
+    "jugsFound": 6,
+    "kalashFound": 13,
+    "legacyCustomerFacingNamesFound": 0,
+    "invalidPurity": 0,
+    "missingWeight": 0,
+    "missingDimension": 0,
+    "missingGallery": 0,
+    "non1254Assets": 0
+  },
+  "correction": {
+    "correctedAt": "2026-08-06T16:29:15.5373550+05:30",
+    "reusedAssets": 47,
+    "replacedProducts": 47,
+    "concentricLineProductsRenamedFromBowlToPlate": 11,
+    "utensilDocumentsTyped": 87,
+    "untypedUtensilDocuments": 0,
+    "utensilTypeCounts": {
+      "glass": 14,
+      "bowl": 17,
+      "plate": 28,
+      "jug": 6,
+      "kalash": 13,
+      "spoon": 9
+    }
+  }
+}

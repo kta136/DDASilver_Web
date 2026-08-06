@@ -5,6 +5,7 @@ import type {
   CoinShape,
   IdolConstruction,
   ProductPurity,
+  UtensilType,
 } from "@/types/catalog";
 
 const purities = new Set<ProductPurity>(["92.5", "99.80"]);
@@ -19,6 +20,14 @@ const coinShapes = new Set<CoinShape>([
   "square",
   "rectangle",
 ]);
+const utensilTypes = new Set<UtensilType>([
+  "glass",
+  "bowl",
+  "plate",
+  "jug",
+  "kalash",
+  "spoon",
+]);
 
 export type CatalogUrlOptions = {
   categorySlugs: readonly string[];
@@ -32,6 +41,7 @@ export type CatalogUrlState = {
   idolConstruction: IdolConstruction | "";
   deitySlug: string;
   coinShape: CoinShape | "";
+  utensilType: UtensilType | "";
 };
 
 function allowedValue<T extends string>(
@@ -65,6 +75,10 @@ export function parseCatalogSearchParams(
       category === "coin"
         ? allowedValue(searchParams.get("shape"), coinShapes)
         : "",
+    utensilType:
+      category === "utensils"
+        ? allowedValue(searchParams.get("item"), utensilTypes)
+        : "",
   };
 }
 
@@ -81,6 +95,7 @@ export function serializeCatalogFilters(
     idol: filters.idolConstruction ?? "",
     deity: filters.deitySlug ?? "",
     shape: filters.coinShape ?? "",
+    item: filters.utensilType ?? "",
   };
 
   for (const [key, value] of Object.entries(entries)) {

@@ -111,6 +111,10 @@ const productSchema = z.object({
     .max(1_000)
     .nullish()
     .transform((value) => value ?? undefined),
+  utensilType: z
+    .enum(["glass", "bowl", "plate", "jug", "kalash", "spoon"])
+    .nullish()
+    .transform((value) => value ?? undefined),
   idolConstruction: z
     .enum(["hollow", "solid", "semi-solid"])
     .nullish()

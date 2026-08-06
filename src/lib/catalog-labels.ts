@@ -2,6 +2,7 @@ import type {
   CoinShape,
   IdolConstruction,
   ProductPurity,
+  UtensilType,
 } from "@/types/catalog";
 
 export const purityLabels: Record<ProductPurity, string> = {
@@ -20,4 +21,13 @@ export const coinShapeLabels: Record<CoinShape, string> = {
   oval: "Oval",
   square: "Square",
   rectangle: "Rectangle",
+};
+
+export const utensilTypeLabels: Record<UtensilType, string> = {
+  glass: "Glass",
+  bowl: "Bowl",
+  plate: "Plate",
+  jug: "Jug",
+  kalash: "Kalash",
+  spoon: "Spoon",
 };

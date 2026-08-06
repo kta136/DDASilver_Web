@@ -211,6 +211,7 @@ export const fallbackProducts: Product[] = [
     displayOrder: 7,
     reference: "DS-H-001",
     purity: "92.5",
+    utensilType: "bowl",
     deities: [],
   },
   {

@@ -89,6 +89,27 @@ describe("catalog filtering", () => {
     ]);
   });
 
+  it("filters utensils by customer-facing item type", () => {
+    const bowl = fallbackProducts.find(
+      (product) => product.categorySlug === "utensils",
+    )!;
+    const plate = {
+      ...bowl,
+      title: "Concentric-Line Silver Plate",
+      slug: "concentric-line-silver-plate",
+      utensilType: "plate" as const,
+    };
+
+    const results = filterProducts([bowl, plate], {
+      category: "utensils",
+      utensilType: "plate",
+    });
+
+    expect(results.map((product) => product.slug)).toEqual([
+      "concentric-line-silver-plate",
+    ]);
+  });
+
   it("only exposes filter values backed by products in the category", () => {
     const availability = getCatalogFilterAvailability(
       fallbackProducts,
@@ -99,6 +120,23 @@ describe("catalog filtering", () => {
     expect([...availability.coinShapes]).toEqual(["round"]);
     expect([...availability.idolConstructions]).toEqual([]);
     expect([...availability.deities]).toEqual([]);
+  });
+
+  it("only exposes utensil item types backed by utensils", () => {
+    const bowl = fallbackProducts.find(
+      (product) => product.categorySlug === "utensils",
+    )!;
+    const plate = {
+      ...bowl,
+      slug: "silver-plate",
+      utensilType: "plate" as const,
+    };
+    const availability = getCatalogFilterAvailability(
+      [bowl, plate],
+      "utensils",
+    );
+
+    expect([...availability.utensilTypes]).toEqual(["bowl", "plate"]);
   });
 
   it("preserves editorial display order", () => {

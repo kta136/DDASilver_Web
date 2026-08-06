@@ -14,6 +14,20 @@ const sanityDataset = /^[a-z0-9_-]+$/.test(
   ? process.env.NEXT_PUBLIC_SANITY_DATASET
   : null;
 
+const correctedPlateSlugs = [
+  "mini-concentric-line-silver",
+  "compact-concentric-line-silver",
+  "medium-concentric-line-silver",
+  "deep-concentric-line-silver",
+  "wide-concentric-line-silver",
+  "large-concentric-line-silver",
+  "grand-concentric-line-silver",
+  "extra-large-concentric-line-silver",
+  "eleven-inch-concentric-line-silver",
+  "twelve-inch-concentric-line-silver",
+  "thirteen-inch-concentric-line-silver",
+] as const;
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
@@ -72,21 +86,26 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    if (process.env.ENABLE_LEGACY_REDIRECTS !== "true") {
-      return [];
-    }
-
     return [
-      {
-        source: "/index.php/c_booking/index",
-        destination: "/rates",
+      ...correctedPlateSlugs.map((slug) => ({
+        source: `/products/${slug}-bowl`,
+        destination: `/products/${slug}-plate`,
         permanent: true,
-      },
-      {
-        source: "/index.php/c_client_main/Contactus",
-        destination: "/contact",
-        permanent: true,
-      },
+      })),
+      ...(process.env.ENABLE_LEGACY_REDIRECTS === "true"
+        ? [
+            {
+              source: "/index.php/c_booking/index",
+              destination: "/rates",
+              permanent: true,
+            },
+            {
+              source: "/index.php/c_client_main/Contactus",
+              destination: "/contact",
+              permanent: true,
+            },
+          ]
+        : []),
     ];
   },
 };

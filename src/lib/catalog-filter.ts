@@ -3,6 +3,7 @@ import type {
   IdolConstruction,
   Product,
   ProductPurity,
+  UtensilType,
 } from "@/types/catalog";
 
 export type CatalogFilters = {
@@ -12,6 +13,7 @@ export type CatalogFilters = {
   idolConstruction?: IdolConstruction | "";
   deitySlug?: string;
   coinShape?: CoinShape | "";
+  utensilType?: UtensilType | "";
 };
 
 export type CatalogFilterAvailability = {
@@ -20,6 +22,7 @@ export type CatalogFilterAvailability = {
   idolConstructions: ReadonlySet<IdolConstruction>;
   deities: ReadonlyMap<string, string>;
   coinShapes: ReadonlySet<CoinShape>;
+  utensilTypes: ReadonlySet<UtensilType>;
 };
 
 export function getCatalogFilterAvailability(
@@ -31,6 +34,7 @@ export function getCatalogFilterAvailability(
   const idolConstructions = new Set<IdolConstruction>();
   const deities = new Map<string, string>();
   const coinShapes = new Set<CoinShape>();
+  const utensilTypes = new Set<UtensilType>();
 
   for (const product of products) {
     categorySlugs.add(product.categorySlug);
@@ -51,6 +55,9 @@ export function getCatalogFilterAvailability(
     if (product.coinShape) {
       coinShapes.add(product.coinShape);
     }
+    if (product.utensilType) {
+      utensilTypes.add(product.utensilType);
+    }
   }
 
   return {
@@ -59,6 +66,7 @@ export function getCatalogFilterAvailability(
     idolConstructions,
     deities,
     coinShapes,
+    utensilTypes,
   };
 }
 
@@ -94,6 +102,13 @@ export function filterProducts(
       }
 
       if (filters.coinShape && product.coinShape !== filters.coinShape) {
+        return false;
+      }
+
+      if (
+        filters.utensilType &&
+        product.utensilType !== filters.utensilType
+      ) {
         return false;
       }
 

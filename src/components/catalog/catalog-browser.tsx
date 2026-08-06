@@ -20,6 +20,7 @@ import {
   coinShapeLabels,
   idolConstructionLabels,
   purityLabels,
+  utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import {
   parseCatalogSearchParams,
@@ -32,6 +33,7 @@ import type {
   IdolConstruction,
   Product,
   ProductPurity,
+  UtensilType,
 } from "@/types/catalog";
 
 const productPurityOptions = Object.entries(purityLabels) as [
@@ -44,6 +46,10 @@ const idolConstructionOptions = Object.entries(idolConstructionLabels) as [
 ][];
 const coinShapeOptions = Object.entries(coinShapeLabels) as [
   CoinShape,
+  string,
+][];
+const utensilTypeOptions = Object.entries(utensilTypeLabels) as [
+  UtensilType,
   string,
 ][];
 
@@ -110,6 +116,17 @@ export function CatalogBrowser({
       ? initialCoinShape
       : "";
   });
+  const [utensilType, setUtensilType] = useState<UtensilType | "">(() => {
+    const initialUtensilType = initialFilters?.utensilType ?? "";
+    const availability = getCatalogFilterAvailability(
+      products,
+      initialCategoryValue,
+    );
+    return initialUtensilType &&
+      availability.utensilTypes.has(initialUtensilType)
+      ? initialUtensilType
+      : "";
+  });
   const deferredQuery = useDeferredValue(query);
   const filterAvailability = useMemo(
     () => getCatalogFilterAvailability(products, category),
@@ -149,6 +166,9 @@ export function CatalogBrowser({
   const availableCoinShapeOptions = coinShapeOptions.filter(([value]) =>
     filterAvailability.coinShapes.has(value),
   );
+  const availableUtensilTypeOptions = utensilTypeOptions.filter(([value]) =>
+    filterAvailability.utensilTypes.has(value),
+  );
   const filterControlCount =
     2 +
     (availablePurityOptions.length > 0 ? 1 : 0) +
@@ -158,6 +178,9 @@ export function CatalogBrowser({
       : 0) +
     (category === "idols" && availableDeityOptions.length > 0 ? 1 : 0) +
     (category === "coin" && availableCoinShapeOptions.length > 0
+      ? 1
+      : 0) +
+    (category === "utensils" && availableUtensilTypeOptions.length > 0
       ? 1
       : 0);
 
@@ -170,6 +193,7 @@ export function CatalogBrowser({
         idolConstruction,
         deitySlug,
         coinShape,
+        utensilType,
       }),
     [
       products,
@@ -179,6 +203,7 @@ export function CatalogBrowser({
       idolConstruction,
       deitySlug,
       coinShape,
+      utensilType,
     ],
   );
 
@@ -219,6 +244,12 @@ export function CatalogBrowser({
           ? next.coinShape
           : "",
       );
+      setUtensilType(
+        next.utensilType &&
+          availability.utensilTypes.has(next.utensilType)
+          ? next.utensilType
+          : "",
+      );
     };
 
     window.addEventListener("popstate", onPopState);
@@ -237,6 +268,7 @@ export function CatalogBrowser({
       idolConstruction,
       deitySlug,
       coinShape,
+      utensilType,
     };
     const next = serializeCatalogFilters(
       filters,
@@ -253,6 +285,7 @@ export function CatalogBrowser({
     purity,
     query,
     syncUrl,
+    utensilType,
   ]);
 
   function trackFilter(filterType: string, publicSlug: string) {
@@ -323,6 +356,16 @@ export function CatalogBrowser({
               }
               if (nextCategory !== "coin") {
                 setCoinShape("");
+              }
+              if (nextCategory !== "utensils") {
+                setUtensilType("");
+              } else {
+                setUtensilType((currentUtensilType) =>
+                  currentUtensilType &&
+                  !nextAvailability.utensilTypes.has(currentUtensilType)
+                    ? ""
+                    : currentUtensilType,
+                );
               }
               trackFilter("category", nextCategory);
             }}
@@ -426,6 +469,30 @@ export function CatalogBrowser({
             </select>
           </label>
         ) : null}
+
+        {category === "utensils" &&
+        availableUtensilTypeOptions.length > 0 ? (
+          <label>
+            <span className="sr-only">Filter by utensil item type</span>
+            <select
+              value={utensilType}
+              onChange={(event) => {
+                const nextUtensilType = event.target
+                  .value as UtensilType | "";
+                setUtensilType(nextUtensilType);
+                trackFilter("utensil_type", nextUtensilType);
+              }}
+              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+            >
+              <option value="">All utensil items</option>
+              {availableUtensilTypeOptions.map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-5">
@@ -438,7 +505,8 @@ export function CatalogBrowser({
         purity ||
         idolConstruction ||
         deitySlug ||
-        coinShape ? (
+        coinShape ||
+        utensilType ? (
           <button
             type="button"
             className="text-sm font-semibold underline decoration-line-strong"
@@ -449,6 +517,7 @@ export function CatalogBrowser({
               setIdolConstruction("");
               setDeitySlug("");
               setCoinShape("");
+              setUtensilType("");
             }}
           >
             Clear filters

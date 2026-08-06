@@ -351,15 +351,16 @@ function productRecord(product, index, outputDirectory) {
   const slug = product.slug ?? slugify(product.title);
   const outputFilename = `${String(number).padStart(2, "0")}-${slug}.png`;
   const measurement = dimensionText(product);
+  const purity = product.utensilType === "spoon" ? "92.5" : "99.80";
   return {
     number,
     id: `product-dda-utensil-${String(number).padStart(2, "0")}`,
     title: product.title,
     slug,
-    shortDescription: `${product.design} ${publicUtensilName(product)} in confirmed 99.80% pure silver, with a supplied weight of ${product.weightGrams} g and ${measurement}.`,
+    shortDescription: `${product.design} ${publicUtensilName(product)} in confirmed ${purity}% pure silver, with a supplied weight of ${product.weightGrams} g and ${measurement}.`,
     alt: `${product.title} centered on the warm ivory DDA Silver gallery background`,
     utensilType: product.utensilType,
-    purity: "99.80",
+    purity,
     weightGrams: product.weightGrams,
     ...(product.heightInches ? { heightInches: product.heightInches } : {}),
     ...(product.widthInches ? { widthInches: product.widthInches } : {}),

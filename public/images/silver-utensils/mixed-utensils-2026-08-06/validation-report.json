@@ -1,0 +1,25 @@
+{
+  "batchId": "mixed-utensils-2026-08-06",
+  "validatedAt": "2026-08-06T10:49:20.543Z",
+  "valid": true,
+  "sourcePhotographCount": 47,
+  "galleryPngCount": 47,
+  "manifestProductCount": 47,
+  "imageDimensions": "1254x1254",
+  "uniqueFieldsChecked": [
+    "sourceFilename",
+    "number",
+    "id",
+    "title",
+    "slug",
+    "shortDescription",
+    "alt",
+    "reference",
+    "imagePath"
+  ],
+  "sourcePhotographsPreserved": true,
+  "widthsInferred": false,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "publishBlockers": []
+}

@@ -6,7 +6,7 @@ import {
 } from "@/lib/catalog-url";
 
 const options = {
-  categorySlugs: ["jewellery", "coin", "idols"],
+  categorySlugs: ["jewellery", "coin", "idols", "utensils"],
   deitySlugs: ["shiva"],
 };
 
@@ -26,7 +26,21 @@ describe("catalog URL state", () => {
       idolConstruction: "solid",
       deitySlug: "shiva",
       coinShape: "",
+      utensilType: "",
     });
+  });
+
+  it("round-trips the utensil item filter", () => {
+    const parsed = parseCatalogSearchParams(
+      new URLSearchParams("category=utensils&item=plate"),
+      options,
+    );
+
+    expect(parsed.category).toBe("utensils");
+    expect(parsed.utensilType).toBe("plate");
+    expect(serializeCatalogFilters(parsed).toString()).toBe(
+      "category=utensils&item=plate",
+    );
   });
 
   it("serializes active filters without discarding unrelated parameters", () => {

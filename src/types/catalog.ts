@@ -28,6 +28,13 @@ export type Collection = {
 export type ProductPurity = "92.5" | "99.80";
 export type IdolConstruction = "hollow" | "solid" | "semi-solid";
 export type CoinShape = "round" | "oval" | "square" | "rectangle";
+export type UtensilType =
+  | "glass"
+  | "bowl"
+  | "plate"
+  | "jug"
+  | "kalash"
+  | "spoon";
 
 export type Deity = {
   title: string;
@@ -49,6 +56,7 @@ export type Product = {
   heightInches?: number;
   widthInches?: number;
   diameterInches?: number;
+  utensilType?: UtensilType;
   idolConstruction?: IdolConstruction;
   deities: Deity[];
   coinShape?: CoinShape;

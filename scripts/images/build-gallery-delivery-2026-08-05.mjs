@@ -179,7 +179,7 @@ async function main() {
     shortDescription: shortDescription(product),
     alt: product.alt,
     utensilType: "spoon",
-    purity: "99.80",
+    purity: "92.5",
     ...(product.weightGrams ? { weightGrams: product.weightGrams } : {}),
     ...(product.heightInches ? { heightInches: product.heightInches } : {}),
     reference: `DDA-UT-${product.codeFamily}-${String(product.number).padStart(2, "0")}`,
@@ -302,7 +302,6 @@ async function main() {
       "category-gifts": giftProducts.length,
       "category-utensils": spoonProducts.length,
     },
-    purity: "99.80",
     backgroundPath:
       "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
     readyForSanityAssetUpload: true,

@@ -29,8 +29,16 @@ type UtensilProduct = {
   slug: string;
   shortDescription: string;
   alt: string;
-  utensilType: "tumbler" | "bowl" | "spoon" | "figurine";
-  purity: "99.80";
+  utensilType:
+    | "tumbler"
+    | "glass"
+    | "bowl"
+    | "plate"
+    | "jug"
+    | "kalash"
+    | "spoon"
+    | "figurine";
+  purity: "92.5" | "99.80";
   weightGrams: number;
   heightInches?: number;
   widthInches?: number;
@@ -101,15 +109,18 @@ function validateManifest(manifest: UtensilManifest) {
     if (!Number.isInteger(product.number) || product.number < 1) {
       throw new Error(`Invalid utensil number: ${product.number}`);
     }
-    if (product.purity !== "99.80") {
-      throw new Error(`${product.title} must use confirmed 99.80% purity.`);
+    const expectedPurity = product.utensilType === "spoon" ? "92.5" : "99.80";
+    if (product.purity !== expectedPurity) {
+      throw new Error(
+        `${product.title} must use confirmed ${expectedPurity}% purity.`,
+      );
     }
     if (!Number.isFinite(product.weightGrams) || product.weightGrams <= 0) {
       throw new Error(`${product.title} has an invalid weight.`);
     }
     const allowedTypes =
       manifest.categoryId === "category-utensils"
-        ? ["tumbler", "bowl", "spoon"]
+        ? ["tumbler", "glass", "bowl", "plate", "jug", "kalash", "spoon"]
         : ["figurine"];
     if (!allowedTypes.includes(product.utensilType)) {
       throw new Error(
@@ -117,13 +128,15 @@ function validateManifest(manifest: UtensilManifest) {
       );
     }
     if (
-      ["tumbler", "spoon", "figurine"].includes(product.utensilType) &&
+      ["tumbler", "glass", "jug", "kalash", "spoon", "figurine"].includes(
+        product.utensilType,
+      ) &&
       (!Number.isFinite(product.heightInches) || product.heightInches! <= 0)
     ) {
       throw new Error(`${product.title} requires a verified height.`);
     }
     if (
-      product.utensilType === "bowl" &&
+      ["bowl", "plate"].includes(product.utensilType) &&
       (!Number.isFinite(product.diameterInches) || product.diameterInches! <= 0)
     ) {
       throw new Error(`${product.title} requires a verified diameter.`);
@@ -288,7 +301,7 @@ async function main() {
       const existingAsset = await findExistingAsset(imagePath);
       const action = existingById.has(product.id) ? "SKIP" : "CREATE";
       const dimension =
-        product.utensilType === "bowl"
+        ["bowl", "plate"].includes(product.utensilType)
           ? `${product.diameterInches} in diameter`
           : `${product.heightInches} in high`;
       console.log(
@@ -321,6 +334,8 @@ async function main() {
     async (product) => {
       const imagePath = resolve(process.cwd(), product.imagePath);
       const assetId = await getOrUploadImage(imagePath, product, summary);
+      const canonicalUtensilType =
+        product.utensilType === "tumbler" ? "glass" : product.utensilType;
       return {
         _id: product.id,
         _type: "product" as const,
@@ -336,6 +351,9 @@ async function main() {
           },
         ],
         category: { _type: "reference" as const, _ref: manifest.categoryId },
+        ...(manifest.categoryId === "category-utensils"
+          ? { utensilType: canonicalUtensilType }
+          : {}),
         purity: product.purity,
         weightGrams: product.weightGrams,
         ...(product.heightInches ? { heightInches: product.heightInches } : {}),

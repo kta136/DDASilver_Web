@@ -69,6 +69,38 @@ export const productType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "utensilType",
+      title: "Utensil item type",
+      type: "string",
+      description:
+        "Choose the customer-facing item type. This powers the Utensils catalog filter.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-utensils",
+      options: {
+        list: [
+          { title: "Glass", value: "glass" },
+          { title: "Bowl", value: "bowl" },
+          { title: "Plate", value: "plate" },
+          { title: "Jug", value: "jug" },
+          { title: "Kalash", value: "kalash" },
+          { title: "Spoon", value: "spoon" },
+        ],
+        layout: "dropdown",
+      },
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+
+          if (categoryReference === "category-utensils") {
+            return value ? true : "Choose a Utensils item type.";
+          }
+
+          return value
+            ? "Utensil item type is only valid for the Utensils category."
+            : true;
+        }),
+    }),
+    defineField({
       name: "purity",
       title: "Purity",
       type: "string",
