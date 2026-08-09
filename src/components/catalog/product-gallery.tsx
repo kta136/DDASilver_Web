@@ -6,7 +6,11 @@ import {
 } from "@phosphor-icons/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import {
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 
 import type { CatalogImage } from "@/types/catalog";
 
@@ -22,13 +26,70 @@ export function ProductGallery({
   priority = false,
 }: ProductGalleryProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const zoomedImageRef = useRef<HTMLImageElement>(null);
+  const zoomBoundsRef = useRef<DOMRect>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const hasMultipleImages = images.length > 1;
+
+  function resetZoom() {
+    const image = zoomedImageRef.current;
+
+    if (image) {
+      image.style.transform = "";
+      image.style.transformOrigin = "";
+      image.style.willChange = "";
+    }
+
+    zoomedImageRef.current = null;
+    zoomBoundsRef.current = null;
+  }
+
+  function updateZoom(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.pointerType !== "mouse") {
+      return;
+    }
+
+    const image = zoomedImageRef.current;
+    const bounds = zoomBoundsRef.current;
+
+    if (!image || !bounds || bounds.width === 0 || bounds.height === 0) {
+      return;
+    }
+
+    const x = Math.min(
+      Math.max(((event.clientX - bounds.left) / bounds.width) * 100, 0),
+      100,
+    );
+    const y = Math.min(
+      Math.max(((event.clientY - bounds.top) / bounds.height) * 100, 0),
+      100,
+    );
+
+    image.style.transformOrigin = `${x}% ${y}%`;
+    image.style.transform = "scale(2)";
+  }
+
+  function startZoom(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.pointerType !== "mouse") {
+      return;
+    }
+
+    zoomedImageRef.current =
+      event.currentTarget.querySelector<HTMLImageElement>("img");
+    zoomBoundsRef.current = event.currentTarget.getBoundingClientRect();
+
+    if (zoomedImageRef.current) {
+      zoomedImageRef.current.style.willChange = "transform";
+    }
+
+    updateZoom(event);
+  }
 
   function showImage(index: number) {
     const nextIndex = Math.min(Math.max(index, 0), images.length - 1);
     const scroller = scrollerRef.current;
 
+    resetZoom();
     setActiveIndex(nextIndex);
     scroller?.scrollTo({
       left: nextIndex * scroller.clientWidth,
@@ -57,7 +118,11 @@ export function ProductGallery({
         {images.map((image, index) => (
           <div
             key={`${image.src}-${index}`}
-            className="relative aspect-[4/5] min-w-full snap-center snap-always sm:aspect-[16/13] lg:h-full lg:min-h-0 lg:aspect-auto"
+            className="relative aspect-[4/5] min-w-full cursor-zoom-in snap-center snap-always overflow-hidden sm:aspect-[16/13] lg:h-full lg:min-h-0 lg:aspect-auto"
+            onPointerEnter={startZoom}
+            onPointerMove={updateZoom}
+            onPointerLeave={resetZoom}
+            onPointerCancel={resetZoom}
           >
             <Image
               src={image.src}
@@ -65,7 +130,10 @@ export function ProductGallery({
               fill
               priority={priority && index === 0}
               sizes="(max-width: 1024px) 100vw, 58vw"
-              className={containImages ? "object-contain" : "object-cover"}
+              className={clsx(
+                containImages ? "object-contain" : "object-cover",
+                "transition-transform duration-150 ease-out motion-reduce:transition-none",
+              )}
               style={{ objectPosition: image.objectPosition ?? "center" }}
             />
           </div>

@@ -56,6 +56,68 @@ describe("<ProductGallery />", () => {
     expect(gallery).toHaveClass("lg:h-full");
   });
 
+  it("magnifies a photo around the mouse position and resets on exit", () => {
+    render(<ProductGallery images={images.slice(0, 1)} />);
+
+    const image = screen.getByAltText("Bracelet front");
+    const slide = image.parentElement!;
+    vi.spyOn(slide, "getBoundingClientRect").mockReturnValue({
+      bottom: 550,
+      height: 500,
+      left: 100,
+      right: 500,
+      top: 50,
+      width: 400,
+      x: 100,
+      y: 50,
+      toJSON: () => ({}),
+    });
+
+    fireEvent.pointerEnter(slide, {
+      clientX: 300,
+      clientY: 300,
+      pointerType: "mouse",
+    });
+
+    expect(image).toHaveStyle({
+      transform: "scale(2)",
+      transformOrigin: "50% 50%",
+    });
+
+    fireEvent.pointerMove(slide, {
+      clientX: 500,
+      clientY: 50,
+      pointerType: "mouse",
+    });
+
+    expect(image).toHaveStyle({ transformOrigin: "100% 0%" });
+
+    fireEvent.pointerLeave(slide, { pointerType: "mouse" });
+
+    expect(image.style.transform).toBe("");
+    expect(image.style.transformOrigin).toBe("");
+  });
+
+  it("leaves touch interactions available for gallery swiping", () => {
+    render(<ProductGallery images={images.slice(0, 1)} />);
+
+    const image = screen.getByAltText("Bracelet front");
+    const slide = image.parentElement!;
+
+    fireEvent.pointerEnter(slide, {
+      clientX: 160,
+      clientY: 160,
+      pointerType: "touch",
+    });
+    fireEvent.pointerMove(slide, {
+      clientX: 220,
+      clientY: 160,
+      pointerType: "touch",
+    });
+
+    expect(image.style.transform).toBe("");
+  });
+
   it("moves between photos with accessible controls", () => {
     render(<ProductGallery images={images} />);
     const scroller = screen.getByAltText("Bracelet front").parentElement!

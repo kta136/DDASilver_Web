@@ -9,7 +9,6 @@ import Link from "next/link";
 import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
-import { RateTeaser } from "@/components/home/rate-teaser";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
@@ -84,34 +83,31 @@ export default async function HomePage() {
       <CategoryIndex categories={categories} />
 
       <section className="border-b border-line bg-paper-strong">
-        <div className="grid lg:grid-cols-[1fr_31rem]">
-          <div className="px-5 py-12 sm:px-10 lg:px-[max(3rem,calc((100vw-90rem)/2))] min-[90rem]:py-6">
-            <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-              <div>
-                <p className="eyebrow">Featured silver</p>
-                <h2 className="font-display mt-3 text-[clamp(2.5rem,2.6vw,2.75rem)] font-semibold leading-none">
-                  Timeless pieces, thoughtful details.
-                </h2>
-              </div>
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-3 border-b border-copper pb-2 text-sm font-bold no-underline"
-              >
-                Explore all products
-                <ArrowRightIcon size={18} aria-hidden="true" />
-              </Link>
+        <div className="px-5 py-12 sm:px-10 lg:px-[max(3rem,calc((100vw-90rem)/2))] min-[90rem]:py-6">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="eyebrow">Featured silver</p>
+              <h2 className="font-display mt-3 text-[clamp(2.5rem,2.6vw,2.75rem)] font-semibold leading-none">
+                Timeless pieces, thoughtful details.
+              </h2>
             </div>
-            <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 min-[90rem]:mt-4">
-              {featured.map((product, index) => (
-                <ProductCard
-                  key={product.slug}
-                  product={product}
-                  priority={index < 2}
-                />
-              ))}
-            </div>
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-3 border-b border-copper pb-2 text-sm font-bold no-underline"
+            >
+              Explore all products
+              <ArrowRightIcon size={18} aria-hidden="true" />
+            </Link>
           </div>
-          <RateTeaser />
+          <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 min-[90rem]:mt-4">
+            {featured.map((product, index) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                priority={index < 2}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
