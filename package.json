@@ -55,6 +55,9 @@
     "sanity:dry-run-mixed-gallery": "node scripts/sanity/upload-mixed-gallery-products.mjs",
     "sanity:upload-mixed-gallery-assets": "sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token",
     "sanity:upload-mixed-gallery-assets:apply": "sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token -- --apply",
+    "sanity:publish-mixed-gallery-products": "sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token",
+    "sanity:publish-mixed-gallery-products:apply": "sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token -- --apply",
+    "sanity:publish-mixed-gallery-products:overwrite": "sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token -- --apply --overwrite",
     "sanity:update-spoon-purity": "sanity exec scripts/sanity/update-spoon-purity.ts --with-user-token",
     "sanity:update-spoon-purity:apply": "sanity exec scripts/sanity/update-spoon-purity.ts --with-user-token -- --apply",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build"
