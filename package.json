@@ -52,6 +52,9 @@
     "sanity:upload-utensils": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token",
     "sanity:upload-utensils:apply": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token -- --apply",
     "sanity:upload-utensils:overwrite": "sanity exec scripts/sanity/upload-utensil-products.ts --with-user-token -- --apply --overwrite",
+    "sanity:dry-run-mixed-gallery": "node scripts/sanity/upload-mixed-gallery-products.mjs",
+    "sanity:upload-mixed-gallery-assets": "sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token",
+    "sanity:upload-mixed-gallery-assets:apply": "sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token -- --apply",
     "sanity:update-spoon-purity": "sanity exec scripts/sanity/update-spoon-purity.ts --with-user-token",
     "sanity:update-spoon-purity:apply": "sanity exec scripts/sanity/update-spoon-purity.ts --with-user-token -- --apply",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build"

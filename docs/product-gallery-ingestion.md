@@ -97,14 +97,21 @@ The delivery manifest must declare its status rather than implying it is ready:
 Run the relevant uploader in dry-run mode before calling the batch ready. Do
 not upload or publish until the user authorizes that external write.
 
-The product schema supports `weightGrams`, `heightInches`, `widthInches`, and
-`diameterInches`. Keep the supplied measurement in both the applicable Sanity
-field and the customer-facing `shortDescription`. Never infer an unavailable
-measurement from pixels or copy a diameter into width.
+The product schema supports `weightGrams`, `heightInches`, `widthInches`,
+`diameterInches`, `singhasanWidthInches`, and `singhasanDepthInches`. Keep the
+supplied measurement in both the applicable Sanity field and the
+customer-facing `shortDescription`. Never infer an unavailable measurement
+from pixels or copy a diameter into width. Singhasan width is measured
+left-to-right and singhasan depth back-to-front; neither value represents an
+overall jhula dimension.
 
 Catalog item cards display height and width independently when their dedicated
 fields are present. A missing field stays hidden; do not insert placeholder or
 inferred values merely to fill the card metadata line.
+
+Jhula cards display a complete singhasan pair as
+`Singhasan: <width> × <depth> in`. Do not publish a partial pair or relabel the
+singhasan measurements as overall jhula width or depth.
 
 ## Final validation
 

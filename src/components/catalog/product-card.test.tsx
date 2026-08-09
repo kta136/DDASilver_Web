@@ -34,4 +34,16 @@ describe("<ProductCard />", () => {
     expect(screen.queryByText(/Height /)).not.toBeInTheDocument();
     expect(screen.queryByText(/Width /)).not.toBeInTheDocument();
   });
+
+  it("labels singhasan width and depth without presenting them as overall dimensions", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      singhasanWidthInches: 9,
+      singhasanDepthInches: 7,
+    };
+
+    render(<ProductCard product={product} />);
+
+    expect(screen.getByText(/Singhasan: 9 × 7 in/)).toBeInTheDocument();
+  });
 });

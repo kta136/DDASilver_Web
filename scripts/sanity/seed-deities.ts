@@ -98,6 +98,19 @@ const deities = [
     slug: "br-ambedkar",
     displayOrder: 26,
   },
+  { _id: "deity-kali", title: "Kali", slug: "kali", displayOrder: 27 },
+  {
+    _id: "deity-annapurna",
+    title: "Annapurna",
+    slug: "annapurna",
+    displayOrder: 28,
+  },
+  {
+    _id: "deity-parshvanath",
+    title: "Parshvanath",
+    slug: "parshvanath",
+    displayOrder: 29,
+  },
 ] as const;
 
 const requestedIds = idsValue

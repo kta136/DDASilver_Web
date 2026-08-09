@@ -51,6 +51,7 @@ export function ProductDetails({
       product.heightInches ||
       product.widthInches ||
       product.diameterInches ||
+      (product.singhasanWidthInches && product.singhasanDepthInches) ||
       product.idolConstruction ||
       product.deities.length > 0 ||
       product.coinShape ? (
@@ -102,6 +103,16 @@ export function ProductDetails({
               </dt>
               <dd className="mt-1 text-sm font-semibold">
                 {product.diameterInches} in
+              </dd>
+            </div>
+          ) : null}
+          {product.singhasanWidthInches && product.singhasanDepthInches ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Singhasan
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {product.singhasanWidthInches} × {product.singhasanDepthInches} in
               </dd>
             </div>
           ) : null}

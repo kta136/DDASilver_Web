@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2-2026-08-09",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-09T09:10:55.182Z",
+  "productCount": 53,
+  "uniqueAssetCount": 53,
+  "uploadedAssetCount": 0,
+  "reusedAssetCount": 53,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-gift-jh-01-ornate-peacock-floral-silver-jhula",
+      "reference": "JH-01",
+      "title": "Ornate Peacock Floral Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png",
+      "sha1hash": "618d43db770a7e0ecee84f7334ecb0ed0baac81a",
+      "sanityAssetId": "image-618d43db770a7e0ecee84f7334ecb0ed0baac81a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/618d43db770a7e0ecee84f7334ecb0ed0baac81a-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-gift-jh-02-peacock-leaf-crest-silver-jhula",
+      "reference": "JH-02",
+      "title": "Peacock Leaf Crest Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-02-ornate-peacock-floral-silver-jhula.png",
+      "sha1hash": "895725971fb13e7067a4ab1e1a978d5c58e48ad9",
+      "sanityAssetId": "image-895725971fb13e7067a4ab1e1a978d5c58e48ad9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/895725971fb13e7067a4ab1e1a978d5c58e48ad9-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-purse-pr-18-peacock-purple-fringe-silver-purse",
+      "reference": "PR-18",
+      "title": "Peacock Purple Fringe Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/pr-18-peacock-purple-fringe-silver-purse.png",
+      "sha1hash": "28a4e9132d24af47362d35ae9dccaca57a4ce2f5",
+      "sanityAssetId": "image-28a4e9132d24af47362d35ae9dccaca57a4ce2f5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/28a4e9132d24af47362d35ae9dccaca57a4ce2f5-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-purse-pr-19-gold-lattice-green-fringe-silver-purse",
+      "reference": "PR-19",
+      "title": "Gold Lattice Green Fringe Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/pr-19-gold-lattice-green-fringe-silver-purse.png",
+      "sha1hash": "1af15e1a2f70918dbfbe3f6974294c0c9b28d8bb",
+      "sanityAssetId": "image-1af15e1a2f70918dbfbe3f6974294c0c9b28d8bb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1af15e1a2f70918dbfbe3f6974294c0c9b28d8bb-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-purse-pr-20-elephant-floral-pink-fringe-silver-purse",
+      "reference": "PR-20",
+      "title": "Elephant Floral Pink Fringe Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/pr-20-elephant-floral-pink-fringe-silver-purse.png",
+      "sha1hash": "17ab837c68a8dfdb834f219f12218d860b819722",
+      "sanityAssetId": "image-17ab837c68a8dfdb834f219f12218d860b819722-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/17ab837c68a8dfdb834f219f12218d860b819722-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-purse-pr-21-green-stone-floral-chain-silver-purse",
+      "reference": "PR-21",
+      "title": "Green Stone Floral Chain Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/pr-21-green-stone-floral-chain-silver-purse.png",
+      "sha1hash": "3ee5d9d313a0b20a7da4ede85abbb3f5191b2f64",
+      "sanityAssetId": "image-3ee5d9d313a0b20a7da4ede85abbb3f5191b2f64-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3ee5d9d313a0b20a7da4ede85abbb3f5191b2f64-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-purse-pr-22-white-stone-purple-fringe-silver-purse",
+      "reference": "PR-22",
+      "title": "White Stone Peacock Fringe Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/pr-22-peacock-white-stone-purple-fringe-silver-purse.png",
+      "sha1hash": "2e8c54cdcbca9146e913870f65d61587c2c943ef",
+      "sanityAssetId": "image-2e8c54cdcbca9146e913870f65d61587c2c943ef-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2e8c54cdcbca9146e913870f65d61587c2c943ef-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-idol-ssm-vn-1-venkateswara-arch-silver-idol",
+      "reference": "SSM-VN-1",
+      "title": "Venkateswara Arch Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-vn-1-venkateswara-silver-idol.png",
+      "sha1hash": "b3fd3872dfac781d51cd0f1ba888d37a6340161a",
+      "sanityAssetId": "image-b3fd3872dfac781d51cd0f1ba888d37a6340161a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b3fd3872dfac781d51cd0f1ba888d37a6340161a-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-idol-ssm-hn-1-panchmukhi-hanuman-silver-idol",
+      "reference": "SSM-HN-1",
+      "title": "Panchmukhi Hanuman Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-hn-1-panchmukhi-hanuman-silver-idol.png",
+      "sha1hash": "b17c5fe18a38e6c643f7802a3045e5b802461c1d",
+      "sanityAssetId": "image-b17c5fe18a38e6c643f7802a3045e5b802461c1d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b17c5fe18a38e6c643f7802a3045e5b802461c1d-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-idol-ssm-kr-1-ornate-standing-krishna-silver-idol",
+      "reference": "SSM-KR-1",
+      "title": "Ornate Standing Krishna Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-kr-1-ornate-standing-krishna-silver-idol.png",
+      "sha1hash": "0aca6ea98cc12759d705a4007f2b1282f9df9b08",
+      "sanityAssetId": "image-0aca6ea98cc12759d705a4007f2b1282f9df9b08-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0aca6ea98cc12759d705a4007f2b1282f9df9b08-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-idol-ssm-kl-1-kali-over-shiva-silver-idol",
+      "reference": "SSM-KL-1",
+      "title": "Kali over Shiva Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-kl-1-kali-over-shiva-silver-idol.png",
+      "sha1hash": "92cafbf411364c3336afd133fafbc88eabb9a962",
+      "sanityAssetId": "image-92cafbf411364c3336afd133fafbc88eabb9a962-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/92cafbf411364c3336afd133fafbc88eabb9a962-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-idol-ssm-sr-1-saraswati-veena-silver-idol",
+      "reference": "SSM-SR-1",
+      "title": "Saraswati Veena Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-sr-1-saraswati-veena-silver-idol.png",
+      "sha1hash": "f27d483dbdf63ab45c0b28852217c67c13acc364",
+      "sanityAssetId": "image-f27d483dbdf63ab45c0b28852217c67c13acc364-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f27d483dbdf63ab45c0b28852217c67c13acc364-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-idol-ssm-gn-1-panchmukhi-ganesha-silver-idol",
+      "reference": "SSM-GN-1",
+      "title": "Panchmukhi Ganesha Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-gn-1-panchmukhi-ganesha-silver-idol.png",
+      "sha1hash": "35509e1677b924f0ad733e7288d63356454021b7",
+      "sanityAssetId": "image-35509e1677b924f0ad733e7288d63356454021b7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/35509e1677b924f0ad733e7288d63356454021b7-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-idol-ssm-gn-2-celestial-arch-ganesha-silver-idol",
+      "reference": "SSM-GN-2",
+      "title": "Celestial Arch Ganesha Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-gn-2-celestial-arch-ganesha-silver-idol.png",
+      "sha1hash": "77d6d533087317f6511b618c017a8f153fbbf920",
+      "sanityAssetId": "image-77d6d533087317f6511b618c017a8f153fbbf920-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/77d6d533087317f6511b618c017a8f153fbbf920-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-idol-ssm-sh-1-seated-shiva-silver-idol",
+      "reference": "SSM-SH-1",
+      "title": "Seated Shiva Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-sh-1-seated-shiva-silver-idol.png",
+      "sha1hash": "2e9f24a0e855b0916762ac9fe13bdab5509a12e9",
+      "sanityAssetId": "image-2e9f24a0e855b0916762ac9fe13bdab5509a12e9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2e9f24a0e855b0916762ac9fe13bdab5509a12e9-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-idol-ssm-hn-2-kneeling-hanuman-silver-idol",
+      "reference": "SSM-HN-2",
+      "title": "Kneeling Hanuman Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-hn-2-kneeling-hanuman-silver-idol.png",
+      "sha1hash": "f72629499853d71feab5ccd7798d06cfdab368cf",
+      "sanityAssetId": "image-f72629499853d71feab5ccd7798d06cfdab368cf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f72629499853d71feab5ccd7798d06cfdab368cf-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-idol-ssm-ln-1-standing-lakshmi-narayan-silver-idol",
+      "reference": "SSM-LN-1",
+      "title": "Standing Lakshmi Narayan Semi-solid Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-ln-1-standing-lakshmi-narayan-silver-idol.png",
+      "sha1hash": "88f235b4ebbddc889f7b13be5accebeed6ad2c73",
+      "sanityAssetId": "image-88f235b4ebbddc889f7b13be5accebeed6ad2c73-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/88f235b4ebbddc889f7b13be5accebeed6ad2c73-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-idol-ssm-sh-2-ornate-reclining-nandi-silver-idol",
+      "reference": "SSM-SH-2",
+      "title": "Ornate Reclining Nandi Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-sh-2-ornate-reclining-nandi-silver-idol.png",
+      "sha1hash": "3972a767384ffc962b901dd216f7dcb5f786b0ab",
+      "sanityAssetId": "image-3972a767384ffc962b901dd216f7dcb5f786b0ab-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3972a767384ffc962b901dd216f7dcb5f786b0ab-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-idol-ssm-lg-1-painted-lakshmi-ganesha-blue-base-silver-idols",
+      "reference": "SSM-LG-1",
+      "title": "Painted Lakshmi Ganesha Blue Base Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-1-painted-lakshmi-ganesha-blue-base-silver-idols.png",
+      "sha1hash": "27e7e425bd33dd5c1377913c84748b02b10e2711",
+      "sanityAssetId": "image-27e7e425bd33dd5c1377913c84748b02b10e2711-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/27e7e425bd33dd5c1377913c84748b02b10e2711-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-idol-ssm-lg-2-painted-lakshmi-ganesha-lotus-base-silver-idols",
+      "reference": "SSM-LG-2",
+      "title": "Painted Lakshmi Ganesha Lotus Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-2-painted-lakshmi-ganesha-lotus-base-silver-idols.png",
+      "sha1hash": "161766700716f8c50d77ef8291792a7069e6b566",
+      "sanityAssetId": "image-161766700716f8c50d77ef8291792a7069e6b566-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/161766700716f8c50d77ef8291792a7069e6b566-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-gift-jh-03-peacock-floral-silver-jhula",
+      "reference": "JH-03",
+      "title": "Peacock Floral Arch Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-03-peacock-floral-silver-jhula.png",
+      "sha1hash": "d674944eefaf51d0b566e0c7ffcd01ee084d9f4b",
+      "sanityAssetId": "image-d674944eefaf51d0b566e0c7ffcd01ee084d9f4b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d674944eefaf51d0b566e0c7ffcd01ee084d9f4b-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-gift-jh-04-leaf-bar-silver-jhula",
+      "reference": "JH-04",
+      "title": "Leaf Bar Four-column Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-04-leaf-bar-silver-jhula.png",
+      "sha1hash": "74330143c32b172cb7928bbb1bbc0e67e9e9120a",
+      "sanityAssetId": "image-74330143c32b172cb7928bbb1bbc0e67e9e9120a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/74330143c32b172cb7928bbb1bbc0e67e9e9120a-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-gift-jh-05-loop-support-peacock-silver-jhula",
+      "reference": "JH-05",
+      "title": "Loop Support Peacock Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-05-loop-support-peacock-silver-jhula.png",
+      "sha1hash": "98e5e90f163a1edf9fbbfe34cffc5c671187d3fc",
+      "sanityAssetId": "image-98e5e90f163a1edf9fbbfe34cffc5c671187d3fc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/98e5e90f163a1edf9fbbfe34cffc5c671187d3fc-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-gift-jh-06-broad-base-peacock-silver-jhula",
+      "reference": "JH-06",
+      "title": "Broad Base Peacock Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-06-broad-base-peacock-silver-jhula.png",
+      "sha1hash": "bd33c0df986b7c2b5f3fe4ed4e2f3decfc2ce890",
+      "sanityAssetId": "image-bd33c0df986b7c2b5f3fe4ed4e2f3decfc2ce890-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bd33c0df986b7c2b5f3fe4ed4e2f3decfc2ce890-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-gift-jh-07-bird-foot-peacock-floral-silver-jhula",
+      "reference": "JH-07",
+      "title": "Bird Foot Peacock Floral Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-07-bird-foot-peacock-floral-silver-jhula.png",
+      "sha1hash": "13dae2a75e4bd29d0cbba09e483877f0f24dc376",
+      "sanityAssetId": "image-13dae2a75e4bd29d0cbba09e483877f0f24dc376-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/13dae2a75e4bd29d0cbba09e483877f0f24dc376-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-gift-jh-08-domed-mandap-silver-jhula",
+      "reference": "JH-08",
+      "title": "Domed Mandap Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-08-domed-mandap-silver-jhula.png",
+      "sha1hash": "0516ac242a8286f3cdc35639d011f4fd2c0687c8",
+      "sanityAssetId": "image-0516ac242a8286f3cdc35639d011f4fd2c0687c8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0516ac242a8286f3cdc35639d011f4fd2c0687c8-1254x1254.png"
+    },
+    {
+      "number": 27,
+      "productId": "product-dda-gift-jh-09-large-peacock-floral-silver-jhula",
+      "reference": "JH-09",
+      "title": "Grand Peacock Floral Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-09-large-peacock-floral-silver-jhula.png",
+      "sha1hash": "b0a420e8349da56ab1ecc29309b2894bf11dd979",
+      "sanityAssetId": "image-b0a420e8349da56ab1ecc29309b2894bf11dd979-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b0a420e8349da56ab1ecc29309b2894bf11dd979-1254x1254.png"
+    },
+    {
+      "number": 28,
+      "productId": "product-dda-idol-ssm-an-1-painted-annapurna-silver-idol",
+      "reference": "SSM-AN-1",
+      "title": "Painted Annapurna Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-an-1-painted-annapurna-silver-idol.png",
+      "sha1hash": "e4a871bbefed4f739c7b8135e5219b973dac02bb",
+      "sanityAssetId": "image-e4a871bbefed4f739c7b8135e5219b973dac02bb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e4a871bbefed4f739c7b8135e5219b973dac02bb-1254x1254.png"
+    },
+    {
+      "number": 29,
+      "productId": "product-dda-idol-ssm-lg-3-round-base-lakshmi-ganesha-silver-idols",
+      "reference": "SSM-LG-3",
+      "title": "Round Base Lakshmi Ganesha Semi-solid Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-3-round-base-lakshmi-ganesha-silver-idols.png",
+      "sha1hash": "ca33bc2686e241574d8a78b033daba1c59e9ed36",
+      "sanityAssetId": "image-ca33bc2686e241574d8a78b033daba1c59e9ed36-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ca33bc2686e241574d8a78b033daba1c59e9ed36-1254x1254.png"
+    },
+    {
+      "number": 30,
+      "productId": "product-dda-idol-ssm-km-1-kamdhenu-calf-silver-idol",
+      "reference": "SSM-KM-1",
+      "title": "Kamdhenu with Calf Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-km-1-kamdhenu-calf-silver-idol.png",
+      "sha1hash": "a1a1b7b31e638cf738aec949cb7951b51743a19c",
+      "sanityAssetId": "image-a1a1b7b31e638cf738aec949cb7951b51743a19c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a1a1b7b31e638cf738aec949cb7951b51743a19c-1254x1254.png"
+    },
+    {
+      "number": 31,
+      "productId": "product-dda-idol-ssm-ln-2-reclining-vishnu-lakshmi-sheshnag-silver-idol",
+      "reference": "SSM-LN-2",
+      "title": "Reclining Vishnu Lakshmi Sheshnag Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-ln-2-reclining-vishnu-lakshmi-sheshnag-silver-idol.png",
+      "sha1hash": "c504985ad8ad101ff1ed78871171eb19650e5098",
+      "sanityAssetId": "image-c504985ad8ad101ff1ed78871171eb19650e5098-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c504985ad8ad101ff1ed78871171eb19650e5098-1254x1254.png"
+    },
+    {
+      "number": 32,
+      "productId": "product-dda-idol-ssm-dg-1-jeweled-durga-tiger-arch-silver-idol",
+      "reference": "SSM-DG-1",
+      "title": "Jeweled Durga Tiger Arch Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-dg-1-jeweled-durga-tiger-arch-silver-idol.png",
+      "sha1hash": "0287981ddd8ec5c692a31f5964cb83d37c2d9f70",
+      "sanityAssetId": "image-0287981ddd8ec5c692a31f5964cb83d37c2d9f70-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0287981ddd8ec5c692a31f5964cb83d37c2d9f70-1254x1254.png"
+    },
+    {
+      "number": 33,
+      "productId": "product-dda-idol-ssm-lg-4-purple-throne-lakshmi-ganesha-silver-idols",
+      "reference": "SSM-LG-4",
+      "title": "Purple Throne Lakshmi Ganesha Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-4-purple-throne-lakshmi-ganesha-silver-idols.png",
+      "sha1hash": "8152668c450b4d53e8958b2b718592255f22a62c",
+      "sanityAssetId": "image-8152668c450b4d53e8958b2b718592255f22a62c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8152668c450b4d53e8958b2b718592255f22a62c-1254x1254.png"
+    },
+    {
+      "number": 34,
+      "productId": "product-dda-idol-ssm-lg-5-elephant-arch-lakshmi-ganesha-silver-idols",
+      "reference": "SSM-LG-5",
+      "title": "Elephant Arch Lakshmi Ganesha Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-5-elephant-arch-lakshmi-ganesha-silver-idols.png",
+      "sha1hash": "264fed0fac8247351318f40f827bf9245313ea5c",
+      "sanityAssetId": "image-264fed0fac8247351318f40f827bf9245313ea5c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/264fed0fac8247351318f40f827bf9245313ea5c-1254x1254.png"
+    },
+    {
+      "number": 35,
+      "productId": "product-dda-idol-ssm-hn-3-mountain-mace-hanuman-silver-idol",
+      "reference": "SSM-HN-3",
+      "title": "Mountain and Mace Hanuman Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-hn-3-mountain-mace-hanuman-silver-idol.png",
+      "sha1hash": "6b3b8278a485dfe3c7838b711738bdd1fa988dd3",
+      "sanityAssetId": "image-6b3b8278a485dfe3c7838b711738bdd1fa988dd3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6b3b8278a485dfe3c7838b711738bdd1fa988dd3-1254x1254.png"
+    },
+    {
+      "number": 36,
+      "productId": "product-dda-idol-ssm-rk-1-painted-radha-krishna-silver-idols",
+      "reference": "SSM-RK-1",
+      "title": "Painted Radha Krishna Semi-solid Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-rk-1-painted-radha-krishna-silver-idols.png",
+      "sha1hash": "0f57e54c00fbe566978dcdc4507e2ca52691a98d",
+      "sanityAssetId": "image-0f57e54c00fbe566978dcdc4507e2ca52691a98d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0f57e54c00fbe566978dcdc4507e2ca52691a98d-1254x1254.png"
+    },
+    {
+      "number": 37,
+      "productId": "product-dda-idol-ssm-bk-1-laddu-gopal-butter-pot-silver-idol",
+      "reference": "SSM-BK-1",
+      "title": "Laddu Gopal Butter Pot Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-bk-1-laddu-gopal-butter-pot-silver-idol.png",
+      "sha1hash": "05557dbad7f324c26dbafdd9d9231304dfd4b283",
+      "sanityAssetId": "image-05557dbad7f324c26dbafdd9d9231304dfd4b283-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/05557dbad7f324c26dbafdd9d9231304dfd4b283-1254x1254.png"
+    },
+    {
+      "number": 38,
+      "productId": "product-dda-idol-ssm-sh-3-cobra-nandi-shivling-silver-idol",
+      "reference": "SSM-SH-3",
+      "title": "Cobra and Nandi Shivling Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-sh-3-cobra-nandi-shivling-silver-idol.png",
+      "sha1hash": "9c7768b865ab1b4ba10d2df2bc32283d1cab66c3",
+      "sanityAssetId": "image-9c7768b865ab1b4ba10d2df2bc32283d1cab66c3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9c7768b865ab1b4ba10d2df2bc32283d1cab66c3-1254x1254.png"
+    },
+    {
+      "number": 39,
+      "productId": "product-dda-idol-ssm-kb-1-seated-kuber-silver-idol",
+      "reference": "SSM-KB-1",
+      "title": "Seated Kuber Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-kb-1-seated-kuber-silver-idol.png",
+      "sha1hash": "b8db4c13c2565f2575ddcf73a68e63356fce0ded",
+      "sanityAssetId": "image-b8db4c13c2565f2575ddcf73a68e63356fce0ded-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b8db4c13c2565f2575ddcf73a68e63356fce0ded-1254x1254.png"
+    },
+    {
+      "number": 40,
+      "productId": "product-dda-idol-ssm-ps-1-parshvanath-cobra-hood-silver-idol",
+      "reference": "SSM-PS-1",
+      "title": "Parshvanath Cobra Hood Semi-solid Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-ps-1-parshvanath-cobra-hood-silver-idol.png",
+      "sha1hash": "c01e81817af5bda65b3bf0462e0451892bdcdb82",
+      "sanityAssetId": "image-c01e81817af5bda65b3bf0462e0451892bdcdb82-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c01e81817af5bda65b3bf0462e0451892bdcdb82-1254x1254.png"
+    },
+    {
+      "number": 41,
+      "productId": "product-dda-idol-ssm-lg-6-lotus-base-lakshmi-ganesha-silver-idols",
+      "reference": "SSM-LG-6",
+      "title": "Lotus Base Lakshmi Ganesha Semi-solid Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-6-lotus-base-lakshmi-ganesha-silver-idols.png",
+      "sha1hash": "aca9f1fd8bee59d6fabfa7241090e78627f7e9ee",
+      "sanityAssetId": "image-aca9f1fd8bee59d6fabfa7241090e78627f7e9ee-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/aca9f1fd8bee59d6fabfa7241090e78627f7e9ee-1254x1254.png"
+    },
+    {
+      "number": 42,
+      "productId": "product-dda-idol-ssm-lg-7-footed-platform-lakshmi-ganesha-silver-idols",
+      "reference": "SSM-LG-7",
+      "title": "Footed Platform Lakshmi Ganesha Silver Idols",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/ssm-lg-7-footed-platform-lakshmi-ganesha-silver-idols.png",
+      "sha1hash": "8b6c70f22b89c15286549c89216a668723c6b9e8",
+      "sanityAssetId": "image-8b6c70f22b89c15286549c89216a668723c6b9e8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8b6c70f22b89c15286549c89216a668723c6b9e8-1254x1254.png"
+    },
+    {
+      "number": 43,
+      "productId": "product-dda-gift-jh-10-ornate-peacock-floral-silver-jhula",
+      "reference": "JH-10",
+      "title": "Large Ornate Peacock Floral Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/jh-10-ornate-peacock-floral-silver-jhula.png",
+      "sha1hash": "2ab544862184770b185bc1dc03476c07ead62897",
+      "sanityAssetId": "image-2ab544862184770b185bc1dc03476c07ead62897-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2ab544862184770b185bc1dc03476c07ead62897-1254x1254.png"
+    },
+    {
+      "number": 44,
+      "productId": "product-dda-gift-sd-01-ganesha-green-stone-silver-sindoor-dani",
+      "reference": "SD-01",
+      "title": "Ganesha Green Stone Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-01-ganesha-green-stone-silver-sindoor-dani.png",
+      "sha1hash": "2a321ca65f7792ac6fd2e13e83d37f874a9a23e9",
+      "sanityAssetId": "image-2a321ca65f7792ac6fd2e13e83d37f874a9a23e9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2a321ca65f7792ac6fd2e13e83d37f874a9a23e9-1254x1254.png"
+    },
+    {
+      "number": 45,
+      "productId": "product-dda-gift-sd-02-devotional-scene-topper-silver-sindoor-dani",
+      "reference": "SD-02",
+      "title": "Devotional Scene Topper Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-02-devotional-scene-topper-silver-sindoor-dani.png",
+      "sha1hash": "d6cb273eb2e9835fd9cdb78443485d0e7ae6b065",
+      "sanityAssetId": "image-d6cb273eb2e9835fd9cdb78443485d0e7ae6b065-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d6cb273eb2e9835fd9cdb78443485d0e7ae6b065-1254x1254.png"
+    },
+    {
+      "number": 46,
+      "productId": "product-dda-gift-sd-03-venkateswara-topper-green-stone-silver-sindoor-dani",
+      "reference": "SD-03",
+      "title": "Venkateswara Topper Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-03-venkateswara-topper-green-stone-silver-sindoor-dani.png",
+      "sha1hash": "7be62f9f6866c6873006a52d770b9beb619ef48b",
+      "sanityAssetId": "image-7be62f9f6866c6873006a52d770b9beb619ef48b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7be62f9f6866c6873006a52d770b9beb619ef48b-1254x1254.png"
+    },
+    {
+      "number": 47,
+      "productId": "product-dda-gift-sd-04-ruby-stone-stacked-pot-silver-sindoor-dani",
+      "reference": "SD-04",
+      "title": "Ruby Stone Stacked Pot Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-04-ruby-stone-stacked-pot-silver-sindoor-dani.png",
+      "sha1hash": "7ce49cf355abb7a9fd3cfb5bad80c04e65eb7825",
+      "sanityAssetId": "image-7ce49cf355abb7a9fd3cfb5bad80c04e65eb7825-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7ce49cf355abb7a9fd3cfb5bad80c04e65eb7825-1254x1254.png"
+    },
+    {
+      "number": 48,
+      "productId": "product-dda-gift-sd-05-miniature-deity-floral-lid-silver-sindoor-dani",
+      "reference": "SD-05",
+      "title": "Miniature Deity Floral Lid Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-05-miniature-deity-floral-lid-silver-sindoor-dani.png",
+      "sha1hash": "51c3d44607e060714ee1dd9957e0ee9cc7958d6e",
+      "sanityAssetId": "image-51c3d44607e060714ee1dd9957e0ee9cc7958d6e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/51c3d44607e060714ee1dd9957e0ee9cc7958d6e-1254x1254.png"
+    },
+    {
+      "number": 49,
+      "productId": "product-dda-gift-sd-06-peacock-ruby-stone-egg-silver-sindoor-dani",
+      "reference": "SD-06",
+      "title": "Peacock Ruby Stone Egg Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-06-peacock-ruby-stone-egg-silver-sindoor-dani.png",
+      "sha1hash": "51487bf486d9577a5bb575bff66ccc4b2c81b232",
+      "sanityAssetId": "image-51487bf486d9577a5bb575bff66ccc4b2c81b232-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/51487bf486d9577a5bb575bff66ccc4b2c81b232-1254x1254.png"
+    },
+    {
+      "number": 50,
+      "productId": "product-dda-gift-sd-07-paduka-ruby-accent-silver-sindoor-dani",
+      "reference": "SD-07",
+      "title": "Paduka Ruby Accent Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-07-paduka-ruby-accent-silver-sindoor-dani.png",
+      "sha1hash": "7803bef7c8e45dd487994d80fe0b56b291a5bbd3",
+      "sanityAssetId": "image-7803bef7c8e45dd487994d80fe0b56b291a5bbd3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7803bef7c8e45dd487994d80fe0b56b291a5bbd3-1254x1254.png"
+    },
+    {
+      "number": 51,
+      "productId": "product-dda-gift-sd-08-om-purple-stone-rectangular-silver-sindoor-dani",
+      "reference": "SD-08",
+      "title": "Om Purple Stone Rectangular Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-08-om-purple-stone-rectangular-silver-sindoor-dani.png",
+      "sha1hash": "50c9c603fde0046dbc8d5e524fb4e3e1ed11e2d5",
+      "sanityAssetId": "image-50c9c603fde0046dbc8d5e524fb4e3e1ed11e2d5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/50c9c603fde0046dbc8d5e524fb4e3e1ed11e2d5-1254x1254.png"
+    },
+    {
+      "number": 52,
+      "productId": "product-dda-gift-sd-09-purple-stone-devotional-cylinder-silver-sindoor-dani",
+      "reference": "SD-09",
+      "title": "Purple Stone Devotional Cylinder Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-09-purple-stone-devotional-cylinder-silver-sindoor-dani.png",
+      "sha1hash": "2c24cd64599cdde4fa8beb3b91d5fa6623efd4f2",
+      "sanityAssetId": "image-2c24cd64599cdde4fa8beb3b91d5fa6623efd4f2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2c24cd64599cdde4fa8beb3b91d5fa6623efd4f2-1254x1254.png"
+    },
+    {
+      "number": 53,
+      "productId": "product-dda-gift-sd-10-shiva-family-purple-stone-oval-silver-sindoor-dani",
+      "reference": "SD-10",
+      "title": "Shiva Family Purple Stone Oval Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/images/sd-10-shiva-family-purple-stone-oval-silver-sindoor-dani.png",
+      "sha1hash": "b382fcfd2d81a5e48ae97c36c41f36e71c02999d",
+      "sanityAssetId": "image-b382fcfd2d81a5e48ae97c36c41f36e71c02999d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b382fcfd2d81a5e48ae97c36c41f36e71c02999d-1254x1254.png"
+    }
+  ]
+}

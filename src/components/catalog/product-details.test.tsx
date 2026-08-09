@@ -78,6 +78,25 @@ describe("<ProductDetails />", () => {
     expect(screen.getByText("5 in")).toBeInTheDocument();
   });
 
+  it("renders verified singhasan width and depth as a dedicated measurement", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      singhasanWidthInches: 9,
+      singhasanDepthInches: 7,
+    };
+
+    render(
+      <ProductDetails
+        product={product}
+        headingLevel={1}
+        presentation="page"
+      />,
+    );
+
+    expect(screen.getByText("Singhasan")).toBeInTheDocument();
+    expect(screen.getByText("9 × 7 in")).toBeInTheDocument();
+  });
+
   it("omits optional attributes that are absent", () => {
     const product = {
       ...fallbackProducts[0]!,
@@ -87,6 +106,8 @@ describe("<ProductDetails />", () => {
       heightInches: undefined,
       widthInches: undefined,
       diameterInches: undefined,
+      singhasanWidthInches: undefined,
+      singhasanDepthInches: undefined,
       idolConstruction: undefined,
       deities: [],
       coinShape: undefined,
@@ -103,6 +124,7 @@ describe("<ProductDetails />", () => {
     expect(screen.queryByText(/^Reference /)).not.toBeInTheDocument();
     expect(screen.queryByText("Purity")).not.toBeInTheDocument();
     expect(screen.queryByText("Weight")).not.toBeInTheDocument();
+    expect(screen.queryByText("Singhasan")).not.toBeInTheDocument();
     expect(screen.queryByText("Shape")).not.toBeInTheDocument();
   });
 });

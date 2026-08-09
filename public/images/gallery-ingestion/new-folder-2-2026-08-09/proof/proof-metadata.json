@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2-mixed-gallery-2026-08-09",
+  "status": "approved-treatment-batch-complete",
+  "sourceDirectory": "C:\\Users\\kk\\Desktop\\New folder (2)",
+  "sourceFilename": "WhatsApp Image 2026-08-05 at 4.50.23 PM.jpeg",
+  "backgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatment": {
+    "label": "Original generated proof",
+    "approvedOn": "2026-08-09",
+    "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png",
+    "usage": "Sole presentation reference for the remaining 52 AI-edited product images"
+  },
+  "rejectedComparisonCandidates": [
+    {
+      "label": "Balanced watermark",
+      "protection": "Large central monogram behind the product with the lower-right DDA Silver lockup.",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula-balanced-watermark.png"
+    },
+    {
+      "label": "Protected watermark",
+      "protection": "Large central monogram plus a faint monogram crossing the lower product area and the lower-right DDA Silver lockup.",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula-protected-watermark.png"
+    }
+  ],
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": false,
+  "publishBlockers": [
+    "JH-01 requires owner-supplied verified physical dimensions; dimensions were not inferred from image pixels."
+  ],
+  "product": {
+    "number": 1,
+    "id": "product-dda-gift-jh-01-ornate-peacock-floral-silver-jhula",
+    "reference": "JH-01",
+    "title": "Ornate Peacock Floral Silver Jhula",
+    "slug": "ornate-peacock-floral-silver-jhula",
+    "categoryId": "category-gifts",
+    "purity": "92.5",
+    "weightGrams": 1400,
+    "shortDescription": "An ornate 92.5% pure silver ceremonial jhula with peacock finials, floral scrollwork, and a suspended engraved seat, supplied at 1400 g.",
+    "alt": "Ornate silver jhula with peacock finials, floral engraving, suspended seat, and hanging chains on the DDA Silver background",
+    "imagePath": "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png"
+  }
+}

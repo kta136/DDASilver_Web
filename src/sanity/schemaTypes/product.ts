@@ -14,6 +14,14 @@ function getCategoryReference(document: unknown) {
   return typeof reference === "string" ? reference : undefined;
 }
 
+function hasNumericField(document: unknown, field: string) {
+  return Boolean(
+    document &&
+      typeof document === "object" &&
+      typeof (document as Record<string, unknown>)[field] === "number",
+  );
+}
+
 export const productType = defineType({
   name: "product",
   title: "Product",
@@ -153,6 +161,52 @@ export const productType = defineType({
       description:
         "Verified diameter for round products such as bowls; use this instead of width.",
       validation: (rule) => rule.positive().max(1_000).precision(2),
+    }),
+    defineField({
+      name: "singhasanWidthInches",
+      title: "Singhasan width (inches)",
+      type: "number",
+      description:
+        "Verified left-to-right width of the jhula singhasan. This is not the overall jhula width.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-gifts",
+      validation: (rule) =>
+        rule.positive().max(1_000).precision(2).custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+          const hasWidth = typeof value === "number";
+
+          if (hasWidth && categoryReference !== "category-gifts") {
+            return "Singhasan measurements are only valid for the Gifts category.";
+          }
+
+          return hasWidth ===
+            hasNumericField(context.document, "singhasanDepthInches")
+            ? true
+            : "Enter both singhasan width and depth.";
+        }),
+    }),
+    defineField({
+      name: "singhasanDepthInches",
+      title: "Singhasan depth (inches)",
+      type: "number",
+      description:
+        "Verified back-to-front depth of the jhula singhasan. This is not the overall jhula depth.",
+      hidden: ({ document }) =>
+        getCategoryReference(document) !== "category-gifts",
+      validation: (rule) =>
+        rule.positive().max(1_000).precision(2).custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+          const hasDepth = typeof value === "number";
+
+          if (hasDepth && categoryReference !== "category-gifts") {
+            return "Singhasan measurements are only valid for the Gifts category.";
+          }
+
+          return hasDepth ===
+            hasNumericField(context.document, "singhasanWidthInches")
+            ? true
+            : "Enter both singhasan width and depth.";
+        }),
     }),
     defineField({
       name: "idolConstruction",

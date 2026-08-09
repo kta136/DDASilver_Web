@@ -12,6 +12,13 @@ Every hollow idol uses this item-code format:
 HM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>
 ```
 
+Every semi-solid idol uses the same family and sequencing rules with the
+semi-solid prefix:
+
+```text
+SSM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>
+```
+
 The code is shown at the beginning of the Sanity Item Name:
 
 ```text
@@ -26,6 +33,7 @@ only in the product description.
 | Code | Meaning | Usage |
 | --- | --- | --- |
 | `HM` | Hollow Murti | Required prefix for every hollow idol |
+| `SSM` | Semi-solid Murti | Required prefix for every semi-solid idol |
 | `BK` | Bal Krishna | All Bal Krishna and Laddu Gopal designs |
 | `GN` | Ganesha | All Ganesha designs |
 | `KS` | Khatu Shyam | All Khatu Shyam designs |
@@ -47,6 +55,11 @@ only in the product description.
 | `EL` | Auspicious Elephant | All auspicious elephant designs |
 | `OW` | Auspicious Owl | All auspicious owl designs |
 | `FS` | Auspicious Fish | All auspicious fish figurine designs |
+| `VN` | Venkateswara | All Venkateswara and Tirupati Balaji designs |
+| `KL` | Kali | All Kali designs |
+| `AN` | Annapurna | All Annapurna designs |
+| `PS` | Parshvanath | All Parshvanath designs |
+| `UN` | Unconfirmed design | Provisional only; publish-blocked until the owner identifies the family |
 
 `HN` is the only Hanuman code. Do not create separate codes for Panchmukhi,
 standing, seated, or other Hanuman forms.
@@ -62,12 +75,16 @@ other Shiva forms.
 4. Never reuse or renumber an issued code, even if a product is unpublished.
 5. A new color, pose, ornament, or design receives the next number in its
    existing family.
-6. The importer must determine the highest existing numerical value for the
-   selected prefix and assign the next value automatically.
+6. Hollow and semi-solid sequences are independent. `HM-GN-1` and `SSM-GN-1`
+   may both exist because their construction prefixes differ.
+7. The importer must determine the highest existing numerical value for the
+   selected construction prefix and design family, then assign the next value
+   automatically.
 
 Examples:
 
 - The next Ganesha item after `HM-GN-3` is `HM-GN-4`.
+- The next semi-solid Ganesha item after `SSM-GN-2` is `SSM-GN-3`.
 - The next Shiva item after `HM-SH-4` is `HM-SH-5`.
 - The next Hanuman item after `HM-HN-2` is `HM-HN-3`.
 - The first future Lakshmi Ganesh item is `HM-LG-1`.
@@ -233,8 +250,10 @@ Examples:
   hide height or width independently when the corresponding field is absent.
 - Keep the product category, purity, idol construction, and deity references in
   their dedicated Sanity fields.
-- Validate item codes against
-  `^HM-[A-Z]{2}-[1-9][0-9]*$` before publishing or importing.
+- Validate hollow item codes against `^HM-[A-Z]{2}-[1-9][0-9]*$` and
+  semi-solid item codes against `^SSM-[A-Z]{2}-[1-9][0-9]*$` before
+  publishing or importing. A provisional `UN` family remains publish-blocked
+  even when it passes the structural pattern.
 
 ## Change control
 

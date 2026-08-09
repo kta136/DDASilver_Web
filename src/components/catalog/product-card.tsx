@@ -32,6 +32,9 @@ export function ProductCard({
     product.weightGrams ? `${product.weightGrams} g` : null,
     product.heightInches ? `Height ${product.heightInches} in` : null,
     product.widthInches ? `Width ${product.widthInches} in` : null,
+    product.singhasanWidthInches && product.singhasanDepthInches
+      ? `Singhasan: ${product.singhasanWidthInches} × ${product.singhasanDepthInches} in`
+      : null,
     product.deities.length > 0
       ? product.deities.map((deity) => deity.title).join(", ")
       : null,

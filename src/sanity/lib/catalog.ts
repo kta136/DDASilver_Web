@@ -111,6 +111,18 @@ const productSchema = z.object({
     .max(1_000)
     .nullish()
     .transform((value) => value ?? undefined),
+  singhasanWidthInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
+  singhasanDepthInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
   utensilType: z
     .enum(["glass", "bowl", "plate", "jug", "kalash", "spoon"])
     .nullish()
@@ -141,10 +153,10 @@ function getFallbackCatalog(): Catalog {
   };
 }
 
-async function fetchCatalog(
+async function fetchCatalogPayload(
   client: typeof sanityClient,
-): Promise<Catalog> {
-  const [products, categories, collections] = await Promise.all([
+): Promise<[unknown, unknown, unknown]> {
+  return Promise.all([
     client.fetch<unknown>(
       productsQuery,
       {},
@@ -161,6 +173,34 @@ async function fetchCatalog(
       { next: { tags: ["collection"] } },
     ),
   ]);
+}
+
+function getErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : "Unknown Sanity error";
+}
+
+export async function fetchCatalog(
+  client: typeof sanityClient,
+): Promise<Catalog> {
+  let payload: [unknown, unknown, unknown];
+
+  try {
+    payload = await fetchCatalogPayload(client);
+  } catch (primaryError) {
+    try {
+      payload = await fetchCatalogPayload(
+        client.withConfig({ useCdn: false }),
+      );
+    } catch (retryError) {
+      console.error("Sanity catalog fetch failed; using fallback catalog.", {
+        primary: getErrorMessage(primaryError),
+        retry: getErrorMessage(retryError),
+      });
+      return getFallbackCatalog();
+    }
+  }
+
+  const [products, categories, collections] = payload;
   const parsed = catalogSchema.safeParse({
     products,
     categories,

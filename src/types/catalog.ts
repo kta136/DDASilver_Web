@@ -56,6 +56,8 @@ export type Product = {
   heightInches?: number;
   widthInches?: number;
   diameterInches?: number;
+  singhasanWidthInches?: number;
+  singhasanDepthInches?: number;
   utensilType?: UtensilType;
   idolConstruction?: IdolConstruction;
   deities: Deity[];
