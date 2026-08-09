@@ -61,6 +61,12 @@ const mockupImages = {
     width: 1254,
     height: 1254,
   },
+  jhula: {
+    src: "/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png",
+    alt: "Ornate 92.5% silver peacock and floral jhula with suspended seat",
+    width: 1254,
+    height: 1254,
+  },
 } satisfies Record<string, Category["image"]>;
 
 export const fallbackCategories: Category[] = [
@@ -103,12 +109,20 @@ export const fallbackCategories: Category[] = [
     displayOrder: 5,
   },
   {
+    title: "Jhula",
+    slug: "jhula",
+    description:
+      "Ornate 92.5% silver jhulas for devotional settings, celebrations, and meaningful gifting.",
+    image: mockupImages.jhula,
+    displayOrder: 6,
+  },
+  {
     title: "Utensils",
     slug: "utensils",
     description:
       "Silver dining, serving, and home utensils for meaningful everyday use.",
     image: mockupImages.tableware,
-    displayOrder: 6,
+    displayOrder: 7,
   },
 ];
 

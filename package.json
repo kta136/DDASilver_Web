@@ -20,6 +20,8 @@
     "utensils:process": "node scripts/images/process-utensil-batch.mjs",
     "sanity:seed-categories": "sanity exec scripts/sanity/seed-categories.ts --with-user-token",
     "sanity:seed-categories:apply": "sanity exec scripts/sanity/seed-categories.ts --with-user-token -- --apply",
+    "sanity:migrate-jhula-ram-taxonomy": "sanity exec scripts/sanity/migrate-jhula-ram-mandir-taxonomy.ts --with-user-token",
+    "sanity:migrate-jhula-ram-taxonomy:apply": "sanity exec scripts/sanity/migrate-jhula-ram-mandir-taxonomy.ts --with-user-token -- --apply",
     "sanity:seed-deities": "sanity exec scripts/sanity/seed-deities.ts --with-user-token",
     "sanity:seed-deities:apply": "sanity exec scripts/sanity/seed-deities.ts --with-user-token -- --apply",
     "sanity:upload-idols": "node scripts/sanity/run-idol-upload.mjs",

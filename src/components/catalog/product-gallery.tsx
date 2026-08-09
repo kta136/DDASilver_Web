@@ -37,10 +37,10 @@ export function ProductGallery({
   }
 
   return (
-    <div className="relative min-w-0 bg-[#ebe7e2]">
+    <div className="relative min-w-0 bg-[#ebe7e2] lg:h-full">
       <div
         ref={scrollerRef}
-        className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] lg:h-full [&::-webkit-scrollbar]:hidden"
         onScroll={(event) => {
           const scroller = event.currentTarget;
           if (scroller.clientWidth === 0) {
@@ -57,7 +57,7 @@ export function ProductGallery({
         {images.map((image, index) => (
           <div
             key={`${image.src}-${index}`}
-            className="relative aspect-[4/5] min-w-full snap-center snap-always sm:aspect-[16/13] lg:min-h-[34rem] lg:aspect-auto"
+            className="relative aspect-[4/5] min-w-full snap-center snap-always sm:aspect-[16/13] lg:h-full lg:min-h-0 lg:aspect-auto"
           >
             <Image
               src={image.src}

@@ -12,6 +12,7 @@ const defaultReviewCsvPath = path.join(
 );
 const supportedCategories = new Set([
   "category-gifts",
+  "category-jhula",
   "category-purse",
   "category-idols",
 ]);
@@ -203,12 +204,16 @@ function validateManifest(manifest, manifestPath) {
     }
     if (
       (hasSinghasanWidth || hasSinghasanDepth) &&
-      product.categoryId !== "category-gifts"
+      product.categoryId !== "category-jhula"
     ) {
-      errors.push(`${label}: singhasan measurements are only valid for Gifts`);
+      errors.push(`${label}: singhasan measurements are only valid for Jhula`);
     }
     if (!Array.isArray(product.publishBlockers)) errors.push(`${label}: publishBlockers must be an array`);
     productBlockerCount += product.publishBlockers?.length ?? 0;
+
+    if (product.reference?.startsWith("JH-") && product.categoryId !== "category-jhula") {
+      errors.push(`${label}: JH references must use the Jhula category`);
+    }
 
     if (product.categoryId === "category-idols") {
       if (!/^SSM-[A-Z]{2}-[1-9][0-9]*$/.test(product.reference ?? "")) {
@@ -224,7 +229,7 @@ function validateManifest(manifest, manifestPath) {
           warnings.push(`${label}: ${deityId} is not in the current deity seed list`);
         }
       }
-    } else if (product.reference?.startsWith("JH-")) {
+    } else if (product.categoryId === "category-jhula") {
       if (!/^JH-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: jhula reference must match JH-NN`);
     } else if (product.reference?.startsWith("SD-")) {
       if (!/^SD-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: Sindoor Dani reference must match SD-NN`);
@@ -297,6 +302,7 @@ function validateManifest(manifest, manifestPath) {
       products: products.length,
       validImages: validImageCount,
       gifts: products.filter((product) => product.categoryId === "category-gifts").length,
+      jhulas: products.filter((product) => product.categoryId === "category-jhula").length,
       purses: products.filter((product) => product.categoryId === "category-purse").length,
       idols: products.filter((product) => product.categoryId === "category-idols").length,
       manifestBlockers: manifest.publishBlockers?.length ?? 0,
@@ -333,6 +339,6 @@ if (result.errors.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Validated ${result.counts.validImages} prospective image asset uploads.`);
-  console.log(`Validated ${result.counts.products} prospective product documents across Gifts, Purse and Idols.`);
+  console.log(`Validated ${result.counts.products} prospective product documents across Gifts, Jhula, Purse and Idols.`);
   console.log("Dry run complete. No network request, asset upload, product mutation or publication occurred.");
 }

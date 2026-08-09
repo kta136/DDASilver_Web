@@ -59,12 +59,23 @@ const categories = [
     alt: "Concept image of an elegant silver gift box",
   },
   {
+    _id: "category-jhula",
+    title: "Jhula",
+    slug: "jhula",
+    description:
+      "Ornate 92.5% silver jhulas for devotional settings, celebrations, and meaningful gifting.",
+    displayOrder: 6,
+    imagePath:
+      "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png",
+    alt: "Ornate 92.5% silver peacock and floral jhula with suspended seat",
+  },
+  {
     _id: "category-utensils",
     title: "Utensils",
     slug: "utensils",
     description:
       "Silver dining, serving, and home utensils for meaningful everyday use.",
-    displayOrder: 6,
+    displayOrder: 7,
     imagePath: "public/images/mockup/category-tableware.png",
     alt: "Concept image of an engraved silver serving bowl",
   },

@@ -45,9 +45,15 @@ describe("<ProductGallery />", () => {
   it("can preserve the full product frame without cropping", () => {
     render(<ProductGallery images={images.slice(0, 1)} containImages />);
 
-    expect(screen.getByAltText("Bracelet front")).toHaveClass(
-      "object-contain",
-    );
+    const image = screen.getByAltText("Bracelet front");
+    const slide = image.parentElement;
+    const scroller = slide?.parentElement;
+    const gallery = scroller?.parentElement;
+
+    expect(image).toHaveClass("object-contain");
+    expect(slide).toHaveClass("lg:h-full", "lg:aspect-auto");
+    expect(scroller).toHaveClass("lg:h-full");
+    expect(gallery).toHaveClass("lg:h-full");
   });
 
   it("moves between photos with accessible controls", () => {

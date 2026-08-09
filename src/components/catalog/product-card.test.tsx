@@ -46,4 +46,19 @@ describe("<ProductCard />", () => {
 
     expect(screen.getByText(/Singhasan: 9 × 7 in/)).toBeInTheDocument();
   });
+
+  it("fills a square Jhula card without cropping or hover zoom", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      categorySlug: "jhula",
+    };
+
+    render(<ProductCard product={product} compactImage />);
+
+    const image = screen.getByAltText(product.images[0]!.alt);
+
+    expect(image).toHaveClass("object-contain");
+    expect(image).not.toHaveClass("group-hover:scale-[1.025]");
+    expect(image.parentElement).toHaveClass("aspect-square");
+  });
 });

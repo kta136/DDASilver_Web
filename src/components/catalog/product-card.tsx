@@ -7,6 +7,10 @@ import {
   idolConstructionLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
+import {
+  shouldContainProductImage,
+  shouldUseSquareProductCardImage,
+} from "@/lib/catalog-image-presentation";
 import type { Product } from "@/types/catalog";
 
 type ProductCardProps = {
@@ -24,9 +28,8 @@ export function ProductCard({
 }: ProductCardProps) {
   const image = product.images[0];
   const Heading = headingLevel === 2 ? "h2" : "h3";
-  const containImage =
-    product.categorySlug === "purse" ||
-    (Boolean(product.coinShape) && !compactImage);
+  const containImage = shouldContainProductImage(product, compactImage);
+  const squareImage = shouldUseSquareProductCardImage(product);
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.weightGrams ? `${product.weightGrams} g` : null,
@@ -52,7 +55,11 @@ export function ProductCard({
       >
         <div
           className={`relative overflow-hidden bg-[#ece8e3] ${
-            compactImage ? "aspect-[4/3]" : "aspect-[4/5]"
+            squareImage
+              ? "aspect-square"
+              : compactImage
+                ? "aspect-[4/3]"
+                : "aspect-[4/5]"
           }`}
         >
           {image ? (

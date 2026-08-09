@@ -169,14 +169,14 @@ export const productType = defineType({
       description:
         "Verified left-to-right width of the jhula singhasan. This is not the overall jhula width.",
       hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-gifts",
+        getCategoryReference(document) !== "category-jhula",
       validation: (rule) =>
         rule.positive().max(1_000).precision(2).custom((value, context) => {
           const categoryReference = getCategoryReference(context.document);
           const hasWidth = typeof value === "number";
 
-          if (hasWidth && categoryReference !== "category-gifts") {
-            return "Singhasan measurements are only valid for the Gifts category.";
+          if (hasWidth && categoryReference !== "category-jhula") {
+            return "Singhasan measurements are only valid for the Jhula category.";
           }
 
           return hasWidth ===
@@ -192,14 +192,14 @@ export const productType = defineType({
       description:
         "Verified back-to-front depth of the jhula singhasan. This is not the overall jhula depth.",
       hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-gifts",
+        getCategoryReference(document) !== "category-jhula",
       validation: (rule) =>
         rule.positive().max(1_000).precision(2).custom((value, context) => {
           const categoryReference = getCategoryReference(context.document);
           const hasDepth = typeof value === "number";
 
-          if (hasDepth && categoryReference !== "category-gifts") {
-            return "Singhasan measurements are only valid for the Gifts category.";
+          if (hasDepth && categoryReference !== "category-jhula") {
+            return "Singhasan measurements are only valid for the Jhula category.";
           }
 
           return hasDepth ===

@@ -24,7 +24,11 @@ type ManifestProduct = {
   slug: string;
   shortDescription: string;
   alt: string;
-  categoryId: "category-gifts" | "category-purse" | "category-idols";
+  categoryId:
+    | "category-gifts"
+    | "category-jhula"
+    | "category-purse"
+    | "category-idols";
   purity: "92.5";
   weightGrams?: number;
   heightInches?: number;
@@ -133,6 +137,18 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
           `${product.reference} must have semi-solid construction and at least one deity.`,
         );
       }
+    }
+    if (
+      product.categoryId === "category-jhula" &&
+      !/^JH-[0-9]{2}$/.test(product.reference)
+    ) {
+      throw new Error(`${product.reference} must use the JH-NN reference format.`);
+    }
+    if (
+      product.reference.startsWith("JH-") &&
+      product.categoryId !== "category-jhula"
+    ) {
+      throw new Error(`${product.reference} must use the Jhula category.`);
     }
 
     const mappingRow = mappingByProductId.get(product.id);

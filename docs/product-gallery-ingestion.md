@@ -105,6 +105,9 @@ from pixels or copy a diameter into width. Singhasan width is measured
 left-to-right and singhasan depth back-to-front; neither value represents an
 overall jhula dimension.
 
+Use `category-jhula` for every Jhula product. Sindoor Dani and other gift items
+remain in `category-gifts`. Jhula references use the sequential `JH-NN` format.
+
 Catalog item cards display height and width independently when their dedicated
 fields are present. A missing field stays hidden; do not insert placeholder or
 inferred values merely to fill the card metadata line.

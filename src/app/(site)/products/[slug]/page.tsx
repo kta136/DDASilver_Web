@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/catalog/product-card";
 import { ProductDetails } from "@/components/catalog/product-details";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
+import { shouldContainProductImage } from "@/lib/catalog-image-presentation";
 import {
   createPageMetadata,
   getProductSeoName,
@@ -148,7 +149,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     : "(max-width: 640px) 100vw, 29vw"
                 }
                 className={
-                  product.coinShape || product.categorySlug === "purse"
+                  shouldContainProductImage(product)
                     ? "object-contain"
                     : "object-cover"
                 }
