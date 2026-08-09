@@ -5,6 +5,7 @@ import {
   coinShapeLabels,
   idolConstructionLabels,
   purityLabels,
+  utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import type { Product } from "@/types/catalog";
@@ -52,6 +53,7 @@ export function ProductDetails({
       product.widthInches ||
       product.diameterInches ||
       (product.singhasanWidthInches && product.singhasanDepthInches) ||
+      product.utensilType ||
       product.idolConstruction ||
       product.deities.length > 0 ||
       product.coinShape ? (
@@ -113,6 +115,16 @@ export function ProductDetails({
               </dt>
               <dd className="mt-1 text-sm font-semibold">
                 {product.singhasanWidthInches} × {product.singhasanDepthInches} in
+              </dd>
+            </div>
+          ) : null}
+          {product.utensilType ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Utensil Type
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {utensilTypeLabels[product.utensilType]}
               </dd>
             </div>
           ) : null}

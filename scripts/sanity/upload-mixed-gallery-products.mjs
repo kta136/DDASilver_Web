@@ -15,6 +15,15 @@ const supportedCategories = new Set([
   "category-jhula",
   "category-purse",
   "category-idols",
+  "category-utensils",
+]);
+const utensilReferenceCodeByType = new Map([
+  ["glass", "GL"],
+  ["bowl", "BW"],
+  ["plate", "PL"],
+  ["jug", "JG"],
+  ["kalash", "KL"],
+  ["spoon", "SP"],
 ]);
 const supportedSeedDeityIds = new Set([
   "deity-krishna",
@@ -110,6 +119,7 @@ function writeReviewCsv(manifest, outputPath) {
     "reference",
     "title",
     "categoryId",
+    "utensilType",
     "purity",
     "weightGrams",
     "heightInches",
@@ -149,7 +159,7 @@ function validateManifest(manifest, manifestPath) {
   if (manifest.sourceCount !== products.length) {
     errors.push(`sourceCount ${manifest.sourceCount} does not match product count ${products.length}`);
   }
-  if (products.length !== 53) errors.push(`expected 53 products, found ${products.length}`);
+  if (products.length === 0) errors.push("products must contain at least one product");
 
   for (const property of [
     "number",
@@ -231,10 +241,20 @@ function validateManifest(manifest, manifestPath) {
       }
     } else if (product.categoryId === "category-jhula") {
       if (!/^JH-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: jhula reference must match JH-NN`);
+    } else if (product.categoryId === "category-utensils") {
+      const referenceCode = utensilReferenceCodeByType.get(product.utensilType);
+      if (!referenceCode) {
+        errors.push(`${label}: unsupported utensilType ${product.utensilType ?? "(missing)"}`);
+      } else if (!new RegExp(`^DDA-UT-${referenceCode}-[1-9][0-9]*$`).test(product.reference ?? "")) {
+        errors.push(`${label}: ${product.utensilType} reference must match DDA-UT-${referenceCode}-N`);
+      }
     } else if (product.reference?.startsWith("SD-")) {
       if (!/^SD-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: Sindoor Dani reference must match SD-NN`);
     } else if (product.categoryId === "category-purse") {
       if (!/^PR-[1-9][0-9]*$/.test(product.reference ?? "")) errors.push(`${label}: purse reference must match PR-N`);
+    }
+    if (product.categoryId !== "category-utensils" && product.utensilType !== undefined) {
+      errors.push(`${label}: utensilType is only valid for Utensils`);
     }
 
     const sourcePath = path.resolve(product.sourcePath ?? "");
@@ -305,6 +325,7 @@ function validateManifest(manifest, manifestPath) {
       jhulas: products.filter((product) => product.categoryId === "category-jhula").length,
       purses: products.filter((product) => product.categoryId === "category-purse").length,
       idols: products.filter((product) => product.categoryId === "category-idols").length,
+      utensils: products.filter((product) => product.categoryId === "category-utensils").length,
       manifestBlockers: manifest.publishBlockers?.length ?? 0,
       productBlockers: productBlockerCount,
     },
@@ -339,6 +360,8 @@ if (result.errors.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(`Validated ${result.counts.validImages} prospective image asset uploads.`);
-  console.log(`Validated ${result.counts.products} prospective product documents across Gifts, Jhula, Purse and Idols.`);
+  console.log(
+    `Validated ${result.counts.products} prospective product documents across Gifts, Jhula, Purse, Idols and Utensils.`,
+  );
   console.log("Dry run complete. No network request, asset upload, product mutation or publication occurred.");
 }

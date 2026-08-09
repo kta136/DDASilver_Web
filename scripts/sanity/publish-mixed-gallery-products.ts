@@ -4,17 +4,35 @@ import { resolve } from "node:path";
 import { getCliClient } from "sanity/cli";
 
 const client = getCliClient({ apiVersion: "2026-08-09" });
+const projectRoot = resolve(import.meta.dirname, "../..");
 const applyChanges = process.argv.includes("--apply");
 const overwriteExisting = process.argv.includes("--overwrite");
-const manifestPath = resolve(
-  process.cwd(),
-  "scripts/images/mixed-gallery-new-folder-2-2026-08-09.json",
+
+function getArgumentValue(name: string) {
+  const inline = process.argv.find((argument) =>
+    argument.startsWith(`${name}=`),
+  );
+  if (inline) return inline.slice(name.length + 1);
+  const index = process.argv.indexOf(name);
+  return index >= 0 ? process.argv[index + 1] : undefined;
+}
+
+function resolveInputPath(value: string | undefined, fallback: string) {
+  return value ? resolve(projectRoot, value) : fallback;
+}
+
+const manifestPath = resolveInputPath(
+  getArgumentValue("--manifest"),
+  resolve(projectRoot, "scripts/images/mixed-gallery-new-folder-2-2026-08-09.json"),
 );
-const assetMappingPath = resolve(
-  process.cwd(),
-  "scripts/images/mixed-gallery-new-folder-2-2026-08-09-sanity-assets.json",
+const assetMappingPath = resolveInputPath(
+  getArgumentValue("--mapping"),
+  resolve(
+    projectRoot,
+    "scripts/images/mixed-gallery-new-folder-2-2026-08-09-sanity-assets.json",
+  ),
 );
-const displayOrderBase = 5_000;
+const displayOrderBase = Number(getArgumentValue("--display-order-base") ?? 5_000);
 
 type ManifestProduct = {
   number: number;
@@ -28,7 +46,9 @@ type ManifestProduct = {
     | "category-gifts"
     | "category-jhula"
     | "category-purse"
-    | "category-idols";
+    | "category-idols"
+    | "category-utensils";
+  utensilType?: "glass" | "bowl" | "plate" | "jug" | "kalash" | "spoon";
   purity: "92.5";
   weightGrams?: number;
   heightInches?: number;
@@ -102,14 +122,15 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
   if (manifest.publishBlockers.length > 0) {
     throw new Error("The mixed-gallery manifest still has publish blockers.");
   }
+  const productCount = manifest.products.length;
   if (
-    manifest.products.length !== 53 ||
-    manifest.sourceCount !== 53 ||
-    mapping.productCount !== 53 ||
-    mapping.uniqueAssetCount !== 53 ||
-    mapping.assets.length !== 53
+    productCount === 0 ||
+    manifest.sourceCount !== productCount ||
+    mapping.productCount !== productCount ||
+    mapping.uniqueAssetCount !== productCount ||
+    mapping.assets.length !== productCount
   ) {
-    throw new Error("Expected a one-to-one 53-product batch and asset mapping.");
+    throw new Error("Expected a non-empty one-to-one product batch and asset mapping.");
   }
 
   assertUnique(manifest.products.map(({ id }) => id), "Product ID");
@@ -150,6 +171,18 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     ) {
       throw new Error(`${product.reference} must use the Jhula category.`);
     }
+    if (
+      product.categoryId === "category-utensils" &&
+      product.utensilType !== "jug"
+    ) {
+      throw new Error(`${product.reference} must use the jug utensil type.`);
+    }
+    if (
+      product.categoryId !== "category-utensils" &&
+      product.utensilType !== undefined
+    ) {
+      throw new Error(`${product.reference} cannot define a utensil type.`);
+    }
 
     const mappingRow = mappingByProductId.get(product.id);
     if (
@@ -187,6 +220,7 @@ function getProductDocument(product: ManifestProduct, assetId: string) {
       _type: "reference",
       _ref: product.categoryId,
     },
+    utensilType: product.utensilType,
     purity: product.purity,
     weightGrams: product.weightGrams,
     heightInches: product.heightInches,

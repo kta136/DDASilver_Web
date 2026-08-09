@@ -1,7 +1,7 @@
 import { CaretRightIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 
-import { toAbsoluteUrl } from "@/lib/seo";
+import { serializeJsonLd, toAbsoluteUrl } from "@/lib/seo";
 
 type BreadcrumbItem = {
   label: string;
@@ -25,7 +25,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+          __html: serializeJsonLd(breadcrumbSchema),
         }}
       />
       <nav aria-label="Breadcrumb" className="text-sm text-ink-muted">

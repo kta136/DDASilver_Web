@@ -82,8 +82,8 @@ async function loadManifest(manifestPath: string) {
   if (!payload.readyForSanityAssetUpload) {
     throw new Error("Manifest is not ready for Sanity asset upload.");
   }
-  if (!Array.isArray(payload.products) || payload.products.length !== 53) {
-    throw new Error(`Expected 53 manifest products, found ${payload.products?.length ?? 0}.`);
+  if (!Array.isArray(payload.products) || payload.products.length === 0) {
+    throw new Error("Mixed gallery manifest must contain at least one product.");
   }
   if (payload.sourceCount !== payload.products.length) {
     throw new Error("Manifest sourceCount does not match its product count.");

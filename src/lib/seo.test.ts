@@ -4,6 +4,8 @@ import {
   createPageMetadata,
   getProductSeoName,
   getProductSocialImage,
+  getSocialImageProductUrl,
+  serializeJsonLd,
   toAbsoluteUrl,
   truncateSeoText,
 } from "@/lib/seo";
@@ -48,6 +50,18 @@ describe("SEO helpers", () => {
     expect(metadata.robots).toMatchObject({ index: false, follow: false });
   });
 
+  it("can noindex thin pages while allowing crawlers to follow their links", () => {
+    const metadata = createPageMetadata({
+      title: "Upcoming silver category",
+      description: "This silver category does not have published products yet.",
+      path: "/category/upcoming",
+      noIndex: true,
+      noFollow: false,
+    });
+
+    expect(metadata.robots).toMatchObject({ index: false, follow: true });
+  });
+
   it("resolves same-site URLs against the configured preview origin", () => {
     expect(toAbsoluteUrl("/contact")).toBe("http://localhost:3000/contact");
   });
@@ -79,5 +93,27 @@ describe("SEO helpers", () => {
       width: 1200,
       height: 630,
     });
+  });
+
+  it("supports local product images in the social image renderer", () => {
+    expect(getSocialImageProductUrl("/images/product.png")).toBe(
+      "http://localhost:3000/images/product.png",
+    );
+  });
+
+  it("adds Sanity image transformations for social cards", () => {
+    expect(
+      getSocialImageProductUrl(
+        "https://cdn.sanity.io/images/project/production/product.png",
+      ),
+    ).toBe(
+      "https://cdn.sanity.io/images/project/production/product.png?w=560&h=560&fit=max&q=92",
+    );
+  });
+
+  it("escapes HTML-significant characters in JSON-LD", () => {
+    expect(serializeJsonLd({ name: "Silver <script>" })).toBe(
+      '{"name":"Silver \\u003cscript>"}',
+    );
   });
 });

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2-additions-2026-08-09",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-09T11:23:20.859Z",
+  "productCount": 10,
+  "uniqueAssetCount": 10,
+  "uploadedAssetCount": 10,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-gift-jh-11-elephant-foot-twin-peacock-silver-jhula",
+      "reference": "JH-11",
+      "title": "Elephant Foot Twin Peacock Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/jh-11-elephant-foot-twin-peacock-silver-jhula.png",
+      "sha1hash": "301ac0ece4eb1672626d444c9dcbd6a0d2f136e3",
+      "sanityAssetId": "image-301ac0ece4eb1672626d444c9dcbd6a0d2f136e3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/301ac0ece4eb1672626d444c9dcbd6a0d2f136e3-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-gift-jh-12-peacock-arch-floral-seat-silver-jhula",
+      "reference": "JH-12",
+      "title": "Peacock Arch Floral Seat Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/jh-12-peacock-arch-floral-seat-silver-jhula.png",
+      "sha1hash": "5c318e878a7c4328a1c01540058d985e5e71d1aa",
+      "sanityAssetId": "image-5c318e878a7c4328a1c01540058d985e5e71d1aa-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5c318e878a7c4328a1c01540058d985e5e71d1aa-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-ut-jg-89-floral-medallion-four-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-89",
+      "title": "Floral Medallion Four-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/89-floral-medallion-four-glass-silver-lemon-set.png",
+      "sha1hash": "8263ff45eaadde715fafb06b9790aac6bdd4195b",
+      "sanityAssetId": "image-8263ff45eaadde715fafb06b9790aac6bdd4195b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8263ff45eaadde715fafb06b9790aac6bdd4195b-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-ut-jg-90-engraved-vine-six-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-90",
+      "title": "Engraved Vine Six-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/90-engraved-vine-six-glass-silver-lemon-set.png",
+      "sha1hash": "ebb621528c70e3537e34653528c372c7999dd274",
+      "sanityAssetId": "image-ebb621528c70e3537e34653528c372c7999dd274-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ebb621528c70e3537e34653528c372c7999dd274-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-ut-jg-91-fluted-floral-bird-handle-four-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-91",
+      "title": "Fluted Floral Bird-Handle Four-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/91-fluted-floral-bird-handle-four-glass-silver-lemon-set.png",
+      "sha1hash": "71115040e4e019793440074a72512a213cdd46b4",
+      "sanityAssetId": "image-71115040e4e019793440074a72512a213cdd46b4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/71115040e4e019793440074a72512a213cdd46b4-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-ut-jg-92-scrollwork-two-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-92",
+      "title": "Scrollwork Two-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/92-scrollwork-two-glass-silver-lemon-set.png",
+      "sha1hash": "9114e851d374de36c663d505560d7439346f522a",
+      "sanityAssetId": "image-9114e851d374de36c663d505560d7439346f522a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9114e851d374de36c663d505560d7439346f522a-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-ut-jg-93-lattice-floral-four-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-93",
+      "title": "Lattice Floral Four-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/93-lattice-floral-four-glass-silver-lemon-set.png",
+      "sha1hash": "9b52f3579d6de853e5062ec7e8e0aa35b01cf4ed",
+      "sanityAssetId": "image-9b52f3579d6de853e5062ec7e8e0aa35b01cf4ed-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9b52f3579d6de853e5062ec7e8e0aa35b01cf4ed-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-ut-jg-94-hammered-six-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-94",
+      "title": "Hammered Six-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/94-hammered-six-glass-silver-lemon-set.png",
+      "sha1hash": "6a30e15822c943062fa2606a84cbd08af71549cf",
+      "sanityAssetId": "image-6a30e15822c943062fa2606a84cbd08af71549cf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6a30e15822c943062fa2606a84cbd08af71549cf-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-ut-jg-95-gilded-arch-four-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-95",
+      "title": "Gilded Arch Four-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/95-gilded-arch-four-glass-silver-lemon-set.png",
+      "sha1hash": "7fa59ba1022fb2efdb677cf90444be36adef6092",
+      "sanityAssetId": "image-7fa59ba1022fb2efdb677cf90444be36adef6092-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7fa59ba1022fb2efdb677cf90444be36adef6092-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-ut-jg-96-floral-band-six-glass-silver-lemon-set",
+      "reference": "DDA-UT-JG-96",
+      "title": "Floral Band Six-Glass Silver Lemon Set",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2-additions-2026-08-09/images/96-floral-band-six-glass-silver-lemon-set.png",
+      "sha1hash": "0102a34a22ba1752ea08a28ae222ca1686003a8e",
+      "sanityAssetId": "image-0102a34a22ba1752ea08a28ae222ca1686003a8e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0102a34a22ba1752ea08a28ae222ca1686003a8e-1254x1254.png"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import {
   getCatalog,
@@ -23,7 +24,11 @@ export async function generateMetadata({
   params,
 }: CollectionPageProps) {
   const { slug } = await params;
-  const collection = await getCollection(slug);
+  const catalog = await getCatalog();
+  const collection = catalog.collections.find((item) => item.slug === slug);
+  const hasPublishedProducts = catalog.products.some((product) =>
+    product.collectionSlugs.includes(slug),
+  );
 
   return collection
     ? createPageMetadata({
@@ -31,6 +36,8 @@ export async function generateMetadata({
         description: `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`,
         path: `/collections/${collection.slug}`,
         image: collection.heroImage,
+        noIndex: !hasPublishedProducts,
+        noFollow: false,
       })
     : createPageMetadata({
         title: "Collection Not Found",
@@ -52,6 +59,14 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   if (!collection) {
     notFound();
   }
+
+  const collectionProducts = catalog.products.filter((product) =>
+    product.collectionSlugs.includes(collection.slug),
+  );
+  const populatedCategories = getPopulatedCategories(
+    catalog.categories,
+    collectionProducts,
+  );
 
   return (
     <main id="main-content">
@@ -91,10 +106,8 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       <section className="section-shell">
         <div className="site-container">
           <CatalogBrowser
-            products={catalog.products.filter((product) =>
-              product.collectionSlugs.includes(collection.slug),
-            )}
-            categories={catalog.categories}
+            products={collectionProducts}
+            categories={populatedCategories}
           />
         </div>
       </section>

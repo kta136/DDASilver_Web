@@ -9,6 +9,7 @@ import Link from "next/link";
 import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
+import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
@@ -24,6 +25,7 @@ export const metadata = createPageMetadata({
 
 export default async function HomePage() {
   const { categories, products } = await getCatalog();
+  const populatedCategories = getPopulatedCategories(categories, products);
   const featured = products
     .filter((product) => product.featured)
     .sort((a, b) => a.displayOrder - b.displayOrder)
@@ -80,7 +82,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <CategoryIndex categories={categories} />
+      <CategoryIndex categories={populatedCategories} />
 
       <section className="border-b border-line bg-paper-strong">
         <div className="px-5 py-12 sm:px-10 lg:px-[max(3rem,calc((100vw-90rem)/2))] min-[90rem]:py-6">

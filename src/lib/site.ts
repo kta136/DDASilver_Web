@@ -13,6 +13,7 @@ export const siteConfig = {
     "https://www.google.com/maps/search/?api=1&query=DDA+Silver%2C+MG+Road%2C+opposite+Nagar+Nigam%2C+Agra",
   googleBusinessUrl: process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL,
   googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
+  bingSiteVerification: process.env.BING_SITE_VERIFICATION,
   androidUrl:
     "https://play.google.com/store/apps/details?id=lmx.dda.bullion",
   iosUrl: "https://apps.apple.com/in/app/dda-silver/id1565809906",

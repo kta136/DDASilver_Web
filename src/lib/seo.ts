@@ -27,6 +27,7 @@ type PageMetadataOptions = {
   absoluteTitle?: boolean;
   canonical?: boolean;
   noIndex?: boolean;
+  noFollow?: boolean;
 };
 
 export function toAbsoluteUrl(path: string) {
@@ -60,6 +61,25 @@ export function getProductSocialImage(
   };
 }
 
+export function getSocialImageProductUrl(src: string) {
+  const url = new URL(toAbsoluteUrl(src));
+
+  if (url.hostname === "cdn.sanity.io") {
+    url.searchParams.set("w", "560");
+    url.searchParams.set("h", "560");
+    url.searchParams.set("fit", "max");
+    url.searchParams.set("q", "92");
+  }
+
+  return url.toString();
+}
+
+export function serializeJsonLd(
+  value: Record<string, unknown> | readonly unknown[],
+) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
 export function truncateSeoText(value: string, maxLength: number) {
   const normalized = value.replace(/\s+/g, " ").trim();
 
@@ -86,6 +106,7 @@ export function createPageMetadata({
   absoluteTitle = false,
   canonical = true,
   noIndex = false,
+  noFollow = noIndex,
 }: PageMetadataOptions): Metadata {
   const pageTitle = truncateSeoText(
     title,
@@ -129,8 +150,8 @@ export function createPageMetadata({
     robots: noIndex
       ? {
           index: false,
-          follow: false,
-          googleBot: { index: false, follow: false },
+          follow: !noFollow,
+          googleBot: { index: false, follow: !noFollow },
         }
       : undefined,
   };

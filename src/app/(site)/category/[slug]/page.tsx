@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import {
   getCatalog,
@@ -22,7 +23,11 @@ export async function generateMetadata({
   params,
 }: CategoryPageProps) {
   const { slug } = await params;
-  const category = await getCategory(slug);
+  const catalog = await getCatalog();
+  const category = catalog.categories.find((item) => item.slug === slug);
+  const hasPublishedProducts = catalog.products.some(
+    (product) => product.categorySlug === slug,
+  );
 
   return category
     ? createPageMetadata({
@@ -30,6 +35,8 @@ export async function generateMetadata({
         description: `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`,
         path: `/category/${category.slug}`,
         image: category.image,
+        noIndex: !hasPublishedProducts,
+        noFollow: false,
       })
     : createPageMetadata({
         title: "Category Not Found",
@@ -51,6 +58,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) {
     notFound();
   }
+
+  const populatedCategories = getPopulatedCategories(
+    catalog.categories,
+    catalog.products,
+  );
 
   return (
     <main id="main-content" className="pt-6 pb-12 sm:pt-8 sm:pb-14 lg:pt-9">
@@ -76,7 +88,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <div className="mt-7">
           <CatalogBrowser
             products={catalog.products}
-            categories={catalog.categories}
+            categories={populatedCategories}
             initialCategory={category.slug}
           />
         </div>

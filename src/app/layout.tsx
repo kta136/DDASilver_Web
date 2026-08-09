@@ -6,7 +6,11 @@ import { AnalyticsEvents } from "@/components/consent/analytics-events";
 import { AnalyticsGate } from "@/components/consent/analytics-gate";
 import { ConsentManager } from "@/components/consent/consent-manager";
 import { isProductionSite, siteConfig } from "@/lib/site";
-import { defaultSocialImage, toAbsoluteUrl } from "@/lib/seo";
+import {
+  defaultSocialImage,
+  serializeJsonLd,
+  toAbsoluteUrl,
+} from "@/lib/seo";
 
 import "./globals.css";
 
@@ -76,8 +80,14 @@ export const metadata: Metadata = {
         : {}),
     },
   },
-  verification: siteConfig.googleSiteVerification
-    ? { google: siteConfig.googleSiteVerification }
+  verification:
+    siteConfig.googleSiteVerification || siteConfig.bingSiteVerification
+    ? {
+        google: siteConfig.googleSiteVerification,
+        other: siteConfig.bingSiteVerification
+          ? { "msvalidate.01": siteConfig.bingSiteVerification }
+          : undefined,
+      }
     : undefined,
 };
 
@@ -167,13 +177,13 @@ export default function RootLayout({
         <Script id="dda-consent-default" strategy="beforeInteractive">
           {consentDefaults}
         </Script>
-        <Script
+        <script
           id="dda-local-business"
           type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c")}
-        </Script>
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(localBusinessSchema),
+          }}
+        />
         {children}
         <ConsentManager />
         <AnalyticsGate gaId={process.env.NEXT_PUBLIC_GA_ID} />

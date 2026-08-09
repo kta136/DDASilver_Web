@@ -4,21 +4,15 @@ import {
   idolConstructionLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
-import { getProductSeoName } from "@/lib/seo";
+import {
+  getProductSeoName,
+  getSocialImageProductUrl,
+} from "@/lib/seo";
 import type { Product } from "@/types/catalog";
 
 type ProductSocialImageProps = {
   product: Product;
 };
-
-function getSocialImageProductUrl(src: string) {
-  const url = new URL(src);
-  url.searchParams.set("w", "560");
-  url.searchParams.set("h", "560");
-  url.searchParams.set("fit", "max");
-  url.searchParams.set("q", "92");
-  return url.toString();
-}
 
 export function ProductSocialImage({ product }: ProductSocialImageProps) {
   const productName = getProductSeoName(product.title, product.reference);
@@ -174,7 +168,7 @@ export function ProductSocialImage({ product }: ProductSocialImageProps) {
           alt=""
           width={550}
           height={550}
-          style={{ width: 550, height: 550, objectFit: "cover" }}
+          style={{ width: 550, height: 550, objectFit: "contain" }}
         />
       </div>
     </div>

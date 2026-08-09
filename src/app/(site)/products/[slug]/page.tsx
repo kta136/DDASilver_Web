@@ -7,10 +7,12 @@ import { ProductCard } from "@/components/catalog/product-card";
 import { ProductDetails } from "@/components/catalog/product-details";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
 import { shouldContainProductImage } from "@/lib/catalog-image-presentation";
+import { getProductStructuredDataProperties } from "@/lib/catalog-seo";
 import {
   createPageMetadata,
   getProductSeoName,
   getProductSocialImage,
+  serializeJsonLd,
   toAbsoluteUrl,
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -79,6 +81,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         item.categorySlug === product.categorySlug,
     )
     .slice(0, 3);
+  const additionalProperty = getProductStructuredDataProperties(product);
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -95,6 +98,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     sku: product.reference,
     url: toAbsoluteUrl(`/products/${product.slug}`),
     mainEntityOfPage: toAbsoluteUrl(`/products/${product.slug}`),
+    ...(additionalProperty.length > 0 ? { additionalProperty } : {}),
   };
 
   return (
@@ -109,7 +113,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema).replace(/</g, "\\u003c"),
+          __html: serializeJsonLd(productSchema),
         }}
       />
 

@@ -1,5 +1,6 @@
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { parseCatalogSearchParams } from "@/lib/catalog-url";
+import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import { getCatalog } from "@/sanity/lib/catalog";
 
@@ -18,6 +19,7 @@ export default async function ProductsPage({
   searchParams,
 }: ProductsPageProps) {
   const { products, categories } = await getCatalog();
+  const populatedCategories = getPopulatedCategories(categories, products);
   const rawSearchParams = await searchParams;
   const normalizedSearchParams = new URLSearchParams();
   for (const [key, value] of Object.entries(rawSearchParams)) {
@@ -57,7 +59,7 @@ export default async function ProductsPage({
         <div className="mt-9">
           <CatalogBrowser
             products={products}
-            categories={categories}
+            categories={populatedCategories}
             initialFilters={initialFilters}
             syncUrl
           />

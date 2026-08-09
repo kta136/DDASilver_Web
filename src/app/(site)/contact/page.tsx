@@ -110,12 +110,7 @@ export default function ContactPage() {
                 Google Business Profile
                 <ArrowSquareOutIcon size={17} aria-hidden="true" />
               </a>
-            ) : (
-              <p className="mt-7 border-t border-line pt-5 text-xs leading-5 text-ink-muted">
-                The verified Google Business Profile URL is still required
-                before launch.
-              </p>
-            )}
+            ) : null}
           </aside>
         </div>
       </div>
