@@ -1,0 +1,285 @@
+{
+  "batchId": "k-mixed-gallery-2026-08-13",
+  "generatedAt": "2026-08-13T13:06:14.525Z",
+  "status": "passed-with-publish-blockers",
+  "counts": {
+    "sources": 29,
+    "images": 29,
+    "manifestProducts": 29,
+    "categories": {
+      "category-jhula": 5,
+      "category-gifts": 19,
+      "category-utensils": 5
+    }
+  },
+  "readiness": {
+    "readyForSanityAssetUpload": true,
+    "readyForProductPublish": false
+  },
+  "integrityChecks": {
+    "allImagesAre1254SquarePng": true,
+    "oneSourcePerProduct": true,
+    "oneImagePerProduct": true,
+    "uniqueReferences": true,
+    "uniqueTitles": true,
+    "uniqueSlugs": true,
+    "uniqueDescriptions": true,
+    "uniqueAltText": true
+  },
+  "sanityDryRun": {
+    "status": "blocked-by-remaining-publish-blockers",
+    "validProspectiveImageAssets": 29,
+    "publishReadyProspectiveProducts": 8,
+    "blockedProspectiveProducts": 21,
+    "confirmedPurityProducts": 27,
+    "unresolvedPurityProducts": 0,
+    "uploadProducts": 27,
+    "excludedUploadReferences": [
+      "DDA-UT-KL-97",
+      "DDA-UT-KL-98"
+    ],
+    "reason": "27 products are approved for Sanity asset upload. KL-97 and KL-98 remain deferred. 8 blocker-free products are ready for product publication; all other confirmed products retain their measurement or schema blockers.",
+    "noSanityWritesPerformedDuringLocalValidation": true
+  },
+  "blockers": [
+    "Standalone Singhasan depth is unsupported by the current product schema outside category-jhula; 11 supplied depths are retained in suppliedDepthInches.",
+    "JH-13 through JH-17 require verified singhasan width and depth.",
+    "DDA-UT-KL-97 and DDA-UT-KL-98 are deferred because the current schema has no weight-and-height variant model.",
+    "DDA-UT-BW-99 through DDA-UT-BW-101 require an applicable verified physical measurement."
+  ],
+  "errors": [],
+  "images": [
+    {
+      "reference": "JH-13",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-13-fan-crest-peacock-floral-silver-jhula.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1961733,
+      "sha256": "6a5cc882f610163885691d2ebb25aaa930c86ba29f470e4b19d46eeb8cd96f81"
+    },
+    {
+      "reference": "JH-14",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-14-swan-seat-peacock-arch-silver-jhula.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1954403,
+      "sha256": "122a6259ad7d5efb8c669ac520127763f36e926dbdf0e334960ccf642fdcd104"
+    },
+    {
+      "reference": "NY-01",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-01-om-shubh-labh-gold-accent-silver-nariyal-3in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1247412,
+      "sha256": "9e76b5266e284466caa7f74954456899f609b20d00d2bb712e8905752fde6ba1"
+    },
+    {
+      "reference": "NY-02",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-02-shubh-om-gold-panel-silver-nariyal-3in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1211207,
+      "sha256": "db1e67549c1b70d380a993ace72acbea7b98c9fa0d6047bcd8a85859221c6c9d"
+    },
+    {
+      "reference": "NY-03",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-03-swastik-om-gold-accent-silver-nariyal-4in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1356203,
+      "sha256": "7b35bde7a5f1b63096bd44864386f7ca681086fea367a91efb63a851c02ea5cf"
+    },
+    {
+      "reference": "NY-04",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-04-shubh-om-fine-line-silver-nariyal-4in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1271319,
+      "sha256": "a35ed4d974a8bce2f93c0daf84233c765dc92454e4fe1a6af6ece7b3b967f3c7"
+    },
+    {
+      "reference": "NY-05",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-05-auspicious-script-gold-neck-silver-nariyal-5in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1293912,
+      "sha256": "ba2c2120ed4428a976c32fd14f0257677700fe91921862b1c0f2ea10d4f43f34"
+    },
+    {
+      "reference": "NY-06",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-06-om-swastik-gold-band-silver-nariyal-5in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1426524,
+      "sha256": "f5f451d1a37c8bf36f72f8cbcf53e346b2cfdb909c0c622051b878091737ee72"
+    },
+    {
+      "reference": "NY-07",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-07-large-swastik-om-silver-nariyal-6in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1325719,
+      "sha256": "9f72b74b0ef0e0c2a1d10bb82b9e684f19f030901011d4ad3050b39dd5d11b6a"
+    },
+    {
+      "reference": "NY-08",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-08-large-gold-neck-swastik-om-silver-nariyal-6in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1409497,
+      "sha256": "35b92a3e66cf07b35e716356f5ef35d3bec84a313238994f88dc773a03addfbb"
+    },
+    {
+      "reference": "JH-15",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-15-bal-krishna-lotus-decorated-silver-jhula.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1883113,
+      "sha256": "7763caca2064faa91960c9ccb0b8563406709aeb01a2bc2d6a4f5380fa4d36de"
+    },
+    {
+      "reference": "JH-16",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-16-yashoda-bal-krishna-peacock-decorated-silver-jhula.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2024770,
+      "sha256": "d58b38c6fb49ceec3dfc64094f28a580610f779a9d8e7ad0de2bd0bb333563cf"
+    },
+    {
+      "reference": "JH-17",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-17-radha-krishna-lotus-decorated-silver-jhula.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2053359,
+      "sha256": "6ae41b2886667c2890c2f5111e37204bb00e87c4f7e90cab98377b7be6bb2186"
+    },
+    {
+      "reference": "DDA-UT-KL-97",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/97-flared-rim-linear-band-silver-lota-2in.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1241241,
+      "sha256": "97a9bf9388d82185c0dfedce1c4c8d21e255e5b4ea56060fbb0240a42b0cbc88"
+    },
+    {
+      "reference": "DDA-UT-KL-98",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/98-bulbous-shoulder-linear-band-silver-lota.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1341519,
+      "sha256": "fdf10e8bf80294cc70923561c572f08ad1f0915b7899f8aac722ac4747879d1e"
+    },
+    {
+      "reference": "DDA-UT-BW-99",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/99-ornate-paisley-six-piece-silver-pudding-set.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1723818,
+      "sha256": "68f48def6a68add2ddbaa55d41d45c5b2087594d64d136d0a6e2acc95e1f825a"
+    },
+    {
+      "reference": "DDA-UT-BW-100",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/100-scalloped-floral-six-piece-silver-pudding-set.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1527741,
+      "sha256": "925772fe592365a11e6479326284f8fa1e1ddd30df7bd0ea9c0a254bc53e01f5"
+    },
+    {
+      "reference": "DDA-UT-BW-101",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/101-leaf-panel-five-piece-silver-pudding-set.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1429767,
+      "sha256": "2be47819f7c674544e3922e24bf1c5785ba03f7f121fd9cd9e7e72b2e1cbf5c9"
+    },
+    {
+      "reference": "SG-01",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-01-twin-peacock-om-floral-silver-singhasan-8x6.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2045081,
+      "sha256": "73bc34a6f8ff2b026ee786cff4347569a799e757ee1295133c03543ff1b20438"
+    },
+    {
+      "reference": "SG-02",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-02-twin-peacock-om-round-silver-singhasan-8x6.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2013803,
+      "sha256": "1444c96dfa7ed7c06dbbc1592f39f7b9b4fec3cdf12c2e45f51181cf3fd539a4"
+    },
+    {
+      "reference": "SG-03",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-03-floral-crown-rectangular-silver-singhasan-5x6.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1970253,
+      "sha256": "0fc686b2a126fd5e53038d8d8d3d1976b668a8248e29a0b88235c714451c1506"
+    },
+    {
+      "reference": "SG-04",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-04-round-floral-back-silver-singhasan-7x5.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1998166,
+      "sha256": "7e90154166903738ede6d78696503a11eab02600851689400b97465d3eb01cc5"
+    },
+    {
+      "reference": "SG-05",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-05-gold-accent-arched-throne-silver-singhasan-10x8.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2099167,
+      "sha256": "8d1fec5aa2d7c61cc9f51fbbadf4d1e9c4c4fb4f8577f72f78095918445ad3cc"
+    },
+    {
+      "reference": "SG-06",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-06-green-blue-peacock-enamel-silver-singhasan-8x5-5.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2106641,
+      "sha256": "56b53632e77842432ffd871942fd339a469b5aad97c947602560441843fe04dc"
+    },
+    {
+      "reference": "SG-07",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-07-fan-tail-peacock-silver-singhasan-9x7.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2028109,
+      "sha256": "589b5b33af20eb143fb32828f759dd7bdaaffe8c7f13449cd12b8c03689fb8a3"
+    },
+    {
+      "reference": "SG-08",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-08-gold-accent-arched-silver-singhasan-7x7.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1885058,
+      "sha256": "39eb7fa8726c3878916c7c40cc5b35ffdead876f38fcf0565d393a79e446448b"
+    },
+    {
+      "reference": "SG-09",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-09-canopy-palm-floral-antique-silver-singhasan-10x8.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1854519,
+      "sha256": "74309ca5236387fa92f80bbc9164f5b1b9ee55ea0a8f9bf53a578a68f3616650"
+    },
+    {
+      "reference": "SG-10",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-10-lakshmi-peacock-tiered-silver-singhasan-10x10.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2207952,
+      "sha256": "50aa3808730515d81a081e20e37b0ada68c73be88c53be0d02a927c52eed9434"
+    },
+    {
+      "reference": "SG-11",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-11-grand-columned-canopy-silver-singhasan-9x7.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2149317,
+      "sha256": "b705ccadcbe126a0f4dcb065cdb692137befe8ce0d7b424ce77cf00a2f52ee56"
+    }
+  ]
+}

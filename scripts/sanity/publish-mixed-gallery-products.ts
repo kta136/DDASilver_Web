@@ -5,8 +5,12 @@ import { getCliClient } from "sanity/cli";
 
 const client = getCliClient({ apiVersion: "2026-08-09" });
 const projectRoot = resolve(import.meta.dirname, "../..");
-const applyChanges = process.argv.includes("--apply");
-const overwriteExisting = process.argv.includes("--overwrite");
+const applyChanges =
+  process.argv.includes("--apply") ||
+  process.env.SANITY_MIXED_GALLERY_PUBLISH_APPLY === "1";
+const overwriteExisting =
+  process.argv.includes("--overwrite") ||
+  process.env.SANITY_MIXED_GALLERY_PUBLISH_OVERWRITE === "1";
 
 function getArgumentValue(name: string) {
   const inline = process.argv.find((argument) =>
@@ -22,11 +26,13 @@ function resolveInputPath(value: string | undefined, fallback: string) {
 }
 
 const manifestPath = resolveInputPath(
-  getArgumentValue("--manifest"),
+  getArgumentValue("--manifest") ??
+    process.env.SANITY_MIXED_GALLERY_MANIFEST,
   resolve(projectRoot, "scripts/images/mixed-gallery-new-folder-2-2026-08-09.json"),
 );
 const assetMappingPath = resolveInputPath(
-  getArgumentValue("--mapping"),
+  getArgumentValue("--mapping") ??
+    process.env.SANITY_MIXED_GALLERY_MAPPING,
   resolve(
     projectRoot,
     "scripts/images/mixed-gallery-new-folder-2-2026-08-09-sanity-assets.json",
@@ -36,6 +42,7 @@ const displayOrderBase = Number(getArgumentValue("--display-order-base") ?? 5_00
 
 type ManifestProduct = {
   number: number;
+  originalNumber?: number;
   id: string;
   reference: string;
   title: string;
@@ -49,7 +56,7 @@ type ManifestProduct = {
     | "category-idols"
     | "category-utensils";
   utensilType?: "glass" | "bowl" | "plate" | "jug" | "kalash" | "spoon";
-  purity: "92.5";
+  purity: "92.5" | "99.80";
   weightGrams?: number;
   heightInches?: number;
   widthInches?: number;
@@ -123,14 +130,15 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     throw new Error("The mixed-gallery manifest still has publish blockers.");
   }
   const productCount = manifest.products.length;
+  if (productCount === 0 || manifest.sourceCount !== productCount) {
+    throw new Error("Expected a non-empty one-to-one product batch.");
+  }
   if (
-    productCount === 0 ||
-    manifest.sourceCount !== productCount ||
-    mapping.productCount !== productCount ||
-    mapping.uniqueAssetCount !== productCount ||
-    mapping.assets.length !== productCount
+    mapping.productCount !== mapping.assets.length ||
+    mapping.uniqueAssetCount !== mapping.assets.length ||
+    mapping.assets.length < productCount
   ) {
-    throw new Error("Expected a non-empty one-to-one product batch and asset mapping.");
+    throw new Error("Asset mapping must contain at least one unique asset for every product.");
   }
 
   assertUnique(manifest.products.map(({ id }) => id), "Product ID");
@@ -187,7 +195,7 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     const mappingRow = mappingByProductId.get(product.id);
     if (
       !mappingRow ||
-      mappingRow.number !== product.number ||
+      mappingRow.number !== (product.originalNumber ?? product.number) ||
       mappingRow.reference !== product.reference
     ) {
       throw new Error(`Missing or mismatched asset mapping for ${product.reference}.`);
@@ -267,7 +275,12 @@ async function main() {
   const deityIds = [
     ...new Set(manifest.products.flatMap(({ deityIds: ids }) => ids ?? [])),
   ];
-  const assetIds = mapping.assets.map(({ sanityAssetId }) => sanityAssetId);
+  const mappingByProductId = new Map(
+    mapping.assets.map((row) => [row.productId, row]),
+  );
+  const assetIds = manifest.products.map(
+    (product) => mappingByProductId.get(product.id)!.sanityAssetId,
+  );
 
   const [categories, deities, assets, existingProducts] = await Promise.all([
     client.fetch<ExistingReference[]>(
@@ -343,9 +356,6 @@ async function main() {
     }
   }
 
-  const mappingByProductId = new Map(
-    mapping.assets.map((row) => [row.productId, row]),
-  );
   const actions = manifest.products.map((product) => {
     const exists = existingById.has(product.id);
     return {

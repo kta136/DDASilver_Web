@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "batchId": "k-mixed-gallery-2026-08-13",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-13T13:05:06.851Z",
+  "productCount": 27,
+  "uniqueAssetCount": 27,
+  "uploadedAssetCount": 27,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-fan-crest-peacock-floral-silver-jhula",
+      "reference": "JH-13",
+      "title": "Fan-Crest Peacock Floral Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-13-fan-crest-peacock-floral-silver-jhula.png",
+      "sha1hash": "417311d7971de8ba68381d1f50ce647123822320",
+      "sanityAssetId": "image-417311d7971de8ba68381d1f50ce647123822320-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/417311d7971de8ba68381d1f50ce647123822320-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-swan-seat-peacock-arch-silver-jhula",
+      "reference": "JH-14",
+      "title": "Swan Seat Peacock Arch Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-14-swan-seat-peacock-arch-silver-jhula.png",
+      "sha1hash": "eb677ce680f3a182b01fd08cf7d40f798ec342e2",
+      "sanityAssetId": "image-eb677ce680f3a182b01fd08cf7d40f798ec342e2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/eb677ce680f3a182b01fd08cf7d40f798ec342e2-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-om-shubh-labh-gold-accent-silver-nariyal",
+      "reference": "NY-01",
+      "title": "Om Shubh Labh Gold-Accent Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-01-om-shubh-labh-gold-accent-silver-nariyal-3in.png",
+      "sha1hash": "c865891ae67decc65b34a36ed8b54dec98585a8e",
+      "sanityAssetId": "image-c865891ae67decc65b34a36ed8b54dec98585a8e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c865891ae67decc65b34a36ed8b54dec98585a8e-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-shubh-om-gold-panel-silver-nariyal",
+      "reference": "NY-02",
+      "title": "Shubh Om Gold-Panel Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-02-shubh-om-gold-panel-silver-nariyal-3in.png",
+      "sha1hash": "8aedcc1f30b2f852aa4c8e7c4263b5ac8a398c7b",
+      "sanityAssetId": "image-8aedcc1f30b2f852aa4c8e7c4263b5ac8a398c7b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8aedcc1f30b2f852aa4c8e7c4263b5ac8a398c7b-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-swastik-om-gold-accent-silver-nariyal",
+      "reference": "NY-03",
+      "title": "Swastik Om Gold-Accent Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-03-swastik-om-gold-accent-silver-nariyal-4in.png",
+      "sha1hash": "7af8de168f088e4e20e9cd5ec672ffd434410c0a",
+      "sanityAssetId": "image-7af8de168f088e4e20e9cd5ec672ffd434410c0a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7af8de168f088e4e20e9cd5ec672ffd434410c0a-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-shubh-om-fine-line-silver-nariyal",
+      "reference": "NY-04",
+      "title": "Shubh Om Fine-Line Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-04-shubh-om-fine-line-silver-nariyal-4in.png",
+      "sha1hash": "aad0cb9619c373de6f4e718b2ba835884bad37fd",
+      "sanityAssetId": "image-aad0cb9619c373de6f4e718b2ba835884bad37fd-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/aad0cb9619c373de6f4e718b2ba835884bad37fd-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-auspicious-script-gold-neck-silver-nariyal",
+      "reference": "NY-05",
+      "title": "Auspicious Script Gold-Neck Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-05-auspicious-script-gold-neck-silver-nariyal-5in.png",
+      "sha1hash": "b05d1df26e2676ee167d5627c65af65ad57a145b",
+      "sanityAssetId": "image-b05d1df26e2676ee167d5627c65af65ad57a145b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b05d1df26e2676ee167d5627c65af65ad57a145b-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-om-swastik-gold-band-silver-nariyal",
+      "reference": "NY-06",
+      "title": "Om Swastik Gold-Band Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-06-om-swastik-gold-band-silver-nariyal-5in.png",
+      "sha1hash": "6111d37b7d75cb16a021ad0112cb1fe7576aa960",
+      "sanityAssetId": "image-6111d37b7d75cb16a021ad0112cb1fe7576aa960-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6111d37b7d75cb16a021ad0112cb1fe7576aa960-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-large-swastik-om-silver-nariyal",
+      "reference": "NY-07",
+      "title": "Large Swastik Om Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-07-large-swastik-om-silver-nariyal-6in.png",
+      "sha1hash": "28c6052d3acb702a24e881c175bde4d55d8bd877",
+      "sanityAssetId": "image-28c6052d3acb702a24e881c175bde4d55d8bd877-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/28c6052d3acb702a24e881c175bde4d55d8bd877-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-large-gold-neck-swastik-om-silver-nariyal",
+      "reference": "NY-08",
+      "title": "Large Gold-Neck Swastik Om Silver Nariyal",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/ny-08-large-gold-neck-swastik-om-silver-nariyal-6in.png",
+      "sha1hash": "e708efada382592703f4a055e278e8966ae8669a",
+      "sanityAssetId": "image-e708efada382592703f4a055e278e8966ae8669a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e708efada382592703f4a055e278e8966ae8669a-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-bal-krishna-lotus-decorated-silver-jhula",
+      "reference": "JH-15",
+      "title": "Bal Krishna Lotus Decorated Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-15-bal-krishna-lotus-decorated-silver-jhula.png",
+      "sha1hash": "9950d4266fe79634a53cbdfd23e34022606a4256",
+      "sanityAssetId": "image-9950d4266fe79634a53cbdfd23e34022606a4256-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9950d4266fe79634a53cbdfd23e34022606a4256-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-yashoda-bal-krishna-peacock-decorated-silver-jhula",
+      "reference": "JH-16",
+      "title": "Yashoda Bal Krishna Peacock Decorated Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-16-yashoda-bal-krishna-peacock-decorated-silver-jhula.png",
+      "sha1hash": "95dad1ab45f537d736dd51e8df52d1d7000d61ea",
+      "sanityAssetId": "image-95dad1ab45f537d736dd51e8df52d1d7000d61ea-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/95dad1ab45f537d736dd51e8df52d1d7000d61ea-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-radha-krishna-lotus-decorated-silver-jhula",
+      "reference": "JH-17",
+      "title": "Radha Krishna Lotus Decorated Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/jh-17-radha-krishna-lotus-decorated-silver-jhula.png",
+      "sha1hash": "d2ae30e78f8628686d9c0ee4a9bb5aa093efd3f0",
+      "sanityAssetId": "image-d2ae30e78f8628686d9c0ee4a9bb5aa093efd3f0-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d2ae30e78f8628686d9c0ee4a9bb5aa093efd3f0-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-ornate-paisley-six-piece-silver-pudding-set",
+      "reference": "DDA-UT-BW-99",
+      "title": "Ornate Paisley Six-Piece Silver Pudding Set",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/99-ornate-paisley-six-piece-silver-pudding-set.png",
+      "sha1hash": "d60b4ae24103a8b76e224502e7e45f4ca388c927",
+      "sanityAssetId": "image-d60b4ae24103a8b76e224502e7e45f4ca388c927-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d60b4ae24103a8b76e224502e7e45f4ca388c927-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-scalloped-floral-six-piece-silver-pudding-set",
+      "reference": "DDA-UT-BW-100",
+      "title": "Scalloped Floral Six-Piece Silver Pudding Set",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/100-scalloped-floral-six-piece-silver-pudding-set.png",
+      "sha1hash": "3d95de816213a720d472f1cca613ebebbc57ce6e",
+      "sanityAssetId": "image-3d95de816213a720d472f1cca613ebebbc57ce6e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3d95de816213a720d472f1cca613ebebbc57ce6e-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-leaf-panel-five-piece-silver-pudding-set",
+      "reference": "DDA-UT-BW-101",
+      "title": "Leaf-Panel Five-Piece Silver Pudding Set",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/101-leaf-panel-five-piece-silver-pudding-set.png",
+      "sha1hash": "2f9a33a0b9e1a6b136137368df4b9438339e6bd4",
+      "sanityAssetId": "image-2f9a33a0b9e1a6b136137368df4b9438339e6bd4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2f9a33a0b9e1a6b136137368df4b9438339e6bd4-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-twin-peacock-om-floral-silver-singhasan",
+      "reference": "SG-01",
+      "title": "Twin Peacock Om Floral Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-01-twin-peacock-om-floral-silver-singhasan-8x6.png",
+      "sha1hash": "2cace5922dec1a89be779a60bdf0816476f70ee7",
+      "sanityAssetId": "image-2cace5922dec1a89be779a60bdf0816476f70ee7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2cace5922dec1a89be779a60bdf0816476f70ee7-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-twin-peacock-om-round-silver-singhasan",
+      "reference": "SG-02",
+      "title": "Twin Peacock Om Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-02-twin-peacock-om-round-silver-singhasan-8x6.png",
+      "sha1hash": "9621302563e22b21ea46fac32a5b8b449937771e",
+      "sanityAssetId": "image-9621302563e22b21ea46fac32a5b8b449937771e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9621302563e22b21ea46fac32a5b8b449937771e-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-floral-crown-rectangular-silver-singhasan",
+      "reference": "SG-03",
+      "title": "Floral Crown Rectangular Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-03-floral-crown-rectangular-silver-singhasan-5x6.png",
+      "sha1hash": "13d5943dbb9f8a791f91846a026e9923aac94b25",
+      "sanityAssetId": "image-13d5943dbb9f8a791f91846a026e9923aac94b25-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/13d5943dbb9f8a791f91846a026e9923aac94b25-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-round-floral-back-antique-silver-singhasan",
+      "reference": "SG-04",
+      "title": "Round Floral-Back Antique Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-04-round-floral-back-silver-singhasan-7x5.png",
+      "sha1hash": "aa851819e193620b12fd529be386e1b363799fc8",
+      "sanityAssetId": "image-aa851819e193620b12fd529be386e1b363799fc8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/aa851819e193620b12fd529be386e1b363799fc8-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-gold-accent-arched-throne-silver-singhasan",
+      "reference": "SG-05",
+      "title": "Gold-Accent Arched Throne Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-05-gold-accent-arched-throne-silver-singhasan-10x8.png",
+      "sha1hash": "7289c517ae042c19f571c30db68fd669283a2963",
+      "sanityAssetId": "image-7289c517ae042c19f571c30db68fd669283a2963-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7289c517ae042c19f571c30db68fd669283a2963-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-green-blue-peacock-enamel-silver-singhasan",
+      "reference": "SG-06",
+      "title": "Green Blue Peacock Enamel Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-06-green-blue-peacock-enamel-silver-singhasan-8x5-5.png",
+      "sha1hash": "e792a161b5b81ce58ca745195a2ea197b0b61c27",
+      "sanityAssetId": "image-e792a161b5b81ce58ca745195a2ea197b0b61c27-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e792a161b5b81ce58ca745195a2ea197b0b61c27-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-fan-tail-peacock-round-silver-singhasan",
+      "reference": "SG-07",
+      "title": "Fan-Tail Peacock Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-07-fan-tail-peacock-silver-singhasan-9x7.png",
+      "sha1hash": "b2898d49a8b017197c84d386e06db9c3a6c4ad41",
+      "sanityAssetId": "image-b2898d49a8b017197c84d386e06db9c3a6c4ad41-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b2898d49a8b017197c84d386e06db9c3a6c4ad41-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-gold-accent-arched-silver-singhasan",
+      "reference": "SG-08",
+      "title": "Gold-Accent Arched Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-08-gold-accent-arched-silver-singhasan-7x7.png",
+      "sha1hash": "d4c1d78ab8c6de8276686076fb76ccd40ab5cf6f",
+      "sanityAssetId": "image-d4c1d78ab8c6de8276686076fb76ccd40ab5cf6f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d4c1d78ab8c6de8276686076fb76ccd40ab5cf6f-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-canopy-palm-floral-antique-silver-singhasan",
+      "reference": "SG-09",
+      "title": "Canopy Palm Floral Antique Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-09-canopy-palm-floral-antique-silver-singhasan-10x8.png",
+      "sha1hash": "abca0544e28db2a7e3767049c6aa621424a9e21c",
+      "sanityAssetId": "image-abca0544e28db2a7e3767049c6aa621424a9e21c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/abca0544e28db2a7e3767049c6aa621424a9e21c-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-lakshmi-peacock-tiered-silver-singhasan",
+      "reference": "SG-10",
+      "title": "Lakshmi Peacock Tiered Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-10-lakshmi-peacock-tiered-silver-singhasan-10x10.png",
+      "sha1hash": "5b27dae9773ea574febb2852153715513615293a",
+      "sanityAssetId": "image-5b27dae9773ea574febb2852153715513615293a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5b27dae9773ea574febb2852153715513615293a-1254x1254.png"
+    },
+    {
+      "number": 27,
+      "productId": "product-dda-grand-columned-canopy-silver-singhasan",
+      "reference": "SG-11",
+      "title": "Grand Columned Canopy Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/k-2026-08-13/images/sg-11-grand-columned-canopy-silver-singhasan-9x7.png",
+      "sha1hash": "5033dd9db39aa3d26bf41e9315436a39718f8d76",
+      "sanityAssetId": "image-5033dd9db39aa3d26bf41e9315436a39718f8d76-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5033dd9db39aa3d26bf41e9315436a39718f8d76-1254x1254.png"
+    }
+  ]
+}

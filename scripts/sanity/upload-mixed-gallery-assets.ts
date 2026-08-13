@@ -15,7 +15,9 @@ const defaultMappingPath = resolve(
   projectRoot,
   "scripts/images/mixed-gallery-new-folder-2-2026-08-09-sanity-assets.json",
 );
-const applyChanges = process.argv.includes("--apply");
+const applyChanges =
+  process.argv.includes("--apply") ||
+  process.env.SANITY_MIXED_GALLERY_ASSETS_APPLY === "1";
 const uploadConcurrency = 3;
 const verificationAttempts = 5;
 const verificationDelayMs = 1_500;
@@ -176,11 +178,13 @@ async function mapWithConcurrency<T, R>(
 
 async function main() {
   const manifestPath = resolveInputPath(
-    getArgumentValue("--manifest"),
+    getArgumentValue("--manifest") ??
+      process.env.SANITY_MIXED_GALLERY_MANIFEST,
     defaultManifestPath,
   );
   const mappingPath = resolveInputPath(
-    getArgumentValue("--mapping"),
+    getArgumentValue("--mapping") ??
+      process.env.SANITY_MIXED_GALLERY_MAPPING,
     defaultMappingPath,
   );
   const manifest = await loadManifest(manifestPath);
