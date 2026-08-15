@@ -4,6 +4,7 @@ const { cookieStore, cookiesMock, readBoundedJsonMock } = vi.hoisted(() => ({
   cookieStore: {
     get: vi.fn(),
     delete: vi.fn(),
+    set: vi.fn(),
   },
   cookiesMock: vi.fn(),
   readBoundedJsonMock: vi.fn(),
@@ -16,8 +17,10 @@ vi.mock("@/lib/auth/config", () => ({
     clientId: "ddasilver",
     clientSecret: "s".repeat(32),
   },
+  authCookiesSecure: false,
   isAuthConfigured: true,
   sessionCookie: "dda_session",
+  sessionCookieMaxAgeSeconds: 400 * 24 * 60 * 60,
 }));
 vi.mock("@/lib/security/external-service", () => ({
   readBoundedJson: readBoundedJsonMock,
@@ -62,6 +65,17 @@ describe("GET /api/auth/me", () => {
       },
     });
     expect(response.headers.get("cache-control")).toBe("private, no-store");
+    expect(cookieStore.set).toHaveBeenCalledWith(
+      "dda_session",
+      "satellite_session_token",
+      {
+        httpOnly: true,
+        secure: false,
+        sameSite: "lax",
+        path: "/",
+        maxAge: 400 * 24 * 60 * 60,
+      },
+    );
   });
 
   it("uses the authoritative group permissions from DDAJewels", async () => {
@@ -96,8 +110,7 @@ describe("GET /api/auth/me", () => {
       user: { canViewCharts: false, canViewBuyingPrice: true },
     });
     const meHeaders = fetchMock.mock.calls[1]?.[1]?.headers as
-      | Record<string, string>
-      | undefined;
+      Record<string, string> | undefined;
     expect(meHeaders?.Cookie).toBe(
       "dda_session=satellite_session_token; __Host-dda_session=satellite_session_token",
     );

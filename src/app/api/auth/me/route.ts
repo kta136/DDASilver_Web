@@ -3,8 +3,10 @@ import { z } from "zod";
 
 import {
   authConfig,
+  authCookiesSecure,
   isAuthConfigured,
   sessionCookie,
+  sessionCookieMaxAgeSeconds,
 } from "@/lib/auth/config";
 import { ddaJewelsSessionCookieHeader } from "@/lib/rates/upstream-session";
 import { readBoundedJson } from "@/lib/security/external-service";
@@ -94,6 +96,13 @@ export async function GET() {
 
   const permissions = await readDdaJewelsUser(sessionToken);
   const approved = parsed.data.user.auth_status === "approved";
+  cookieStore.set(sessionCookie, sessionToken, {
+    httpOnly: true,
+    secure: authCookiesSecure,
+    sameSite: "lax",
+    path: "/",
+    maxAge: sessionCookieMaxAgeSeconds,
+  });
 
   return privateJson({
     user: {

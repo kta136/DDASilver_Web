@@ -68,12 +68,12 @@ create a DDASilver session:
 
 ```ts
 type DDAIdentityAssertion = {
-  subject: string
-  issuedAt: number
-  expiresAt: number
-  rateVisibilityVersion: string
-  displayName?: string
-}
+  subject: string;
+  issuedAt: number;
+  expiresAt: number;
+  rateVisibilityVersion: string;
+  displayName?: string;
+};
 ```
 
 Do not return password metadata, provider tokens, Google credentials, or
@@ -86,7 +86,11 @@ unnecessary profile fields.
 - `Secure` outside local development.
 - `SameSite=Lax`.
 - Path `/`.
-- Short, sliding or renewable lifetime consistent with DDA security policy.
+- Persistent device session: elapsed time or inactivity alone does not require
+  login again.
+- Renewable 400-day browser-cookie transport horizon; successful authoritative
+  session checks renew the same host-only cookie without replacing the server
+  session.
 - Signed and/or encrypted with a DDASilver-specific secret.
 - Rotated after login and privilege changes.
 
@@ -129,10 +133,10 @@ Recommended response:
 
 ```ts
 type StreamTicketResponse = {
-  ticket: string
-  expiresAt: string
-  view: string
-}
+  ticket: string;
+  expiresAt: string;
+  view: string;
+};
 ```
 
 The browser holds the ticket in memory only. It is excluded from analytics,
@@ -154,6 +158,8 @@ through the authenticated same-origin endpoint.
   or tokens.
 - Session invalidation when DDAJewels disables the account or changes
   visibility.
+- Explicit DDA Silver logout revokes the authoritative shared session and
+  deletes the local host-only cookie.
 
 ## Required tests
 
@@ -170,4 +176,3 @@ through the authenticated same-origin endpoint.
 - Logout and CSRF rejection.
 - Expired/replayed stream ticket.
 - Visibility change during an active DDASilver session.
-

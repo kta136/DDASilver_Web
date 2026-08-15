@@ -30,6 +30,7 @@ vi.mock("@/lib/auth/config", () => ({
   authTransactionCookie: "dda_auth_transaction",
   isAuthConfigured: true,
   sessionCookie: "dda_session",
+  sessionCookieMaxAgeSeconds: 400 * 24 * 60 * 60,
 }));
 vi.mock("@/lib/auth/transaction", () => ({
   safeEqual: (left: string, right: string) => left === right,
@@ -68,14 +69,16 @@ describe("GET /auth/callback", () => {
     );
     readBoundedJsonMock.mockResolvedValue({
       session_token: "satellite_session_token_1234567890",
-      expires_in: 3600,
+      expires_in: 400 * 24 * 60 * 60,
       nonce: "expected_nonce_that_is_long_enough",
     });
 
     const response = await GET(callbackRequest("expected_state"));
 
     expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toBe("http://localhost:3010/rates");
+    expect(response.headers.get("location")).toBe(
+      "http://localhost:3010/rates",
+    );
     expect(cookieStore.set).toHaveBeenCalledWith(
       "dda_session",
       "satellite_session_token_1234567890",
@@ -84,7 +87,7 @@ describe("GET /auth/callback", () => {
         secure: false,
         sameSite: "lax",
         path: "/",
-        maxAge: 3600,
+        maxAge: 400 * 24 * 60 * 60,
       },
     );
     expect(cookieStore.delete).toHaveBeenCalledWith("dda_auth_transaction");

@@ -24,9 +24,7 @@ test("discovers a product and opens its enquiry path", async ({ page }) => {
 
   await page.getByRole("link", { name: "Explore products" }).first().click();
   await expect(page).toHaveURL(/\/products$/);
-  await page
-    .getByRole("searchbox", { name: "Search products" })
-    .fill("silver");
+  await page.getByRole("searchbox", { name: "Search products" }).fill("silver");
   await expect(page).toHaveURL(/\/products\?q=silver$/);
   const catalogUrl = page.url();
   const firstProduct = page.locator('article a[href^="/products/"]').first();
@@ -79,25 +77,27 @@ test("product detail overlay fits a phone viewport", async ({ page }) => {
 
 test("keeps catalog filters in a reloadable share URL", async ({ page }) => {
   await page.goto("/products");
-  await page
-    .getByRole("searchbox", { name: "Search products" })
-    .fill("silver");
+  await page.getByRole("searchbox", { name: "Search products" }).fill("silver");
   await expect(page).toHaveURL(/q=silver/);
   await page.reload();
   await expect(
     page.getByRole("searchbox", { name: "Search products" }),
   ).toHaveValue("silver");
-  await expect(page.locator('article a[href^="/products/"]').first()).toBeVisible();
+  await expect(
+    page.locator('article a[href^="/products/"]').first(),
+  ).toBeVisible();
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/q=/);
 });
 
-test("rates never show fabricated zeroes when unconfigured", async ({ page }) => {
+test("rates never show fabricated zeroes when unconfigured", async ({
+  page,
+}) => {
   await page.goto("/rates");
   await expect(
     page.getByRole("status").filter({
-      hasText: /not been connected in this preview/i,
+      hasText: /no valid rate snapshot is available/i,
     }),
   ).toBeVisible();
   await expect(page.getByRole("cell", { name: "—" }).first()).toBeVisible();
@@ -184,7 +184,9 @@ test("mobile navigation is keyboard and touch accessible", async ({ page }) => {
   await page.goto("/");
   const menuButton = page.getByRole("button", { name: "Open menu" });
   await menuButton.click();
-  await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Mobile navigation" }),
+  ).toBeVisible();
   await page.getByRole("link", { name: "Contact" }).last().click();
   await expect(page).toHaveURL(/\/contact$/);
 });

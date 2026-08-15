@@ -9,17 +9,15 @@ import {
   authTransactionCookie,
   isAuthConfigured,
   sessionCookie,
+  sessionCookieMaxAgeSeconds,
 } from "@/lib/auth/config";
-import {
-  safeEqual,
-  verifyAuthTransaction,
-} from "@/lib/auth/transaction";
+import { safeEqual, verifyAuthTransaction } from "@/lib/auth/transaction";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 import { readBoundedJson } from "@/lib/security/external-service";
 
 const tokenResponseSchema = z.object({
   session_token: z.string().min(20),
-  expires_in: z.number().int().positive().max(60 * 60 * 24 * 30),
+  expires_in: z.number().int().positive().max(sessionCookieMaxAgeSeconds),
   nonce: z.string().min(20),
 });
 
@@ -46,12 +44,7 @@ export async function GET(request: Request) {
     cookieStore.get(authTransactionCookie)?.value,
   );
 
-  if (
-    !transaction ||
-    !code ||
-    !state ||
-    !safeEqual(state, transaction.state)
-  ) {
+  if (!transaction || !code || !state || !safeEqual(state, transaction.state)) {
     cookieStore.delete(authTransactionCookie);
     return loginFailure("handoff_failed");
   }
@@ -94,10 +87,7 @@ export async function GET(request: Request) {
     return loginFailure("handoff_failed");
   }
   const parsed = tokenResponseSchema.safeParse(tokenPayload);
-  if (
-    !parsed.success ||
-    !safeEqual(parsed.data.nonce, transaction.nonce)
-  ) {
+  if (!parsed.success || !safeEqual(parsed.data.nonce, transaction.nonce)) {
     cookieStore.delete(authTransactionCookie);
     return loginFailure("handoff_failed");
   }
