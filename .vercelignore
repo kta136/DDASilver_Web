@@ -1,6 +1,7 @@
 .git
 .next
 .preview-logs
+.codex-tmp
 .vercel
 node_modules
 
