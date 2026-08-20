@@ -91,6 +91,7 @@ export const productType = defineType({
           { title: "Plate", value: "plate" },
           { title: "Jug", value: "jug" },
           { title: "Kalash", value: "kalash" },
+          { title: "Bottle", value: "bottle" },
           { title: "Spoon", value: "spoon" },
         ],
         layout: "dropdown",

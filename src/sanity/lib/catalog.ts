@@ -124,7 +124,7 @@ const productSchema = z.object({
     .nullish()
     .transform((value) => value ?? undefined),
   utensilType: z
-    .enum(["glass", "bowl", "plate", "jug", "kalash", "spoon"])
+    .enum(["glass", "bowl", "plate", "jug", "kalash", "bottle", "spoon"])
     .nullish()
     .transform((value) => value ?? undefined),
   idolConstruction: z

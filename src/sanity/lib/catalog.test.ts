@@ -79,6 +79,57 @@ describe("fetchCatalog()", () => {
     expect(catalog.products[0]?.slug).toBe("test-silver-gift");
   });
 
+  it("accepts published bottle products without falling back", async () => {
+    const fetch = vi
+      .fn()
+      .mockResolvedValueOnce([
+        {
+          title: "Test Silver Bottle",
+          slug: "test-silver-bottle",
+          shortDescription:
+            "A test silver bottle used to verify catalog validation.",
+          images: [catalogImage("A test silver bottle on a neutral background")],
+          categorySlug: "utensils",
+          collectionSlugs: [],
+          featured: false,
+          displayOrder: 1,
+          reference: "TEST-BOTTLE-1",
+          purity: "92.5",
+          weightGrams: null,
+          heightInches: null,
+          widthInches: null,
+          diameterInches: null,
+          singhasanWidthInches: null,
+          singhasanDepthInches: null,
+          utensilType: "bottle",
+          idolConstruction: null,
+          deities: [],
+          coinShape: null,
+          updatedAt: "2026-08-20T00:00:00.000Z",
+        },
+      ])
+      .mockResolvedValueOnce([
+        {
+          title: "Utensils",
+          slug: "utensils",
+          description: "Silver utensils for serving and gifting.",
+          image: catalogImage("A representative silver utensil"),
+          displayOrder: 1,
+          updatedAt: "2026-08-20T00:00:00.000Z",
+        },
+      ])
+      .mockResolvedValueOnce([]);
+    const client = asCatalogClient({
+      fetch,
+      withConfig: vi.fn(),
+    });
+
+    const catalog = await fetchCatalog(client);
+
+    expect(catalog.source).toBe("sanity");
+    expect(catalog.products[0]?.utensilType).toBe("bottle");
+  });
+
   it("uses the fallback catalog when both Sanity requests fail", async () => {
     const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
     const retryClient = asCatalogClient({

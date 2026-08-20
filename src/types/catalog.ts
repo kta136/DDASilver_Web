@@ -34,6 +34,7 @@ export type UtensilType =
   | "plate"
   | "jug"
   | "kalash"
+  | "bottle"
   | "spoon";
 
 export type Deity = {
