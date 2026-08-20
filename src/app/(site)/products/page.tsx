@@ -1,13 +1,21 @@
+import Link from "next/link";
+
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
 import { parseCatalogSearchParams } from "@/lib/catalog-url";
-import { getPopulatedCategories } from "@/lib/catalog-seo";
+import {
+  getPopulatedCategories,
+  getPopulatedCollections,
+} from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import { getCatalog } from "@/sanity/lib/catalog";
 
+const productsDescription =
+  "Explore silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp for availability.";
+
 export const metadata = createPageMetadata({
   title: "Silver Products in Agra",
-  description:
-    "Explore silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp for availability.",
+  description: productsDescription,
   path: "/products",
 });
 
@@ -18,8 +26,12 @@ type ProductsPageProps = {
 export default async function ProductsPage({
   searchParams,
 }: ProductsPageProps) {
-  const { products, categories } = await getCatalog();
+  const { products, categories, collections } = await getCatalog();
   const populatedCategories = getPopulatedCategories(categories, products);
+  const populatedCollections = getPopulatedCollections(
+    collections,
+    products,
+  );
   const rawSearchParams = await searchParams;
   const normalizedSearchParams = new URLSearchParams();
   for (const [key, value] of Object.entries(rawSearchParams)) {
@@ -43,6 +55,12 @@ export default async function ProductsPage({
 
   return (
     <main id="main-content" className="section-shell">
+      <CatalogStructuredData
+        name="Silver products in Agra"
+        description={productsDescription}
+        path="/products"
+        products={products}
+      />
       <div className="site-container">
         <p className="eyebrow">Digital showroom</p>
         <div className="mt-4 grid gap-7 lg:grid-cols-[1fr_28rem] lg:items-end">
@@ -56,6 +74,47 @@ export default async function ProductsPage({
             confirmed directly by the DDA Silver team.
           </p>
         </div>
+        <nav
+          aria-label="Browse the silver catalog"
+          className="mt-8 grid gap-5 border-y border-line py-6 lg:grid-cols-2 lg:gap-10"
+        >
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
+              Browse by category
+            </h2>
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+              {populatedCategories.map((category) => (
+                <li key={category.slug}>
+                  <Link
+                    href={`/category/${category.slug}`}
+                    className="text-sm font-semibold no-underline underline-offset-4 hover:underline"
+                  >
+                    {category.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {populatedCollections.length > 0 ? (
+            <div>
+              <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Browse curated collections
+              </h2>
+              <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                {populatedCollections.map((collection) => (
+                  <li key={collection.slug}>
+                    <Link
+                      href={`/collections/${collection.slug}`}
+                      className="text-sm font-semibold no-underline underline-offset-4 hover:underline"
+                    >
+                      {collection.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </nav>
         <div className="mt-9">
           <CatalogBrowser
             products={products}

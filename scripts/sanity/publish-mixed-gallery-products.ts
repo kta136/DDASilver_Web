@@ -55,17 +55,34 @@ type ManifestProduct = {
     | "category-purse"
     | "category-idols"
     | "category-utensils";
-  utensilType?: "glass" | "bowl" | "plate" | "jug" | "kalash" | "spoon";
+  utensilType?:
+    | "glass"
+    | "bowl"
+    | "plate"
+    | "jug"
+    | "kalash"
+    | "bottle"
+    | "spoon";
   purity: "92.5" | "99.80";
   weightGrams?: number;
   heightInches?: number;
   widthInches?: number;
+  depthInches?: number;
   diameterInches?: number;
   singhasanWidthInches?: number;
   singhasanDepthInches?: number;
+  sizeVariants?: Array<{
+    weightGrams: number;
+    diameterInches: number;
+  }>;
   idolConstruction?: "semi-solid";
   deityIds?: string[];
   publishBlockers: string[];
+  recordType?: "alternateGalleryImage";
+  createProduct?: boolean;
+  parentProductId?: string;
+  parentReference?: string;
+  updateParentMetadata?: boolean;
 };
 
 type Manifest = {
@@ -97,9 +114,15 @@ type AssetMapping = {
 
 type ExistingProduct = {
   _id: string;
+  _rev: string;
   title: string;
   slug?: string;
   reference?: string;
+  gallery?: Array<{
+    _key: string;
+    alt?: string;
+    assetId?: string;
+  }>;
 };
 
 type ExistingReference = {
@@ -129,20 +152,23 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
   if (manifest.publishBlockers.length > 0) {
     throw new Error("The mixed-gallery manifest still has publish blockers.");
   }
-  const productCount = manifest.products.length;
-  if (productCount === 0 || manifest.sourceCount !== productCount) {
-    throw new Error("Expected a non-empty one-to-one product batch.");
+  const sourceRecordCount = manifest.products.length;
+  const productRecords = manifest.products.filter(
+    (product) => product.createProduct !== false,
+  );
+  if (sourceRecordCount === 0 || manifest.sourceCount !== sourceRecordCount) {
+    throw new Error("Expected one manifest record for every source image.");
   }
   if (
     mapping.productCount !== mapping.assets.length ||
     mapping.uniqueAssetCount !== mapping.assets.length ||
-    mapping.assets.length < productCount
+    mapping.assets.length !== sourceRecordCount
   ) {
-    throw new Error("Asset mapping must contain at least one unique asset for every product.");
+    throw new Error("Asset mapping must contain one unique asset for every source record.");
   }
 
-  assertUnique(manifest.products.map(({ id }) => id), "Product ID");
-  assertUnique(manifest.products.map(({ slug }) => slug), "Product slug");
+  assertUnique(manifest.products.map(({ id }) => id), "Manifest record ID");
+  assertUnique(productRecords.map(({ slug }) => slug), "Product slug");
   assertUnique(manifest.products.map(({ reference }) => reference), "Product reference");
   assertUnique(mapping.assets.map(({ sanityAssetId }) => sanityAssetId), "Sanity asset ID");
 
@@ -154,8 +180,23 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     if (product.publishBlockers.length > 0) {
       throw new Error(`${product.reference} still has publish blockers.`);
     }
-    if (product.purity !== "92.5") {
-      throw new Error(`${product.reference} must use 92.5 purity.`);
+    if (product.purity !== "92.5" && product.purity !== "99.80") {
+      throw new Error(`${product.reference} has an unsupported purity.`);
+    }
+    if (product.recordType === "alternateGalleryImage") {
+      if (
+        product.createProduct !== false ||
+        !product.parentProductId ||
+        !product.parentReference
+      ) {
+        throw new Error(
+          `${product.reference} must identify its parent product and disable product creation.`,
+        );
+      }
+    } else if (product.createProduct === false) {
+      throw new Error(
+        `${product.reference} disables product creation without being an alternate gallery image.`,
+      );
     }
     if (product.categoryId === "category-idols") {
       if (
@@ -179,11 +220,8 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     ) {
       throw new Error(`${product.reference} must use the Jhula category.`);
     }
-    if (
-      product.categoryId === "category-utensils" &&
-      product.utensilType !== "jug"
-    ) {
-      throw new Error(`${product.reference} must use the jug utensil type.`);
+    if (product.categoryId === "category-utensils" && !product.utensilType) {
+      throw new Error(`${product.reference} must define a utensil type.`);
     }
     if (
       product.categoryId !== "category-utensils" &&
@@ -203,7 +241,22 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
   }
 }
 
-function getProductDocument(product: ManifestProduct, assetId: string) {
+function getGalleryImage(product: ManifestProduct, assetId: string) {
+  return {
+    _key: `gallery-${product.reference.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    _type: "image",
+    asset: {
+      _type: "reference",
+      _ref: assetId,
+    },
+    alt: product.alt,
+  };
+}
+
+function getProductDocument(
+  product: ManifestProduct,
+  gallery: ReturnType<typeof getGalleryImage>[],
+) {
   return {
     _id: product.id,
     _type: "product",
@@ -213,17 +266,7 @@ function getProductDocument(product: ManifestProduct, assetId: string) {
       current: product.slug,
     },
     shortDescription: product.shortDescription,
-    gallery: [
-      {
-        _key: `gallery-${product.reference.toLowerCase()}`,
-        _type: "image",
-        asset: {
-          _type: "reference",
-          _ref: assetId,
-        },
-        alt: product.alt,
-      },
-    ],
+    gallery,
     category: {
       _type: "reference",
       _ref: product.categoryId,
@@ -233,9 +276,16 @@ function getProductDocument(product: ManifestProduct, assetId: string) {
     weightGrams: product.weightGrams,
     heightInches: product.heightInches,
     widthInches: product.widthInches,
+    depthInches: product.depthInches,
     diameterInches: product.diameterInches,
     singhasanWidthInches: product.singhasanWidthInches,
     singhasanDepthInches: product.singhasanDepthInches,
+    sizeVariants: product.sizeVariants?.map((variant) => ({
+      _key: `${variant.weightGrams}g-${variant.diameterInches}in`.replace(".", "-"),
+      _type: "productSizeVariant",
+      weightGrams: variant.weightGrams,
+      diameterInches: variant.diameterInches,
+    })),
     idolConstruction: product.idolConstruction,
     deities: product.deityIds?.map((deityId) => ({
       _key: deityId.replace(/^deity-/, ""),
@@ -267,19 +317,39 @@ async function main() {
     );
   }
 
-  const productIds = manifest.products.map(({ id }) => id);
+  const productRecords = manifest.products.filter(
+    (product) => product.createProduct !== false,
+  );
+  const alternateRecords = manifest.products.filter(
+    (product) => product.recordType === "alternateGalleryImage",
+  );
+  const productIds = productRecords.map(({ id }) => id);
   const draftIds = productIds.map((id) => `drafts.${id}`);
-  const slugs = manifest.products.map(({ slug }) => slug);
-  const references = manifest.products.map(({ reference }) => reference);
-  const categoryIds = [...new Set(manifest.products.map(({ categoryId }) => categoryId))];
-  const deityIds = [
-    ...new Set(manifest.products.flatMap(({ deityIds: ids }) => ids ?? [])),
+  const slugs = productRecords.map(({ slug }) => slug);
+  const references = productRecords.map(({ reference }) => reference);
+  const parentProductIds = [
+    ...new Set(
+      alternateRecords.flatMap((product) =>
+        product.parentProductId ? [product.parentProductId] : [],
+      ),
+    ),
   ];
-  const mappingByProductId = new Map(
+  const parentReferences = [
+    ...new Set(
+      alternateRecords.flatMap((product) =>
+        product.parentReference ? [product.parentReference] : [],
+      ),
+    ),
+  ];
+  const categoryIds = [...new Set(productRecords.map(({ categoryId }) => categoryId))];
+  const deityIds = [
+    ...new Set(productRecords.flatMap(({ deityIds: ids }) => ids ?? [])),
+  ];
+  const mappingByRecordId = new Map(
     mapping.assets.map((row) => [row.productId, row]),
   );
   const assetIds = manifest.products.map(
-    (product) => mappingByProductId.get(product.id)!.sanityAssetId,
+    (product) => mappingByRecordId.get(product.id)!.sanityAssetId,
   );
 
   const [categories, deities, assets, existingProducts] = await Promise.all([
@@ -298,11 +368,17 @@ async function main() {
     client.fetch<ExistingProduct[]>(
       `*[_type == "product" && (_id in $candidateIds || slug.current in $slugs || reference in $references)]{
         _id,
+        _rev,
         title,
         "slug": slug.current,
-        reference
+        reference,
+        "gallery": gallery[]{_key, alt, "assetId": asset._ref}
       }`,
-      { candidateIds: [...productIds, ...draftIds], slugs, references },
+      {
+        candidateIds: [...productIds, ...draftIds, ...parentProductIds],
+        slugs,
+        references: [...references, ...parentReferences],
+      },
     ),
   ]);
 
@@ -322,12 +398,19 @@ async function main() {
   assertAllReferencesExist(deityIds, deities, "deities");
   assertAllReferencesExist(assetIds, assets, "1254x1254 image assets");
 
-  const productById = new Map(manifest.products.map((product) => [product.id, product]));
-  const productBySlug = new Map(manifest.products.map((product) => [product.slug, product]));
+  const productById = new Map(productRecords.map((product) => [product.id, product]));
+  const productBySlug = new Map(productRecords.map((product) => [product.slug, product]));
   const productByReference = new Map(
-    manifest.products.map((product) => [product.reference, product]),
+    productRecords.map((product) => [product.reference, product]),
+  );
+  const parentReferenceById = new Map(
+    alternateRecords.map((product) => [
+      product.parentProductId!,
+      product.parentReference!,
+    ]),
   );
   const existingById = new Map<string, ExistingProduct>();
+  const existingParentById = new Map<string, ExistingProduct>();
 
   for (const existing of existingProducts) {
     if (existing._id.startsWith("drafts.")) {
@@ -339,6 +422,17 @@ async function main() {
     const expectedById = productById.get(existing._id);
     if (expectedById) {
       existingById.set(existing._id, existing);
+      continue;
+    }
+
+    const expectedParentReference = parentReferenceById.get(existing._id);
+    if (expectedParentReference) {
+      if (existing.reference !== expectedParentReference) {
+        throw new Error(
+          `Existing parent ${existing._id} has reference ${existing.reference ?? "(missing)"}; expected ${expectedParentReference}.`,
+        );
+      }
+      existingParentById.set(existing._id, existing);
       continue;
     }
 
@@ -356,18 +450,65 @@ async function main() {
     }
   }
 
-  const actions = manifest.products.map((product) => {
+  for (const alternate of alternateRecords) {
+    if (
+      !productById.has(alternate.parentProductId!) &&
+      !existingParentById.has(alternate.parentProductId!)
+    ) {
+      throw new Error(
+        `Parent product ${alternate.parentProductId} (${alternate.parentReference}) was not found for ${alternate.reference}.`,
+      );
+    }
+  }
+
+  const actions = productRecords.map((product) => {
     const exists = existingById.has(product.id);
+    const galleryRecords = [
+      product,
+      ...alternateRecords.filter(
+        (alternate) => alternate.parentProductId === product.id,
+      ),
+    ];
     return {
       product,
       action: exists ? (overwriteExisting ? "REPLACE" : "SKIP") : "CREATE",
-      assetId: mappingByProductId.get(product.id)!.sanityAssetId,
+      gallery: galleryRecords.map((record) =>
+        getGalleryImage(
+          record,
+          mappingByRecordId.get(record.id)!.sanityAssetId,
+        ),
+      ),
     } as const;
   });
+  const parentGalleryActions = alternateRecords
+    .filter((product) => !productById.has(product.parentProductId!))
+    .map((product) => {
+      const existing = existingParentById.get(product.parentProductId!)!;
+      const assetId = mappingByRecordId.get(product.id)!.sanityAssetId;
+      const galleryContainsAsset = existing.gallery?.some(
+        (image) => image.assetId === assetId,
+      );
+      return {
+        product,
+        existing,
+        assetId,
+        action: galleryContainsAsset ? "UPDATE_METADATA" : "ATTACH",
+      } as const;
+    });
 
   console.log(
-    `Target: ${projectId}/${dataset}; batch: ${manifest.batchId}; products: ${actions.length}`,
+    `Target: ${projectId}/${dataset}; batch: ${manifest.batchId}; source images: ${manifest.products.length}; new product candidates: ${actions.length}`,
   );
+  if (parentGalleryActions.length > 0) {
+    console.table(
+      parentGalleryActions.map(({ product, existing, action }) => ({
+        action,
+        reference: existing.reference,
+        imageRecord: product.reference,
+        title: existing.title,
+      })),
+    );
+  }
   console.table(
     actions.map(({ product, action }) => ({
       action,
@@ -386,23 +527,47 @@ async function main() {
   }
 
   const mutations = actions.filter(({ action }) => action !== "SKIP");
-  if (mutations.length === 0) {
-    console.log("All batch products already exist; no mutations were required.");
+  if (mutations.length === 0 && parentGalleryActions.length === 0) {
+    console.log("All batch products and gallery images already exist; no mutations were required.");
     return;
   }
 
   let transaction = client.transaction();
-  for (const { product, action, assetId } of mutations) {
-    const document = getProductDocument(product, assetId);
+  for (const { product, action, gallery } of mutations) {
+    const document = getProductDocument(product, gallery);
     transaction =
       action === "REPLACE"
         ? transaction.createOrReplace(document)
         : transaction.create(document);
   }
+  for (const { product, existing, assetId, action } of parentGalleryActions) {
+    transaction = transaction.patch(existing._id, (patch) => {
+      let nextPatch = patch.ifRevisionId(existing._rev);
+      if (product.updateParentMetadata) {
+        nextPatch = nextPatch.set({
+          shortDescription: product.shortDescription,
+          purity: product.purity,
+          weightGrams: product.weightGrams,
+          heightInches: product.heightInches,
+          widthInches: product.widthInches,
+          depthInches: product.depthInches,
+          diameterInches: product.diameterInches,
+          singhasanWidthInches: product.singhasanWidthInches,
+          singhasanDepthInches: product.singhasanDepthInches,
+        });
+      }
+      if (action === "ATTACH") {
+        nextPatch = nextPatch
+          .setIfMissing({ gallery: [] })
+          .append("gallery", [getGalleryImage(product, assetId)]);
+      }
+      return nextPatch;
+    });
+  }
 
   await transaction.commit({ visibility: "sync" });
   console.log(
-    `Published ${mutations.filter(({ action }) => action === "CREATE").length} new products and replaced ${mutations.filter(({ action }) => action === "REPLACE").length}.`,
+    `Published ${mutations.filter(({ action }) => action === "CREATE").length} new products, replaced ${mutations.filter(({ action }) => action === "REPLACE").length}, and updated ${parentGalleryActions.length} existing gallery parent products.`,
   );
 }
 

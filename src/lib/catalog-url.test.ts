@@ -43,6 +43,19 @@ describe("catalog URL state", () => {
     );
   });
 
+  it("round-trips the bottle utensil item filter", () => {
+    const parsed = parseCatalogSearchParams(
+      new URLSearchParams("category=utensils&item=bottle"),
+      options,
+    );
+
+    expect(parsed.category).toBe("utensils");
+    expect(parsed.utensilType).toBe("bottle");
+    expect(serializeCatalogFilters(parsed).toString()).toBe(
+      "category=utensils&item=bottle",
+    );
+  });
+
   it("serializes active filters without discarding unrelated parameters", () => {
     const serialized = serializeCatalogFilters(
       {

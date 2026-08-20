@@ -59,6 +59,7 @@ describe("<ProductDetails />", () => {
       ...fallbackProducts[0]!,
       heightInches: 4.5,
       widthInches: 3,
+      depthInches: 2.5,
       diameterInches: 5,
     };
 
@@ -74,8 +75,31 @@ describe("<ProductDetails />", () => {
     expect(screen.getByText("4.5 in")).toBeInTheDocument();
     expect(screen.getByText("Width")).toBeInTheDocument();
     expect(screen.getByText("3 in")).toBeInTheDocument();
+    expect(screen.getByText("Depth")).toBeInTheDocument();
+    expect(screen.getByText("2.5 in")).toBeInTheDocument();
     expect(screen.getByText("Diameter")).toBeInTheDocument();
     expect(screen.getByText("5 in")).toBeInTheDocument();
+  });
+
+  it("renders structured weight and diameter variants", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      sizeVariants: [
+        { weightGrams: 350, diameterInches: 5 },
+        { weightGrams: 450, diameterInches: 6 },
+      ],
+    };
+
+    render(
+      <ProductDetails
+        product={product}
+        headingLevel={1}
+        presentation="page"
+      />,
+    );
+
+    expect(screen.getByText("Available sizes")).toBeInTheDocument();
+    expect(screen.getByText("350 g / 5 in, 450 g / 6 in")).toBeInTheDocument();
   });
 
   it("renders verified singhasan width and depth as a dedicated measurement", () => {
@@ -105,9 +129,11 @@ describe("<ProductDetails />", () => {
       weightGrams: undefined,
       heightInches: undefined,
       widthInches: undefined,
+      depthInches: undefined,
       diameterInches: undefined,
       singhasanWidthInches: undefined,
       singhasanDepthInches: undefined,
+      sizeVariants: [],
       idolConstruction: undefined,
       deities: [],
       coinShape: undefined,

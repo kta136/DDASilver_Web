@@ -74,6 +74,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const category = catalog.categories.find(
     (item) => item.slug === product.categorySlug,
   );
+  const productCollections = catalog.collections.filter((collection) =>
+    product.collectionSlugs.includes(collection.slug),
+  );
   const related = catalog.products
     .filter(
       (item) =>
@@ -170,6 +173,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
             headingLevel={1}
             presentation="page"
           />
+          {productCollections.length > 0 ? (
+            <nav
+              aria-label="Collections containing this product"
+              className="mt-7 border-t border-line pt-5"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Explore in collections
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                {productCollections.map((collection) => (
+                  <li key={collection.slug}>
+                    <Link
+                      href={`/collections/${collection.slug}`}
+                      className="text-sm font-semibold no-underline underline-offset-4 hover:underline"
+                    >
+                      {collection.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </div>
       </section>
 

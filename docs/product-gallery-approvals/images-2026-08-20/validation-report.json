@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "batchId": "images-2026-08-20",
+  "validatedOn": "2026-08-20",
+  "manifestPath": "public/images/gallery-ingestion/images-2026-08-20/sanity-gallery-manifest.json",
+  "reviewCsvPath": "docs/product-gallery-approvals/images-2026-08-20/review.csv",
+  "checks": {
+    "sourceFileCount": 48,
+    "excludedSourceCount": 1,
+    "activeSourceCount": 47,
+    "galleryImageCount": 47,
+    "manifestProductCount": 47,
+    "uniqueProductCount": 44,
+    "alternateGalleryImageCount": 3,
+    "reviewCsvRowCount": 47,
+    "allImagesArePng": true,
+    "allImagesAre1254By1254": true,
+    "allManifestImagePathsExist": true,
+    "allManifestSourcePathsExist": true,
+    "uniqueProductIds": 47,
+    "uniqueReferences": 47,
+    "uniqueTitles": 47,
+    "uniqueSlugs": 47,
+    "uniqueDescriptions": 47,
+    "uniqueAltTexts": 47,
+    "descriptionLengthsValid": true,
+    "altTextLengthsValid": true,
+    "categoryCountsMatchManifest": true
+  },
+  "categoryCounts": {
+    "category-gifts": 24,
+    "category-jhula": 1,
+    "category-purse": 10,
+    "category-utensils": 12
+  },
+  "categoryProductCounts": {
+    "category-gifts": 23,
+    "category-jhula": 0,
+    "category-purse": 9,
+    "category-utensils": 12
+  },
+  "confirmedMetadata": {
+    "HG-01": {"purity": "99.80", "weightGrams": 160, "physicalDimensionsRequired": false},
+    "HG-02": {"sameProductAs": "HG-01", "recordType": "alternateGalleryImage", "createProduct": false},
+    "allOtherProducts": {"purity": "92.5"},
+    "brandedBottleCatalogCopyApproved": true,
+    "DDA-UT-BT-100": {"confirmedWeightGrams": 400},
+    "DDA-UT-BT-102": {"confirmedHeightInches": 10},
+    "JH-11": {"singhasanWidthInches": 7, "singhasanDepthInches": 5},
+    "DDA-UT-KL-109": {"weightGrams": 500, "heightInches": 5},
+    "DDA-UT-GL-111": {"utensilType": "glass", "heightInches": 4},
+    "DS-01": {"weightGrams": 40000, "widthInches": 49, "heightInches": 22},
+    "category-purse": {"physicalDimensionsRequired": false},
+    "category-utensils/bottle": {"supported": true, "productCount": 10}
+  },
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "result": "Published to the Sanity production dataset: 47 image assets, 44 new product documents, and one existing JH-11 gallery and metadata update. Post-write verification found zero drafts, gallery errors, bottle classification errors, purity errors, or unreferenced uploaded assets.",
+  "blockingSummary": [],
+  "sanityPublication": {
+    "publishedAt": "2026-08-20T18:06:31.4219976+05:30",
+    "uploadedAssetCount": 47,
+    "createdProductCount": 44,
+    "updatedExistingProductCount": 1,
+    "publishedDraftCount": 0,
+    "unreferencedUploadedAssetCount": 0,
+    "bottleProductCount": 10,
+    "standaloneSinghasanDepthCount": 14,
+    "jpbSizeVariantCount": 4
+  },
+  "excludedSources": [
+    {
+      "reference": "DDA-UT-KL-110",
+      "reason": "Owner excluded the combination image containing both a kalash and a tumbler.",
+      "archivedImagePath": "docs/product-gallery-approvals/images-2026-08-20/excluded/kl-02-lakshmi-relief-silver-kalash-tumbler-set.png"
+    }
+  ]
+}

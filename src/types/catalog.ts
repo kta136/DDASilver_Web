@@ -34,11 +34,17 @@ export type UtensilType =
   | "plate"
   | "jug"
   | "kalash"
+  | "bottle"
   | "spoon";
 
 export type Deity = {
   title: string;
   slug: string;
+};
+
+export type ProductSizeVariant = {
+  weightGrams: number;
+  diameterInches: number;
 };
 
 export type Product = {
@@ -55,9 +61,11 @@ export type Product = {
   weightGrams?: number;
   heightInches?: number;
   widthInches?: number;
+  depthInches?: number;
   diameterInches?: number;
   singhasanWidthInches?: number;
   singhasanDepthInches?: number;
+  sizeVariants?: ProductSizeVariant[];
   utensilType?: UtensilType;
   idolConstruction?: IdolConstruction;
   deities: Deity[];

@@ -23,6 +23,7 @@ const utensilReferenceCodeByType = new Map([
   ["plate", "PL"],
   ["jug", "JG"],
   ["kalash", "KL"],
+  ["bottle", "BT"],
   ["spoon", "SP"],
 ]);
 const supportedSeedDeityIds = new Set([
@@ -107,7 +108,13 @@ function positiveNumber(value) {
 }
 
 function csvCell(value) {
-  const text = Array.isArray(value) ? value.join(" | ") : String(value ?? "");
+  const text = Array.isArray(value)
+    ? value
+        .map((item) =>
+          item && typeof item === "object" ? JSON.stringify(item) : String(item),
+        )
+        .join(" | ")
+    : String(value ?? "");
   return `"${text.replaceAll('"', '""')}"`;
 }
 
@@ -124,12 +131,16 @@ function writeReviewCsv(manifest, outputPath) {
     "weightGrams",
     "heightInches",
     "widthInches",
+    "depthInches",
     "diameterInches",
     "suppliedSizeLabel",
     "singhasanWidthInches",
     "singhasanDepthInches",
     "idolConstruction",
     "deityIds",
+    "sizeVariants",
+    "recordType",
+    "parentReference",
     "shortDescription",
     "alt",
     "publishBlockers",
@@ -186,7 +197,9 @@ function validateManifest(manifest, manifestPath) {
     if (!/^product-dda-[a-z0-9-]+$/.test(product.id ?? "")) errors.push(`${label}: invalid id`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(product.slug ?? "")) errors.push(`${label}: invalid slug`);
     if (!supportedCategories.has(product.categoryId)) errors.push(`${label}: unsupported category ${product.categoryId}`);
-    if (product.purity !== "92.5") errors.push(`${label}: purity must be 92.5`);
+    if (!new Set(["92.5", "99.80"]).has(product.purity)) {
+      errors.push(`${label}: purity must be 92.5 or 99.80`);
+    }
     if ((product.shortDescription?.length ?? 0) < 20 || product.shortDescription.length > 240) {
       errors.push(`${label}: shortDescription must be 20-240 characters`);
     }
@@ -199,6 +212,7 @@ function validateManifest(manifest, manifestPath) {
     for (const field of [
       "heightInches",
       "widthInches",
+      "depthInches",
       "diameterInches",
       "singhasanWidthInches",
       "singhasanDepthInches",
@@ -220,6 +234,34 @@ function validateManifest(manifest, manifestPath) {
     }
     if (!Array.isArray(product.publishBlockers)) errors.push(`${label}: publishBlockers must be an array`);
     productBlockerCount += product.publishBlockers?.length ?? 0;
+
+    if (product.recordType === "alternateGalleryImage") {
+      if (product.createProduct !== false) {
+        errors.push(`${label}: alternate gallery records must set createProduct to false`);
+      }
+      if (!product.parentProductId || !product.parentReference) {
+        errors.push(`${label}: alternate gallery records require parentProductId and parentReference`);
+      }
+    } else if (product.createProduct === false) {
+      errors.push(`${label}: createProduct false is only valid for alternate gallery records`);
+    }
+
+    if (product.sizeVariants !== undefined) {
+      if (!Array.isArray(product.sizeVariants) || product.sizeVariants.length === 0) {
+        errors.push(`${label}: sizeVariants must be a non-empty array when present`);
+      } else {
+        const variantKeys = new Set();
+        for (const variant of product.sizeVariants) {
+          if (!positiveNumber(variant.weightGrams) || !positiveNumber(variant.diameterInches)) {
+            errors.push(`${label}: every size variant requires positive weightGrams and diameterInches`);
+          }
+          variantKeys.add(`${variant.weightGrams}/${variant.diameterInches}`);
+        }
+        if (variantKeys.size !== product.sizeVariants.length) {
+          errors.push(`${label}: sizeVariants must be unique`);
+        }
+      }
+    }
 
     if (product.reference?.startsWith("JH-") && product.categoryId !== "category-jhula") {
       errors.push(`${label}: JH references must use the Jhula category`);
@@ -251,7 +293,12 @@ function validateManifest(manifest, manifestPath) {
     } else if (product.reference?.startsWith("SD-")) {
       if (!/^SD-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: Sindoor Dani reference must match SD-NN`);
     } else if (product.categoryId === "category-purse") {
-      if (!/^PR-[1-9][0-9]*$/.test(product.reference ?? "")) errors.push(`${label}: purse reference must match PR-N`);
+      const pursePattern = product.recordType === "alternateGalleryImage"
+        ? /^PR-[1-9][0-9]*-ALT$/
+        : /^PR-[1-9][0-9]*$/;
+      if (!pursePattern.test(product.reference ?? "")) {
+        errors.push(`${label}: purse reference has an invalid format`);
+      }
     }
     if (product.categoryId !== "category-utensils" && product.utensilType !== undefined) {
       errors.push(`${label}: utensilType is only valid for Utensils`);
@@ -286,11 +333,19 @@ function validateManifest(manifest, manifestPath) {
       .readdirSync(manifest.sourceFolder, { withFileTypes: true })
       .filter((entry) => entry.isFile() && /\.jpe?g$/i.test(entry.name))
       .map((entry) => path.join(manifest.sourceFolder, entry.name).toLowerCase());
-    if (sourceFiles.length !== manifest.sourceCount) {
-      errors.push(`source folder contains ${sourceFiles.length} JPEGs, expected ${manifest.sourceCount}`);
+    const expectedOriginalCount = manifest.originalSourceCount ?? manifest.sourceCount;
+    if (sourceFiles.length !== expectedOriginalCount) {
+      errors.push(`source folder contains ${sourceFiles.length} JPEGs, expected ${expectedOriginalCount}`);
     }
+    const excludedSourcePaths = new Set(
+      (manifest.excludedSources ?? []).map((row) =>
+        path.resolve(row.sourcePath ?? "").toLowerCase(),
+      ),
+    );
     for (const sourceFile of sourceFiles) {
-      if (!mappedSourcePaths.has(sourceFile)) errors.push(`source JPEG is not mapped: ${sourceFile}`);
+      if (!mappedSourcePaths.has(sourceFile) && !excludedSourcePaths.has(sourceFile)) {
+        errors.push(`source JPEG is not mapped or excluded: ${sourceFile}`);
+      }
     }
   } else {
     errors.push(`sourceFolder is missing: ${manifest.sourceFolder}`);
@@ -310,9 +365,17 @@ function validateManifest(manifest, manifestPath) {
     );
   }
 
-  for (const fileField of ["approvedBackgroundPath", "approvedTreatmentReferencePath"]) {
+  for (const fileField of ["approvedBackgroundPath"]) {
     const filePath = path.resolve(projectRoot, manifest[fileField] ?? "");
     if (!fs.existsSync(filePath)) errors.push(`${fileField} is missing: ${manifest[fileField]}`);
+  }
+  if (manifest.approvedTreatmentReferencePath) {
+    const filePath = path.resolve(projectRoot, manifest.approvedTreatmentReferencePath);
+    if (!fs.existsSync(filePath)) {
+      errors.push(
+        `approvedTreatmentReferencePath is missing: ${manifest.approvedTreatmentReferencePath}`,
+      );
+    }
   }
 
   return {
@@ -320,6 +383,8 @@ function validateManifest(manifest, manifestPath) {
     warnings,
     counts: {
       products: products.length,
+      productDocuments: products.filter((product) => product.createProduct !== false).length,
+      alternateImages: products.filter((product) => product.recordType === "alternateGalleryImage").length,
       validImages: validImageCount,
       gifts: products.filter((product) => product.categoryId === "category-gifts").length,
       jhulas: products.filter((product) => product.categoryId === "category-jhula").length,
@@ -361,7 +426,7 @@ if (result.errors.length > 0) {
 } else {
   console.log(`Validated ${result.counts.validImages} prospective image asset uploads.`);
   console.log(
-    `Validated ${result.counts.products} prospective product documents across Gifts, Jhula, Purse, Idols and Utensils.`,
+    `Validated ${result.counts.productDocuments} prospective product documents across Gifts, Jhula, Purse, Idols and Utensils.`,
   );
   console.log("Dry run complete. No network request, asset upload, product mutation or publication occurred.");
 }

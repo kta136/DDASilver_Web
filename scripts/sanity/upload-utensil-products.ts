@@ -36,6 +36,7 @@ type UtensilProduct = {
     | "plate"
     | "jug"
     | "kalash"
+    | "bottle"
     | "spoon"
     | "figurine";
   purity: "92.5" | "99.80";
@@ -109,7 +110,9 @@ function validateManifest(manifest: UtensilManifest) {
     if (!Number.isInteger(product.number) || product.number < 1) {
       throw new Error(`Invalid utensil number: ${product.number}`);
     }
-    const expectedPurity = product.utensilType === "spoon" ? "92.5" : "99.80";
+    const expectedPurity = ["spoon", "bottle"].includes(product.utensilType)
+      ? "92.5"
+      : "99.80";
     if (product.purity !== expectedPurity) {
       throw new Error(
         `${product.title} must use confirmed ${expectedPurity}% purity.`,
@@ -120,7 +123,7 @@ function validateManifest(manifest: UtensilManifest) {
     }
     const allowedTypes =
       manifest.categoryId === "category-utensils"
-        ? ["tumbler", "glass", "bowl", "plate", "jug", "kalash", "spoon"]
+        ? ["tumbler", "glass", "bowl", "plate", "jug", "kalash", "bottle", "spoon"]
         : ["figurine"];
     if (!allowedTypes.includes(product.utensilType)) {
       throw new Error(
@@ -128,7 +131,7 @@ function validateManifest(manifest: UtensilManifest) {
       );
     }
     if (
-      ["tumbler", "glass", "jug", "kalash", "spoon", "figurine"].includes(
+      ["tumbler", "glass", "jug", "kalash", "bottle", "spoon", "figurine"].includes(
         product.utensilType,
       ) &&
       (!Number.isFinite(product.heightInches) || product.heightInches! <= 0)

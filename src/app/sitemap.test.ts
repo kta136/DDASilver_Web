@@ -30,6 +30,7 @@ describe("sitemap metadata route", () => {
           featured: false,
           displayOrder: 1,
           deities: [],
+          updatedAt: "2026-08-20T10:00:00.000Z",
         },
       ],
       categories: [
@@ -39,6 +40,7 @@ describe("sitemap metadata route", () => {
           description: "Silver coins.",
           image,
           displayOrder: 1,
+          updatedAt: "2026-08-01T10:00:00.000Z",
         },
         {
           title: "Purse",
@@ -56,6 +58,7 @@ describe("sitemap metadata route", () => {
           heroImage: image,
           productSlugs: ["silver-coin"],
           displayOrder: 1,
+          updatedAt: "2026-08-02T10:00:00.000Z",
         },
         {
           title: "Coming Soon",
@@ -80,12 +83,26 @@ describe("sitemap metadata route", () => {
       expect.objectContaining({
         url: "http://localhost:3000/category/coin",
         images: ["http://localhost:3000/images/product.png"],
+        lastModified: "2026-08-20T10:00:00.000Z",
       }),
     );
     expect(entries).toContainEqual(
       expect.objectContaining({
         url: "http://localhost:3000/collections/gifts",
         images: ["http://localhost:3000/images/product.png"],
+        lastModified: "2026-08-20T10:00:00.000Z",
+      }),
+    );
+    expect(entries).toContainEqual(
+      expect.objectContaining({
+        url: "http://localhost:3000/",
+        lastModified: "2026-08-20T10:00:00.000Z",
+      }),
+    );
+    expect(entries).toContainEqual(
+      expect.objectContaining({
+        url: "http://localhost:3000/products",
+        lastModified: "2026-08-20T10:00:00.000Z",
       }),
     );
     expect(entries.map((entry) => entry.url)).not.toContain(

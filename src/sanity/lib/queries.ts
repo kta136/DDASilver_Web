@@ -26,9 +26,11 @@ export const productsQuery = defineQuery(`*[_type == "product"] | order(displayO
   weightGrams,
   heightInches,
   widthInches,
+  depthInches,
   diameterInches,
   singhasanWidthInches,
   singhasanDepthInches,
+  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),
   utensilType,
   idolConstruction,
   "deities": coalesce(deities[]->{

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
 import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import {
@@ -67,9 +68,16 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     catalog.categories,
     collectionProducts,
   );
+  const collectionDescription = `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`;
 
   return (
     <main id="main-content">
+      <CatalogStructuredData
+        name={`${collection.title} silver collection`}
+        description={collectionDescription}
+        path={`/collections/${collection.slug}`}
+        products={collectionProducts}
+      />
       <section className="grid border-b border-line lg:min-h-[29rem] lg:grid-cols-2">
         <div className="flex items-center px-5 py-10 sm:px-10 sm:py-12 lg:px-[max(3rem,calc((100vw-90rem)/2))]">
           <div>

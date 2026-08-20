@@ -105,6 +105,12 @@ const productSchema = z.object({
     .max(1_000)
     .nullish()
     .transform((value) => value ?? undefined),
+  depthInches: z
+    .number()
+    .positive()
+    .max(1_000)
+    .nullish()
+    .transform((value) => value ?? undefined),
   diameterInches: z
     .number()
     .positive()
@@ -123,8 +129,16 @@ const productSchema = z.object({
     .max(1_000)
     .nullish()
     .transform((value) => value ?? undefined),
+  sizeVariants: z
+    .array(
+      z.object({
+        weightGrams: z.number().positive().max(100_000),
+        diameterInches: z.number().positive().max(1_000),
+      }),
+    )
+    .max(20),
   utensilType: z
-    .enum(["glass", "bowl", "plate", "jug", "kalash", "spoon"])
+    .enum(["glass", "bowl", "plate", "jug", "kalash", "bottle", "spoon"])
     .nullish()
     .transform((value) => value ?? undefined),
   idolConstruction: z

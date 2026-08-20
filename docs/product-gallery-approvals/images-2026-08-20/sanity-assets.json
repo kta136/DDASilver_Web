@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 1,
+  "batchId": "images-2026-08-20",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-20T12:33:11.475Z",
+  "productCount": 47,
+  "uniqueAssetCount": 47,
+  "uploadedAssetCount": 47,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-gift-sg-12-scalloped-floral-round-silver-singhasan",
+      "reference": "SG-12",
+      "title": "Scalloped Floral Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-12-scalloped-floral-round-silver-singhasan-6x4.png",
+      "sha1hash": "197ff222244a45622459bb9bc642920ae9c6f092",
+      "sanityAssetId": "image-197ff222244a45622459bb9bc642920ae9c6f092-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/197ff222244a45622459bb9bc642920ae9c6f092-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-jhula-jh-11-gallery-alt-2026-08-20",
+      "reference": "JH-11",
+      "title": "Elephant-Foot Twin-Peacock Silver Jhula — Alternate View",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/jh-11-elephant-foot-twin-peacock-silver-jhula.png",
+      "sha1hash": "8757589716b42bf1a40554229cdf201e09dc66fb",
+      "sanityAssetId": "image-8757589716b42bf1a40554229cdf201e09dc66fb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8757589716b42bf1a40554229cdf201e09dc66fb-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-gift-sg-14-petite-pointed-floral-silver-singhasan",
+      "reference": "SG-14",
+      "title": "Petite Pointed Floral Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-14-petite-pointed-floral-silver-singhasan-2x2-5.png",
+      "sha1hash": "acedea6fa933c19ed7fca2cadac0b3c862a9b121",
+      "sanityAssetId": "image-acedea6fa933c19ed7fca2cadac0b3c862a9b121-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/acedea6fa933c19ed7fca2cadac0b3c862a9b121-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-gift-sg-15-compact-floral-fan-silver-singhasan",
+      "reference": "SG-15",
+      "title": "Compact Floral-Fan Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-15-compact-floral-fan-silver-singhasan-4x3.png",
+      "sha1hash": "88baa1e2979dd48a3596658b219ac96756bb1241",
+      "sanityAssetId": "image-88baa1e2979dd48a3596658b219ac96756bb1241-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/88baa1e2979dd48a3596658b219ac96756bb1241-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-gift-sg-13-twin-peacock-floral-elephant-foot-silver-singhasan",
+      "reference": "SG-13",
+      "title": "Twin Peacock Floral Elephant-Foot Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-13-twin-peacock-floral-elephant-foot-silver-singhasan-7x5.png",
+      "sha1hash": "3ed7499e129b40c8ee3b8a9fe6f11569d738115e",
+      "sanityAssetId": "image-3ed7499e129b40c8ee3b8a9fe6f11569d738115e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3ed7499e129b40c8ee3b8a9fe6f11569d738115e-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-gift-sg-16-openwork-arch-floral-silver-singhasan",
+      "reference": "SG-16",
+      "title": "Openwork Arch Floral Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-16-openwork-arch-floral-silver-singhasan-7x5.png",
+      "sha1hash": "81eafeaadf2ab00862322a8467b333452a0851cb",
+      "sanityAssetId": "image-81eafeaadf2ab00862322a8467b333452a0851cb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/81eafeaadf2ab00862322a8467b333452a0851cb-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-gift-sg-17-twin-peacock-bolster-silver-singhasan",
+      "reference": "SG-17",
+      "title": "Twin Peacock Bolster Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-17-twin-peacock-bolster-silver-singhasan-7x5.png",
+      "sha1hash": "2702a9c8e48975dfdfe5af115c08c3272942b746",
+      "sanityAssetId": "image-2702a9c8e48975dfdfe5af115c08c3272942b746-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2702a9c8e48975dfdfe5af115c08c3272942b746-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-gift-sg-18-tiered-floral-crown-silver-singhasan",
+      "reference": "SG-18",
+      "title": "Tiered Floral-Crown Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-18-tiered-floral-crown-silver-singhasan-9x7.png",
+      "sha1hash": "41df635f7b41eee799cf8cd08aed047e8adc666e",
+      "sanityAssetId": "image-41df635f7b41eee799cf8cd08aed047e8adc666e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/41df635f7b41eee799cf8cd08aed047e8adc666e-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-gift-sg-19-gold-accent-peacock-canopy-silver-singhasan",
+      "reference": "SG-19",
+      "title": "Gold-Accent Peacock-Canopy Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-19-gold-accent-peacock-canopy-silver-singhasan-10x8.png",
+      "sha1hash": "c35687fbadb8503fc42c4d1ac70624f0e6da8c9b",
+      "sanityAssetId": "image-c35687fbadb8503fc42c4d1ac70624f0e6da8c9b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c35687fbadb8503fc42c4d1ac70624f0e6da8c9b-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-gift-sg-20-chrysanthemum-tree-round-silver-singhasan",
+      "reference": "SG-20",
+      "title": "Chrysanthemum-Tree Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-20-chrysanthemum-tree-round-silver-singhasan-6x4.png",
+      "sha1hash": "3fd9e38c74cfab75f4ac5620bc516b9b215488f2",
+      "sanityAssetId": "image-3fd9e38c74cfab75f4ac5620bc516b9b215488f2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3fd9e38c74cfab75f4ac5620bc516b9b215488f2-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-gift-sg-21-tiered-leaf-floral-silver-singhasan",
+      "reference": "SG-21",
+      "title": "Tiered Leaf-and-Floral Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-21-tiered-leaf-floral-silver-singhasan-7x5.png",
+      "sha1hash": "4be6a5eb1e6e650c2becc8ba6cf16719a3910e4e",
+      "sanityAssetId": "image-4be6a5eb1e6e650c2becc8ba6cf16719a3910e4e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/4be6a5eb1e6e650c2becc8ba6cf16719a3910e4e-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-gift-sg-22-peacock-fan-two-tier-silver-singhasan",
+      "reference": "SG-22",
+      "title": "Peacock-Fan Two-Tier Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-22-peacock-fan-two-tier-silver-singhasan-7x5.png",
+      "sha1hash": "a8c9c5be0c65f4290d893a89f483e1969ab873e0",
+      "sanityAssetId": "image-a8c9c5be0c65f4290d893a89f483e1969ab873e0-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a8c9c5be0c65f4290d893a89f483e1969ab873e0-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-gift-sg-23-pink-accent-floral-round-silver-singhasan",
+      "reference": "SG-23",
+      "title": "Pink-Accent Floral Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-23-pink-accent-floral-round-silver-singhasan-7x5.png",
+      "sha1hash": "f001dd33632a1789ba3a663705fc717e775ac6f6",
+      "sanityAssetId": "image-f001dd33632a1789ba3a663705fc717e775ac6f6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f001dd33632a1789ba3a663705fc717e775ac6f6-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-utensil-bt-99-glass-floral-band-silver-bottle",
+      "reference": "DDA-UT-BT-99",
+      "title": "Glass Floral-Band Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-01-glass-floral-band-silver-bottle-11in.png",
+      "sha1hash": "71a687440604618870509ed0b3f03d1617ed4ce4",
+      "sanityAssetId": "image-71a687440604618870509ed0b3f03d1617ed4ce4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/71a687440604618870509ed0b3f03d1617ed4ce4-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-utensil-bt-100-fluted-shoulder-floral-silver-bottle",
+      "reference": "DDA-UT-BT-100",
+      "title": "Fluted-Shoulder Floral Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-02-fluted-shoulder-floral-silver-bottle-9-5in.png",
+      "sha1hash": "dabab51f8d4ac2c8055343c0c29ee4b51f39fea4",
+      "sanityAssetId": "image-dabab51f8d4ac2c8055343c0c29ee4b51f39fea4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/dabab51f8d4ac2c8055343c0c29ee4b51f39fea4-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-utensil-bt-101-arched-botanical-panel-silver-bottle",
+      "reference": "DDA-UT-BT-101",
+      "title": "Arched Botanical-Panel Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-03-arched-botanical-panel-silver-bottle-9-5in.png",
+      "sha1hash": "b215e4903d870b1a0d236fcc4ccc67ca5e286ab9",
+      "sanityAssetId": "image-b215e4903d870b1a0d236fcc4ccc67ca5e286ab9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b215e4903d870b1a0d236fcc4ccc67ca5e286ab9-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-utensil-bt-102-rectangular-scroll-panel-silver-bottle",
+      "reference": "DDA-UT-BT-102",
+      "title": "Rectangular Scroll-Panel Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-04-rectangular-scroll-panel-silver-bottle-10in.png",
+      "sha1hash": "df357dfc9d9c39c106261d18519c76e1b6d5fc7b",
+      "sanityAssetId": "image-df357dfc9d9c39c106261d18519c76e1b6d5fc7b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/df357dfc9d9c39c106261d18519c76e1b6d5fc7b-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-utensil-bt-103-plain-polished-silver-bottle",
+      "reference": "DDA-UT-BT-103",
+      "title": "Plain Polished Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-05-plain-polished-silver-bottle-8in.png",
+      "sha1hash": "de0e78a47ba3155d20b06ab15b6deb6584edb7c1",
+      "sanityAssetId": "image-de0e78a47ba3155d20b06ab15b6deb6584edb7c1-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/de0e78a47ba3155d20b06ab15b6deb6584edb7c1-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-utensil-bt-104-plain-brushed-silver-bottle",
+      "reference": "DDA-UT-BT-104",
+      "title": "Plain Brushed Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-06-plain-brushed-silver-bottle-10in.png",
+      "sha1hash": "a82f22b27feee7510db251e3b3f6fd4d7cf2dbb4",
+      "sanityAssetId": "image-a82f22b27feee7510db251e3b3f6fd4d7cf2dbb4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a82f22b27feee7510db251e3b3f6fd4d7cf2dbb4-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-utensil-bt-105-faceted-leaf-panel-silver-bottle",
+      "reference": "DDA-UT-BT-105",
+      "title": "Faceted Leaf-Panel Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-07-faceted-leaf-panel-silver-bottle-11in.png",
+      "sha1hash": "10c296ab17b91327aacd5e59b4f36faeaec65cf3",
+      "sanityAssetId": "image-10c296ab17b91327aacd5e59b4f36faeaec65cf3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/10c296ab17b91327aacd5e59b4f36faeaec65cf3-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-utensil-bt-106-frosted-engraved-silver-wine-bottle",
+      "reference": "DDA-UT-BT-106",
+      "title": "Frosted Engraved Silver Wine Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-08-frosted-chivas-regal-silver-wine-bottle-10-5in.png",
+      "sha1hash": "d1b1b8d411f644106fe72ddcd891c858617cb928",
+      "sanityAssetId": "image-d1b1b8d411f644106fe72ddcd891c858617cb928-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d1b1b8d411f644106fe72ddcd891c858617cb928-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-utensil-bt-107-blackdog-floral-panel-silver-wine-bottle",
+      "reference": "DDA-UT-BT-107",
+      "title": "Blackdog Floral-Panel Silver Wine Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-09-blackdog-floral-panel-silver-wine-bottle-12in.png",
+      "sha1hash": "7075f70bdc606aeb2202a9512d534fe74866e5e3",
+      "sanityAssetId": "image-7075f70bdc606aeb2202a9512d534fe74866e5e3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7075f70bdc606aeb2202a9512d534fe74866e5e3-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-utensil-bt-108-enamel-peacock-elephant-silver-bottle",
+      "reference": "DDA-UT-BT-108",
+      "title": "Enamel Peacock-and-Elephant Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/bt-10-enamel-peacock-elephant-silver-bottle-10in.png",
+      "sha1hash": "91df020309aaa2590f2a8a5ce91fe909c65ebd5b",
+      "sanityAssetId": "image-91df020309aaa2590f2a8a5ce91fe909c65ebd5b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/91df020309aaa2590f2a8a5ce91fe909c65ebd5b-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-gift-jpb-01-plain-nine-piece-silver-jain-pooja-box-set",
+      "reference": "JPB-01",
+      "title": "Plain Nine-Piece Silver Jain Pooja Box Set",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/jpb-01-plain-nine-piece-silver-jain-pooja-box-set.png",
+      "sha1hash": "a10f0234306f97ecabdf44d5c37382db7280f1c3",
+      "sanityAssetId": "image-a10f0234306f97ecabdf44d5c37382db7280f1c3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a10f0234306f97ecabdf44d5c37382db7280f1c3-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-gift-sd-11-scrollwork-glass-lid-silver-sindoor-dani",
+      "reference": "SD-11",
+      "title": "Scrollwork Glass-Lid Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-01-scrollwork-glass-lid-silver-sindoor-dani.png",
+      "sha1hash": "5b9c69710bfa6dd5319112e4952690c48b096fdc",
+      "sanityAssetId": "image-5b9c69710bfa6dd5319112e4952690c48b096fdc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5b9c69710bfa6dd5319112e4952690c48b096fdc-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-gift-sd-12-plain-glass-lid-silver-sindoor-dani",
+      "reference": "SD-12",
+      "title": "Plain Glass-Lid Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-02-plain-glass-lid-silver-sindoor-dani.png",
+      "sha1hash": "4e97363dc1b1de77229050ccfadb8c0a6107c6cb",
+      "sanityAssetId": "image-4e97363dc1b1de77229050ccfadb8c0a6107c6cb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/4e97363dc1b1de77229050ccfadb8c0a6107c6cb-1254x1254.png"
+    },
+    {
+      "number": 27,
+      "productId": "product-dda-gift-sd-13-fluted-floral-lidded-silver-sindoor-dani",
+      "reference": "SD-13",
+      "title": "Fluted Floral-Lidded Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-03-fluted-floral-lidded-silver-sindoor-dani.png",
+      "sha1hash": "0ef0da0441c8e67dc4f7ea82277a5ffdce2b3d30",
+      "sanityAssetId": "image-0ef0da0441c8e67dc4f7ea82277a5ffdce2b3d30-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0ef0da0441c8e67dc4f7ea82277a5ffdce2b3d30-1254x1254.png"
+    },
+    {
+      "number": 28,
+      "productId": "product-dda-gift-sd-14-plain-glass-lid-silver-sindoor-dani-3in",
+      "reference": "SD-14",
+      "title": "Wide Plain Glass-Lid Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-04-plain-glass-lid-silver-sindoor-dani-3in.png",
+      "sha1hash": "fc0a4814ce898a279c793c559b1440d7194d7fe6",
+      "sanityAssetId": "image-fc0a4814ce898a279c793c559b1440d7194d7fe6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fc0a4814ce898a279c793c559b1440d7194d7fe6-1254x1254.png"
+    },
+    {
+      "number": 29,
+      "productId": "product-dda-gift-sd-15-scrollwork-glass-lid-silver-sindoor-dani-3in",
+      "reference": "SD-15",
+      "title": "Wide Scrollwork Glass-Lid Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-05-scrollwork-glass-lid-silver-sindoor-dani-3in.png",
+      "sha1hash": "b07aebc91b4c04f22a74150be06566df8c8805f4",
+      "sanityAssetId": "image-b07aebc91b4c04f22a74150be06566df8c8805f4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b07aebc91b4c04f22a74150be06566df8c8805f4-1254x1254.png"
+    },
+    {
+      "number": 30,
+      "productId": "product-dda-gift-sd-16-floral-crystal-knob-silver-sindoor-dani",
+      "reference": "SD-16",
+      "title": "Floral Crystal-Knob Silver Sindoor Dani",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sd-06-floral-crystal-knob-silver-sindoor-dani-4in.png",
+      "sha1hash": "da6d37a7fce18a0b95757eb96a6c7b4928d11886",
+      "sanityAssetId": "image-da6d37a7fce18a0b95757eb96a6c7b4928d11886-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/da6d37a7fce18a0b95757eb96a6c7b4928d11886-1254x1254.png"
+    },
+    {
+      "number": 31,
+      "productId": "product-dda-gift-hg-01-hollow-gun-silver-display-set",
+      "reference": "HG-01",
+      "title": "Hollow Gun Silver Display Set",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/hg-01-silver-finish-hollow-gun-display-set.png",
+      "sha1hash": "07c251ef1aaac00f04231052af00ea7a4fa6e785",
+      "sanityAssetId": "image-07c251ef1aaac00f04231052af00ea7a4fa6e785-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/07c251ef1aaac00f04231052af00ea7a4fa6e785-1254x1254.png"
+    },
+    {
+      "number": 32,
+      "productId": "product-dda-gift-hg-02-hollow-gun-silver-display-set-alt",
+      "reference": "HG-02",
+      "title": "Hollow Gun Silver Display Set — Alternate View",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/hg-02-silver-finish-hollow-gun-display-set-alt.png",
+      "sha1hash": "57f8936e90664dce49d3076bec9d940c8c5052fc",
+      "sanityAssetId": "image-57f8936e90664dce49d3076bec9d940c8c5052fc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/57f8936e90664dce49d3076bec9d940c8c5052fc-1254x1254.png"
+    },
+    {
+      "number": 33,
+      "productId": "product-dda-purse-pr-23-peacock-floral-silver-clutch-purse",
+      "reference": "PR-23",
+      "title": "Peacock Floral Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-01-peacock-floral-silver-clutch-purse.png",
+      "sha1hash": "b50e7507be44a58dd8a7b7cf3491adea22f62990",
+      "sanityAssetId": "image-b50e7507be44a58dd8a7b7cf3491adea22f62990-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b50e7507be44a58dd8a7b7cf3491adea22f62990-1254x1254.png"
+    },
+    {
+      "number": 34,
+      "productId": "product-dda-purse-pr-24-gold-lattice-pearl-fringe-silver-clutch-purse",
+      "reference": "PR-24",
+      "title": "Gold-Lattice Pearl-Fringe Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-02-gold-lattice-pearl-fringe-silver-clutch-purse.png",
+      "sha1hash": "b1c92cc283721b2f8ac8230ddc0f7a7f34c0ce51",
+      "sanityAssetId": "image-b1c92cc283721b2f8ac8230ddc0f7a7f34c0ce51-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b1c92cc283721b2f8ac8230ddc0f7a7f34c0ce51-1254x1254.png"
+    },
+    {
+      "number": 35,
+      "productId": "product-dda-purse-pr-25-elephant-peacock-floral-silver-clutch-purse",
+      "reference": "PR-25",
+      "title": "Elephant-and-Peacock Floral Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-03-elephant-peacock-floral-silver-clutch-purse.png",
+      "sha1hash": "9e906641190bdeec4ec60f7e2b2fe3a5a681c5bb",
+      "sanityAssetId": "image-9e906641190bdeec4ec60f7e2b2fe3a5a681c5bb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9e906641190bdeec4ec60f7e2b2fe3a5a681c5bb-1254x1254.png"
+    },
+    {
+      "number": 36,
+      "productId": "product-dda-purse-pr-26-scroll-vine-round-handle-silver-clutch-purse",
+      "reference": "PR-26",
+      "title": "Scroll-Vine Round-Handle Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-04-scroll-vine-round-handle-silver-clutch-purse.png",
+      "sha1hash": "24f06ce0e06e06a9d221d7500da528ed272b8cb5",
+      "sanityAssetId": "image-24f06ce0e06e06a9d221d7500da528ed272b8cb5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/24f06ce0e06e06a9d221d7500da528ed272b8cb5-1254x1254.png"
+    },
+    {
+      "number": 37,
+      "productId": "product-dda-purse-pr-27-honeycomb-floral-silver-clutch-purse",
+      "reference": "PR-27",
+      "title": "Honeycomb Floral Round-Handle Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-05-honeycomb-floral-silver-clutch-purse.png",
+      "sha1hash": "83f84f4c448538261ed3a90b0e95974086ab5059",
+      "sanityAssetId": "image-83f84f4c448538261ed3a90b0e95974086ab5059-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/83f84f4c448538261ed3a90b0e95974086ab5059-1254x1254.png"
+    },
+    {
+      "number": 38,
+      "productId": "product-dda-purse-pr-28-vertical-floral-panel-silver-clutch-purse",
+      "reference": "PR-28",
+      "title": "Vertical Floral-Panel Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-06-vertical-floral-panel-silver-clutch-purse.png",
+      "sha1hash": "49c1fac8a00c077fd9ff473df0249a3ef2ed3584",
+      "sanityAssetId": "image-49c1fac8a00c077fd9ff473df0249a3ef2ed3584-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/49c1fac8a00c077fd9ff473df0249a3ef2ed3584-1254x1254.png"
+    },
+    {
+      "number": 39,
+      "productId": "product-dda-purse-pr-27-honeycomb-floral-silver-clutch-purse-alt",
+      "reference": "PR-27-ALT",
+      "title": "Honeycomb Floral Round-Handle Silver Clutch Purse — Alternate View",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-07-honeycomb-floral-silver-clutch-purse-alt.png",
+      "sha1hash": "fc25322c6e5e8f4f059a6bd480d7a50750d8b022",
+      "sanityAssetId": "image-fc25322c6e5e8f4f059a6bd480d7a50750d8b022-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fc25322c6e5e8f4f059a6bd480d7a50750d8b022-1254x1254.png"
+    },
+    {
+      "number": 40,
+      "productId": "product-dda-purse-pr-29-scallop-pattern-silver-clutch-purse",
+      "reference": "PR-29",
+      "title": "Scallop-Pattern Silver Clutch Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-08-scallop-pattern-silver-clutch-purse.png",
+      "sha1hash": "35190e9c8f82187bca1082882b9b595b26ea2b9e",
+      "sanityAssetId": "image-35190e9c8f82187bca1082882b9b595b26ea2b9e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/35190e9c8f82187bca1082882b9b595b26ea2b9e-1254x1254.png"
+    },
+    {
+      "number": 41,
+      "productId": "product-dda-purse-pr-30-enamel-birds-pearl-fringe-silver-shoulder-purse",
+      "reference": "PR-30",
+      "title": "Enamel Birds Pearl-Fringe Silver Shoulder Purse",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-09-enamel-birds-pearl-fringe-silver-shoulder-purse.png",
+      "sha1hash": "0a76fc100f6c0a990f7030c546da851b0345b0b1",
+      "sanityAssetId": "image-0a76fc100f6c0a990f7030c546da851b0345b0b1-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0a76fc100f6c0a990f7030c546da851b0345b0b1-1254x1254.png"
+    },
+    {
+      "number": 42,
+      "productId": "product-dda-purse-pr-31-jeweled-peacock-tassel-silver-handbag",
+      "reference": "PR-31",
+      "title": "Jeweled Peacock-Tassel Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/pr-10-jeweled-peacock-tassel-silver-handbag.png",
+      "sha1hash": "0c1145d5e0095627e747628a512070599f987575",
+      "sanityAssetId": "image-0c1145d5e0095627e747628a512070599f987575-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0c1145d5e0095627e747628a512070599f987575-1254x1254.png"
+    },
+    {
+      "number": 43,
+      "productId": "product-dda-utensil-kl-109-lakshmi-relief-silver-kalash",
+      "reference": "DDA-UT-KL-109",
+      "title": "Lakshmi-Relief Silver Kalash",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/kl-01-lakshmi-relief-silver-kalash.png",
+      "sha1hash": "c0465fe7f404c578037346800fe1ecae45faf8f8",
+      "sanityAssetId": "image-c0465fe7f404c578037346800fe1ecae45faf8f8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c0465fe7f404c578037346800fe1ecae45faf8f8-1254x1254.png"
+    },
+    {
+      "number": 44,
+      "productId": "product-dda-utensil-gl-111-lakshmi-relief-silver-glass-pair",
+      "reference": "DDA-UT-GL-111",
+      "title": "Lakshmi-Relief Silver Glass Pair",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/tb-01-lakshmi-relief-silver-tumbler-pair.png",
+      "sha1hash": "935236e9779948317eba29323af483056a569573",
+      "sanityAssetId": "image-935236e9779948317eba29323af483056a569573-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/935236e9779948317eba29323af483056a569573-1254x1254.png"
+    },
+    {
+      "number": 45,
+      "productId": "product-dda-gift-sg-24-twin-peacock-round-silver-singhasan",
+      "reference": "SG-24",
+      "title": "Twin-Peacock Round Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-24-twin-peacock-round-silver-singhasan-7x5.png",
+      "sha1hash": "d75ef17007f5adef2c642cb6ef3ea37380f9fb7c",
+      "sanityAssetId": "image-d75ef17007f5adef2c642cb6ef3ea37380f9fb7c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d75ef17007f5adef2c642cb6ef3ea37380f9fb7c-1254x1254.png"
+    },
+    {
+      "number": 46,
+      "productId": "product-dda-gift-sg-25-floral-back-silver-singhasan",
+      "reference": "SG-25",
+      "title": "Floral-Back Silver Singhasan",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/sg-25-floral-back-silver-singhasan-8x6.png",
+      "sha1hash": "8261c58fd4d346202801ade45b4910989239d6d9",
+      "sanityAssetId": "image-8261c58fd4d346202801ade45b4910989239d6d9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8261c58fd4d346202801ade45b4910989239d6d9-1254x1254.png"
+    },
+    {
+      "number": 47,
+      "productId": "product-dda-gift-ds-01-ceremonial-peacock-boat-silver-sculpture",
+      "reference": "DS-01",
+      "title": "Ceremonial Peacock-Boat Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20/images/ds-01-ceremonial-peacock-boat-silver-sculpture.png",
+      "sha1hash": "e86aed7081401bebb2038d9816b53b689de3ecdc",
+      "sanityAssetId": "image-e86aed7081401bebb2038d9816b53b689de3ecdc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e86aed7081401bebb2038d9816b53b689de3ecdc-1254x1254.png"
+    }
+  ]
+}

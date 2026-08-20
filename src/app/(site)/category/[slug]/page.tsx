@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
 import { getPopulatedCategories } from "@/lib/catalog-seo";
 import { createPageMetadata } from "@/lib/seo";
 import {
@@ -31,7 +32,7 @@ export async function generateMetadata({
 
   return category
     ? createPageMetadata({
-        title: `Explore ${category.title} in Agra`,
+        title: `Silver ${category.title} in Agra`,
         description: `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`,
         path: `/category/${category.slug}`,
         image: category.image,
@@ -63,9 +64,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     catalog.categories,
     catalog.products,
   );
+  const categoryProducts = catalog.products.filter(
+    (product) => product.categorySlug === category.slug,
+  );
+  const categoryDescription = `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`;
 
   return (
     <main id="main-content" className="pt-6 pb-12 sm:pt-8 sm:pb-14 lg:pt-9">
+      <CatalogStructuredData
+        name={`Silver ${category.title} in Agra`}
+        description={categoryDescription}
+        path={`/category/${category.slug}`}
+        products={categoryProducts}
+      />
       <div className="site-container">
         <Breadcrumbs
           items={[

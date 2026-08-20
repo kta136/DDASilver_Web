@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "batchId": "images-2026-08-20-approval",
+  "sourceFolder": "C:\\Users\\kk\\Desktop\\Images",
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "sourceCount": 2,
+  "readyForSanityAssetUpload": false,
+  "readyForProductPublish": false,
+  "publishBlockers": [
+    "The two-image visual treatment is awaiting owner approval; the Sanity uploader dry run has therefore not been performed.",
+    "Silver purity was not supplied by the owner and is not visible in either source photograph.",
+    "Sanity schema mismatch: standalone Singhasan depth has no dedicated field outside category-jhula. Each supplied depth is retained as suppliedDepthInches for review and must not be dropped."
+  ],
+  "products": [
+    {
+      "number": 12,
+      "id": "product-dda-gift-sg-12-scalloped-floral-round-silver-singhasan",
+      "reference": "SG-12",
+      "title": "Scalloped Floral Round Silver Singhasan",
+      "slug": "scalloped-floral-round-silver-singhasan",
+      "shortDescription": "An ornate silver singhasan weighing 270 g, with a round raised base, pierced guard rail, engraved floral seat and scalloped floral-scroll back. Supplied size: 6 × 4 in.",
+      "alt": "Round silver singhasan with pierced guard rail, engraved floral seat and scalloped floral-scroll back",
+      "categoryId": "category-gifts",
+      "weightGrams": 270,
+      "suppliedSizeLabel": "6/4inch",
+      "widthInches": 6,
+      "suppliedDepthInches": 4,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\Images\\WhatsApp Image 2026-08-13 at 5.50.20 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20-approval/images/sg-12-scalloped-floral-round-silver-singhasan-6x4.png",
+      "publishBlockers": [
+        "Owner must confirm the silver purity.",
+        "The supplied 4-inch depth cannot be stored in a dedicated Sanity field for category-gifts; it is retained as suppliedDepthInches."
+      ]
+    },
+    {
+      "number": 13,
+      "id": "product-dda-gift-sg-13-twin-peacock-floral-elephant-foot-silver-singhasan",
+      "reference": "SG-13",
+      "title": "Twin Peacock Floral Elephant-Foot Silver Singhasan",
+      "slug": "twin-peacock-floral-elephant-foot-silver-singhasan",
+      "shortDescription": "An ornate silver singhasan weighing 760 g, with a twin-peacock floral back, engraved platform, curved rails and elephant-form feet. Supplied size: 7 × 5 in.",
+      "alt": "Silver singhasan with twin-peacock floral back, engraved seat, curved rails and elephant-form feet",
+      "categoryId": "category-gifts",
+      "weightGrams": 760,
+      "suppliedSizeLabel": "7/5inch",
+      "widthInches": 7,
+      "suppliedDepthInches": 5,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\Images\\WhatsApp Image 2026-08-14 at 12.40.50 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/images-2026-08-20-approval/images/sg-13-twin-peacock-floral-elephant-foot-silver-singhasan-7x5.png",
+      "publishBlockers": [
+        "Owner must confirm the silver purity.",
+        "The supplied 5-inch depth cannot be stored in a dedicated Sanity field for category-gifts; it is retained as suppliedDepthInches."
+      ]
+    }
+  ]
+}

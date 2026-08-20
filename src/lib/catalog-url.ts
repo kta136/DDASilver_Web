@@ -26,6 +26,7 @@ const utensilTypes = new Set<UtensilType>([
   "plate",
   "jug",
   "kalash",
+  "bottle",
   "spoon",
 ]);
 

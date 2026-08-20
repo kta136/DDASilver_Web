@@ -51,8 +51,10 @@ export function ProductDetails({
       product.weightGrams ||
       product.heightInches ||
       product.widthInches ||
+      product.depthInches ||
       product.diameterInches ||
       (product.singhasanWidthInches && product.singhasanDepthInches) ||
+      (product.sizeVariants?.length ?? 0) > 0 ||
       product.utensilType ||
       product.idolConstruction ||
       product.deities.length > 0 ||
@@ -98,6 +100,16 @@ export function ProductDetails({
               </dd>
             </div>
           ) : null}
+          {product.depthInches ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Depth
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {product.depthInches} in
+              </dd>
+            </div>
+          ) : null}
           {product.diameterInches ? (
             <div>
               <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
@@ -115,6 +127,21 @@ export function ProductDetails({
               </dt>
               <dd className="mt-1 text-sm font-semibold">
                 {product.singhasanWidthInches} × {product.singhasanDepthInches} in
+              </dd>
+            </div>
+          ) : null}
+          {product.sizeVariants?.length ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Available sizes
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {product.sizeVariants
+                  .map(
+                    (variant) =>
+                      `${variant.weightGrams} g / ${variant.diameterInches} in`,
+                  )
+                  .join(", ")}
               </dd>
             </div>
           ) : null}

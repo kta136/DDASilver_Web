@@ -91,6 +91,7 @@ export const productType = defineType({
           { title: "Plate", value: "plate" },
           { title: "Jug", value: "jug" },
           { title: "Kalash", value: "kalash" },
+          { title: "Bottle", value: "bottle" },
           { title: "Spoon", value: "spoon" },
         ],
         layout: "dropdown",
@@ -155,6 +156,13 @@ export const productType = defineType({
       validation: (rule) => rule.positive().max(1_000).precision(2),
     }),
     defineField({
+      name: "depthInches",
+      title: "Depth (inches)",
+      type: "number",
+      description: "Verified front-to-back depth supplied with the product.",
+      validation: (rule) => rule.positive().max(1_000).precision(2),
+    }),
+    defineField({
       name: "diameterInches",
       title: "Diameter (inches)",
       type: "number",
@@ -207,6 +215,45 @@ export const productType = defineType({
             ? true
             : "Enter both singhasan width and depth.";
         }),
+    }),
+    defineField({
+      name: "sizeVariants",
+      title: "Weight and diameter variants",
+      type: "array",
+      description:
+        "Use when one catalog product is supplied in multiple verified weight-and-diameter combinations.",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "productSizeVariant",
+          title: "Size variant",
+          fields: [
+            defineField({
+              name: "weightGrams",
+              title: "Weight (grams)",
+              type: "number",
+              validation: (rule) => rule.required().positive().max(100_000),
+            }),
+            defineField({
+              name: "diameterInches",
+              title: "Diameter (inches)",
+              type: "number",
+              validation: (rule) =>
+                rule.required().positive().max(1_000).precision(2),
+            }),
+          ],
+          preview: {
+            select: {
+              weightGrams: "weightGrams",
+              diameterInches: "diameterInches",
+            },
+            prepare: ({ weightGrams, diameterInches }) => ({
+              title: `${weightGrams} g / ${diameterInches} in diameter`,
+            }),
+          },
+        }),
+      ],
+      validation: (rule) => rule.unique().max(20),
     }),
     defineField({
       name: "idolConstruction",

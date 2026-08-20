@@ -78,6 +78,16 @@ tumblers and cups, record `heightInches`; include `widthInches` only when a
 verified width is supplied. Never infer an unlabelled physical measurement
 from image pixels.
 
+Physical dimensions are optional for `category-purse`. Record verified purse
+dimensions when the owner supplies them, but do not block gallery readiness,
+Sanity asset upload, or product publication solely because a purse has no
+height, width, or diameter. Weight and confirmed purity remain required for
+purse products.
+
+Use `utensilType: "bottle"` for bottles in `category-utensils`. Bottle height
+is the applicable physical dimension when supplied. Do not classify bottles as
+jugs or leave their utensil type unset.
+
 ## Sanity readiness
 
 The delivery manifest must declare its status rather than implying it is ready:
@@ -98,7 +108,9 @@ Run the relevant uploader in dry-run mode before calling the batch ready. Do
 not upload or publish until the user authorizes that external write.
 
 The product schema supports `weightGrams`, `heightInches`, `widthInches`,
-`diameterInches`, `singhasanWidthInches`, and `singhasanDepthInches`. Keep the
+`depthInches`, `diameterInches`, `singhasanWidthInches`,
+`singhasanDepthInches`, and structured `sizeVariants` containing verified
+weight-and-diameter pairs. Keep the
 supplied measurement in both the applicable Sanity field and the
 customer-facing `shortDescription`. Never infer an unavailable measurement
 from pixels or copy a diameter into width. Singhasan width is measured
