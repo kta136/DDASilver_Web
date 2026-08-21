@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { isSanityImageUrl } from "@/lib/sanity-image";
 import { siteConfig } from "@/lib/site";
 import type { CatalogImage } from "@/types/catalog";
 
@@ -13,10 +14,10 @@ export const productSocialImageSize = {
 } as const;
 
 export const defaultSocialImage: CatalogImage = {
-  src: "/images/mockup/hero-silver-bowl.png",
+  src: "/images/mockup/hero-silver-bowl-social.jpg",
   alt: "Ornate engraved silver bowl representing DDA Silver in Agra",
-  width: 1672,
-  height: 941,
+  width: 1200,
+  height: 630,
 };
 
 type PageMetadataOptions = {
@@ -64,11 +65,13 @@ export function getProductSocialImage(
 export function getSocialImageProductUrl(src: string) {
   const url = new URL(toAbsoluteUrl(src));
 
-  if (url.hostname === "cdn.sanity.io") {
+  if (isSanityImageUrl(url.toString())) {
+    url.searchParams.delete("auto");
     url.searchParams.set("w", "560");
     url.searchParams.set("h", "560");
     url.searchParams.set("fit", "max");
-    url.searchParams.set("q", "92");
+    url.searchParams.set("fm", "jpg");
+    url.searchParams.set("q", "90");
   }
 
   return url.toString();

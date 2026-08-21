@@ -29,12 +29,16 @@ export const categoryType = defineType({
       name: "image",
       title: "Image",
       type: "image",
+      description:
+        "The website automatically creates responsive Sanity CDN URLs and a descriptive filename from the category slug.",
       options: { hotspot: true },
       fields: [
         defineField({
           name: "alt",
           title: "Alternative text",
           type: "string",
+          description:
+            "Required for accessibility and image search. Describe the visible silver item represented by this category.",
           validation: (rule) => rule.required().min(12).max(180),
         }),
       ],

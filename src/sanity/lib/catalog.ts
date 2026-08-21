@@ -7,6 +7,8 @@ import {
   fallbackCollections,
   fallbackProducts,
 } from "@/data/catalog";
+import { getCatalogImageWithSeo } from "@/lib/sanity-image";
+import { getProductSeoName } from "@/lib/seo";
 import {
   isSanityConfigured,
   sanityDataset,
@@ -39,7 +41,12 @@ const catalogImageSchema = z.object({
     .string()
     .url()
     .refine((value) => value.startsWith(sanityImageUrlPrefix)),
-  alt: z.string().trim().max(240),
+  alt: z
+    .string()
+    .trim()
+    .max(240)
+    .nullish()
+    .transform((value) => value ?? ""),
   width: z.number().int().positive().max(20_000),
   height: z.number().int().positive().max(20_000),
   objectPosition: z
@@ -158,11 +165,60 @@ const catalogSchema = z.object({
   collections: z.array(collectionSchema).max(100),
 });
 
-function getFallbackCatalog(): Catalog {
+function addAutomaticImageSeo({
+  products,
+  categories,
+  collections,
+}: Pick<Catalog, "products" | "categories" | "collections">) {
   return {
+    products: products.map((product) => {
+      const productName = getProductSeoName(
+        product.title,
+        product.reference,
+      );
+
+      return {
+        ...product,
+        images: product.images.map((image, index) =>
+          getCatalogImageWithSeo(image, {
+            fallbackAlt:
+              index === 0
+                ? `${productName} from DDA Silver`
+                : `${productName}, alternate view ${index + 1}, from DDA Silver`,
+            vanityFilename:
+              index === 0
+                ? product.slug
+                : `${product.slug}-view-${index + 1}`,
+          }),
+        ),
+      };
+    }),
+    categories: categories.map((category) => ({
+      ...category,
+      image: getCatalogImageWithSeo(category.image, {
+        fallbackAlt: `${category.title} silver category at DDA Silver`,
+        vanityFilename: `${category.slug}-silver-category`,
+      }),
+    })),
+    collections: collections.map((collection) => ({
+      ...collection,
+      heroImage: getCatalogImageWithSeo(collection.heroImage, {
+        fallbackAlt: `${collection.title} silver collection at DDA Silver`,
+        vanityFilename: `${collection.slug}-silver-collection`,
+      }),
+    })),
+  };
+}
+
+function getFallbackCatalog(): Catalog {
+  const catalog = addAutomaticImageSeo({
     products: fallbackProducts,
     categories: fallbackCategories,
     collections: fallbackCollections,
+  });
+
+  return {
+    ...catalog,
     source: "fallback",
   };
 }
@@ -233,9 +289,7 @@ export async function fetchCatalog(
   }
 
   return {
-    products: parsed.data.products,
-    categories: parsed.data.categories,
-    collections: parsed.data.collections,
+    ...addAutomaticImageSeo(parsed.data),
     source: "sanity",
   };
 }

@@ -70,7 +70,7 @@ export default async function HomePage() {
 
           <div className="relative min-h-[22rem] overflow-hidden bg-[#d8d4d0] sm:min-h-[27rem] lg:min-h-full">
             <Image
-              src="/images/mockup/hero-silver-bowl.png"
+              src="/images/mockup/hero-silver-bowl.webp"
               alt="Concept image of an ornate engraved silver bowl"
               fill
               priority

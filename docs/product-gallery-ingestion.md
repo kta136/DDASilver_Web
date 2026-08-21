@@ -67,6 +67,14 @@ Required per-item values:
 | `imagePath` | Repository-relative path to the final PNG |
 | `reference` | Stable internal item code when an approved code family exists |
 
+The uploaded master filename remains useful for operations, but it is not the
+customer-facing image URL. At read time the website automatically appends a
+stable, descriptive Sanity vanity filename derived from the product slug and
+gallery position. It also generates responsive modern-format variants directly
+on Sanity's CDN. Keep writing image-specific alt text: the runtime fallback is a
+safety net for legacy or direct API imports, not a replacement for reviewing
+what is actually visible.
+
 Descriptions should identify the utensil type and visible design, state the
 confirmed purity naturally, and include the supplied measurements without
 making unsupported quality, price, stock, or availability claims. Similar

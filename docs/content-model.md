@@ -205,3 +205,28 @@ slug. The website maps the change to affected paths:
   sitemap.
 - Page/settings: the direct page plus layouts or metadata that consume the
   singleton.
+
+## Automatic image delivery and SEO
+
+Published product, category, and collection images are delivered directly from
+the Sanity image CDN. The website generates a bounded responsive `srcset` with
+`w`, `q`, `fit=max`, and `auto=format`; the Vercel Image Optimization endpoint
+is not part of this path. Sanity selects AVIF or WebP when the browser supports
+it and never receives a requested width larger than the uploaded master.
+
+The catalog boundary also appends a stable descriptive vanity filename derived
+from the product, category, or collection slug. This happens automatically for
+existing assets and every future upload, so the hash-only Sanity asset filename
+is not exposed as the public SEO filename. Product JSON-LD and the image sitemap
+reuse the same URL. Social-card rendering pins the product source to JPEG for
+predictable crawler support.
+
+Alternative text remains editorial content: it must accurately describe the
+visible image and is required in Sanity Studio. The website preserves authored
+alt text and supplies a deterministic title-based fallback for legacy or direct
+API imports that omitted it. An intentionally decorative rendering may still
+use `alt=""` when the same meaning is already present in adjacent text.
+
+Local files under `public/` are served directly and should be compressed to
+their intended display dimensions before being added; they do not use Vercel's
+image optimizer.

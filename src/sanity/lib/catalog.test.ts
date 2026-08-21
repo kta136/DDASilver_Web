@@ -22,6 +22,34 @@ function catalogImage(alt: string) {
   };
 }
 
+function productPayload(imageAlt?: string) {
+  return {
+    title: "TEST-1 — Test Silver Gift",
+    slug: "test-silver-gift",
+    shortDescription: "A test silver gift used to verify catalog recovery.",
+    images: [{ ...catalogImage(imageAlt ?? ""), alt: imageAlt }],
+    categorySlug: "gifts",
+    collectionSlugs: [],
+    featured: false,
+    displayOrder: 1,
+    reference: "TEST-1",
+    purity: "92.5",
+    weightGrams: null,
+    heightInches: null,
+    widthInches: null,
+    depthInches: null,
+    diameterInches: null,
+    singhasanWidthInches: null,
+    singhasanDepthInches: null,
+    sizeVariants: [],
+    utensilType: null,
+    idolConstruction: null,
+    deities: [],
+    coinShape: null,
+    updatedAt: "2026-08-09T00:00:00.000Z",
+  };
+}
+
 describe("fetchCatalog()", () => {
   it("retries without the CDN after a malformed or failed Sanity response", async () => {
     const retryFetch = vi
@@ -132,6 +160,37 @@ describe("fetchCatalog()", () => {
 
     expect(catalog.source).toBe("sanity");
     expect(catalog.products[0]?.utensilType).toBe("bottle");
+  });
+
+  it("automatically adds product image SEO for API-imported content", async () => {
+    const fetch = vi
+      .fn()
+      .mockResolvedValueOnce([productPayload()])
+      .mockResolvedValueOnce([
+        {
+          title: "Gifts",
+          slug: "gifts",
+          description: "Silver gifts for meaningful occasions.",
+          image: catalogImage("A representative silver gift"),
+          displayOrder: 1,
+          updatedAt: "2026-08-09T00:00:00.000Z",
+        },
+      ])
+      .mockResolvedValueOnce([]);
+    const client = asCatalogClient({ fetch, withConfig: vi.fn() });
+
+    const catalog = await fetchCatalog(client);
+
+    expect(catalog.source).toBe("sanity");
+    expect(catalog.products[0]?.images[0]).toMatchObject({
+      alt: "Test Silver Gift from DDA Silver",
+      src: expect.stringContaining(
+        "/test-1x1.png/test-silver-gift.png",
+      ),
+    });
+    expect(catalog.categories[0]?.image.src).toContain(
+      "/test-1x1.png/gifts-silver-category.png",
+    );
   });
 
   it("uses the fallback catalog when both Sanity requests fail", async () => {

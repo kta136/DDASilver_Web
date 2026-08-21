@@ -12,10 +12,10 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
       className="inline-flex items-center gap-3 no-underline"
     >
       <Image
-        src="/brand/dda-family-mark.png"
+        src="/brand/dda-family-mark.webp"
         alt=""
-        width={804}
-        height={692}
+        width={402}
+        height={346}
         sizes={compact ? "50px" : "(min-width: 1440px) 86px, 62px"}
         data-compact={compact}
         className="brand-family-mark object-contain"

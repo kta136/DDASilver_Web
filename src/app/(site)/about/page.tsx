@@ -31,7 +31,7 @@ export default function AboutPage() {
         </div>
         <div className="relative min-h-[27rem] bg-[#e4e1dd]">
           <Image
-            src="/images/mockup/hero-silver-bowl.png"
+            src="/images/mockup/hero-silver-bowl.webp"
             alt="Concept image of an ornate engraved silver bowl"
             fill
             priority

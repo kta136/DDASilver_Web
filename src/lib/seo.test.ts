@@ -104,10 +104,10 @@ describe("SEO helpers", () => {
   it("adds Sanity image transformations for social cards", () => {
     expect(
       getSocialImageProductUrl(
-        "https://cdn.sanity.io/images/project/production/product.png",
+        "https://cdn.sanity.io/images/project/production/product-1254x1254.png/product-name.png?auto=format",
       ),
     ).toBe(
-      "https://cdn.sanity.io/images/project/production/product.png?w=560&h=560&fit=max&q=92",
+      "https://cdn.sanity.io/images/project/production/product-1254x1254.png/product-name.png?w=560&h=560&fit=max&fm=jpg&q=90",
     );
   });
 

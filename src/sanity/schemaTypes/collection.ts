@@ -29,12 +29,16 @@ export const collectionType = defineType({
       name: "heroImage",
       title: "Hero image",
       type: "image",
+      description:
+        "The website automatically creates responsive Sanity CDN URLs and a descriptive filename from the collection slug.",
       options: { hotspot: true },
       fields: [
         defineField({
           name: "alt",
           title: "Alternative text",
           type: "string",
+          description:
+            "Required for accessibility and image search. Describe the visible silver products in this collection image.",
           validation: (rule) => rule.required().min(12).max(180),
         }),
       ],

@@ -51,6 +51,8 @@ export const productType = defineType({
       name: "gallery",
       title: "Image gallery",
       type: "array",
+      description:
+        "Upload the original approved image. The website automatically creates responsive Sanity CDN URLs and descriptive filenames from the product slug.",
       of: [
         defineArrayMember({
           type: "image",
@@ -61,7 +63,7 @@ export const productType = defineType({
               title: "Alternative text",
               type: "string",
               description:
-                "Describe the visible product and important context. Do not repeat the product title alone.",
+                "Required for accessibility and image search. Describe the visible product and important context; do not repeat the product title alone. Upload scripts populate this automatically, but review it before publishing.",
               validation: (rule) => rule.required().min(12).max(180),
             }),
           ],

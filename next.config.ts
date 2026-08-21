@@ -45,7 +45,10 @@ const contentSecurityPolicy = [
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/avif", "image/webp"],
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
+    deviceSizes: [384, 640, 828, 1080, 1200],
+    imageSizes: [64, 96, 128, 256],
     remotePatterns:
       sanityProjectId && sanityDataset
         ? [
