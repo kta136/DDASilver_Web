@@ -68,16 +68,16 @@ describe("catalog URL state", () => {
     );
   });
 
-  it("round-trips Gold purity and scalloped shape", () => {
+  it("round-trips 91.60% Gold purity and scalloped shape", () => {
     const parsed = parseCatalogSearchParams(
-      new URLSearchParams("category=gold&purity=99.50&shape=scalloped"),
+      new URLSearchParams("category=gold&purity=91.60&shape=scalloped"),
       options,
     );
 
-    expect(parsed.purity).toBe("99.50");
+    expect(parsed.purity).toBe("91.60");
     expect(parsed.coinShape).toBe("scalloped");
     expect(serializeCatalogFilters(parsed).toString()).toBe(
-      "category=gold&purity=99.50&shape=scalloped",
+      "category=gold&purity=91.60&shape=scalloped",
     );
   });
 

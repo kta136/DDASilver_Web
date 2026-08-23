@@ -26,7 +26,7 @@ export type Collection = {
 };
 
 export type ProductMaterial = "silver" | "gold";
-export type ProductPurity = "92.5" | "99.50" | "99.80";
+export type ProductPurity = "91.60" | "92.5" | "99.50" | "99.80";
 export type IdolConstruction = "hollow" | "solid" | "semi-solid";
 export type CoinShape = "round" | "oval" | "square" | "rectangle" | "scalloped";
 export type UtensilType =

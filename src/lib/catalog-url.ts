@@ -8,7 +8,12 @@ import type {
   UtensilType,
 } from "@/types/catalog";
 
-const purities = new Set<ProductPurity>(["92.5", "99.50", "99.80"]);
+const purities = new Set<ProductPurity>([
+  "91.60",
+  "92.5",
+  "99.50",
+  "99.80",
+]);
 const idolConstructions = new Set<IdolConstruction>([
   "hollow",
   "solid",

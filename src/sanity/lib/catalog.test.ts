@@ -165,7 +165,7 @@ describe("fetchCatalog()", () => {
     expect(catalog.products[0]?.utensilType).toBe("bottle");
   });
 
-  it("accepts Gold products and Pooja Thali Sets", async () => {
+  it("accepts Gold products with multiple purities and Pooja Thali Sets", async () => {
     const goldProduct = {
       ...productPayload("A card-packed gold coin on a neutral background"),
       title: "Card-Packed Gold Coin",
@@ -176,6 +176,20 @@ describe("fetchCatalog()", () => {
       reference: "DDA-GOLD-TEST-1",
       material: "gold",
       purity: "99.50",
+      coinShape: "round",
+    };
+    const queenVictoriaGoldProduct = {
+      ...productPayload(
+        "A card-packed Queen Victoria gold coin on a neutral background",
+      ),
+      title: "Packaged Queen Victoria Gold Coin",
+      slug: "packaged-queen-victoria-gold-coin",
+      shortDescription:
+        "A card-packed 91.60% Queen Victoria gold coin prepared for gifting.",
+      categorySlug: "gold",
+      reference: "DDA-GOLD-TEST-2",
+      material: "gold",
+      purity: "91.60",
       coinShape: "round",
     };
     const poojaThali = {
@@ -192,12 +206,12 @@ describe("fetchCatalog()", () => {
     };
     const fetch = vi
       .fn()
-      .mockResolvedValueOnce([goldProduct, poojaThali])
+      .mockResolvedValueOnce([goldProduct, queenVictoriaGoldProduct, poojaThali])
       .mockResolvedValueOnce([
         {
           title: "Gold Coins & Bars",
           slug: "gold",
-          description: "Card-packed 99.50% gold coins and bars.",
+          description: "Card-packed gold coins and bars in multiple purities.",
           image: catalogImage("A representative card-packed gold coin"),
           displayOrder: 1,
           updatedAt: "2026-08-22T00:00:00.000Z",
@@ -222,6 +236,11 @@ describe("fetchCatalog()", () => {
         expect.objectContaining({
           material: "gold",
           purity: "99.50",
+          coinShape: "round",
+        }),
+        expect.objectContaining({
+          material: "gold",
+          purity: "91.60",
           coinShape: "round",
         }),
         expect.objectContaining({

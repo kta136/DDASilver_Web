@@ -38,7 +38,7 @@ The source folder was read only; output files were written under the repository.
 ## Metadata coverage
 
 - 57 silver coin/bar records use the intended `category-coin` category and owner-confirmed `99.80` purity. Two-tone designs are recorded as gold-polished silver, not gold products.
-- 6 card-packed gold records use `category-gold`, material `gold`, and owner-confirmed `99.50` purity. Any visible card marking is retained separately as `sourcePurityMarking` for traceability.
+- 4 card-packed fine-gold bar records use `category-gold`, material `gold`, and owner-confirmed `99.50` purity. The 2 packaged Queen Victoria gold coin records use the same category and material with owner-confirmed `91.60` purity. Any visible card marking is retained separately as `sourcePurityMarking` for traceability.
 - 4 purse records use `category-purse` with owner-confirmed `92.5` silver purity.
 - 13 Pooja Thali Set records use `category-utensils`, owner-confirmed `92.5` silver purity, and `utensilType: pooja-thali-set`.
 - Five packaged gold records retain the supplied ±0.03 g weight tolerance.
@@ -48,7 +48,7 @@ The source folder was read only; output files were written under the repository.
 
 The repository mixed-gallery validator found all 80 source mappings and all 80 final PNGs. All image files opened as 1254 x 1254 PNGs. Numbers, IDs, references, titles, slugs, descriptions, alt text, source paths, source checksums, and image paths are unique.
 
-The Sanity schema and mixed-gallery pipeline now support Coin, Gold Coins & Bars, material, 99.50% purity, Pooja Thali Sets, and scalloped coin shapes. Coin and bar dimensions are intentionally not required for this batch by owner instruction.
+The Sanity schema and mixed-gallery pipeline now support Coin, Gold Coins & Bars, material, 91.60% and 99.50% gold purities, Pooja Thali Sets, and scalloped coin shapes. Coin and bar dimensions are intentionally not required for this batch by owner instruction.
 
 Records 038, 047, 048, and 053 are recorded at the owner-confirmed weight of 10 grams each. Record 066 is recorded at the owner-confirmed diameter of 10 inches.
 

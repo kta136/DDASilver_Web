@@ -83,7 +83,7 @@ type ManifestProduct = {
     | "spoon"
     | "pooja-thali-set";
   material?: "silver" | "gold";
-  purity: "92.5" | "99.50" | "99.80";
+  purity: "91.60" | "92.5" | "99.50" | "99.80";
   coinShape?: "round" | "oval" | "square" | "rectangle" | "scalloped";
   weightGrams?: number;
   heightInches?: number;
@@ -205,6 +205,7 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
       throw new Error(`${product.reference} has an unsupported category.`);
     }
     if (
+      product.purity !== "91.60" &&
       product.purity !== "92.5" &&
       product.purity !== "99.50" &&
       product.purity !== "99.80"

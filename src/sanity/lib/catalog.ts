@@ -95,7 +95,7 @@ const productSchema = z.object({
     .nullish()
     .transform((value) => value ?? undefined),
   purity: z
-    .enum(["92.5", "99.50", "99.80"])
+    .enum(["91.60", "92.5", "99.50", "99.80"])
     .nullish()
     .transform((value) => value ?? undefined),
   weightGrams: z

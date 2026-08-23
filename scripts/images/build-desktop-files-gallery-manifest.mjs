@@ -117,7 +117,12 @@ function categoryFor(item) {
 }
 
 function confirmedPurityFor(item) {
-  if (item.kind === "gold") return "99.50";
+  if (item.kind === "gold") {
+    if (!item.purity) {
+      throw new Error(`Missing confirmed gold purity for source record ${item.n}.`);
+    }
+    return item.purity;
+  }
   if (item.kind === "coin") return "99.80";
   return "92.5";
 }
@@ -229,7 +234,8 @@ const manifest = {
   coinAndBarDimensionsPolicy: "Ignored by owner instruction on 2026-08-22.",
   ownerConfirmedPurityPolicy: {
     silverCoinsIncludingGoldPolish: "99.80",
-    cardPackedGoldProducts: "99.50",
+    cardPackedQueenVictoriaGoldCoins: "91.60",
+    cardPackedFineGoldBars: "99.50",
     otherSilverProducts: "92.5",
     confirmedAt: "2026-08-22",
   },

@@ -84,7 +84,7 @@ const categories = [
     title: "Gold Coins & Bars",
     slug: "gold",
     description:
-      "Card-packed 99.50% gold coins and bars for gifting and milestones.",
+      "Card-packed gold coins and bars in product-specific purities for gifting and milestones.",
     displayOrder: 8,
     imagePath:
       "public/images/gallery-ingestion/desktop-files-2026-08-22/054-packaged-fine-gold-bar-1g-995.png",

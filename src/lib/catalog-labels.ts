@@ -7,6 +7,7 @@ import type {
 } from "@/types/catalog";
 
 export const purityLabels: Record<ProductPurity, string> = {
+  "91.60": "91.60%",
   "92.5": "92.5%",
   "99.50": "99.50%",
   "99.80": "99.80%",

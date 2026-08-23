@@ -29,7 +29,7 @@ const utensilReferenceCodeByType = new Map([
   ["spoon", "SP"],
   ["pooja-thali-set", "PT"],
 ]);
-const supportedPurities = new Set(["92.5", "99.50", "99.80"]);
+const supportedPurities = new Set(["91.60", "92.5", "99.50", "99.80"]);
 const supportedMaterials = new Set(["silver", "gold"]);
 const supportedCoinShapes = new Set([
   "round",
@@ -212,7 +212,7 @@ function validateManifest(manifest, manifestPath) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(product.slug ?? "")) errors.push(`${label}: invalid slug`);
     if (!supportedCategories.has(product.categoryId)) errors.push(`${label}: unsupported category ${product.categoryId}`);
     if (!supportedPurities.has(product.purity)) {
-      errors.push(`${label}: purity must be 92.5, 99.50 or 99.80`);
+      errors.push(`${label}: purity must be 91.60, 92.5, 99.50 or 99.80`);
     }
     if (!supportedMaterials.has(product.material)) {
       errors.push(`${label}: material must be silver or gold`);

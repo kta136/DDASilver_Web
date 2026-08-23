@@ -147,6 +147,7 @@ export const productType = defineType({
       type: "string",
       options: {
         list: [
+          { title: "91.60%", value: "91.60" },
           { title: "92.5%", value: "92.5" },
           { title: "99.50%", value: "99.50" },
           { title: "99.80%", value: "99.80" },
