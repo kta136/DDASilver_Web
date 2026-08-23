@@ -1,6 +1,7 @@
 import {
   coinShapeLabels,
   idolConstructionLabels,
+  materialLabels,
   purityLabels,
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
@@ -90,8 +91,14 @@ export function getCatalogPageStructuredData({
 
 export function getProductStructuredDataProperties(product: Product) {
   const properties = [
+    product.material
+      ? { name: "Material", value: materialLabels[product.material] }
+      : null,
     product.purity
-      ? { name: "Silver purity", value: purityLabels[product.purity] }
+      ? {
+          name: product.material === "gold" ? "Gold purity" : "Silver purity",
+          value: purityLabels[product.purity],
+        }
       : null,
     product.weightGrams
       ? { name: "Weight", value: `${product.weightGrams} g` }
@@ -126,7 +133,7 @@ export function getProductStructuredDataProperties(product: Product) {
         }
       : null,
     product.utensilType
-      ? { name: "Utensil type", value: utensilTypeLabels[product.utensilType] }
+      ? { name: "Product type", value: utensilTypeLabels[product.utensilType] }
       : null,
     product.idolConstruction
       ? {
@@ -141,7 +148,7 @@ export function getProductStructuredDataProperties(product: Product) {
         }
       : null,
     product.coinShape
-      ? { name: "Coin shape", value: coinShapeLabels[product.coinShape] }
+      ? { name: "Shape", value: coinShapeLabels[product.coinShape] }
       : null,
   ].filter((property): property is { name: string; value: string } =>
     Boolean(property),

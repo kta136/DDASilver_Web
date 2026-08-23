@@ -1,0 +1,813 @@
+{
+  "schemaVersion": 1,
+  "batchId": "desktop-files-2026-08-22",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-22T10:47:03.085Z",
+  "productCount": 80,
+  "uniqueAssetCount": 80,
+  "uploadedAssetCount": 80,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-desktop-files-20260822-001",
+      "reference": "DDA-COIN-20260822-001",
+      "title": "DDA 5 Gram Benjamin Franklin Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/001-benjamin-franklin-rectangular-silver-bar-5g.png",
+      "sha1hash": "d6ff65f44bc63dfbc8a4112996665ae01c6e3f76",
+      "sanityAssetId": "image-d6ff65f44bc63dfbc8a4112996665ae01c6e3f76-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d6ff65f44bc63dfbc8a4112996665ae01c6e3f76-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-desktop-files-20260822-002",
+      "reference": "DDA-COIN-20260822-002",
+      "title": "DDA 5 Gram George V Two-Tone Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/002-george-v-two-tone-round-silver-coin-5g.png",
+      "sha1hash": "9948b0154a38195edce6c006edfadea57cd8b2f6",
+      "sanityAssetId": "image-9948b0154a38195edce6c006edfadea57cd8b2f6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9948b0154a38195edce6c006edfadea57cd8b2f6-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-desktop-files-20260822-003",
+      "reference": "DDA-COIN-20260822-003",
+      "title": "DDA 5 Gram George V Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/003-george-v-all-silver-round-coin-5g.png",
+      "sha1hash": "ea35d9ded009342d73dbbc3fe3738d5dac8098f3",
+      "sanityAssetId": "image-ea35d9ded009342d73dbbc3fe3738d5dac8098f3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ea35d9ded009342d73dbbc3fe3738d5dac8098f3-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-desktop-files-20260822-004",
+      "reference": "DDA-COIN-20260822-004",
+      "title": "DDA 10 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/004-george-v-two-tone-oval-coin-10g.png",
+      "sha1hash": "17972178d9798fb9f09205bec8b4d66291ed60e9",
+      "sanityAssetId": "image-17972178d9798fb9f09205bec8b4d66291ed60e9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/17972178d9798fb9f09205bec8b4d66291ed60e9-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-desktop-files-20260822-005",
+      "reference": "DDA-COIN-20260822-005",
+      "title": "DDA 20 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/005-george-v-two-tone-oval-coin-20g.png",
+      "sha1hash": "a55cbd481eb97d561cca3c0fd60ae8fe496ed413",
+      "sanityAssetId": "image-a55cbd481eb97d561cca3c0fd60ae8fe496ed413-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a55cbd481eb97d561cca3c0fd60ae8fe496ed413-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-desktop-files-20260822-006",
+      "reference": "DDA-COIN-20260822-006",
+      "title": "DDA 25 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/006-george-v-two-tone-oval-coin-25g.png",
+      "sha1hash": "02aa4b990b40296e8e688e6473bade7f506b3231",
+      "sanityAssetId": "image-02aa4b990b40296e8e688e6473bade7f506b3231-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/02aa4b990b40296e8e688e6473bade7f506b3231-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-desktop-files-20260822-007",
+      "reference": "DDA-COIN-20260822-007",
+      "title": "DDA 50 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/007-george-v-two-tone-oval-coin-50g.png",
+      "sha1hash": "fb85e6cc96df53f50114d9e2e825619a451c424a",
+      "sanityAssetId": "image-fb85e6cc96df53f50114d9e2e825619a451c424a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fb85e6cc96df53f50114d9e2e825619a451c424a-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-desktop-files-20260822-008",
+      "reference": "DDA-COIN-20260822-008",
+      "title": "DDA 100 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/008-george-v-two-tone-oval-coin-100g.png",
+      "sha1hash": "6eb7e66180a3332b67ad6f59f2929f477497a3ac",
+      "sanityAssetId": "image-6eb7e66180a3332b67ad6f59f2929f477497a3ac-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6eb7e66180a3332b67ad6f59f2929f477497a3ac-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-desktop-files-20260822-009",
+      "reference": "DDA-COIN-20260822-009",
+      "title": "DDA 10 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/009-radha-krishna-two-tone-oval-coin-10g.png",
+      "sha1hash": "33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0",
+      "sanityAssetId": "image-33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-desktop-files-20260822-010",
+      "reference": "DDA-COIN-20260822-010",
+      "title": "DDA 20 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/010-radha-krishna-two-tone-oval-coin-20g.png",
+      "sha1hash": "8949ec83147cd00c058001fb7e6356e777f1051b",
+      "sanityAssetId": "image-8949ec83147cd00c058001fb7e6356e777f1051b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8949ec83147cd00c058001fb7e6356e777f1051b-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-desktop-files-20260822-011",
+      "reference": "PR-2201",
+      "title": "DDA 405 Gram Floral Panel Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/011-floral-panel-silver-purse-405g.png",
+      "sha1hash": "8bd173c33643da735477d0a595e139f3b17f4835",
+      "sanityAssetId": "image-8bd173c33643da735477d0a595e139f3b17f4835-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8bd173c33643da735477d0a595e139f3b17f4835-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-desktop-files-20260822-012",
+      "reference": "PR-2202",
+      "title": "DDA 400 Gram Woven Lattice Two-Tone Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/012-woven-lattice-two-tone-silver-purse-400g.png",
+      "sha1hash": "c3d861b5f5ff076a5b55db2f2f58b9dfe5633193",
+      "sanityAssetId": "image-c3d861b5f5ff076a5b55db2f2f58b9dfe5633193-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c3d861b5f5ff076a5b55db2f2f58b9dfe5633193-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-desktop-files-20260822-013",
+      "reference": "PR-2203",
+      "title": "DDA 450 Gram Openwork Scroll Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/013-openwork-scroll-silver-purse-450g.png",
+      "sha1hash": "fb2be094473242e509826d36413a621625b83f92",
+      "sanityAssetId": "image-fb2be094473242e509826d36413a621625b83f92-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fb2be094473242e509826d36413a621625b83f92-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-desktop-files-20260822-014",
+      "reference": "PR-2204",
+      "title": "DDA 400 Gram Peacock Motif Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/014-peacock-motif-silver-purse-400g.png",
+      "sha1hash": "c2b9237877e3acde0d3bb121c194fcd2849d949e",
+      "sanityAssetId": "image-c2b9237877e3acde0d3bb121c194fcd2849d949e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c2b9237877e3acde0d3bb121c194fcd2849d949e-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-desktop-files-20260822-015",
+      "reference": "DDA-COIN-20260822-015",
+      "title": "DDA 25 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/015-radha-krishna-two-tone-oval-coin-25g.png",
+      "sha1hash": "c86f0926c2881729d656c3357abb74e3a0ee446b",
+      "sanityAssetId": "image-c86f0926c2881729d656c3357abb74e3a0ee446b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c86f0926c2881729d656c3357abb74e3a0ee446b-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-desktop-files-20260822-016",
+      "reference": "DDA-COIN-20260822-016",
+      "title": "DDA 50 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/016-radha-krishna-two-tone-oval-coin-50g.png",
+      "sha1hash": "bf22561dca9581d38a434e50239787d9517cf191",
+      "sanityAssetId": "image-bf22561dca9581d38a434e50239787d9517cf191-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bf22561dca9581d38a434e50239787d9517cf191-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-desktop-files-20260822-017",
+      "reference": "DDA-COIN-20260822-017",
+      "title": "DDA 50 Gram Ram Darbar Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/017-ram-darbar-two-tone-oval-coin-50g.png",
+      "sha1hash": "a105955c87bc068333d339022f2820038dc5d240",
+      "sanityAssetId": "image-a105955c87bc068333d339022f2820038dc5d240-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a105955c87bc068333d339022f2820038dc5d240-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-desktop-files-20260822-018",
+      "reference": "DDA-COIN-20260822-018",
+      "title": "DDA 50 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/018-bal-krishna-two-tone-oval-coin-50g.png",
+      "sha1hash": "0d8d12ce3e2ace836bacec528e88a1b7c17edc9d",
+      "sanityAssetId": "image-0d8d12ce3e2ace836bacec528e88a1b7c17edc9d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0d8d12ce3e2ace836bacec528e88a1b7c17edc9d-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-desktop-files-20260822-019",
+      "reference": "DDA-COIN-20260822-019",
+      "title": "DDA 50 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/019-queen-elizabeth-tree-of-life-square-coin-50g.png",
+      "sha1hash": "d54dcc1ff05bf29a63867a6b93b5be39802f0e20",
+      "sanityAssetId": "image-d54dcc1ff05bf29a63867a6b93b5be39802f0e20-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d54dcc1ff05bf29a63867a6b93b5be39802f0e20-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-desktop-files-20260822-020",
+      "reference": "DDA-COIN-20260822-020",
+      "title": "DDA 100 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/020-queen-elizabeth-tree-of-life-square-coin-100g.png",
+      "sha1hash": "07391502dd55454141700dd787bc079845ec46d4",
+      "sanityAssetId": "image-07391502dd55454141700dd787bc079845ec46d4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/07391502dd55454141700dd787bc079845ec46d4-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-desktop-files-20260822-021",
+      "reference": "DDA-COIN-20260822-021",
+      "title": "DDA 10 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/021-queen-elizabeth-tree-of-life-square-coin-10g.png",
+      "sha1hash": "13f78b521f26162798939112014f67b4819a640e",
+      "sanityAssetId": "image-13f78b521f26162798939112014f67b4819a640e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/13f78b521f26162798939112014f67b4819a640e-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-desktop-files-20260822-022",
+      "reference": "DDA-COIN-20260822-022",
+      "title": "DDA 20 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/022-queen-elizabeth-tree-of-life-square-coin-20g.png",
+      "sha1hash": "396b92a02e42372a054c7e2dbcc51b5eb9f85698",
+      "sanityAssetId": "image-396b92a02e42372a054c7e2dbcc51b5eb9f85698-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/396b92a02e42372a054c7e2dbcc51b5eb9f85698-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-desktop-files-20260822-023",
+      "reference": "DDA-COIN-20260822-023",
+      "title": "DDA 20 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/023-bal-krishna-two-tone-oval-coin-20g.png",
+      "sha1hash": "e6d33432563ff0d7387024c82a12e5d39d53def2",
+      "sanityAssetId": "image-e6d33432563ff0d7387024c82a12e5d39d53def2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e6d33432563ff0d7387024c82a12e5d39d53def2-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-desktop-files-20260822-024",
+      "reference": "DDA-COIN-20260822-024",
+      "title": "DDA 10 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/024-bal-krishna-two-tone-oval-coin-10g.png",
+      "sha1hash": "3305397c69ffba3b24dcf954aa931a0836c01a91",
+      "sanityAssetId": "image-3305397c69ffba3b24dcf954aa931a0836c01a91-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3305397c69ffba3b24dcf954aa931a0836c01a91-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-desktop-files-20260822-025",
+      "reference": "DDA-COIN-20260822-025",
+      "title": "DDA 25 Gram Scalloped Tree of Life Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/025-tree-of-life-scalloped-silver-coin-25g.png",
+      "sha1hash": "45be26d8a796d6fa9cde1a985788a6d6e2e62df9",
+      "sanityAssetId": "image-45be26d8a796d6fa9cde1a985788a6d6e2e62df9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/45be26d8a796d6fa9cde1a985788a6d6e2e62df9-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-desktop-files-20260822-026",
+      "reference": "DDA-COIN-20260822-026",
+      "title": "DDA 25 Gram Radha Krishna Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/026-radha-krishna-all-silver-oval-coin-25g.png",
+      "sha1hash": "d0b0099c38f153e997cddbebbdf286e481361bd8",
+      "sanityAssetId": "image-d0b0099c38f153e997cddbebbdf286e481361bd8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d0b0099c38f153e997cddbebbdf286e481361bd8-1254x1254.png"
+    },
+    {
+      "number": 27,
+      "productId": "product-dda-desktop-files-20260822-027",
+      "reference": "DDA-COIN-20260822-027",
+      "title": "DDA 25 Gram Ram Darbar Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/027-ram-darbar-all-silver-oval-coin-25g.png",
+      "sha1hash": "2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a",
+      "sanityAssetId": "image-2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a-1254x1254.png"
+    },
+    {
+      "number": 28,
+      "productId": "product-dda-desktop-files-20260822-028",
+      "reference": "DDA-COIN-20260822-028",
+      "title": "DDA 50 Gram Scalloped Tree of Life Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/028-tree-of-life-scalloped-silver-coin-50g.png",
+      "sha1hash": "b4b7becca65e7786b28cb5c69741592b76d4b4ee",
+      "sanityAssetId": "image-b4b7becca65e7786b28cb5c69741592b76d4b4ee-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b4b7becca65e7786b28cb5c69741592b76d4b4ee-1254x1254.png"
+    },
+    {
+      "number": 29,
+      "productId": "product-dda-desktop-files-20260822-029",
+      "reference": "DDA-COIN-20260822-029",
+      "title": "DDA 50 Gram Round Tree of Life Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/029-tree-of-life-round-silver-coin-50g.png",
+      "sha1hash": "b03e326cab2e2d448e149fda7f3f3d4acfd83f9a",
+      "sanityAssetId": "image-b03e326cab2e2d448e149fda7f3f3d4acfd83f9a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b03e326cab2e2d448e149fda7f3f3d4acfd83f9a-1254x1254.png"
+    },
+    {
+      "number": 30,
+      "productId": "product-dda-desktop-files-20260822-030",
+      "reference": "DDA-COIN-20260822-030",
+      "title": "DDA 20 Gram Round Tree of Life Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/030-tree-of-life-round-silver-coin-20g.png",
+      "sha1hash": "166949cef055b9543d8c4aaa2fd88c036150be40",
+      "sanityAssetId": "image-166949cef055b9543d8c4aaa2fd88c036150be40-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/166949cef055b9543d8c4aaa2fd88c036150be40-1254x1254.png"
+    },
+    {
+      "number": 31,
+      "productId": "product-dda-desktop-files-20260822-031",
+      "reference": "DDA-COIN-20260822-031",
+      "title": "DDA 20 Gram Radha Krishna Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/031-radha-krishna-all-silver-oval-coin-20g.png",
+      "sha1hash": "b74255ce4828bec1a11ae681aba07b0c48ab3e6b",
+      "sanityAssetId": "image-b74255ce4828bec1a11ae681aba07b0c48ab3e6b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b74255ce4828bec1a11ae681aba07b0c48ab3e6b-1254x1254.png"
+    },
+    {
+      "number": 32,
+      "productId": "product-dda-desktop-files-20260822-032",
+      "reference": "DDA-COIN-20260822-032",
+      "title": "DDA 50 Gram Radha Krishna Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/032-radha-krishna-all-silver-oval-coin-50g.png",
+      "sha1hash": "8d42275a78a457c77bd87b009de8e48575eecd0b",
+      "sanityAssetId": "image-8d42275a78a457c77bd87b009de8e48575eecd0b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8d42275a78a457c77bd87b009de8e48575eecd0b-1254x1254.png"
+    },
+    {
+      "number": 33,
+      "productId": "product-dda-desktop-files-20260822-033",
+      "reference": "DDA-COIN-20260822-033",
+      "title": "DDA 100 Gram Classical Profile Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/033-classical-profile-rectangular-silver-bar-100g.png",
+      "sha1hash": "ad694a9e31d54f9117d17049c7e3eb492c1d3dcd",
+      "sanityAssetId": "image-ad694a9e31d54f9117d17049c7e3eb492c1d3dcd-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ad694a9e31d54f9117d17049c7e3eb492c1d3dcd-1254x1254.png"
+    },
+    {
+      "number": 34,
+      "productId": "product-dda-desktop-files-20260822-034",
+      "reference": "DDA-COIN-20260822-034",
+      "title": "DDA 50 Gram Classical Profile Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/034-classical-profile-rectangular-silver-bar-50g.png",
+      "sha1hash": "4bd859a6c8fcd174acdaf405297c3c613d6b2ef7",
+      "sanityAssetId": "image-4bd859a6c8fcd174acdaf405297c3c613d6b2ef7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/4bd859a6c8fcd174acdaf405297c3c613d6b2ef7-1254x1254.png"
+    },
+    {
+      "number": 35,
+      "productId": "product-dda-desktop-files-20260822-035",
+      "reference": "DDA-COIN-20260822-035",
+      "title": "DDA 20 Gram Classical Profile Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/035-classical-profile-rectangular-silver-bar-20g.png",
+      "sha1hash": "c980f2ae4efa14534e92f32a2873146033da0e7c",
+      "sanityAssetId": "image-c980f2ae4efa14534e92f32a2873146033da0e7c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c980f2ae4efa14534e92f32a2873146033da0e7c-1254x1254.png"
+    },
+    {
+      "number": 36,
+      "productId": "product-dda-desktop-files-20260822-036",
+      "reference": "DDA-COIN-20260822-036",
+      "title": "DDA 10 Gram Classical Profile Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/036-classical-profile-rectangular-silver-bar-10g.png",
+      "sha1hash": "dfe4b00facfe18d0243480a82cca9f107e2252fb",
+      "sanityAssetId": "image-dfe4b00facfe18d0243480a82cca9f107e2252fb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/dfe4b00facfe18d0243480a82cca9f107e2252fb-1254x1254.png"
+    },
+    {
+      "number": 37,
+      "productId": "product-dda-desktop-files-20260822-037",
+      "reference": "DDA-COIN-20260822-037",
+      "title": "DDA 5 Gram Classical Profile Rectangular Silver Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/037-classical-profile-rectangular-silver-bar-5g.png",
+      "sha1hash": "73b05bcd87b81870ab291b9ba64f88ce8625b64f",
+      "sanityAssetId": "image-73b05bcd87b81870ab291b9ba64f88ce8625b64f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/73b05bcd87b81870ab291b9ba64f88ce8625b64f-1254x1254.png"
+    },
+    {
+      "number": 38,
+      "productId": "product-dda-desktop-files-20260822-038",
+      "reference": "DDA-COIN-20260822-038",
+      "title": "DDA Mahavir Navkar Mantra Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/038-mahavir-navkar-mantra-round-silver-coin.png",
+      "sha1hash": "2df729e02cc59289bddf6d68edbf344a097b5158",
+      "sanityAssetId": "image-2df729e02cc59289bddf6d68edbf344a097b5158-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2df729e02cc59289bddf6d68edbf344a097b5158-1254x1254.png"
+    },
+    {
+      "number": 39,
+      "productId": "product-dda-desktop-files-20260822-039",
+      "reference": "DDA-COIN-20260822-039",
+      "title": "DDA 10 Gram Ram Darbar Ram Mandir Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/039-ram-darbar-ram-mandir-round-silver-coin-10g.png",
+      "sha1hash": "820a4d10cd24618f2bf00c4bca5ea38949658ece",
+      "sanityAssetId": "image-820a4d10cd24618f2bf00c4bca5ea38949658ece-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/820a4d10cd24618f2bf00c4bca5ea38949658ece-1254x1254.png"
+    },
+    {
+      "number": 40,
+      "productId": "product-dda-desktop-files-20260822-040",
+      "reference": "DDA-COIN-20260822-040",
+      "title": "DDA 10 Gram Durga on Lion Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/040-durga-on-lion-round-silver-coin-10g.png",
+      "sha1hash": "397c4f8c63d44a87eb4b1f30032460cfa1f5de85",
+      "sanityAssetId": "image-397c4f8c63d44a87eb4b1f30032460cfa1f5de85-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/397c4f8c63d44a87eb4b1f30032460cfa1f5de85-1254x1254.png"
+    },
+    {
+      "number": 41,
+      "productId": "product-dda-desktop-files-20260822-041",
+      "reference": "DDA-COIN-20260822-041",
+      "title": "DDA 10 Gram Ganesha Under Arch Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/041-ganesha-under-arch-round-silver-coin-10g.png",
+      "sha1hash": "be4912200ca2dc16da89f82096ff6f00bb64c202",
+      "sanityAssetId": "image-be4912200ca2dc16da89f82096ff6f00bb64c202-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/be4912200ca2dc16da89f82096ff6f00bb64c202-1254x1254.png"
+    },
+    {
+      "number": 42,
+      "productId": "product-dda-desktop-files-20260822-042",
+      "reference": "DDA-COIN-20260822-042",
+      "title": "DDA 10 Gram Hanuman Carrying Mountain Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/042-hanuman-carrying-mountain-round-silver-coin-10g.png",
+      "sha1hash": "eddfc82c1fa6a870031371c2ac82135f30ecdd70",
+      "sanityAssetId": "image-eddfc82c1fa6a870031371c2ac82135f30ecdd70-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/eddfc82c1fa6a870031371c2ac82135f30ecdd70-1254x1254.png"
+    },
+    {
+      "number": 43,
+      "productId": "product-dda-desktop-files-20260822-043",
+      "reference": "DDA-COIN-20260822-043",
+      "title": "DDA 10 Gram Seated Shiva Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/043-shiva-seated-round-silver-coin-10g.png",
+      "sha1hash": "06f8f39e847c698bb3581ba452de0a0462cb99b3",
+      "sanityAssetId": "image-06f8f39e847c698bb3581ba452de0a0462cb99b3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/06f8f39e847c698bb3581ba452de0a0462cb99b3-1254x1254.png"
+    },
+    {
+      "number": 44,
+      "productId": "product-dda-desktop-files-20260822-044",
+      "reference": "DDA-COIN-20260822-044",
+      "title": "DDA 10 Gram Srinathji Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/044-srinathji-round-silver-coin-10g.png",
+      "sha1hash": "e894929259a73e49405d00175581df05b2c53c5c",
+      "sanityAssetId": "image-e894929259a73e49405d00175581df05b2c53c5c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e894929259a73e49405d00175581df05b2c53c5c-1254x1254.png"
+    },
+    {
+      "number": 45,
+      "productId": "product-dda-desktop-files-20260822-045",
+      "reference": "DDA-COIN-20260822-045",
+      "title": "DDA 10 Gram Shiv Parivar Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/045-shiv-parivar-round-silver-coin-10g.png",
+      "sha1hash": "5380260aad949244a85cd01ae53b126d32bf5d9c",
+      "sanityAssetId": "image-5380260aad949244a85cd01ae53b126d32bf5d9c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5380260aad949244a85cd01ae53b126d32bf5d9c-1254x1254.png"
+    },
+    {
+      "number": 46,
+      "productId": "product-dda-desktop-files-20260822-046",
+      "reference": "DDA-COIN-20260822-046",
+      "title": "DDA 10 Gram Kaaba and Allah Calligraphy Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/046-kaaba-allah-calligraphy-round-silver-coin-10g.png",
+      "sha1hash": "ee0202ac57092204b946ab21679a6ee208e7f9ad",
+      "sanityAssetId": "image-ee0202ac57092204b946ab21679a6ee208e7f9ad-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ee0202ac57092204b946ab21679a6ee208e7f9ad-1254x1254.png"
+    },
+    {
+      "number": 47,
+      "productId": "product-dda-desktop-files-20260822-047",
+      "reference": "DDA-COIN-20260822-047",
+      "title": "DDA Kaaba and 786 Round Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/047-kaaba-786-round-silver-coin.png",
+      "sha1hash": "bc828070d3c7a1320adeea4e4715630bd4dc8635",
+      "sanityAssetId": "image-bc828070d3c7a1320adeea4e4715630bd4dc8635-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bc828070d3c7a1320adeea4e4715630bd4dc8635-1254x1254.png"
+    },
+    {
+      "number": 48,
+      "productId": "product-dda-desktop-files-20260822-048",
+      "reference": "DDA-COIN-20260822-048",
+      "title": "DDA Khatu Shyam Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/048-khatu-shyam-oval-silver-coin.png",
+      "sha1hash": "ad51fc7d0ffe34009731c6d4121689c0d4eea95f",
+      "sanityAssetId": "image-ad51fc7d0ffe34009731c6d4121689c0d4eea95f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ad51fc7d0ffe34009731c6d4121689c0d4eea95f-1254x1254.png"
+    },
+    {
+      "number": 49,
+      "productId": "product-dda-desktop-files-20260822-049",
+      "reference": "DDA-COIN-20260822-049",
+      "title": "DDA 10 Gram Srinathji Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/049-srinathji-oval-silver-coin-10g.png",
+      "sha1hash": "f9156c73077e2803d589f71b6cb22a7968e5b0ca",
+      "sanityAssetId": "image-f9156c73077e2803d589f71b6cb22a7968e5b0ca-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f9156c73077e2803d589f71b6cb22a7968e5b0ca-1254x1254.png"
+    },
+    {
+      "number": 50,
+      "productId": "product-dda-desktop-files-20260822-050",
+      "reference": "DDA-COIN-20260822-050",
+      "title": "DDA 15 Gram George V Two-Tone Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/050-george-v-two-tone-oval-coin-15g-single-face.png",
+      "sha1hash": "759076c528678fb7ac7b58ba0d557f5c9c42d1fb",
+      "sanityAssetId": "image-759076c528678fb7ac7b58ba0d557f5c9c42d1fb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/759076c528678fb7ac7b58ba0d557f5c9c42d1fb-1254x1254.png"
+    },
+    {
+      "number": 51,
+      "productId": "product-dda-desktop-files-20260822-051",
+      "reference": "DDA-COIN-20260822-051",
+      "title": "DDA 15 Gram Radha Krishna Two-Tone Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/051-radha-krishna-two-tone-oval-coin-15g-single-face.png",
+      "sha1hash": "1239c493c16f53ac12bc5b478b23869e12049833",
+      "sanityAssetId": "image-1239c493c16f53ac12bc5b478b23869e12049833-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1239c493c16f53ac12bc5b478b23869e12049833-1254x1254.png"
+    },
+    {
+      "number": 52,
+      "productId": "product-dda-desktop-files-20260822-052",
+      "reference": "DDA-COIN-20260822-052",
+      "title": "DDA 15 Gram George V Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/052-george-v-all-silver-oval-coin-15g-single-face.png",
+      "sha1hash": "40e6a17518d639ad0402aa786df5c0699e87d02f",
+      "sanityAssetId": "image-40e6a17518d639ad0402aa786df5c0699e87d02f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/40e6a17518d639ad0402aa786df5c0699e87d02f-1254x1254.png"
+    },
+    {
+      "number": 53,
+      "productId": "product-dda-desktop-files-20260822-053",
+      "reference": "DDA-COIN-20260822-053",
+      "title": "DDA Radha Krishna Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/053-radha-krishna-all-silver-oval-coin-single-face.png",
+      "sha1hash": "abe8269d26197385754bbfc28afb7caba9e997b4",
+      "sanityAssetId": "image-abe8269d26197385754bbfc28afb7caba9e997b4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/abe8269d26197385754bbfc28afb7caba9e997b4-1254x1254.png"
+    },
+    {
+      "number": 54,
+      "productId": "product-dda-desktop-files-20260822-054",
+      "reference": "DDA-GOLD-20260822-054",
+      "title": "DDA 1 Gram Packaged Fine Gold Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/054-packaged-fine-gold-bar-1g-995.png",
+      "sha1hash": "55a735b164d54719502e6d8f90245ee316d4bc81",
+      "sanityAssetId": "image-55a735b164d54719502e6d8f90245ee316d4bc81-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/55a735b164d54719502e6d8f90245ee316d4bc81-1254x1254.png"
+    },
+    {
+      "number": 55,
+      "productId": "product-dda-desktop-files-20260822-055",
+      "reference": "DDA-UT-PT-2201",
+      "title": "DDA 9 Inch Multicolor Enamel Petal Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/055-multicolor-enamel-petal-thali-set-9in-765g.png",
+      "sha1hash": "58ebdc0bdbaab884ad0e817a97c19f5f8f694c58",
+      "sanityAssetId": "image-58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png"
+    },
+    {
+      "number": 56,
+      "productId": "product-dda-desktop-files-20260822-056",
+      "reference": "DDA-UT-PT-2202",
+      "title": "DDA 12 Inch Red Enamel Floral Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/056-red-enamel-floral-thali-set-12in-930g.png",
+      "sha1hash": "40eaeca4ad4d19bde20e0f2601ae1cfcdc24274e",
+      "sanityAssetId": "image-40eaeca4ad4d19bde20e0f2601ae1cfcdc24274e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/40eaeca4ad4d19bde20e0f2601ae1cfcdc24274e-1254x1254.png"
+    },
+    {
+      "number": 57,
+      "productId": "product-dda-desktop-files-20260822-057",
+      "reference": "DDA-UT-PT-2203",
+      "title": "DDA 12 Inch Blue Enamel Floral Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/057-blue-enamel-floral-thali-set-12in-1123g.png",
+      "sha1hash": "9c6bfd56c70e8fcad8004667637e6af8a85ab3b4",
+      "sanityAssetId": "image-9c6bfd56c70e8fcad8004667637e6af8a85ab3b4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9c6bfd56c70e8fcad8004667637e6af8a85ab3b4-1254x1254.png"
+    },
+    {
+      "number": 58,
+      "productId": "product-dda-desktop-files-20260822-058",
+      "reference": "DDA-COIN-20260822-058",
+      "title": "DDA 5 Gram Radha Krishna Two-Tone Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/058-radha-krishna-two-tone-oval-coin-5g-single-face.png",
+      "sha1hash": "a2b293d40f401ef89eb3e2b7a85a0d215135da24",
+      "sanityAssetId": "image-a2b293d40f401ef89eb3e2b7a85a0d215135da24-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a2b293d40f401ef89eb3e2b7a85a0d215135da24-1254x1254.png"
+    },
+    {
+      "number": 59,
+      "productId": "product-dda-desktop-files-20260822-059",
+      "reference": "DDA-UT-PT-2204",
+      "title": "DDA 8 Inch Floral Openwork Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/059-floral-openwork-thali-set-8in-225g.png",
+      "sha1hash": "bd0d5623f0d783d83c4eb46b607b9e214818f3af",
+      "sanityAssetId": "image-bd0d5623f0d783d83c4eb46b607b9e214818f3af-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bd0d5623f0d783d83c4eb46b607b9e214818f3af-1254x1254.png"
+    },
+    {
+      "number": 60,
+      "productId": "product-dda-desktop-files-20260822-060",
+      "reference": "DDA-COIN-20260822-060",
+      "title": "DDA 5 Gram George V Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/060-george-v-all-silver-oval-coin-5g.png",
+      "sha1hash": "2e0e6343412795590b99e2fb5ccc9dd7024b1e97",
+      "sanityAssetId": "image-2e0e6343412795590b99e2fb5ccc9dd7024b1e97-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2e0e6343412795590b99e2fb5ccc9dd7024b1e97-1254x1254.png"
+    },
+    {
+      "number": 61,
+      "productId": "product-dda-desktop-files-20260822-061",
+      "reference": "DDA-UT-PT-2205",
+      "title": "DDA 9 Inch Floral Pooja Thali Set with Gold-Tone Vessels",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/061-gold-tone-vessel-floral-thali-set-9in-275g.png",
+      "sha1hash": "7031dbce7d0670d176cce94b5f21c5cce59b79b7",
+      "sanityAssetId": "image-7031dbce7d0670d176cce94b5f21c5cce59b79b7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7031dbce7d0670d176cce94b5f21c5cce59b79b7-1254x1254.png"
+    },
+    {
+      "number": 62,
+      "productId": "product-dda-desktop-files-20260822-062",
+      "reference": "DDA-UT-PT-2206",
+      "title": "DDA 8 Inch Ornate Embossed Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/062-ornate-embossed-thali-set-8in-400g.png",
+      "sha1hash": "a474c999df0ab736339c886ef7bef536923fece1",
+      "sanityAssetId": "image-a474c999df0ab736339c886ef7bef536923fece1-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a474c999df0ab736339c886ef7bef536923fece1-1254x1254.png"
+    },
+    {
+      "number": 63,
+      "productId": "product-dda-desktop-files-20260822-063",
+      "reference": "DDA-GOLD-20260822-063",
+      "title": "DDA 5 Gram Packaged Classical Profile Fine Gold Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/063-packaged-classical-profile-fine-gold-bar-5g-995.png",
+      "sha1hash": "7ceff3b538996c67eecaf926637275f85ca326ab",
+      "sanityAssetId": "image-7ceff3b538996c67eecaf926637275f85ca326ab-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7ceff3b538996c67eecaf926637275f85ca326ab-1254x1254.png"
+    },
+    {
+      "number": 64,
+      "productId": "product-dda-desktop-files-20260822-064",
+      "reference": "DDA-UT-PT-2207",
+      "title": "DDA 10 Inch Floral Scroll Ghungroo Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/064-floral-scroll-ghungroo-thali-set-10in-500g.png",
+      "sha1hash": "e1472d78f8d53ce1e80806b0ad4803124ac8a77b",
+      "sanityAssetId": "image-e1472d78f8d53ce1e80806b0ad4803124ac8a77b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e1472d78f8d53ce1e80806b0ad4803124ac8a77b-1254x1254.png"
+    },
+    {
+      "number": 65,
+      "productId": "product-dda-desktop-files-20260822-065",
+      "reference": "DDA-COIN-20260822-065",
+      "title": "DDA 5 Gram Radha Krishna Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/065-radha-krishna-all-silver-oval-coin-5g.png",
+      "sha1hash": "962668d336a7aba45e40d9b13818919f2139e1b9",
+      "sanityAssetId": "image-962668d336a7aba45e40d9b13818919f2139e1b9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/962668d336a7aba45e40d9b13818919f2139e1b9-1254x1254.png"
+    },
+    {
+      "number": 66,
+      "productId": "product-dda-desktop-files-20260822-066",
+      "reference": "DDA-UT-PT-2208",
+      "title": "DDA 10 Inch Leaf Petal Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/066-leaf-petal-thali-set-10in-400g.png",
+      "sha1hash": "b30916b01cd7ed237c38c0c84e5449fef3d629db",
+      "sanityAssetId": "image-b30916b01cd7ed237c38c0c84e5449fef3d629db-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b30916b01cd7ed237c38c0c84e5449fef3d629db-1254x1254.png"
+    },
+    {
+      "number": 67,
+      "productId": "product-dda-desktop-files-20260822-067",
+      "reference": "DDA-COIN-20260822-067",
+      "title": "DDA 5 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/067-radha-krishna-two-tone-oval-coin-5g.png",
+      "sha1hash": "9d8b65a1a53ecf77db2f76d51293d832fa6aeb91",
+      "sanityAssetId": "image-9d8b65a1a53ecf77db2f76d51293d832fa6aeb91-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9d8b65a1a53ecf77db2f76d51293d832fa6aeb91-1254x1254.png"
+    },
+    {
+      "number": 68,
+      "productId": "product-dda-desktop-files-20260822-068",
+      "reference": "DDA-COIN-20260822-068",
+      "title": "DDA 5 Gram George V Two-Tone Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/068-george-v-two-tone-oval-coin-5g-single-face.png",
+      "sha1hash": "3398c493b3438846ac5e4b29821064ff9fbe3b6e",
+      "sanityAssetId": "image-3398c493b3438846ac5e4b29821064ff9fbe3b6e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3398c493b3438846ac5e4b29821064ff9fbe3b6e-1254x1254.png"
+    },
+    {
+      "number": 69,
+      "productId": "product-dda-desktop-files-20260822-069",
+      "reference": "DDA-COIN-20260822-069",
+      "title": "DDA 5 Gram George V Oval Silver Coin Front",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/069-george-v-all-silver-oval-coin-5g-single-face.png",
+      "sha1hash": "e717f085d75765efd2d3e8a2dcea1ee40d4c5d32",
+      "sanityAssetId": "image-e717f085d75765efd2d3e8a2dcea1ee40d4c5d32-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e717f085d75765efd2d3e8a2dcea1ee40d4c5d32-1254x1254.png"
+    },
+    {
+      "number": 70,
+      "productId": "product-dda-desktop-files-20260822-070",
+      "reference": "DDA-COIN-20260822-070",
+      "title": "DDA 5 Gram George V Two-Tone Oval Silver Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/070-george-v-two-tone-oval-coin-5g.png",
+      "sha1hash": "4e2e66f90085e7cf0891d8236eb20b201f558570",
+      "sanityAssetId": "image-4e2e66f90085e7cf0891d8236eb20b201f558570-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/4e2e66f90085e7cf0891d8236eb20b201f558570-1254x1254.png"
+    },
+    {
+      "number": 71,
+      "productId": "product-dda-desktop-files-20260822-071",
+      "reference": "DDA-GOLD-20260822-071",
+      "title": "DDA 10 Gram Packaged Classical Profile Fine Gold Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/071-packaged-classical-profile-fine-gold-bar-10g-995.png",
+      "sha1hash": "1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7",
+      "sanityAssetId": "image-1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7-1254x1254.png"
+    },
+    {
+      "number": 72,
+      "productId": "product-dda-desktop-files-20260822-072",
+      "reference": "DDA-GOLD-20260822-072",
+      "title": "DDA 8 Gram Packaged Queen Victoria Gold Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/072-packaged-queen-victoria-gold-coin-8g-916.png",
+      "sha1hash": "d02df9053aac0832ecf3d80825517510e7aebdcf",
+      "sanityAssetId": "image-d02df9053aac0832ecf3d80825517510e7aebdcf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d02df9053aac0832ecf3d80825517510e7aebdcf-1254x1254.png"
+    },
+    {
+      "number": 73,
+      "productId": "product-dda-desktop-files-20260822-073",
+      "reference": "DDA-UT-PT-2209",
+      "title": "DDA 6 Inch Lotus Ghungroo Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/073-lotus-ghungroo-thali-set-6in-150g.png",
+      "sha1hash": "667b91965d9deb9eb9bbba53ba1db3dc74425fc0",
+      "sanityAssetId": "image-667b91965d9deb9eb9bbba53ba1db3dc74425fc0-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/667b91965d9deb9eb9bbba53ba1db3dc74425fc0-1254x1254.png"
+    },
+    {
+      "number": 74,
+      "productId": "product-dda-desktop-files-20260822-074",
+      "reference": "DDA-UT-PT-2210",
+      "title": "DDA 10 Inch Blue Teal Enamel Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/074-blue-teal-enamel-thali-set-10in-765g.png",
+      "sha1hash": "72aae52858ad10592692e62d3a08d303aaa9eb06",
+      "sanityAssetId": "image-72aae52858ad10592692e62d3a08d303aaa9eb06-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/72aae52858ad10592692e62d3a08d303aaa9eb06-1254x1254.png"
+    },
+    {
+      "number": 75,
+      "productId": "product-dda-desktop-files-20260822-075",
+      "reference": "DDA-GOLD-20260822-075",
+      "title": "DDA 4 Gram Packaged Queen Victoria Gold Coin",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/075-packaged-queen-victoria-gold-coin-4g-916.png",
+      "sha1hash": "749247fd7c55fe1dd7a1d44dcfa9abef028d49d5",
+      "sanityAssetId": "image-749247fd7c55fe1dd7a1d44dcfa9abef028d49d5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/749247fd7c55fe1dd7a1d44dcfa9abef028d49d5-1254x1254.png"
+    },
+    {
+      "number": 76,
+      "productId": "product-dda-desktop-files-20260822-076",
+      "reference": "DDA-GOLD-20260822-076",
+      "title": "DDA 2 Gram Packaged Classical Profile Fine Gold Bar",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/076-packaged-classical-profile-fine-gold-bar-2g-995.png",
+      "sha1hash": "c0a33470e37c75c1d16c5fb1b9516e689ba8fd04",
+      "sanityAssetId": "image-c0a33470e37c75c1d16c5fb1b9516e689ba8fd04-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c0a33470e37c75c1d16c5fb1b9516e689ba8fd04-1254x1254.png"
+    },
+    {
+      "number": 77,
+      "productId": "product-dda-desktop-files-20260822-077",
+      "reference": "DDA-COIN-20260822-077",
+      "title": "DDA 5 Gram Radha Krishna Oval Silver Coin Front with Unclear Mark",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/077-radha-krishna-all-silver-oval-coin-5g-single-face-unclear-purity.png",
+      "sha1hash": "043696e89341aee5e7d9ac93db435fa2fa3c4d59",
+      "sanityAssetId": "image-043696e89341aee5e7d9ac93db435fa2fa3c4d59-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/043696e89341aee5e7d9ac93db435fa2fa3c4d59-1254x1254.png"
+    },
+    {
+      "number": 78,
+      "productId": "product-dda-desktop-files-20260822-078",
+      "reference": "DDA-UT-PT-2211",
+      "title": "DDA 11 Inch Floral Scroll Leaf Rim Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/078-floral-scroll-leaf-rim-thali-set-11in-950g.png",
+      "sha1hash": "43a2943e0f36993a3fd477aeaeda1f466bb918c6",
+      "sanityAssetId": "image-43a2943e0f36993a3fd477aeaeda1f466bb918c6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/43a2943e0f36993a3fd477aeaeda1f466bb918c6-1254x1254.png"
+    },
+    {
+      "number": 79,
+      "productId": "product-dda-desktop-files-20260822-079",
+      "reference": "DDA-UT-PT-2212",
+      "title": "DDA 10 Inch Peacock Flower Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/079-peacock-flower-thali-set-10in-500g.png",
+      "sha1hash": "55104b6866d5c552fd9015e88cf1cd3eec04b7e6",
+      "sanityAssetId": "image-55104b6866d5c552fd9015e88cf1cd3eec04b7e6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/55104b6866d5c552fd9015e88cf1cd3eec04b7e6-1254x1254.png"
+    },
+    {
+      "number": 80,
+      "productId": "product-dda-desktop-files-20260822-080",
+      "reference": "DDA-UT-PT-2213",
+      "title": "DDA 8 Inch Floral Butterfly Pooja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/080-floral-butterfly-thali-set-8in-475g.png",
+      "sha1hash": "e75b88831a7f5fed6dad18e1709d9b5fbf924096",
+      "sanityAssetId": "image-e75b88831a7f5fed6dad18e1709d9b5fbf924096-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e75b88831a7f5fed6dad18e1709d9b5fbf924096-1254x1254.png"
+    }
+  ]
+}

@@ -169,6 +169,7 @@ export function CatalogBrowser({
   const availableUtensilTypeOptions = utensilTypeOptions.filter(([value]) =>
     filterAvailability.utensilTypes.has(value),
   );
+  const isCoinOrGoldCategory = category === "coin" || category === "gold";
   const filterControlCount =
     2 +
     (availablePurityOptions.length > 0 ? 1 : 0) +
@@ -177,7 +178,7 @@ export function CatalogBrowser({
       ? 1
       : 0) +
     (category === "idols" && availableDeityOptions.length > 0 ? 1 : 0) +
-    (category === "coin" && availableCoinShapeOptions.length > 0
+    (isCoinOrGoldCategory && availableCoinShapeOptions.length > 0
       ? 1
       : 0) +
     (category === "utensils" && availableUtensilTypeOptions.length > 0
@@ -354,7 +355,7 @@ export function CatalogBrowser({
                 setIdolConstruction("");
                 setDeitySlug("");
               }
-              if (nextCategory !== "coin") {
+              if (nextCategory !== "coin" && nextCategory !== "gold") {
                 setCoinShape("");
               }
               if (nextCategory !== "utensils") {
@@ -448,9 +449,9 @@ export function CatalogBrowser({
           </label>
         ) : null}
 
-        {category === "coin" && availableCoinShapeOptions.length > 0 ? (
+        {isCoinOrGoldCategory && availableCoinShapeOptions.length > 0 ? (
           <label>
-            <span className="sr-only">Filter by coin shape</span>
+            <span className="sr-only">Filter by coin or bar shape</span>
             <select
               value={coinShape}
               onChange={(event) => {

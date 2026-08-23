@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   coinShapeLabels,
   idolConstructionLabels,
+  materialLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
 import {
@@ -31,6 +32,7 @@ export function ProductCard({
   const containImage = shouldContainProductImage(product, compactImage);
   const squareImage = shouldUseSquareProductCardImage(product);
   const details = [
+    product.material === "gold" ? materialLabels.gold : null,
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.weightGrams ? `${product.weightGrams} g` : null,
     product.heightInches ? `Height ${product.heightInches} in` : null,

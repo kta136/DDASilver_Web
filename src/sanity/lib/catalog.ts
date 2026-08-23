@@ -90,8 +90,12 @@ const productSchema = z.object({
     .max(80)
     .nullish()
     .transform((value) => value ?? undefined),
+  material: z
+    .enum(["silver", "gold"])
+    .nullish()
+    .transform((value) => value ?? undefined),
   purity: z
-    .enum(["92.5", "99.80"])
+    .enum(["92.5", "99.50", "99.80"])
     .nullish()
     .transform((value) => value ?? undefined),
   weightGrams: z
@@ -145,7 +149,16 @@ const productSchema = z.object({
     )
     .max(20),
   utensilType: z
-    .enum(["glass", "bowl", "plate", "jug", "kalash", "bottle", "spoon"])
+    .enum([
+      "glass",
+      "bowl",
+      "plate",
+      "jug",
+      "kalash",
+      "bottle",
+      "spoon",
+      "pooja-thali-set",
+    ])
     .nullish()
     .transform((value) => value ?? undefined),
   idolConstruction: z
@@ -154,7 +167,7 @@ const productSchema = z.object({
     .transform((value) => value ?? undefined),
   deities: z.array(deitySchema).max(50),
   coinShape: z
-    .enum(["round", "oval", "square", "rectangle"])
+    .enum(["round", "oval", "square", "rectangle", "scalloped"])
     .nullish()
     .transform((value) => value ?? undefined),
   updatedAt,
@@ -196,8 +209,8 @@ function addAutomaticImageSeo({
     categories: categories.map((category) => ({
       ...category,
       image: getCatalogImageWithSeo(category.image, {
-        fallbackAlt: `${category.title} silver category at DDA Silver`,
-        vanityFilename: `${category.slug}-silver-category`,
+        fallbackAlt: `${category.title} category at DDA Silver`,
+        vanityFilename: `${category.slug}-category`,
       }),
     })),
     collections: collections.map((collection) => ({

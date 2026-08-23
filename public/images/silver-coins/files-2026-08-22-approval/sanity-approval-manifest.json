@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "batchId": "desktop-files-2026-08-22",
+  "approvalStage": "two-image-sample",
+  "sourceDirectory": "C:/Users/kk/Desktop/Files",
+  "batchSourceCount": 77,
+  "approvalSampleSourceCount": 2,
+  "sampleImageCount": 2,
+  "manifestProductCount": 2,
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "categoryId": "category-coin",
+  "generationMethod": "OpenAI built-in image generation tool; newly art-directed AI enhancement using each source photograph as the product truth and the approved DDA Silver background as the identity reference; no local image-processing scripts",
+  "readyForSanityAssetUpload": false,
+  "readyForProductPublish": false,
+  "publishBlockers": [
+    "The two-image visual approval gate has not yet been approved by the owner.",
+    "Both products are engraved 999 (99.9% fineness), but the current Sanity purity field only accepts 92.5 or 99.80. Confirm whether to map these products to the existing 99.80 coin convention or extend the schema for 99.9 before publication.",
+    "The remaining 75 source files have intentionally not been processed until the two sample images are approved.",
+    "A full-batch Sanity dry run has not been performed because this is an approval sample only."
+  ],
+  "products": [
+    {
+      "number": 1,
+      "id": "product-dda-5g-rectangle-benjamin-franklin-silver-bar",
+      "title": "DDA 5 Gram Benjamin Franklin Rectangular Silver Bar",
+      "slug": "dda-5-gram-benjamin-franklin-rectangular-silver-bar",
+      "shortDescription": "A 5 gram rectangular silver bar marked 999, showing Benjamin Franklin on the front and a historic building design on the reverse.",
+      "alt": "Front and reverse views of a rectangular 5 gram Benjamin Franklin silver bar",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "purity": null,
+      "sourcePurityMarking": "999",
+      "interpretedFineness": "99.9%",
+      "purityStatus": "schema-blocked",
+      "weightGrams": 5,
+      "weightEvidence": "Intrinsic 5 gram engraving visible in the source photograph",
+      "imagePath": "public/images/silver-coins/files-2026-08-22-approval/001-benjamin-franklin-rectangular-silver-bar-5g-ai-enhanced-v2.png",
+      "sourceImagePath": "C:/Users/kk/Desktop/Files/IMG_2373.jpeg",
+      "reference": "DDA-COIN-5G-RECTANGLE-BENJAMIN-FRANKLIN",
+      "sha256": "838fb774008dcc150c6ac5e9e01c699cf396f36018a74d900f0944fdfd867a6e"
+    },
+    {
+      "number": 2,
+      "id": "product-dda-5g-round-george-v-two-tone-silver-coin",
+      "title": "DDA 5 Gram George V Two-Tone Round Silver Coin",
+      "slug": "dda-5-gram-george-v-two-tone-round-silver-coin",
+      "shortDescription": "A 5 gram round two-tone silver coin marked 999, featuring George V with a gold-tone portrait and an ornate floral reverse.",
+      "alt": "Front and reverse views of a round 5 gram George V two-tone silver coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "purity": null,
+      "sourcePurityMarking": "999",
+      "interpretedFineness": "99.9%",
+      "purityStatus": "schema-blocked",
+      "weightGrams": 5,
+      "weightEvidence": "Intrinsic 5 gram engraving visible in the source photograph",
+      "imagePath": "public/images/silver-coins/files-2026-08-22-approval/002-george-v-two-tone-round-silver-coin-5g-ai-enhanced-v2.png",
+      "sourceImagePath": "C:/Users/kk/Desktop/Files/IMG_2374.jpeg",
+      "reference": "DDA-COIN-5G-ROUND-GEORGE-V-TWO-TONE",
+      "sha256": "5187a11cd29a0e4fa0e6117ef302c6dc640eb3cf4a627305705905995a516249"
+    }
+  ]
+}

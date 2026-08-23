@@ -79,6 +79,17 @@ const categories = [
     imagePath: "public/images/mockup/category-tableware.png",
     alt: "Concept image of an engraved silver serving bowl",
   },
+  {
+    _id: "category-gold",
+    title: "Gold Coins & Bars",
+    slug: "gold",
+    description:
+      "Card-packed 99.50% gold coins and bars for gifting and milestones.",
+    displayOrder: 8,
+    imagePath:
+      "public/images/gallery-ingestion/desktop-files-2026-08-22/054-packaged-fine-gold-bar-1g-995.png",
+    alt: "Card-packed 99.50% fine gold bar from DDA Silver",
+  },
 ] as const;
 
 async function getOrUploadImage(imagePath: string, title: string) {

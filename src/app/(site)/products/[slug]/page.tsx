@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       "@type": "Brand",
       name: siteConfig.name,
     },
-    material: "Silver",
+    material: product.material === "gold" ? "Gold" : "Silver",
     category: category?.title,
     sku: product.reference,
     url: toAbsoluteUrl(`/products/${product.slug}`),

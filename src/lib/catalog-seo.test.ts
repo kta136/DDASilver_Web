@@ -71,7 +71,24 @@ describe("catalog SEO helpers", () => {
     expect(getProductStructuredDataProperties(product)).toEqual([
       { "@type": "PropertyValue", name: "Silver purity", value: "99.80%" },
       { "@type": "PropertyValue", name: "Weight", value: "50 g" },
-      { "@type": "PropertyValue", name: "Coin shape", value: "Round" },
+      { "@type": "PropertyValue", name: "Shape", value: "Round" },
+    ]);
+  });
+
+  it("describes Gold material and 99.50% purity", () => {
+    expect(
+      getProductStructuredDataProperties({
+        ...product,
+        title: "Gold Coin",
+        categorySlug: "gold",
+        material: "gold",
+        purity: "99.50",
+      }),
+    ).toEqual([
+      { "@type": "PropertyValue", name: "Material", value: "Gold" },
+      { "@type": "PropertyValue", name: "Gold purity", value: "99.50%" },
+      { "@type": "PropertyValue", name: "Weight", value: "50 g" },
+      { "@type": "PropertyValue", name: "Shape", value: "Round" },
     ]);
   });
 

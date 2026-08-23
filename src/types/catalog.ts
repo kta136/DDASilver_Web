@@ -25,9 +25,10 @@ export type Collection = {
   updatedAt?: string;
 };
 
-export type ProductPurity = "92.5" | "99.80";
+export type ProductMaterial = "silver" | "gold";
+export type ProductPurity = "92.5" | "99.50" | "99.80";
 export type IdolConstruction = "hollow" | "solid" | "semi-solid";
-export type CoinShape = "round" | "oval" | "square" | "rectangle";
+export type CoinShape = "round" | "oval" | "square" | "rectangle" | "scalloped";
 export type UtensilType =
   | "glass"
   | "bowl"
@@ -35,7 +36,8 @@ export type UtensilType =
   | "jug"
   | "kalash"
   | "bottle"
-  | "spoon";
+  | "spoon"
+  | "pooja-thali-set";
 
 export type Deity = {
   title: string;
@@ -57,6 +59,7 @@ export type Product = {
   featured: boolean;
   displayOrder: number;
   reference?: string;
+  material?: ProductMaterial;
   purity?: ProductPurity;
   weightGrams?: number;
   heightInches?: number;

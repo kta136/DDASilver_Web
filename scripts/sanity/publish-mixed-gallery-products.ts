@@ -39,6 +39,22 @@ const assetMappingPath = resolveInputPath(
   ),
 );
 const displayOrderBase = Number(getArgumentValue("--display-order-base") ?? 5_000);
+const supportedCategories = new Set([
+  "category-coin",
+  "category-gold",
+  "category-gifts",
+  "category-jhula",
+  "category-purse",
+  "category-idols",
+  "category-utensils",
+]);
+const supportedCoinShapes = new Set([
+  "round",
+  "oval",
+  "square",
+  "rectangle",
+  "scalloped",
+]);
 
 type ManifestProduct = {
   number: number;
@@ -50,6 +66,8 @@ type ManifestProduct = {
   shortDescription: string;
   alt: string;
   categoryId:
+    | "category-coin"
+    | "category-gold"
     | "category-gifts"
     | "category-jhula"
     | "category-purse"
@@ -62,8 +80,11 @@ type ManifestProduct = {
     | "jug"
     | "kalash"
     | "bottle"
-    | "spoon";
-  purity: "92.5" | "99.80";
+    | "spoon"
+    | "pooja-thali-set";
+  material?: "silver" | "gold";
+  purity: "92.5" | "99.50" | "99.80";
+  coinShape?: "round" | "oval" | "square" | "rectangle" | "scalloped";
   weightGrams?: number;
   heightInches?: number;
   widthInches?: number;
@@ -180,8 +201,22 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     if (product.publishBlockers.length > 0) {
       throw new Error(`${product.reference} still has publish blockers.`);
     }
-    if (product.purity !== "92.5" && product.purity !== "99.80") {
+    if (!supportedCategories.has(product.categoryId)) {
+      throw new Error(`${product.reference} has an unsupported category.`);
+    }
+    if (
+      product.purity !== "92.5" &&
+      product.purity !== "99.50" &&
+      product.purity !== "99.80"
+    ) {
       throw new Error(`${product.reference} has an unsupported purity.`);
+    }
+    const material = product.material ?? "silver";
+    if (product.categoryId === "category-gold" && material !== "gold") {
+      throw new Error(`${product.reference} must use gold material.`);
+    }
+    if (product.categoryId !== "category-gold" && material === "gold") {
+      throw new Error(`${product.reference} cannot use gold material outside the Gold category.`);
     }
     if (product.recordType === "alternateGalleryImage") {
       if (
@@ -229,6 +264,20 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
     ) {
       throw new Error(`${product.reference} cannot define a utensil type.`);
     }
+    if (
+      (product.categoryId === "category-coin" ||
+        product.categoryId === "category-gold") &&
+      !supportedCoinShapes.has(product.coinShape ?? "")
+    ) {
+      throw new Error(`${product.reference} must define a supported coin or bar shape.`);
+    }
+    if (
+      product.categoryId !== "category-coin" &&
+      product.categoryId !== "category-gold" &&
+      product.coinShape !== undefined
+    ) {
+      throw new Error(`${product.reference} cannot define a coin or bar shape.`);
+    }
 
     const mappingRow = mappingByProductId.get(product.id);
     if (
@@ -271,8 +320,10 @@ function getProductDocument(
       _type: "reference",
       _ref: product.categoryId,
     },
+    material: product.material ?? "silver",
     utensilType: product.utensilType,
     purity: product.purity,
+    coinShape: product.coinShape,
     weightGrams: product.weightGrams,
     heightInches: product.heightInches,
     widthInches: product.widthInches,
@@ -546,7 +597,10 @@ async function main() {
       if (product.updateParentMetadata) {
         nextPatch = nextPatch.set({
           shortDescription: product.shortDescription,
+          material: product.material ?? "silver",
+          utensilType: product.utensilType,
           purity: product.purity,
+          coinShape: product.coinShape,
           weightGrams: product.weightGrams,
           heightInches: product.heightInches,
           widthInches: product.widthInches,

@@ -22,6 +22,7 @@ export const productsQuery = defineQuery(`*[_type == "product"] | order(displayO
   featured,
   displayOrder,
   reference,
+  material,
   purity,
   weightGrams,
   heightInches,

@@ -79,6 +79,35 @@ export const productType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "material",
+      title: "Material",
+      type: "string",
+      description:
+        "Choose the underlying precious metal. Gold polish on a silver coin remains Silver.",
+      initialValue: "silver",
+      options: {
+        list: [
+          { title: "Silver", value: "silver" },
+          { title: "Gold", value: "gold" },
+        ],
+        layout: "radio",
+      },
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const categoryReference = getCategoryReference(context.document);
+
+          if (categoryReference === "category-gold") {
+            return value === "gold"
+              ? true
+              : "Gold-category products must use Gold material.";
+          }
+
+          return value === "gold"
+            ? "Gold material is only valid for the Gold category."
+            : true;
+        }),
+    }),
+    defineField({
       name: "utensilType",
       title: "Utensil item type",
       type: "string",
@@ -95,6 +124,7 @@ export const productType = defineType({
           { title: "Kalash", value: "kalash" },
           { title: "Bottle", value: "bottle" },
           { title: "Spoon", value: "spoon" },
+          { title: "Pooja Thali Set", value: "pooja-thali-set" },
         ],
         layout: "dropdown",
       },
@@ -118,6 +148,7 @@ export const productType = defineType({
       options: {
         list: [
           { title: "92.5%", value: "92.5" },
+          { title: "99.50%", value: "99.50" },
           { title: "99.80%", value: "99.80" },
         ],
         layout: "radio",
@@ -318,29 +349,36 @@ export const productType = defineType({
     }),
     defineField({
       name: "coinShape",
-      title: "Coin shape",
+      title: "Coin or bar shape",
       type: "string",
-      description: "Complete this field only for products in the Coin category.",
+      description:
+        "Complete this field only for products in the Coin or Gold category.",
       hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-coin",
+        !new Set(["category-coin", "category-gold"]).has(
+          getCategoryReference(document) ?? "",
+        ),
       options: {
         list: [
           { title: "Round", value: "round" },
           { title: "Oval", value: "oval" },
           { title: "Square", value: "square" },
           { title: "Rectangle", value: "rectangle" },
+          { title: "Scalloped", value: "scalloped" },
         ],
       },
       validation: (rule) =>
         rule.custom((value, context) => {
           const categoryReference = getCategoryReference(context.document);
 
-          if (categoryReference === "category-coin") {
-            return value ? true : "Choose a Coin shape.";
+          if (
+            categoryReference === "category-coin" ||
+            categoryReference === "category-gold"
+          ) {
+            return value ? true : "Choose a coin or bar shape.";
           }
 
           return value
-            ? "Coin shape is only valid for the Coin category."
+            ? "Coin or bar shape is only valid for the Coin or Gold category."
             : true;
         }),
     }),

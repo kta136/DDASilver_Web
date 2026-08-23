@@ -11,6 +11,8 @@ const defaultReviewCsvPath = path.join(
   "scripts/images/mixed-gallery-new-folder-2-2026-08-09-review.csv",
 );
 const supportedCategories = new Set([
+  "category-coin",
+  "category-gold",
   "category-gifts",
   "category-jhula",
   "category-purse",
@@ -25,6 +27,16 @@ const utensilReferenceCodeByType = new Map([
   ["kalash", "KL"],
   ["bottle", "BT"],
   ["spoon", "SP"],
+  ["pooja-thali-set", "PT"],
+]);
+const supportedPurities = new Set(["92.5", "99.50", "99.80"]);
+const supportedMaterials = new Set(["silver", "gold"]);
+const supportedCoinShapes = new Set([
+  "round",
+  "oval",
+  "square",
+  "rectangle",
+  "scalloped",
 ]);
 const supportedSeedDeityIds = new Set([
   "deity-krishna",
@@ -127,6 +139,7 @@ function writeReviewCsv(manifest, outputPath) {
     "title",
     "categoryId",
     "utensilType",
+    "material",
     "purity",
     "weightGrams",
     "heightInches",
@@ -138,6 +151,7 @@ function writeReviewCsv(manifest, outputPath) {
     "singhasanDepthInches",
     "idolConstruction",
     "deityIds",
+    "coinShape",
     "sizeVariants",
     "recordType",
     "parentReference",
@@ -197,8 +211,17 @@ function validateManifest(manifest, manifestPath) {
     if (!/^product-dda-[a-z0-9-]+$/.test(product.id ?? "")) errors.push(`${label}: invalid id`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(product.slug ?? "")) errors.push(`${label}: invalid slug`);
     if (!supportedCategories.has(product.categoryId)) errors.push(`${label}: unsupported category ${product.categoryId}`);
-    if (!new Set(["92.5", "99.80"]).has(product.purity)) {
-      errors.push(`${label}: purity must be 92.5 or 99.80`);
+    if (!supportedPurities.has(product.purity)) {
+      errors.push(`${label}: purity must be 92.5, 99.50 or 99.80`);
+    }
+    if (!supportedMaterials.has(product.material)) {
+      errors.push(`${label}: material must be silver or gold`);
+    }
+    if (product.categoryId === "category-gold" && product.material !== "gold") {
+      errors.push(`${label}: Gold category products must use gold material`);
+    }
+    if (product.categoryId !== "category-gold" && product.material === "gold") {
+      errors.push(`${label}: gold material is only valid for the Gold category`);
     }
     if ((product.shortDescription?.length ?? 0) < 20 || product.shortDescription.length > 240) {
       errors.push(`${label}: shortDescription must be 20-240 characters`);
@@ -283,6 +306,20 @@ function validateManifest(manifest, manifestPath) {
       }
     } else if (product.categoryId === "category-jhula") {
       if (!/^JH-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: jhula reference must match JH-NN`);
+    } else if (product.categoryId === "category-coin") {
+      if (!/^DDA-COIN-[A-Z0-9-]+$/.test(product.reference ?? "")) {
+        errors.push(`${label}: coin reference must start with DDA-COIN-`);
+      }
+      if (!supportedCoinShapes.has(product.coinShape)) {
+        errors.push(`${label}: Coin products require a supported coinShape`);
+      }
+    } else if (product.categoryId === "category-gold") {
+      if (!/^DDA-GOLD-[A-Z0-9-]+$/.test(product.reference ?? "")) {
+        errors.push(`${label}: gold reference must start with DDA-GOLD-`);
+      }
+      if (!supportedCoinShapes.has(product.coinShape)) {
+        errors.push(`${label}: Gold products require a supported coinShape`);
+      }
     } else if (product.categoryId === "category-utensils") {
       const referenceCode = utensilReferenceCodeByType.get(product.utensilType);
       if (!referenceCode) {
@@ -302,6 +339,13 @@ function validateManifest(manifest, manifestPath) {
     }
     if (product.categoryId !== "category-utensils" && product.utensilType !== undefined) {
       errors.push(`${label}: utensilType is only valid for Utensils`);
+    }
+    if (
+      product.categoryId !== "category-coin" &&
+      product.categoryId !== "category-gold" &&
+      product.coinShape !== undefined
+    ) {
+      errors.push(`${label}: coinShape is only valid for Coin or Gold products`);
     }
 
     const sourcePath = path.resolve(product.sourcePath ?? "");
@@ -386,6 +430,8 @@ function validateManifest(manifest, manifestPath) {
       productDocuments: products.filter((product) => product.createProduct !== false).length,
       alternateImages: products.filter((product) => product.recordType === "alternateGalleryImage").length,
       validImages: validImageCount,
+      coins: products.filter((product) => product.categoryId === "category-coin").length,
+      gold: products.filter((product) => product.categoryId === "category-gold").length,
       gifts: products.filter((product) => product.categoryId === "category-gifts").length,
       jhulas: products.filter((product) => product.categoryId === "category-jhula").length,
       purses: products.filter((product) => product.categoryId === "category-purse").length,
@@ -426,7 +472,7 @@ if (result.errors.length > 0) {
 } else {
   console.log(`Validated ${result.counts.validImages} prospective image asset uploads.`);
   console.log(
-    `Validated ${result.counts.productDocuments} prospective product documents across Gifts, Jhula, Purse, Idols and Utensils.`,
+    `Validated ${result.counts.productDocuments} prospective product documents across Coin, Gold, Gifts, Jhula, Purse, Idols and Utensils.`,
   );
   console.log("Dry run complete. No network request, asset upload, product mutation or publication occurred.");
 }

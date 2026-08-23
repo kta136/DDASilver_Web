@@ -4,6 +4,7 @@ import clsx from "clsx";
 import {
   coinShapeLabels,
   idolConstructionLabels,
+  materialLabels,
   purityLabels,
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
@@ -47,7 +48,8 @@ export function ProductDetails({
           Reference {product.reference}
         </p>
       ) : null}
-      {product.purity ||
+      {product.material ||
+      product.purity ||
       product.weightGrams ||
       product.heightInches ||
       product.widthInches ||
@@ -60,6 +62,16 @@ export function ProductDetails({
       product.deities.length > 0 ||
       product.coinShape ? (
         <dl className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-line pt-5">
+          {product.material ? (
+            <div>
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+                Material
+              </dt>
+              <dd className="mt-1 text-sm font-semibold">
+                {materialLabels[product.material]}
+              </dd>
+            </div>
+          ) : null}
           {product.purity ? (
             <div>
               <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
@@ -148,7 +160,7 @@ export function ProductDetails({
           {product.utensilType ? (
             <div>
               <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
-                Utensil Type
+                Product Type
               </dt>
               <dd className="mt-1 text-sm font-semibold">
                 {utensilTypeLabels[product.utensilType]}

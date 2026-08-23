@@ -58,7 +58,7 @@ describe("<CatalogBrowser />", () => {
     ).toBeInTheDocument();
 
     const shapeFilter = screen.getByRole("combobox", {
-      name: "Filter by coin shape",
+      name: "Filter by coin or bar shape",
     });
     expect(
       within(shapeFilter).getByRole("option", { name: "Round" }),
@@ -66,6 +66,43 @@ describe("<CatalogBrowser />", () => {
     expect(
       within(shapeFilter).queryByRole("option", { name: "Oval" }),
     ).not.toBeInTheDocument();
+  });
+
+  it("shows Gold purity and shape filters", () => {
+    const goldProduct = {
+      ...fallbackProducts.find((product) => product.categorySlug === "coin")!,
+      title: "Card-Packed Gold Coin",
+      slug: "card-packed-gold-coin",
+      categorySlug: "gold",
+      material: "gold" as const,
+      purity: "99.50" as const,
+      coinShape: "scalloped" as const,
+    };
+    const goldCategory = {
+      ...fallbackCategories[0]!,
+      title: "Gold Coins & Bars",
+      slug: "gold",
+    };
+
+    render(
+      <CatalogBrowser
+        products={[goldProduct]}
+        categories={[goldCategory]}
+        initialCategory="gold"
+      />,
+    );
+
+    expect(
+      within(screen.getByRole("combobox", { name: "Filter by purity" }))
+        .getByRole("option", { name: "99.50%" }),
+    ).toBeInTheDocument();
+    expect(
+      within(
+        screen.getByRole("combobox", {
+          name: "Filter by coin or bar shape",
+        }),
+      ).getByRole("option", { name: "Scalloped" }),
+    ).toBeInTheDocument();
   });
 
   it("shows deity names backed by products in the Idols category", () => {

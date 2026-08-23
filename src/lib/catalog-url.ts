@@ -8,7 +8,7 @@ import type {
   UtensilType,
 } from "@/types/catalog";
 
-const purities = new Set<ProductPurity>(["92.5", "99.80"]);
+const purities = new Set<ProductPurity>(["92.5", "99.50", "99.80"]);
 const idolConstructions = new Set<IdolConstruction>([
   "hollow",
   "solid",
@@ -19,6 +19,7 @@ const coinShapes = new Set<CoinShape>([
   "oval",
   "square",
   "rectangle",
+  "scalloped",
 ]);
 const utensilTypes = new Set<UtensilType>([
   "glass",
@@ -28,6 +29,7 @@ const utensilTypes = new Set<UtensilType>([
   "kalash",
   "bottle",
   "spoon",
+  "pooja-thali-set",
 ]);
 
 export type CatalogUrlOptions = {
@@ -73,7 +75,7 @@ export function parseCatalogSearchParams(
         ? allowedValue(searchParams.get("deity"), deitySlugs)
         : "",
     coinShape:
-      category === "coin"
+      category === "coin" || category === "gold"
         ? allowedValue(searchParams.get("shape"), coinShapes)
         : "",
     utensilType:

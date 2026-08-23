@@ -55,13 +55,33 @@ next-env.d.ts
 # graphify
 /graphify-out/
 
-# Product imagery is uploaded to Sanity and kept out of GitHub
+# Product gallery imagery is uploaded to Sanity and kept out of GitHub.
+# Keep manifests, review CSVs, audit notes, and ingestion scripts tracked.
 /public/images/product-backgrounds/
-/public/images/silver-idols/**/*.png
-/public/images/silver-idols/**/*.jpg
-/public/images/silver-idols/**/*.jpeg
-/public/images/silver-idols/**/*.webp
-/public/images/silver-purses/**/*.png
-/public/images/silver-purses/**/*.jpg
-/public/images/silver-purses/**/*.jpeg
-/public/images/silver-purses/**/*.webp
+/public/images/gallery-ingestion/**/*.png
+/public/images/gallery-ingestion/**/*.jpg
+/public/images/gallery-ingestion/**/*.jpeg
+/public/images/gallery-ingestion/**/*.webp
+/public/images/gallery-ingestion/**/*.avif
+/public/images/gallery-ingestion/**/*.gif
+/public/images/gallery-ingestion/**/*.tif
+/public/images/gallery-ingestion/**/*.tiff
+/public/images/gallery-ingestion/**/*.bmp
+/public/images/silver-*/**/*.png
+/public/images/silver-*/**/*.jpg
+/public/images/silver-*/**/*.jpeg
+/public/images/silver-*/**/*.webp
+/public/images/silver-*/**/*.avif
+/public/images/silver-*/**/*.gif
+/public/images/silver-*/**/*.tif
+/public/images/silver-*/**/*.tiff
+/public/images/silver-*/**/*.bmp
+/docs/product-gallery-approvals/**/*.png
+/docs/product-gallery-approvals/**/*.jpg
+/docs/product-gallery-approvals/**/*.jpeg
+/docs/product-gallery-approvals/**/*.webp
+/docs/product-gallery-approvals/**/*.avif
+/docs/product-gallery-approvals/**/*.gif
+/docs/product-gallery-approvals/**/*.tif
+/docs/product-gallery-approvals/**/*.tiff
+/docs/product-gallery-approvals/**/*.bmp

@@ -33,6 +33,7 @@ function productPayload(imageAlt?: string) {
     featured: false,
     displayOrder: 1,
     reference: "TEST-1",
+    material: null,
     purity: "92.5",
     weightGrams: null,
     heightInches: null,
@@ -65,6 +66,7 @@ describe("fetchCatalog()", () => {
           featured: false,
           displayOrder: 1,
           reference: "TEST-1",
+          material: null,
           purity: "92.5",
           weightGrams: null,
           heightInches: null,
@@ -124,6 +126,7 @@ describe("fetchCatalog()", () => {
           featured: false,
           displayOrder: 1,
           reference: "TEST-BOTTLE-1",
+          material: "silver",
           purity: "92.5",
           weightGrams: null,
           heightInches: null,
@@ -162,6 +165,73 @@ describe("fetchCatalog()", () => {
     expect(catalog.products[0]?.utensilType).toBe("bottle");
   });
 
+  it("accepts Gold products and Pooja Thali Sets", async () => {
+    const goldProduct = {
+      ...productPayload("A card-packed gold coin on a neutral background"),
+      title: "Card-Packed Gold Coin",
+      slug: "card-packed-gold-coin",
+      shortDescription:
+        "A card-packed 99.50% gold coin prepared for gifting.",
+      categorySlug: "gold",
+      reference: "DDA-GOLD-TEST-1",
+      material: "gold",
+      purity: "99.50",
+      coinShape: "round",
+    };
+    const poojaThali = {
+      ...productPayload("A silver Pooja Thali Set on a neutral background"),
+      title: "Silver Pooja Thali Set",
+      slug: "silver-pooja-thali-set",
+      shortDescription:
+        "A 92.5% silver Pooja Thali Set for devotional rituals.",
+      categorySlug: "utensils",
+      reference: "DDA-UT-PT-TEST-1",
+      material: "silver",
+      purity: "92.5",
+      utensilType: "pooja-thali-set",
+    };
+    const fetch = vi
+      .fn()
+      .mockResolvedValueOnce([goldProduct, poojaThali])
+      .mockResolvedValueOnce([
+        {
+          title: "Gold Coins & Bars",
+          slug: "gold",
+          description: "Card-packed 99.50% gold coins and bars.",
+          image: catalogImage("A representative card-packed gold coin"),
+          displayOrder: 1,
+          updatedAt: "2026-08-22T00:00:00.000Z",
+        },
+        {
+          title: "Utensils",
+          slug: "utensils",
+          description: "Silver Pooja Thali Sets.",
+          image: catalogImage("A representative silver Pooja Thali Set"),
+          displayOrder: 2,
+          updatedAt: "2026-08-22T00:00:00.000Z",
+        },
+      ])
+      .mockResolvedValueOnce([]);
+    const client = asCatalogClient({ fetch, withConfig: vi.fn() });
+
+    const catalog = await fetchCatalog(client);
+
+    expect(catalog.source).toBe("sanity");
+    expect(catalog.products).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          material: "gold",
+          purity: "99.50",
+          coinShape: "round",
+        }),
+        expect.objectContaining({
+          material: "silver",
+          utensilType: "pooja-thali-set",
+        }),
+      ]),
+    );
+  });
+
   it("automatically adds product image SEO for API-imported content", async () => {
     const fetch = vi
       .fn()
@@ -189,7 +259,7 @@ describe("fetchCatalog()", () => {
       ),
     });
     expect(catalog.categories[0]?.image.src).toContain(
-      "/test-1x1.png/gifts-silver-category.png",
+      "/test-1x1.png/gifts-category.png",
     );
   });
 

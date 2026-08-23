@@ -6,7 +6,7 @@ import {
 } from "@/lib/catalog-url";
 
 const options = {
-  categorySlugs: ["jewellery", "coin", "idols", "utensils"],
+  categorySlugs: ["jewellery", "coin", "gold", "idols", "utensils"],
   deitySlugs: ["shiva"],
 };
 
@@ -53,6 +53,31 @@ describe("catalog URL state", () => {
     expect(parsed.utensilType).toBe("bottle");
     expect(serializeCatalogFilters(parsed).toString()).toBe(
       "category=utensils&item=bottle",
+    );
+  });
+
+  it("round-trips Pooja Thali Sets", () => {
+    const parsed = parseCatalogSearchParams(
+      new URLSearchParams("category=utensils&item=pooja-thali-set"),
+      options,
+    );
+
+    expect(parsed.utensilType).toBe("pooja-thali-set");
+    expect(serializeCatalogFilters(parsed).toString()).toBe(
+      "category=utensils&item=pooja-thali-set",
+    );
+  });
+
+  it("round-trips Gold purity and scalloped shape", () => {
+    const parsed = parseCatalogSearchParams(
+      new URLSearchParams("category=gold&purity=99.50&shape=scalloped"),
+      options,
+    );
+
+    expect(parsed.purity).toBe("99.50");
+    expect(parsed.coinShape).toBe("scalloped");
+    expect(serializeCatalogFilters(parsed).toString()).toBe(
+      "category=gold&purity=99.50&shape=scalloped",
     );
   });
 
