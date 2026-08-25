@@ -63,6 +63,14 @@ container health probe; the final application base remains Debian. `SOURCE_COMMI
 Next.js build assets aligned during a health-checked rolling replacement and
 exposes the current commit through `/api/health`.
 
+Coolify's Traefik service labels actively check `/api/health` every five
+seconds for each site router. On `SIGTERM`, the container marks that endpoint
+as draining, waits eight seconds for Traefik to remove the old backend, and
+then forwards the signal to Next.js. Keep Coolify's stop grace period at 30
+seconds. This drain window is required for a rolling replacement without
+failed requests; do not replace it with a retry middleware shared by duplicate
+router definitions.
+
 ## Environment ownership
 
 Coolify production is the source of truth for the active origin. Vercel keeps

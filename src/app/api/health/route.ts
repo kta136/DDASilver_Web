@@ -1,8 +1,12 @@
+import { existsSync } from "node:fs";
+
 import { checkRateLimit } from "@/lib/security/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 type CheckState = "ok" | "not_configured";
+
+const DRAIN_MARKER = "/tmp/ddasilver-draining";
 
 function isSanityConfigured() {
   return (
@@ -12,6 +16,13 @@ function isSanityConfigured() {
     /^[a-z0-9_-]+$/.test(
       process.env.NEXT_PUBLIC_SANITY_DATASET ?? "",
     )
+  );
+}
+
+function isDraining() {
+  return (
+    process.env.DDA_CONTAINER_DRAINING === "1" ||
+    existsSync(DRAIN_MARKER)
   );
 }
 
@@ -52,14 +63,15 @@ export async function GET(request: Request) {
   const sanity: CheckState = isSanityConfigured()
     ? "ok"
     : "not_configured";
-  const status = sanity === "ok" ? "ok" : "degraded";
+  const draining = isDraining();
+  const status = sanity === "ok" && !draining ? "ok" : "degraded";
 
   return Response.json(
     {
       status,
       version: buildVersion(),
       checks: {
-        application: "ok",
+        application: draining ? "draining" : "ok",
         sanity,
       },
     },

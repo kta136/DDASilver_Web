@@ -137,6 +137,9 @@ retained Vercel value so a DNS rollback does not invalidate sessions.
   hostname return 404, while the panel remains behind Cloudflare Access.
 - `SOURCE_COMMIT` is supplied to the Docker build and becomes
   `NEXT_DEPLOYMENT_ID` and the health endpoint's `APP_VERSION`.
+- On shutdown the container reports `checks.application: "draining"`, waits
+  eight seconds for Traefik's active health checks to remove the backend, and
+  only then stops Next.js. The normal health response remains unchanged.
 - The application remains single-instance and has no persistent filesystem,
   distributed cache, or Redis dependency.
 - Vercel remains configured but disconnected from Git after cutover.

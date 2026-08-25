@@ -43,6 +43,24 @@ describe("GET /api/health", () => {
     });
   });
 
+  it("reports a draining container as unhealthy without changing the response shape", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", "dda-production");
+    vi.stubEnv("NEXT_PUBLIC_SANITY_DATASET", "production");
+    vi.stubEnv("DDA_CONTAINER_DRAINING", "1");
+
+    const response = await GET(healthRequest("198.51.100.14"));
+    const payload = await response.json();
+
+    expect(response.status).toBe(503);
+    expect(payload).toMatchObject({
+      status: "degraded",
+      checks: {
+        application: "draining",
+        sanity: "ok",
+      },
+    });
+  });
+
   it("prefers the Coolify application version and shortens commit hashes", async () => {
     vi.stubEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", "dda-production");
     vi.stubEnv("NEXT_PUBLIC_SANITY_DATASET", "production");
