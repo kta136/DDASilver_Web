@@ -34,6 +34,10 @@ FROM base AS runner
 
 ARG SOURCE_COMMIT=development
 
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV NODE_ENV=production \
     HOSTNAME=0.0.0.0 \
     PORT=3000 \
