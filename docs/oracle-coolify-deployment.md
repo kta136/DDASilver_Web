@@ -156,9 +156,34 @@ configuration before changes. The active proxied records are CNAMEs to:
 61e8ad96-2e1a-4e4f-b82c-7dbecac951e5.cfargotunnel.com
 ```
 
-After public verification, OCI public ingress for ports `80`, `443`, and
-`8000` is closed. Website, Coolify panel, SSH, and vault access continue over
-the outbound-only tunnel.
+After public verification, the attached OCI security list was confirmed to
+have no ingress rules for ports `80`, `443`, or `8000`; direct connection tests
+to all three ports timed out. Its only ingress rule remains TCP/22 from the
+operator `/32`, so no OCI control-plane mutation was required. Website,
+Coolify panel, SSH, and vault access continue over the outbound-only tunnel.
+
+## Cutover record
+
+Production moved to Oracle Coolify on 2026-08-25. Cloudflare “Always Use
+HTTPS” is on, the apex and `www` records are proxied CNAMEs to the named
+tunnel, and tunnel configuration version 9 retains the existing panel, SSH,
+vault, DDA Silver, deploy-only webhook, and catch-all routes. The temporary
+cutover DNS record, ingress rule, and Access application were removed.
+
+The initial gated `main` release was commit `a715768275d3`. GitHub
+[CI run 32833152312](https://github.com/kta136/DDASilver_Web/actions/runs/32833152312)
+and
+[production run 32833152316](https://github.com/kta136/DDASilver_Web/actions/runs/32833152316)
+passed before Coolify deployed it. Validation included 317/317 uninterrupted
+page requests during a rolling replacement, 223/223 during the workflow-driven
+replacement, a signed Sanity revalidation, and one 180-second SSE connection
+that delivered 961 frames. Public responses reported the Coolify commit and no
+`x-vercel-*` headers.
+
+Vercel did not create a deployment for the cutover commit. Its Git repository
+link is disconnected, while the custom domains, aliases, environment, and last
+production deployment at commit `a29f417e8066` remain available for the DNS
+rollback below.
 
 ## Vercel fallback and rollback
 

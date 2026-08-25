@@ -144,6 +144,12 @@ retained Vercel value so a DNS rollback does not invalidate sessions.
   distributed cache, or Redis dependency.
 - Vercel remains configured but disconnected from Git after cutover.
 
+The production cutover completed on 2026-08-25. Cloudflare Tunnel is the only
+website origin path; direct OCI ports `80`, `443`, and `8000` were verified
+unreachable and already absent from the attached security-list ingress rules.
+The temporary validation route has been removed, and the retained Vercel
+deployment is a DNS-only rollback target.
+
 ## Security boundaries
 
 - Sanity draft tokens are server-only.
