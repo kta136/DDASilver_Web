@@ -56,8 +56,8 @@ describe("<ProductGallery />", () => {
     expect(gallery).toHaveClass("lg:h-full");
   });
 
-  it("magnifies a photo around the mouse position and resets on exit", () => {
-    render(<ProductGallery images={images.slice(0, 1)} />);
+  it("starts fully visible, then applies gentle mouse zoom and resets", () => {
+    render(<ProductGallery images={images.slice(0, 1)} containImages />);
 
     const image = screen.getByAltText("Bracelet front");
     const slide = image.parentElement!;
@@ -73,33 +73,37 @@ describe("<ProductGallery />", () => {
       toJSON: () => ({}),
     });
 
+    expect(image).toHaveClass("object-contain");
+    expect(image.style.transform).toBe("");
+
     fireEvent.pointerEnter(slide, {
       clientX: 300,
       clientY: 300,
       pointerType: "mouse",
     });
 
-    expect(image).toHaveStyle({
-      transform: "scale(2)",
-      transformOrigin: "50% 50%",
-    });
+    expect(image.style.transform).toBe("");
 
     fireEvent.pointerMove(slide, {
-      clientX: 500,
-      clientY: 50,
+      clientX: 300,
+      clientY: 300,
       pointerType: "mouse",
     });
 
-    expect(image).toHaveStyle({ transformOrigin: "100% 0%" });
+    expect(image).toHaveStyle({
+      transform: "scale(1.4)",
+      transformOrigin: "50% 50%",
+    });
 
     fireEvent.pointerLeave(slide, { pointerType: "mouse" });
 
     expect(image.style.transform).toBe("");
     expect(image.style.transformOrigin).toBe("");
+    expect(slide).toHaveClass("cursor-zoom-in");
   });
 
   it("leaves touch interactions available for gallery swiping", () => {
-    render(<ProductGallery images={images.slice(0, 1)} />);
+    render(<ProductGallery images={images.slice(0, 1)} containImages />);
 
     const image = screen.getByAltText("Bracelet front");
     const slide = image.parentElement!;

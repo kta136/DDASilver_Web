@@ -61,4 +61,19 @@ describe("<ProductCard />", () => {
     expect(image).not.toHaveClass("group-hover:scale-[1.025]");
     expect(image.parentElement).toHaveClass("aspect-square");
   });
+
+  it("uses one square, uncropped image treatment throughout the catalog gallery", () => {
+    const product = {
+      ...fallbackProducts[0]!,
+      categorySlug: "gifts",
+    };
+
+    render(<ProductCard product={product} compactImage />);
+
+    const image = screen.getByAltText(product.images[0]!.alt);
+
+    expect(image).toHaveClass("object-contain");
+    expect(image).not.toHaveClass("object-cover");
+    expect(image.parentElement).toHaveClass("aspect-square");
+  });
 });

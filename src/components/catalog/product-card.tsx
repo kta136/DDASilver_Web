@@ -10,7 +10,6 @@ import {
 } from "@/lib/catalog-labels";
 import {
   shouldContainProductImage,
-  shouldUseSquareProductCardImage,
 } from "@/lib/catalog-image-presentation";
 import type { Product } from "@/types/catalog";
 
@@ -29,8 +28,8 @@ export function ProductCard({
 }: ProductCardProps) {
   const image = product.images[0];
   const Heading = headingLevel === 2 ? "h2" : "h3";
-  const containImage = shouldContainProductImage(product, compactImage);
-  const squareImage = shouldUseSquareProductCardImage(product);
+  const containImage =
+    compactImage || shouldContainProductImage(product, compactImage);
   const details = [
     product.material === "gold" ? materialLabels.gold : null,
     product.purity ? `${purityLabels[product.purity]} purity` : null,
@@ -57,11 +56,9 @@ export function ProductCard({
       >
         <div
           className={`relative overflow-hidden bg-[#ece8e3] ${
-            squareImage
+            compactImage
               ? "aspect-square"
-              : compactImage
-                ? "aspect-[4/3]"
-                : "aspect-[4/5]"
+              : "aspect-[4/5]"
           }`}
         >
           {image ? (

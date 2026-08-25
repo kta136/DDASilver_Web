@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pics-2026-08-25",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-25T14:55:30.799Z",
+  "productCount": 66,
+  "uniqueAssetCount": 66,
+  "uploadedAssetCount": 66,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-pics-20260825-01",
+      "reference": "DDA-UT-PT-1",
+      "title": "Leaf-Rim Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/01-leaf-rim-puja-thali-set.png",
+      "sha1hash": "042105f46655cf8f84b7e56013734d5d87265256",
+      "sanityAssetId": "image-042105f46655cf8f84b7e56013734d5d87265256-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/042105f46655cf8f84b7e56013734d5d87265256-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-pics-20260825-02",
+      "reference": "DDA-UT-PT-2",
+      "title": "Peacock-Handle Floral Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/02-peacock-handle-floral-puja-thali-set.png",
+      "sha1hash": "73cc48dc7ee307dc5b1938b063a8aad07adf30fb",
+      "sanityAssetId": "image-73cc48dc7ee307dc5b1938b063a8aad07adf30fb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/73cc48dc7ee307dc5b1938b063a8aad07adf30fb-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-pics-20260825-03",
+      "reference": "DDA-UT-PT-3",
+      "title": "Butterfly Floral Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/03-butterfly-floral-puja-thali-set.png",
+      "sha1hash": "95a2e8b084870c38b7bd9d491cc542bab6002ccf",
+      "sanityAssetId": "image-95a2e8b084870c38b7bd9d491cc542bab6002ccf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/95a2e8b084870c38b7bd9d491cc542bab6002ccf-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-pics-20260825-04",
+      "reference": "DDA-UT-PT-4",
+      "title": "Lotus-Rim Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/04-lotus-rim-puja-thali-set.png",
+      "sha1hash": "a4f0f3d0bbaa920226563d8ee2891b8ed93bc6e6",
+      "sanityAssetId": "image-a4f0f3d0bbaa920226563d8ee2891b8ed93bc6e6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a4f0f3d0bbaa920226563d8ee2891b8ed93bc6e6-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-pics-20260825-05",
+      "reference": "DDA-UT-PT-5",
+      "title": "Swastika Floral Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/05-swastika-floral-puja-thali-set.png",
+      "sha1hash": "21f61a62191ba1ad10d47ec1fb8d384318cd4ceb",
+      "sanityAssetId": "image-21f61a62191ba1ad10d47ec1fb8d384318cd4ceb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/21f61a62191ba1ad10d47ec1fb8d384318cd4ceb-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-pics-20260825-06",
+      "reference": "DDA-UT-PT-6",
+      "title": "Enamel Floral Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/06-enamel-floral-puja-thali-set.png",
+      "sha1hash": "ed3f77a7bd2f810c56a8371ea853a6281701ba9b",
+      "sanityAssetId": "image-ed3f77a7bd2f810c56a8371ea853a6281701ba9b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ed3f77a7bd2f810c56a8371ea853a6281701ba9b-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-pics-20260825-07",
+      "reference": "DDA-UT-PT-7",
+      "title": "Turquoise Enamel Lobed Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/07-turquoise-enamel-lobed-puja-thali-set.png",
+      "sha1hash": "09498252cf5a7c2c64339b496abc255c10e0c892",
+      "sanityAssetId": "image-09498252cf5a7c2c64339b496abc255c10e0c892-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/09498252cf5a7c2c64339b496abc255c10e0c892-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-pics-20260825-08",
+      "reference": "DDA-UT-PT-8",
+      "title": "Peacock-Feather Enamel Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/08-peacock-feather-enamel-puja-thali-set.png",
+      "sha1hash": "608782aacf7568ad3d91fab5d380fd7f45aa9df7",
+      "sanityAssetId": "image-608782aacf7568ad3d91fab5d380fd7f45aa9df7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/608782aacf7568ad3d91fab5d380fd7f45aa9df7-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-pics-20260825-09",
+      "reference": "DDA-UT-PT-9",
+      "title": "Red Lotus Enamel Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/09-red-lotus-enamel-puja-thali-set.png",
+      "sha1hash": "008635c15843979f1eaf0f85e7b2682d90675a93",
+      "sanityAssetId": "image-008635c15843979f1eaf0f85e7b2682d90675a93-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/008635c15843979f1eaf0f85e7b2682d90675a93-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-pics-20260825-10",
+      "reference": "DDA-UT-PT-10",
+      "title": "Fan-Petal Enamel Puja Thali Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/10-fan-petal-enamel-puja-thali-set.png",
+      "sha1hash": "cd3ff1afe60c74c37808fb0ba961099835ed11f8",
+      "sanityAssetId": "image-cd3ff1afe60c74c37808fb0ba961099835ed11f8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/cd3ff1afe60c74c37808fb0ba961099835ed11f8-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-pics-20260825-11",
+      "reference": "DDA-GF-PICS-11",
+      "title": "Two-Tier Arched Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/11-two-tier-arched-silver-hatri.png",
+      "sha1hash": "bf09cd28f671d95cdc42d9f4feeb89fcf28494e9",
+      "sanityAssetId": "image-bf09cd28f671d95cdc42d9f4feeb89fcf28494e9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bf09cd28f671d95cdc42d9f4feeb89fcf28494e9-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-pics-20260825-12",
+      "reference": "DDA-GF-PICS-12",
+      "title": "Compact Two-Tier Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/12-compact-two-tier-silver-hatri.png",
+      "sha1hash": "6319d9569960dcb1e70f642a0734dddc8dafe98e",
+      "sanityAssetId": "image-6319d9569960dcb1e70f642a0734dddc8dafe98e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6319d9569960dcb1e70f642a0734dddc8dafe98e-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-pics-20260825-13",
+      "reference": "DDA-GF-PICS-13",
+      "title": "Three-Tier Six-Cup Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/13-three-tier-six-cup-silver-hatri.png",
+      "sha1hash": "3334de593f46891661a71f13537e766ebde51796",
+      "sanityAssetId": "image-3334de593f46891661a71f13537e766ebde51796-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3334de593f46891661a71f13537e766ebde51796-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-pics-20260825-14",
+      "reference": "DDA-GF-PICS-14",
+      "title": "Peacock-Crown Three-Tier Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/14-peacock-crown-three-tier-silver-hatri.png",
+      "sha1hash": "e9bc75e20f9fa82e53463286978290061b6f73d7",
+      "sanityAssetId": "image-e9bc75e20f9fa82e53463286978290061b6f73d7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e9bc75e20f9fa82e53463286978290061b6f73d7-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-pics-20260825-15",
+      "reference": "DDA-GF-PICS-15",
+      "title": "Domed Single-Chamber Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/15-domed-single-chamber-silver-hatri.png",
+      "sha1hash": "2a9e825d7147bdc66f4eb7aa5a9c6914d8266c9d",
+      "sanityAssetId": "image-2a9e825d7147bdc66f4eb7aa5a9c6914d8266c9d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2a9e825d7147bdc66f4eb7aa5a9c6914d8266c9d-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-pics-20260825-16",
+      "reference": "DDA-GF-PICS-16",
+      "title": "Om-Flag Domed Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/16-om-flag-domed-silver-hatri.png",
+      "sha1hash": "14e153c51fa4940bf4560fa5e1d33ec2ca952638",
+      "sanityAssetId": "image-14e153c51fa4940bf4560fa5e1d33ec2ca952638-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/14e153c51fa4940bf4560fa5e1d33ec2ca952638-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-pics-20260825-17",
+      "reference": "DDA-GF-PICS-17",
+      "title": "Petite Pointed-Dome Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/17-petite-pointed-dome-silver-hatri.png",
+      "sha1hash": "7e02c11ea21eb9af0f356a96f8da057942d22914",
+      "sanityAssetId": "image-7e02c11ea21eb9af0f356a96f8da057942d22914-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7e02c11ea21eb9af0f356a96f8da057942d22914-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-pics-20260825-18",
+      "reference": "JH-18",
+      "title": "Peacock-Arch Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/18-peacock-arch-silver-jhula.png",
+      "sha1hash": "644ba38461f4a0bd4b27f9260d6b3a198155cce1",
+      "sanityAssetId": "image-644ba38461f4a0bd4b27f9260d6b3a198155cce1-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/644ba38461f4a0bd4b27f9260d6b3a198155cce1-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-pics-20260825-19",
+      "reference": "JH-19",
+      "title": "Twin-Peacock Singhasan Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/19-twin-peacock-singhasan-silver-jhula.png",
+      "sha1hash": "905eaafaeec8d14c5b49211587277d83e2990afc",
+      "sanityAssetId": "image-905eaafaeec8d14c5b49211587277d83e2990afc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/905eaafaeec8d14c5b49211587277d83e2990afc-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-pics-20260825-20",
+      "reference": "DDA-GF-PICS-20",
+      "title": "Compact Om-Flag Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/20-compact-om-flag-silver-hatri.png",
+      "sha1hash": "dc9653a7e0afe72cc98c3bf058dc4ae36e63fa8d",
+      "sanityAssetId": "image-dc9653a7e0afe72cc98c3bf058dc4ae36e63fa8d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/dc9653a7e0afe72cc98c3bf058dc4ae36e63fa8d-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-pics-20260825-21",
+      "reference": "DDA-GF-PICS-21",
+      "title": "Miniature Om-Flag Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/21-miniature-om-flag-silver-hatri.png",
+      "sha1hash": "88a05ffd187a291b6e5fddbc4d91211dc5874e3f",
+      "sanityAssetId": "image-88a05ffd187a291b6e5fddbc4d91211dc5874e3f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/88a05ffd187a291b6e5fddbc4d91211dc5874e3f-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-pics-20260825-22",
+      "reference": "DDA-GF-PICS-22",
+      "title": "Two-Tier Four-Cup Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/22-two-tier-four-cup-silver-hatri.png",
+      "sha1hash": "d8f1a3ef842989c1977a84b6994d0109923e5dd2",
+      "sanityAssetId": "image-d8f1a3ef842989c1977a84b6994d0109923e5dd2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d8f1a3ef842989c1977a84b6994d0109923e5dd2-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-pics-20260825-23",
+      "reference": "DDA-GF-PICS-23",
+      "title": "Gemstone Three-Tier Silver Hatri",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/23-gemstone-three-tier-silver-hatri.png",
+      "sha1hash": "3bbc773692758d4b9a8ce6a994a99cb4e63dccf0",
+      "sanityAssetId": "image-3bbc773692758d4b9a8ce6a994a99cb4e63dccf0-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3bbc773692758d4b9a8ce6a994a99cb4e63dccf0-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-pics-20260825-24",
+      "reference": "DDA-GF-PICS-24",
+      "title": "Horse-Drawn Carriage Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/24-horse-drawn-carriage-silver-sculpture.png",
+      "sha1hash": "5e85e20e445e07edbea660db7c604db26b974902",
+      "sanityAssetId": "image-5e85e20e445e07edbea660db7c604db26b974902-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5e85e20e445e07edbea660db7c604db26b974902-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-pics-20260825-25",
+      "reference": "DDA-GF-PICS-25",
+      "title": "Vintage Automobile Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/25-vintage-automobile-silver-sculpture.png",
+      "sha1hash": "fdba7e333a4b408e9917c9826b46fc0bf3f69361",
+      "sanityAssetId": "image-fdba7e333a4b408e9917c9826b46fc0bf3f69361-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fdba7e333a4b408e9917c9826b46fc0bf3f69361-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-pics-20260825-26",
+      "reference": "DDA-GF-PICS-26",
+      "title": "Village Water-Carrier Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/26-village-water-carrier-silver-sculpture.png",
+      "sha1hash": "73fce158d09e273bd3fa2522f40b0990e9468fc4",
+      "sanityAssetId": "image-73fce158d09e273bd3fa2522f40b0990e9468fc4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/73fce158d09e273bd3fa2522f40b0990e9468fc4-1254x1254.png"
+    },
+    {
+      "number": 27,
+      "productId": "product-dda-pics-20260825-27",
+      "reference": "SSM-RD-1",
+      "title": "Ram Darbar Silver Idol Tableau",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/27-ram-darbar-silver-idol-tableau.png",
+      "sha1hash": "29b5212dfda8ab17bed5f84a6c43b87da7e247f4",
+      "sanityAssetId": "image-29b5212dfda8ab17bed5f84a6c43b87da7e247f4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/29b5212dfda8ab17bed5f84a6c43b87da7e247f4-1254x1254.png"
+    },
+    {
+      "number": 28,
+      "productId": "product-dda-pics-20260825-28",
+      "reference": "DDA-GF-PICS-28",
+      "title": "Enamel Peacock Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/28-enamel-peacock-silver-sculpture.png",
+      "sha1hash": "fa38189c6327817391ed175d8e29427d7692d5f7",
+      "sanityAssetId": "image-fa38189c6327817391ed175d8e29427d7692d5f7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fa38189c6327817391ed175d8e29427d7692d5f7-1254x1254.png"
+    },
+    {
+      "number": 29,
+      "productId": "product-dda-pics-20260825-29",
+      "reference": "DDA-GF-PICS-29",
+      "title": "Paired Swan Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/29-paired-swan-silver-sculpture.png",
+      "sha1hash": "2ce7289c133c694b8c697c3c526b24a81d57b3dc",
+      "sanityAssetId": "image-2ce7289c133c694b8c697c3c526b24a81d57b3dc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2ce7289c133c694b8c697c3c526b24a81d57b3dc-1254x1254.png"
+    },
+    {
+      "number": 30,
+      "productId": "product-dda-pics-20260825-30",
+      "reference": "DDA-GF-PICS-30",
+      "title": "Eagle-in-Flight Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/30-eagle-in-flight-silver-sculpture.png",
+      "sha1hash": "5016c08bac056e6e0f12a4f41f36b707e639cd59",
+      "sanityAssetId": "image-5016c08bac056e6e0f12a4f41f36b707e639cd59-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5016c08bac056e6e0f12a4f41f36b707e639cd59-1254x1254.png"
+    },
+    {
+      "number": 31,
+      "productId": "product-dda-pics-20260825-31",
+      "reference": "DDA-GF-PICS-31",
+      "title": "Paired Falcon Silver Sculptures",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/31-paired-falcon-silver-sculpture.png",
+      "sha1hash": "fa25d55ab88cb1055df2cef6c5954bbdcb222066",
+      "sanityAssetId": "image-fa25d55ab88cb1055df2cef6c5954bbdcb222066-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fa25d55ab88cb1055df2cef6c5954bbdcb222066-1254x1254.png"
+    },
+    {
+      "number": 32,
+      "productId": "product-dda-pics-20260825-32",
+      "reference": "DDA-GF-PICS-32",
+      "title": "Deer Pair Silver Sculptures",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/32-deer-pair-silver-sculpture.png",
+      "sha1hash": "b38533a5eb85b681d9f6e08a4a16596547603adf",
+      "sanityAssetId": "image-b38533a5eb85b681d9f6e08a4a16596547603adf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b38533a5eb85b681d9f6e08a4a16596547603adf-1254x1254.png"
+    },
+    {
+      "number": 34,
+      "productId": "product-dda-pics-20260825-34",
+      "reference": "DDA-GF-PICS-34",
+      "title": "Walking Leopard Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/34-walking-leopard-silver-sculpture.png",
+      "sha1hash": "096b98a372d19af5262e4395005b90febe9fefe3",
+      "sanityAssetId": "image-096b98a372d19af5262e4395005b90febe9fefe3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/096b98a372d19af5262e4395005b90febe9fefe3-1254x1254.png"
+    },
+    {
+      "number": 35,
+      "productId": "product-dda-pics-20260825-35",
+      "reference": "DDA-GF-PICS-35",
+      "title": "Embossed Ceremonial Silver Gada",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/35-embossed-ceremonial-gada.png",
+      "sha1hash": "bf6acc923a9b8ec463f9cd7e33a895f2b8a24046",
+      "sanityAssetId": "image-bf6acc923a9b8ec463f9cd7e33a895f2b8a24046-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bf6acc923a9b8ec463f9cd7e33a895f2b8a24046-1254x1254.png"
+    },
+    {
+      "number": 36,
+      "productId": "product-dda-pics-20260825-36",
+      "reference": "DDA-GF-PICS-36",
+      "title": "Vintage Pickup Truck Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/36-vintage-pickup-truck-silver-sculpture.png",
+      "sha1hash": "e75ce167ca0382b8b928e9295f94aeca86502256",
+      "sanityAssetId": "image-e75ce167ca0382b8b928e9295f94aeca86502256-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e75ce167ca0382b8b928e9295f94aeca86502256-1254x1254.png"
+    },
+    {
+      "number": 37,
+      "productId": "product-dda-pics-20260825-37",
+      "reference": "DDA-GF-PICS-37",
+      "title": "Camel Cart Silver Sculpture",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/37-camel-cart-silver-sculpture.png",
+      "sha1hash": "ca3fddfd1e6f078a7a809080a6d8d39c1bb4c29e",
+      "sanityAssetId": "image-ca3fddfd1e6f078a7a809080a6d8d39c1bb4c29e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ca3fddfd1e6f078a7a809080a6d8d39c1bb4c29e-1254x1254.png"
+    },
+    {
+      "number": 38,
+      "productId": "product-dda-pics-20260825-38",
+      "reference": "SSM-BK-2",
+      "title": "Laddu Gopal Crawling Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/38-laddu-gopal-crawling-silver-idol.png",
+      "sha1hash": "44c41246fa2e1d68a25efbc11da41c9e3c5f4e90",
+      "sanityAssetId": "image-44c41246fa2e1d68a25efbc11da41c9e3c5f4e90-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/44c41246fa2e1d68a25efbc11da41c9e3c5f4e90-1254x1254.png"
+    },
+    {
+      "number": 39,
+      "productId": "product-dda-pics-20260825-39",
+      "reference": "SSM-BK-3",
+      "title": "Ornate Laddu Gopal Crawling Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/39-ornate-laddu-gopal-crawling-silver-idol.png",
+      "sha1hash": "8f412720d960f53733c3fd508f7740939fc39125",
+      "sanityAssetId": "image-8f412720d960f53733c3fd508f7740939fc39125-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8f412720d960f53733c3fd508f7740939fc39125-1254x1254.png"
+    },
+    {
+      "number": 40,
+      "productId": "product-dda-pics-20260825-40",
+      "reference": "SSM-BK-4",
+      "title": "Petite Laddu Gopal Crawling Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/40-petite-laddu-gopal-crawling-silver-idol.png",
+      "sha1hash": "ccef885618731f14475903ce860da349f99f1192",
+      "sanityAssetId": "image-ccef885618731f14475903ce860da349f99f1192-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ccef885618731f14475903ce860da349f99f1192-1254x1254.png"
+    },
+    {
+      "number": 41,
+      "productId": "product-dda-pics-20260825-41",
+      "reference": "DDA-GF-PICS-41",
+      "title": "Gold-and-Pink Crest Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/41-gold-pink-crest-octagonal-silver-box.png",
+      "sha1hash": "d90998eb62a7320dbff03e038b91643443592cef",
+      "sanityAssetId": "image-d90998eb62a7320dbff03e038b91643443592cef-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d90998eb62a7320dbff03e038b91643443592cef-1254x1254.png"
+    },
+    {
+      "number": 42,
+      "productId": "product-dda-pics-20260825-42",
+      "reference": "DDA-GF-PICS-42",
+      "title": "Enamel Floral Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/42-enamel-floral-octagonal-silver-box.png",
+      "sha1hash": "656311de05b478dc85e757fac6e66316d9d796e7",
+      "sanityAssetId": "image-656311de05b478dc85e757fac6e66316d9d796e7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/656311de05b478dc85e757fac6e66316d9d796e7-1254x1254.png"
+    },
+    {
+      "number": 43,
+      "productId": "product-dda-pics-20260825-43",
+      "reference": "DDA-GF-PICS-43",
+      "title": "Floral-Jewel Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/43-floral-jewel-octagonal-silver-box.png",
+      "sha1hash": "f6691d50734b83b2c230d59c7b2b915c9fae2a9f",
+      "sanityAssetId": "image-f6691d50734b83b2c230d59c7b2b915c9fae2a9f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f6691d50734b83b2c230d59c7b2b915c9fae2a9f-1254x1254.png"
+    },
+    {
+      "number": 44,
+      "productId": "product-dda-pics-20260825-44",
+      "reference": "DDA-GF-PICS-44",
+      "title": "Domed Enamel Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/44-domed-enamel-octagonal-silver-box.png",
+      "sha1hash": "a6e27765c82cc1c4023e461a5422fa8d4d3c5f59",
+      "sanityAssetId": "image-a6e27765c82cc1c4023e461a5422fa8d4d3c5f59-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a6e27765c82cc1c4023e461a5422fa8d4d3c5f59-1254x1254.png"
+    },
+    {
+      "number": 45,
+      "productId": "product-dda-pics-20260825-45",
+      "reference": "DDA-GF-PICS-45",
+      "title": "Square-Medallion Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/45-square-medallion-octagonal-silver-box.png",
+      "sha1hash": "74798ec7231f47deab0a8fac1a4ea89bc4af2293",
+      "sanityAssetId": "image-74798ec7231f47deab0a8fac1a4ea89bc4af2293-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/74798ec7231f47deab0a8fac1a4ea89bc4af2293-1254x1254.png"
+    },
+    {
+      "number": 46,
+      "productId": "product-dda-pics-20260825-46",
+      "reference": "DDA-GF-PICS-46",
+      "title": "Enamel Floral Rectangular Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/46-enamel-floral-rectangular-silver-box.png",
+      "sha1hash": "b68c7b80cf24d265d657921c28290daa7ce35ff7",
+      "sanityAssetId": "image-b68c7b80cf24d265d657921c28290daa7ce35ff7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b68c7b80cf24d265d657921c28290daa7ce35ff7-1254x1254.png"
+    },
+    {
+      "number": 47,
+      "productId": "product-dda-pics-20260825-47",
+      "reference": "DDA-GF-PICS-47",
+      "title": "Faceted Floral Footed Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/47-faceted-floral-footed-silver-box.png",
+      "sha1hash": "f4212a2cb0c8fb9c71f810b61769bc4aa8c360f8",
+      "sanityAssetId": "image-f4212a2cb0c8fb9c71f810b61769bc4aa8c360f8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f4212a2cb0c8fb9c71f810b61769bc4aa8c360f8-1254x1254.png"
+    },
+    {
+      "number": 48,
+      "productId": "product-dda-pics-20260825-48",
+      "reference": "DDA-GF-PICS-48",
+      "title": "Floral-Lattice Oval Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/48-floral-lattice-oval-silver-box.png",
+      "sha1hash": "fa9e6b5b43418375990edb543e3680351503067e",
+      "sanityAssetId": "image-fa9e6b5b43418375990edb543e3680351503067e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fa9e6b5b43418375990edb543e3680351503067e-1254x1254.png"
+    },
+    {
+      "number": 49,
+      "productId": "product-dda-pics-20260825-49",
+      "reference": "DDA-GF-PICS-49",
+      "title": "Enamel Floral Hammered Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/49-enamel-floral-hammered-silver-box.png",
+      "sha1hash": "b86f295ba8121f0cb2be2832b3d27cb54fd14cc8",
+      "sanityAssetId": "image-b86f295ba8121f0cb2be2832b3d27cb54fd14cc8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b86f295ba8121f0cb2be2832b3d27cb54fd14cc8-1254x1254.png"
+    },
+    {
+      "number": 50,
+      "productId": "product-dda-pics-20260825-50",
+      "reference": "DDA-UT-BW-102",
+      "title": "Four-Bowl Square Silver Serving Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/50-four-bowl-square-silver-serving-set.png",
+      "sha1hash": "1380c8bdf1eb5f44dcc298bb3f5d2383936a3b50",
+      "sanityAssetId": "image-1380c8bdf1eb5f44dcc298bb3f5d2383936a3b50-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1380c8bdf1eb5f44dcc298bb3f5d2383936a3b50-1254x1254.png"
+    },
+    {
+      "number": 51,
+      "productId": "product-dda-pics-20260825-51",
+      "reference": "DDA-UT-BW-103",
+      "title": "Handled Four-Bowl Silver Serving Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/51-handled-four-bowl-silver-serving-set.png",
+      "sha1hash": "58071025eadd37cca6187e39352d618c3bc7dc85",
+      "sanityAssetId": "image-58071025eadd37cca6187e39352d618c3bc7dc85-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/58071025eadd37cca6187e39352d618c3bc7dc85-1254x1254.png"
+    },
+    {
+      "number": 52,
+      "productId": "product-dda-pics-20260825-52",
+      "reference": "DDA-UT-BW-104",
+      "title": "Six-Bowl Rectangular Silver Serving Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/52-six-bowl-rectangular-silver-serving-set.png",
+      "sha1hash": "764f916a0151401e35ccb56db252d80b0b03280a",
+      "sanityAssetId": "image-764f916a0151401e35ccb56db252d80b0b03280a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/764f916a0151401e35ccb56db252d80b0b03280a-1254x1254.png"
+    },
+    {
+      "number": 53,
+      "productId": "product-dda-pics-20260825-53",
+      "reference": "DDA-UT-BW-105",
+      "title": "Six-Bowl Flared Silver Serving Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/53-six-bowl-flared-silver-serving-set.png",
+      "sha1hash": "fec559f717ea0939440da922f07ac7f0edbe36dc",
+      "sanityAssetId": "image-fec559f717ea0939440da922f07ac7f0edbe36dc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/fec559f717ea0939440da922f07ac7f0edbe36dc-1254x1254.png"
+    },
+    {
+      "number": 54,
+      "productId": "product-dda-pics-20260825-54",
+      "reference": "SSM-SF-1",
+      "title": "Shiva Family Silver Idol Tableau",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/54-shiva-family-silver-idol-tableau.png",
+      "sha1hash": "51dcbb5fca48cd1a22c506d43e23ac696bd56a52",
+      "sanityAssetId": "image-51dcbb5fca48cd1a22c506d43e23ac696bd56a52-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/51dcbb5fca48cd1a22c506d43e23ac696bd56a52-1254x1254.png"
+    },
+    {
+      "number": 55,
+      "productId": "product-dda-pics-20260825-55",
+      "reference": "SSM-GN-3",
+      "title": "Grand Seated Ganesha Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/55-grand-seated-ganesha-silver-idol.png",
+      "sha1hash": "1514683d711f993e744722dc32b9c56b40f2d321",
+      "sanityAssetId": "image-1514683d711f993e744722dc32b9c56b40f2d321-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1514683d711f993e744722dc32b9c56b40f2d321-1254x1254.png"
+    },
+    {
+      "number": 56,
+      "productId": "product-dda-pics-20260825-56",
+      "reference": "DDA-GF-PICS-56",
+      "title": "Engraved Wedding Scroll Holder",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/56-engraved-wedding-scroll-holder.png",
+      "sha1hash": "6d270520975a8f8a258ea43eaec280573e8d3e0e",
+      "sanityAssetId": "image-6d270520975a8f8a258ea43eaec280573e8d3e0e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6d270520975a8f8a258ea43eaec280573e8d3e0e-1254x1254.png"
+    },
+    {
+      "number": 57,
+      "productId": "product-dda-pics-20260825-57",
+      "reference": "SSM-GN-4",
+      "title": "Peacock-Throne Ganesha Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/57-peacock-throne-ganesha-silver-idol.png",
+      "sha1hash": "0b2fe577698194b5dc4ba452d62759d7628428c4",
+      "sanityAssetId": "image-0b2fe577698194b5dc4ba452d62759d7628428c4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0b2fe577698194b5dc4ba452d62759d7628428c4-1254x1254.png"
+    },
+    {
+      "number": 58,
+      "productId": "product-dda-pics-20260825-58",
+      "reference": "DDA-GF-PICS-58",
+      "title": "Round Footed Silver Keepsake Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/58-round-footed-silver-keepsake-box.png",
+      "sha1hash": "a29094b616e571c0aed1e5137c285ec3145a2dd6",
+      "sanityAssetId": "image-a29094b616e571c0aed1e5137c285ec3145a2dd6-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a29094b616e571c0aed1e5137c285ec3145a2dd6-1254x1254.png"
+    },
+    {
+      "number": 59,
+      "productId": "product-dda-pics-20260825-59",
+      "reference": "DDA-GF-PICS-59",
+      "title": "Pink-Stone Enamel Floral Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/59-pink-stone-enamel-floral-silver-box.png",
+      "sha1hash": "2bef693660cc60d319f5ef661a25647fbc284ace",
+      "sanityAssetId": "image-2bef693660cc60d319f5ef661a25647fbc284ace-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2bef693660cc60d319f5ef661a25647fbc284ace-1254x1254.png"
+    },
+    {
+      "number": 60,
+      "productId": "product-dda-pics-20260825-60",
+      "reference": "DDA-UT-BW-106",
+      "title": "Leaf-Base Pedestal Silver Serving Bowl",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/60-leaf-base-pedestal-silver-serving-bowl.png",
+      "sha1hash": "b1725170184ddc2ab4616a8bac7b4a310d543f81",
+      "sanityAssetId": "image-b1725170184ddc2ab4616a8bac7b4a310d543f81-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b1725170184ddc2ab4616a8bac7b4a310d543f81-1254x1254.png"
+    },
+    {
+      "number": 61,
+      "productId": "product-dda-pics-20260825-61",
+      "reference": "DDA-GF-PICS-61",
+      "title": "Peacock-Footed Octagonal Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/61-peacock-footed-octagonal-silver-box.png",
+      "sha1hash": "0ace4d9cd93af45d9158460b0897983b59d5555e",
+      "sanityAssetId": "image-0ace4d9cd93af45d9158460b0897983b59d5555e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0ace4d9cd93af45d9158460b0897983b59d5555e-1254x1254.png"
+    },
+    {
+      "number": 62,
+      "productId": "product-dda-pics-20260825-62",
+      "reference": "DDA-UT-BW-107",
+      "title": "Turquoise Floral Five-Piece Condiment Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/62-turquoise-floral-five-piece-condiment-set.png",
+      "sha1hash": "8b3864692160befcf1566f94b4c92fbdfb2f1be2",
+      "sanityAssetId": "image-8b3864692160befcf1566f94b4c92fbdfb2f1be2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8b3864692160befcf1566f94b4c92fbdfb2f1be2-1254x1254.png"
+    },
+    {
+      "number": 63,
+      "productId": "product-dda-pics-20260825-63",
+      "reference": "DDA-GF-PICS-63",
+      "title": "Elephant-Floral Rectangular Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/63-elephant-floral-rectangular-silver-box.png",
+      "sha1hash": "6f3cd97a51bc7a442d8c78d700baac3295f1f476",
+      "sanityAssetId": "image-6f3cd97a51bc7a442d8c78d700baac3295f1f476-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6f3cd97a51bc7a442d8c78d700baac3295f1f476-1254x1254.png"
+    },
+    {
+      "number": 64,
+      "productId": "product-dda-pics-20260825-64",
+      "reference": "DDA-GF-PICS-64",
+      "title": "Enamel Floral Fan-Shaped Silver Box",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/64-enamel-floral-fan-shaped-silver-box.png",
+      "sha1hash": "5b588f246153ff5d17dcaea3fc7ac885c1d53ce4",
+      "sanityAssetId": "image-5b588f246153ff5d17dcaea3fc7ac885c1d53ce4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5b588f246153ff5d17dcaea3fc7ac885c1d53ce4-1254x1254.png"
+    },
+    {
+      "number": 65,
+      "productId": "product-dda-pics-20260825-65",
+      "reference": "DDA-UT-BW-108",
+      "title": "Two-Bowl Handled Silver Serving Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/65-two-bowl-handled-silver-serving-set.png",
+      "sha1hash": "2628a20b66dbc2827c32842c0c4505844600c7e3",
+      "sanityAssetId": "image-2628a20b66dbc2827c32842c0c4505844600c7e3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2628a20b66dbc2827c32842c0c4505844600c7e3-1254x1254.png"
+    },
+    {
+      "number": 66,
+      "productId": "product-dda-pics-20260825-66",
+      "reference": "DDA-UT-BW-109",
+      "title": "Crystal-Knob Five-Piece Condiment Set",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/66-crystal-knob-five-piece-condiment-set.png",
+      "sha1hash": "0d090e18312f918dcc241fbcdb9a4b7f43208ae4",
+      "sanityAssetId": "image-0d090e18312f918dcc241fbcdb9a4b7f43208ae4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0d090e18312f918dcc241fbcdb9a4b7f43208ae4-1254x1254.png"
+    },
+    {
+      "number": 67,
+      "productId": "product-dda-pics-20260825-67",
+      "reference": "DDA-UT-BW-110",
+      "title": "Floral-Relief Covered Silver Serving Bowl",
+      "imagePath": "public/images/gallery-ingestion/pics-2026-08-25/images/67-floral-relief-covered-silver-serving-bowl.png",
+      "sha1hash": "9913a8385a49c7116bbd83a6a64421f71cff977a",
+      "sanityAssetId": "image-9913a8385a49c7116bbd83a6a64421f71cff977a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9913a8385a49c7116bbd83a6a64421f71cff977a-1254x1254.png"
+    }
+  ]
+}

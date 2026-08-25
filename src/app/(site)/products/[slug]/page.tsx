@@ -6,7 +6,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/catalog/product-card";
 import { ProductDetails } from "@/components/catalog/product-details";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
-import { shouldContainProductImage } from "@/lib/catalog-image-presentation";
 import { getProductStructuredDataProperties } from "@/lib/catalog-seo";
 import {
   createPageMetadata,
@@ -155,11 +154,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     ? "(max-width: 1024px) 100vw, 58vw"
                     : "(max-width: 640px) 100vw, 29vw"
                 }
-                className={
-                  shouldContainProductImage(product)
-                    ? "object-contain"
-                    : "object-cover"
-                }
+                className="object-contain"
                 style={{ objectPosition: image.objectPosition ?? "center" }}
               />
             </div>

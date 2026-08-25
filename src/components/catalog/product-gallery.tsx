@@ -20,6 +20,8 @@ type ProductGalleryProps = {
   priority?: boolean;
 };
 
+const pointerZoomScale = 1.4;
+
 export function ProductGallery({
   images,
   containImages = false,
@@ -66,7 +68,7 @@ export function ProductGallery({
     );
 
     image.style.transformOrigin = `${x}% ${y}%`;
-    image.style.transform = "scale(2)";
+    image.style.transform = `scale(${pointerZoomScale})`;
   }
 
   function startZoom(event: ReactPointerEvent<HTMLDivElement>) {
@@ -81,8 +83,6 @@ export function ProductGallery({
     if (zoomedImageRef.current) {
       zoomedImageRef.current.style.willChange = "transform";
     }
-
-    updateZoom(event);
   }
 
   function showImage(index: number) {

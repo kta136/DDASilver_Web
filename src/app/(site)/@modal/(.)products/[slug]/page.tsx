@@ -4,7 +4,6 @@ import { ProductDetailDialog } from "@/components/catalog/product-detail-dialog"
 import { ProductDetails } from "@/components/catalog/product-details";
 import { ProductGallery } from "@/components/catalog/product-gallery";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
-import { shouldContainProductImage } from "@/lib/catalog-image-presentation";
 import { getCatalog } from "@/sanity/lib/catalog";
 
 type ProductModalPageProps = {
@@ -43,7 +42,7 @@ export default async function ProductModalPage({
         <div className="grid max-h-[calc(100dvh-4rem)] overflow-y-auto lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
           <ProductGallery
             images={product.images}
-            containImages={shouldContainProductImage(product)}
+            containImages
             priority
           />
           <div className="px-5 py-8 sm:px-8 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto lg:px-10 lg:py-12">
