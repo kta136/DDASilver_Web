@@ -93,7 +93,6 @@ All P2 findings were corrected and recaptured before the final comparison.
 
 ## Launch boundary
 
-This QA covers the local production build. The protected Vercel Preview is
-verified separately after its manual deployment.
-`ddasilver.com`, production aliases, indexing, and production deployment remain
-untouched until the owner explicitly says: `Go live on ddasilver.com.`
+This QA covers the local production build. Production behavior on Oracle
+Coolify is verified separately after a gated deployment. The site went live on
+`ddasilver.com` after explicit owner authorization on 25 August 2026.

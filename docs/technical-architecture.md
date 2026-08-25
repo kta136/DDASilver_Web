@@ -3,7 +3,7 @@
 **Status:** Production architecture
 
 **Implementation:** Oracle Coolify origin behind an outbound-only Cloudflare
-Tunnel, with Vercel retained as a dormant fallback
+Tunnel
 
 ## System context
 
@@ -21,7 +21,6 @@ flowchart LR
     Web --> Identity["DDAJewels identity service"]
     Web --> GA["Google Analytics 4"]
     Search["Search engines"] --> Web
-    Vercel["Dormant Vercel fallback"] -. DNS rollback .-> Edge
 ```
 
 ## Runtime choices
@@ -36,7 +35,6 @@ flowchart LR
   Coolify and reached through Traefik on internal port `3000`.
 - Cloudflare DNS, proxy, TLS/WAF, and named Tunnel
   `61e8ad96-2e1a-4e4f-b82c-7dbecac951e5` as the only public request path.
-- Vercel retained without Git deployment as a warm DNS rollback target.
 - A pinned npm lockfile and Node.js 24.19 runtime.
 
 No generic UI theme may supersede the selected design direction.
@@ -124,8 +122,8 @@ AUTH_COOKIE_SECRET
 Actual secret values exist only in ignored local files or deployment secret
 stores. Coolify owns active production values. Public Next.js variables are
 available at build and runtime; Sanity revalidation, DDAJewels, and cookie
-credentials are runtime-only. `AUTH_COOKIE_SECRET` is identical to the
-retained Vercel value so a DNS rollback does not invalidate sessions.
+credentials are runtime-only. `AUTH_COOKIE_SECRET` must remain stable across
+Coolify releases so existing sessions are not invalidated.
 
 ## Deployment and release isolation
 
@@ -142,13 +140,14 @@ retained Vercel value so a DNS rollback does not invalidate sessions.
   only then stops Next.js. The normal health response remains unchanged.
 - The application remains single-instance and has no persistent filesystem,
   distributed cache, or Redis dependency.
-- Vercel remains configured but disconnected from Git after cutover.
 
 The production cutover completed on 2026-08-25. Cloudflare Tunnel is the only
 website origin path; direct OCI ports `80`, `443`, and `8000` were verified
 unreachable and already absent from the attached security-list ingress rules.
-The temporary validation route has been removed, and the retained Vercel
-deployment is a DNS-only rollback target.
+The temporary validation route has been removed. The former Vercel project and
+its account-level `ddasilver.com` domain registration were deleted after
+cutover validation, so rollback uses a retained Coolify image or reverted Git
+commit without changing DNS.
 
 ## Security boundaries
 
@@ -182,8 +181,8 @@ database details, or current personalized rates.
 
 `/api/health` implements this contract. It returns a degraded `503` when
 Sanity's required public configuration is absent and never returns rate values
-or credentials. Its version priority is `APP_VERSION`, `SOURCE_COMMIT`, the
-Vercel commit fallback, then the package version.
+or credentials. Its version priority is `APP_VERSION`, `SOURCE_COMMIT`, then
+the package version.
 
 See [Oracle Coolify production deployment](oracle-coolify-deployment.md) for
 the network path, environment ownership, release procedure, and rollback.

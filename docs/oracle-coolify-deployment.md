@@ -8,7 +8,7 @@
 
 **Application port:** `3000` (internal only)
 
-**Fallback:** dormant Vercel production deployment
+**Rollback target:** previous healthy Coolify image or Git commit
 
 ## Request path
 
@@ -73,9 +73,9 @@ router definitions.
 
 ## Environment ownership
 
-Coolify production is the source of truth for the active origin. Vercel keeps
-an unchanged production copy solely for DNS rollback. Real values must never
-be committed, placed in the Docker build context, or printed in logs.
+Coolify production is the sole hosting environment and source of truth for the
+active origin. Real values must never be committed, placed in the Docker build
+context, or printed in logs.
 
 ### Build and runtime
 
@@ -100,9 +100,9 @@ be committed, placed in the Docker build context, or printed in logs.
 - `DDAJEWELS_AUTH_CLIENT_SECRET`
 - `AUTH_COOKIE_SECRET`
 
-`AUTH_COOKIE_SECRET` must be copied byte-for-byte so existing sessions remain
-valid. Do not migrate `VERCEL_OIDC_TOKEN`, preview credentials, or unused
-ticket/service-token variables.
+`AUTH_COOKIE_SECRET` must be preserved byte-for-byte across Coolify releases so
+existing sessions remain valid. Do not add unused preview, OIDC, ticket, or
+service-token variables.
 
 ## Release flow
 
@@ -144,8 +144,7 @@ Required checks include:
 - Snapshot rates work and the SSE connection stays open for several minutes.
 - The apex host redirects once to `www` while preserving the path and query.
 - A rolling replacement completes without a failed request.
-- After cutover, responses have Cloudflare headers but no `x-vercel-*`
-  headers.
+- Responses have Cloudflare headers and no stale hosting-provider headers.
 
 ## Cloudflare and origin controls
 
@@ -178,27 +177,28 @@ passed before Coolify deployed it. Validation included 317/317 uninterrupted
 page requests during a rolling replacement, 223/223 during the workflow-driven
 replacement, a signed Sanity revalidation, and one 180-second SSE connection
 that delivered 961 frames. Public responses reported the Coolify commit and no
-`x-vercel-*` headers.
+stale origin headers.
 
-Vercel did not create a deployment for the cutover commit. Its Git repository
-link is disconnected, while the custom domains, aliases, environment, and last
-production deployment at commit `a29f417e8066` remain available for the DNS
-rollback below.
+On 2026-08-25, after the Oracle release was stable, Vercel project
+`dda-silver-web` and all of its deployments were permanently deleted. The
+`ddasilver.com` account-level domain registration was also removed from
+Vercel. Vercel is no longer a rollback target.
 
-## Vercel fallback and rollback
+## Coolify rollback
 
-Keep the Vercel project, custom domains, production environment, aliases, and
-last healthy production deployment unchanged. `vercel.json` disables Git
-deployments, and the Git repository is disconnected from Vercel after the
-Coolify cutover succeeds.
+Keep the Cloudflare DNS and tunnel routes pointed at Oracle during an
+application rollback.
 
-If cutover validation fails:
+1. Identify the last healthy source commit and retained Coolify image.
+2. Prefer reverting the faulty `main` commit and allowing the gated GitHub
+   workflow to deploy the resulting commit.
+3. For an urgent recovery, use Coolify to redeploy the retained healthy image,
+   then reconcile `main` immediately afterward.
+4. Verify `/api/health`, TLS, apex redirect, catalog, signed revalidation,
+   rates, SSE, authentication, logout, and contact journeys.
+5. Record the failed and restored commits, deployment times, and validation
+   evidence before resuming releases.
 
-1. Restore the captured proxied Vercel A records for apex and `www`.
-2. Confirm both hosts resolve to the retained Vercel deployment.
-3. Recheck `/api/health`, TLS, apex redirect, catalog, rates, and auth.
-4. Leave the failed Coolify release available for investigation but do not
-   delete or alter the Vercel fallback.
-
-Rollback is a DNS reversal; no secret, domain, alias, or data migration is
-required.
+No DNS reversal is required for an application rollback. A host-level failure
+requires restoring Oracle/Coolify or provisioning a separately authorized
+origin; no dormant hosting copy exists.

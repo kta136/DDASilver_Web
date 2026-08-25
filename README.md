@@ -20,7 +20,7 @@ deployment configuration.
 | Sanity schemas and Studio | Production |
 | DDAJewels rates and authentication | Production integration configured server-side |
 | Production hosting | Oracle `coolify-a1`, reached only through Cloudflare Tunnel |
-| Warm fallback | Retained Vercel production deployment; Git deploys disabled |
+| Rollback | Previous healthy Coolify image or a reverted `main` commit |
 
 ## Highlights
 

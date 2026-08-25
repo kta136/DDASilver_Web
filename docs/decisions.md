@@ -82,9 +82,9 @@
 
 - Next.js App Router and TypeScript.
 - Tailwind plus CSS-variable design tokens.
-- Vercel previews and production runtime.
-- Cloudflare in front only during approved production work.
-- Public unlisted preview with crawler blocking.
+- Oracle Coolify production runtime behind Cloudflare Tunnel.
+- Cloudflare remains the public TLS/CDN/WAF boundary.
+- Temporary previews require an Access-protected Coolify route.
 - Until `NEXT_PUBLIC_SITE_ENV=production` is explicitly enabled during an
   approved cutover, metadata and robots rules block indexing.
 

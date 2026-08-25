@@ -10,7 +10,7 @@ remaining content items are editorial follow-up
 - [ ] DDAJewels staging URL.
 - [ ] Rate API and SSE implementation ownership.
 - [ ] Identity/auth implementation ownership.
-- [x] Vercel team/project access retained for warm rollback.
+- [x] Oracle Coolify and Cloudflare Tunnel administrative access available.
 - [x] Dedicated Sanity project created for DDA Silver with a public
   `production` dataset.
 - [ ] GA4 property ID or approval to create a separate property.
@@ -107,7 +107,7 @@ These are not needed to begin local work:
 - [x] Production migration to Oracle Coolify authorized on 25 August 2026.
 - [x] Current DNS and tunnel configuration identified for export at cutover.
 - [x] Cloudflare zone and non-web routes preserved by the migration plan.
-- [x] Vercel production deployment retained as the rollback target.
-- [x] DNS-only rollback procedure and operator confirmed.
+- [x] Former Vercel project and domain registration removed after cutover.
+- [x] Coolify image/Git rollback procedure and operator confirmed.
 - [ ] Legacy URL inventory complete.
 - [ ] Search Console and monitoring ready.

@@ -30,7 +30,6 @@ function buildVersion() {
   const versions = [
     process.env.APP_VERSION,
     process.env.SOURCE_COMMIT,
-    process.env.VERCEL_GIT_COMMIT_SHA,
   ];
 
   for (const candidate of versions) {

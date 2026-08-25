@@ -210,7 +210,7 @@ slug. The website maps the change to affected paths:
 
 Published product, category, and collection images are delivered directly from
 the Sanity image CDN. The website generates a bounded responsive `srcset` with
-`w`, `q`, `fit=max`, and `auto=format`; the Vercel Image Optimization endpoint
+`w`, `q`, `fit=max`, and `auto=format`; the Next.js Image Optimization endpoint
 is not part of this path. Sanity selects AVIF or WebP when the browser supports
 it and never receives a requested width larger than the uploaded master.
 
@@ -228,5 +228,5 @@ API imports that omitted it. An intentionally decorative rendering may still
 use `alt=""` when the same meaning is already present in adjacent text.
 
 Local files under `public/` are served directly and should be compressed to
-their intended display dimensions before being added; they do not use Vercel's
-image optimizer.
+their intended display dimensions before being added; they do not depend on an
+external hosting-provider image optimizer.

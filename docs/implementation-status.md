@@ -69,9 +69,9 @@ cutover plan
   strings independently of the hosting platform.
 - GitHub production workflow that gates the deploy-only Coolify webhook behind
   the repository checks and serializes production releases.
-- Vercel project `dda-silver-web` retained with domains, production
-  environment, aliases, and last healthy deployment as a warm fallback; new
-  Git deployments are disabled.
+- Former Vercel project `dda-silver-web`, its deployments, stored environment,
+  aliases, and account-level `ddasilver.com` domain registration permanently
+  removed after the Oracle cutover was validated.
 - Read-only Sanity integration verified against 22 published product routes.
   No catalog records or assets were changed during the 29 July quality pass.
 - Desktop design comparison and remediation against the selected option, with
@@ -100,7 +100,8 @@ cutover plan
 - Verified Google Business Profile link.
 - Final product catalog, approved copy, legal approval, and complete image set.
 - Real product and showroom photography to replace every concept image.
-- Owner UAT on the stable, protected Vercel Preview.
+- Owner UAT on production or an explicitly created, Access-protected temporary
+  Coolify validation route.
 - Upstream dependency patches or documented risk acceptance for the residual
   findings recorded in `docs/security-dependency-audit.md`.
 
@@ -111,8 +112,8 @@ cutover plan
 - Cloudflare remains the public TLS/CDN/WAF layer and forwards both site hosts
   through the existing named tunnel to Coolify Traefik.
 - GitHub Actions is the only automatic production release trigger.
-- Vercel is a dormant DNS rollback target and is not part of the normal
-  release path.
+- Rollback uses a retained healthy Coolify image or a reverted Git commit;
+  there is no dormant external hosting origin.
 
 See [Oracle Coolify production deployment](oracle-coolify-deployment.md) and
 [Delivery, launch, and rollback](delivery-launch-rollback.md) for current
