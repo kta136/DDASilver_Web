@@ -41,5 +41,6 @@ jobs:
         run: >-
           curl --fail-with-body --silent --show-error
           --retry 3 --retry-all-errors
+          --request POST
           --header "Authorization: Bearer ${COOLIFY_TOKEN}"
           "${COOLIFY_WEBHOOK}"
