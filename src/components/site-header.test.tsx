@@ -33,6 +33,30 @@ afterEach(() => {
 });
 
 describe("<SiteHeader />", () => {
+  it("shows mobile app download links for Android and iPhone", () => {
+    render(<SiteHeader />);
+
+    expect(screen.getByTestId("mobile-app-download-bar")).toHaveClass(
+      "lg:hidden",
+    );
+    expect(
+      screen.getByRole("link", {
+        name: "Download DDA Silver for Android",
+      }),
+    ).toHaveAttribute(
+      "href",
+      "https://play.google.com/store/apps/details?id=lmx.dda.bullion",
+    );
+    expect(
+      screen.getByRole("link", {
+        name: "Download DDA Silver for iPhone",
+      }),
+    ).toHaveAttribute(
+      "href",
+      "https://apps.apple.com/in/app/dda-silver/id1565809906",
+    );
+  });
+
   it("keeps desktop and mobile Live Rates links inside DDA Silver", () => {
     render(<SiteHeader />);
 

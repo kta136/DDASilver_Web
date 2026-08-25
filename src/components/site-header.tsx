@@ -1,6 +1,8 @@
 "use client";
 
 import {
+  AndroidLogoIcon,
+  AppleLogoIcon,
   CaretDownIcon,
   ListIcon,
   SignOutIcon,
@@ -13,6 +15,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
+import { siteConfig } from "@/lib/site";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -84,6 +87,45 @@ export function SiteHeader() {
 
   return (
     <header className="relative z-40 border-b border-line bg-paper/95 backdrop-blur">
+      <div
+        className="bg-ink text-white lg:hidden"
+        data-testid="mobile-app-download-bar"
+      >
+        <div className="site-container flex min-h-12 items-center justify-between gap-3 py-1.5">
+          <p className="min-w-0 text-xs font-semibold leading-tight">
+            Download DDA Silver app
+          </p>
+          <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={siteConfig.androidUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download DDA Silver for Android"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
+              data-analytics="app_store_click"
+              data-analytics-platform="android"
+              data-analytics-placement="mobile_app_bar"
+            >
+              <AndroidLogoIcon size={16} aria-hidden="true" />
+              Android
+            </a>
+            <a
+              href={siteConfig.iosUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download DDA Silver for iPhone"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
+              data-analytics="app_store_click"
+              data-analytics-platform="ios"
+              data-analytics-placement="mobile_app_bar"
+            >
+              <AppleLogoIcon size={16} aria-hidden="true" />
+              iPhone
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="site-container flex min-h-20 items-center justify-between gap-6 min-[90rem]:min-h-[6.25rem]">
         <BrandMark />
 

@@ -47,7 +47,7 @@
 ## Contact and acquisition
 
 - WhatsApp, call, and map only; no web enquiry form.
-- Phone: 0562-4100044.
+- Phone: 0562-4099980.
 - WhatsApp: +91 7060001491.
 - Tuesday–Sunday, 12:00–20:00.
 - Link to Google Business Profile without copying live review text.

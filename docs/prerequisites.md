@@ -67,7 +67,7 @@ secrets.
 
 - [x] Public brand: DDA Silver.
 - [x] Heritage year resolved as 1977 by the owner on 29 July 2026.
-- [x] Phone: 0562-4100044.
+- [x] Phone: 0562-4099980.
 - [x] WhatsApp: +91 7060001491.
 - [x] Location description: MG Road, opposite Nagar Nigam, Agra.
 - [x] Hours: Tuesday–Sunday, 12:00–20:00.

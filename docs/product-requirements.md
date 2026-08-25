@@ -69,7 +69,7 @@ gifts, and home or tableware products.
 
 ### Approved contact defaults
 
-- Phone: `0562-4100044`
+- Phone: `0562-4099980`
 - WhatsApp: `+91 7060001491`
 - Location: MG Road, opposite Nagar Nigam, Agra
 - Hours: Tuesday–Sunday, 12:00–20:00

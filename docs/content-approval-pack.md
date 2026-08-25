@@ -11,7 +11,7 @@ unverified links, or production launch.
 - Public brand: DDA Silver.
 - Relationship: a distinct sister brand to DDAJewels.
 - DDA family heritage year: 1977.
-- Phone: 0562-4100044.
+- Phone: 0562-4099980.
 - WhatsApp: +91 7060001491.
 - General location: MG Road, opposite Nagar Nigam, Agra.
 - Opening hours: Tuesday–Sunday, 12:00–20:00.

@@ -3,8 +3,8 @@ export const siteConfig = {
   description:
     "Discover silver jewellery, coins, pooja pieces, gifts, and homeware at DDA Silver in Agra.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  phoneDisplay: "0562-4100044",
-  phoneHref: "tel:+915624100044",
+  phoneDisplay: "0562-4099980",
+  phoneHref: "tel:+915624099980",
   whatsappDisplay: "+91 7060001491",
   whatsappNumber: "917060001491",
   address: "MG Road, opposite Nagar Nigam, Agra",
