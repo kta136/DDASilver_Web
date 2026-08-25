@@ -42,6 +42,32 @@ describe("GET /api/health", () => {
       sanity: "not_configured",
     });
   });
+
+  it("prefers the Coolify application version and shortens commit hashes", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", "dda-production");
+    vi.stubEnv("NEXT_PUBLIC_SANITY_DATASET", "production");
+    vi.stubEnv("APP_VERSION", "0123456789abcdef0123456789abcdef01234567");
+    vi.stubEnv("SOURCE_COMMIT", "fedcba9876543210");
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "abcdef0123456789");
+
+    const response = await GET(healthRequest("198.51.100.12"));
+    const payload = await response.json();
+
+    expect(payload.version).toBe("0123456789ab");
+  });
+
+  it("retains Vercel commit metadata as the final hosting fallback", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SANITY_PROJECT_ID", "dda-production");
+    vi.stubEnv("NEXT_PUBLIC_SANITY_DATASET", "production");
+    vi.stubEnv("APP_VERSION", "");
+    vi.stubEnv("SOURCE_COMMIT", "");
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "abcdef0123456789abcdef");
+
+    const response = await GET(healthRequest("198.51.100.13"));
+    const payload = await response.json();
+
+    expect(payload.version).toBe("abcdef012345");
+  });
 });
 
 function healthRequest(address: string) {

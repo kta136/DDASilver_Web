@@ -102,9 +102,9 @@ export function ProductDetailDialog({
           closeDialog();
         }
       }}
-      className="m-auto max-h-[calc(100dvh-1rem)] w-[calc(100%-1rem)] max-w-6xl overflow-visible border-0 bg-transparent p-0 text-ink backdrop:bg-ink/55 backdrop:backdrop-blur-[2px] sm:max-h-[calc(100dvh-3rem)] sm:w-[calc(100%-3rem)]"
+      className="mx-auto my-8 max-h-[calc(100dvh-4rem)] w-[calc(100dvw-1rem)] max-w-6xl overflow-visible border-0 bg-transparent p-0 text-ink backdrop:bg-ink/55 backdrop:backdrop-blur-[2px] sm:w-[calc(100dvw-3rem)]"
     >
-      <div className="relative max-h-[calc(100dvh-1rem)] overflow-hidden rounded-[1.25rem] bg-paper shadow-[0_28px_90px_rgba(37,35,33,0.35)] sm:max-h-[calc(100dvh-3rem)]">
+      <div className="relative max-h-[calc(100dvh-4rem)] overflow-hidden rounded-[1.25rem] bg-paper shadow-[0_28px_90px_rgba(37,35,33,0.35)]">
         <button
           type="button"
           aria-label="Close product details"

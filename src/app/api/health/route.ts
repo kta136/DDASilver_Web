@@ -16,10 +16,21 @@ function isSanityConfigured() {
 }
 
 function buildVersion() {
-  const commit = process.env.VERCEL_GIT_COMMIT_SHA;
-  if (commit && /^[a-f0-9]{7,40}$/i.test(commit)) {
-    return commit.slice(0, 12);
+  const versions = [
+    process.env.APP_VERSION,
+    process.env.SOURCE_COMMIT,
+    process.env.VERCEL_GIT_COMMIT_SHA,
+  ];
+
+  for (const candidate of versions) {
+    const version = candidate?.trim();
+    if (!version) continue;
+    if (/^[a-f0-9]{7,40}$/i.test(version)) {
+      return version.slice(0, 12);
+    }
+    return version.slice(0, 64);
   }
+
   return process.env.npm_package_version ?? "development";
 }
 

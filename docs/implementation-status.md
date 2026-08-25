@@ -1,8 +1,9 @@
 # Implementation status
 
-**Updated:** 31 July 2026
-**Environment:** Local production build plus protected Vercel Preview
-**Production authorization:** Not granted
+**Updated:** 25 August 2026
+**Environment:** Production migration from Vercel to Oracle Coolify
+**Production authorization:** Granted for the approved Coolify/Cloudflare
+cutover plan
 
 ## Implemented
 
@@ -61,11 +62,16 @@
   Sanity webhook requests, including origin allowlists, timeouts, bounded
   payloads, rate limiting, and runtime catalog validation.
 - Non-sensitive `/api/health` readiness reporting for application, Sanity,
-  DDAJewels snapshot connectivity, and build version.
-- Vercel project `dda-silver-web` linked to `kta136/DDASilver_Web`, with
-  automatic Git deployments disabled and a deliberate Preview deployed from
-  commit `13c9025` at
-  `https://dda-silver-preview-13c9025.vercel.app`.
+  and source-commit build version.
+- ARM64-compatible multi-stage Docker image using Next.js standalone output,
+  a non-root runtime user, an internal port, and Docker health checks.
+- Application-owned apex-to-`www` redirect, preserving request paths and query
+  strings independently of the hosting platform.
+- GitHub production workflow that gates the deploy-only Coolify webhook behind
+  the repository checks and serializes production releases.
+- Vercel project `dda-silver-web` retained with domains, production
+  environment, aliases, and last healthy deployment as a warm fallback; new
+  Git deployments are disabled.
 - Read-only Sanity integration verified against 22 published product routes.
   No catalog records or assets were changed during the 29 July quality pass.
 - Desktop design comparison and remediation against the selected option, with
@@ -86,13 +92,10 @@
 - Internal links/fragments pass validation, and the six primary external
   destinations return HTTP 200.
 
-## Intentionally unavailable until prerequisites arrive
+## Content follow-up
 
 - Catalog expansion, copy approval, and production photography. This work was
   explicitly left out of the 29 July implementation pass.
-- Production/preview DDAJewels rate and shared-account endpoint configuration;
-  the application code paths are implemented but local `.env.local` does not
-  contain those production-owned values.
 - GA4 reporting and Search Console verification.
 - Verified Google Business Profile link.
 - Final product catalog, approved copy, legal approval, and complete image set.
@@ -101,16 +104,16 @@
 - Upstream dependency patches or documented risk acceptance for the residual
   findings recorded in `docs/security-dependency-audit.md`.
 
-## External configuration still required
+## Production operations
 
-- Configure the existing DDAJewels SSO, snapshot, and SSE endpoint values on
-  the stable preview and later production deployment.
-- Register the exact stable preview/production callback URLs in DDAJewels.
-- Provide non-production test accounts for public, approved, buying-rate, and
-  chart-enabled visibility scenarios.
+- Coolify owns the production container and runtime environment on Oracle
+  `coolify-a1`.
+- Cloudflare remains the public TLS/CDN/WAF layer and forwards both site hosts
+  through the existing named tunnel to Coolify Traefik.
+- GitHub Actions is the only automatic production release trigger.
+- Vercel is a dormant DNS rollback target and is not part of the normal
+  release path.
 
-## Launch protection
-
-No custom domain, DNS, Cloudflare, production alias, redirect activation, or
-current-server change has been made. `ENABLE_LEGACY_REDIRECTS` defaults to
-`false`, and the site defaults to preview/noindex behavior.
+See [Oracle Coolify production deployment](oracle-coolify-deployment.md) and
+[Delivery, launch, and rollback](delivery-launch-rollback.md) for current
+controls and validation requirements.

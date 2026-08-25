@@ -1,14 +1,18 @@
 # Technical architecture
 
-**Status:** Approved target architecture  
-**Implementation:** Web application and safe integration boundaries
-implemented; external staging connectivity remains
+**Status:** Production architecture
+
+**Implementation:** Oracle Coolify origin behind an outbound-only Cloudflare
+Tunnel, with Vercel retained as a dormant fallback
 
 ## System context
 
 ```mermaid
 flowchart LR
-    Visitor["Customer browser"] --> Web["DDA Silver Next.js"]
+    Visitor["Customer browser"] --> Edge["Cloudflare TLS/CDN/WAF"]
+    Edge --> Tunnel["Named Cloudflare Tunnel"]
+    Tunnel --> Traefik["Coolify Traefik"]
+    Traefik --> Web["DDA Silver standalone container"]
     Editor["Trusted content admin"] --> Studio["Sanity Studio"]
     Studio --> Lake["Sanity Content Lake"]
     Web --> Lake
@@ -17,8 +21,7 @@ flowchart LR
     Web --> Identity["DDAJewels identity service"]
     Web --> GA["Google Analytics 4"]
     Search["Search engines"] --> Web
-    Cloudflare["Cloudflare (production only)"] --> Web
-    Vercel["Vercel preview/production runtime"] --> Web
+    Vercel["Dormant Vercel fallback"] -. DNS rollback .-> Edge
 ```
 
 ## Runtime choices
@@ -29,9 +32,12 @@ flowchart LR
   galleries, live SSE updates, and session-aware controls.
 - Tailwind CSS plus CSS-variable design tokens.
 - Sanity Studio and Content Lake.
-- Vercel for preview and production runtime.
-- Cloudflare DNS/proxy only during an explicitly approved cutover.
-- A pinned package-manager lockfile and supported LTS Node.js version.
+- An ARM64 Next.js standalone container on Oracle `coolify-a1`, managed by
+  Coolify and reached through Traefik on internal port `3000`.
+- Cloudflare DNS, proxy, TLS/WAF, and named Tunnel
+  `61e8ad96-2e1a-4e4f-b82c-7dbecac951e5` as the only public request path.
+- Vercel retained without Git deployment as a warm DNS rollback target.
+- A pinned npm lockfile and Node.js 24.19 runtime.
 
 No generic UI theme may supersede the selected design direction.
 
@@ -115,19 +121,22 @@ DDAJEWELS_AUTH_CLIENT_SECRET
 AUTH_COOKIE_SECRET
 ```
 
-Actual secret values must exist only in local ignored files or deployment
-secret stores. Preview and production values must be separate.
+Actual secret values exist only in ignored local files or deployment secret
+stores. Coolify owns active production values. Public Next.js variables are
+available at build and runtime; Sanity revalidation, DDAJewels, and cookie
+credentials are runtime-only. `AUTH_COOKIE_SECRET` is identical to the
+retained Vercel value so a DNS rollback does not invalidate sessions.
 
-## Preview isolation
+## Deployment and release isolation
 
-- Preview is publicly reachable only through an unlisted Vercel URL.
-- Every preview response sends `X-Robots-Tag: noindex, nofollow`.
-- Preview `robots.txt` disallows all crawling.
-- Preview canonical URLs must not point to `ddasilver.com`.
-- Preview analytics should use a separate GA property or remain disabled until
-  explicitly configured.
-- The stable preview origin must be separately allowlisted in DDAJewels CORS
-  and auth callback configuration.
+- `main` is deployed only by the GitHub Actions Coolify webhook workflow after
+  `npm run check` passes.
+- Coolify repository auto-deploy is disabled to prevent duplicate releases.
+- `SOURCE_COMMIT` is supplied to the Docker build and becomes
+  `NEXT_DEPLOYMENT_ID` and the health endpoint's `APP_VERSION`.
+- The application remains single-instance and has no persistent filesystem,
+  distributed cache, or Redis dependency.
+- Vercel remains configured but disconnected from Git after cutover.
 
 ## Security boundaries
 
@@ -154,12 +163,15 @@ Expose a non-sensitive health endpoint that verifies:
 
 - The application process responds.
 - Sanity configuration is present.
-- DDAJewels snapshot connectivity succeeds within a short timeout.
 - Build/version metadata is available.
 
 The health endpoint must not report secrets, user information, internal
 database details, or current personalized rates.
 
-`/api/health` implements this contract. It returns a degraded `503` when a
-configured dependency is unavailable or when required preview integrations are
-not configured, and it never returns rate values or credentials.
+`/api/health` implements this contract. It returns a degraded `503` when
+Sanity's required public configuration is absent and never returns rate values
+or credentials. Its version priority is `APP_VERSION`, `SOURCE_COMMIT`, the
+Vercel commit fallback, then the package version.
+
+See [Oracle Coolify production deployment](oracle-coolify-deployment.md) for
+the network path, environment ownership, release procedure, and rollback.

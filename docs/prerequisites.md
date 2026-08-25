@@ -1,7 +1,7 @@
 # Prerequisites and content intake
 
-**Status:** Local implementation started; remaining items gate integration,
-content approval, or launch as indicated
+**Status:** Production infrastructure access and launch authorization obtained;
+remaining content items are editorial follow-up
 
 ## Engineering access
 
@@ -10,13 +10,13 @@ content approval, or launch as indicated
 - [ ] DDAJewels staging URL.
 - [ ] Rate API and SSE implementation ownership.
 - [ ] Identity/auth implementation ownership.
-- [ ] Vercel team/project access for DDASilver previews.
+- [x] Vercel team/project access retained for warm rollback.
 - [x] Dedicated Sanity project created for DDA Silver with a public
   `production` dataset.
 - [ ] GA4 property ID or approval to create a separate property.
 - [ ] Search Console ownership verification path.
-- [ ] Cloudflare access for future approved production work.
-- [ ] Namecheap/DNS access reserved for the approved cutover operator.
+- [x] Cloudflare production DNS and named Tunnel access.
+- [x] Oracle `coolify-a1` and Coolify production access.
 
 Do not place credentials or tokens in this checklist.
 
@@ -104,10 +104,10 @@ Before production:
 
 These are not needed to begin local work:
 
-- [ ] Exact “Go live on ddasilver.com” instruction received.
-- [ ] Current DNS export reviewed.
-- [ ] Cloudflare zone and non-web DNS records reviewed.
-- [ ] Vercel production deployment approved.
-- [ ] Rollback operator and values confirmed.
+- [x] Production migration to Oracle Coolify authorized on 25 August 2026.
+- [x] Current DNS and tunnel configuration identified for export at cutover.
+- [x] Cloudflare zone and non-web routes preserved by the migration plan.
+- [x] Vercel production deployment retained as the rollback target.
+- [x] DNS-only rollback procedure and operator confirmed.
 - [ ] Legacy URL inventory complete.
 - [ ] Search Console and monitoring ready.

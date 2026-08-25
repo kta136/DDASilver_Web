@@ -1,187 +1,126 @@
 # Delivery, launch, and rollback
 
-**Status:** Hard operational control  
-**Production authority:** Not granted
+**Status:** Oracle Coolify migration authorized
 
-**29 July 2026 evidence:** local production build and desktop/mobile browser
-journeys pass with preview noindex controls. The `dda-silver-web` Vercel
-project is Git-linked with automatic deployments disabled. A protected Preview
-from commit `13c9025` is ready at
-`https://dda-silver-preview-13c9025.vercel.app`. Vercel reports the project as
-not live, with one Preview deployment, no production deployment, no custom
-domain, no DNS change, and no indexing change.
+**Authorized target:** `coolify-a1` through the existing named Cloudflare
+Tunnel
 
-## Absolute launch gate
+**Rollback target:** retained Vercel production deployment
 
-No DNS, nameserver, custom-domain, production-alias, current-server, live
-redirect, or search-indexing change may occur until the owner gives this exact
-instruction:
+The production controls in this document supersede the pre-launch Vercel
+runbook. Detailed application, network, and environment settings are in
+[Oracle Coolify production deployment](oracle-coolify-deployment.md).
 
-> Go live on ddasilver.com.
+## Release gate
 
-Statements such as “finish it,” “deploy a preview,” “make it ready,” “show the
-team,” or “prepare production” do not satisfy the gate.
+Only commits to `main` may deploy to the production application. The GitHub
+Actions production workflow must complete `npm ci` and `npm run check` before
+calling the deploy-only Coolify webhook. Coolify repository auto-deploy stays
+off, and superseded workflow runs are cancelled.
 
-## Delivery phases
+The existing general CI workflow also runs Playwright desktop/mobile journeys.
+Branch protection should require both workflows' checks before direct updates
+to `main` where repository policy permits.
 
-### 1. Prerequisites
+## Pre-cutover record
 
-- Obtain source and staging access for DDAJewels rates and identity.
-- Obtain Vercel, future Cloudflare, Sanity, GA4, and Search Console access.
-- Collect logo masters, photography, product spreadsheet, map/profile URLs,
-  and owner-approved facts.
-- Export current DNS and legacy URL inventory without changing them.
+Capture these values without printing credentials into logs or documentation:
 
-### 2. Visual direction
+- The exact Cloudflare DNS record IDs, types, names, values, proxy state, and
+  TTLs for apex and `www`.
+- The complete named-tunnel ingress configuration, including existing panel,
+  SSH, and vault routes.
+- The current Vercel production deployment URL, aliases, domain bindings, and
+  commit.
+- Coolify application UUID, production deployment webhook, and last healthy
+  image.
 
-- Audit logo and photography.
-- Draft copy from verified facts.
-- Create exactly three homepage/product visual directions.
-- Obtain owner selection.
-- Define the selected responsive design tokens and component behavior.
+Production Vercel environment values are transferred through a temporary
+ignored file. The temporary file is removed after Coolify receives the values.
+The cookie secret must be preserved exactly. `VERCEL_OIDC_TOKEN` and unused
+preview, ticket, and service-token values are excluded.
 
-No production UI implementation begins before this selection.
+## Pre-cutover validation
 
-### 3. Foundation
+1. Run lint, type checking, unit tests, production build, and Playwright
+   desktop/mobile journeys.
+2. Build the ARM64 image on `coolify-a1` and confirm the server runs as a
+   non-root user.
+3. Confirm the image contains no environment files and `/api/health` reports
+   the source commit.
+4. Validate through an Access-protected temporary hostname and by sending
+   server-local requests with both production Host headers.
+5. Check catalog/Sanity content, generated product social images, metadata,
+   robots, sitemap, legacy redirects, contact/WhatsApp, auth redirects,
+   same-origin logout, rate snapshots, and a several-minute SSE connection.
+6. Perform a health-checked rolling replacement while continuously probing the
+   application; no probe may fail.
+7. Back up DNS and tunnel state, then add the two production-host tunnel rules
+   before the catch-all without changing panel, SSH, or vault routes.
 
-- Scaffold Next.js, TypeScript, Tailwind, Sanity, and tests.
-- Configure environment separation.
-- Establish preview-only CI/CD.
-- Add preview noindex and robots controls.
-- Build global layout, catalog, content routes, and legal placeholders.
+## Cutover
 
-### 4. Shared services
+1. Replace the proxied Vercel records for `ddasilver.com` and
+   `www.ddasilver.com` with proxied CNAMEs to
+   `61e8ad96-2e1a-4e4f-b82c-7dbecac951e5.cfargotunnel.com`.
+2. Keep Cloudflare Always Use HTTPS enabled and keep `/api/*` out of cache.
+3. Verify HTTP and HTTPS for apex and `www`, one-hop apex canonicalization,
+   TLS/HSTS, health, catalog, signed Sanity revalidation, GA consent loading,
+   forwarded visitor IPs, rates, SSE reconnection, and auth/logout.
+4. Confirm production responses no longer contain `x-vercel-*` headers.
+5. Remove the temporary validation hostname.
+6. Close OCI public ingress for ports `80`, `443`, and `8000` after confirming
+   website, panel, SSH, and vault access through the tunnel.
+7. Disconnect the Git repository from Vercel. Keep its project, custom
+   domains, environment values, aliases, and last production deployment.
 
-- Implement/extend DDAJewels rate snapshot contract.
-- Add allowlisted CORS and staging contract tests.
-- Build public SSE state handling.
-- Implement redirected login/code exchange.
-- Implement personalized stream ticket.
-- Add health monitoring and safe failure states.
-
-### 5. Content and quality
-
-- Import product drafts.
-- Attach/crop images and resolve asset issues.
-- Complete owner copy review.
-- Run automated, visual, accessibility, security, and real-device testing.
-- Conduct owner UAT on the unlisted Vercel preview.
-
-### 6. Launch preparation
-
-Preparation may include documents, dry runs, and inactive configuration only:
-
-- Cloudflare zone and DNS change plan.
-- Vercel custom-domain plan.
-- Current DNS backup.
-- TLS and redirect checklist.
-- Search Console and sitemap checklist.
-- Monitoring and escalation contacts.
-- Rollback commands and DNS values.
-
-Do not attach or route the live domain during preparation.
-
-## Preview policy
-
-- Unlisted Vercel URL only.
-- Reachable to authorized Vercel reviewers with the link.
-- `noindex, nofollow` header.
-- Robots disallow all.
-- Separate/non-production secrets.
-- No live DDASilver domain or `www` alias.
-- Preview content must not contain unapproved private or customer information.
-
-## Approved cutover runbook
-
-Execute only after the exact launch instruction.
-
-### Pre-cutover
-
-1. Confirm owner approval timestamp and responsible operator.
-2. Confirm the approved commit and immutable Vercel deployment.
-3. Re-run production build, smoke, auth, rate, link, accessibility, and
-   redirect checks.
-4. Export current Namecheap DNS records and record the current legacy origin.
-5. Verify the Cloudflare zone contains all necessary non-web records before
-   nameserver changes.
-6. Verify Vercel domain records and certificate requirements.
-7. Confirm old Apache origin remains available for rollback.
-
-### Cutover
-
-1. Add/verify apex and `www` with Vercel.
-2. Activate the approved Cloudflare DNS/proxy configuration.
-3. Change nameservers or DNS records according to the reviewed runbook.
-4. Verify TLS and hostname redirects.
-5. Verify home, products, product detail, rates, login callback, contact, legal,
-   robots, and sitemap on both hostnames.
-6. Enable production indexing and production GA4 consented tracking.
-7. Submit sitemap in Search Console.
-8. Begin enhanced monitoring.
-
-### Required redirects
+## Required redirects
 
 ```text
-/index.php/c_booking/index              -> /rates
-/index.php/c_client_main/Contactus      -> /contact
+http://ddasilver.com/:path*                 -> https://www.ddasilver.com/:path*
+https://ddasilver.com/:path*                -> https://www.ddasilver.com/:path*
+/index.php/c_booking/index                  -> /rates
+/index.php/c_client_main/Contactus          -> /contact
 ```
 
-Apply the reviewed legacy redirect inventory. Preserve query strings only when
-safe and useful. Avoid redirect chains.
+Paths and query strings are preserved by the apex redirect. Avoid a Coolify
+canonical redirect so there is only one application-owned host redirect.
 
-## Post-launch monitoring
+## Post-cutover monitoring
 
-For at least the first 24 hours:
+For the first 24 hours monitor:
 
-- Availability and TLS.
-- 4xx/5xx rates.
-- Rate snapshot and SSE health.
-- Auth callback and exchange failures.
-- Personalized ticket failures.
-- Sanity fetch/revalidation failures.
-- Web Vitals.
-- Broken external actions.
-- Search-engine crawl errors.
+- Coolify deployment and container health logs.
+- Cloudflare Tunnel connection health and 5xx traffic.
+- `/api/health`, catalog/Sanity errors, and signed revalidation.
+- Rate snapshot failures, SSE reconnects, and history errors.
+- Auth redirects, callback failures, logout, and cookie validation.
+- Cloudflare cache behavior for API routes and any unexpected `x-vercel-*`
+  response headers.
 
-Keep the old server unchanged for at least 14 days.
+Test one later `main` push: the GitHub checks must gate the Coolify rolling
+deployment, the reported health commit must update, and Vercel must create no
+new deployment.
 
 ## Rollback triggers
 
-Rollback or disable an affected feature when:
+Reverse DNS to Vercel when the site is broadly unavailable, TLS/host routing is
+unsafe, critical catalog or contact journeys fail, rates are incorrect,
+authentication exposes data or consistently fails, or a security incident is
+suspected.
 
-- The site is broadly unavailable.
-- TLS or hostname routing is unsafe.
-- Incorrect rates are presented as live.
-- Authentication exposes data or consistently blocks existing users.
-- Critical catalog/contact journeys fail.
-- A security incident is suspected.
+## Rollback procedure
 
-## Rollback actions
+1. Restore the captured proxied Vercel A records exactly; do not invent or use
+   remembered values.
+2. Confirm Cloudflare resolves both hostnames to Vercel and the current Vercel
+   production deployment serves them.
+3. Verify TLS, apex redirect, `/api/health`, catalog, rates, auth, logout,
+   contact, robots, and sitemap.
+4. Leave Cloudflare Tunnel and Coolify application state available for
+   diagnosis, but stop public traffic to the failed origin.
+5. Record the incident, failed commit/deployment, rollback time, and validation
+   evidence before attempting another cutover.
 
-### Application-only failure
-
-- Roll Vercel back to the last approved immutable deployment.
-- Recheck health, rates, auth, redirects, and consent.
-
-### DNS/origin failure
-
-- Restore the recorded legacy origin through the approved Cloudflare/DNS path.
-- Verify the old site and certificate state.
-- Keep the new deployment unaliased while investigating.
-
-### Integration failure
-
-- Prefer a controlled “rates unavailable” or public-only state over invented
-  data.
-- Disable personalized-rate entry if auth/ticket security is uncertain.
-- Preserve catalog and contact access where safe.
-
-## Decommissioning
-
-The legacy server may be decommissioned only after:
-
-- At least 14 stable days.
-- Owner approval.
-- Redirect and Search Console review.
-- Backup retention confirmed.
-- No rollback dependency remains.
+Because Vercel retains domains, aliases, production environment, and the last
+healthy deployment, rollback requires only the captured DNS reversal.

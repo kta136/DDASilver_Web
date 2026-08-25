@@ -1,7 +1,6 @@
 # DDA Silver
 
-The Next.js application for the future replacement of
-[ddasilver.com](https://www.ddasilver.com/).
+The Next.js application for [ddasilver.com](https://www.ddasilver.com/).
 
 DDA Silver is being built as a modern, mobile-first digital showroom for
 customers across India. Visitors can browse silver products and collections,
@@ -11,20 +10,17 @@ product pricing.
 
 ## Project status
 
-This repository contains an active implementation. It is not the production
-website.
+This repository contains the production application and its Oracle Coolify
+deployment configuration.
 
 | Area | Status |
 | --- | --- |
-| Application and responsive UI | Implemented; manual UAT remains |
-| Catalog and editorial routes | Implemented; catalog expansion intentionally pending |
-| Sanity schemas and Studio | Implemented; 22 published product routes verified read-only |
-| DDAJewels rates and authentication | In-site DDA Silver `/rates` experience implemented; Preview feed configured and production approval pending |
-| Preview deployment | [Ready on Vercel](https://dda-silver-preview-13c9025.vercel.app); automatic Git deploys disabled |
-| Production launch | Not authorized |
-
-No production domain, DNS, hosting, redirect, or upstream integration may be
-changed without explicit owner approval to go live on `ddasilver.com`.
+| Application and responsive UI | Production |
+| Catalog and editorial routes | Production; content remains Sanity-managed |
+| Sanity schemas and Studio | Production |
+| DDAJewels rates and authentication | Production integration configured server-side |
+| Production hosting | Oracle `coolify-a1`, reached only through Cloudflare Tunnel |
+| Warm fallback | Retained Vercel production deployment; Git deploys disabled |
 
 ## Highlights
 
@@ -57,7 +53,7 @@ changed without explicit owner approval to go live on `ddasilver.com`.
 
 ### Requirements
 
-- Node.js 24.15 or newer
+- Node.js 24.19 or newer
 - npm
 
 ### Installation
@@ -156,6 +152,7 @@ docs/             Product, architecture, integration, and launch documentation
 - [Shared-account authentication](docs/authentication.md)
 - [Quality strategy](docs/quality-strategy.md)
 - [Delivery, launch, and rollback](docs/delivery-launch-rollback.md)
+- [Oracle Coolify production deployment](docs/oracle-coolify-deployment.md)
 - [Prerequisites and content intake](docs/prerequisites.md)
 - [Implementation status](docs/implementation-status.md)
 - [Design QA](design-qa.md)

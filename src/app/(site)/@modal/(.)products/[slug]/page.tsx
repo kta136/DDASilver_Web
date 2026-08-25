@@ -40,7 +40,7 @@ export default async function ProductModalPage({
         titleId={titleId}
         productPath={`/products/${product.slug}`}
       >
-        <div className="grid max-h-[calc(100dvh-1rem)] overflow-y-auto sm:max-h-[calc(100dvh-3rem)] lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
+        <div className="grid max-h-[calc(100dvh-4rem)] overflow-y-auto lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
           <ProductGallery
             images={product.images}
             containImages={shouldContainProductImage(product)}

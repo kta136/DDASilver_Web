@@ -1,0 +1,39 @@
+# Source-control and hosting metadata
+.git
+.github
+.vercel
+graphify-out
+
+# Credentials and local configuration
+.env*
+*.pem
+*.key
+*.p12
+
+# Local dependencies and build output
+node_modules
+.next
+out
+build
+coverage
+*.tsbuildinfo
+*.log
+
+# Test and development artifacts
+playwright-report
+test-results
+blob-report
+.preview-logs
+.codex-tmp
+tmp
+
+# Product-gallery source and working files are not runtime assets
+public/images/gallery-ingestion
+public/images/silver-*
+docs/product-gallery-approvals
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea
+.vscode

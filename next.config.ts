@@ -44,6 +44,7 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     loader: "custom",
     loaderFile: "./src/lib/image-loader.ts",
@@ -90,6 +91,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "ddasilver.com" }],
+        destination: "https://www.ddasilver.com/:path*",
+        permanent: true,
+      },
       ...correctedPlateSlugs.map((slug) => ({
         source: `/products/${slug}-bowl`,
         destination: `/products/${slug}-plate`,
