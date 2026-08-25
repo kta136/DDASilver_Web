@@ -1,3 +1,5 @@
+FROM busybox:1.37.0-glibc@sha256:4279d9b47df4c1b02d80efd8d02cd59b3a8182c1e785a4ff3f6983bee19dc8b0 AS healthcheck
+
 FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS base
 
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -34,10 +36,7 @@ FROM base AS runner
 
 ARG SOURCE_COMMIT=development
 
-RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
-    && apt-get -o Acquire::ForceIPv4=true update \
-    && apt-get install --yes --no-install-recommends curl \
-    && rm -rf /var/lib/apt/lists/*
+COPY --from=healthcheck /bin/wget /usr/local/bin/wget
 
 ENV NODE_ENV=production \
     HOSTNAME=0.0.0.0 \
