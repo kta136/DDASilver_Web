@@ -56,7 +56,9 @@ enabled for the rates SSE connection.
 
 The Docker image is based on the multi-architecture
 `node:24.19.0-bookworm-slim` image and runs the Next.js standalone server as
-the image's non-root `node` user. `SOURCE_COMMIT` becomes
+the image's non-root `node` user. A pinned multi-architecture BusyBox stage
+contributes only the static `wget` applet required by Coolify's generated
+container health probe; the final application base remains Debian. `SOURCE_COMMIT` becomes
 `NEXT_DEPLOYMENT_ID` during the build and `APP_VERSION` at runtime. This keeps
 Next.js build assets aligned during a health-checked rolling replacement and
 exposes the current commit through `/api/health`.
@@ -109,6 +111,13 @@ The GitHub `production` environment owns the deploy-only `COOLIFY_TOKEN` and
 an unverified webhook and the verified workflow cannot race or deploy twice.
 Superseded GitHub workflow runs are cancelled and production runs are
 serialized.
+
+GitHub reaches only
+`https://coolify-deploy.kartikeyagarwal.com/api/v1/deploy`. The named tunnel
+matches that exact hostname and path and forwards it to the Coolify API;
+every other path on the hostname falls through to `http_status:404`. The
+Coolify bearer token is deploy-only, and the panel remains protected by
+Cloudflare Access.
 
 ## Validation
 

@@ -132,6 +132,9 @@ retained Vercel value so a DNS rollback does not invalidate sessions.
 - `main` is deployed only by the GitHub Actions Coolify webhook workflow after
   `npm run check` passes.
 - Coolify repository auto-deploy is disabled to prevent duplicate releases.
+- GitHub calls the deploy-only Coolify API through the exact tunnel match
+  `coolify-deploy.kartikeyagarwal.com/api/v1/deploy`; other paths on that
+  hostname return 404, while the panel remains behind Cloudflare Access.
 - `SOURCE_COMMIT` is supplied to the Docker build and becomes
   `NEXT_DEPLOYMENT_ID` and the health endpoint's `APP_VERSION`.
 - The application remains single-instance and has no persistent filesystem,
