@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { catalogLimits, catalogSlugSchema } from "@/lib/catalog-domain";
 
 export const deityType = defineType({
   name: "deity",
@@ -16,14 +17,23 @@ export const deityType = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule
+          .required()
+          .custom(
+            (value) =>
+              !value ||
+              catalogSlugSchema.safeParse(value.current).success ||
+              "Use lowercase letters, numbers and hyphens.",
+          ),
     }),
     defineField({
       name: "displayOrder",
       title: "Display order",
       type: "number",
       initialValue: 100,
-      validation: (rule) => rule.required().integer().min(0),
+      validation: (rule) =>
+        rule.required().integer().min(0).max(catalogLimits.displayOrder),
     }),
   ],
   orderings: [

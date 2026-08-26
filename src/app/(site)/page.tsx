@@ -13,7 +13,7 @@ import { getHomepageCategories } from "@/lib/homepage-categories";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
-import { getCatalog, getPublishedCatalog } from "@/sanity/lib/catalog";
+import { getHomepageCatalog } from "@/sanity/lib/catalog";
 
 export const metadata = createPageMetadata({
   title: "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
@@ -24,16 +24,9 @@ export const metadata = createPageMetadata({
 });
 
 export default async function HomePage() {
-  const [catalog, publishedCatalog] = await Promise.all([
-    getCatalog(),
-    getPublishedCatalog(),
-  ]);
+  const catalog = await getHomepageCatalog();
   const { categories, products } = catalog;
-  const homepageCategories = getHomepageCategories(
-    categories,
-    products,
-    publishedCatalog.categories,
-  );
+  const homepageCategories = getHomepageCategories(categories);
   const featured = products
     .filter((product) => product.featured)
     .sort((a, b) => a.displayOrder - b.displayOrder)
@@ -49,8 +42,8 @@ export default async function HomePage() {
               <h1 className="font-display text-balance mt-3 text-[clamp(2.85rem,13vw,3.25rem)] font-semibold leading-[0.9] tracking-[-0.035em] lg:text-[clamp(2.9rem,3.65vw,4.5rem)]">
                 DDA Silver,
                 <br />
-                Agra&apos;s trusted family destination for purity,
-                craftsmanship &amp; trust.
+                Agra&apos;s trusted family destination for purity, craftsmanship
+                &amp; trust.
               </h1>
               <p className="mt-5 max-w-[23rem] text-sm leading-6 text-ink-muted">
                 Discover silver jewellery, coins, pooja pieces, thoughtful
@@ -203,7 +196,9 @@ export default async function HomePage() {
         <span className="inline-flex size-8 items-center justify-center rounded-full bg-[#35b85a] text-white">
           <WhatsappLogoIcon size={20} weight="fill" aria-hidden="true" />
         </span>
-        <span className="hidden sm:inline">Confirm availability on WhatsApp</span>
+        <span className="hidden sm:inline">
+          Confirm availability on WhatsApp
+        </span>
       </a>
     </main>
   );

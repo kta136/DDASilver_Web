@@ -1,6 +1,12 @@
-import type {
-  CatalogFilters,
-} from "@/lib/catalog-filter";
+import type { CatalogFilters } from "@/lib/catalog-filter";
+import {
+  getCategoryKind,
+  productPurities,
+  idolConstructions as constructionValues,
+  coinShapes as shapeValues,
+  utensilTypes as utensilValues,
+  type CategoryKind,
+} from "@/lib/catalog-domain";
 import type {
   CoinShape,
   IdolConstruction,
@@ -8,38 +14,15 @@ import type {
   UtensilType,
 } from "@/types/catalog";
 
-const purities = new Set<ProductPurity>([
-  "91.60",
-  "92.5",
-  "99.50",
-  "99.80",
-]);
-const idolConstructions = new Set<IdolConstruction>([
-  "hollow",
-  "solid",
-  "semi-solid",
-]);
-const coinShapes = new Set<CoinShape>([
-  "round",
-  "oval",
-  "square",
-  "rectangle",
-  "scalloped",
-]);
-const utensilTypes = new Set<UtensilType>([
-  "glass",
-  "bowl",
-  "plate",
-  "jug",
-  "kalash",
-  "bottle",
-  "spoon",
-  "pooja-thali-set",
-]);
+const purities = new Set<ProductPurity>(productPurities);
+const idolConstructions = new Set<IdolConstruction>(constructionValues);
+const coinShapes = new Set<CoinShape>(shapeValues);
+const utensilTypes = new Set<UtensilType>(utensilValues);
 
 export type CatalogUrlOptions = {
   categorySlugs: readonly string[];
   deitySlugs?: readonly string[];
+  categoryKinds?: Record<string, CategoryKind>;
 };
 
 export type CatalogUrlState = {
@@ -52,11 +35,26 @@ export type CatalogUrlState = {
   utensilType: UtensilType | "";
 };
 
+export function getCatalogPagePath(path: `/${string}`, page: number): `/${string}` {
+  return page > 1 ? `${path}?page=${page}` : path;
+}
+
 function allowedValue<T extends string>(
   value: string | null,
   allowed: ReadonlySet<T>,
 ): T | "" {
   return value && allowed.has(value as T) ? (value as T) : "";
+}
+
+export function toCatalogSearchParams(
+  values: Record<string, string | string[] | undefined>,
+) {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(values)) {
+    const first = Array.isArray(value) ? value[0] : value;
+    if (first) params.set(key, first);
+  }
+  return params;
 }
 
 export function parseCatalogSearchParams(
@@ -66,25 +64,29 @@ export function parseCatalogSearchParams(
   const categorySlugs = new Set(options.categorySlugs);
   const deitySlugs = new Set(options.deitySlugs ?? []);
   const category = allowedValue(searchParams.get("category"), categorySlugs);
+  const kind = getCategoryKind({
+    slug: category,
+    productKind: options.categoryKinds?.[category],
+  });
 
   return {
     query: (searchParams.get("q") ?? "").trim().slice(0, 80),
     category,
     purity: allowedValue(searchParams.get("purity"), purities),
     idolConstruction:
-      category === "idols"
+      kind === "idol"
         ? allowedValue(searchParams.get("idol"), idolConstructions)
         : "",
     deitySlug:
-      category === "idols"
+      kind === "idol"
         ? allowedValue(searchParams.get("deity"), deitySlugs)
         : "",
     coinShape:
-      category === "coin" || category === "gold"
+      kind === "coin" || kind === "gold"
         ? allowedValue(searchParams.get("shape"), coinShapes)
         : "",
     utensilType:
-      category === "utensils"
+      kind === "utensil"
         ? allowedValue(searchParams.get("item"), utensilTypes)
         : "",
   };

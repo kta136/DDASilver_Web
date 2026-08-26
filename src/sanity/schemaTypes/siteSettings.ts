@@ -4,6 +4,7 @@ export const siteSettingsType = defineType({
   name: "siteSettings",
   title: "Site settings",
   type: "document",
+  readOnly: true,
   fields: [
     defineField({
       name: "logo",

@@ -16,23 +16,16 @@ import {
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
-  getCatalog,
+  getCatalogNavigation,
   getProduct,
-  getPublishedCatalog,
+  getRelatedProducts,
 } from "@/sanity/lib/catalog";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  const { products } = await getPublishedCatalog();
-  return products.map((product) => ({ slug: product.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: ProductPageProps) {
+export async function generateMetadata({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await getProduct(slug);
 
@@ -61,7 +54,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const [product, catalog] = await Promise.all([
     getProduct(slug),
-    getCatalog(),
+    getCatalogNavigation(),
   ]);
 
   if (!product) {
@@ -76,13 +69,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const productCollections = catalog.collections.filter((collection) =>
     product.collectionSlugs.includes(collection.slug),
   );
-  const related = catalog.products
-    .filter(
-      (item) =>
-        item.slug !== product.slug &&
-        item.categorySlug === product.categorySlug,
-    )
-    .slice(0, 3);
+  const related = await getRelatedProducts(product.categorySlug, product.slug);
   const additionalProperty = getProductStructuredDataProperties(product);
   const productSchema = {
     "@context": "https://schema.org",

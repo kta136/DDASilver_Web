@@ -4,6 +4,7 @@ import { readFile, stat } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { assertProductDocument } from "../../src/lib/catalog-domain";
 
 const client = getCliClient({ apiVersion: "2026-07-30" });
 
@@ -782,7 +783,7 @@ async function main() {
       summary,
     );
 
-    await client.createOrReplace({
+    const document = {
       _id: productId,
       _type: "product",
       title,
@@ -811,7 +812,9 @@ async function main() {
       featured: false,
       displayOrder: product.displayOrder,
       reference: getProductReference(product),
-    });
+    };
+    assertProductDocument(document, "coin");
+    await client.createOrReplace(document);
 
     if (existingProduct) {
       summary.replacedProducts += 1;

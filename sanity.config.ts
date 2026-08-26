@@ -4,10 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
-import {
-  sanityDataset,
-  sanityProjectId,
-} from "./src/sanity/env";
+import { sanityDataset, sanityProjectId } from "./src/sanity/env";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 
 export default defineConfig({
@@ -16,6 +13,28 @@ export default defineConfig({
   projectId: sanityProjectId,
   dataset: sanityDataset,
   basePath: "/studio",
-  plugins: [structureTool(), visionTool()],
-  schema: { types: schemaTypes },
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title("Catalog")
+          .items(
+            S.documentTypeListItems().filter(
+              (item) => !["page", "siteSettings"].includes(item.getId() ?? ""),
+            ),
+          ),
+    }),
+    visionTool(),
+  ],
+  schema: {
+    types: schemaTypes,
+    templates: (templates) =>
+      templates.filter(
+        (template) => !["page", "siteSettings"].includes(template.schemaType),
+      ),
+  },
+  document: {
+    actions: (actions, context) =>
+      ["page", "siteSettings"].includes(context.schemaType) ? [] : actions,
+  },
 });

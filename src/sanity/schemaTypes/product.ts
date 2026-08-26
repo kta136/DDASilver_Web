@@ -1,58 +1,104 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import {
+  catalogLimits,
+  catalogSlugSchema,
+  coinShapes,
+  getCategoryKind,
+  getProductAttributeIssues,
+  idolConstructions,
+  productDocumentSchema,
+  productMaterials,
+  productPurities,
+  utensilTypes,
+} from "@/lib/catalog-domain";
+import { sanityApiVersion } from "@/sanity/env";
 
-function getCategoryReference(document: unknown) {
-  if (!document || typeof document !== "object") {
-    return undefined;
-  }
-
-  const category = (document as { category?: unknown }).category;
-  if (!category || typeof category !== "object") {
-    return undefined;
-  }
-
-  const reference = (category as { _ref?: unknown })._ref;
-  return typeof reference === "string" ? reference : undefined;
-}
-
-function hasNumericField(document: unknown, field: string) {
-  return Boolean(
-    document &&
-      typeof document === "object" &&
-      typeof (document as Record<string, unknown>)[field] === "number",
-  );
-}
+const options = (values: readonly string[]) =>
+  values.map((value) => ({ title: value, value }));
 
 export const productType = defineType({
   name: "product",
   title: "Product",
   type: "document",
+  groups: [
+    { name: "content", title: "Content", default: true },
+    { name: "images", title: "Images" },
+    { name: "specifications", title: "Specifications" },
+    { name: "organization", title: "Organization" },
+  ],
+  validation: (rule) =>
+    rule.custom(async (document, context) => {
+      if (!document) return true;
+      const parsed = productDocumentSchema.safeParse(document);
+      if (!parsed.success)
+        return {
+          message: "Complete the product fields before publishing.",
+          paths: parsed.error.issues.map(
+            (issue) => issue.path as (string | number)[],
+          ),
+        };
+      const category = await context
+        .getClient({ apiVersion: sanityApiVersion })
+        .withConfig({ perspective: "published", useCdn: false })
+        .fetch(
+          '*[_type == "category" && _id == $id][0]{productKind, "slug": slug.current}',
+          { id: parsed.data.category._ref },
+        );
+      if (!category)
+        return {
+          message: "Publish the referenced category first.",
+          paths: [["category"]],
+        };
+      const issues = getProductAttributeIssues(
+        parsed.data,
+        getCategoryKind(category),
+      );
+      return issues.length
+        ? {
+            message: issues.map((issue) => issue.message).join(" "),
+            paths: issues.map((issue) => [issue.field]),
+          }
+        : true;
+    }),
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
-      validation: (rule) => rule.required().max(100),
+      group: "content",
+      validation: (rule) => rule.required().max(catalogLimits.title),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      group: "content",
+      options: { source: "title", maxLength: catalogLimits.slug },
+      validation: (rule) =>
+        rule
+          .required()
+          .custom(
+            (value) =>
+              !value ||
+              catalogSlugSchema.safeParse(value.current).success ||
+              "Use lowercase letters, numbers and hyphens.",
+          ),
     }),
     defineField({
       name: "shortDescription",
       title: "Short description",
       type: "text",
       rows: 3,
-      validation: (rule) => rule.required().max(240),
+      group: "content",
+      validation: (rule) => rule.required().max(catalogLimits.description),
     }),
     defineField({
       name: "gallery",
       title: "Image gallery",
       type: "array",
+      group: "images",
       description:
-        "Upload the original approved image. The website automatically creates responsive Sanity CDN URLs and descriptive filenames from the product slug.",
+        "Upload approved gallery images. Keep the full branded frame and review the alt text before publishing.",
       of: [
         defineArrayMember({
           type: "image",
@@ -62,96 +108,39 @@ export const productType = defineType({
               name: "alt",
               title: "Alternative text",
               type: "string",
-              description:
-                "Required for accessibility and image search. Describe the visible product and important context; do not repeat the product title alone. Upload scripts populate this automatically, but review it before publishing.",
-              validation: (rule) => rule.required().min(12).max(180),
+              validation: (rule) =>
+                rule.required().min(12).max(catalogLimits.alt),
             }),
           ],
         }),
       ],
-      validation: (rule) => rule.required().min(1),
+      validation: (rule) => rule.required().min(1).max(catalogLimits.gallery),
     }),
     defineField({
       name: "category",
       title: "Category",
       type: "reference",
       to: [{ type: "category" }],
+      group: "organization",
+      description:
+        "The category's Product fields setting determines the required specifications; document IDs do not matter.",
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "material",
       title: "Material",
       type: "string",
-      description:
-        "Choose the underlying precious metal. Gold polish on a silver coin remains Silver.",
       initialValue: "silver",
-      options: {
-        list: [
-          { title: "Silver", value: "silver" },
-          { title: "Gold", value: "gold" },
-        ],
-        layout: "radio",
-      },
-      validation: (rule) =>
-        rule.custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-
-          if (categoryReference === "category-gold") {
-            return value === "gold"
-              ? true
-              : "Gold-category products must use Gold material.";
-          }
-
-          return value === "gold"
-            ? "Gold material is only valid for the Gold category."
-            : true;
-        }),
-    }),
-    defineField({
-      name: "utensilType",
-      title: "Utensil item type",
-      type: "string",
-      description:
-        "Choose the customer-facing item type. This powers the Utensils catalog filter.",
-      hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-utensils",
-      options: {
-        list: [
-          { title: "Glass", value: "glass" },
-          { title: "Bowl", value: "bowl" },
-          { title: "Plate", value: "plate" },
-          { title: "Jug", value: "jug" },
-          { title: "Kalash", value: "kalash" },
-          { title: "Bottle", value: "bottle" },
-          { title: "Spoon", value: "spoon" },
-          { title: "Pooja Thali Set", value: "pooja-thali-set" },
-        ],
-        layout: "dropdown",
-      },
-      validation: (rule) =>
-        rule.custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-
-          if (categoryReference === "category-utensils") {
-            return value ? true : "Choose a Utensils item type.";
-          }
-
-          return value
-            ? "Utensil item type is only valid for the Utensils category."
-            : true;
-        }),
+      group: "specifications",
+      options: { list: options(productMaterials), layout: "radio" },
     }),
     defineField({
       name: "purity",
       title: "Purity",
       type: "string",
+      group: "specifications",
       options: {
-        list: [
-          { title: "91.60%", value: "91.60" },
-          { title: "92.5%", value: "92.5" },
-          { title: "99.50%", value: "99.50" },
-          { title: "99.80%", value: "99.80" },
-        ],
+        list: productPurities.map((value) => ({ title: `${value}%`, value })),
         layout: "radio",
       },
       validation: (rule) => rule.required(),
@@ -160,254 +149,134 @@ export const productType = defineType({
       name: "weightGrams",
       title: "Weight (grams)",
       type: "number",
+      group: "specifications",
       description:
-        "Enter the product weight in grams. This is required for products in the Purse category.",
-      validation: (rule) =>
-        rule.min(1).max(100_000).custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-
-          if (categoryReference === "category-purse") {
-            return typeof value === "number" && Number.isFinite(value)
-              ? true
-              : "Enter the purse weight in grams.";
-          }
-
-          return true;
-        }),
+        "Enter a verified weight only. Required for Purse product fields.",
+      validation: (rule) => rule.positive().max(catalogLimits.weight),
     }),
-    defineField({
-      name: "heightInches",
-      title: "Height (inches)",
-      type: "number",
-      description: "Verified physical height supplied with the product.",
-      validation: (rule) => rule.positive().max(1_000).precision(2),
-    }),
-    defineField({
-      name: "widthInches",
-      title: "Width (inches)",
-      type: "number",
-      description: "Verified physical width supplied with the product.",
-      validation: (rule) => rule.positive().max(1_000).precision(2),
-    }),
-    defineField({
-      name: "depthInches",
-      title: "Depth (inches)",
-      type: "number",
-      description: "Verified front-to-back depth supplied with the product.",
-      validation: (rule) => rule.positive().max(1_000).precision(2),
-    }),
-    defineField({
-      name: "diameterInches",
-      title: "Diameter (inches)",
-      type: "number",
-      description:
-        "Verified diameter for round products such as bowls; use this instead of width.",
-      validation: (rule) => rule.positive().max(1_000).precision(2),
-    }),
-    defineField({
-      name: "singhasanWidthInches",
-      title: "Singhasan width (inches)",
-      type: "number",
-      description:
-        "Verified left-to-right width of the jhula singhasan. This is not the overall jhula width.",
-      hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-jhula",
-      validation: (rule) =>
-        rule.positive().max(1_000).precision(2).custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-          const hasWidth = typeof value === "number";
-
-          if (hasWidth && categoryReference !== "category-jhula") {
-            return "Singhasan measurements are only valid for the Jhula category.";
-          }
-
-          return hasWidth ===
-            hasNumericField(context.document, "singhasanDepthInches")
-            ? true
-            : "Enter both singhasan width and depth.";
-        }),
-    }),
-    defineField({
-      name: "singhasanDepthInches",
-      title: "Singhasan depth (inches)",
-      type: "number",
-      description:
-        "Verified back-to-front depth of the jhula singhasan. This is not the overall jhula depth.",
-      hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-jhula",
-      validation: (rule) =>
-        rule.positive().max(1_000).precision(2).custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-          const hasDepth = typeof value === "number";
-
-          if (hasDepth && categoryReference !== "category-jhula") {
-            return "Singhasan measurements are only valid for the Jhula category.";
-          }
-
-          return hasDepth ===
-            hasNumericField(context.document, "singhasanWidthInches")
-            ? true
-            : "Enter both singhasan width and depth.";
-        }),
-    }),
+    ...[
+      ["heightInches", "Height"],
+      ["widthInches", "Width"],
+      ["depthInches", "Depth"],
+      ["diameterInches", "Diameter"],
+      ["singhasanWidthInches", "Singhasan width"],
+      ["singhasanDepthInches", "Singhasan depth"],
+    ].map(([name, title]) =>
+      defineField({
+        name,
+        title: `${title} (inches)`,
+        type: "number",
+        group: "specifications",
+        description: name.startsWith("singhasan")
+          ? "For Jhula product fields only; enter both seat dimensions."
+          : "Verified physical measurement; use diameter for round items.",
+        validation: (rule) => rule.positive().max(catalogLimits.dimension),
+      }),
+    ),
     defineField({
       name: "sizeVariants",
       title: "Weight and diameter variants",
       type: "array",
-      description:
-        "Use when one catalog product is supplied in multiple verified weight-and-diameter combinations.",
+      group: "specifications",
       of: [
         defineArrayMember({
           type: "object",
           name: "productSizeVariant",
-          title: "Size variant",
           fields: [
             defineField({
               name: "weightGrams",
               title: "Weight (grams)",
               type: "number",
-              validation: (rule) => rule.required().positive().max(100_000),
+              validation: (rule) =>
+                rule.required().positive().max(catalogLimits.weight),
             }),
             defineField({
               name: "diameterInches",
               title: "Diameter (inches)",
               type: "number",
               validation: (rule) =>
-                rule.required().positive().max(1_000).precision(2),
+                rule.required().positive().max(catalogLimits.dimension),
             }),
           ],
           preview: {
-            select: {
-              weightGrams: "weightGrams",
-              diameterInches: "diameterInches",
-            },
-            prepare: ({ weightGrams, diameterInches }) => ({
-              title: `${weightGrams} g / ${diameterInches} in diameter`,
+            select: { weight: "weightGrams", diameter: "diameterInches" },
+            prepare: ({ weight, diameter }) => ({
+              title: `${weight} g / ${diameter} in`,
             }),
           },
         }),
       ],
-      validation: (rule) => rule.unique().max(20),
+      validation: (rule) => rule.unique().max(catalogLimits.variants),
+    }),
+    defineField({
+      name: "utensilType",
+      title: "Utensil item type",
+      type: "string",
+      group: "specifications",
+      description: "Complete only for Utensil product fields.",
+      options: { list: options(utensilTypes) },
     }),
     defineField({
       name: "idolConstruction",
-      title: "Idol Construction",
+      title: "Idol construction",
       type: "string",
-      description:
-        "Choose how the idol is constructed. Complete this only for products in the Idols category.",
-      hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-idols",
-      options: {
-        list: [
-          { title: "Hollow", value: "hollow" },
-          { title: "Solid", value: "solid" },
-          { title: "Semi-solid", value: "semi-solid" },
-        ],
-        layout: "radio",
-      },
-      validation: (rule) =>
-        rule.custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-
-          if (categoryReference === "category-idols") {
-            return value ? true : "Choose an Idols subcategory.";
-          }
-
-          return value
-            ? "Idol Construction is only valid for the Idols category."
-            : true;
-        }),
+      group: "specifications",
+      description: "Complete only for Idol product fields.",
+      options: { list: options(idolConstructions) },
     }),
     defineField({
       name: "deities",
       title: "Deities",
       type: "array",
-      description:
-        "Choose every God or deity represented by this idol. This powers the customer-facing Deity filter.",
-      hidden: ({ document }) =>
-        getCategoryReference(document) !== "category-idols",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: [{ type: "deity" }],
-        }),
-      ],
-      validation: (rule) =>
-        rule.unique().custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-          const hasDeities = Array.isArray(value) && value.length > 0;
-
-          if (categoryReference === "category-idols") {
-            return hasDeities
-              ? true
-              : "Choose at least one deity for an Idol product.";
-          }
-
-          return hasDeities
-            ? "Deities are only valid for the Idols category."
-            : true;
-        }),
+      group: "specifications",
+      description: "Complete only for Idol product fields.",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "deity" }] })],
+      validation: (rule) => rule.unique().max(catalogLimits.deities),
     }),
     defineField({
       name: "coinShape",
       title: "Coin or bar shape",
       type: "string",
-      description:
-        "Complete this field only for products in the Coin or Gold category.",
-      hidden: ({ document }) =>
-        !new Set(["category-coin", "category-gold"]).has(
-          getCategoryReference(document) ?? "",
-        ),
-      options: {
-        list: [
-          { title: "Round", value: "round" },
-          { title: "Oval", value: "oval" },
-          { title: "Square", value: "square" },
-          { title: "Rectangle", value: "rectangle" },
-          { title: "Scalloped", value: "scalloped" },
-        ],
-      },
-      validation: (rule) =>
-        rule.custom((value, context) => {
-          const categoryReference = getCategoryReference(context.document);
-
-          if (
-            categoryReference === "category-coin" ||
-            categoryReference === "category-gold"
-          ) {
-            return value ? true : "Choose a coin or bar shape.";
-          }
-
-          return value
-            ? "Coin or bar shape is only valid for the Coin or Gold category."
-            : true;
-        }),
+      group: "specifications",
+      description: "Complete only for Coin or Gold product fields.",
+      options: { list: options(coinShapes) },
     }),
     defineField({
       name: "collections",
       title: "Collections",
       type: "array",
-      of: [defineArrayMember({ type: "reference", to: [{ type: "collection" }] })],
+      group: "organization",
+      description:
+        "Manage collection membership here. Collection pages and their product lists are derived from these references.",
+      of: [
+        defineArrayMember({ type: "reference", to: [{ type: "collection" }] }),
+      ],
+      validation: (rule) => rule.unique().max(catalogLimits.collections),
     }),
     defineField({
       name: "featured",
       title: "Featured",
       type: "boolean",
+      group: "organization",
       initialValue: false,
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "displayOrder",
       title: "Display order",
       type: "number",
+      group: "organization",
       initialValue: 100,
-      validation: (rule) => rule.required().integer().min(0),
+      validation: (rule) =>
+        rule.required().integer().min(0).max(catalogLimits.displayOrder),
     }),
     defineField({
       name: "reference",
       title: "Internal reference",
       type: "string",
-      description: "Optional. Included in WhatsApp enquiries.",
-      validation: (rule) => rule.max(60),
+      group: "organization",
+      description: "Canonical item code included in WhatsApp enquiries.",
+      validation: (rule) => rule.max(catalogLimits.reference),
     }),
   ],
   orderings: [
@@ -418,10 +287,6 @@ export const productType = defineType({
     },
   ],
   preview: {
-    select: {
-      title: "title",
-      media: "gallery.0",
-      subtitle: "category.title",
-    },
+    select: { title: "title", media: "gallery.0", subtitle: "category.title" },
   },
 });

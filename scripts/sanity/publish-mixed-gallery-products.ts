@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { assertProductDocument, catalogLimits, galleryManifestProductSchema, getCategoryKind, type CategoryKind } from "../../src/lib/catalog-domain";
 
 const client = getCliClient({ apiVersion: "2026-08-09" });
 const projectRoot = resolve(import.meta.dirname, "../..");
@@ -39,23 +40,6 @@ const assetMappingPath = resolveInputPath(
   ),
 );
 const displayOrderBase = Number(getArgumentValue("--display-order-base") ?? 5_000);
-const supportedCategories = new Set([
-  "category-coin",
-  "category-gold",
-  "category-gifts",
-  "category-jhula",
-  "category-purse",
-  "category-idols",
-  "category-utensils",
-]);
-const supportedCoinShapes = new Set([
-  "round",
-  "oval",
-  "square",
-  "rectangle",
-  "scalloped",
-]);
-
 type ManifestProduct = {
   number: number;
   originalNumber?: number;
@@ -65,14 +49,7 @@ type ManifestProduct = {
   slug: string;
   shortDescription: string;
   alt: string;
-  categoryId:
-    | "category-coin"
-    | "category-gold"
-    | "category-gifts"
-    | "category-jhula"
-    | "category-purse"
-    | "category-idols"
-    | "category-utensils";
+  categoryId: string;
   utensilType?:
     | "glass"
     | "bowl"
@@ -96,7 +73,7 @@ type ManifestProduct = {
     weightGrams: number;
     diameterInches: number;
   }>;
-  idolConstruction?: "semi-solid";
+  idolConstruction?: "hollow" | "solid" | "semi-solid";
   deityIds?: string[];
   publishBlockers: string[];
   recordType?: "alternateGalleryImage";
@@ -148,6 +125,8 @@ type ExistingProduct = {
 
 type ExistingReference = {
   _id: string;
+  slug?: string;
+  productKind?: CategoryKind;
 };
 
 async function readJson<T>(filePath: string): Promise<T> {
@@ -198,26 +177,9 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
   );
 
   for (const product of manifest.products) {
+    galleryManifestProductSchema.parse(product);
     if (product.publishBlockers.length > 0) {
       throw new Error(`${product.reference} still has publish blockers.`);
-    }
-    if (!supportedCategories.has(product.categoryId)) {
-      throw new Error(`${product.reference} has an unsupported category.`);
-    }
-    if (
-      product.purity !== "91.60" &&
-      product.purity !== "92.5" &&
-      product.purity !== "99.50" &&
-      product.purity !== "99.80"
-    ) {
-      throw new Error(`${product.reference} has an unsupported purity.`);
-    }
-    const material = product.material ?? "silver";
-    if (product.categoryId === "category-gold" && material !== "gold") {
-      throw new Error(`${product.reference} must use gold material.`);
-    }
-    if (product.categoryId !== "category-gold" && material === "gold") {
-      throw new Error(`${product.reference} cannot use gold material outside the Gold category.`);
     }
     if (product.recordType === "alternateGalleryImage") {
       if (
@@ -234,52 +196,6 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
         `${product.reference} disables product creation without being an alternate gallery image.`,
       );
     }
-    if (product.categoryId === "category-idols") {
-      if (
-        product.idolConstruction !== "semi-solid" ||
-        !product.deityIds?.length
-      ) {
-        throw new Error(
-          `${product.reference} must have semi-solid construction and at least one deity.`,
-        );
-      }
-    }
-    if (
-      product.categoryId === "category-jhula" &&
-      !/^JH-[0-9]{2}$/.test(product.reference)
-    ) {
-      throw new Error(`${product.reference} must use the JH-NN reference format.`);
-    }
-    if (
-      product.reference.startsWith("JH-") &&
-      product.categoryId !== "category-jhula"
-    ) {
-      throw new Error(`${product.reference} must use the Jhula category.`);
-    }
-    if (product.categoryId === "category-utensils" && !product.utensilType) {
-      throw new Error(`${product.reference} must define a utensil type.`);
-    }
-    if (
-      product.categoryId !== "category-utensils" &&
-      product.utensilType !== undefined
-    ) {
-      throw new Error(`${product.reference} cannot define a utensil type.`);
-    }
-    if (
-      (product.categoryId === "category-coin" ||
-        product.categoryId === "category-gold") &&
-      !supportedCoinShapes.has(product.coinShape ?? "")
-    ) {
-      throw new Error(`${product.reference} must define a supported coin or bar shape.`);
-    }
-    if (
-      product.categoryId !== "category-coin" &&
-      product.categoryId !== "category-gold" &&
-      product.coinShape !== undefined
-    ) {
-      throw new Error(`${product.reference} cannot define a coin or bar shape.`);
-    }
-
     const mappingRow = mappingByProductId.get(product.id);
     if (
       !mappingRow ||
@@ -307,7 +223,7 @@ function getProductDocument(
   product: ManifestProduct,
   gallery: ReturnType<typeof getGalleryImage>[],
 ) {
-  return {
+  const document = {
     _id: product.id,
     _type: "product",
     title: product.title,
@@ -349,6 +265,8 @@ function getProductDocument(
     displayOrder: displayOrderBase + product.number,
     reference: product.reference,
   };
+  assertProductDocument(document);
+  return document;
 }
 
 async function main() {
@@ -393,7 +311,7 @@ async function main() {
       ),
     ),
   ];
-  const categoryIds = [...new Set(productRecords.map(({ categoryId }) => categoryId))];
+  const categoryIds = [...new Set(manifest.products.map(({ categoryId }) => categoryId))];
   const deityIds = [
     ...new Set(productRecords.flatMap(({ deityIds: ids }) => ids ?? [])),
   ];
@@ -406,7 +324,7 @@ async function main() {
 
   const [categories, deities, assets, existingProducts] = await Promise.all([
     client.fetch<ExistingReference[]>(
-      `*[_type == "category" && _id in $categoryIds]{_id}`,
+      `*[_type == "category" && _id in $categoryIds]{_id, productKind, "slug": slug.current}`,
       { categoryIds },
     ),
     client.fetch<ExistingReference[]>(
@@ -532,6 +450,11 @@ async function main() {
       ),
     } as const;
   });
+  // The exact assembled document is validated during dry-run and again at the
+  // write boundary; readiness flags cannot bypass the shared contract.
+  for (const { product, gallery } of actions) {
+    assertProductDocument(getProductDocument(product, gallery), getCategoryKind(categories.find((category) => category._id === product.categoryId)));
+  }
   const parentGalleryActions = alternateRecords
     .filter((product) => !productById.has(product.parentProductId!))
     .map((product) => {
@@ -547,6 +470,22 @@ async function main() {
         action: galleryContainsAsset ? "UPDATE_METADATA" : "ATTACH",
       } as const;
     });
+
+  // Check the final gallery size per parent, including multiple attachments in
+  // this batch. Existing revisions are checked by the transaction below.
+  for (const [id, existing] of existingParentById) {
+    const additions = parentGalleryActions.filter((item) => item.existing._id === id && item.action === "ATTACH");
+    if ((existing.gallery?.length ?? 0) + additions.length > catalogLimits.gallery) {
+      throw new Error(`${id}: gallery would exceed ${catalogLimits.gallery} images.`);
+    }
+    const keys = [...(existing.gallery ?? []).map((image) => image._key), ...additions.map(({ product, assetId }) => getGalleryImage(product, assetId)._key)];
+    assertUnique(keys, `${id} gallery key`);
+  }
+  for (const { product, assetId } of parentGalleryActions) {
+    if (product.updateParentMetadata) {
+      assertProductDocument(getProductDocument(product, [getGalleryImage(product, assetId)]), getCategoryKind(categories.find((category) => category._id === product.categoryId)));
+    }
+  }
 
   console.log(
     `Target: ${projectId}/${dataset}; batch: ${manifest.batchId}; source images: ${manifest.products.length}; new product candidates: ${actions.length}`,

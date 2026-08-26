@@ -1,23 +1,33 @@
+import { getCategoryKind } from "@/lib/catalog-domain";
 import type { Product } from "@/types/catalog";
 
 type ProductImagePresentation = Pick<
   Product,
-  "categorySlug" | "coinShape"
+  "categorySlug" | "categoryKind" | "coinShape"
 >;
 
 export function shouldContainProductImage(
   product: ProductImagePresentation,
   compactImage = false,
 ) {
+  const kind = getCategoryKind({
+    slug: product.categorySlug,
+    productKind: product.categoryKind,
+  });
   return (
-    product.categorySlug === "jhula" ||
-    product.categorySlug === "purse" ||
+    kind === "jhula" ||
+    kind === "purse" ||
     (Boolean(product.coinShape) && !compactImage)
   );
 }
 
 export function shouldUseSquareProductCardImage(
-  product: Pick<Product, "categorySlug">,
+  product: Pick<Product, "categorySlug" | "categoryKind">,
 ) {
-  return product.categorySlug === "jhula";
+  return (
+    getCategoryKind({
+      slug: product.categorySlug,
+      productKind: product.categoryKind,
+    }) === "jhula"
+  );
 }

@@ -4,6 +4,7 @@ export const pageType = defineType({
   name: "page",
   title: "Page",
   type: "document",
+  readOnly: true,
   fields: [
     defineField({
       name: "title",

@@ -4,38 +4,29 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
-import { getPopulatedCategories } from "@/lib/catalog-seo";
+import { getCatalogPagePath, toCatalogSearchParams } from "@/lib/catalog-url";
 import { createPageMetadata } from "@/lib/seo";
-import {
-  getCatalog,
-  getCollection,
-  getPublishedCatalog,
-} from "@/sanity/lib/catalog";
+import { getCatalogListing, getCollection } from "@/sanity/lib/catalog";
 
 type CollectionPageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export async function generateStaticParams() {
-  const { collections } = await getPublishedCatalog();
-  return collections.map((collection) => ({ slug: collection.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: CollectionPageProps) {
+export async function generateMetadata({ params, searchParams }: CollectionPageProps) {
   const { slug } = await params;
-  const catalog = await getCatalog();
-  const collection = catalog.collections.find((item) => item.slug === slug);
-  const hasPublishedProducts = catalog.products.some((product) =>
-    product.collectionSlugs.includes(slug),
-  );
+  const [collection, listing] = await Promise.all([
+    getCollection(slug),
+    searchParams.then((values) => getCatalogListing(toCatalogSearchParams(values), "", slug)),
+  ]);
+  const hasPublishedProducts =
+    (collection?.productCount ?? collection?.productSlugs.length ?? 0) > 0;
 
   return collection
     ? createPageMetadata({
         title: `${collection.title} Silver Collection`,
         description: `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`,
-        path: `/collections/${collection.slug}`,
+        path: getCatalogPagePath(`/collections/${collection.slug}`, listing.result.page),
         image: collection.heroImage,
         noIndex: !hasPublishedProducts,
         noFollow: false,
@@ -50,24 +41,24 @@ export async function generateMetadata({
       });
 }
 
-export default async function CollectionPage({ params }: CollectionPageProps) {
+export default async function CollectionPage({
+  params,
+  searchParams,
+}: CollectionPageProps) {
   const { slug } = await params;
-  const [collection, catalog] = await Promise.all([
+  const [collection, listing] = await Promise.all([
     getCollection(slug),
-    getCatalog(),
+    searchParams.then((values) =>
+      getCatalogListing(toCatalogSearchParams(values), "", slug),
+    ),
   ]);
 
   if (!collection) {
     notFound();
   }
 
-  const collectionProducts = catalog.products.filter((product) =>
-    product.collectionSlugs.includes(collection.slug),
-  );
-  const populatedCategories = getPopulatedCategories(
-    catalog.categories,
-    collectionProducts,
-  );
+  const collectionProducts = listing.result.products;
+  const populatedCategories = listing.categories;
   const collectionDescription = `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`;
 
   return (
@@ -75,7 +66,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       <CatalogStructuredData
         name={`${collection.title} silver collection`}
         description={collectionDescription}
-        path={`/collections/${collection.slug}`}
+        path={getCatalogPagePath(`/collections/${collection.slug}`, listing.result.page)}
+        total={listing.result.total}
+        offset={(listing.result.page - 1) * listing.result.pageSize}
         products={collectionProducts}
       />
       <section className="grid border-b border-line lg:min-h-[29rem] lg:grid-cols-2">
@@ -116,6 +109,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
           <CatalogBrowser
             products={collectionProducts}
             categories={populatedCategories}
+            initialFilters={listing.filters}
+            initialPage={listing.result}
+            collectionSlug={slug}
+            syncUrl
           />
         </div>
       </section>

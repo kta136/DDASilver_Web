@@ -6,16 +6,18 @@ import {
   render,
   screen,
   within,
+  waitFor,
 } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
-import {
-  fallbackCategories,
-  fallbackProducts,
-} from "@/data/catalog";
+import { fallbackCategories, fallbackProducts } from "@/data/catalog";
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+  window.history.replaceState(null, "", "/");
+});
 
 describe("<CatalogBrowser />", () => {
   it("removes collections and only renders item-backed filter options", () => {
@@ -93,8 +95,9 @@ describe("<CatalogBrowser />", () => {
     );
 
     expect(
-      within(screen.getByRole("combobox", { name: "Filter by purity" }))
-        .getByRole("option", { name: "99.50%" }),
+      within(
+        screen.getByRole("combobox", { name: "Filter by purity" }),
+      ).getByRole("option", { name: "99.50%" }),
     ).toBeInTheDocument();
     expect(
       within(
@@ -179,5 +182,118 @@ describe("<CatalogBrowser />", () => {
     expect(
       screen.queryByRole("heading", { name: bowl.title }),
     ).not.toBeInTheDocument();
+  });
+});
+
+describe("paginated catalog browsing", () => {
+  const coin = fallbackProducts.find(
+    (product) => product.categorySlug === "coin",
+  )!;
+  const second = {
+    ...coin,
+    slug: "second-page-coin",
+    title: "Second Page Coin",
+  };
+  const initialPage = {
+    products: [coin],
+    total: 25,
+    page: 1,
+    pageSize: 24,
+    degraded: false,
+    facets: [
+      {
+        categorySlug: "coin",
+        productCount: 25,
+        purities: ["99.80" as const],
+        coinShapes: ["round" as const, "oval" as const],
+        idolConstructions: [],
+        utensilTypes: [],
+        deities: [],
+      },
+    ],
+  };
+  it("uses full-catalog facets, requests the next page and restores browser history", async () => {
+    window.history.replaceState(null, "", "/products?category=coin");
+    const fetch = vi
+      .fn()
+      .mockImplementation(async (url: string) => ({
+        ok: true,
+        json: async () =>
+          url.includes("page=2")
+            ? { ...initialPage, products: [second], page: 2 }
+            : initialPage,
+      }));
+    vi.stubGlobal("fetch", fetch);
+    render(
+      <CatalogBrowser
+        products={[coin]}
+        categories={fallbackCategories}
+        initialCategory="coin"
+        initialPage={initialPage}
+        syncUrl
+      />,
+    );
+    expect(screen.getByRole("option", { name: "Oval" })).toBeInTheDocument();
+    expect(fetch).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("link", { name: "Next" }));
+    expect(screen.getByRole("status")).toHaveTextContent("Updating designs");
+    await screen.findByRole("heading", { name: second.title });
+    expect(fetch.mock.calls[0][0]).toContain("page=2");
+    expect(screen.getByText("Page 2 of 2")).toBeInTheDocument();
+    window.history.replaceState(null, "", "/products?category=coin");
+    fireEvent.popState(window);
+    await waitFor(() =>
+      expect(screen.getByText("Page 1 of 2")).toBeInTheDocument(),
+    );
+    expect(
+      screen.queryByRole("heading", { name: second.title }),
+    ).not.toBeInTheDocument();
+  });
+  it("shows an actionable error, retries, and resets pagination when filters change", async () => {
+    const fetch = vi
+      .fn()
+      .mockRejectedValueOnce(new Error("offline"))
+      .mockResolvedValue({
+        ok: true,
+        json: async () => ({ ...initialPage, products: [second], page: 2 }),
+      });
+    vi.stubGlobal("fetch", fetch);
+    render(
+      <CatalogBrowser
+        products={[coin]}
+        categories={fallbackCategories}
+        initialCategory="coin"
+        initialPage={initialPage}
+      />,
+    );
+    fireEvent.click(screen.getByRole("link", { name: "Next" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "Previous results are shown",
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Try again" }));
+    await screen.findByRole("heading", { name: second.title });
+    fireEvent.change(
+      screen.getByRole("searchbox", { name: "Search products" }),
+      { target: { value: "silver" } },
+    );
+    await waitFor(() =>
+      expect(fetch.mock.calls.at(-1)?.[0]).toContain(
+        "q=silver&category=coin&page=1",
+      ),
+    );
+  });
+  it("uses a category's configured kind after its slug changes", () => {
+    render(
+      <CatalogBrowser
+        products={[{ ...coin, categorySlug: "bullion" }]}
+        categories={[
+          { ...fallbackCategories[0], slug: "bullion", productKind: "coin" },
+        ]}
+        initialCategory="bullion"
+      />,
+    );
+    expect(
+      screen.getByRole("combobox", { name: "Filter by coin or bar shape" }),
+    ).toBeInTheDocument();
   });
 });

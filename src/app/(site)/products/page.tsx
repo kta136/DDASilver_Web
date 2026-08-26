@@ -2,64 +2,49 @@ import Link from "next/link";
 
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
-import { parseCatalogSearchParams } from "@/lib/catalog-url";
-import {
-  getPopulatedCategories,
-  getPopulatedCollections,
-} from "@/lib/catalog-seo";
+import { getCatalogPagePath, toCatalogSearchParams } from "@/lib/catalog-url";
 import { createPageMetadata } from "@/lib/seo";
-import { getCatalog } from "@/sanity/lib/catalog";
+import { getCatalogListing } from "@/sanity/lib/catalog";
 
 const productsDescription =
   "Explore silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp for availability.";
-
-export const metadata = createPageMetadata({
-  title: "Silver Products in Agra",
-  description: productsDescription,
-  path: "/products",
-});
 
 type ProductsPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
+export async function generateMetadata({ searchParams }: ProductsPageProps) {
+  const { result } = await getCatalogListing(toCatalogSearchParams(await searchParams));
+  return createPageMetadata({ title: "Silver Products in Agra", description: productsDescription, path: getCatalogPagePath("/products", result.page) });
+}
+
 export default async function ProductsPage({
   searchParams,
 }: ProductsPageProps) {
-  const { products, categories, collections } = await getCatalog();
-  const populatedCategories = getPopulatedCategories(categories, products);
-  const populatedCollections = getPopulatedCollections(
+  const {
+    result,
+    filters: initialFilters,
+    categories,
     collections,
-    products,
+  } = await getCatalogListing(toCatalogSearchParams(await searchParams));
+  const products = result.products;
+  const populatedCategories = categories.filter(
+    (category) => (category.productCount ?? 0) > 0,
   );
-  const rawSearchParams = await searchParams;
-  const normalizedSearchParams = new URLSearchParams();
-  for (const [key, value] of Object.entries(rawSearchParams)) {
-    const firstValue = Array.isArray(value) ? value[0] : value;
-    if (firstValue) {
-      normalizedSearchParams.set(key, firstValue);
-    }
-  }
-  const initialFilters = parseCatalogSearchParams(normalizedSearchParams, {
-    categorySlugs: [
-      ...new Set(products.map((product) => product.categorySlug)),
-    ],
-    deitySlugs: [
-      ...new Set(
-        products.flatMap((product) =>
-          product.deities.map((deity) => deity.slug),
-        ),
-      ),
-    ],
-  });
+  const populatedCollections = collections.filter(
+    (collection) =>
+      (collection.productCount ?? collection.productSlugs.length) > 0,
+  );
 
   return (
     <main id="main-content" className="section-shell">
       <CatalogStructuredData
         name="Silver products in Agra"
         description={productsDescription}
-        path="/products"
+        path={getCatalogPagePath("/products", result.page)}
         products={products}
+        total={result.total}
+        offset={(result.page - 1) * result.pageSize}
       />
       <div className="site-container">
         <p className="eyebrow">Digital showroom</p>
@@ -120,6 +105,7 @@ export default async function ProductsPage({
             products={products}
             categories={populatedCategories}
             initialFilters={initialFilters}
+            initialPage={result}
             syncUrl
           />
         </div>

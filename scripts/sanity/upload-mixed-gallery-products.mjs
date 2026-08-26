@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { galleryManifestProductSchema } from "../../src/lib/catalog-domain.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const defaultManifestPath = path.join(
@@ -207,6 +208,10 @@ function validateManifest(manifest, manifestPath) {
 
   for (const [index, product] of products.entries()) {
     const label = `product ${product.number ?? index + 1}`;
+    const sharedValidation = galleryManifestProductSchema.safeParse(product);
+    if (!sharedValidation.success) {
+      for (const issue of sharedValidation.error.issues) errors.push(`${label}: ${issue.path.join(".")}: ${issue.message}`);
+    }
     if (product.number !== index + 1) errors.push(`${label}: number must follow stable sequence ${index + 1}`);
     if (!/^product-dda-[a-z0-9-]+$/.test(product.id ?? "")) errors.push(`${label}: invalid id`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(product.slug ?? "")) errors.push(`${label}: invalid slug`);

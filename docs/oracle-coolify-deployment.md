@@ -52,7 +52,7 @@ enabled for the rates SSE connection.
 | Health check | Dockerfile health check enabled |
 | Include source commit in build | enabled |
 | Coolify Git auto-deploy | disabled |
-| Persistent storage/cache/Redis | none |
+| Persistent storage/cache/Redis | Optional catalog recovery volume; see below |
 
 The Docker image is based on the multi-architecture
 `node:24.19.0-bookworm-slim` image and runs the Next.js standalone server as
@@ -202,3 +202,27 @@ application rollback.
 No DNS reversal is required for an application rollback. A host-level failure
 requires restoring Oracle/Coolify or provisioning a separately authorized
 origin; no dormant hosting copy exists.
+
+## Sanity catalog rollout
+
+Follow the filter/projection in [the content model](content-model.md#signed-publish-webhook),
+including deity and image-asset events. Existing hosted webhook settings are not
+changed by deploying the application. Keep `/api/catalog` and draft responses
+uncached at the reverse proxy.
+
+For recovery across container replacement, mount a writable directory such as
+`/app/catalog-recovery` and set `SANITY_CATALOG_CACHE_DIR` to that path. Snapshots
+contain only published query results, with at most 200 entries and a 24-hour age
+limit. Without the volume, recovery lasts only for the current container. This
+cache is not a Sanity backup; a cold outage displays an unavailable state.
+
+Set `NEXT_PUBLIC_SITE_ENV=production` and the correct public Sanity project/dataset
+at build time. No migration is required to read existing products. Before renaming
+legacy category slugs, explicitly set Product fields in Studio and review homepage
+order, visibility and image source. Assign collections on products. Deployment
+must not run upload scripts or publish documents automatically.
+
+Before promotion, run `npm run sanity:typegen`, `npm run check`, and browser
+journeys. After an authorized deploy, verify listing page 2, a filtered share URL,
+a product detail, the full sitemap and one approved publish/unpublish webhook
+cycle. Live publishing checks require separate owner authorization.

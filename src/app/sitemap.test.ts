@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from "vitest";
 
-const { getPublishedCatalog } = vi.hoisted(() => ({
-  getPublishedCatalog: vi.fn(),
+const { getSitemapCatalog } = vi.hoisted(() => ({
+  getSitemapCatalog: vi.fn(),
 }));
 
-vi.mock("@/sanity/lib/catalog", () => ({ getPublishedCatalog }));
+vi.mock("@/sanity/lib/catalog", () => ({ getSitemapCatalog }));
 
 import sitemap from "@/app/sitemap";
 
@@ -17,7 +17,7 @@ const image = {
 
 describe("sitemap metadata route", () => {
   it("includes product images and omits empty category and collection pages", async () => {
-    getPublishedCatalog.mockResolvedValue({
+    getSitemapCatalog.mockResolvedValue({
       source: "fallback",
       products: [
         {

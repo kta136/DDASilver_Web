@@ -6,15 +6,9 @@ import {
 } from "@/lib/catalog-seo";
 import { toAbsoluteUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { getPublishedCatalog } from "@/sanity/lib/catalog";
+import { getSitemapCatalog } from "@/sanity/lib/catalog";
 
-const staticRoutes = [
-  "",
-  "/products",
-  "/rates",
-  "/about",
-  "/contact",
-];
+const staticRoutes = ["", "/products", "/rates", "/about", "/contact"];
 
 function getLatestModified(...candidates: Array<string | undefined>) {
   let latest: { value: string; timestamp: number } | undefined;
@@ -38,7 +32,7 @@ function getLatestModified(...candidates: Array<string | undefined>) {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { products, categories, collections } = await getPublishedCatalog();
+  const { products, categories, collections } = await getSitemapCatalog();
   const populatedCategories = getPopulatedCategories(categories, products);
   const populatedCollections = getPopulatedCollections(collections, products);
   const catalogLastModified = getLatestModified(
@@ -55,10 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       product.updatedAt,
     );
     if (categoryUpdate) {
-      latestProductUpdateByCategory.set(
-        product.categorySlug,
-        categoryUpdate,
-      );
+      latestProductUpdateByCategory.set(product.categorySlug, categoryUpdate);
     }
 
     for (const collectionSlug of product.collectionSlugs) {
@@ -67,10 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         product.updatedAt,
       );
       if (collectionUpdate) {
-        latestProductUpdateByCollection.set(
-          collectionSlug,
-          collectionUpdate,
-        );
+        latestProductUpdateByCollection.set(collectionSlug, collectionUpdate);
       }
     }
   }
@@ -78,8 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes.map((route) => ({
       url: new URL(route || "/", siteConfig.url).toString(),
-      ...((route === "" || route === "/products") &&
-      catalogLastModified
+      ...((route === "" || route === "/products") && catalogLastModified
         ? { lastModified: catalogLastModified }
         : {}),
       changeFrequency:

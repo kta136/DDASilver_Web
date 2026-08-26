@@ -1,4 +1,5 @@
 import type {
+  CatalogFacet,
   CoinShape,
   IdolConstruction,
   Product,
@@ -24,6 +25,33 @@ export type CatalogFilterAvailability = {
   coinShapes: ReadonlySet<CoinShape>;
   utensilTypes: ReadonlySet<UtensilType>;
 };
+
+export function getFacetAvailability(
+  facets: CatalogFacet[],
+  category = "",
+): CatalogFilterAvailability {
+  const selected = facets.filter(
+    (facet) => !category || facet.categorySlug === category,
+  );
+  return {
+    categorySlugs: new Set(
+      facets
+        .filter((facet) => facet.productCount > 0)
+        .map((facet) => facet.categorySlug),
+    ),
+    purities: new Set(selected.flatMap((facet) => facet.purities)),
+    idolConstructions: new Set(
+      selected.flatMap((facet) => facet.idolConstructions),
+    ),
+    deities: new Map(
+      selected.flatMap((facet) =>
+        facet.deities.map(({ slug, title }) => [slug, title] as const),
+      ),
+    ),
+    coinShapes: new Set(selected.flatMap((facet) => facet.coinShapes)),
+    utensilTypes: new Set(selected.flatMap((facet) => facet.utensilTypes)),
+  };
+}
 
 export function getCatalogFilterAvailability(
   products: Product[],
@@ -70,10 +98,7 @@ export function getCatalogFilterAvailability(
   };
 }
 
-export function filterProducts(
-  products: Product[],
-  filters: CatalogFilters,
-) {
+export function filterProducts(products: Product[], filters: CatalogFilters) {
   const query = filters.query?.trim().toLocaleLowerCase("en-IN");
   const queryTerms = query?.split(/\s+/).filter(Boolean) ?? [];
 
@@ -105,10 +130,7 @@ export function filterProducts(
         return false;
       }
 
-      if (
-        filters.utensilType &&
-        product.utensilType !== filters.utensilType
-      ) {
+      if (filters.utensilType && product.utensilType !== filters.utensilType) {
         return false;
       }
 
@@ -118,9 +140,9 @@ export function filterProducts(
 
       const words =
         `${product.title} ${product.shortDescription} ${product.deities.map((deity) => deity.title).join(" ")}`
-        .toLocaleLowerCase("en-IN")
-        .split(/[^\p{L}\p{N}]+/u)
-        .filter(Boolean);
+          .toLocaleLowerCase("en-IN")
+          .split(/[^\p{L}\p{N}]+/u)
+          .filter(Boolean);
 
       return queryTerms.every((term) =>
         words.some((word) => word.startsWith(term)),

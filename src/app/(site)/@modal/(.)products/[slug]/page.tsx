@@ -4,7 +4,7 @@ import { ProductDetailDialog } from "@/components/catalog/product-detail-dialog"
 import { ProductDetails } from "@/components/catalog/product-details";
 import { ProductGallery } from "@/components/catalog/product-gallery";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
-import { getCatalog } from "@/sanity/lib/catalog";
+import { getCatalogNavigation, getProduct } from "@/sanity/lib/catalog";
 
 type ProductModalPageProps = {
   params: Promise<{ slug: string }>;
@@ -14,8 +14,10 @@ export default async function ProductModalPage({
   params,
 }: ProductModalPageProps) {
   const { slug } = await params;
-  const catalog = await getCatalog();
-  const product = catalog.products.find((item) => item.slug === slug);
+  const [catalog, product] = await Promise.all([
+    getCatalogNavigation(),
+    getProduct(slug),
+  ]);
 
   if (!product) {
     notFound();
@@ -40,11 +42,7 @@ export default async function ProductModalPage({
         productPath={`/products/${product.slug}`}
       >
         <div className="grid max-h-[calc(100dvh-4rem)] overflow-y-auto lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
-          <ProductGallery
-            images={product.images}
-            containImages
-            priority
-          />
+          <ProductGallery images={product.images} containImages priority />
           <div className="px-5 py-8 sm:px-8 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto lg:px-10 lg:py-12">
             <ProductDetails
               product={product}

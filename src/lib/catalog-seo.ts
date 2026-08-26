@@ -5,10 +5,7 @@ import {
   purityLabels,
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
-import {
-  getProductSeoName,
-  toAbsoluteUrl,
-} from "@/lib/seo";
+import { getProductSeoName, toAbsoluteUrl } from "@/lib/seo";
 import type { Category, Collection, Product } from "@/types/catalog";
 
 type CatalogPageStructuredDataOptions = {
@@ -16,13 +13,15 @@ type CatalogPageStructuredDataOptions = {
   description: string;
   path: `/${string}`;
   products: Product[];
+  total?: number;
+  offset?: number;
 };
 
 const MAX_STRUCTURED_CATALOG_ITEMS = 100;
 
 export function getPopulatedCategories(
   categories: Category[],
-  products: Product[],
+  products: Pick<Product, "categorySlug">[],
 ) {
   const populatedCategorySlugs = new Set(
     products.map((product) => product.categorySlug),
@@ -35,7 +34,7 @@ export function getPopulatedCategories(
 
 export function getPopulatedCollections(
   collections: Collection[],
-  products: Product[],
+  products: Pick<Product, "collectionSlugs">[],
 ) {
   const populatedCollectionSlugs = new Set(
     products.flatMap((product) => product.collectionSlugs),
@@ -51,6 +50,8 @@ export function getCatalogPageStructuredData({
   description,
   path,
   products,
+  total = products.length,
+  offset = 0,
 }: CatalogPageStructuredDataOptions) {
   const pageUrl = toAbsoluteUrl(path);
 
@@ -66,7 +67,7 @@ export function getCatalogPageStructuredData({
       "@type": "ItemList",
       "@id": `${pageUrl}#product-list`,
       name,
-      numberOfItems: products.length,
+      numberOfItems: total,
       itemListOrder: "https://schema.org/ItemListOrderAscending",
       itemListElement: products
         .slice(0, MAX_STRUCTURED_CATALOG_ITEMS)
@@ -75,7 +76,7 @@ export function getCatalogPageStructuredData({
 
           return {
             "@type": "ListItem",
-            position: index + 1,
+            position: offset + index + 1,
             url: productUrl,
             item: {
               "@type": "Product",

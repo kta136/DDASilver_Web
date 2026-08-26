@@ -1,4 +1,9 @@
 import { defineField, defineType } from "sanity";
+import {
+  catalogLimits,
+  catalogSlugSchema,
+  categoryKinds,
+} from "@/lib/catalog-domain";
 
 export const categoryType = defineType({
   name: "category",
@@ -16,7 +21,15 @@ export const categoryType = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule
+          .required()
+          .custom(
+            (value) =>
+              !value ||
+              catalogSlugSchema.safeParse(value.current).success ||
+              "Use lowercase letters, numbers and hyphens.",
+          ),
     }),
     defineField({
       name: "description",
@@ -49,7 +62,50 @@ export const categoryType = defineType({
       title: "Display order",
       type: "number",
       initialValue: 100,
-      validation: (rule) => rule.required().integer().min(0),
+      validation: (rule) =>
+        rule.required().integer().min(0).max(catalogLimits.displayOrder),
+    }),
+    defineField({
+      name: "productKind",
+      title: "Product fields",
+      type: "string",
+      description:
+        "Choose which specifications and filters apply. Set this before changing an existing category slug. Legacy categories keep their current behavior until this is set.",
+      options: {
+        list: categoryKinds.map((value) => ({
+          title: value === "general" ? "General products" : value,
+          value,
+        })),
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "showOnHomepage",
+      title: "Show on homepage",
+      type: "boolean",
+      initialValue: true,
+      description:
+        "Only populated categories appear. Existing categories are shown unless this is disabled.",
+    }),
+    defineField({
+      name: "homepageOrder",
+      title: "Homepage order",
+      type: "number",
+      description: "Optional override; otherwise uses Display order.",
+      validation: (rule) =>
+        rule.integer().min(0).max(catalogLimits.displayOrder),
+    }),
+    defineField({
+      name: "homepageImageSource",
+      title: "Homepage image",
+      type: "string",
+      initialValue: "product",
+      options: {
+        list: [
+          { title: "First product image", value: "product" },
+          { title: "Category image", value: "category" },
+        ],
+      },
     }),
   ],
 });

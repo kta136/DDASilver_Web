@@ -4,6 +4,7 @@ import { readFile, stat } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { assertProductDocument } from "../../src/lib/catalog-domain";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
 const applyChanges =
@@ -373,7 +374,10 @@ async function main() {
 
   if (documents.length > 0) {
     let transaction = client.transaction();
-    for (const document of documents) transaction = transaction.createOrReplace(document);
+    for (const document of documents) {
+      assertProductDocument(document, document.utensilType ? "utensil" : "general");
+      transaction = transaction.createOrReplace(document);
+    }
     await transaction.commit();
   }
   for (const product of uploadProducts) {

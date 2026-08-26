@@ -7,6 +7,8 @@ type CatalogStructuredDataProps = {
   description: string;
   path: `/${string}`;
   products: Product[];
+  total?: number;
+  offset?: number;
 };
 
 export function CatalogStructuredData({
@@ -14,6 +16,8 @@ export function CatalogStructuredData({
   description,
   path,
   products,
+  total,
+  offset,
 }: CatalogStructuredDataProps) {
   if (products.length === 0) {
     return null;
@@ -29,6 +33,8 @@ export function CatalogStructuredData({
             description,
             path,
             products,
+            total,
+            offset,
           }),
         ),
       }}

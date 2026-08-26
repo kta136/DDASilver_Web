@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { catalogLimits, catalogSlugSchema } from "@/lib/catalog-domain";
 
 export const collectionType = defineType({
   name: "collection",
@@ -16,7 +17,15 @@ export const collectionType = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule
+          .required()
+          .custom(
+            (value) =>
+              !value ||
+              catalogSlugSchema.safeParse(value.current).success ||
+              "Use lowercase letters, numbers and hyphens.",
+          ),
     }),
     defineField({
       name: "description",
@@ -46,8 +55,12 @@ export const collectionType = defineType({
     }),
     defineField({
       name: "products",
-      title: "Selected products",
+      title: "Legacy selected products",
       type: "array",
+      hidden: true,
+      readOnly: true,
+      description:
+        "Legacy only. Manage membership using Collections on each Product.",
       of: [defineArrayMember({ type: "reference", to: [{ type: "product" }] })],
     }),
     defineField({
@@ -55,7 +68,8 @@ export const collectionType = defineType({
       title: "Display order",
       type: "number",
       initialValue: 100,
-      validation: (rule) => rule.required().integer().min(0),
+      validation: (rule) =>
+        rule.required().integer().min(0).max(catalogLimits.displayOrder),
     }),
   ],
 });

@@ -1,19 +1,36 @@
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import type { NextRequest } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 import { z } from "zod";
 
 import { checkRateLimit } from "@/lib/security/rate-limit";
+import { CATALOG_TAG } from "@/sanity/lib/read";
 
 const webhookBodySchema = z.object({
-  _type: z.enum(["product", "category", "collection", "page", "siteSettings"]),
-  slug: z.string().optional(),
+  _type: z.enum([
+    "product",
+    "category",
+    "collection",
+    "deity",
+    "sanity.imageAsset",
+    "page",
+    "siteSettings",
+  ]),
+  _id: z.string().max(200).optional(),
+  slug: z.string().max(120).nullish(),
 });
 
 const typeTags: Record<z.infer<typeof webhookBodySchema>["_type"], string[]> = {
   product: ["product"],
   category: ["category", "product"],
   collection: ["collection", "product"],
+  deity: ["deity", "product"],
+  "sanity.imageAsset": [
+    "sanity.imageAsset",
+    "product",
+    "category",
+    "collection",
+  ],
   page: ["page"],
   siteSettings: ["siteSettings"],
 };
@@ -46,7 +63,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { body, isValidSignature } = await parseBody<unknown>(request, secret);
+  let body: unknown;
+  let isValidSignature: boolean | null;
+  try {
+    ({ body, isValidSignature } = await parseBody<unknown>(request, secret));
+  } catch {
+    return Response.json(
+      { error: "Invalid webhook request." },
+      { status: 400 },
+    );
+  }
   if (!isValidSignature) {
     return Response.json({ error: "Invalid signature." }, { status: 401 });
   }
@@ -56,9 +82,19 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Invalid webhook body." }, { status: 400 });
   }
 
-  const tags = typeTags[parsed.data._type];
+  if (parsed.data._id?.startsWith("drafts."))
+    return Response.json({ revalidated: [] });
+  const tags = [CATALOG_TAG, ...typeTags[parsed.data._type]];
   for (const tag of tags) {
     revalidateTag(tag, { expire: 0 });
+  }
+  revalidatePath("/sitemap.xml");
+  if (
+    parsed.data._type === "product" &&
+    parsed.data.slug &&
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(parsed.data.slug)
+  ) {
+    revalidatePath(`/api/og/product/${parsed.data.slug}`);
   }
 
   return Response.json({ revalidated: tags });

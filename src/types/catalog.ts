@@ -1,3 +1,12 @@
+import type {
+  CategoryKind,
+  productMaterials,
+  productPurities,
+  idolConstructions,
+  coinShapes,
+  utensilTypes,
+} from "@/lib/catalog-domain";
+
 export type CatalogImage = {
   src: string;
   alt: string;
@@ -7,15 +16,23 @@ export type CatalogImage = {
 };
 
 export type Category = {
+  _id?: string;
   title: string;
   slug: string;
   description: string;
   image: CatalogImage;
   displayOrder: number;
   updatedAt?: string;
+  productKind?: CategoryKind;
+  showOnHomepage?: boolean;
+  homepageOrder?: number;
+  homepageImageSource?: "category" | "product";
+  firstProductImage?: CatalogImage;
+  productCount?: number;
 };
 
 export type Collection = {
+  _id?: string;
   title: string;
   slug: string;
   description: string;
@@ -23,21 +40,14 @@ export type Collection = {
   productSlugs: string[];
   displayOrder: number;
   updatedAt?: string;
+  productCount?: number;
 };
 
-export type ProductMaterial = "silver" | "gold";
-export type ProductPurity = "91.60" | "92.5" | "99.50" | "99.80";
-export type IdolConstruction = "hollow" | "solid" | "semi-solid";
-export type CoinShape = "round" | "oval" | "square" | "rectangle" | "scalloped";
-export type UtensilType =
-  | "glass"
-  | "bowl"
-  | "plate"
-  | "jug"
-  | "kalash"
-  | "bottle"
-  | "spoon"
-  | "pooja-thali-set";
+export type ProductMaterial = (typeof productMaterials)[number];
+export type ProductPurity = (typeof productPurities)[number];
+export type IdolConstruction = (typeof idolConstructions)[number];
+export type CoinShape = (typeof coinShapes)[number];
+export type UtensilType = (typeof utensilTypes)[number];
 
 export type Deity = {
   title: string;
@@ -50,11 +60,13 @@ export type ProductSizeVariant = {
 };
 
 export type Product = {
+  _id?: string;
   title: string;
   slug: string;
   shortDescription: string;
   images: CatalogImage[];
   categorySlug: string;
+  categoryKind?: CategoryKind;
   collectionSlugs: string[];
   featured: boolean;
   displayOrder: number;
@@ -74,4 +86,23 @@ export type Product = {
   deities: Deity[];
   coinShape?: CoinShape;
   updatedAt?: string;
+};
+
+export type CatalogFacet = {
+  categorySlug: string;
+  productCount: number;
+  purities: ProductPurity[];
+  idolConstructions: IdolConstruction[];
+  deities: Deity[];
+  coinShapes: CoinShape[];
+  utensilTypes: UtensilType[];
+};
+
+export type CatalogPage = {
+  products: Product[];
+  total: number;
+  page: number;
+  pageSize: number;
+  facets: CatalogFacet[];
+  degraded: boolean;
 };

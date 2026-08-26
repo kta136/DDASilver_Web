@@ -3,38 +3,28 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
-import { getPopulatedCategories } from "@/lib/catalog-seo";
+import { getCatalogPagePath, toCatalogSearchParams } from "@/lib/catalog-url";
 import { createPageMetadata } from "@/lib/seo";
-import {
-  getCatalog,
-  getCategory,
-  getPublishedCatalog,
-} from "@/sanity/lib/catalog";
+import { getCatalogListing, getCategory } from "@/sanity/lib/catalog";
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export async function generateStaticParams() {
-  const { categories } = await getPublishedCatalog();
-  return categories.map((category) => ({ slug: category.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: CategoryPageProps) {
+export async function generateMetadata({ params, searchParams }: CategoryPageProps) {
   const { slug } = await params;
-  const catalog = await getCatalog();
-  const category = catalog.categories.find((item) => item.slug === slug);
-  const hasPublishedProducts = catalog.products.some(
-    (product) => product.categorySlug === slug,
-  );
+  const [category, listing] = await Promise.all([
+    getCategory(slug),
+    searchParams.then((values) => getCatalogListing(toCatalogSearchParams(values), slug, "")),
+  ]);
+  const hasPublishedProducts = (category?.productCount ?? 0) > 0;
 
   return category
     ? createPageMetadata({
         title: `Silver ${category.title} in Agra`,
         description: `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`,
-        path: `/category/${category.slug}`,
+        path: getCatalogPagePath(`/category/${category.slug}`, listing.result.page),
         image: category.image,
         noIndex: !hasPublishedProducts,
         noFollow: false,
@@ -49,24 +39,26 @@ export async function generateMetadata({
       });
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: CategoryPageProps) {
   const { slug } = await params;
-  const [category, catalog] = await Promise.all([
+  const [category, listing] = await Promise.all([
     getCategory(slug),
-    getCatalog(),
+    searchParams.then((values) =>
+      getCatalogListing(toCatalogSearchParams(values), slug),
+    ),
   ]);
 
   if (!category) {
     notFound();
   }
 
-  const populatedCategories = getPopulatedCategories(
-    catalog.categories,
-    catalog.products,
+  const populatedCategories = listing.categories.filter(
+    (item) => (item.productCount ?? 0) > 0,
   );
-  const categoryProducts = catalog.products.filter(
-    (product) => product.categorySlug === category.slug,
-  );
+  const categoryProducts = listing.result.products;
   const categoryDescription = `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`;
 
   return (
@@ -74,7 +66,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <CatalogStructuredData
         name={`Silver ${category.title} in Agra`}
         description={categoryDescription}
-        path={`/category/${category.slug}`}
+        path={getCatalogPagePath(`/category/${category.slug}`, listing.result.page)}
+        total={listing.result.total}
+        offset={(listing.result.page - 1) * listing.result.pageSize}
         products={categoryProducts}
       />
       <div className="site-container">
@@ -98,9 +92,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </header>
         <div className="mt-7">
           <CatalogBrowser
-            products={catalog.products}
+            products={listing.result.products}
             categories={populatedCategories}
             initialCategory={category.slug}
+            initialFilters={listing.filters}
+            initialPage={listing.result}
+            syncUrl
           />
         </div>
       </div>
