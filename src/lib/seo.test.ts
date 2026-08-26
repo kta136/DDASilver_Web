@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   createPageMetadata,
+  getProductIdentity,
   getProductSeoName,
   getProductSocialImage,
   getSocialImageProductUrl,
@@ -35,6 +36,33 @@ describe("SEO helpers", () => {
     });
     expect(metadata.twitter).toMatchObject({ card: "summary_large_image" });
     expect(metadata.robots).toBeUndefined();
+    expect(metadata).not.toHaveProperty("robots");
+  });
+
+  it("preserves distinguishing title endings instead of hard-truncating them", () => {
+    const title =
+      "Painted Lakshmi Ganesha Silver Idol Pair on Lotus Bases, 40 g";
+    expect(
+      createPageMetadata({
+        title,
+        description: "A silver idol pair.",
+        path: "/products/pair",
+      }).title,
+    ).toBe(title);
+  });
+
+  it("distinguishes product sizes without repeating a weight already in the name", () => {
+    expect(
+      getProductIdentity({
+        title: "HM-DG-1 — Durga Silver Idol",
+        reference: "HM-DG-1",
+        weightGrams: 17,
+      }),
+    ).toBe("Durga Silver Idol, 17 g");
+    expect(
+      getProductIdentity({ title: "DDA 10 Gram Silver Coin", weightGrams: 10 }),
+    ).toBe("DDA 10 Gram Silver Coin");
+    expect(getProductIdentity({ title: "Silver Box" })).toBe("Silver Box");
   });
 
   it("keeps private utility pages out of search results", () => {
@@ -68,10 +96,7 @@ describe("SEO helpers", () => {
 
   it("removes an internal item code from a product SEO name", () => {
     expect(
-      getProductSeoName(
-        "HM-GN-1 — Ganesha Silver Idol with Arch",
-        "HM-GN-1",
-      ),
+      getProductSeoName("HM-GN-1 — Ganesha Silver Idol with Arch", "HM-GN-1"),
     ).toBe("Ganesha Silver Idol with Arch");
   });
 

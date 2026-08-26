@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { catalogEditorialField } from "./catalog-editorial";
 import { catalogLimits, catalogSlugSchema } from "@/lib/catalog-domain";
 
 export const collectionType = defineType({
@@ -6,6 +7,7 @@ export const collectionType = defineType({
   title: "Collection",
   type: "document",
   fields: [
+    catalogEditorialField,
     defineField({
       name: "title",
       title: "Title",

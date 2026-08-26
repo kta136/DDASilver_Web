@@ -20,6 +20,7 @@ export type Category = {
   title: string;
   slug: string;
   description: string;
+  editorialSections?: CatalogEditorialSection[];
   image: CatalogImage;
   displayOrder: number;
   updatedAt?: string;
@@ -36,11 +37,17 @@ export type Collection = {
   title: string;
   slug: string;
   description: string;
+  editorialSections?: CatalogEditorialSection[];
   heroImage: CatalogImage;
   productSlugs: string[];
   displayOrder: number;
   updatedAt?: string;
   productCount?: number;
+};
+
+export type CatalogEditorialSection = {
+  heading: string;
+  body: string;
 };
 
 export type ProductMaterial = (typeof productMaterials)[number];
@@ -64,6 +71,7 @@ export type Product = {
   title: string;
   slug: string;
   shortDescription: string;
+  seoTitle?: string;
   images: CatalogImage[];
   categorySlug: string;
   categoryKind?: CategoryKind;

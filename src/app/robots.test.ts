@@ -17,6 +17,19 @@ describe("robots metadata route", () => {
           allow: ["/", "/api/og/product/"],
           disallow: ["/studio", "/studio/", "/api/", "/auth/"],
         },
+        {
+          userAgent: expect.arrayContaining([
+            "OAI-SearchBot",
+            "PerplexityBot",
+            "Claude-SearchBot",
+          ]),
+          allow: ["/", "/api/og/product/"],
+          disallow: ["/studio", "/studio/", "/api/", "/auth/"],
+        },
+        {
+          userAgent: ["GPTBot", "ClaudeBot", "Google-Extended"],
+          disallow: "/",
+        },
       ],
       sitemap: "http://localhost:3000/sitemap.xml",
       host: "http://localhost:3000",

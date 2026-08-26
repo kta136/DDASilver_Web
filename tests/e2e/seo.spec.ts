@@ -29,18 +29,16 @@ test.describe("production SEO output", () => {
       headers: crawlerHeaders,
     });
     const html = await productResponse.text();
-    const canonical = html.match(
-      /<link rel="canonical" href="([^"]+)"/,
-    )?.[1];
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
     const socialImage = html.match(
       /<meta property="og:image" content="([^"]+)"/,
     )?.[1];
-    const jsonLd = [...html.matchAll(
-      /<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
-    )].map((match) => JSON.parse(match[1]) as Record<string, unknown>);
-    const productSchema = jsonLd.find(
-      (entry) => entry["@type"] === "Product",
-    );
+    const jsonLd = [
+      ...html.matchAll(
+        /<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+      ),
+    ].map((match) => JSON.parse(match[1]) as Record<string, unknown>);
+    const productSchema = jsonLd.find((entry) => entry["@type"] === "Product");
 
     expect(productResponse.ok()).toBe(true);
     expect(html).toMatch(/<title>[^<]+ \| DDA Silver<\/title>/);
@@ -61,8 +59,12 @@ test.describe("production SEO output", () => {
     });
 
     expect(socialImageResponse.ok()).toBe(true);
-    expect(socialImageResponse.headers()["content-type"]).toContain("image/png");
-    expect((await socialImageResponse.body()).byteLength).toBeGreaterThan(10_000);
+    expect(socialImageResponse.headers()["content-type"]).toContain(
+      "image/png",
+    );
+    expect((await socialImageResponse.body()).byteLength).toBeGreaterThan(
+      10_000,
+    );
   });
 
   test("keeps crawler directives and filtered canonicals consistent", async ({
@@ -87,5 +89,37 @@ test.describe("production SEO output", () => {
       '<link rel="canonical" href="https://www.ddasilver.com/products"',
     );
     expect(contact).not.toContain("still required before launch");
+    const businessProfile = "https://maps.app.goo.gl/MtSbKmvTjxZHNxdZ7";
+    expect(contact).toContain(`href="${businessProfile}"`);
+    expect(contact).toContain(`"hasMap":"${businessProfile}"`);
+    expect(contact).toContain(`"sameAs":["${businessProfile}"]`);
+    expect(contact).toContain('"postalCode":"282002"');
+    const accountResponse = await request.get("/api/auth/me", {
+      headers: crawlerHeaders,
+    });
+    expect(accountResponse.headers()["x-robots-tag"]).toContain("noindex");
+    expect(robots).toContain("OAI-SearchBot");
+    expect(robots).toContain("Claude-SearchBot");
+    expect(filteredCatalog).toContain("max-image-preview:large");
+  });
+
+  test("renders real featured products and crawlable buying guides", async ({
+    request,
+  }) => {
+    const home = await (await request.get("/")).text();
+    expect(home).not.toContain(
+      "Concept image of an ornate engraved silver bowl",
+    );
+    expect(home).toContain(
+      "/products/multicolor-enamel-petal-thali-set-9in-765g",
+    );
+    const guide = await (
+      await request.get("/guides/choosing-silver-gifts")
+    ).text();
+    expect(guide).toContain("How to choose a silver gift");
+    expect(guide).toContain('href="/collections/silver-wedding-gifts"');
+    const gold = await (await request.get("/category/gold")).text();
+    expect(gold).toContain("Gold Coins &amp; Bars in Agra | DDA Silver");
+    expect(gold).not.toContain("Silver Gold Coins");
   });
 });

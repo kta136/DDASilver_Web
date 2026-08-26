@@ -12,6 +12,7 @@ import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 const legalLinks = [
+  { label: "Buying guides", href: "/guides" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
   { label: "Rates disclaimer", href: "/rates-disclaimer" },
@@ -25,8 +26,8 @@ export function SiteFooter() {
         <div>
           <BrandMark compact />
           <p className="mt-6 max-w-md text-sm leading-7 text-ink-muted">
-            A modern silver showroom in Agra for jewellery, coins, pooja
-            pieces, thoughtful gifts, and homeware.
+            A modern silver showroom in Agra for jewellery, coins, pooja pieces,
+            thoughtful gifts, and homeware.
           </p>
           <a
             href={siteConfig.sisterBrandUrl}

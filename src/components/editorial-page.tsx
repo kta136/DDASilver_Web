@@ -1,9 +1,11 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import Link from "next/link";
 
 type EditorialSection = {
   title: string;
   paragraphs: string[];
   bullets?: string[];
+  links?: { label: string; href: string }[];
 };
 
 type EditorialPageProps = {
@@ -60,6 +62,15 @@ export function EditorialPage({
                       {section.bullets.map((bullet) => (
                         <li key={bullet} className="list-disc pl-1">
                           {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {section.links?.length ? (
+                    <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                      {section.links.map((link) => (
+                        <li key={link.href}>
+                          <Link href={link.href}>{link.label}</Link>
                         </li>
                       ))}
                     </ul>

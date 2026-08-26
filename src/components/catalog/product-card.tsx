@@ -8,10 +8,9 @@ import {
   materialLabels,
   purityLabels,
 } from "@/lib/catalog-labels";
-import {
-  shouldContainProductImage,
-} from "@/lib/catalog-image-presentation";
+import { shouldContainProductImage } from "@/lib/catalog-image-presentation";
 import type { Product } from "@/types/catalog";
+import { getProductIdentity } from "@/lib/seo";
 
 type ProductCardProps = {
   product: Product;
@@ -50,15 +49,10 @@ export function ProductCard({
 
   return (
     <article className="group">
-      <Link
-        href={`/products/${product.slug}`}
-        className="block no-underline"
-      >
+      <Link href={`/products/${product.slug}`} className="block no-underline">
         <div
           className={`relative overflow-hidden bg-[#ece8e3] ${
-            compactImage
-              ? "aspect-square"
-              : "aspect-[4/5]"
+            compactImage ? "aspect-square" : "aspect-[4/5]"
           }`}
         >
           {image ? (
@@ -73,7 +67,7 @@ export function ProductCard({
                   ? "object-contain transition duration-500"
                   : product.coinShape
                     ? "object-cover transition duration-500"
-                  : "object-cover transition duration-500 group-hover:scale-[1.025]"
+                    : "object-cover transition duration-500 group-hover:scale-[1.025]"
               }
               style={{ objectPosition: image.objectPosition ?? "center" }}
             />
@@ -82,7 +76,7 @@ export function ProductCard({
         <div className="flex items-start justify-between gap-4 border-b border-line py-4">
           <div>
             <Heading className="font-display text-2xl font-semibold leading-tight">
-              {product.title}
+              {getProductIdentity(product)}
             </Heading>
             <p className="mt-1 text-xs uppercase tracking-[0.16em] text-ink-muted">
               {details.length > 0 ? details.join(" · ") : "Enquire for details"}

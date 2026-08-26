@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 
 import { isSanityImageUrl } from "@/lib/sanity-image";
 import { siteConfig } from "@/lib/site";
-import type { CatalogImage } from "@/types/catalog";
+import type { CatalogImage, Product } from "@/types/catalog";
 
-const MAX_PAGE_TITLE_LENGTH = 48;
-const MAX_ABSOLUTE_TITLE_LENGTH = 65;
 const MAX_DESCRIPTION_LENGTH = 160;
 
 export const productSocialImageSize = {
@@ -14,10 +12,11 @@ export const productSocialImageSize = {
 } as const;
 
 export const defaultSocialImage: CatalogImage = {
-  src: "/images/mockup/hero-silver-bowl-social.jpg",
-  alt: "Ornate engraved silver bowl representing DDA Silver in Agra",
-  width: 1200,
-  height: 630,
+  // Approved photograph already published for DDA-UT-PT-2201; no concept stock.
+  src: "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+  alt: "DDA Silver pooja thali set with a multicolor enamel petal border and coordinated ritual vessels",
+  width: 1254,
+  height: 1254,
 };
 
 type PageMetadataOptions = {
@@ -39,7 +38,10 @@ export function getProductSeoName(title: string, reference?: string) {
   const normalizedTitle = title.replace(/\s+/g, " ").trim();
   const normalizedReference = reference?.trim();
 
-  if (!normalizedReference || !normalizedTitle.startsWith(normalizedReference)) {
+  if (
+    !normalizedReference ||
+    !normalizedTitle.startsWith(normalizedReference)
+  ) {
     return normalizedTitle;
   }
 
@@ -49,6 +51,16 @@ export function getProductSeoName(title: string, reference?: string) {
     .trim();
 
   return descriptiveTitle || normalizedTitle;
+}
+
+export function getProductIdentity(
+  product: Pick<Product, "title" | "reference" | "weightGrams">,
+) {
+  const name = getProductSeoName(product.title, product.reference);
+  // Keep the distinguishing measurement in the name, not beyond a hard cut-off.
+  return product.weightGrams && !/\b\d+(?:\.\d+)?\s*(?:g|grams?)\b/i.test(name)
+    ? `${name}, ${product.weightGrams} g`
+    : name;
 }
 
 export function getProductSocialImage(
@@ -111,14 +123,8 @@ export function createPageMetadata({
   noIndex = false,
   noFollow = noIndex,
 }: PageMetadataOptions): Metadata {
-  const pageTitle = truncateSeoText(
-    title,
-    absoluteTitle ? MAX_ABSOLUTE_TITLE_LENGTH : MAX_PAGE_TITLE_LENGTH,
-  );
-  const metaDescription = truncateSeoText(
-    description,
-    MAX_DESCRIPTION_LENGTH,
-  );
+  const pageTitle = title.replace(/\s+/g, " ").trim();
+  const metaDescription = truncateSeoText(description, MAX_DESCRIPTION_LENGTH);
   const renderedTitle = absoluteTitle
     ? pageTitle
     : `${pageTitle} | ${siteConfig.name}`;
@@ -150,12 +156,14 @@ export function createPageMetadata({
       description: metaDescription,
       images: [{ url: imageUrl, alt: image.alt }],
     },
-    robots: noIndex
+    ...(noIndex
       ? {
-          index: false,
-          follow: !noFollow,
-          googleBot: { index: false, follow: !noFollow },
+          robots: {
+            index: false,
+            follow: !noFollow,
+            googleBot: { index: false, follow: !noFollow },
+          },
         }
-      : undefined,
+      : {}),
   };
 }

@@ -2,9 +2,11 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { CatalogEditorial } from "@/components/catalog/catalog-editorial";
 import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
 import { getCatalogPagePath, toCatalogSearchParams } from "@/lib/catalog-url";
 import { createPageMetadata } from "@/lib/seo";
+import { getCategorySeoName } from "@/lib/catalog-seo";
 import { getCatalogListing, getCategory } from "@/sanity/lib/catalog";
 
 type CategoryPageProps = {
@@ -12,19 +14,27 @@ type CategoryPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export async function generateMetadata({ params, searchParams }: CategoryPageProps) {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: CategoryPageProps) {
   const { slug } = await params;
   const [category, listing] = await Promise.all([
     getCategory(slug),
-    searchParams.then((values) => getCatalogListing(toCatalogSearchParams(values), slug, "")),
+    searchParams.then((values) =>
+      getCatalogListing(toCatalogSearchParams(values), slug, ""),
+    ),
   ]);
   const hasPublishedProducts = (category?.productCount ?? 0) > 0;
 
   return category
     ? createPageMetadata({
-        title: `Silver ${category.title} in Agra`,
+        title: `${getCategorySeoName(category)} in Agra`,
         description: `Explore ${category.title.toLowerCase()} at DDA Silver in Agra. ${category.description}`,
-        path: getCatalogPagePath(`/category/${category.slug}`, listing.result.page),
+        path: getCatalogPagePath(
+          `/category/${category.slug}`,
+          listing.result.page,
+        ),
         image: category.image,
         noIndex: !hasPublishedProducts,
         noFollow: false,
@@ -64,9 +74,12 @@ export default async function CategoryPage({
   return (
     <main id="main-content" className="pt-6 pb-12 sm:pt-8 sm:pb-14 lg:pt-9">
       <CatalogStructuredData
-        name={`Silver ${category.title} in Agra`}
+        name={`${getCategorySeoName(category)} in Agra`}
         description={categoryDescription}
-        path={getCatalogPagePath(`/category/${category.slug}`, listing.result.page)}
+        path={getCatalogPagePath(
+          `/category/${category.slug}`,
+          listing.result.page,
+        )}
         total={listing.result.total}
         offset={(listing.result.page - 1) * listing.result.pageSize}
         products={categoryProducts}
@@ -100,6 +113,9 @@ export default async function CategoryPage({
             syncUrl
           />
         </div>
+        {listing.result.page === 1 ? (
+          <CatalogEditorial sections={category.editorialSections} />
+        ) : null}
       </div>
     </main>
   );

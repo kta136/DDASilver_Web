@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   getCatalogPageStructuredData,
+  getCategorySeoName,
   getPopulatedCategories,
   getPopulatedCollections,
   getProductStructuredDataProperties,
@@ -33,31 +34,42 @@ const product: Product = {
 const categories = [
   { title: "Coin", slug: "coin" },
   { title: "Purse", slug: "purse" },
-].map(
-  ({ title, slug }, displayOrder): Category => ({
-    title,
-    slug,
-    description: `${title} products`,
-    image,
-    displayOrder,
-  }),
-);
+].map(({ title, slug }, displayOrder): Category => ({
+  title,
+  slug,
+  description: `${title} products`,
+  image,
+  displayOrder,
+}));
 
 const collections = [
   { title: "Gifts", slug: "gifts" },
   { title: "Coming Soon", slug: "coming-soon" },
-].map(
-  ({ title, slug }, displayOrder): Collection => ({
-    title,
-    slug,
-    description: `${title} collection`,
-    heroImage: image,
-    productSlugs: [],
-    displayOrder,
-  }),
-);
+].map(({ title, slug }, displayOrder): Collection => ({
+  title,
+  slug,
+  description: `${title} collection`,
+  heroImage: image,
+  productSlugs: [],
+  displayOrder,
+}));
 
 describe("catalog SEO helpers", () => {
+  it("does not label gold categories as silver or duplicate the material", () => {
+    expect(
+      getCategorySeoName({
+        title: "Gold Coins & Bars",
+        slug: "gold",
+        productKind: "gold",
+      }),
+    ).toBe("Gold Coins & Bars");
+    expect(getCategorySeoName({ title: "Silver Gifts", slug: "gifts" })).toBe(
+      "Silver Gifts",
+    );
+    expect(getCategorySeoName({ title: "Utensils", slug: "utensils" })).toBe(
+      "Silver Utensils",
+    );
+  });
   it("keeps only categories and collections backed by published products", () => {
     expect(getPopulatedCategories(categories, [product])).toEqual([
       categories[0],
@@ -121,9 +133,8 @@ describe("catalog SEO helpers", () => {
             url: "http://localhost:3000/products/silver-coin",
             item: {
               "@type": "Product",
-              "@id":
-                "http://localhost:3000/products/silver-coin#product",
-              name: "Silver Coin",
+              "@id": "http://localhost:3000/products/silver-coin#product",
+              name: "Silver Coin, 50 g",
               url: "http://localhost:3000/products/silver-coin",
             },
           },

@@ -128,6 +128,12 @@ export type Collection = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  editorialSections?: Array<{
+    heading?: string;
+    body?: string;
+    _type: "catalogEditorialSection";
+    _key: string;
+  }>;
   title?: string;
   slug?: Slug;
   description?: string;
@@ -188,6 +194,7 @@ export type Product = {
   title?: string;
   slug?: Slug;
   shortDescription?: string;
+  seoTitle?: string;
   gallery?: Array<{
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -245,6 +252,12 @@ export type Category = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  editorialSections?: Array<{
+    heading?: string;
+    body?: string;
+    _type: "catalogEditorialSection";
+    _key: string;
+  }>;
   title?: string;
   slug?: Slug;
   description?: string;
@@ -387,12 +400,13 @@ export type AllSanitySchemaTypes =
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productsQuery
-// Query: *[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {  _id, title, "slug": slug.current, shortDescription,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
+// Query: *[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
 export type ProductsQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   shortDescription: string | null;
+  seoTitle: string | null;
   categorySlug: string | null;
   categoryKind:
     "coin" | "general" | "gold" | "idol" | "jhula" | "purse" | "utensil" | null;
@@ -447,12 +461,13 @@ export type ProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productQuery
-// Query: *[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {  _id, title, "slug": slug.current, shortDescription,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
+// Query: *[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
 export type ProductQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   shortDescription: string | null;
+  seoTitle: string | null;
   categorySlug: string | null;
   categoryKind:
     "coin" | "general" | "gold" | "idol" | "jhula" | "purse" | "utensil" | null;
@@ -507,12 +522,72 @@ export type ProductQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: featuredProductsQuery
-// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
 export type FeaturedProductsQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   shortDescription: string | null;
+  seoTitle: string | null;
+  categorySlug: string | null;
+  categoryKind:
+    "coin" | "general" | "gold" | "idol" | "jhula" | "purse" | "utensil" | null;
+  collectionSlugs: Array<never> | Array<string | null>;
+  featured: boolean | false;
+  displayOrder: number | null;
+  reference: string | null;
+  material: "gold" | "silver" | null;
+  purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+  weightGrams: number | null;
+  heightInches: number | null;
+  widthInches: number | null;
+  depthInches: number | null;
+  diameterInches: number | null;
+  singhasanWidthInches: number | null;
+  singhasanDepthInches: number | null;
+  sizeVariants:
+    | Array<{
+        weightGrams: number | null;
+        diameterInches: number | null;
+      }>
+    | Array<never>;
+  utensilType:
+    | "bottle"
+    | "bowl"
+    | "glass"
+    | "jug"
+    | "kalash"
+    | "plate"
+    | "pooja-thali-set"
+    | "spoon"
+    | null;
+  idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+  deities:
+    | Array<{
+        title: string | null;
+        slug: string | null;
+      }>
+    | Array<never>;
+  coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
+  updatedAt: string;
+  images: Array<{
+    src: string | null;
+    alt: string | null;
+    width: number | null;
+    height: number | null;
+    objectPosition: "center center" | "left center" | "right center";
+  }> | null;
+}>;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: homepageFallbackProductsQuery
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+export type HomepageFallbackProductsQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: string | null;
+  shortDescription: string | null;
+  seoTitle: string | null;
   categorySlug: string | null;
   categoryKind:
     "coin" | "general" | "gold" | "idol" | "jhula" | "purse" | "utensil" | null;
@@ -565,12 +640,13 @@ export type FeaturedProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: relatedProductsQuery
-// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {  _id, title, "slug": slug.current, shortDescription,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
 export type RelatedProductsQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   shortDescription: string | null;
+  seoTitle: string | null;
   categorySlug: string | null;
   categoryKind:
     "coin" | "general" | "gold" | "idol" | "jhula" | "purse" | "utensil" | null;
@@ -623,13 +699,14 @@ export type RelatedProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productPageQuery
-// Query: {  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)] | order(displayOrder asc, _id asc)[$start...$end] {  _id, title, "slug": slug.current, shortDescription,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}},  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)])}
+// Query: {  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)] | order(displayOrder asc, _id asc)[$start...$end] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}},  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)])}
 export type ProductPageQueryResult = {
   products: Array<{
     _id: string;
     title: string | null;
     slug: string | null;
     shortDescription: string | null;
+    seoTitle: string | null;
     categorySlug: string | null;
     categoryKind:
       | "coin"
@@ -691,12 +768,16 @@ export type ProductPageQueryResult = {
 
 // Source: src/sanity/lib/queries.ts
 // Variable: categoriesQuery
-// Query: *[_type == "category"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, "image": image {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, displayOrder,  productKind, showOnHomepage, homepageOrder, homepageImageSource,  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "updatedAt": _updatedAt}
+// Query: *[_type == "category"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, displayOrder,  productKind, showOnHomepage, homepageOrder, homepageImageSource,  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "updatedAt": _updatedAt}
 export type CategoriesQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   description: string | null;
+  editorialSections: Array<{
+    heading: string | null;
+    body: string | null;
+  }> | null;
   image: {
     src: string | null;
     alt: string | null;
@@ -723,12 +804,16 @@ export type CategoriesQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: collectionsQuery
-// Query: *[_type == "collection"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, "heroImage": heroImage {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "productSlugs": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref]),  displayOrder, "updatedAt": _updatedAt}
+// Query: *[_type == "collection"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "heroImage": heroImage {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "productSlugs": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref]),  displayOrder, "updatedAt": _updatedAt}
 export type CollectionsQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: string | null;
   description: string | null;
+  editorialSections: Array<{
+    heading: string | null;
+    body: string | null;
+  }> | null;
   heroImage: {
     src: string | null;
     alt: string | null;
@@ -791,13 +876,14 @@ export type SitemapProductsQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, "slug": slug.current, shortDescription,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductsQueryResult;
-    '*[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {\n  _id, title, "slug": slug.current, shortDescription,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductQueryResult;
-    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': FeaturedProductsQueryResult;
-    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {\n  _id, title, "slug": slug.current, shortDescription,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': RelatedProductsQueryResult;
-    '{\n  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n] | order(displayOrder asc, _id asc)[$start...$end] {\n  _id, title, "slug": slug.current, shortDescription,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}},\n  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n])\n}': ProductPageQueryResult;
-    '*[_type == "category"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, "image": image {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, displayOrder,\n  productKind, showOnHomepage, homepageOrder, homepageImageSource,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),\n  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "updatedAt": _updatedAt\n}': CategoriesQueryResult;
-    '*[_type == "collection"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, "heroImage": heroImage {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "productSlugs": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref]),\n  displayOrder, "updatedAt": _updatedAt\n}': CollectionsQueryResult;
+    '*[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductsQueryResult;
+    '*[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': FeaturedProductsQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': HomepageFallbackProductsQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': RelatedProductsQueryResult;
+    '{\n  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n] | order(displayOrder asc, _id asc)[$start...$end] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}},\n  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n])\n}': ProductPageQueryResult;
+    '*[_type == "category"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, displayOrder,\n  productKind, showOnHomepage, homepageOrder, homepageImageSource,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),\n  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "updatedAt": _updatedAt\n}': CategoriesQueryResult;
+    '*[_type == "collection"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "heroImage": heroImage {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "productSlugs": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref]),\n  displayOrder, "updatedAt": _updatedAt\n}': CollectionsQueryResult;
     '*[_type == "category"] {\n  "categorySlug": slug.current,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id]),\n  "purities": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].purity)[defined(@)],\n  "idolConstructions": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].idolConstruction)[defined(@)],\n  "coinShapes": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].coinShape)[defined(@)],\n  "utensilTypes": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].utensilType)[defined(@)],\n  "deities": (*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].deities[]->{title, "slug": slug.current})[defined(slug)]\n}': CatalogFacetsQueryResult;
     '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, reference, "slug": slug.current,\n  "images": gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "categorySlug": category->slug.current,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "updatedAt": _updatedAt\n}': SitemapProductsQueryResult;
   }

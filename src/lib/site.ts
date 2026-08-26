@@ -1,3 +1,7 @@
+const googleBusinessUrl =
+  process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ||
+  "https://maps.app.goo.gl/MtSbKmvTjxZHNxdZ7";
+
 export const siteConfig = {
   name: "DDA Silver",
   description:
@@ -7,15 +11,16 @@ export const siteConfig = {
   phoneHref: "tel:+915624099980",
   whatsappDisplay: "+91 7060001491",
   whatsappNumber: "917060001491",
-  address: "MG Road, opposite Nagar Nigam, Agra",
+  address: "MG Road, opposite Nagar Nigam, Agra, Uttar Pradesh 282002",
+  postalCode: "282002",
+  // Place coordinates from the official Maps profile, not its camera position.
+  coordinates: { latitude: 27.2032231, longitude: 78.0046043 },
   hours: "Tuesday–Sunday, 12:00–20:00",
-  mapUrl:
-    "https://www.google.com/maps/search/?api=1&query=DDA+Silver%2C+MG+Road%2C+opposite+Nagar+Nigam%2C+Agra",
-  googleBusinessUrl: process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL,
+  mapUrl: googleBusinessUrl,
+  googleBusinessUrl,
   googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
   bingSiteVerification: process.env.BING_SITE_VERIFICATION,
-  androidUrl:
-    "https://play.google.com/store/apps/details?id=lmx.dda.bullion",
+  androidUrl: "https://play.google.com/store/apps/details?id=lmx.dda.bullion",
   iosUrl: "https://apps.apple.com/in/app/dda-silver/id1565809906",
   sisterBrandUrl: "https://ddajewels.com",
   tvUrl: "https://ddajewels.com/tv",

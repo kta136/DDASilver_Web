@@ -5,7 +5,7 @@ import {
   purityLabels,
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
-import { getProductSeoName, toAbsoluteUrl } from "@/lib/seo";
+import { getProductIdentity, toAbsoluteUrl } from "@/lib/seo";
 import type { Category, Collection, Product } from "@/types/catalog";
 
 type CatalogPageStructuredDataOptions = {
@@ -18,6 +18,17 @@ type CatalogPageStructuredDataOptions = {
 };
 
 const MAX_STRUCTURED_CATALOG_ITEMS = 100;
+
+export function getCategorySeoName(
+  category: Pick<Category, "title" | "productKind" | "slug">,
+) {
+  const title = category.title.trim();
+  return category.productKind === "gold" ||
+    category.slug === "gold" ||
+    /\b(?:silver|gold)\b/i.test(title)
+    ? title
+    : `Silver ${title}`;
+}
 
 export function getPopulatedCategories(
   categories: Category[],
@@ -81,7 +92,7 @@ export function getCatalogPageStructuredData({
             item: {
               "@type": "Product",
               "@id": `${productUrl}#product`,
-              name: getProductSeoName(product.title, product.reference),
+              name: getProductIdentity(product),
               url: productUrl,
             },
           };

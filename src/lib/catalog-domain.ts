@@ -113,6 +113,7 @@ export const productDocumentSchema = z.object({
   title: z.string().trim().min(1).max(catalogLimits.title),
   slug: z.object({ current: catalogSlugSchema }),
   shortDescription: z.string().trim().min(1).max(catalogLimits.description),
+  seoTitle: z.string().trim().min(1).max(100).optional(),
   gallery: z
     .array(
       z.object({

@@ -488,8 +488,7 @@ function getProductTitle(product: CoinProduct) {
     return `DDA ${product.weight} Gram Silver Coin`;
   }
 
-  const shapeLabel =
-    product.shape === "oval" ? "Oval" : "Rectangle";
+  const shapeLabel = product.shape === "oval" ? "Oval" : "Rectangle";
   return `DDA ${product.weight} Gram ${shapeLabel} Silver Coin`;
 }
 
@@ -717,19 +716,17 @@ async function main() {
       requestedSeries === "design-10g"
         ? "sanity:upload-new-10g-coins"
         : requestedSeries === "lakshmi-ganesh"
-        ? "sanity:upload-lakshmi-ganesh-coins"
-        : requestedShape === "oval"
-        ? "sanity:upload-oval-coins"
-        : requestedShape === "square"
-          ? "sanity:upload-square-coins"
-          : requestedShape === "rectangle"
-          ? "sanity:upload-rectangle-coins"
-          : "sanity:upload-coins";
+          ? "sanity:upload-lakshmi-ganesh-coins"
+          : requestedShape === "oval"
+            ? "sanity:upload-oval-coins"
+            : requestedShape === "square"
+              ? "sanity:upload-square-coins"
+              : requestedShape === "rectangle"
+                ? "sanity:upload-rectangle-coins"
+                : "sanity:upload-coins";
 
     console.log("\nDry run only. No assets or documents will be written.");
-    console.log(
-      `Run \`npm run ${commandName}:apply\` to upload and publish.`,
-    );
+    console.log(`Run \`npm run ${commandName}:apply\` to upload and publish.`);
     console.log(
       `Run \`npm run ${commandName}:overwrite\` only when existing script-managed products should be replaced.\n`,
     );
@@ -808,6 +805,7 @@ async function main() {
         _ref: categoryId,
       },
       purity: "99.80",
+      weightGrams: product.weight,
       coinShape: product.shape,
       featured: false,
       displayOrder: product.displayOrder,

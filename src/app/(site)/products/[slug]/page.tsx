@@ -9,7 +9,7 @@ import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
 import { getProductStructuredDataProperties } from "@/lib/catalog-seo";
 import {
   createPageMetadata,
-  getProductSeoName,
+  getProductIdentity,
   getProductSocialImage,
   serializeJsonLd,
   toAbsoluteUrl,
@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: ProductPageProps) {
     });
   }
 
-  const productName = getProductSeoName(product.title, product.reference);
+  const productName = getProductIdentity(product);
 
   return createPageMetadata({
-    title: `${productName} in Agra`,
+    title: product.seoTitle || productName,
     description: `${productName} at DDA Silver in Agra. ${product.shortDescription}`,
     path: `/products/${product.slug}`,
     image: getProductSocialImage(product.slug, productName),
@@ -61,7 +61,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const productName = getProductSeoName(product.title, product.reference);
+  const productName = getProductIdentity(product);
 
   const category = catalog.categories.find(
     (item) => item.slug === product.categorySlug,
@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   },
                 ]
               : []),
-            { label: product.title },
+            { label: productName },
           ]}
         />
       </div>

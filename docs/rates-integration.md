@@ -56,6 +56,27 @@ session value is never exposed to browser JavaScript or placed in a URL.
 
 ## Page behavior
 
+### Public HTML reference snapshot
+
+The rates route also renders a small anonymous snapshot in its initial HTML.
+`src/lib/rates/public-snapshot.ts` deliberately does not use the authenticated
+proxy, request headers, cookies, or an incoming `view` parameter. It requests
+the configured DDAJewels origin's fixed `/api/v1/rates/current` endpoint with
+credentials omitted and redirects rejected. Only `view: default`, a live feed,
+and timestamps within 90 seconds (at most 30 seconds ahead) are accepted.
+
+The upstream response has a 15-second cache lifetime and a 3-second timeout.
+The route waits for an incoming request before checking freshness, so a build
+cannot freeze a historical rate into the page. The explicit public item-ID
+and unit allowlist must be reviewed if DDAJewels changes its public feed.
+Only names, units, timestamps and public final values are serialized; buying
+rates, premiums, sources and other private fields are dropped. Browser-rendered
+snapshot figures disappear when their timestamp reaches 90 seconds old.
+Closed, stale, malformed or unavailable feeds show an unavailable message.
+
+The existing live, session-aware experience remains separate. Reference values
+are not product offers or final retail quotations.
+
 - Customer and market-reference rows follow the complete server-authorized
   item set and deterministic upstream order.
 - Approved customers can drag, move, hide, restore, and reset rows. New items

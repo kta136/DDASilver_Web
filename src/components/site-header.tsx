@@ -26,8 +26,7 @@ const navigation = [
 ];
 
 type AccountState =
-  | { status: "guest" }
-  | { status: "user"; name: string; authStatus: string };
+  { status: "guest" } | { status: "user"; name: string; authStatus: string };
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -223,7 +222,10 @@ export function SiteHeader() {
             </div>
           </li>
           {navigation.map((item) => (
-            <li key={item.href} className="border-b border-line last:border-b-0">
+            <li
+              key={item.href}
+              className="border-b border-line last:border-b-0"
+            >
               <Link
                 href={item.href}
                 className="flex min-h-14 items-center justify-between py-3 font-semibold no-underline"
@@ -274,6 +276,7 @@ function DesktopAccount({
     return (
       <a
         href={loginHref(pathname)}
+        rel="nofollow"
         className="inline-flex min-h-11 items-center gap-2 rounded-full border border-copper px-5 py-2 text-sm font-bold text-ink no-underline transition-colors hover:bg-copper hover:text-white"
         data-analytics="login_start"
         data-analytics-placement="header"
@@ -336,6 +339,7 @@ function MobileAccount({
     return (
       <a
         href={loginHref(pathname)}
+        rel="nofollow"
         className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-copper px-5 py-3 font-bold text-white no-underline"
         data-analytics="login_start"
         data-analytics-placement="mobile_menu"

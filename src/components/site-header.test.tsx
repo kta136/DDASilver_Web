@@ -73,10 +73,8 @@ describe("<SiteHeader />", () => {
     const loginLinks = screen.getAllByRole("link", { name: "Login" });
     expect(loginLinks).toHaveLength(2);
     for (const link of loginLinks) {
-      expect(link).toHaveAttribute(
-        "href",
-        "/api/auth/login?returnTo=%2F",
-      );
+      expect(link).toHaveAttribute("rel", "nofollow");
+      expect(link).toHaveAttribute("href", "/api/auth/login?returnTo=%2F");
     }
   });
 

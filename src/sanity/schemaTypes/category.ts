@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { catalogEditorialField } from "./catalog-editorial";
 import {
   catalogLimits,
   catalogSlugSchema,
@@ -10,6 +11,7 @@ export const categoryType = defineType({
   title: "Category",
   type: "document",
   fields: [
+    catalogEditorialField,
     defineField({
       name: "title",
       title: "Title",

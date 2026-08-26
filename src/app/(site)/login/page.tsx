@@ -45,14 +45,18 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             securely handed off.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted">
-            DDAJewels remains responsible for passwords, Google sign-in,
-            signup, and account recovery. DDA Silver receives only a
-            short-lived authorization code and keeps its own secure session.
+            DDAJewels remains responsible for passwords, Google sign-in, signup,
+            and account recovery. DDA Silver receives only a short-lived
+            authorization code and keeps its own secure session.
           </p>
         </div>
 
         <aside className="border border-line bg-white p-7 sm:p-9">
-          <ShieldCheckIcon size={34} className="text-copper" aria-hidden="true" />
+          <ShieldCheckIcon
+            size={34}
+            className="text-copper"
+            aria-hidden="true"
+          />
           <h2 className="font-display mt-5 text-4xl font-semibold">
             Continue to DDAJewels
           </h2>
@@ -73,6 +77,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             // eslint-disable-next-line @next/next/no-html-link-for-pages
             <a
               href="/api/auth/login?returnTo=%2Frates"
+              rel="nofollow"
               className="button-primary mt-7 w-full no-underline"
               data-analytics="login_start"
               data-analytics-placement="login_page"

@@ -1,13 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
-import {
-  idolConstructionLabels,
-  purityLabels,
-} from "@/lib/catalog-labels";
-import {
-  getProductSeoName,
-  getSocialImageProductUrl,
-} from "@/lib/seo";
+import { idolConstructionLabels, purityLabels } from "@/lib/catalog-labels";
+import { getProductIdentity, getSocialImageProductUrl } from "@/lib/seo";
 import type { Product } from "@/types/catalog";
 
 type ProductSocialImageProps = {
@@ -15,8 +9,9 @@ type ProductSocialImageProps = {
 };
 
 export function ProductSocialImage({ product }: ProductSocialImageProps) {
-  const productName = getProductSeoName(product.title, product.reference);
-  const fontSize = productName.length > 52 ? 45 : productName.length > 36 ? 52 : 60;
+  const productName = getProductIdentity(product);
+  const fontSize =
+    productName.length > 52 ? 45 : productName.length > 36 ? 52 : 60;
   const details = [
     product.purity ? `${purityLabels[product.purity]} purity` : null,
     product.weightGrams ? `${product.weightGrams} g` : null,
@@ -144,7 +139,9 @@ export function ProductSocialImage({ product }: ProductSocialImageProps) {
             textTransform: "uppercase",
           }}
         >
-          {product.reference ? `Item ${product.reference}` : "Silver craftsmanship"}
+          {product.reference
+            ? `Item ${product.reference}`
+            : "Silver craftsmanship"}
         </div>
       </div>
 

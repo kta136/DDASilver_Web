@@ -44,6 +44,7 @@ describe("shared Sanity write contract", () => {
     { weightGrams: -1 },
     { displayOrder: 100001 },
     { shortDescription: "" },
+    { seoTitle: "x".repeat(101) },
     { widthInches: 1001 },
     { purity: "fake" },
   ])("rejects invalid metadata %j", (invalid) => {

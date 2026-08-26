@@ -10,7 +10,7 @@ import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
 import { getHomepageCategories } from "@/lib/homepage-categories";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, defaultSocialImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { getHomepageCatalog } from "@/sanity/lib/catalog";
@@ -27,8 +27,7 @@ export default async function HomePage() {
   const catalog = await getHomepageCatalog();
   const { categories, products } = catalog;
   const homepageCategories = getHomepageCategories(categories);
-  const featured = products
-    .filter((product) => product.featured)
+  const featured = [...products]
     .sort((a, b) => a.displayOrder - b.displayOrder)
     .slice(0, 4);
 
@@ -69,17 +68,21 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[22rem] overflow-hidden bg-[#d8d4d0] sm:min-h-[27rem] lg:min-h-full">
+          <Link
+            href="/products/multicolor-enamel-petal-thali-set-9in-765g"
+            aria-label="View the multicolor enamel silver pooja thali set"
+            className="relative min-h-[22rem] overflow-hidden bg-[#f7f3ed] sm:min-h-[27rem] lg:min-h-full"
+          >
             <Image
-              src="/images/mockup/hero-silver-bowl.webp"
-              alt="Concept image of an ornate engraved silver bowl"
+              src={defaultSocialImage.src}
+              alt={defaultSocialImage.alt}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover"
+              className="object-contain"
               style={{ objectPosition: "center" }}
             />
-          </div>
+          </Link>
         </div>
       </section>
 

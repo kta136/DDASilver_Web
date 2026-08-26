@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { guides } from "@/data/guides";
 
 import {
   getPopulatedCategories,
@@ -8,7 +9,15 @@ import { toAbsoluteUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { getSitemapCatalog } from "@/sanity/lib/catalog";
 
-const staticRoutes = ["", "/products", "/rates", "/about", "/contact"];
+const staticRoutes = [
+  "",
+  "/products",
+  "/rates",
+  "/about",
+  "/contact",
+  "/guides",
+  ...guides.map(({ slug }) => `/guides/${slug}`),
+];
 
 function getLatestModified(...candidates: Array<string | undefined>) {
   let latest: { value: string; timestamp: number } | undefined;

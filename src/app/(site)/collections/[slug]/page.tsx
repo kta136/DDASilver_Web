@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
+import { CatalogEditorial } from "@/components/catalog/catalog-editorial";
 import { CatalogStructuredData } from "@/components/seo/catalog-structured-data";
 import { getCatalogPagePath, toCatalogSearchParams } from "@/lib/catalog-url";
 import { createPageMetadata } from "@/lib/seo";
@@ -13,20 +14,28 @@ type CollectionPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export async function generateMetadata({ params, searchParams }: CollectionPageProps) {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: CollectionPageProps) {
   const { slug } = await params;
   const [collection, listing] = await Promise.all([
     getCollection(slug),
-    searchParams.then((values) => getCatalogListing(toCatalogSearchParams(values), "", slug)),
+    searchParams.then((values) =>
+      getCatalogListing(toCatalogSearchParams(values), "", slug),
+    ),
   ]);
   const hasPublishedProducts =
     (collection?.productCount ?? collection?.productSlugs.length ?? 0) > 0;
 
   return collection
     ? createPageMetadata({
-        title: `${collection.title} Silver Collection`,
+        title: `${collection.title} in Agra`,
         description: `Explore the ${collection.title} collection at DDA Silver in Agra. ${collection.description}`,
-        path: getCatalogPagePath(`/collections/${collection.slug}`, listing.result.page),
+        path: getCatalogPagePath(
+          `/collections/${collection.slug}`,
+          listing.result.page,
+        ),
         image: collection.heroImage,
         noIndex: !hasPublishedProducts,
         noFollow: false,
@@ -64,9 +73,12 @@ export default async function CollectionPage({
   return (
     <main id="main-content">
       <CatalogStructuredData
-        name={`${collection.title} silver collection`}
+        name={`${collection.title} in Agra`}
         description={collectionDescription}
-        path={getCatalogPagePath(`/collections/${collection.slug}`, listing.result.page)}
+        path={getCatalogPagePath(
+          `/collections/${collection.slug}`,
+          listing.result.page,
+        )}
         total={listing.result.total}
         offset={(listing.result.page - 1) * listing.result.pageSize}
         products={collectionProducts}
@@ -97,7 +109,7 @@ export default async function CollectionPage({
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
+            className="object-contain"
             style={{
               objectPosition: collection.heroImage.objectPosition ?? "center",
             }}
@@ -114,6 +126,9 @@ export default async function CollectionPage({
             collectionSlug={slug}
             syncUrl
           />
+          {listing.result.page === 1 ? (
+            <CatalogEditorial sections={collection.editorialSections} />
+          ) : null}
         </div>
       </section>
     </main>

@@ -7,7 +7,7 @@ const imageProjection = `{
   "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")
 }`;
 const productFields = `
-  _id, title, "slug": slug.current, shortDescription,
+  _id, title, "slug": slug.current, shortDescription, seoTitle,
   "categorySlug": category->slug.current, "categoryKind": category->productKind,
   "collectionSlugs": coalesce(collections[]->slug.current, []),
   "featured": coalesce(featured, false), displayOrder, reference, material, purity,
@@ -42,6 +42,9 @@ export const productQuery = defineQuery(
 export const featuredProductsQuery = defineQuery(
   `*[${publishedProduct} && featured == true] | order(displayOrder asc, _id asc)[0...4] ${cardProjection}`,
 );
+export const homepageFallbackProductsQuery = defineQuery(
+  `*[${publishedProduct}] | order(displayOrder asc, _id asc)[0...4] ${cardProjection}`,
+);
 export const relatedProductsQuery = defineQuery(
   `*[${publishedProduct} && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] ${cardProjection}`,
 );
@@ -52,7 +55,7 @@ export const productPageQuery = defineQuery(`{
 
 export const categoriesQuery =
   defineQuery(`*[_type == "category"] | order(displayOrder asc, _id asc) {
-  _id, title, "slug": slug.current, description, "image": image ${imageProjection}, displayOrder,
+  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image ${imageProjection}, displayOrder,
   productKind, showOnHomepage, homepageOrder, homepageImageSource,
   "productCount": count(*[${publishedProduct} && category._ref == ^._id]),
   "firstProductImage": *[${publishedProduct} && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] ${imageProjection},
@@ -63,7 +66,7 @@ export const categoriesQuery =
 // field is deliberately not read.
 export const collectionsQuery =
   defineQuery(`*[_type == "collection"] | order(displayOrder asc, _id asc) {
-  _id, title, "slug": slug.current, description, "heroImage": heroImage ${imageProjection},
+  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "heroImage": heroImage ${imageProjection},
   "productSlugs": *[${publishedProduct} && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,
   "productCount": count(*[${publishedProduct} && ^._id in collections[]._ref]),
   displayOrder, "updatedAt": _updatedAt

@@ -129,8 +129,10 @@ const localBusinessSchema = {
         streetAddress: "MG Road, opposite Nagar Nigam",
         addressLocality: "Agra",
         addressRegion: "Uttar Pradesh",
+        postalCode: siteConfig.postalCode,
         addressCountry: "IN",
       },
+      geo: { "@type": "GeoCoordinates", ...siteConfig.coordinates },
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",

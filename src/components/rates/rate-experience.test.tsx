@@ -1,4 +1,5 @@
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -8,6 +9,43 @@ import {
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { RateExperience } from "./rate-experience";
+import { PublicRateReference } from "./public-rate-snapshot";
+import { renderToStaticMarkup } from "react-dom/server";
+
+describe("public reference HTML", () => {
+  it("renders currency, unit and timestamp without JavaScript, then expires in the browser", () => {
+    vi.useFakeTimers();
+    try {
+      const snapshot = {
+        serverTime: new Date().toISOString(),
+        items: [
+          {
+            id: "public-silver",
+            name: "Silver Bank",
+            unit: "PER_KG",
+            value: 123456,
+          },
+        ],
+      };
+      const html = renderToStaticMarkup(
+        <PublicRateReference snapshot={snapshot} />,
+      );
+      expect(html).toContain("₹1,23,456.00");
+      expect(html).toContain("per kg");
+      expect(html).toContain(snapshot.serverTime);
+      expect(html).toContain("IST (UTC+05:30)");
+      render(<PublicRateReference snapshot={snapshot} />);
+      expect(screen.getByRole("table")).toBeInTheDocument();
+      act(() => vi.advanceTimersByTime(90_001));
+      expect(screen.queryByRole("table")).not.toBeInTheDocument();
+      expect(
+        screen.getByText(/A fresh public snapshot is unavailable/),
+      ).toBeInTheDocument();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
 
 class MockEventSource {
   static readonly CONNECTING = 0;
@@ -158,7 +196,9 @@ describe("RateExperience authorized feature parity", () => {
     fireEvent.click(
       screen.getByRole("button", { name: "Show rate history chart" }),
     );
-    expect(await screen.findByRole("heading", { name: "Rate history" })).toBeVisible();
+    expect(
+      await screen.findByRole("heading", { name: "Rate history" }),
+    ).toBeVisible();
     expect(screen.getByRole("button", { name: "Custom" })).toBeVisible();
     await screen.findByText("Latest");
   });

@@ -1,5 +1,6 @@
 import { WhatsappLogoIcon } from "@phosphor-icons/react/ssr";
 import clsx from "clsx";
+import Link from "next/link";
 
 import {
   coinShapeLabels,
@@ -9,6 +10,7 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
+import { getProductIdentity } from "@/lib/seo";
 import type { Product } from "@/types/catalog";
 
 type ProductDetailsProps = {
@@ -41,7 +43,7 @@ export function ProductDetails({
             : "text-6xl sm:text-7xl",
         )}
       >
-        {product.title}
+        {getProductIdentity(product)}
       </Heading>
       {product.reference ? (
         <p className="mt-4 text-xs uppercase tracking-[0.16em] text-ink-muted">
@@ -138,7 +140,8 @@ export function ProductDetails({
                 Singhasan
               </dt>
               <dd className="mt-1 text-sm font-semibold">
-                {product.singhasanWidthInches} × {product.singhasanDepthInches} in
+                {product.singhasanWidthInches} × {product.singhasanDepthInches}{" "}
+                in
               </dd>
             </div>
           ) : null}
@@ -231,6 +234,19 @@ export function ProductDetails({
       <p className="mt-4 text-xs leading-5 text-ink-muted">
         Your message includes this product title, reference, and page link.
       </p>
+      {!isDialog ? (
+        <p className="mt-5 text-sm leading-7 text-ink-muted">
+          Need help comparing pieces? Read about{" "}
+          <Link href="/guides/understanding-product-details">
+            purity, weight and dimensions
+          </Link>{" "}
+          and{" "}
+          <Link href="/guides/caring-for-silver">
+            care questions for your finish
+          </Link>
+          .
+        </p>
+      ) : null}
     </>
   );
 }

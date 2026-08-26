@@ -26,7 +26,8 @@
       "purity": "99.80",
       "weightGrams": 10,
       "heightInches": 1.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/01-fine-line-mini-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/01-fine-line-mini-silver-tumbler.png",
+      "reference": "DDA-UT-GL-01"
     },
     {
       "number": 2,
@@ -39,7 +40,8 @@
       "purity": "99.80",
       "weightGrams": 20,
       "heightInches": 2,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/02-double-band-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/02-double-band-silver-tumbler.png",
+      "reference": "DDA-UT-GL-02"
     },
     {
       "number": 3,
@@ -52,7 +54,8 @@
       "purity": "99.80",
       "weightGrams": 30,
       "heightInches": 2.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/03-triple-band-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/03-triple-band-silver-tumbler.png",
+      "reference": "DDA-UT-GL-03"
     },
     {
       "number": 4,
@@ -65,7 +68,8 @@
       "purity": "99.80",
       "weightGrams": 40,
       "heightInches": 3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/04-polished-rim-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/04-polished-rim-silver-tumbler.png",
+      "reference": "DDA-UT-GL-04"
     },
     {
       "number": 5,
@@ -78,7 +82,8 @@
       "purity": "99.80",
       "weightGrams": 50,
       "heightInches": 3.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/05-brushed-linear-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/05-brushed-linear-silver-tumbler.png",
+      "reference": "DDA-UT-GL-05"
     },
     {
       "number": 6,
@@ -91,7 +96,8 @@
       "purity": "99.80",
       "weightGrams": 50,
       "heightInches": 3.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/06-multi-ring-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/06-multi-ring-silver-tumbler.png",
+      "reference": "DDA-UT-GL-06"
     },
     {
       "number": 7,
@@ -104,7 +110,8 @@
       "purity": "99.80",
       "weightGrams": 60,
       "heightInches": 4,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/07-minimal-band-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/07-minimal-band-silver-tumbler.png",
+      "reference": "DDA-UT-GL-07"
     },
     {
       "number": 8,
@@ -117,7 +124,8 @@
       "purity": "99.80",
       "weightGrams": 70,
       "heightInches": 4,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/08-twin-line-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/08-twin-line-silver-tumbler.png",
+      "reference": "DDA-UT-GL-08"
     },
     {
       "number": 9,
@@ -130,7 +138,8 @@
       "purity": "99.80",
       "weightGrams": 80,
       "heightInches": 4,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/09-classic-brushed-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/09-classic-brushed-silver-tumbler.png",
+      "reference": "DDA-UT-GL-09"
     },
     {
       "number": 10,
@@ -143,7 +152,8 @@
       "purity": "99.80",
       "weightGrams": 100,
       "heightInches": 4.3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/10-straight-rim-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/10-straight-rim-silver-tumbler.png",
+      "reference": "DDA-UT-GL-10"
     },
     {
       "number": 11,
@@ -156,7 +166,8 @@
       "purity": "99.80",
       "weightGrams": 125,
       "heightInches": 4,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/11-satin-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/11-satin-silver-tumbler.png",
+      "reference": "DDA-UT-GL-11"
     },
     {
       "number": 12,
@@ -169,7 +180,8 @@
       "purity": "99.80",
       "weightGrams": 150,
       "heightInches": 5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/12-tall-brushed-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/12-tall-brushed-silver-tumbler.png",
+      "reference": "DDA-UT-GL-12"
     },
     {
       "number": 13,
@@ -182,7 +194,8 @@
       "purity": "99.80",
       "weightGrams": 150,
       "heightInches": 4.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/13-mid-band-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/13-mid-band-silver-tumbler.png",
+      "reference": "DDA-UT-GL-13"
     },
     {
       "number": 14,
@@ -195,7 +208,8 @@
       "purity": "99.80",
       "weightGrams": 200,
       "heightInches": 5.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/14-tall-classic-silver-tumbler.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/14-tall-classic-silver-tumbler.png",
+      "reference": "DDA-UT-GL-14"
     },
     {
       "number": 15,
@@ -208,7 +222,8 @@
       "purity": "99.80",
       "weightGrams": 10,
       "diameterInches": 2,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/15-mini-linear-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/15-mini-linear-silver-bowl.png",
+      "reference": "DDA-UT-BW-15"
     },
     {
       "number": 16,
@@ -221,7 +236,8 @@
       "purity": "99.80",
       "weightGrams": 20,
       "diameterInches": 2.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/16-double-line-mini-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/16-double-line-mini-silver-bowl.png",
+      "reference": "DDA-UT-BW-16"
     },
     {
       "number": 17,
@@ -234,7 +250,8 @@
       "purity": "99.80",
       "weightGrams": 30,
       "diameterInches": 3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/17-brushed-rim-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/17-brushed-rim-silver-bowl.png",
+      "reference": "DDA-UT-BW-17"
     },
     {
       "number": 18,
@@ -247,7 +264,8 @@
       "purity": "99.80",
       "weightGrams": 40,
       "diameterInches": 3.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/18-fine-band-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/18-fine-band-silver-bowl.png",
+      "reference": "DDA-UT-BW-18"
     },
     {
       "number": 19,
@@ -260,7 +278,8 @@
       "purity": "99.80",
       "weightGrams": 50,
       "diameterInches": 3.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/19-classic-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/19-classic-silver-bowl.png",
+      "reference": "DDA-UT-BW-19"
     },
     {
       "number": 20,
@@ -273,7 +292,8 @@
       "purity": "99.80",
       "weightGrams": 50,
       "diameterInches": 4,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/20-wide-linear-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/20-wide-linear-silver-bowl.png",
+      "reference": "DDA-UT-BW-20"
     },
     {
       "number": 21,
@@ -286,7 +306,8 @@
       "purity": "99.80",
       "weightGrams": 60,
       "diameterInches": 4.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/21-polished-rim-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/21-polished-rim-silver-bowl.png",
+      "reference": "DDA-UT-BW-21"
     },
     {
       "number": 22,
@@ -299,7 +320,8 @@
       "purity": "99.80",
       "weightGrams": 55,
       "diameterInches": 5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/22-wide-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/22-wide-silver-bowl.png",
+      "reference": "DDA-UT-BW-22"
     },
     {
       "number": 23,
@@ -312,7 +334,8 @@
       "purity": "99.80",
       "weightGrams": 70,
       "diameterInches": 5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/23-deep-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/23-deep-silver-bowl.png",
+      "reference": "DDA-UT-BW-23"
     },
     {
       "number": 24,
@@ -325,7 +348,8 @@
       "purity": "99.80",
       "weightGrams": 100,
       "diameterInches": 5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/24-twin-line-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/24-twin-line-silver-bowl.png",
+      "reference": "DDA-UT-BW-24"
     },
     {
       "number": 25,
@@ -338,7 +362,8 @@
       "purity": "99.80",
       "weightGrams": 125,
       "diameterInches": 6,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/25-classic-serving-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/25-classic-serving-silver-bowl.png",
+      "reference": "DDA-UT-BW-25"
     },
     {
       "number": 26,
@@ -351,7 +376,8 @@
       "purity": "99.80",
       "weightGrams": 150,
       "diameterInches": 7,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/26-wide-serving-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/26-wide-serving-silver-bowl.png",
+      "reference": "DDA-UT-BW-26"
     },
     {
       "number": 27,
@@ -364,7 +390,8 @@
       "purity": "99.80",
       "weightGrams": 200,
       "diameterInches": 8,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/27-large-serving-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/27-large-serving-silver-bowl.png",
+      "reference": "DDA-UT-BW-27"
     },
     {
       "number": 28,
@@ -377,7 +404,8 @@
       "purity": "99.80",
       "weightGrams": 30,
       "diameterInches": 3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/28-straight-sided-mini-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/28-straight-sided-mini-silver-bowl.png",
+      "reference": "DDA-UT-BW-28"
     },
     {
       "number": 29,
@@ -390,7 +418,8 @@
       "purity": "99.80",
       "weightGrams": 40,
       "diameterInches": 3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/29-triple-line-mini-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/29-triple-line-mini-silver-bowl.png",
+      "reference": "DDA-UT-BW-29"
     },
     {
       "number": 30,
@@ -403,7 +432,8 @@
       "purity": "99.80",
       "weightGrams": 50,
       "diameterInches": 3.3,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/30-straight-sided-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/30-straight-sided-silver-bowl.png",
+      "reference": "DDA-UT-BW-30"
     },
     {
       "number": 31,
@@ -416,7 +446,8 @@
       "purity": "99.80",
       "weightGrams": 60,
       "diameterInches": 3.5,
-      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/31-deep-straight-sided-silver-bowl.png"
+      "imagePath": "public/images/silver-utensils/ai-gallery-2026-08-02/31-deep-straight-sided-silver-bowl.png",
+      "reference": "DDA-UT-BW-31"
     }
   ]
 }

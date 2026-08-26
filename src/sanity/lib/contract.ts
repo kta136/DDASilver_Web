@@ -1,4 +1,9 @@
-import type { CategoriesQueryResult, CollectionsQueryResult, ProductsQueryResult, CatalogFacetsQueryResult } from "@/sanity/types";
+import type {
+  CategoriesQueryResult,
+  CollectionsQueryResult,
+  ProductsQueryResult,
+  CatalogFacetsQueryResult,
+} from "@/sanity/types";
 import { z } from "zod";
 
 import {
@@ -25,6 +30,16 @@ const identity = {
 };
 const text = (max: number) => z.string().trim().min(1).max(max);
 const slug = catalogSlugSchema;
+const editorialSections = nullable(
+  z
+    .array(
+      z.object({
+        heading: text(100),
+        body: text(1200),
+      }),
+    )
+    .max(6),
+);
 
 export const catalogImageSchema = z.object({
   src: z
@@ -54,6 +69,7 @@ export const categorySchema = z.object({
   title: text(80),
   slug,
   description: text(240),
+  editorialSections,
   image: catalogImageSchema,
   displayOrder: displayOrderSchema,
   productKind: nullable(z.enum(categoryKinds)),
@@ -68,6 +84,7 @@ export const collectionSchema = z.object({
   title: text(100),
   slug,
   description: text(320),
+  editorialSections,
   heroImage: catalogImageSchema,
   productSlugs: z.array(slug),
   displayOrder: displayOrderSchema,
@@ -79,6 +96,7 @@ export const productSchema = z.object({
   title: text(catalogLimits.title),
   slug,
   shortDescription: text(catalogLimits.description),
+  seoTitle: nullable(text(100)),
   images: z.array(catalogImageSchema).min(1).max(catalogLimits.gallery),
   categorySlug: slug,
   categoryKind: nullable(z.enum(categoryKinds)),

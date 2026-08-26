@@ -291,10 +291,24 @@ export const getHomepageCatalog = cache(async () => {
           degraded: false,
         }),
   ]);
+  let selectedProducts = products.value;
+  let selectionDegraded = Boolean(products.degraded);
+  if (isSanityConfigured && selectedProducts.length === 0) {
+    console.warn(
+      "[catalog] No featured products published; showing published catalog selections.",
+    );
+    const read = await getReader();
+    const fallback = await readProductList(
+      read,
+      queries.homepageFallbackProductsQuery,
+    );
+    selectedProducts = fallback.value;
+    selectionDegraded = Boolean(fallback.degraded);
+  }
   return {
     ...navigation,
-    products: products.value,
-    degraded: navigation.degraded || Boolean(products.degraded),
+    products: selectedProducts,
+    degraded: navigation.degraded || selectionDegraded,
   };
 });
 
@@ -465,9 +479,24 @@ async function loadCatalogListing(
   return { ...navigation, filters, result };
 }
 
-const cachedCatalogListing = cache((search: string, defaultCategory: string, collection: string) => loadCatalogListing(new URLSearchParams(search), defaultCategory, collection));
-export function getCatalogListing(searchParams: URLSearchParams, defaultCategory = "", collection = "") {
-  return cachedCatalogListing(searchParams.toString(), defaultCategory, collection);
+const cachedCatalogListing = cache(
+  (search: string, defaultCategory: string, collection: string) =>
+    loadCatalogListing(
+      new URLSearchParams(search),
+      defaultCategory,
+      collection,
+    ),
+);
+export function getCatalogListing(
+  searchParams: URLSearchParams,
+  defaultCategory = "",
+  collection = "",
+) {
+  return cachedCatalogListing(
+    searchParams.toString(),
+    defaultCategory,
+    collection,
+  );
 }
 
 const sitemapProductSchema = z.object({

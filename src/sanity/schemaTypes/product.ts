@@ -93,6 +93,15 @@ export const productType = defineType({
       validation: (rule) => rule.required().max(catalogLimits.description),
     }),
     defineField({
+      name: "seoTitle",
+      title: "Search title (optional)",
+      description:
+        "A distinct, accurate title without the DDA Silver suffix. Keep the weight or design that distinguishes similar products. Otherwise the product name and weight are used.",
+      type: "string",
+      group: "content",
+      validation: (rule) => rule.max(100),
+    }),
+    defineField({
       name: "gallery",
       title: "Image gallery",
       type: "array",

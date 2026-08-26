@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const isDevelopment = process.env.NODE_ENV === "development";
-const isProductionSite =
-  process.env.NEXT_PUBLIC_SITE_ENV === "production";
+const isProductionSite = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 const sanityProjectId = /^[a-z0-9-]+$/.test(
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "",
 )
@@ -63,6 +62,12 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      ...["/api/auth/:path*", "/auth/:path*", "/studio/:path*"].map(
+        (source) => ({
+          source,
+          headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+        }),
+      ),
       {
         source: "/:path*",
         headers: [
