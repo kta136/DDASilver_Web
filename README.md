@@ -117,6 +117,8 @@ files other than `.env.example` are excluded from Git.
 | `npm run check` | Run linting, type checks, unit tests, and a build |
 | `npm run sanity:seed-categories` | Preview category seeding without writes |
 | `npm run sanity:seed-categories:apply` | Apply category seeding to the asserted dataset |
+| `npm run sanity:migrate-gift-subcategories` | Preview the Boxes, Singhasan, and Hatri taxonomy migration |
+| `npm run sanity:migrate-gift-subcategories:apply` | Apply and verify the production gift-subcategory migration |
 | `npm run sanity:seed-deities` | Preview Deity taxonomy seeding without writes |
 | `npm run sanity:seed-deities:apply` | Apply Deity taxonomy seeding to the asserted dataset |
 | `npm run sanity:upload-idols` | Preview the 19-product idol import without writes |

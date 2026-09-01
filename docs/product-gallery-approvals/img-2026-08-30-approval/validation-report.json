@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-08-30-approval",
+  "validatedAt": "2026-08-30",
+  "status": "uploaded-and-published",
+  "checks": {
+    "manifestJsonParses": true,
+    "sourceJpegCount": 26,
+    "mappedProductCount": 26,
+    "outputPngCount": 26,
+    "outputPngDimensions": "1254x1254",
+    "validOutputPngs": 26,
+    "uniqueOutputHashes": 26,
+    "oneToOneSourceMapping": true,
+    "uniqueReferences": true,
+    "uniqueSlugs": true,
+    "validShortDescriptions": 26,
+    "validAltText": 26,
+    "reviewCsvRows": 26,
+    "ownerConfirmedPurityRecords": 26,
+    "ownerConfirmedSinghasanRecords": 3,
+    "approvedBackgroundExists": true,
+    "contactSheetExists": true,
+    "ownerWaivedDimensionRecords": 2
+  },
+  "categoryCounts": {
+    "gifts": 19,
+    "purses": 1,
+    "utensils": 2,
+    "jhulas": 4
+  },
+  "sanityDryRun": {
+    "command": "node --experimental-strip-types scripts/sanity/upload-mixed-gallery-products.mjs --manifest docs/product-gallery-approvals/img-2026-08-30-approval/manifest.json",
+    "performed": true,
+    "madeNetworkRequests": false,
+    "madeSanityWrites": false,
+    "exitCode": 0,
+    "validImages": 26,
+    "productDocuments": 26,
+    "errorCount": 0,
+    "nonPurityErrorCount": 0,
+    "result": "Validated 26 prospective image asset uploads and 26 prospective product documents. All image, mapping, reference, category, material, purity, title, slug, description, alt-text, weight and supplied-dimension checks passed."
+  },
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "publishBlockers": [],
+  "sanityUpload": {
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "assetMappingFile": "sanity-assets.json",
+    "uniqueAssetCount": 26,
+    "uploadedAssetCount": 26,
+    "reusedAssetCount": 0,
+    "publishedNewProductCount": 26,
+    "replacedProductCount": 0,
+    "postPublishVerifiedExistingCount": 26,
+    "verifiedAt": "2026-08-30T12:22:51.6363720+05:30"
+  }
+}

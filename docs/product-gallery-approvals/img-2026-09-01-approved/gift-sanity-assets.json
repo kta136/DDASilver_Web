@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-01-approved-phone-covers",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-09-01T07:49:39.201Z",
+  "productCount": 7,
+  "uniqueAssetCount": 7,
+  "uploadedAssetCount": 7,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-img-20260901-12-peacock-phone-cover",
+      "reference": "PH-01",
+      "title": "Peacock-Floral Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/12-peacock-floral-custom-fit-silver-phone-cover.png",
+      "sha1hash": "4ca94759094d2faae1aab5c9055dff5b941f8d46",
+      "sanityAssetId": "image-4ca94759094d2faae1aab5c9055dff5b941f8d46-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/4ca94759094d2faae1aab5c9055dff5b941f8d46-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-img-20260901-13-cow-calf-phone-cover",
+      "reference": "PH-02",
+      "title": "Cow-and-Calf Floral Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/13-cow-calf-floral-custom-fit-silver-phone-cover.png",
+      "sha1hash": "40b69d17e3e0c806178e6f96b271ff6d74e35800",
+      "sanityAssetId": "image-40b69d17e3e0c806178e6f96b271ff6d74e35800-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/40b69d17e3e0c806178e6f96b271ff6d74e35800-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-img-20260901-14-tiger-phone-cover",
+      "reference": "PH-03",
+      "title": "Crowned-Tiger Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/14-crowned-tiger-custom-fit-silver-phone-cover.png",
+      "sha1hash": "82625694240acf2c9372c4e74957ee8ba58e3554",
+      "sanityAssetId": "image-82625694240acf2c9372c4e74957ee8ba58e3554-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/82625694240acf2c9372c4e74957ee8ba58e3554-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-img-20260901-15-floral-vine-phone-cover",
+      "reference": "PH-04",
+      "title": "Floral-Vine Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/15-floral-vine-custom-fit-silver-phone-cover.png",
+      "sha1hash": "5d452f2653ac18f7fa27eb54cb94b388bec4a105",
+      "sanityAssetId": "image-5d452f2653ac18f7fa27eb54cb94b388bec4a105-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5d452f2653ac18f7fa27eb54cb94b388bec4a105-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-img-20260901-16-elephant-phone-cover",
+      "reference": "PH-05",
+      "title": "Elephant-Medallion Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/16-elephant-medallion-custom-fit-silver-phone-cover.png",
+      "sha1hash": "b3615c99171d8d3d9ce699fb0a6517315c30c50b",
+      "sanityAssetId": "image-b3615c99171d8d3d9ce699fb0a6517315c30c50b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b3615c99171d8d3d9ce699fb0a6517315c30c50b-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-img-20260901-17-birds-phone-cover",
+      "reference": "PH-06",
+      "title": "Two-Bird Floral Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/17-two-bird-floral-custom-fit-silver-phone-cover.png",
+      "sha1hash": "d47b658424be09bdb2d42ad46528ae3a8c697e56",
+      "sanityAssetId": "image-d47b658424be09bdb2d42ad46528ae3a8c697e56-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d47b658424be09bdb2d42ad46528ae3a8c697e56-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-img-20260901-18-deity-phone-cover",
+      "reference": "PH-07",
+      "title": "Standing-Deity Custom-Fit Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/18-standing-deity-custom-fit-silver-phone-cover.png",
+      "sha1hash": "c891a89c4005ed30351f2f2c73c44283c1537aa9",
+      "sanityAssetId": "image-c891a89c4005ed30351f2f2c73c44283c1537aa9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c891a89c4005ed30351f2f2c73c44283c1537aa9-1254x1254.png"
+    }
+  ]
+}

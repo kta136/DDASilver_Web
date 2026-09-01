@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-01-approved-phone-covers",
+  "sourceFolder": "C:\\Users\\kk\\Desktop\\img",
+  "sourceCount": 7,
+  "originalSourceCount": 18,
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "publishBlockers": [],
+  "excludedSources": [
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.46.16 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.49.44 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.52.30 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.54.45 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.56.24 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 11.59.01 AM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 12.01.25 PM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 12.03.20 PM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 12.05.56 PM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 12.07.38 PM.jpeg",
+      "reason": "Handled by the solid-idol manifest."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 12.09.19 PM.jpeg",
+      "reason": "Handled by the solid-idol manifest with owner-approved HM-RK item-code family."
+    }
+  ],
+  "products": [
+    {
+      "number": 1,
+      "id": "product-dda-img-20260901-12-peacock-phone-cover",
+      "reference": "PH-01",
+      "title": "Peacock-Floral Custom-Fit Silver Phone Cover",
+      "slug": "peacock-floral-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 35 g, with an antique-finish silver peacock-and-floral relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique peacock and floral relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 35,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.30.32 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/12-peacock-floral-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 2,
+      "id": "product-dda-img-20260901-13-cow-calf-phone-cover",
+      "reference": "PH-02",
+      "title": "Cow-and-Calf Floral Custom-Fit Silver Phone Cover",
+      "slug": "cow-and-calf-floral-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 30 g, with an antique-finish silver cow-and-calf floral relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique cow-and-calf floral relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 30,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.31.46 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/13-cow-calf-floral-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 3,
+      "id": "product-dda-img-20260901-14-tiger-phone-cover",
+      "reference": "PH-03",
+      "title": "Crowned-Tiger Custom-Fit Silver Phone Cover",
+      "slug": "crowned-tiger-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 25 g, with an antique-finish silver crowned-tiger and scrollwork relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique crowned-tiger and scrollwork relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 25,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.32.37 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/14-crowned-tiger-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 4,
+      "id": "product-dda-img-20260901-15-floral-vine-phone-cover",
+      "reference": "PH-04",
+      "title": "Floral-Vine Custom-Fit Silver Phone Cover",
+      "slug": "floral-vine-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 36 g, with an antique-finish silver floral-vine relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique floral-vine relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 36,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.33.46 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/15-floral-vine-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 5,
+      "id": "product-dda-img-20260901-16-elephant-phone-cover",
+      "reference": "PH-05",
+      "title": "Elephant-Medallion Custom-Fit Silver Phone Cover",
+      "slug": "elephant-medallion-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 35 g, with an antique-finish silver elephant-medallion relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique elephant-medallion relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 35,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.34.37 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/16-elephant-medallion-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 6,
+      "id": "product-dda-img-20260901-17-birds-phone-cover",
+      "reference": "PH-06",
+      "title": "Two-Bird Floral Custom-Fit Silver Phone Cover",
+      "slug": "two-bird-floral-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 32 g, with an antique-finish silver two-bird and floral relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique two-bird and floral relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 32,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.35.43 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/17-two-bird-floral-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 7,
+      "id": "product-dda-img-20260901-18-deity-phone-cover",
+      "reference": "PH-07",
+      "title": "Standing-Deity Custom-Fit Silver Phone Cover",
+      "slug": "standing-deity-custom-fit-silver-phone-cover",
+      "shortDescription": "A custom-fit phone-cover design weighing 27 g, with an antique-finish silver standing-deity and foliage relief panel, made for any phone size.",
+      "alt": "Custom-fit silver phone-cover design with antique standing-deity and foliage relief panel",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 27,
+      "sourcePath": "C:\\Users\\kk\\Desktop\\img\\WhatsApp Image 2026-08-30 at 8.36.49 PM.jpeg",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/18-standing-deity-custom-fit-silver-phone-cover.png",
+      "publishBlockers": []
+    }
+  ]
+}

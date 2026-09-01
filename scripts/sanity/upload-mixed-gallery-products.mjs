@@ -15,8 +15,12 @@ const supportedCategories = new Set([
   "category-coin",
   "category-gold",
   "category-gifts",
+  "category-boxes",
+  "category-singhasan",
+  "category-hatri",
   "category-jhula",
   "category-purse",
+  "category-phone-covers",
   "category-idols",
   "category-utensils",
 ]);
@@ -309,6 +313,22 @@ function validateManifest(manifest, manifestPath) {
           warnings.push(`${label}: ${deityId} is not in the current deity seed list`);
         }
       }
+    } else if (product.categoryId === "category-phone-covers") {
+      if (!/^PH-[0-9]{2}$/.test(product.reference ?? "")) {
+        errors.push(`${label}: phone-cover reference must match PH-NN`);
+      }
+    } else if (product.categoryId === "category-boxes") {
+      if (!/^BX-[0-9]{2}$/.test(product.reference ?? "")) {
+        errors.push(`${label}: box reference must match BX-NN`);
+      }
+    } else if (product.categoryId === "category-singhasan") {
+      if (!/^SG-[0-9]{2}$/.test(product.reference ?? "")) {
+        errors.push(`${label}: Singhasan reference must match SG-NN`);
+      }
+    } else if (product.categoryId === "category-hatri") {
+      if (!/^HT-[0-9]{2}$/.test(product.reference ?? "")) {
+        errors.push(`${label}: Hatri reference must match HT-NN`);
+      }
     } else if (product.categoryId === "category-jhula") {
       if (!/^JH-[0-9]{2}$/.test(product.reference)) errors.push(`${label}: jhula reference must match JH-NN`);
     } else if (product.categoryId === "category-coin") {
@@ -438,6 +458,10 @@ function validateManifest(manifest, manifestPath) {
       coins: products.filter((product) => product.categoryId === "category-coin").length,
       gold: products.filter((product) => product.categoryId === "category-gold").length,
       gifts: products.filter((product) => product.categoryId === "category-gifts").length,
+      boxes: products.filter((product) => product.categoryId === "category-boxes").length,
+      singhasans: products.filter((product) => product.categoryId === "category-singhasan").length,
+      hatris: products.filter((product) => product.categoryId === "category-hatri").length,
+      phoneCovers: products.filter((product) => product.categoryId === "category-phone-covers").length,
       jhulas: products.filter((product) => product.categoryId === "category-jhula").length,
       purses: products.filter((product) => product.categoryId === "category-purse").length,
       idols: products.filter((product) => product.categoryId === "category-idols").length,

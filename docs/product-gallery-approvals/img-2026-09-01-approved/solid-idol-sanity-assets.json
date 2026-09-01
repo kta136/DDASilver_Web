@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-01-approved-solid-idols",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-09-01T07:49:35.516Z",
+  "productCount": 11,
+  "uniqueAssetCount": 11,
+  "uploadedAssetCount": 1,
+  "reusedAssetCount": 10,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-img-20260901-01-durga-tiger",
+      "reference": "HM-DG-8",
+      "title": "HM-DG-8 — Gold-Accent Durga Silver Idol on Tiger",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/01-durga-silver-idol-on-tiger.png",
+      "sha1hash": "9dc3c0ba960ef4eebfaa5924a159455acbba8b12",
+      "sanityAssetId": "image-9dc3c0ba960ef4eebfaa5924a159455acbba8b12-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9dc3c0ba960ef4eebfaa5924a159455acbba8b12-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-img-20260901-02-lakshmi-ganesha-owl-mouse",
+      "reference": "HM-LG-31",
+      "title": "HM-LG-31 — Lakshmi Ganesha Silver Idol Pair with Owl and Mouse",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/02-lakshmi-ganesha-silver-idol-pair-with-owl-mouse.png",
+      "sha1hash": "98caf0dfd766d6bb09ce8755312cbaf7aa5e6d3d",
+      "sanityAssetId": "image-98caf0dfd766d6bb09ce8755312cbaf7aa5e6d3d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/98caf0dfd766d6bb09ce8755312cbaf7aa5e6d3d-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-img-20260901-03-lakshmi-ganesha-arches",
+      "reference": "HM-LG-32",
+      "title": "HM-LG-32 — Lakshmi Ganesha Silver Idol Pair with Matching Arches",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/03-lakshmi-ganesha-silver-idol-pair-with-arches.png",
+      "sha1hash": "5d363dfdc0e2d5ff4f096c459a68027b002d3985",
+      "sanityAssetId": "image-5d363dfdc0e2d5ff4f096c459a68027b002d3985-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/5d363dfdc0e2d5ff4f096c459a68027b002d3985-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-img-20260901-04-shiva-family-ganesha-nandi",
+      "reference": "HM-SH-10",
+      "title": "HM-SH-10 — Shiva Family Silver Idol with Ganesha and Nandi",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/04-shiva-family-silver-idol-with-ganesha-nandi.png",
+      "sha1hash": "18e8ba8be1972281d6f8a5c3c1153f25a4ab5e38",
+      "sanityAssetId": "image-18e8ba8be1972281d6f8a5c3c1153f25a4ab5e38-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/18e8ba8be1972281d6f8a5c3c1153f25a4ab5e38-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-img-20260901-05-lakshmi-narayan-sheshnag",
+      "reference": "HM-LN-5",
+      "title": "HM-LN-5 — Lakshmi Narayan Silver Idol beneath Sheshnag Canopy",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/05-lakshmi-narayan-silver-idol-on-sheshnag.png",
+      "sha1hash": "c5c3b51636c130c68b51af671b7470caed48d017",
+      "sanityAssetId": "image-c5c3b51636c130c68b51af671b7470caed48d017-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c5c3b51636c130c68b51af671b7470caed48d017-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-img-20260901-06-lakshmi-ganesha-ornate-seats",
+      "reference": "HM-LG-33",
+      "title": "HM-LG-33 — Lakshmi Ganesha Silver Idol Pair on Ornate Seats",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/06-lakshmi-ganesha-silver-idol-pair-on-ornate-seats.png",
+      "sha1hash": "8e59d9642cd841cc157ad294323459b5434e7bb7",
+      "sanityAssetId": "image-8e59d9642cd841cc157ad294323459b5434e7bb7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8e59d9642cd841cc157ad294323459b5434e7bb7-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-img-20260901-07-lakshmi-ganesha-layered-lotus",
+      "reference": "HM-LG-34",
+      "title": "HM-LG-34 — Lakshmi Ganesha Silver Idol Pair on Layered Lotus Bases",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/07-lakshmi-ganesha-silver-idol-pair-on-layered-lotus-bases.png",
+      "sha1hash": "bb1cff31cb3b523ee86425a8b430799de9811ad1",
+      "sanityAssetId": "image-bb1cff31cb3b523ee86425a8b430799de9811ad1-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bb1cff31cb3b523ee86425a8b430799de9811ad1-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-img-20260901-08-lakshmi-ganesha-wide-lotus",
+      "reference": "HM-LG-35",
+      "title": "HM-LG-35 — Lakshmi Ganesha Silver Idol Pair on Wide Lotus Bases",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/08-lakshmi-ganesha-silver-idol-pair-on-wide-lotus-bases.png",
+      "sha1hash": "0a4e08bffd153e64ff8b1e9241dabe6e56334da9",
+      "sanityAssetId": "image-0a4e08bffd153e64ff8b1e9241dabe6e56334da9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0a4e08bffd153e64ff8b1e9241dabe6e56334da9-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-img-20260901-09-crawling-bal-krishna",
+      "reference": "HM-BK-22",
+      "title": "HM-BK-22 — Crawling Bal Krishna Silver Idol with Butter Ball",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/09-crawling-bal-krishna-silver-idol-with-butter-ball.png",
+      "sha1hash": "00cb758495d22512da94f29451a5ded5ac9fe3be",
+      "sanityAssetId": "image-00cb758495d22512da94f29451a5ded5ac9fe3be-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/00cb758495d22512da94f29451a5ded5ac9fe3be-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-img-20260901-10-kamdhenu-calf",
+      "reference": "HM-KM-18",
+      "title": "HM-KM-18 — Kamdhenu Cow and Calf Silver Idol with Diamond Blanket",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/10-kamdhenu-cow-calf-silver-idol.png",
+      "sha1hash": "123792af7cce76abea6415182543c03f9137cd8e",
+      "sanityAssetId": "image-123792af7cce76abea6415182543c03f9137cd8e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/123792af7cce76abea6415182543c03f9137cd8e-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-img-20260901-11-crawling-radharani",
+      "reference": "HM-RK-24",
+      "title": "HM-RK-24 — Crawling Radharani Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-01-approved/images/11-crawling-radharani-silver-idol.png",
+      "sha1hash": "a85182b753e498e6317fb0d03f8ba542f4337ac3",
+      "sanityAssetId": "image-a85182b753e498e6317fb0d03f8ba542f4337ac3-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a85182b753e498e6317fb0d03f8ba542f4337ac3-1254x1254.png"
+    }
+  ]
+}

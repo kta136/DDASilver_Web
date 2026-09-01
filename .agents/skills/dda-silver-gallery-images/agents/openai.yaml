@@ -1,0 +1,4 @@
+interface:
+  display_name: "DDA Silver Gallery Images"
+  short_description: "Create approved-background Sanity gallery images"
+  default_prompt: "Use $dda-silver-gallery-images to prepare this product-photo folder for the DDA Silver Sanity gallery."

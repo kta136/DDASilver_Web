@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-01-approved",
+  "sourceFolder": "C:\\Users\\kk\\Desktop\\img",
+  "sourceCount": 18,
+  "imageCount": 18,
+  "approved": true,
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+  "contactSheetPath": "docs/product-gallery-approvals/img-2026-09-01-approved/contact-sheet.png",
+  "sanity": {
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "publishedProductCount": 18,
+    "publishedAssetCount": 18,
+    "verifiedProductCount": 18,
+    "purity": "92.5",
+    "publishedReferences": [
+      "HM-DG-8",
+      "HM-LG-31",
+      "HM-LG-32",
+      "HM-SH-10",
+      "HM-LN-5",
+      "HM-LG-33",
+      "HM-LG-34",
+      "HM-LG-35",
+      "HM-BK-22",
+      "HM-KM-18",
+      "HM-RK-24",
+      "PH-01",
+      "PH-02",
+      "PH-03",
+      "PH-04",
+      "PH-05",
+      "PH-06",
+      "PH-07"
+    ]
+  },
+  "workflows": {
+    "solidIdols": {
+      "manifestPath": "docs/product-gallery-approvals/img-2026-09-01-approved/solid-idol-manifest.json",
+      "assetMappingPath": "docs/product-gallery-approvals/img-2026-09-01-approved/solid-idol-sanity-assets.json",
+      "productCount": 11,
+      "purity": "92.5",
+      "idolConstruction": "solid",
+      "readyForProductPublish": true,
+      "published": true,
+      "verified": true
+    },
+    "customFitPhoneCovers": {
+      "manifestPath": "docs/product-gallery-approvals/img-2026-09-01-approved/gift-manifest.json",
+      "assetMappingPath": "docs/product-gallery-approvals/img-2026-09-01-approved/gift-sanity-assets.json",
+      "productCount": 7,
+      "purity": "92.5",
+      "categoryId": "category-phone-covers",
+      "referenceRange": "PH-01 through PH-07",
+      "phoneModelMetadataPublished": false,
+      "readyForSanityAssetUpload": true,
+      "readyForProductPublish": true,
+      "published": true,
+      "verified": true
+    }
+  }
+}

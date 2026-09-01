@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-01-approved",
+  "validatedAt": "2026-09-01",
+  "sources": {
+    "expected": 18,
+    "found": 18,
+    "preservedUnchanged": true
+  },
+  "images": {
+    "expected": 18,
+    "found": 18,
+    "validPngCount": 18,
+    "valid1254By1254Count": 18,
+    "colorSpace": "sRGB",
+    "contactSheetReviewed": true,
+    "visualApprovalReceived": true
+  },
+  "sanity": {
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "idolDryRunPassed": true,
+    "idolProductsCreated": 11,
+    "idolProductsCorrected": 10,
+    "idolProductsWithPurity92_5": 11,
+    "solidIdolProducts": 11,
+    "idolAssetsVerified": 11,
+    "idolProductsVerified": 11,
+    "phoneCoverManifestDryRunPassed": true,
+    "phoneCoverAssetsVerified": 7,
+    "phoneCoverProductsPublished": 7,
+    "phoneCoverProductsWithoutPhoneModelMetadata": 7,
+    "phoneCoverCategoryId": "category-phone-covers",
+    "phoneCoverCategoryVerified": true,
+    "uniquePhoneCoverReferenceCount": 7,
+    "phoneCoverReferenceRange": "PH-01 through PH-07",
+    "publishedProductCount": 18,
+    "publishedAssetCount": 18,
+    "verifiedProductCount": 18,
+    "wrongPurityCount": 0,
+    "nonSolidIdolCount": 0,
+    "blockedProductCount": 0,
+    "blockers": []
+  },
+  "repositorySkill": {
+    "path": ".agents/skills/dda-silver-gallery-images",
+    "quickValidationPassed": true
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-08-30-approval",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-08-30T06:51:25.710Z",
+  "productCount": 26,
+  "uniqueAssetCount": 26,
+  "uploadedAssetCount": 26,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-img-20260830-01",
+      "reference": "DDA-GF-IMG-0830-01",
+      "title": "Pink Rose Enamel Rectangular Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+      "sha1hash": "ff6e938912e4ba90a31d5297021d964094a818ed",
+      "sanityAssetId": "image-ff6e938912e4ba90a31d5297021d964094a818ed-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ff6e938912e4ba90a31d5297021d964094a818ed-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-img-20260830-02",
+      "reference": "DDA-GF-IMG-0830-02",
+      "title": "Ornate Enamel Leaf Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/02-ornate-enamel-leaf-silver-gift-box-8x6.png",
+      "sha1hash": "d3bd2d0a93511565686cb3a3b00b2181bc1b734d",
+      "sanityAssetId": "image-d3bd2d0a93511565686cb3a3b00b2181bc1b734d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d3bd2d0a93511565686cb3a3b00b2181bc1b734d-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-img-20260830-03",
+      "reference": "DDA-GF-IMG-0830-03",
+      "title": "Twin-Peacock Enamel Octagonal Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/03-twin-peacock-enamel-octagonal-silver-gift-box-6x6.png",
+      "sha1hash": "8ca64e02e390b1f225f41fe18e20eca8e960595c",
+      "sanityAssetId": "image-8ca64e02e390b1f225f41fe18e20eca8e960595c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8ca64e02e390b1f225f41fe18e20eca8e960595c-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-img-20260830-04",
+      "reference": "DDA-GF-IMG-0830-04",
+      "title": "Raised-Rose Antique Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/04-raised-rose-antique-silver-gift-box-6x5.png",
+      "sha1hash": "2a2709a3aee7a76ede661e9e4072e70949b1c77e",
+      "sanityAssetId": "image-2a2709a3aee7a76ede661e9e4072e70949b1c77e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2a2709a3aee7a76ede661e9e4072e70949b1c77e-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-img-20260830-05",
+      "reference": "DDA-GF-IMG-0830-05",
+      "title": "Floral-Relief Antique Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/05-floral-relief-antique-silver-gift-box-10x8.png",
+      "sha1hash": "0bf597e5256e1c667735543417801c18eeba61fc",
+      "sanityAssetId": "image-0bf597e5256e1c667735543417801c18eeba61fc-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/0bf597e5256e1c667735543417801c18eeba61fc-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-img-20260830-06",
+      "reference": "DDA-GF-IMG-0830-06",
+      "title": "Pink-Blue Enamel Medallion Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/06-pink-blue-enamel-medallion-silver-gift-box-8x4.png",
+      "sha1hash": "2c7e23f5078343baf6f021545543f73ba160543e",
+      "sanityAssetId": "image-2c7e23f5078343baf6f021545543f73ba160543e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2c7e23f5078343baf6f021545543f73ba160543e-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-img-20260830-07",
+      "reference": "DDA-GF-IMG-0830-07",
+      "title": "Multicolour Enamel Arched Floral Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/07-multicolour-enamel-arched-floral-silver-gift-box-9p5x8.png",
+      "sha1hash": "ce2cacc60eac3021492bd4554e578098e8aeb6b8",
+      "sanityAssetId": "image-ce2cacc60eac3021492bd4554e578098e8aeb6b8-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ce2cacc60eac3021492bd4554e578098e8aeb6b8-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-img-20260830-08",
+      "reference": "DDA-GF-IMG-0830-08",
+      "title": "Antique Rose-Cluster Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/08-antique-rose-cluster-silver-gift-box-6p5x5.png",
+      "sha1hash": "f52c257bccff1dc97d1c61d80d67f1e6278e7374",
+      "sanityAssetId": "image-f52c257bccff1dc97d1c61d80d67f1e6278e7374-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f52c257bccff1dc97d1c61d80d67f1e6278e7374-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-img-20260830-09",
+      "reference": "DDA-GF-IMG-0830-09",
+      "title": "Twin-Flower Scroll Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/09-twin-flower-scroll-silver-gift-box-7p5x5p5.png",
+      "sha1hash": "aa3e05167e2d7765881eede82f0817676defbc55",
+      "sanityAssetId": "image-aa3e05167e2d7765881eede82f0817676defbc55-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/aa3e05167e2d7765881eede82f0817676defbc55-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-img-20260830-10",
+      "reference": "DDA-GF-IMG-0830-10",
+      "title": "Diamond-Floral Antique Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/10-diamond-floral-antique-silver-gift-box-8x6p5.png",
+      "sha1hash": "c1a1039c6662b2d43214823e5bf11a023180e141",
+      "sanityAssetId": "image-c1a1039c6662b2d43214823e5bf11a023180e141-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c1a1039c6662b2d43214823e5bf11a023180e141-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-img-20260830-11",
+      "reference": "DDA-GF-IMG-0830-11",
+      "title": "Antique Floral-Lattice Lidded Silver Jar",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/11-antique-floral-lattice-lidded-silver-jar-5in.png",
+      "sha1hash": "c85d6f72ba2988839eae6e8129ccb16400f63551",
+      "sanityAssetId": "image-c85d6f72ba2988839eae6e8129ccb16400f63551-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/c85d6f72ba2988839eae6e8129ccb16400f63551-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-img-20260830-12",
+      "reference": "DDA-GF-IMG-0830-12",
+      "title": "Open-Top Floral-Relief Square Silver Jar",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/12-open-top-square-floral-relief-silver-jar-4in.png",
+      "sha1hash": "86819915b75c359647d2a4a6939c1d0a5a3f85b9",
+      "sanityAssetId": "image-86819915b75c359647d2a4a6939c1d0a5a3f85b9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/86819915b75c359647d2a4a6939c1d0a5a3f85b9-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-img-20260830-13",
+      "reference": "DDA-GF-IMG-0830-13",
+      "title": "Red-Accent Floral-Medallion Square Silver Jar",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/13-red-accent-floral-medallion-square-silver-jar-4in.png",
+      "sha1hash": "1625e8c7fa47f312db51eb5d5845bfed10cb3705",
+      "sanityAssetId": "image-1625e8c7fa47f312db51eb5d5845bfed10cb3705-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/1625e8c7fa47f312db51eb5d5845bfed10cb3705-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-img-20260830-14",
+      "reference": "DDA-GF-IMG-0830-14",
+      "title": "Gold-Accent Peacock-Floral Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/14-gold-accent-peacock-floral-silver-gift-box-4x3.png",
+      "sha1hash": "09f6efca5063b3c56f80a49fe4209f8bbb50a8f7",
+      "sanityAssetId": "image-09f6efca5063b3c56f80a49fe4209f8bbb50a8f7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/09f6efca5063b3c56f80a49fe4209f8bbb50a8f7-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-img-20260830-15",
+      "reference": "DDA-GF-IMG-0830-15",
+      "title": "Faceted Floral-Panel Square Silver Jar",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/15-faceted-floral-panel-square-silver-jar-4in.png",
+      "sha1hash": "b612912616bc489c9334a1f0d29d276cee7dcc0c",
+      "sanityAssetId": "image-b612912616bc489c9334a1f0d29d276cee7dcc0c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b612912616bc489c9334a1f0d29d276cee7dcc0c-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-img-20260830-16",
+      "reference": "DDA-GF-IMG-0830-16",
+      "title": "Double-Heart Butterfly-Enamel Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/16-double-heart-butterfly-enamel-silver-gift-box-10x9.png",
+      "sha1hash": "bfb99abc11d96e90a40ab0d570b10b0454ed7c60",
+      "sanityAssetId": "image-bfb99abc11d96e90a40ab0d570b10b0454ed7c60-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bfb99abc11d96e90a40ab0d570b10b0454ed7c60-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-img-20260830-17",
+      "reference": "DDA-GF-IMG-0830-17",
+      "title": "Raised-Foot Floral-Relief Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/17-raised-foot-floral-relief-silver-gift-box-5p5x4p5.png",
+      "sha1hash": "eb1a55a06bf838ef58cce8a7bc7158efbeeae928",
+      "sanityAssetId": "image-eb1a55a06bf838ef58cce8a7bc7158efbeeae928-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/eb1a55a06bf838ef58cce8a7bc7158efbeeae928-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-img-20260830-18",
+      "reference": "DDA-GF-IMG-0830-18",
+      "title": "Blue-Enamel Garden-Panel Square Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/18-blue-enamel-garden-panel-square-silver-gift-box-6x6.png",
+      "sha1hash": "a565a1a682686ec7a2b444f03150bf080d8235a4",
+      "sanityAssetId": "image-a565a1a682686ec7a2b444f03150bf080d8235a4-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a565a1a682686ec7a2b444f03150bf080d8235a4-1254x1254.png"
+    },
+    {
+      "number": 19,
+      "productId": "product-dda-img-20260830-19",
+      "reference": "DDA-GF-IMG-0830-19",
+      "title": "Red-Enamel Geometric Square Silver Gift Box",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/19-red-enamel-geometric-square-silver-gift-box-6p5x6.png",
+      "sha1hash": "949c3144ee78ce708154f398aefbe6a2234cae45",
+      "sanityAssetId": "image-949c3144ee78ce708154f398aefbe6a2234cae45-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/949c3144ee78ce708154f398aefbe6a2234cae45-1254x1254.png"
+    },
+    {
+      "number": 20,
+      "productId": "product-dda-img-20260830-20",
+      "reference": "PR-2205",
+      "title": "Peacock Red-Stone Antique Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/20-peacock-red-stone-antique-silver-purse.png",
+      "sha1hash": "d5850dc63b905b7dae843b17d7c7d72df8d997a5",
+      "sanityAssetId": "image-d5850dc63b905b7dae843b17d7c7d72df8d997a5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d5850dc63b905b7dae843b17d7c7d72df8d997a5-1254x1254.png"
+    },
+    {
+      "number": 21,
+      "productId": "product-dda-img-20260830-21",
+      "reference": "DDA-UT-PT-2214",
+      "title": "Embossed Leaf-Border Silver Dining Thali Set",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/21-embossed-leaf-border-silver-dining-thali-set-9in.png",
+      "sha1hash": "6b6fb2cd6755db70b20b4b06e36a4d6226b8a16e",
+      "sanityAssetId": "image-6b6fb2cd6755db70b20b4b06e36a4d6226b8a16e-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6b6fb2cd6755db70b20b4b06e36a4d6226b8a16e-1254x1254.png"
+    },
+    {
+      "number": 22,
+      "productId": "product-dda-img-20260830-22",
+      "reference": "DDA-UT-PT-2215",
+      "title": "Antique Floral-Border Silver Dining Thali Set",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/22-antique-floral-border-silver-dining-thali-set-12in.png",
+      "sha1hash": "6a2409c1778ba42ab77984837cf9cb4d3153a6c5",
+      "sanityAssetId": "image-6a2409c1778ba42ab77984837cf9cb4d3153a6c5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6a2409c1778ba42ab77984837cf9cb4d3153a6c5-1254x1254.png"
+    },
+    {
+      "number": 23,
+      "productId": "product-dda-img-20260830-23",
+      "reference": "JH-20",
+      "title": "Peacock Flower-Tree Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/23-peacock-flower-tree-silver-jhula.png",
+      "sha1hash": "394c5f7261031c8544c67d36cc2f2544dc320803",
+      "sanityAssetId": "image-394c5f7261031c8544c67d36cc2f2544dc320803-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/394c5f7261031c8544c67d36cc2f2544dc320803-1254x1254.png"
+    },
+    {
+      "number": 24,
+      "productId": "product-dda-img-20260830-24",
+      "reference": "JH-21",
+      "title": "Floral-Arch Layered-Peacock Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/24-floral-arch-layered-peacock-silver-jhula-9x7.png",
+      "sha1hash": "bdb10c545aa27d9e9824e3dc17231a8459fec0b2",
+      "sanityAssetId": "image-bdb10c545aa27d9e9824e3dc17231a8459fec0b2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/bdb10c545aa27d9e9824e3dc17231a8459fec0b2-1254x1254.png"
+    },
+    {
+      "number": 25,
+      "productId": "product-dda-img-20260830-25",
+      "reference": "JH-22",
+      "title": "Elephant-Foot Scaled-Peacock Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/25-elephant-foot-scaled-peacock-silver-jhula-9x7.png",
+      "sha1hash": "315a9e9d72ff9a2e70fb652bcad789e9b46786ec",
+      "sanityAssetId": "image-315a9e9d72ff9a2e70fb652bcad789e9b46786ec-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/315a9e9d72ff9a2e70fb652bcad789e9b46786ec-1254x1254.png"
+    },
+    {
+      "number": 26,
+      "productId": "product-dda-img-20260830-26",
+      "reference": "JH-23",
+      "title": "Floral-Arch Peacock-Rail Silver Jhula",
+      "imagePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/26-floral-arch-peacock-rail-silver-jhula-9x7.png",
+      "sha1hash": "ac9d04217169b426f4ec71e0657dcc65c99d430b",
+      "sanityAssetId": "image-ac9d04217169b426f4ec71e0657dcc65c99d430b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/ac9d04217169b426f4ec71e0657dcc65c99d430b-1254x1254.png"
+    }
+  ]
+}

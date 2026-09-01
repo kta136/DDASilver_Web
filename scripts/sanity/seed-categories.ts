@@ -14,6 +14,7 @@ const categories = [
     description:
       "Silver adornments for everyday wear and meaningful occasions.",
     displayOrder: 1,
+    productKind: "general",
     imagePath: "public/images/mockup/category-jewellery.png",
     alt: "Concept image of a floral silver jewellery ornament",
   },
@@ -24,6 +25,7 @@ const categories = [
     description:
       "Silver coins in classic and contemporary shapes for gifting and milestones.",
     displayOrder: 2,
+    productKind: "coin",
     imagePath: "public/images/mockup/category-coins.png",
     alt: "Concept image of a classic round silver coin",
   },
@@ -34,6 +36,7 @@ const categories = [
     description:
       "Hollow, solid, and semi-solid silver devotional pieces for prayer and tradition.",
     displayOrder: 3,
+    productKind: "idol",
     imagePath: "public/images/mockup/category-pooja.png",
     alt: "Concept image of a small devotional silver diya lamp",
   },
@@ -44,6 +47,7 @@ const categories = [
     description:
       "Ornate 92.5% silver purses and clutches for celebrations and gifting.",
     displayOrder: 4,
+    productKind: "purse",
     imagePath:
       "public/images/silver-purses/ai-cleaned-2026-08-01/purse-01-ornate-elephant-floral-400g.png",
     alt: "Ornate 92.5% silver purse with raised elephant and floral motifs",
@@ -55,8 +59,45 @@ const categories = [
     description:
       "Memorable silver gifts for families, celebrations, and milestones.",
     displayOrder: 5,
+    productKind: "general",
     imagePath: "public/images/mockup/category-gifts.png",
     alt: "Concept image of an elegant silver gift box",
+  },
+  {
+    _id: "category-boxes",
+    title: "Boxes",
+    slug: "boxes",
+    description:
+      "Decorative silver boxes, keepsakes, and gift sets for celebrations, rituals, and meaningful occasions.",
+    displayOrder: 6,
+    productKind: "general",
+    imagePath:
+      "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+    alt: "Pink rose enamel rectangular silver gift box with floral relief decoration",
+  },
+  {
+    _id: "category-singhasan",
+    title: "Singhasan",
+    slug: "singhasan",
+    description:
+      "Ornate 92.5% silver singhasans for devotional idols, home temples, and auspicious celebrations.",
+    displayOrder: 7,
+    productKind: "general",
+    imagePath:
+      "public/images/gallery-ingestion/images-2026-08-20-approval/images/sg-12-scalloped-floral-round-silver-singhasan-6x4.png",
+    alt: "Scalloped floral round silver singhasan with engraved seat and decorative back",
+  },
+  {
+    _id: "category-hatri",
+    title: "Hatri",
+    slug: "hatri",
+    description:
+      "Traditional 92.5% silver Hatris for Diwali puja, festive rituals, and devotional settings.",
+    displayOrder: 8,
+    productKind: "general",
+    imagePath:
+      "public/images/gallery-ingestion/pics-2026-08-25/images/11-two-tier-arched-silver-hatri.png",
+    alt: "Two-tier arched silver Hatri with ritual cups and devotional detailing",
   },
   {
     _id: "category-jhula",
@@ -64,7 +105,8 @@ const categories = [
     slug: "jhula",
     description:
       "Ornate 92.5% silver jhulas for devotional settings, celebrations, and meaningful gifting.",
-    displayOrder: 6,
+    displayOrder: 9,
+    productKind: "jhula",
     imagePath:
       "public/images/gallery-ingestion/new-folder-2-2026-08-09/proof/jh-01-ornate-peacock-floral-silver-jhula.png",
     alt: "Ornate 92.5% silver peacock and floral jhula with suspended seat",
@@ -75,7 +117,8 @@ const categories = [
     slug: "utensils",
     description:
       "Silver dining, serving, and home utensils for meaningful everyday use.",
-    displayOrder: 7,
+    displayOrder: 10,
+    productKind: "utensil",
     imagePath: "public/images/mockup/category-tableware.png",
     alt: "Concept image of an engraved silver serving bowl",
   },
@@ -85,10 +128,23 @@ const categories = [
     slug: "gold",
     description:
       "Card-packed gold coins and bars in product-specific purities for gifting and milestones.",
-    displayOrder: 8,
+    displayOrder: 11,
+    productKind: "gold",
     imagePath:
       "public/images/gallery-ingestion/desktop-files-2026-08-22/054-packaged-fine-gold-bar-1g-995.png",
     alt: "Card-packed 99.50% fine gold bar from DDA Silver",
+  },
+  {
+    _id: "category-phone-covers",
+    title: "Phone Covers",
+    slug: "phone-covers",
+    description:
+      "Custom-fit 92.5% silver phone-cover designs made to suit any phone size.",
+    displayOrder: 12,
+    productKind: "general",
+    imagePath:
+      "public/images/gallery-ingestion/img-2026-09-01-approved/images/12-peacock-floral-custom-fit-silver-phone-cover.png",
+    alt: "Custom-fit silver phone cover with antique peacock and floral relief",
   },
 ] as const;
 
@@ -152,6 +208,10 @@ async function main() {
       },
       description: category.description,
       displayOrder: category.displayOrder,
+      productKind: category.productKind,
+      showOnHomepage: true,
+      homepageOrder: category.displayOrder,
+      homepageImageSource: "product",
       image: {
         _type: "image",
         asset: {
