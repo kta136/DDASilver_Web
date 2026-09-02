@@ -135,7 +135,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 src={image.src}
                 alt={image.alt}
                 fill
-                preload={index === 0}
+                fetchPriority={index === 0 ? "high" : undefined}
                 sizes={
                   index === 0
                     ? "(max-width: 1023px) 100vw, (max-width: 1536px) 52vw, 800px"

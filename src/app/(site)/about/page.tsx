@@ -34,7 +34,7 @@ export default function AboutPage() {
             src="/images/mockup/hero-silver-bowl.webp"
             alt="Concept image of an ornate engraved silver bowl"
             fill
-            preload
+            fetchPriority="high"
             sizes="(max-width: 1023px) 100vw, 52vw"
             className="object-cover"
             style={{ objectPosition: "center" }}

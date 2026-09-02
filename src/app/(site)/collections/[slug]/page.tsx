@@ -107,7 +107,7 @@ export default async function CollectionPage({
             src={collection.heroImage.src}
             alt={collection.heroImage.alt}
             fill
-            preload
+            fetchPriority="high"
             sizes="(max-width: 1023px) 100vw, 50vw"
             className="object-contain"
             style={{

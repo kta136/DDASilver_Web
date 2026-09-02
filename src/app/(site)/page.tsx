@@ -77,7 +77,7 @@ export default async function HomePage() {
               src={defaultSocialImage.src}
               alt={defaultSocialImage.alt}
               fill
-              preload
+              fetchPriority="high"
               sizes="(max-width: 1023px) 100vw, 50vw"
               className="object-contain"
               style={{ objectPosition: "center" }}
