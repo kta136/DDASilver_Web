@@ -3,7 +3,7 @@ import type {
   RateItem,
   RateSnapshot,
   SourceItem,
-} from "@/lib/rates/contract";
+} from "@/lib/rates/model";
 
 export type RateConnection =
   | "idle"

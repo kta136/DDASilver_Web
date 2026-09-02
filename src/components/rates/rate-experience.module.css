@@ -675,7 +675,7 @@ div.historyState {
 .marketSection {
   --source-ink: var(--ink);
   --source-ink-2: var(--ink-muted);
-  --source-muted: #8a8580;
+  --source-muted: #6d6863;
   --source-hairline: #eae4da;
   --source-hairline-soft: #f1ece2;
   --source-surface: var(--paper-strong);

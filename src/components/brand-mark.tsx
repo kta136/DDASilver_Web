@@ -12,14 +12,13 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
       className="inline-flex items-center gap-3 no-underline"
     >
       <Image
-        src="/brand/dda-family-mark.webp"
+        src="/brand/dda-family-mark-v1.webp"
         alt=""
         width={402}
         height={346}
         sizes={compact ? "50px" : "(min-width: 1440px) 86px, 62px"}
         data-compact={compact}
         className="brand-family-mark object-contain"
-        priority
       />
       <span
         className={`flex min-w-0 flex-col justify-center border-l border-line text-ink ${

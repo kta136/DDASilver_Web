@@ -36,6 +36,11 @@ const utensilReferenceCodeByType = new Map([
 ]);
 const supportedPurities = new Set(["91.60", "92.5", "99.50", "99.80"]);
 const supportedMaterials = new Set(["silver", "gold"]);
+const idolReferencePrefixByConstruction = new Map([
+  ["hollow", "HM"],
+  ["semi-solid", "SSM"],
+  ["solid", "SM"],
+]);
 const supportedCoinShapes = new Set([
   "round",
   "oval",
@@ -73,6 +78,11 @@ const supportedSeedDeityIds = new Set([
   "deity-kali",
   "deity-annapurna",
   "deity-parshvanath",
+  "deity-lakshman",
+  "deity-nandi",
+  "deity-kaila-devi",
+  "deity-auspicious-elephant",
+  "deity-auspicious-turtle",
 ]);
 
 function getArgumentValue(name) {
@@ -300,10 +310,22 @@ function validateManifest(manifest, manifestPath) {
     }
 
     if (product.categoryId === "category-idols") {
-      if (!/^SSM-[A-Z]{2}-[1-9][0-9]*$/.test(product.reference ?? "")) {
-        errors.push(`${label}: semi-solid idol reference must match SSM-XX-N`);
+      const idolPrefix = idolReferencePrefixByConstruction.get(
+        product.idolConstruction,
+      );
+      if (!idolPrefix) {
+        errors.push(
+          `${label}: idolConstruction must be hollow, semi-solid, or solid`,
+        );
+      } else if (
+        !new RegExp(`^${idolPrefix}-[A-Z]{2}-[1-9][0-9]*$`).test(
+          product.reference ?? "",
+        )
+      ) {
+        errors.push(
+          `${label}: ${product.idolConstruction} idol reference must match ${idolPrefix}-XX-N`,
+        );
       }
-      if (product.idolConstruction !== "semi-solid") errors.push(`${label}: idolConstruction must be semi-solid`);
       if (!Array.isArray(product.deityIds)) errors.push(`${label}: deityIds must be an array`);
       if (product.deityIds?.length === 0 && product.publishBlockers?.length === 0) {
         errors.push(`${label}: empty deityIds requires a publish blocker`);

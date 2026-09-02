@@ -28,26 +28,3 @@ The manifest defines the output canvas and one crop for each weight:
 The script validates every crop against its source image before writing any
 files. Adjust the manifest for a new coin series, then add that series to
 `scripts/sanity/upload-coin-products.ts`.
-
-## Idol image workflow
-
-Use `process-idol-batch.mjs` for idol photos. It extracts measurements with
-OCR, removes backgrounds through one reusable local rembg session, composites
-the cutouts onto the fixed DDA Silver template, and writes an upload-ready
-Sanity manifest.
-
-See `docs/idol-image-pipeline.md` for the catalog format and commands.
-
-## Utensil image workflow
-
-`process-utensil-batch.mjs` extracts utensils from already approved or
-AI-enhanced source images through the reusable rembg worker, then places each
-cutout on the fixed DDA Silver background without regenerating the brand art.
-It writes 1254 x 1254 PNGs, a Sanity manifest, and a review CSV.
-
-```powershell
-npm run utensils:process -- -- "C:\path\to\AI Enhanced Gallery" `
-  --catalog=scripts/images/utensil-batch-2026-08-02.json `
-  --output-dir=public/images/silver-utensils/ai-gallery-2026-08-02 `
-  --apply
-```

@@ -6,7 +6,7 @@ import {
   coinShapes as shapeValues,
   utensilTypes as utensilValues,
   type CategoryKind,
-} from "@/lib/catalog-domain";
+} from "@/lib/catalog-taxonomy";
 import type {
   CoinShape,
   IdolConstruction,

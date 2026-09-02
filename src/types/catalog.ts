@@ -5,7 +5,7 @@ import type {
   idolConstructions,
   coinShapes,
   utensilTypes,
-} from "@/lib/catalog-domain";
+} from "@/lib/catalog-taxonomy";
 
 export type CatalogImage = {
   src: string;

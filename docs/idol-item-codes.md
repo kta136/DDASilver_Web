@@ -19,6 +19,13 @@ semi-solid prefix:
 SSM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>
 ```
 
+Every solid idol uses the same family and sequencing rules with the solid
+prefix:
+
+```text
+SM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>
+```
+
 The code is shown at the beginning of the Sanity Item Name:
 
 ```text
@@ -34,6 +41,7 @@ only in the product description.
 | --- | --- | --- |
 | `HM` | Hollow Murti | Required prefix for every hollow idol |
 | `SSM` | Semi-solid Murti | Required prefix for every semi-solid idol |
+| `SM` | Solid Murti | Required prefix for every solid idol |
 | `BK` | Bal Krishna | All Bal Krishna and Laddu Gopal designs |
 | `GN` | Ganesha | All Ganesha designs |
 | `KS` | Khatu Shyam | All Khatu Shyam designs |
@@ -59,6 +67,9 @@ only in the product description.
 | `KL` | Kali | All Kali designs |
 | `AN` | Annapurna | All Annapurna designs |
 | `PS` | Parshvanath | All Parshvanath designs |
+| `ND` | Nandi | All standalone Nandi designs |
+| `KD` | Kaila Devi | All Kaila Devi designs |
+| `TR` | Auspicious Turtle | All auspicious turtle figurine designs |
 | `UN` | Unconfirmed design | Provisional only; publish-blocked until the owner identifies the family |
 
 `HN` is the only Hanuman code. Do not create separate codes for Panchmukhi,
@@ -75,8 +86,9 @@ other Shiva forms.
 4. Never reuse or renumber an issued code, even if a product is unpublished.
 5. A new color, pose, ornament, or design receives the next number in its
    existing family.
-6. Hollow and semi-solid sequences are independent. `HM-GN-1` and `SSM-GN-1`
-   may both exist because their construction prefixes differ.
+6. Hollow, semi-solid, and solid sequences are independent. `HM-GN-1`,
+   `SSM-GN-1`, and `SM-GN-1` may all exist because their construction prefixes
+   differ.
 7. The importer must determine the highest existing numerical value for the
    selected construction prefix and design family, then assign the next value
    automatically.
@@ -88,6 +100,31 @@ Examples:
 - The next Shiva item after `HM-SH-4` is `HM-SH-5`.
 - The next Hanuman item after `HM-HN-2` is `HM-HN-3`.
 - The first future Lakshmi Ganesh item is `HM-LG-1`.
+
+## Solid-code rollout
+
+A live catalog audit on 2026-09-02 found no issued `SM-*` references. It also
+found 11 solid idols carrying legacy `HM-*` references. The following `SM`
+codes are reserved for their controlled migration so new solid-item numbering
+does not collide:
+
+| Current reference | Reserved solid reference | Family |
+| --- | --- | --- |
+| `HM-DG-8` | `SM-DG-1` | Durga |
+| `HM-LG-31` | `SM-LG-1` | Lakshmi Ganesh |
+| `HM-LG-32` | `SM-LG-2` | Lakshmi Ganesh |
+| `HM-SH-10` | `SM-SH-1` | Shiva |
+| `HM-LN-5` | `SM-LN-1` | Lakshmi Narayan |
+| `HM-LG-33` | `SM-LG-3` | Lakshmi Ganesh |
+| `HM-LG-34` | `SM-LG-4` | Lakshmi Ganesh |
+| `HM-LG-35` | `SM-LG-5` | Lakshmi Ganesh |
+| `HM-BK-22` | `SM-BK-1` | Bal Krishna |
+| `HM-KM-18` | `SM-KM-1` | Kamdhenu |
+| `HM-RK-24` | `SM-RK-1` | Radha Krishna |
+
+The 2026-09-02 AI-enhanced batch continues after these reservations where a
+family overlaps: `SM-SH-2`, `SM-RK-2` through `SM-RK-5`, and `SM-LN-2`.
+Families without a prior solid reservation begin at `SM-<FAMILY>-1`.
 
 ## Current idol assignments
 
@@ -251,9 +288,10 @@ Examples:
 - Keep the product category, purity, idol construction, and deity references in
   their dedicated Sanity fields.
 - Validate hollow item codes against `^HM-[A-Z]{2}-[1-9][0-9]*$` and
-  semi-solid item codes against `^SSM-[A-Z]{2}-[1-9][0-9]*$` before
-  publishing or importing. A provisional `UN` family remains publish-blocked
-  even when it passes the structural pattern.
+  semi-solid item codes against `^SSM-[A-Z]{2}-[1-9][0-9]*$`, and solid item
+  codes against `^SM-[A-Z]{2}-[1-9][0-9]*$` before publishing or importing. A
+  provisional `UN` family remains publish-blocked even when it passes the
+  structural pattern.
 
 ## Change control
 

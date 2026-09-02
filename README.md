@@ -125,10 +125,9 @@ files other than `.env.example` are excluded from Git.
 | `npm run sanity:upload-idols:apply` | Upload and publish missing idol products |
 | `npm run sanity:upload-idols:overwrite` | Replace existing script-managed idol products |
 
-The Sanity catalog import utilities are defined in `package.json` and documented
-under [`scripts/images`](scripts/images/README.md). Commands ending in `:apply`
-write to the configured Sanity dataset and should only be used with the intended
-project and credentials.
+The Sanity catalog import utilities are defined in `package.json`. Commands
+ending in `:apply` write to the configured Sanity dataset and should only be
+used with the intended project and credentials.
 
 ## Project structure
 

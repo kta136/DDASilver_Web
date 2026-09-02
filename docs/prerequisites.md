@@ -107,7 +107,7 @@ These are not needed to begin local work:
 - [x] Production migration to Oracle Coolify authorized on 25 August 2026.
 - [x] Current DNS and tunnel configuration identified for export at cutover.
 - [x] Cloudflare zone and non-web routes preserved by the migration plan.
-- [x] Former Vercel project and domain registration removed after cutover.
+- [x] Former hosting project and domain registration removed after cutover.
 - [x] Coolify image/Git rollback procedure and operator confirmed.
 - [ ] Legacy URL inventory complete.
 - [ ] Search Console and monitoring ready.

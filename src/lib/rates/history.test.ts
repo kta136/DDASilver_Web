@@ -6,6 +6,8 @@ import {
   historyIntervalForIstDates,
   istCalendarDate,
   normalizeChartPoints,
+  rateHistoryResponseSchema,
+  sourceHistoryCatalogSchema,
 } from "@/lib/rates/history";
 
 describe("rate history chart", () => {
@@ -68,5 +70,56 @@ describe("rate history chart", () => {
       low: 99,
       updatedAt: "2026-07-30T10:02:00.000Z",
     });
+  });
+
+  it("accepts bounded history responses without loading Zod in the client", () => {
+    expect(
+      rateHistoryResponseSchema.safeParse({
+        itemId: "silver-999",
+        unit: "10g",
+        points: [
+          {
+            snapshotAt: "2026-07-30T10:00:00.000Z",
+            finalRate: 101,
+            quality: "ASK",
+          },
+        ],
+      }),
+    ).toEqual({
+      success: true,
+      data: {
+        itemId: "silver-999",
+        unit: "10g",
+        points: [
+          {
+            snapshotAt: "2026-07-30T10:00:00.000Z",
+            finalRate: 101,
+            quality: "ASK",
+          },
+        ],
+      },
+    });
+  });
+
+  it("rejects malformed or unbounded history responses", () => {
+    expect(
+      rateHistoryResponseSchema.safeParse({
+        itemId: "silver-999",
+        unit: "10g",
+        points: [{ snapshotAt: "not-a-date", finalRate: 101 }],
+      }).success,
+    ).toBe(false);
+
+    expect(
+      sourceHistoryCatalogSchema.safeParse({
+        items: Array.from({ length: 101 }, () => ({
+          sourceId: "source",
+          name: "Source",
+          unit: "10g",
+          enabledFrom: "2026-07-30T10:00:00.000Z",
+          availableFrom: null,
+        })),
+      }).success,
+    ).toBe(false);
   });
 });

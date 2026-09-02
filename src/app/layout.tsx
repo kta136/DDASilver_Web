@@ -17,7 +17,7 @@ import "./globals.css";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 const cormorant = Cormorant_Garamond({
@@ -120,7 +120,7 @@ const localBusinessSchema = {
       name: siteConfig.name,
       description: siteConfig.description,
       url: toAbsoluteUrl("/"),
-      logo: toAbsoluteUrl("/brand/dda-family-mark.png"),
+      logo: toAbsoluteUrl("/brand/dda-family-mark-v1-256w.png"),
       image: toAbsoluteUrl(defaultSocialImage.src),
       telephone: siteConfig.phoneHref.replace("tel:", ""),
       hasMap: siteConfig.mapUrl,

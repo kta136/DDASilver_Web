@@ -144,8 +144,8 @@ Coolify releases so existing sessions are not invalidated.
 The production cutover completed on 2026-08-25. Cloudflare Tunnel is the only
 website origin path; direct OCI ports `80`, `443`, and `8000` were verified
 unreachable and already absent from the attached security-list ingress rules.
-The temporary validation route has been removed. The former Vercel project and
-its account-level `ddasilver.com` domain registration were deleted after
+The temporary validation route has been removed. The former hosting project
+and its account-level `ddasilver.com` domain registration were deleted after
 cutover validation, so rollback uses a retained Coolify image or reverted Git
 commit without changing DNS.
 

@@ -82,7 +82,7 @@ export default async function ProductsPage({
           </div>
           {populatedCollections.length > 0 ? (
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <h2 className="min-h-4 text-xs font-bold leading-4 uppercase tracking-[0.16em] text-ink-muted">
                 Browse curated collections
               </h2>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">

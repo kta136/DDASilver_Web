@@ -63,6 +63,9 @@ describe("Sanity image delivery", () => {
     expect(imageLoader({ src: "/images/product.png", width: 640 })).toBe(
       "/images/product.png",
     );
+    expect(
+      imageLoader({ src: "/brand/dda-family-mark-v1.webp", width: 86 }),
+    ).toBe("/brand/dda-family-mark-v1-96w.webp");
   });
 
   it("preserves authored alt text and supplies a fallback when it is absent", () => {

@@ -56,6 +56,17 @@ Publish custom-fit phone-cover designs in `category-phone-covers`, not Gifts. Ch
 
 Produce a Sanity-ready manifest, human-review CSV, prompt audit, and validation report. Include stable IDs, titles, slugs, concise unique descriptions, descriptive alt text, category, material, purity, weight, applicable physical dimensions, source path, image path, and item reference. Put missing or schema-incompatible values in `publishBlockers`; never silently drop them.
 
+For a mixed or partially blocked batch, run the repository-local helper after writing the manifest:
+
+```powershell
+node .agents/skills/dda-silver-gallery-images/scripts/validate-delivery.mjs `
+  public/images/gallery-ingestion/<batch-id>/sanity-gallery-manifest.json `
+  --write-review-csv `
+  --write-validation-report
+```
+
+The helper validates source hashes, one-to-one mappings, unique metadata, image readability and 1254 × 1254 PNG dimensions. It treats an explicitly blocked missing purity, reference, or measurement as a reviewable delivery instead of inventing a value. This does not replace the relevant repository uploader dry run, whose schema errors must also be recorded before publication.
+
 Confirm source count, final-image count, manifest count, filename mappings, unique identifiers, dimensions, and image readability. Run the relevant existing uploader in dry-run mode before any write.
 
 ## Sanity writes

@@ -107,8 +107,8 @@ export default async function CollectionPage({
             src={collection.heroImage.src}
             alt={collection.heroImage.alt}
             fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            preload
+            sizes="(max-width: 1023px) 100vw, 50vw"
             className="object-contain"
             style={{
               objectPosition: collection.heroImage.objectPosition ?? "center",

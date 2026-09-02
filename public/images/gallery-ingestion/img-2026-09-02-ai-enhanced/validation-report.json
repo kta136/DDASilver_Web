@@ -1,0 +1,17 @@
+{
+  "batchId": "img-2026-09-02-ai-enhanced",
+  "validatedAt": "2026-09-02T09:21:13.750Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 18,
+    "products": 18,
+    "verifiedSources": 18,
+    "validImages": 18,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}

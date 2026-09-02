@@ -1,7 +1,7 @@
 # Implementation status
 
-**Updated:** 25 August 2026
-**Environment:** Production migration from Vercel to Oracle Coolify
+**Updated:** 2 September 2026
+**Environment:** Oracle Coolify production behind Cloudflare
 **Production authorization:** Granted for the approved Coolify/Cloudflare
 cutover plan
 
@@ -24,9 +24,9 @@ cutover plan
 - Initial Jewellery, Coin, Idols, Gifts, and Utensils taxonomy, including
   Idols-only Idol Construction and Deity filtering and Coin-only
   Round/Oval/Square/Rectangle filtering.
-- Approved hollow-idol Item Name and reference terminology using
-  `HM-<DEITY_OR_DESIGN_CODE>-<SEQUENCE>`, documented with the 19 current item
-  assignments.
+- Approved idol Item Name and reference terminology using `HM` for hollow,
+  `SSM` for semi-solid, and `SM` for solid construction with independent
+  family sequences documented in `docs/idol-item-codes.md`.
 - WhatsApp enquiry links that include product title, optional reference, and
   canonical URL.
 - Sanity document schemas for product, category, collection, page, and site
@@ -69,9 +69,9 @@ cutover plan
   strings independently of the hosting platform.
 - GitHub production workflow that gates the deploy-only Coolify webhook behind
   the repository checks and serializes production releases.
-- Former Vercel project `dda-silver-web`, its deployments, stored environment,
-  aliases, and account-level `ddasilver.com` domain registration permanently
-  removed after the Oracle cutover was validated.
+- Former hosting project, deployments, stored environment, aliases, and
+  account-level `ddasilver.com` domain registration permanently removed after
+  the Oracle cutover was validated.
 - Read-only Sanity integration verified against 22 published product routes.
   No catalog records or assets were changed during the 29 July quality pass.
 - Desktop design comparison and remediation against the selected option, with

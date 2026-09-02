@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
-import type { RateItem } from "@/lib/rates/contract";
+import type { RateItem } from "@/lib/rates/model";
 import { formatIndianNumber } from "@/lib/rates/format";
 import {
   buildChartPaths,

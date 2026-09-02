@@ -1,5 +1,19 @@
 import { z } from "zod";
 
+import type { RateItem, SourceItem } from "@/lib/rates/model";
+
+export {
+  extractNumberLike,
+  extractRateValue,
+  isRateSnapshotFresh,
+  normalizeFeedStatus,
+  normalizeRateIdentifier,
+  type FeedStatus,
+  type RateItem,
+  type RateSnapshot,
+  type SourceItem,
+} from "@/lib/rates/model";
+
 const schemaVersion = z.union([
   z.literal(1),
   z.literal("1"),
@@ -337,70 +351,3 @@ export const feedStatusEventSchema = z.union([
   legacyFeedStatusEventSchema,
   ddaJewelsFeedStatusEventSchema,
 ]);
-
-export type RateItem = z.infer<typeof rateItemSchema>;
-export type SourceItem = z.infer<typeof sourceItemSchema>;
-export type RateSnapshot = z.infer<typeof rateSnapshotSchema>;
-export type FeedStatus = z.infer<typeof feedStatusSchema>;
-
-export function normalizeFeedStatus(status: FeedStatus) {
-  return typeof status === "string" ? status : status.status;
-}
-
-export function extractRateValue(item?: RateItem) {
-  if (!item) {
-    return null;
-  }
-
-  const value = item.displayValue ?? item.value ?? item.rate;
-  if (value === null || value === undefined) {
-    return null;
-  }
-
-  if (
-    typeof value === "string" &&
-    !/^\d+(?:\.\d+)?$/.test(value.trim())
-  ) {
-    return null;
-  }
-  const parsed = typeof value === "number" ? value : Number(value.trim());
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
-}
-
-export function extractNumberLike(
-  value: z.infer<typeof numberLike> | undefined,
-) {
-  if (value === null || value === undefined) {
-    return null;
-  }
-
-  if (
-    typeof value === "string" &&
-    !/^\d+(?:\.\d+)?$/.test(value.trim())
-  ) {
-    return null;
-  }
-  const parsed = typeof value === "number" ? value : Number(value.trim());
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
-}
-
-export function normalizeRateIdentifier(value: string) {
-  return value
-    .toLocaleLowerCase("en-IN")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
-export function isRateSnapshotFresh(
-  serverTime: string,
-  now = Date.now(),
-  maxAgeMs = 90_000,
-  maxFutureSkewMs = 30_000,
-) {
-  const timestamp = Date.parse(serverTime);
-  return (
-    Number.isFinite(timestamp) &&
-    timestamp >= now - maxAgeMs &&
-    timestamp <= now + maxFutureSkewMs
-  );
-}

@@ -10,7 +10,7 @@ describe("web app manifest", () => {
       start_url: "/",
       icons: [
         {
-          src: "/icon.png",
+          src: "/icons/dda-silver-app-icon-512-v1.png",
           sizes: "512x512",
           type: "image/png",
         },

@@ -120,5 +120,5 @@ exposes data or consistently fails, or a security incident is suspected.
 5. Record the incident, failed commit/deployment, rollback time, and validation
    evidence before resuming releases.
 
-There is no dormant Vercel origin. A host-level failure requires restoring the
-Oracle/Coolify origin or provisioning a separately authorized replacement.
+There is no dormant secondary origin. A host-level failure requires restoring
+the Oracle/Coolify origin or provisioning a separately authorized replacement.

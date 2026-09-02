@@ -29,11 +29,11 @@ const correctedPlateSlugs = [
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' blob: data: https://cdn.sanity.io https://www.google-analytics.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.sanity.io wss://*.sanity.io https://www.google-analytics.com",
+  "connect-src 'self' https://*.sanity.io wss://*.sanity.io https://www.google-analytics.com https://cloudflareinsights.com",
   "frame-src 'self' https://www.google.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./src/lib/image-loader.ts",
     deviceSizes: [384, 640, 828, 1080, 1200],
-    imageSizes: [64, 96, 128, 256],
+    imageSizes: [64, 96, 128, 192, 256],
     remotePatterns:
       sanityProjectId && sanityDataset
         ? [
@@ -68,6 +68,24 @@ const nextConfig: NextConfig = {
           headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
         }),
       ),
+      {
+        source: "/brand/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/icons/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
       {
         source: "/:path*",
         headers: [

@@ -111,6 +111,31 @@ const deities = [
     slug: "parshvanath",
     displayOrder: 29,
   },
+  {
+    _id: "deity-lakshman",
+    title: "Lakshman",
+    slug: "lakshman",
+    displayOrder: 30,
+  },
+  { _id: "deity-nandi", title: "Nandi", slug: "nandi", displayOrder: 31 },
+  {
+    _id: "deity-kaila-devi",
+    title: "Kaila Devi",
+    slug: "kaila-devi",
+    displayOrder: 32,
+  },
+  {
+    _id: "deity-auspicious-elephant",
+    title: "Auspicious Elephant",
+    slug: "auspicious-elephant",
+    displayOrder: 33,
+  },
+  {
+    _id: "deity-auspicious-turtle",
+    title: "Auspicious Turtle",
+    slug: "auspicious-turtle",
+    displayOrder: 34,
+  },
 ] as const;
 
 const requestedIds = idsValue

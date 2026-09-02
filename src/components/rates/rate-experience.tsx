@@ -29,7 +29,7 @@ import {
   sourceSnapshotEventSchema,
   type RateItem,
   type SourceItem,
-} from "@/lib/rates/contract";
+} from "@/lib/rates/client-contract";
 import {
   customerRateDefinitions,
   marketRateDefinitions,

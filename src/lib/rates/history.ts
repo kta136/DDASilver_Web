@@ -1,40 +1,148 @@
-import { z } from "zod";
+type SafeParseResult<T> =
+  | { success: true; data: T }
+  | { success: false; error: Error };
 
-const historyPointSchema = z.object({
-  snapshotAt: z.string().datetime({ offset: true }),
-  finalRate: z.number().finite().nonnegative().optional(),
-  ask: z.number().finite().nonnegative().optional(),
-  quality: z.enum(["ASK", "LTP_FALLBACK"]).optional(),
-  gapBefore: z.literal(true).optional(),
-  rollover: z.literal(true).optional(),
+type ClientSchema<T> = {
+  safeParse(value: unknown): SafeParseResult<T>;
+};
+
+type HistoryPoint = {
+  snapshotAt: string;
+  finalRate?: number;
+  ask?: number;
+  quality?: "ASK" | "LTP_FALLBACK";
+  gapBefore?: true;
+  rollover?: true;
+};
+
+function schema<T>(parser: (value: unknown) => T): ClientSchema<T> {
+  return {
+    safeParse(value) {
+      try {
+        return { success: true, data: parser(value) };
+      } catch (error) {
+        return {
+          success: false,
+          error: error instanceof Error ? error : new Error("Invalid history data"),
+        };
+      }
+    },
+  };
+}
+
+function invalid(message: string): never {
+  throw new Error(message);
+}
+
+function record(value: unknown, label: string): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    invalid(`${label} must be an object`);
+  }
+  return value as Record<string, unknown>;
+}
+
+function text(value: unknown, label: string, maximum?: number) {
+  if (typeof value !== "string" || value.length < 1 || (maximum && value.length > maximum)) {
+    invalid(`${label} is invalid`);
+  }
+  return value;
+}
+
+function dateTime(value: unknown, label: string) {
+  const parsed = text(value, label, 64);
+  if (
+    !/(?:Z|[+-]\d{2}:\d{2})$/i.test(parsed) ||
+    !Number.isFinite(Date.parse(parsed))
+  ) {
+    invalid(`${label} must be an ISO date-time with an offset`);
+  }
+  return parsed;
+}
+
+function optionalNumber(object: Record<string, unknown>, key: string) {
+  const value = object[key];
+  if (value === undefined) return undefined;
+  if (typeof value !== "number" || !Number.isFinite(value) || value < 0) {
+    invalid(`${key} must be a non-negative number`);
+  }
+  return value;
+}
+
+function historyPoint(value: unknown): HistoryPoint {
+  const object = record(value, "history point");
+  const point: HistoryPoint = {
+    snapshotAt: dateTime(object.snapshotAt, "snapshotAt"),
+  };
+  const finalRate = optionalNumber(object, "finalRate");
+  const ask = optionalNumber(object, "ask");
+  if (finalRate !== undefined) point.finalRate = finalRate;
+  if (ask !== undefined) point.ask = ask;
+  if (object.quality !== undefined) {
+    if (object.quality !== "ASK" && object.quality !== "LTP_FALLBACK") {
+      invalid("quality is invalid");
+    }
+    point.quality = object.quality;
+  }
+  for (const key of ["gapBefore", "rollover"] as const) {
+    if (object[key] !== undefined) {
+      if (object[key] !== true) invalid(`${key} is invalid`);
+      point[key] = true;
+    }
+  }
+  return point;
+}
+
+function points(value: unknown) {
+  if (!Array.isArray(value) || value.length > 2_000) {
+    invalid("points must be a bounded array");
+  }
+  return value.map(historyPoint);
+}
+
+export const rateHistoryResponseSchema = schema((value) => {
+  const object = record(value, "rate history response");
+  return {
+    itemId: text(object.itemId, "itemId"),
+    unit: text(object.unit, "unit", 40),
+    points: points(object.points),
+  };
 });
 
-export const rateHistoryResponseSchema = z.object({
-  itemId: z.string().min(1),
-  unit: z.string().min(1).max(40),
-  points: z.array(historyPointSchema).max(2_000),
+export const sourceHistoryResponseSchema = schema((value) => {
+  const object = record(value, "source history response");
+  if (object.valueField !== "ask") invalid("valueField is invalid");
+  return {
+    sourceId: text(object.sourceId, "sourceId"),
+    unit: text(object.unit, "unit", 40),
+    valueField: "ask" as const,
+    availableFrom:
+      object.availableFrom === null
+        ? null
+        : dateTime(object.availableFrom, "availableFrom"),
+    points: points(object.points),
+  };
 });
 
-export const sourceHistoryResponseSchema = z.object({
-  sourceId: z.string().min(1),
-  unit: z.string().min(1).max(40),
-  valueField: z.literal("ask"),
-  availableFrom: z.string().datetime({ offset: true }).nullable(),
-  points: z.array(historyPointSchema).max(2_000),
-});
-
-export const sourceHistoryCatalogSchema = z.object({
-  items: z
-    .array(
-      z.object({
-        sourceId: z.string().min(1),
-        name: z.string().min(1).max(160),
-        unit: z.string().min(1).max(40),
-        enabledFrom: z.string().datetime({ offset: true }),
-        availableFrom: z.string().datetime({ offset: true }).nullable(),
-      }),
-    )
-    .max(100),
+export const sourceHistoryCatalogSchema = schema((value) => {
+  const object = record(value, "source history catalog");
+  if (!Array.isArray(object.items) || object.items.length > 100) {
+    invalid("items must be a bounded array");
+  }
+  return {
+    items: object.items.map((value) => {
+      const item = record(value, "source history item");
+      return {
+        sourceId: text(item.sourceId, "sourceId"),
+        name: text(item.name, "name", 160),
+        unit: text(item.unit, "unit", 40),
+        enabledFrom: dateTime(item.enabledFrom, "enabledFrom"),
+        availableFrom:
+          item.availableFrom === null
+            ? null
+            : dateTime(item.availableFrom, "availableFrom"),
+      };
+    }),
+  };
 });
 
 export type ChartPoint = {
@@ -91,7 +199,7 @@ export function chartPointStats(points: readonly ChartPoint[]) {
 }
 
 export function normalizeChartPoints(
-  points: ReadonlyArray<z.infer<typeof historyPointSchema>>,
+  points: ReadonlyArray<HistoryPoint>,
 ) {
   const byTimestamp = new Map<number, ChartPoint>();
   for (const point of points) {

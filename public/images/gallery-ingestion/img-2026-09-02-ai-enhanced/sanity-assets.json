@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-02-ai-enhanced",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-09-02T09:17:38.308Z",
+  "productCount": 18,
+  "uniqueAssetCount": 18,
+  "uploadedAssetCount": 18,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-img-20260902-01",
+      "reference": "SM-RM-1",
+      "title": "SM-RM-1 — Gold-Accent Ram Darbar Silver Idol Set",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/01-painted-ram-darbar-silver-idol-set-gold-accents.png",
+      "sha1hash": "b597f211ee9714ab7cdab9c22ba0b302ae21b34b",
+      "sanityAssetId": "image-b597f211ee9714ab7cdab9c22ba0b302ae21b34b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b597f211ee9714ab7cdab9c22ba0b302ae21b34b-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-img-20260902-02",
+      "reference": "SM-EL-1",
+      "title": "SM-EL-1 — Gold-Blanket Auspicious Elephant Silver Figurine",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/02-auspicious-elephant-silver-figurine-gold-blanket.png",
+      "sha1hash": "50275528fd56c46418024c3612d9f8e991b926c9",
+      "sanityAssetId": "image-50275528fd56c46418024c3612d9f8e991b926c9-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/50275528fd56c46418024c3612d9f8e991b926c9-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-img-20260902-03",
+      "reference": "SM-ND-1",
+      "title": "SM-ND-1 — Gold-Blanket Nandi Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/03-reclining-horned-bovine-silver-figurine-gold-blanket.png",
+      "sha1hash": "99ab7757d0151a75526f800e6a495985017ae243",
+      "sanityAssetId": "image-99ab7757d0151a75526f800e6a495985017ae243-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/99ab7757d0151a75526f800e6a495985017ae243-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-img-20260902-04",
+      "reference": "SM-KD-1",
+      "title": "SM-KD-1 — Kaila Devi Silver Devotional Bust Pair with Gold Halos",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/04-crowned-devotional-bust-pair-silver-gold-halos.png",
+      "sha1hash": "e055d8d6e6877b3f79df2fef8c3d52a87f3b4adb",
+      "sanityAssetId": "image-e055d8d6e6877b3f79df2fef8c3d52a87f3b4adb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e055d8d6e6877b3f79df2fef8c3d52a87f3b4adb-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-img-20260902-05",
+      "reference": "SM-TR-1",
+      "title": "SM-TR-1 — Gold-Accent Auspicious Turtle Silver Figurine",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/05-gold-accent-silver-turtle-figurine.png",
+      "sha1hash": "f9708abb6dbe5e69df254f693e3d3beb3c3fb677",
+      "sanityAssetId": "image-f9708abb6dbe5e69df254f693e3d3beb3c3fb677-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f9708abb6dbe5e69df254f693e3d3beb3c3fb677-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-img-20260902-06",
+      "reference": "SM-SH-2",
+      "title": "SM-SH-2 — Gold-Accent Shivling Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/06-gold-accent-shivling-silver-idol.png",
+      "sha1hash": "edaecd8bb0cdb11d227a6230af301ca3260788d7",
+      "sanityAssetId": "image-edaecd8bb0cdb11d227a6230af301ca3260788d7-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/edaecd8bb0cdb11d227a6230af301ca3260788d7-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-img-20260902-07",
+      "reference": "SM-SR-1",
+      "title": "SM-SR-1 — Saraswati Silver Idol on Lotus with Veena",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/07-saraswati-silver-idol-lotus-veena.png",
+      "sha1hash": "55fa399fbc65b6bed6ca55471c23ec1579b2d716",
+      "sanityAssetId": "image-55fa399fbc65b6bed6ca55471c23ec1579b2d716-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/55fa399fbc65b6bed6ca55471c23ec1579b2d716-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-img-20260902-08",
+      "reference": "SM-FS-1",
+      "title": "SM-FS-1 — Engraved Auspicious Silver Fish Figurine",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/08-auspicious-silver-fish-figurine.png",
+      "sha1hash": "26b27b05ae9c7161cbc5b38ad63ca61307f989ea",
+      "sanityAssetId": "image-26b27b05ae9c7161cbc5b38ad63ca61307f989ea-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/26b27b05ae9c7161cbc5b38ad63ca61307f989ea-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-img-20260902-09",
+      "reference": "SM-RK-2",
+      "title": "SM-RK-2 — Tall Gold-Accent Radha Krishna Silver Idol Pair",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/09-standing-radha-krishna-silver-idol-gold-accents.png",
+      "sha1hash": "a2be9a8a16256a2d54347fd31064d98f40d12f9d",
+      "sanityAssetId": "image-a2be9a8a16256a2d54347fd31064d98f40d12f9d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a2be9a8a16256a2d54347fd31064d98f40d12f9d-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-img-20260902-10",
+      "reference": "SM-RK-3",
+      "title": "SM-RK-3 — Compact Standing Radha Krishna Silver Idol Pair",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/10-compact-standing-radha-krishna-silver-idol-pair.png",
+      "sha1hash": "a9ff73648ff41ce1a7456fc9491bc847151ef544",
+      "sanityAssetId": "image-a9ff73648ff41ce1a7456fc9491bc847151ef544-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a9ff73648ff41ce1a7456fc9491bc847151ef544-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-img-20260902-11",
+      "reference": "SM-RK-4",
+      "title": "SM-RK-4 — Seated Radha Krishna Silver Idol with Flute",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/11-seated-radha-krishna-silver-idol.png",
+      "sha1hash": "d046c2eca4a4f165e8cb098fd43c2b73a8b2c82c",
+      "sanityAssetId": "image-d046c2eca4a4f165e8cb098fd43c2b73a8b2c82c-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d046c2eca4a4f165e8cb098fd43c2b73a8b2c82c-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-img-20260902-12",
+      "reference": "SM-KB-1",
+      "title": "SM-KB-1 — Gold-Accent Kuber Silver Idol on Throne",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/12-kuber-silver-idol-on-throne-gold-accents.png",
+      "sha1hash": "899306b25cb9540273ac3fc9c1ffcda61ec73ebb",
+      "sanityAssetId": "image-899306b25cb9540273ac3fc9c1ffcda61ec73ebb-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/899306b25cb9540273ac3fc9c1ffcda61ec73ebb-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-img-20260902-13",
+      "reference": "SM-RK-5",
+      "title": "SM-RK-5 — Compact Radha Krishna Silver Idol with Flute",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/13-compact-radha-krishna-silver-idol-flute.png",
+      "sha1hash": "255c9052a127ccfecfca249bf2031bb0d9203aff",
+      "sanityAssetId": "image-255c9052a127ccfecfca249bf2031bb0d9203aff-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/255c9052a127ccfecfca249bf2031bb0d9203aff-1254x1254.png"
+    },
+    {
+      "number": 14,
+      "productId": "product-dda-img-20260902-14",
+      "reference": "SM-LN-2",
+      "title": "SM-LN-2 — Reclining Vishnu on Sheshnag Silver Idol",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/14-reclining-vishnu-sheshnag-silver-idol.png",
+      "sha1hash": "b259e268ef3034be1dc3e29fa66b66361d3f0b5d",
+      "sanityAssetId": "image-b259e268ef3034be1dc3e29fa66b66361d3f0b5d-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b259e268ef3034be1dc3e29fa66b66361d3f0b5d-1254x1254.png"
+    },
+    {
+      "number": 15,
+      "productId": "product-dda-img-20260902-15",
+      "reference": "DDA-UT-BT-109",
+      "title": "Butterfly Relief Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/15-butterfly-relief-silver-bottle-10-inch.png",
+      "sha1hash": "7212fb1019ddd72cb1c9b782fdfb0507f0f72587",
+      "sanityAssetId": "image-7212fb1019ddd72cb1c9b782fdfb0507f0f72587-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/7212fb1019ddd72cb1c9b782fdfb0507f0f72587-1254x1254.png"
+    },
+    {
+      "number": 16,
+      "productId": "product-dda-img-20260902-16",
+      "reference": "DDA-UT-BT-110",
+      "title": "Leaf Scroll Engraved Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/16-leaf-scroll-engraved-silver-bottle-10-inch.png",
+      "sha1hash": "a5a6d16f1f1fdd73a64156a9c775490404241f2f",
+      "sanityAssetId": "image-a5a6d16f1f1fdd73a64156a9c775490404241f2f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/a5a6d16f1f1fdd73a64156a9c775490404241f2f-1254x1254.png"
+    },
+    {
+      "number": 17,
+      "productId": "product-dda-img-20260902-17",
+      "reference": "DDA-UT-BT-111",
+      "title": "Elephant Vine Engraved Silver Bottle",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/17-elephant-vine-engraved-silver-bottle-10-inch.png",
+      "sha1hash": "327460fa2e23c167d87bcb5aed0f8739955a234b",
+      "sanityAssetId": "image-327460fa2e23c167d87bcb5aed0f8739955a234b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/327460fa2e23c167d87bcb5aed0f8739955a234b-1254x1254.png"
+    },
+    {
+      "number": 18,
+      "productId": "product-dda-img-20260902-18",
+      "reference": "SG-26",
+      "title": "Floral-Back Silver Singhasan with Decorative Tree",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-02-ai-enhanced/images/18-engraved-silver-singhasan-tree-7x5.png",
+      "sha1hash": "9f75f252ab014c0efe5155795ebb69ca8f91fedf",
+      "sanityAssetId": "image-9f75f252ab014c0efe5155795ebb69ca8f91fedf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9f75f252ab014c0efe5155795ebb69ca8f91fedf-1254x1254.png"
+    }
+  ]
+}

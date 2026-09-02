@@ -1,4 +1,0 @@
-rembg==2.0.75
-numba>=0.60,<0.64
-onnxruntime-directml>=1.22,<1.24
-Pillow>=11.3,<13

@@ -1,4 +1,4 @@
-import { getCategoryKind } from "@/lib/catalog-domain";
+import { getCategoryKind } from "@/lib/catalog-taxonomy";
 import type { Product } from "@/types/catalog";
 
 type ProductImagePresentation = Pick<

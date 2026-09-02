@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#f8f6f3",
     icons: [
       {
-        src: "/icon.png",
+        src: "/icons/dda-silver-app-icon-512-v1.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",

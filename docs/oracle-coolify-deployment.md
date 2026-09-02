@@ -179,10 +179,10 @@ replacement, a signed Sanity revalidation, and one 180-second SSE connection
 that delivered 961 frames. Public responses reported the Coolify commit and no
 stale origin headers.
 
-On 2026-08-25, after the Oracle release was stable, Vercel project
-`dda-silver-web` and all of its deployments were permanently deleted. The
-`ddasilver.com` account-level domain registration was also removed from
-Vercel. Vercel is no longer a rollback target.
+On 2026-08-25, after the Oracle release was stable, the former hosting project
+and all of its deployments were permanently deleted. The account-level
+`ddasilver.com` domain registration was also removed from that provider. The
+retired provider is no longer a rollback target.
 
 ## Coolify rollback
 

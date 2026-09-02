@@ -14,14 +14,12 @@ import { getProductIdentity } from "@/lib/seo";
 
 type ProductCardProps = {
   product: Product;
-  priority?: boolean;
   headingLevel?: 2 | 3;
   compactImage?: boolean;
 };
 
 export function ProductCard({
   product,
-  priority = false,
   headingLevel = 3,
   compactImage = false,
 }: ProductCardProps) {
@@ -60,7 +58,6 @@ export function ProductCard({
               src={image.src}
               alt={image.alt}
               fill
-              priority={priority}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className={
                 containImage

@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 
-import { getCategoryKind } from "@/lib/catalog-domain";
+import { getCategoryKind } from "@/lib/catalog-taxonomy";
 import { useCatalogPage } from "@/components/catalog/use-catalog-page";
 import { ProductCard } from "@/components/catalog/product-card";
 import {
@@ -596,11 +596,10 @@ export function CatalogBrowser({
       ) : null}
       {visibleProducts.length > 0 ? (
         <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
-          {visibleProducts.map((product, index) => (
+          {visibleProducts.map((product) => (
             <ProductCard
               key={product.slug}
               product={product}
-              priority={index < 4}
               headingLevel={2}
               compactImage
             />

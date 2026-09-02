@@ -17,7 +17,7 @@ import type { CatalogImage } from "@/types/catalog";
 type ProductGalleryProps = {
   images: CatalogImage[];
   containImages?: boolean;
-  priority?: boolean;
+  highPriority?: boolean;
 };
 
 const pointerZoomScale = 1.4;
@@ -25,7 +25,7 @@ const pointerZoomScale = 1.4;
 export function ProductGallery({
   images,
   containImages = false,
-  priority = false,
+  highPriority = false,
 }: ProductGalleryProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const zoomedImageRef = useRef<HTMLImageElement>(null);
@@ -128,7 +128,7 @@ export function ProductGallery({
               src={image.src}
               alt={image.alt}
               fill
-              priority={priority && index === 0}
+              fetchPriority={highPriority && index === 0 ? "high" : undefined}
               sizes="(max-width: 1024px) 100vw, 58vw"
               className={clsx(
                 containImages ? "object-contain" : "object-cover",

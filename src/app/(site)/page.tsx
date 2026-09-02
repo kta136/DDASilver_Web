@@ -77,8 +77,8 @@ export default async function HomePage() {
               src={defaultSocialImage.src}
               alt={defaultSocialImage.alt}
               fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 58vw"
+              preload
+              sizes="(max-width: 1023px) 100vw, 50vw"
               className="object-contain"
               style={{ objectPosition: "center" }}
             />
@@ -106,12 +106,8 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 min-[90rem]:mt-4">
-            {featured.map((product, index) => (
-              <ProductCard
-                key={product.slug}
-                product={product}
-                priority={index < 2}
-              />
+            {featured.map((product) => (
+              <ProductCard key={product.slug} product={product} />
             ))}
           </div>
         </div>
