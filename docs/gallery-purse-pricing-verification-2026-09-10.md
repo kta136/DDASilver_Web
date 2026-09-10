@@ -35,6 +35,14 @@ ordering such as PR-1, PR-10, PR-11, PR-2.
 
 - `npm run check` passed: lint, TypeScript, 50 test files / 242 tests, and the
   production build.
+- GitHub CI [34456555065](https://github.com/kta136/DDASilver_Web/actions/runs/34456555065)
+  passed, including generated Sanity contracts and browser journeys. Deployment
+  workflow [34456555123](https://github.com/kta136/DDASilver_Web/actions/runs/34456555123)
+  passed for application commit `9737d201fcdf4e4a0f1a20abb83701801fa193df`.
+- Coolify deployment `qbpztgb9oaj0rjiezfquyb8c` finished successfully. The
+  post-deployment check at `2026-09-10T08:48:31Z` confirmed production version
+  `9737d201fcdf`, healthy application/Sanity/pricing, all 36 purse prices, and the
+  new Studio list configuration in the JavaScript actually served by `/studio`.
 - Full catalogue audit: 631 products, zero pricing coverage failures. Deferred
   categories and gold retain their approved exclusions.
 - Published price feed: 552 available estimates, zero unavailable estimates,
@@ -50,6 +58,12 @@ ordering such as PR-1, PR-10, PR-11, PR-2.
   dates with JavaScript disabled; no structured-data Offer prices were added.
 - Desktop and mobile screenshots were visually inspected. Mobile had no
   horizontal overflow and browser verification reported no runtime errors.
+- The live Studio initially showed a connection setup screen because its
+  production origin was missing from Sanity CORS. Added the exact credentialed
+  origin `https://www.ddasilver.com` to project `f6i0fy2f`, then verified that
+  `/studio` reaches the normal login-provider screen. The browser used for this
+  check was signed out; the authenticated list is covered by its configuration,
+  type/build checks and the ordered Content Lake readback.
 
 The purse category has no generic making-charge fallback. Each future purse
 requires a verified product override; the existing publishing coverage check
