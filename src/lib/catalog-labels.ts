@@ -37,6 +37,8 @@ export const utensilTypeLabels: Record<UtensilType, string> = {
   bowl: "Bowl",
   plate: "Plate",
   jug: "Jug",
+  jar: "Jar",
+  handi: "Handi",
   kalash: "Kalash",
   bottle: "Bottle",
   spoon: "Spoon",

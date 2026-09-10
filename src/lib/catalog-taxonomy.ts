@@ -30,6 +30,8 @@ export const utensilTypes = [
   "bowl",
   "plate",
   "jug",
+  "jar",
+  "handi",
   "kalash",
   "bottle",
   "spoon",

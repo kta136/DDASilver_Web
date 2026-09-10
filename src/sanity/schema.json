@@ -1467,6 +1467,14 @@
             },
             {
               "type": "string",
+              "value": "jar"
+            },
+            {
+              "type": "string",
+              "value": "handi"
+            },
+            {
+              "type": "string",
               "value": "kalash"
             },
             {
