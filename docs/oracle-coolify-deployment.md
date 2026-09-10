@@ -227,6 +227,13 @@ including a real feed seed and replacement-container recovery. A stale price rat
 is an operational warning, not a failed website liveness check. Two copies on
 this volume protect against file corruption, not loss of the host.
 
+Gallery pricing was activated on 2026-09-10 with application commit `9d861cf2b8d`.
+The configured named volume is `jmqhqogpliodvwr5m8igqr5u-gallery-pricing`; keep that
+exact volume attached during later releases and rollbacks. Production seeding,
+recovery of the original attempt schedule, 70 uninterrupted health probes and
+public desktop/mobile/JavaScript-disabled pricing checks are recorded in the
+[release verification](gallery-pricing-verification-2026-09-10.md#production-activation).
+
 Set `NEXT_PUBLIC_SITE_ENV=production` and the correct public Sanity project/dataset
 at build time. No migration is required to read existing products. Before renaming
 legacy category slugs, explicitly set Product fields in Studio and review homepage

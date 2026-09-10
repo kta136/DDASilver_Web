@@ -1,7 +1,8 @@
 # Gallery pricing verification — 10 September 2026
 
-Implementation is ready for rollout review. Public pricing is still disabled in
-Sanity; no application deployment was performed as part of these checks.
+Gallery pricing is live on `https://www.ddasilver.com`, deployed from application
+commit `9d861cf2b8d19368de626a8ff2689c2beee3a56a` and enabled in Sanity after
+production storage and coverage verification on 10 September 2026.
 
 ## Applied configuration
 
@@ -58,11 +59,36 @@ Vitals or production latency guarantees.
 The measured increase was about 16–24 ms. Catalogue caching remains enabled;
 the due upstream refresh runs after the response.
 
-## Remaining activation steps
+## Production activation
 
-Mount and verify the actual production persistent directory across replacement containers, seed it
-from the live feed, deploy the verified code and then enable Gallery Pricing.
-The [implementation and rollout guide](gallery-pricing.md) contains the commands,
-storage requirements and rollback procedure. Search Console verification must
-use the deployed, enabled production pages; local HTML checks cannot establish
+- [CI run 34451484312](https://github.com/kta136/DDASilver_Web/actions/runs/34451484312)
+  and [deployment run 34451484321](https://github.com/kta136/DDASilver_Web/actions/runs/34451484321)
+  passed. Coolify deployment `6tudw9ain0plazvpf8br7ryt` finished successfully.
+- Named volume `jmqhqogpliodvwr5m8igqr5u-gallery-pricing` is mounted at
+  `/app/gallery-pricing`, with runtime-only `GALLERY_PRICING_DIR` set to that path.
+  The directory and application run as UID/GID 1000. It remains outside ordinary
+  catalogue-cache eviction.
+- The production volume accepted an anonymous live-feed seed. A separate helper
+  container and then the deployed application recovered the same original
+  snapshot timestamp, generation and five-minute attempt schedule. The primary
+  and backup copies matched. After activation, the application accepted its next
+  due refresh through the normal controller.
+- All 70 public health checks during the rolling replacement succeeded. The
+  final application version was `9d861cf2b8d1`, with healthy application and
+  pricing status.
+- The final activation audit checked 631 products with zero gaps, then enabled
+  Gallery Pricing with a revision guard and confirmed the saved setting.
+- Public Chromium checks passed at desktop and mobile widths without runtime
+  errors. Gallery amounts were visible in the initial HTTP HTML with ordinary
+  product links and no timestamp or “Approx.” prefix. Dialogs reused their card's
+  price and showed the date and explanation. No pricing polling occurred during
+  a 35-second idle observation.
+- JavaScript-disabled public gallery and product pages showed their prices.
+  The 10 g coin and HM-GN-16 totals matched the saved rate plus their respective
+  ₹5/g and ₹30/g making charges. Purses remained on enquiry. Canonical URLs and
+  production indexing directives were correct; no `Offer` prices were added.
+
+The [implementation and rollout guide](gallery-pricing.md) contains storage
+requirements and the rollback procedure. Search Console verification can now
+use the enabled production pages; successful public HTML checks do not establish
 Google indexing or a price's appearance in search results.
