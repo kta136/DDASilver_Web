@@ -47,6 +47,15 @@ Owner-confirmed defaults are in [gallery-pricing-defaults.json](gallery-pricing-
 | Phone covers | ₹3,000/piece |
 | Purses, boxes and gifts | Deferred; enquiry only |
 
+Purse making charges for PR-1 through PR-31 were saved as individual product
+overrides on 10 September 2026, including the owner's clarification of PR-2 at
+₹35/g. The transcription and application record is in
+[gallery-purse-making-2026-09-10.json](gallery-purse-making-2026-09-10.json).
+The sheet also lists PR-32 through PR-36, which do not match the five other
+website records. Their correspondence is awaiting owner identification from
+photos; do not infer it from product order. Purse pricing remains deferred until
+the category coverage check passes. No category-wide making charge is assumed.
+
 Singhasan decorations use the underlying finish's rate. Small painted eyes, lips
 and tilaks still count as plain silver. Steel polish means the reflective dark or
 chrome-looking finish, including gold accents. Photographs determine finish
