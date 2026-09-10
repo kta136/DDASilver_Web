@@ -6,6 +6,14 @@ or range only. Opening an item shows the rate snapshot date, any fallback notice
 and “Includes making charges and taxes. Final price confirmed on enquiry.”
 There is no “Approx.” prefix. Manual totals show their own review date instead.
 
+The public `GET /api/catalog/prices` feed supplies the same calculated estimates
+to the DDA Silver native apps through the Live Rates V3 gallery API. It returns
+only published product IDs, slugs and optional estimates, never raw making-charge
+inputs or drafts. Responses are `no-store`; the consuming web service may cache
+them for 60 seconds. Stale/fallback catalogs return 503 without affecting product
+browsing. The feed shares this service's existing durable reference and refresh
+lock, so it does not create a second rate sampler.
+
 ## Calculation and category charges
 
 `total = weightGrams × (silverRatePerKg / 1000) + makingCharge`
