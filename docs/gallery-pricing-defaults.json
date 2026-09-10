@@ -44,5 +44,5 @@
       { "minimumWeightGrams": 0, "finish": "antique", "makingChargePerGram": 15 }
     ]
   },
-  "category-boxes": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true }
+  "category-boxes": { "source": "Owner-confirmed per-product charges in gallery-box-making-2026-09-10.json. All 30 boxes activated on 2026-09-10; no category-wide making-charge fallback.", "pricingDeferred": false }
 }

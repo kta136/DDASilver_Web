@@ -1,0 +1,411 @@
+{
+  "reviewedAt": "2026-09-10T10:10:06.9053177Z",
+  "categoryId": "category-boxes",
+  "unit": "INR_PER_GRAM",
+  "meaning": "Making charge per gram, to be added to silver value using the existing gallery pricing formula.",
+  "sources": [
+    {
+      "file": "WhatsApp Image 2026-09-10 at 3.08.46 PM.jpeg",
+      "sha256": "58d8eef34dfa653f9598b6c39bfdf747f9af363c63bdb28df1c1b2e279380767"
+    }
+  ],
+  "transcriptionNotes": [
+    "Crossed-out entries are excluded; the final uncrossed BX-8 and BX-9 entries are both 15 per gram.",
+    "Sheet BX-1 through BX-9 match catalogue BX-01 through BX-09 by numeric code; catalogue references are preserved."
+  ],
+  "status": "applied",
+  "categorySnapshot": {
+    "_id": "category-boxes",
+    "_rev": "PGZhlb2SqMdd7klBIJOXdr",
+    "pricingDeferred": true
+  },
+  "products": [
+    {
+      "sheetReference": "BX-1",
+      "catalogueReference": "BX-01",
+      "productId": "product-dda-img-20260830-01",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Pink Rose Enamel Rectangular Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 625,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-2",
+      "catalogueReference": "BX-02",
+      "productId": "product-dda-img-20260830-02",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Ornate Enamel Leaf Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 910,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-3",
+      "catalogueReference": "BX-03",
+      "productId": "product-dda-img-20260830-03",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Twin-Peacock Enamel Octagonal Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 661,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-4",
+      "catalogueReference": "BX-04",
+      "productId": "product-dda-img-20260830-04",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Raised-Rose Antique Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 500,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-5",
+      "catalogueReference": "BX-05",
+      "productId": "product-dda-img-20260830-05",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Floral-Relief Antique Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 950,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-6",
+      "catalogueReference": "BX-06",
+      "productId": "product-dda-img-20260830-06",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Pink-Blue Enamel Medallion Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 1165,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-7",
+      "catalogueReference": "BX-07",
+      "productId": "product-dda-img-20260830-07",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Multicolour Enamel Arched Floral Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 1450,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-8",
+      "catalogueReference": "BX-08",
+      "productId": "product-dda-img-20260830-08",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Antique Rose-Cluster Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 500,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-9",
+      "catalogueReference": "BX-09",
+      "productId": "product-dda-img-20260830-09",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Twin-Flower Scroll Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 550,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-10",
+      "catalogueReference": "BX-10",
+      "productId": "product-dda-img-20260830-10",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Diamond-Floral Antique Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 700,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-11",
+      "catalogueReference": "BX-11",
+      "productId": "product-dda-img-20260830-14",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Gold-Accent Peacock-Floral Silver Gift Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 200,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-12",
+      "catalogueReference": "BX-12",
+      "productId": "product-dda-img-20260830-16",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Double-Heart Butterfly-Enamel Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 1414,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-13",
+      "catalogueReference": "BX-13",
+      "productId": "product-dda-img-20260830-17",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Raised-Foot Floral-Relief Silver Gift Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 700,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-14",
+      "catalogueReference": "BX-14",
+      "productId": "product-dda-img-20260830-18",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Blue-Enamel Garden-Panel Square Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 960,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-15",
+      "catalogueReference": "BX-15",
+      "productId": "product-dda-img-20260830-19",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Red-Enamel Geometric Square Silver Gift Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 1212,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-16",
+      "catalogueReference": "BX-16",
+      "productId": "product-dda-gift-jpb-01-plain-nine-piece-silver-jain-pooja-box-set",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Plain Nine-Piece Silver Jain Pooja Box Set",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": null,
+      "sizeVariants": [
+        {
+          "_key": "350g-5in",
+          "_type": "productSizeVariant",
+          "diameterInches": 5,
+          "weightGrams": 350
+        },
+        {
+          "_key": "450g-6in",
+          "_type": "productSizeVariant",
+          "diameterInches": 6,
+          "weightGrams": 450
+        },
+        {
+          "_key": "550g-7in",
+          "_type": "productSizeVariant",
+          "diameterInches": 7,
+          "weightGrams": 550
+        },
+        {
+          "_key": "800g-8in",
+          "_type": "productSizeVariant",
+          "diameterInches": 8,
+          "weightGrams": 800
+        }
+      ],
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-17",
+      "catalogueReference": "BX-17",
+      "productId": "product-dda-pics-20260825-41",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Gold-and-Pink Crest Octagonal Silver Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 230,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-18",
+      "catalogueReference": "BX-18",
+      "productId": "product-dda-pics-20260825-42",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Enamel Floral Octagonal Silver Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 250,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-19",
+      "catalogueReference": "BX-19",
+      "productId": "product-dda-pics-20260825-43",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Floral-Jewel Octagonal Silver Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 235,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-20",
+      "catalogueReference": "BX-20",
+      "productId": "product-dda-pics-20260825-44",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Domed Enamel Octagonal Silver Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 240,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-21",
+      "catalogueReference": "BX-21",
+      "productId": "product-dda-pics-20260825-45",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Square-Medallion Octagonal Silver Box",
+      "makingChargePerGram": 35,
+      "status": "applied",
+      "weightGrams": 240,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-22",
+      "catalogueReference": "BX-22",
+      "productId": "product-dda-pics-20260825-46",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Enamel Floral Rectangular Silver Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 935,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-23",
+      "catalogueReference": "BX-23",
+      "productId": "product-dda-pics-20260825-47",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Faceted Floral Footed Silver Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 280,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-24",
+      "catalogueReference": "BX-24",
+      "productId": "product-dda-pics-20260825-48",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Floral-Lattice Oval Silver Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 565,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-25",
+      "catalogueReference": "BX-25",
+      "productId": "product-dda-pics-20260825-49",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Enamel Floral Hammered Silver Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 600,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-26",
+      "catalogueReference": "BX-26",
+      "productId": "product-dda-pics-20260825-58",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Round Footed Silver Keepsake Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 875,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-27",
+      "catalogueReference": "BX-27",
+      "productId": "product-dda-pics-20260825-59",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Pink-Stone Enamel Floral Silver Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 700,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-28",
+      "catalogueReference": "BX-28",
+      "productId": "product-dda-pics-20260825-61",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Peacock-Footed Octagonal Silver Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 977,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-29",
+      "catalogueReference": "BX-29",
+      "productId": "product-dda-pics-20260825-63",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Elephant-Floral Rectangular Silver Box",
+      "makingChargePerGram": 15,
+      "status": "applied",
+      "weightGrams": 980,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    },
+    {
+      "sheetReference": "BX-30",
+      "catalogueReference": "BX-30",
+      "productId": "product-dda-pics-20260825-64",
+      "revision": "be7lSVyrDDrRj2s4P0rGq4",
+      "title": "Enamel Floral Fan-Shaped Silver Box",
+      "makingChargePerGram": 10,
+      "status": "applied",
+      "weightGrams": 900,
+      "sizeVariants": null,
+      "appliedRevision": "RbbFydKhICUFs6q5YheDKD"
+    }
+  ],
+  "appliedAt": "2026-09-10T10:18:44.195Z",
+  "appliedCategoryRevision": "RbbFydKhICUFs6q5YheDKD"
+}

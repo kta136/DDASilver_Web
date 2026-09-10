@@ -21,8 +21,10 @@ lock, so it does not create a second rate sampler.
 Making is either weight multiplied by the per-gram charge or one fixed per-piece
 charge. The owner supplied tax-inclusive making charges: do not add tax again or
 apply an additional purity multiplier. Calculate each weight/diameter variant
-independently, round the final totals to the nearest rupee, and show a range when
-the totals differ. A product override takes priority over category rules. Zero is
+independently, round the final totals to the nearest ₹100 (₹50 ties round up), and
+show a range when the rounded totals differ. This also applies to manual totals
+and every manual size price, consistently across cards, details and the public
+price feed. A product override takes priority over category rules. Zero is
 a valid making charge; a missing value is not zero.
 
 Owner-confirmed defaults are in [gallery-pricing-defaults.json](gallery-pricing-defaults.json).
@@ -46,7 +48,16 @@ Owner-confirmed defaults are in [gallery-pricing-defaults.json](gallery-pricing-
 | Utensils, over 20 g | ₹10/g |
 | Phone covers | ₹3,000/piece |
 | Purses | Individual product charges: ₹15, ₹35, ₹50, ₹80 or ₹90/g |
-| Boxes and gifts | Deferred; enquiry only |
+| Boxes | Individual product charges: ₹10, ₹15 or ₹35/g |
+| Gifts | Deferred; enquiry only |
+
+Box making charges for all 30 products were activated as individual product
+overrides on 10 September 2026. The transcription and application record is in
+[gallery-box-making-2026-09-10.json](gallery-box-making-2026-09-10.json).
+BX-16 uses ₹10/g for each of its four size variants. Sheet BX-1 through BX-9
+match catalogue BX-01 through BX-09; existing references are preserved. There
+is no category-wide making-charge fallback, so future boxes require their own
+verified charge before publishing.
 
 Purse making charges for all 36 products were activated as individual product
 overrides on 10 September 2026, including the owner's clarification of PR-2 at
@@ -119,8 +130,13 @@ This follows Google's guidance on
 [server rendering](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics)
 and [crawlable links](https://developers.google.com/search/docs/crawling-indexing/links-crawlable).
 Google can extract the visible prices, but indexing and showing prices in search
-results remain Google's decision. Estimates are excluded from structured-data
-`Offer` prices, as agreed. The existing product URLs, sitemap and canonical URLs
+results remain Google's decision. Following the owner's 10 September confirmation
+to use the now-published item prices for SEO, direct product pages include
+`Product` and INR `Offer` markup from the same estimate rendered on that request.
+Each visible size price has its own Offer; variant ranges are not AggregateOffers.
+Missing, invalid, fallback or automatic references older than 390 seconds omit
+offers and use ordinary WebPage markup. Manual review dates are not expiry dates.
+Stock, reviews and price expiry are not assumed. The existing product URLs, sitemap and canonical URLs
 provide discovery independently of the JavaScript dialog.
 
 ## Studio and publishing

@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 1,
+  "batchId": "img-2026-09-10",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": false,
+  "publishBlockers": [
+    "Owner must supply labour amount and unit for every item before any Sanity upload.",
+    "Owner must confirm silver purity."
+  ],
+  "products": [
+    {
+      "number": 1,
+      "id": "product-dda-img-20260910-01",
+      "title": "Ornate Long-Spout Silver Ewer",
+      "slug": "ornate-long-spout-silver-ewer",
+      "shortDescription": "Ornate silver ewer with a long curved spout and embossed body; label states 300 g and 6.5 in height.",
+      "alt": "Ornate silver ewer with a long curved spout",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 300,
+      "heightInches": 6.5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 2.19.36 PM.jpeg",
+      "sourceSha256": "9A29C438FEB663775597F4B68E3287660346E5B7665097F0A44027D5FA8F962E",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/01-ornate-long-spout-silver-ewer.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 2.19.36 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "jug",
+      "reference": "DDA-UT-JG-97",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "44CF815411BB2D6CCD5A90EF4D9DDE7A8682D276BB0E96D40077BE1F8D0B7116",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 300gm; Height 6.5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 2,
+      "id": "product-dda-img-20260910-02",
+      "title": "Tall Lidded Long-Spout Silver Ewer",
+      "slug": "tall-lidded-long-spout-silver-ewer",
+      "shortDescription": "Tall lidded silver ewer with an embossed finial and long curved spout; label states 380 g and 9.5 in height.",
+      "alt": "Tall lidded silver ewer with long curved spout",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 380,
+      "heightInches": 9.5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 2.21.06 PM.jpeg",
+      "sourceSha256": "56852D4DDA643EAADF2441A888110F19B145C2A3123CD844BB074D44ED62B25E",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/02-tall-lidded-long-spout-silver-ewer.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 2.21.06 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "jug",
+      "reference": "DDA-UT-JG-98",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "4E974C1E4D8D795AFDCD8BEC1AE1A4EDA489582466263DE5192B4CF9DBADBFCA",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 380gm; Height 9.5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 3,
+      "id": "product-dda-img-20260910-03",
+      "title": "Five Tapered Embossed Silver Cone Set",
+      "slug": "five-tapered-embossed-silver-cone-set",
+      "shortDescription": "Set of five tapered embossed silver cone forms; label states 650 g and 9 in height, pending confirmation whether weight is per set.",
+      "alt": "Five tapered embossed silver cone forms in a set",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 650,
+      "heightInches": 9,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 2.24.55 PM.jpeg",
+      "sourceSha256": "E67D761564BDC938A69DEB1A52CF5DEC7D5EEBE2EB5E47B49BA1F0D2C127FE03",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/03-five-tapered-embossed-silver-cone-set.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner confirmation of set weight/category",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 2.24.55 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "02EE70DD3260FE57B2648C08C52AB1FC288801447FA1E42C7326EEAFF5372366",
+      "labourStatus": "awaiting-owner",
+      "labelWeightGrams": 650,
+      "weightBasis": "unconfirmed-piece-or-complete-set",
+      "sourceLabelText": "Weight 650gm; Height 9inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 4,
+      "id": "product-dda-img-20260910-04",
+      "title": "Eight Auspicious Symbol Silver Stand Set",
+      "slug": "eight-auspicious-symbol-silver-stand-set",
+      "shortDescription": "Set of eight silver auspicious-symbol stands with varied relief motifs; label states 450 g and 6 in height, pending set-weight confirmation.",
+      "alt": "Eight silver auspicious-symbol stands with relief motifs",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 450,
+      "heightInches": 6,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 2.39.02 PM.jpeg",
+      "sourceSha256": "1DB83E96132F96BDD2B202FCA5E305A2F05A14771265ACF9BA9DEE1B28B4E093",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/04-eight-auspicious-symbol-silver-stand-set.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner confirmation of set weight/category",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 2.39.02 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "8113B433B8229E4DEE93F89D7CC5B178BF36823CB48A269DDEA30C980242D103",
+      "labourStatus": "awaiting-owner",
+      "labelWeightGrams": 450,
+      "weightBasis": "unconfirmed-piece-or-complete-set",
+      "sourceLabelText": "Weight 450gm; Height 6inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 5,
+      "id": "product-dda-img-20260910-05",
+      "title": "Tall Ceremonial Silver Canopy Stand",
+      "slug": "tall-ceremonial-silver-canopy-stand",
+      "shortDescription": "Tall ceremonial silver canopy stand with a decorative top and central medallion; label states 2 kg and 34 in height.",
+      "alt": "Tall ceremonial silver canopy stand with decorative medallion",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 2000,
+      "heightInches": 34,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 3.09.27 PM.jpeg",
+      "sourceSha256": "F1D65F56A058506D0683898BADDCFD71C7411A39F147922E014F96BA524BDC0B",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/05-tall-ceremonial-silver-canopy-stand.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner confirmation of exact product type/category",
+        "Item reference pending confirmed product category/type and live code allocation.",
+        "Visual review: original photo clips the top hanging loop; generated completion is not verified against the source."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 3.09.27 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "F13956EDE03D821E66EA961CFF2065500863D87945A1BDD605C326063B513FE2",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 2kg; Height 34inch",
+      "imageReviewStatus": "needs-source-completion-review",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload.",
+        "Top loop outline extends beyond the clipped source; resolve using an uncropped source or explicit owner confirmation."
+      ]
+    },
+    {
+      "number": 6,
+      "id": "product-dda-img-20260910-06",
+      "title": "Small Pedestal Silver Bowl",
+      "slug": "small-pedestal-silver-bowl",
+      "shortDescription": "Small polished silver pedestal bowl; label states 20 g and 2 in height.",
+      "alt": "Small polished silver bowl on a pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 20,
+      "heightInches": 2,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 3.53.24 PM.jpeg",
+      "sourceSha256": "E4B8C4703DB77016CDE42A2795DDF1ABBF29AF869F3B1DA55598A4CFD0D9AEE9",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/06-small-pedestal-bowl.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 3.53.24 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "bowl",
+      "reference": "DDA-UT-BW-111",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "456161284CF5F3337FD314B0AB6B4ECC2FBE1ADAF7EBCD6B16247E761820865B",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 20gm; Height 2inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 7,
+      "id": "product-dda-img-20260910-07",
+      "title": "Small Handled Pedestal Silver Bowl",
+      "slug": "small-handled-pedestal-silver-bowl",
+      "shortDescription": "Small handled silver pedestal bowl; label states 25 g and 2 in height.",
+      "alt": "Small handled silver bowl on a pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 25,
+      "heightInches": 2,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 3.55.34 PM.jpeg",
+      "sourceSha256": "EE41A7A0A8D1CA627DBD6EF60920897403737D70E0A7B7CD364AA874BF566223",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/07-small-handled-pedestal-silver-bowl.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 3.55.34 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "bowl",
+      "reference": "DDA-UT-BW-112",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "0AF598A63B1B46E8D6D7E9ACA19F986B8710F8BBF87AEE0DBEB77F88A951B647",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 25gm; Height 2inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 8,
+      "id": "product-dda-img-20260910-08",
+      "title": "Tiny Pedestal Silver Bowl",
+      "slug": "tiny-pedestal-silver-bowl",
+      "shortDescription": "Tiny polished silver pedestal bowl; label states 10 g and 1.5 in height.",
+      "alt": "Tiny polished silver bowl on a pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 10,
+      "heightInches": 1.5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 3.57.55 PM.jpeg",
+      "sourceSha256": "ACF945E4A43A0CB1907E3485BE3376B19CE4E5B070A083BFFD71FC496FF586E5",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/08-tiny-pedestal-silver-bowl.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 3.57.55 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "bowl",
+      "reference": "DDA-UT-BW-113",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "C20031900F9CDE6BFA795B483E61C7B2A5A2114259B48230668B8271FF26CB8F",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 10gm; Height 1.5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 9,
+      "id": "product-dda-img-20260910-09",
+      "title": "Tiny Handled Pedestal Silver Bowl",
+      "slug": "tiny-handled-pedestal-silver-bowl",
+      "shortDescription": "Tiny handled silver pedestal bowl; label states 15 g and 1.5 in height.",
+      "alt": "Tiny handled silver bowl on a pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 15,
+      "heightInches": 1.5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 3.59.41 PM.jpeg",
+      "sourceSha256": "533A141CFC013353FF1D5D84DB1B0CFC3F7E623B6D6B89D61F42C7AA69B6B50C",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/09-tiny-handled-pedestal-silver-bowl.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 3.59.41 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "bowl",
+      "reference": "DDA-UT-BW-114",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "D96EBA92E8148EA788224E46E4A1A009FD89F0BA1EDD99F6F8D5972EBD305959",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 15gm; Height 1.5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 10,
+      "id": "product-dda-img-20260910-10",
+      "title": "Silver Diya Bowl on Tray",
+      "slug": "silver-diya-bowl-on-tray",
+      "shortDescription": "Wide silver diya bowl on a circular tray; label states 200 g and 3.5 in height.",
+      "alt": "Wide silver diya bowl on a circular tray",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 200,
+      "heightInches": 3.5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 4.13.28 PM.jpeg",
+      "sourceSha256": "2914C14DBBDF9F6A806C62C3A60577307B514AE40DB409E84139A8DCCA695B23",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/10-silver-diya-bowl-on-tray.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "Item reference pending confirmed product category/type and live code allocation.",
+        "Confirm diya category/reference; current utensil schema has no diya type."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 4.13.28 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "1B1260F42BCAA3133D481B676CEFFC2B6760987EC3343004462C15D89F862ACC",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 200gm; Height 3.5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 11,
+      "id": "product-dda-img-20260910-11",
+      "title": "Engraved Leaf-Band Silver Kalash",
+      "slug": "engraved-leaf-band-silver-kalash",
+      "shortDescription": "Round silver kalash with engraved leaf bands; label states 500 g and 7 in height.",
+      "alt": "Round silver kalash with engraved leaf bands",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 500,
+      "heightInches": 7,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.41.08 PM.jpeg",
+      "sourceSha256": "0B589EA6B4256BAA8025A8B90B839CFFEEA2778D136F297BBD498ABEF7107C83",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/11-engraved-round-silver-vessel-leaf-bands.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.41.08 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-110",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "D5924A7EE570C5A9D29C84CC6EBB222234A68D2A2EE6A967004D93F6EDA58BC9",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 500gm; Height 7inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 12,
+      "id": "product-dda-img-20260910-12",
+      "title": "Floral Engraved Silver Kalash",
+      "slug": "floral-engraved-silver-kalash",
+      "shortDescription": "Round silver kalash with dense floral engraving; label states 650 g and 8 in height.",
+      "alt": "Floral engraved round silver kalash",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 650,
+      "heightInches": 8,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.42.07 PM.jpeg",
+      "sourceSha256": "F298A15309978C83AC624FFA6133AD089A4A92B729DB533915A7EF252109F13F",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/12-floral-engraved-round-silver-vessel.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.42.07 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-111",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "05BB90E8FCEB4AE37FFC796558B1F729FBB930C2805785FA983F7FBF22B8AD31",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 650gm; Height 8inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 13,
+      "id": "product-dda-img-20260910-13",
+      "title": "Om Relief Silver Kalash",
+      "slug": "om-relief-silver-kalash",
+      "shortDescription": "Round silver kalash with Om relief, hanging bells and deity panels; label states 800 g and 8 in height.",
+      "alt": "Round silver kalash with Om relief and hanging bells",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 800,
+      "heightInches": 8,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.44.18 PM.jpeg",
+      "sourceSha256": "B5D425E5533369C9AC2C86E1E1FC1109E66766E4E74E9A9D45097337D5FCC3D9",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/13-om-relief-round-silver-vessel.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.44.18 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-112",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "5E156BFB3F9A324432026A6CD05F7B968104C9DC3E3BCBEAD7C60512637E2277",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 800gm; Height 8inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 14,
+      "id": "product-dda-img-20260910-14",
+      "title": "Smooth Banded Silver Kalash",
+      "slug": "smooth-banded-silver-kalash-10in",
+      "shortDescription": "Smooth polished round silver kalash with horizontal bands; label states 1400 g and 10 in height.",
+      "alt": "Smooth polished round silver kalash with bands",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 1400,
+      "heightInches": 10,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.45.36 PM.jpeg",
+      "sourceSha256": "FA7E1159F5A2651BE08176E996056B22F0F28C7DC71B5B822BCF73CA25A0D58E",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/14-smooth-round-silver-vessel-10in.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.45.36 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-113",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "07653E6ED91D56406C197026E954A982F4C697F458C29F92BEA00A079237D935",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 1400gm; Height 10inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 15,
+      "id": "product-dda-img-20260910-15",
+      "title": "Dark-Band Silver Kalash 7 Inch",
+      "slug": "dark-band-silver-kalash-7in",
+      "shortDescription": "Polished round silver kalash with a dark horizontal band; label states 500 g and 7 in height.",
+      "alt": "Seven-inch polished silver kalash with a stepped neck and dark horizontal bands",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 500,
+      "heightInches": 7,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.46.45 PM.jpeg",
+      "sourceSha256": "EFF919A315E810692ACFB39E2B67C4F77A6932A2354387A6874EA13F786BC1D4",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/15-smooth-round-silver-vessel-7in.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.46.45 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-114",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "1FEA435FAA7A144A02F6F84969BF9126C96768374F5E0BC237C7E723599757FF",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 500gm; Height 7inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 16,
+      "id": "product-dda-img-20260910-16",
+      "title": "Dark-Band Silver Kalash 8 Inch",
+      "slug": "dark-band-silver-kalash-8in",
+      "shortDescription": "Polished round silver kalash with a dark horizontal band; label states 700 g and 8 in height.",
+      "alt": "Eight-inch rounded silver kalash with a flared rim and dark bands around the body",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 700,
+      "heightInches": 8,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.47.35 PM.jpeg",
+      "sourceSha256": "DB6809A392BEC5B722FB19CD533FEA5F804E3ADD56CF8C1DC67461FD3A7F9020",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/16-smooth-round-silver-vessel-8in.png",
+      "publishBlockers": [
+        "purity",
+        "labour"
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.47.35 PM.jpeg",
+      "categoryId": "category-utensils",
+      "utensilType": "kalash",
+      "reference": "DDA-UT-KL-115",
+      "referenceStatus": "proposed-from-live-audit-recheck-before-upload",
+      "imageSha256": "4C937D8B4D1D5A089FA95A613FAD768776719FCA74A7003914AE1AFE60A4A7E3",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 700gm; Height 8inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 17,
+      "id": "product-dda-img-20260910-17",
+      "title": "Engraved Floral Silver Pedestal 8 Inch",
+      "slug": "engraved-floral-silver-pedestal-8in",
+      "shortDescription": "Cylindrical silver pedestal with engraved floral panels and a closed decorated top; label states 750 g and 8 in height.",
+      "alt": "Engraved floral cylindrical silver pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 750,
+      "heightInches": 8,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.52.19 PM.jpeg",
+      "sourceSha256": "71E4AA9E4A28C8D896B2388B4A09A6FABAB90CDBE209F9C8C774171FCF52AC2A",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/17-engraved-floral-silver-cylinder-8in.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.52.19 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "773A0E1F23F332E9E39DCB4C6584A18F0907C2214A26E03DC98C3A2C2251F21C",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 750gm; Height 8inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 18,
+      "id": "product-dda-img-20260910-18",
+      "title": "Floral Silver Pedestal 10 Inch",
+      "slug": "floral-silver-pedestal-10in",
+      "shortDescription": "Cylindrical silver pedestal with floral engraved bands and a closed decorated top; label states 1 kg and 10 in height.",
+      "alt": "Floral engraved cylindrical silver pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 1000,
+      "heightInches": 10,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.53.44 PM.jpeg",
+      "sourceSha256": "41967434AA0C77EAA610D4A419CAAA568C2DA7459181B0CBA26C4E386CC1A91D",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/18-floral-silver-cylinder-10in.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.53.44 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "F9D932A35ADA59BC71645ABD2F89F7965F14A7F0C9A1D768FE9355EB8CC873B6",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 1kg; Height 10inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 19,
+      "id": "product-dda-img-20260910-19",
+      "title": "Large Floral Silver Pedestal 12 Inch",
+      "slug": "large-floral-silver-pedestal-12in",
+      "shortDescription": "Large cylindrical silver pedestal with engraved floral band and closed decorated top; label states 1.5 kg and 12 in height.",
+      "alt": "Large cylindrical silver pedestal with floral engraving",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 1500,
+      "heightInches": 12,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 5.58.11 PM.jpeg",
+      "sourceSha256": "C42069A47C007E474A5EA9CB073C4A150FF0C7F9659132FEAE19C498FD6A35DD",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/19-large-floral-silver-pedestal-12in.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 5.58.11 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "B0B1F480A67784F4424605574466647A7AA6A77617F5208AD88E653DF2F33D38",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 1.5kg; Height 12inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 20,
+      "id": "product-dda-img-20260910-20",
+      "title": "Ornate Silver Pedestal 14 Inch",
+      "slug": "ornate-silver-pedestal-14in",
+      "shortDescription": "Large ornate cylindrical silver pedestal with engraved floral bands and flat decorated top; label states 2 kg and 14 in height.",
+      "alt": "Ornate cylindrical silver pedestal with engraved bands",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 2000,
+      "heightInches": 14,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 6.00.01 PM.jpeg",
+      "sourceSha256": "ED56FDEA83E0425F5604A584E83C938D6E374BE4CE5486BE6A945D23453E6528",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/20-ornate-silver-pedestal-14in.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 6.00.01 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "C52682F2E366711BC19D749F84D00A5A20B6F5019BDD436EFC605081905E9E07",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 2kg; Height 14inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 21,
+      "id": "product-dda-img-20260910-21",
+      "title": "Checkerboard Silver Pedestal 10 Inch",
+      "slug": "checkerboard-silver-pedestal-10in",
+      "shortDescription": "Cylindrical silver pedestal with checkerboard and floral engraved bands and a closed top; label states 1200 g and 10 in height.",
+      "alt": "Checkerboard and floral cylindrical silver pedestal",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 1200,
+      "heightInches": 10,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-05 at 6.01.26 PM.jpeg",
+      "sourceSha256": "F5AC19CE36A43223F591CBEBE0F55F24E9C19A88D288A8DC38BF4F215B7167FA",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/21-checkerboard-silver-pedestal-10in.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-05 at 6.01.26 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "9357AA1A2DE6B9854CB0D8A2763DE5FCF9CCD0AF39A4E276662BE4742EB53C8E",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 1200gm; Height 10inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 22,
+      "id": "product-dda-img-20260910-22",
+      "title": "Tall Ceremonial Silver Tripod Display",
+      "slug": "tall-ceremonial-silver-tripod-display",
+      "shortDescription": "Tall ceremonial silver tripod display with a facial figure and circular halo; label states 440 g and 20 in height, identity pending owner confirmation.",
+      "alt": "Tall silver tripod display with facial figure and circular halo",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 440,
+      "heightInches": 20,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-08 at 4.13.12 PM.jpeg",
+      "sourceSha256": "377EEB11C5245C62BB0A5F816F99B19E0A3F8DB52C4912D34456B478437DC256",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/22-tall-ceremonial-silver-tripod-display.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner identity/category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-08 at 4.13.12 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "B31A9FDC1D768D079CF0681FC12EE850130328E056E4D076F7F018ADCEDAA544",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 440gm; Height 20inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    },
+    {
+      "number": 23,
+      "id": "product-dda-img-20260910-23",
+      "title": "Small Lidded Star-Motif Silver Container",
+      "slug": "small-lidded-star-motif-silver-container",
+      "shortDescription": "Small lidded round silver container with star-shaped motifs and a floral lower band; label states 130 g and 5 in height.",
+      "alt": "Small lidded round silver container with star motifs",
+      "material": "silver",
+      "purity": null,
+      "weightGrams": 130,
+      "heightInches": 5,
+      "sourcePath": "C:/Users/kk/Desktop/img/WhatsApp Image 2026-09-08 at 4.13.52 PM.jpeg",
+      "sourceSha256": "7254547E56F1627569B891A278963209E2986A8BE4103FC7860E80A7F20DC55A",
+      "imagePath": "public/images/gallery-ingestion/img-2026-09-10/images/23-small-lidded-star-motif-silver-container.png",
+      "publishBlockers": [
+        "purity",
+        "labour",
+        "owner category confirmation",
+        "Item reference pending confirmed product category/type and live code allocation."
+      ],
+      "preservedSourcePath": "public/images/gallery-ingestion/img-2026-09-10/sources/WhatsApp Image 2026-09-08 at 4.13.52 PM.jpeg",
+      "categoryId": "category-gifts",
+      "reference": null,
+      "imageSha256": "215A6F64B92A82556114DBCEF9175A4ECEF73AA4F705E28E1EB45F7A243A809D",
+      "labourStatus": "awaiting-owner",
+      "sourceLabelText": "Weight 130gm; Height 5inch",
+      "imageReviewStatus": "reviewed",
+      "uploadBlockers": [
+        "Owner labour amount and unit required before upload."
+      ]
+    }
+  ],
+  "sourceFolder": "C:/Users/kk/Desktop/img",
+  "sourceCount": 23,
+  "originalSourceCount": 23,
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+  "promptAuditPath": "public/images/gallery-ingestion/img-2026-09-10/prompt-audit.md",
+  "generationMode": "built-in image_gen compositing, Luna subagent",
+  "uploadStatus": "held-pending-owner-labour-and-specifications",
+  "liveReferenceAudit": {
+    "checkedAt": "2026-09-10T08:47:25.543Z",
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "proposedUtensilReferences": [
+      {
+        "number": 1,
+        "reference": "DDA-UT-JG-97"
+      },
+      {
+        "number": 2,
+        "reference": "DDA-UT-JG-98"
+      },
+      {
+        "number": 6,
+        "reference": "DDA-UT-BW-111"
+      },
+      {
+        "number": 7,
+        "reference": "DDA-UT-BW-112"
+      },
+      {
+        "number": 8,
+        "reference": "DDA-UT-BW-113"
+      },
+      {
+        "number": 9,
+        "reference": "DDA-UT-BW-114"
+      },
+      {
+        "number": 11,
+        "reference": "DDA-UT-KL-110"
+      },
+      {
+        "number": 12,
+        "reference": "DDA-UT-KL-111"
+      },
+      {
+        "number": 13,
+        "reference": "DDA-UT-KL-112"
+      },
+      {
+        "number": 14,
+        "reference": "DDA-UT-KL-113"
+      },
+      {
+        "number": 15,
+        "reference": "DDA-UT-KL-114"
+      },
+      {
+        "number": 16,
+        "reference": "DDA-UT-KL-115"
+      }
+    ],
+    "collisions": []
+  },
+  "sanityDryRunReportPath": "public/images/gallery-ingestion/img-2026-09-10/sanity-dry-run-report.md",
+  "uploadBlockers": [
+    "Owner labour amount and unit required for all 23 items before upload.",
+    "Item 5 source clips its hanging loop; generated outline requires resolution."
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "verifiedAt": "2026-09-10T10:20:00.373Z",
+  "feedGeneratedAt": "2026-09-10T10:19:49.626Z",
+  "snapshotAsOf": "2026-09-10T10:16:49.311Z",
+  "availableBoxPrices": 30,
+  "bx16Sizes": [
+    {
+      "weightGrams": 350,
+      "diameterInches": 5,
+      "amount": 88619
+    },
+    {
+      "weightGrams": 450,
+      "diameterInches": 6,
+      "amount": 113939
+    },
+    {
+      "weightGrams": 550,
+      "diameterInches": 7,
+      "amount": 139259
+    },
+    {
+      "weightGrams": 800,
+      "diameterInches": 8,
+      "amount": 202558
+    }
+  ],
+  "formulaCheck": "All 33 weight/price pairs are consistent with the supplied making rates and one shared silver reference, with production rounding to the nearest rupee.",
+  "inferredSilverPerGramInterval": {
+    "minimum": 243.19799999999998,
+    "maximum": 243.1980552712385
+  },
+  "htmlChecks": [
+    {
+      "reference": "BX-01",
+      "url": "https://www.ddasilver.com/products/pink-rose-enamel-rectangular-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        158249
+      ]
+    },
+    {
+      "reference": "BX-02",
+      "url": "https://www.ddasilver.com/products/ornate-enamel-leaf-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        230410
+      ]
+    },
+    {
+      "reference": "BX-03",
+      "url": "https://www.ddasilver.com/products/twin-peacock-enamel-octagonal-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        167364
+      ]
+    },
+    {
+      "reference": "BX-04",
+      "url": "https://www.ddasilver.com/products/raised-rose-antique-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        129099
+      ]
+    },
+    {
+      "reference": "BX-05",
+      "url": "https://www.ddasilver.com/products/floral-relief-antique-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        245288
+      ]
+    },
+    {
+      "reference": "BX-06",
+      "url": "https://www.ddasilver.com/products/pink-blue-enamel-medallion-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        294976
+      ]
+    },
+    {
+      "reference": "BX-07",
+      "url": "https://www.ddasilver.com/products/multicolour-enamel-arched-floral-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        367137
+      ]
+    },
+    {
+      "reference": "BX-08",
+      "url": "https://www.ddasilver.com/products/antique-rose-cluster-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        129099
+      ]
+    },
+    {
+      "reference": "BX-09",
+      "url": "https://www.ddasilver.com/products/twin-flower-scroll-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        142009
+      ]
+    },
+    {
+      "reference": "BX-10",
+      "url": "https://www.ddasilver.com/products/diamond-floral-antique-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        180739
+      ]
+    },
+    {
+      "reference": "BX-11",
+      "url": "https://www.ddasilver.com/products/gold-accent-peacock-floral-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        55640
+      ]
+    },
+    {
+      "reference": "BX-12",
+      "url": "https://www.ddasilver.com/products/double-heart-butterfly-enamel-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        358022
+      ]
+    },
+    {
+      "reference": "BX-13",
+      "url": "https://www.ddasilver.com/products/raised-foot-floral-relief-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        180739
+      ]
+    },
+    {
+      "reference": "BX-14",
+      "url": "https://www.ddasilver.com/products/blue-enamel-garden-panel-square-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        243070
+      ]
+    },
+    {
+      "reference": "BX-15",
+      "url": "https://www.ddasilver.com/products/red-enamel-geometric-square-silver-gift-box",
+      "status": 200,
+      "amounts": [
+        306876
+      ]
+    },
+    {
+      "reference": "BX-16",
+      "url": "https://www.ddasilver.com/products/plain-nine-piece-silver-jain-pooja-box-set",
+      "status": 200,
+      "amounts": [
+        88619,
+        202558,
+        113939,
+        139259
+      ]
+    },
+    {
+      "reference": "BX-17",
+      "url": "https://www.ddasilver.com/products/gold-and-pink-crest-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        63986
+      ]
+    },
+    {
+      "reference": "BX-18",
+      "url": "https://www.ddasilver.com/products/enamel-floral-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        69550
+      ]
+    },
+    {
+      "reference": "BX-19",
+      "url": "https://www.ddasilver.com/products/floral-jewel-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        65377
+      ]
+    },
+    {
+      "reference": "BX-20",
+      "url": "https://www.ddasilver.com/products/domed-enamel-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        66768
+      ]
+    },
+    {
+      "reference": "BX-21",
+      "url": "https://www.ddasilver.com/products/square-medallion-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        66768
+      ]
+    },
+    {
+      "reference": "BX-22",
+      "url": "https://www.ddasilver.com/products/enamel-floral-rectangular-silver-box",
+      "status": 200,
+      "amounts": [
+        236740
+      ]
+    },
+    {
+      "reference": "BX-23",
+      "url": "https://www.ddasilver.com/products/faceted-floral-footed-silver-box",
+      "status": 200,
+      "amounts": [
+        72295
+      ]
+    },
+    {
+      "reference": "BX-24",
+      "url": "https://www.ddasilver.com/products/floral-lattice-oval-silver-box",
+      "status": 200,
+      "amounts": [
+        145882
+      ]
+    },
+    {
+      "reference": "BX-25",
+      "url": "https://www.ddasilver.com/products/enamel-floral-hammered-silver-box",
+      "status": 200,
+      "amounts": [
+        151919
+      ]
+    },
+    {
+      "reference": "BX-26",
+      "url": "https://www.ddasilver.com/products/round-footed-silver-keepsake-box",
+      "status": 200,
+      "amounts": [
+        225923
+      ]
+    },
+    {
+      "reference": "BX-27",
+      "url": "https://www.ddasilver.com/products/pink-stone-enamel-floral-silver-box",
+      "status": 200,
+      "amounts": [
+        177239
+      ]
+    },
+    {
+      "reference": "BX-28",
+      "url": "https://www.ddasilver.com/products/peacock-footed-octagonal-silver-box",
+      "status": 200,
+      "amounts": [
+        252259
+      ]
+    },
+    {
+      "reference": "BX-29",
+      "url": "https://www.ddasilver.com/products/elephant-floral-rectangular-silver-box",
+      "status": 200,
+      "amounts": [
+        253034
+      ]
+    },
+    {
+      "reference": "BX-30",
+      "url": "https://www.ddasilver.com/products/enamel-floral-fan-shaped-silver-box",
+      "status": 200,
+      "amounts": [
+        227878
+      ]
+    }
+  ]
+}

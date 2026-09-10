@@ -53,7 +53,7 @@ describe("request-time price composition", () => {
     expect(mocks.connection).toHaveBeenCalledOnce();
     expect(mocks.refresh).not.toHaveBeenCalled();
     expect(result.map((product) => product.estimate)).toMatchObject([
-      { minimum: 1050, asOf: reference.snapshotAsOf, lastAvailable: true },
+      { minimum: 1100, asOf: reference.snapshotAsOf, lastAvailable: true },
       { minimum: 2100, asOf: reference.snapshotAsOf },
     ]);
     await mocks.after.mock.calls[0][0]();

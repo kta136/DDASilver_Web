@@ -4,6 +4,8 @@ import { describe, expect, it, vi } from "vitest";
 import { ProductPrice } from "./product-price";
 import { GalleryPriceProvider, PricedProductLink } from "./price-context";
 import type { PriceEstimate } from "@/lib/pricing/model";
+import { getProductPageStructuredData } from "@/lib/catalog-seo";
+import { fallbackProducts } from "@/data/catalog";
 vi.mock("next/link", () => ({
   default: ({ children, ...props }: React.ComponentProps<"a">) => (
     <a {...props}>{children}</a>
@@ -20,6 +22,32 @@ const old: PriceEstimate = {
   sizes: [],
 };
 describe("server-supplied visible pricing", () => {
+  it("matches every structured offer to its server-rendered size price", () => {
+    const now = Date.parse("2026-09-10T10:00:00Z");
+    const estimate: PriceEstimate = {
+      ...old, lastAvailable: false, asOf: new Date(now).toISOString(),
+      minimum: 5500, maximum: 9900,
+      sizes: [
+        { weightGrams: 50, diameterInches: 4, amount: 5500 },
+        { weightGrams: 100, diameterInches: 6, amount: 9900 },
+      ],
+    };
+    const product = { ...fallbackProducts[0], estimate };
+    const schema = getProductPageStructuredData(product, now);
+    const html = renderToStaticMarkup(
+      <ProductPrice slug={product.slug} estimate={estimate} details />,
+    );
+    if (!("offers" in schema)) throw new Error("Expected priced Product markup");
+    for (const offer of schema.offers) {
+      const formatted = new Intl.NumberFormat("en-IN", {
+        style: "currency", currency: "INR", maximumFractionDigits: 0,
+      }).format(Number(offer.price));
+      expect(html).toContain(formatted);
+      expect(html).toContain(offer.name);
+      expect(html).toContain(offer.description);
+    }
+  });
+
   it("includes amount and absolute date in HTML without JavaScript", () => {
     const html = renderToStaticMarkup(
       <ProductPrice slug="coin" estimate={old} details />,

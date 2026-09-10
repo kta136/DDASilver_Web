@@ -1,0 +1,29 @@
+{
+  "batchId": "img-2026-09-10",
+  "reviewedBy": "parent",
+  "checks": [
+    {"number":1,"status":"pass","note":"Matches source long-spout ewer; branding and full silhouette present."},
+    {"number":2,"status":"pass","note":"Matches source lidded tall ewer."},
+    {"number":3,"status":"pass","note":"Five tower forms preserved. Set weight basis and product name pending owner."},
+    {"number":4,"status":"pass","note":"Eight symbol stands preserved; source edge-clipped outer side elements warrant owner review with final batch."},
+    {"number":5,"status":"review","note":"Source top loop is clipped; output completes its outline. Do not upload without resolving source limitation."},
+    {"number":6,"status":"pass-after-correction","note":"Initial output incorrectly showed item 2 ewer; corrected output now matches 20g pedestal bowl."},
+    {"number":7,"status":"pass","note":"Handle, pouring lip and tall pedestal match source."},
+    {"number":8,"status":"pass","note":"Small bowl and broad tiered pedestal match source."},
+    {"number":9,"status":"pass","note":"Short pedestal, lip and handle match source."},
+    {"number":10,"status":"pass","note":"Diya post, bowl and round tray preserved."},
+    {"number":11,"status":"pass","note":"Leaf bands and medallion panels match source."},
+    {"number":12,"status":"pass","note":"Distinct floral engraved sections match source."},
+    {"number":13,"status":"pass","note":"Om panel and six visible hanging ornament clusters retained."},
+    {"number":14,"status":"pass","note":"Large plain kalash profile and horizontal bands retained."},
+    {"number":15,"status":"pass","note":"Seven-inch kalash source matched; bands and neck profile retained."},
+    {"number":16,"status":"pass","note":"Eight-inch kalash source matched; bands and neck profile retained."},
+    {"number":17,"status":"pass","note":"Floral oval panels and vertical texture retained."},
+    {"number":18,"status":"pass","note":"Floral polished motifs and decorated flat top retained."},
+    {"number":19,"status":"pass","note":"Central floral band and circular top motif retained."},
+    {"number":20,"status":"pass","note":"Floral bands and dotted texture retained; source top sticker removed."},
+    {"number":21,"status":"pass","note":"Checkerboard band, floral borders and top retained."},
+    {"number":22,"status":"pass","note":"Ceremonial figure, circular fan forms, holders and three legs retained; exact product identity pending."},
+    {"number":23,"status":"pass","note":"Lid, star motifs and lower floral band match source."}
+  ]
+}

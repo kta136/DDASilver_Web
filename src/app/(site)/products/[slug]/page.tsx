@@ -6,15 +6,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/catalog/product-card";
 import { ProductDetails } from "@/components/catalog/product-details";
 import { AnalyticsBeacon } from "@/components/consent/analytics-beacon";
-import { getProductStructuredDataProperties } from "@/lib/catalog-seo";
+import { getProductPageStructuredData } from "@/lib/catalog-seo";
 import {
   createPageMetadata,
   getProductIdentity,
   getProductSocialImage,
   serializeJsonLd,
-  toAbsoluteUrl,
 } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
 import {
   getCatalogNavigation,
   getProduct,
@@ -70,25 +68,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     product.collectionSlugs.includes(collection.slug),
   );
   const related = await getRelatedProducts(product.categorySlug, product.slug);
-  const additionalProperty = getProductStructuredDataProperties(product);
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${toAbsoluteUrl(`/products/${product.slug}`)}#product`,
-    name: productName,
-    description: product.shortDescription,
-    image: product.images.map((image) => toAbsoluteUrl(image.src)),
-    brand: {
-      "@type": "Brand",
-      name: siteConfig.name,
-    },
-    material: product.material === "gold" ? "Gold" : "Silver",
-    category: category?.title,
-    sku: product.reference,
-    url: toAbsoluteUrl(`/products/${product.slug}`),
-    mainEntityOfPage: toAbsoluteUrl(`/products/${product.slug}`),
-    ...(additionalProperty.length > 0 ? { additionalProperty } : {}),
-  };
+  const productSchema = getProductPageStructuredData(product);
 
   return (
     <main id="main-content">

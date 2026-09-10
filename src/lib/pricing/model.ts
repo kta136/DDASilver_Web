@@ -192,6 +192,11 @@ export function pricingIssues(product: PricingProduct): string[] {
   return issues;
 }
 
+/** Round the completed item total to the nearest ₹100; ₹50 ties round up. */
+function roundItemTotal(amount: number) {
+  return Math.round(amount / 100) * 100;
+}
+
 export function calculateEstimate(
   product: PricingProduct,
   reference: SilverReference | null,
@@ -207,7 +212,7 @@ export function calculateEstimate(
     (weight * reference!.value) / 1_000 + makingTotal(product, weight)!;
   const sizes = (product.sizeVariants ?? []).map((variant) => ({
     ...variant,
-    amount: Math.round(
+    amount: roundItemTotal(
       mode === "manual"
         ? pricing.manualSizes!.find(
             (size) =>
@@ -220,7 +225,7 @@ export function calculateEstimate(
   const totals = sizes.length
     ? sizes.map((size) => size.amount)
     : [
-        Math.round(
+        roundItemTotal(
           mode === "manual"
             ? pricing.manualTotalInr!
             : automaticTotal(product.weightGrams!),

@@ -1,0 +1,19 @@
+{
+  "batchId": "img-2026-09-10",
+  "validatedAt": "2026-09-10T09:23:21.232Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": false,
+  "counts": {
+    "sources": 23,
+    "products": 23,
+    "verifiedSources": 23,
+    "validImages": 23,
+    "manifestBlockers": 2,
+    "productBlockers": 69
+  },
+  "errors": [],
+  "warnings": [
+    "71 publish blockers remain"
+  ]
+}

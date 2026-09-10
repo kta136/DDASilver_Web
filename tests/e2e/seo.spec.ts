@@ -38,7 +38,9 @@ test.describe("production SEO output", () => {
         /<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
       ),
     ].map((match) => JSON.parse(match[1]) as Record<string, unknown>);
-    const productSchema = jsonLd.find((entry) => entry["@type"] === "Product");
+    const productSchema = jsonLd.find((entry) =>
+      entry["@type"] === "WebPage" || entry["@type"] === "Product",
+    );
 
     expect(productResponse.ok()).toBe(true);
     expect(html).toMatch(/<title>[^<]+ \| DDA Silver<\/title>/);
@@ -48,10 +50,21 @@ test.describe("production SEO output", () => {
     );
     expect(productSchema).toMatchObject({
       "@context": "https://schema.org",
-      "@type": "Product",
-      material: "Silver",
+      url: `https://www.ddasilver.com${productPath}`,
     });
-    expect(productSchema?.additionalProperty).toBeTruthy();
+    if (productSchema?.["@type"] === "Product") {
+      const offers = productSchema.offers as Array<{ price: string; priceCurrency: string }>;
+      expect(offers.length).toBeGreaterThan(0);
+      for (const offer of offers) {
+        expect(offer.priceCurrency).toBe("INR");
+        expect(Number(offer.price)).toBeGreaterThan(0);
+        expect(html).toContain(new Intl.NumberFormat("en-IN", {
+          style: "currency", currency: "INR", maximumFractionDigits: 0,
+        }).format(Number(offer.price)));
+      }
+    } else {
+      expect(productSchema?.mainEntity).toMatchObject({ "@type": "Thing" });
+    }
 
     const socialImagePath = new URL(socialImage!).pathname;
     const socialImageResponse = await request.get(socialImagePath, {

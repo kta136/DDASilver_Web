@@ -21,10 +21,10 @@ const product: PricingProduct = {
   purity: "92.5",
 };
 describe("gallery pricing", () => {
-  it("adds tax-inclusive making to the per-gram rate and rounds only the final total", () => {
+  it("adds tax-inclusive making before rounding the final total to the nearest hundred", () => {
     expect(calculateEstimate(product, reference)).toMatchObject({
-      minimum: 1051,
-      maximum: 1051,
+      minimum: 1100,
+      maximum: 1100,
       asOf: reference.snapshotAsOf,
     });
     expect(
@@ -32,7 +32,7 @@ describe("gallery pricing", () => {
     ).toEqual(calculateEstimate(product, reference));
     expect(
       calculateEstimate({ ...product, weightGrams: 20 }, reference),
-    ).toMatchObject({ minimum: 2102 });
+    ).toMatchObject({ minimum: 2100 });
   });
   it("distinguishes explicit zero, inheritance, missing charges and invalid fields", () => {
     expect(
@@ -40,7 +40,7 @@ describe("gallery pricing", () => {
         { ...product, pricing: { makingChargePerGram: 0 } },
         reference,
       ),
-    ).toMatchObject({ minimum: 1001 });
+    ).toMatchObject({ minimum: 1000 });
     expect(calculateEstimate({ weightGrams: 10 }, reference)).toEqual({
       status: "unavailable",
     });
@@ -90,15 +90,15 @@ describe("gallery pricing", () => {
     expect(
       calculateEstimate({ ...coin, pricing: { finish: "silver" } }, reference),
     ).toMatchObject({
-      minimum: 26281,
-      maximum: 51562,
-      sizes: [{ amount: 26281 }, { amount: 51562 }],
+      minimum: 26300,
+      maximum: 51600,
+      sizes: [{ amount: 26300 }, { amount: 51600 }],
     });
   });
   it.each([
-    [19, 2150],
-    [20, 2250],
-    [21, 2310],
+    [19, 2200],
+    [20, 2300],
+    [21, 2300],
   ])(
     "adds fixed or per-gram utensil making at %s g",
     (weightGrams, minimum) => {
@@ -181,7 +181,7 @@ describe("gallery pricing", () => {
       },
     };
     expect(calculateEstimate(manual, null, true)).toMatchObject({
-      minimum: 1235,
+      minimum: 1200,
       mode: "manual",
       asOf: "2020-01-01T00:00:00Z",
       lastAvailable: false,
@@ -202,18 +202,19 @@ describe("gallery pricing", () => {
       pricing: {
         mode: "manual",
         reviewedAt: reference.snapshotAsOf,
-        manualSizes: [{ weightGrams: 10, diameterInches: 1, totalInr: 500 }],
+        manualSizes: [{ weightGrams: 10, diameterInches: 1, totalInr: 549.99 }],
       },
     };
     expect(calculateEstimate(manual, null)).toEqual({ status: "unavailable" });
     manual.pricing!.manualSizes!.push({
       weightGrams: 20,
       diameterInches: 2,
-      totalInr: 900,
+      totalInr: 850,
     });
     expect(calculateEstimate(manual, null)).toMatchObject({
       minimum: 500,
       maximum: 900,
+      sizes: [{ amount: 500 }, { amount: 900 }],
     });
     expect(
       decodePricing({
@@ -224,6 +225,31 @@ describe("gallery pricing", () => {
         ],
       }),
     ).toBeNull();
+  });
+  it.each([
+    [1000, 1000],
+    [1049.99, 1000],
+    [1050, 1100],
+    [1050.01, 1100],
+    [1099, 1100],
+  ])("rounds automatic and manual totals of ₹%s to ₹%s", (total, rounded) => {
+    const automatic = calculateEstimate(
+      { weightGrams: 1, categoryMakingChargePerPiece: 0 },
+      { ...reference, value: total * 1000 },
+    );
+    const manual = calculateEstimate(
+      {
+        pricing: {
+          mode: "manual",
+          manualTotalInr: total,
+          reviewedAt: reference.snapshotAsOf,
+        },
+      },
+      null,
+    );
+    for (const estimate of [automatic, manual]) {
+      expect(estimate).toMatchObject({ minimum: rounded, maximum: rounded });
+    }
   });
   it("does not price gold or owner-deferred categories", () => {
     expect(

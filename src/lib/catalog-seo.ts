@@ -6,6 +6,7 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { getProductIdentity, toAbsoluteUrl } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import type { Category, Collection, Product } from "@/types/catalog";
 
 type CatalogPageStructuredDataOptions = {
@@ -89,14 +90,96 @@ export function getCatalogPageStructuredData({
             "@type": "ListItem",
             position: offset + index + 1,
             url: productUrl,
-            item: {
-              "@type": "Product",
-              "@id": `${productUrl}#product`,
-              name: getProductIdentity(product),
-              url: productUrl,
-            },
+            name: getProductIdentity(product),
           };
         }),
+    },
+  };
+}
+
+// The gallery refreshes every five minutes and accepts source data up to 90s old.
+const MAX_OFFER_REFERENCE_AGE_MS = 390_000;
+
+function getProductOffers(product: Product, now: number) {
+  const estimate = product.estimate;
+  if (!estimate || estimate.status !== "available" || estimate.lastAvailable) {
+    return undefined;
+  }
+  const asOf = Date.parse(estimate.asOf);
+  if (!Number.isFinite(asOf) || asOf > now ||
+      (estimate.mode === "automatic" && now - asOf > MAX_OFFER_REFERENCE_AGE_MS)) {
+    return undefined;
+  }
+
+  const prices = estimate.sizes.length
+    ? estimate.sizes.map((size) => ({
+        name: `${size.weightGrams} g / ${size.diameterInches} in`,
+        amount: size.amount,
+      }))
+    : [{ name: getProductIdentity(product), amount: estimate.minimum }];
+  if (prices.some(({ amount }) => !Number.isSafeInteger(amount) || amount <= 0) ||
+      Math.min(...prices.map(({ amount }) => amount)) !== estimate.minimum ||
+      Math.max(...prices.map(({ amount }) => amount)) !== estimate.maximum) {
+    return undefined;
+  }
+
+  // Individual size offers match the visible size table. AggregateOffer is not
+  // appropriate for size variants (it describes multiple offers of one product).
+  return prices.map(({ name, amount }) => ({
+    "@type": "Offer",
+    name,
+    price: amount.toFixed(2),
+    priceCurrency: estimate.currency,
+    url: toAbsoluteUrl(`/products/${product.slug}`),
+    seller: { "@id": `${toAbsoluteUrl("/")}#business` },
+    description: "Includes making charges and taxes. Final price confirmed on enquiry.",
+  }));
+}
+
+/** Use the same request's visible prices; enquiry-only pages remain WebPages. */
+export function getProductPageStructuredData(product: Product, now = Date.now()) {
+  const pageUrl = toAbsoluteUrl(`/products/${product.slug}`);
+  const name = getProductIdentity(product);
+  const offers = getProductOffers(product, now);
+  if (offers) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "@id": `${pageUrl}#product`,
+      name,
+      description: product.shortDescription,
+      url: pageUrl,
+      mainEntityOfPage: pageUrl,
+      image: product.images.map((image) => toAbsoluteUrl(image.src)),
+      brand: { "@type": "Brand", name: siteConfig.name },
+      ...(product.material ? { material: materialLabels[product.material] } : {}),
+      ...(product.reference ? { sku: product.reference } : {}),
+      additionalProperty: getProductStructuredDataProperties(product),
+      offers,
+    };
+  }
+  const facts = getProductStructuredDataProperties(product)
+    .map(({ name, value }) => `${name}: ${value}`)
+    .join(". ");
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name,
+    description: product.shortDescription,
+    url: pageUrl,
+    image: product.images.map((image) => toAbsoluteUrl(image.src)),
+    isPartOf: { "@id": `${toAbsoluteUrl("/")}#website` },
+    ...(product.updatedAt ? { dateModified: product.updatedAt } : {}),
+    mainEntity: {
+      "@type": "Thing",
+      "@id": `${pageUrl}#item`,
+      name,
+      description: [product.shortDescription, facts].filter(Boolean).join(" "),
+      ...(product.reference ? { identifier: product.reference } : {}),
+      url: pageUrl,
+      image: product.images.map((image) => toAbsoluteUrl(image.src)),
     },
   };
 }
