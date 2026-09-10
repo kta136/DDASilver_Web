@@ -112,7 +112,7 @@
     {
       "number": 11,
       "productId": "product-dda-desktop-files-20260822-011",
-      "reference": "PR-2201",
+      "reference": "PR-32",
       "title": "DDA 405 Gram Floral Panel Silver Purse",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/011-floral-panel-silver-purse-405g.png",
       "sha1hash": "8bd173c33643da735477d0a595e139f3b17f4835",
@@ -122,7 +122,7 @@
     {
       "number": 12,
       "productId": "product-dda-desktop-files-20260822-012",
-      "reference": "PR-2202",
+      "reference": "PR-33",
       "title": "DDA 400 Gram Woven Lattice Two-Tone Silver Purse",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/012-woven-lattice-two-tone-silver-purse-400g.png",
       "sha1hash": "c3d861b5f5ff076a5b55db2f2f58b9dfe5633193",
@@ -132,7 +132,7 @@
     {
       "number": 13,
       "productId": "product-dda-desktop-files-20260822-013",
-      "reference": "PR-2203",
+      "reference": "PR-34",
       "title": "DDA 450 Gram Openwork Scroll Silver Purse",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/013-openwork-scroll-silver-purse-450g.png",
       "sha1hash": "fb2be094473242e509826d36413a621625b83f92",
@@ -142,7 +142,7 @@
     {
       "number": 14,
       "productId": "product-dda-desktop-files-20260822-014",
-      "reference": "PR-2204",
+      "reference": "PR-35",
       "title": "DDA 400 Gram Peacock Motif Silver Purse",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/014-peacock-motif-silver-purse-400g.png",
       "sha1hash": "c2b9237877e3acde0d3bb121c194fcd2849d949e",

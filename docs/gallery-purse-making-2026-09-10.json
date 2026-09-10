@@ -18,334 +18,425 @@
       "sheetReference": "PR-1",
       "catalogueReference": "PR-1",
       "productId": "product-dda-purse-01-ornate-elephant-floral",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2010
     },
     {
       "sheetReference": "PR-2",
       "catalogueReference": "PR-2",
       "productId": "product-dda-purse-02-blue-stone-vertical",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 35,
       "status": "applied",
       "confirmation": "Owner clarified the handwritten amount as INR 35/g on 2026-09-10.",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2020
     },
     {
       "sheetReference": "PR-3",
       "catalogueReference": "PR-3",
       "productId": "product-dda-purse-03-gold-tone-floral",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2030
     },
     {
       "sheetReference": "PR-4",
       "catalogueReference": "PR-4",
       "productId": "product-dda-purse-04-jeweled-medallion-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2040
     },
     {
       "sheetReference": "PR-5",
       "catalogueReference": "PR-5",
       "productId": "product-dda-purse-05-red-fabric-potli",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2050
     },
     {
       "sheetReference": "PR-6",
       "catalogueReference": "PR-6",
       "productId": "product-dda-purse-06-woven-silver-tote",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2060
     },
     {
       "sheetReference": "PR-7",
       "catalogueReference": "PR-7",
       "productId": "product-dda-purse-07-green-stone-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2070
     },
     {
       "sheetReference": "PR-8",
       "catalogueReference": "PR-8",
       "productId": "product-dda-purse-08-embossed-floral-handbag",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2080
     },
     {
       "sheetReference": "PR-9",
       "catalogueReference": "PR-9",
       "productId": "product-dda-purse-09-beaded-oval-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2090
     },
     {
       "sheetReference": "PR-10",
       "catalogueReference": "PR-10",
       "productId": "product-dda-purse-10-orange-brocade-potli",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2100
     },
     {
       "sheetReference": "PR-11",
       "catalogueReference": "PR-11",
       "productId": "product-dda-purse-11-teal-brocade-potli",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2110
     },
     {
       "sheetReference": "PR-12",
       "catalogueReference": "PR-12",
       "productId": "product-dda-purse-12-geometric-silver-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2120
     },
     {
       "sheetReference": "PR-13",
       "catalogueReference": "PR-13",
       "productId": "product-dda-purse-13-elephant-floral",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2130
     },
     {
       "sheetReference": "PR-14",
       "catalogueReference": "PR-14",
       "productId": "product-dda-purse-14-paisley-floral",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2140
     },
     {
       "sheetReference": "PR-15",
       "catalogueReference": "PR-15",
       "productId": "product-dda-purse-15-ornate-panel-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2150
     },
     {
       "sheetReference": "PR-16",
       "catalogueReference": "PR-16",
       "productId": "product-dda-purse-16-pink-red-jeweled-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2160
     },
     {
       "sheetReference": "PR-17",
       "catalogueReference": "PR-17",
       "productId": "product-dda-purse-17-figurative-silver-clutch",
-      "revision": "Bk0wLbxlDiIlSPvlS7fKK9",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD",
+      "displayOrder": 2170
     },
     {
       "sheetReference": "PR-18",
       "catalogueReference": "PR-18",
       "productId": "product-dda-purse-pr-18-peacock-purple-fringe-silver-purse",
-      "revision": "g2Fmo7gArmLdG0VhQ71GwN",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2180
     },
     {
       "sheetReference": "PR-19",
       "catalogueReference": "PR-19",
       "productId": "product-dda-purse-pr-19-gold-lattice-green-fringe-silver-purse",
-      "revision": "g2Fmo7gArmLdG0VhQ71GwN",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2190
     },
     {
       "sheetReference": "PR-20",
       "catalogueReference": "PR-20",
       "productId": "product-dda-purse-pr-20-elephant-floral-pink-fringe-silver-purse",
-      "revision": "g2Fmo7gArmLdG0VhQ71GwN",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2200
     },
     {
       "sheetReference": "PR-21",
       "catalogueReference": "PR-21",
       "productId": "product-dda-purse-pr-21-green-stone-floral-chain-silver-purse",
-      "revision": "g2Fmo7gArmLdG0VhQ71GwN",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2210
     },
     {
       "sheetReference": "PR-22",
       "catalogueReference": "PR-22",
       "productId": "product-dda-purse-pr-22-white-stone-purple-fringe-silver-purse",
-      "revision": "g2Fmo7gArmLdG0VhQ71GwN",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 90,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2220
     },
     {
       "sheetReference": "PR-23",
       "catalogueReference": "PR-23",
       "productId": "product-dda-purse-pr-23-peacock-floral-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2230
     },
     {
       "sheetReference": "PR-24",
       "catalogueReference": "PR-24",
       "productId": "product-dda-purse-pr-24-gold-lattice-pearl-fringe-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 50,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2240
     },
     {
       "sheetReference": "PR-25",
       "catalogueReference": "PR-25",
       "productId": "product-dda-purse-pr-25-elephant-peacock-floral-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2250
     },
     {
       "sheetReference": "PR-26",
       "catalogueReference": "PR-26",
       "productId": "product-dda-purse-pr-26-scroll-vine-round-handle-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2260
     },
     {
       "sheetReference": "PR-27",
       "catalogueReference": "PR-27",
       "productId": "product-dda-purse-pr-27-honeycomb-floral-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2270
     },
     {
       "sheetReference": "PR-28",
       "catalogueReference": "PR-28",
       "productId": "product-dda-purse-pr-28-vertical-floral-panel-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2280
     },
     {
       "sheetReference": "PR-29",
       "catalogueReference": "PR-29",
       "productId": "product-dda-purse-pr-29-scallop-pattern-silver-clutch-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 80,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2290
     },
     {
       "sheetReference": "PR-30",
       "catalogueReference": "PR-30",
       "productId": "product-dda-purse-pr-30-enamel-birds-pearl-fringe-silver-shoulder-purse",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2300
     },
     {
       "sheetReference": "PR-31",
       "catalogueReference": "PR-31",
       "productId": "product-dda-purse-pr-31-jeweled-peacock-tassel-silver-handbag",
-      "revision": "LPc3Jmv1ULU5uXF5HIQaRR",
+      "revision": "RbbFydKhICUFs6q5YgzpSD",
       "makingChargePerGram": 15,
       "status": "applied",
-      "appliedRevision": "RbbFydKhICUFs6q5YgzpSD"
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY",
+      "displayOrder": 2310
     },
     {
-      "sheetReference": "PR-32",
-      "catalogueReference": null,
-      "productId": null,
-      "revision": null,
+      "sheetReference": null,
+      "photoLabel": "A",
+      "catalogueReference": "PR-32",
+      "previousCatalogueReference": "PR-2201",
+      "productId": "product-dda-desktop-files-20260822-011",
+      "revision": "BkzyrJBKPibjXXRxK6fjnb",
+      "photoAssetId": "image-8bd173c33643da735477d0a595e139f3b17f4835-1254x1254-png",
       "makingChargePerGram": 15,
-      "status": "mapping-pending"
+      "displayOrder": 2320,
+      "status": "applied",
+      "confirmation": "Owner identified this product in the A-E photo comparison and supplied its making charge. The corrected code follows PR-31; this is not an inferred match to the original sheet.",
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY"
+    },
+    {
+      "sheetReference": null,
+      "photoLabel": "B",
+      "catalogueReference": "PR-33",
+      "previousCatalogueReference": "PR-2202",
+      "productId": "product-dda-desktop-files-20260822-012",
+      "revision": "LPc3Jmv1ULU5uXF5HOP0T7",
+      "photoAssetId": "image-c3d861b5f5ff076a5b55db2f2f58b9dfe5633193-1254x1254-png",
+      "makingChargePerGram": 90,
+      "displayOrder": 2330,
+      "status": "applied",
+      "confirmation": "Owner identified this product in the A-E photo comparison and supplied its making charge. The corrected code follows PR-31; this is not an inferred match to the original sheet.",
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY"
+    },
+    {
+      "sheetReference": null,
+      "photoLabel": "C",
+      "catalogueReference": "PR-34",
+      "previousCatalogueReference": "PR-2203",
+      "productId": "product-dda-desktop-files-20260822-013",
+      "revision": "LPc3Jmv1ULU5uXF5HOP0T7",
+      "photoAssetId": "image-fb2be094473242e509826d36413a621625b83f92-1254x1254-png",
+      "makingChargePerGram": 15,
+      "displayOrder": 2340,
+      "status": "applied",
+      "confirmation": "Owner identified this product in the A-E photo comparison and supplied its making charge. The corrected code follows PR-31; this is not an inferred match to the original sheet.",
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY"
+    },
+    {
+      "sheetReference": null,
+      "photoLabel": "D",
+      "catalogueReference": "PR-35",
+      "previousCatalogueReference": "PR-2204",
+      "productId": "product-dda-desktop-files-20260822-014",
+      "revision": "LPc3Jmv1ULU5uXF5HOP0T7",
+      "photoAssetId": "image-c2b9237877e3acde0d3bb121c194fcd2849d949e-1254x1254-png",
+      "makingChargePerGram": 15,
+      "displayOrder": 2350,
+      "status": "applied",
+      "confirmation": "Owner identified this product in the A-E photo comparison and supplied its making charge. The corrected code follows PR-31; this is not an inferred match to the original sheet.",
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY"
+    },
+    {
+      "sheetReference": null,
+      "photoLabel": "E",
+      "catalogueReference": "PR-36",
+      "previousCatalogueReference": "PR-2205",
+      "productId": "product-dda-img-20260830-20",
+      "revision": "Lf7o4tbSRFd4ey0FFCr9Ki",
+      "photoAssetId": "image-d5850dc63b905b7dae843b17d7c7d72df8d997a5-1254x1254-png",
+      "makingChargePerGram": 15,
+      "displayOrder": 2360,
+      "status": "applied",
+      "confirmation": "Owner identified this product in the A-E photo comparison and supplied its making charge. The corrected code follows PR-31; this is not an inferred match to the original sheet.",
+      "appliedRevision": "TTr0IfAYvmKfDEO5orOzTY"
+    }
+  ],
+  "lastAppliedAt": "2026-09-10T08:35:10.720Z",
+  "activation": {
+    "status": "live",
+    "activatedAt": "2026-09-10T08:35:10.720Z",
+    "savedProductsVerified": 36,
+    "categoryCoverageFailures": 0,
+    "globalProductsChecked": 631,
+    "globalCoverageFailures": 0
+  },
+  "supersededUnmatchedSheetRows": [
+    {
+      "sheetReference": "PR-32",
+      "makingChargePerGram": 15
     },
     {
       "sheetReference": "PR-33",
-      "catalogueReference": null,
-      "productId": null,
-      "revision": null,
-      "makingChargePerGram": 15,
-      "status": "mapping-pending"
+      "makingChargePerGram": 15
     },
     {
       "sheetReference": "PR-34",
-      "catalogueReference": null,
-      "productId": null,
-      "revision": null,
-      "makingChargePerGram": 15,
-      "status": "mapping-pending"
+      "makingChargePerGram": 15
     },
     {
       "sheetReference": "PR-35",
-      "catalogueReference": null,
-      "productId": null,
-      "revision": null,
-      "makingChargePerGram": 90,
-      "status": "mapping-pending"
+      "makingChargePerGram": 90
     },
     {
       "sheetReference": "PR-36",
-      "catalogueReference": null,
-      "productId": null,
-      "revision": null,
-      "makingChargePerGram": 90,
-      "status": "mapping-pending"
+      "makingChargePerGram": 90
     }
   ],
-  "lastAppliedAt": "2026-09-10T08:25:31.623Z",
-  "activation": {
-    "status": "deferred",
-    "reason": "Five published website purses have import references that the owner does not recognise as catalogue references. PR-32 through PR-36 are awaiting photo identification; no correspondence has been assumed.",
-    "savedProductsVerified": 31,
-    "unassignedSheetReferences": [
-      "PR-32",
-      "PR-33",
-      "PR-34",
-      "PR-35",
-      "PR-36"
-    ]
+  "referenceCorrection": {
+    "reason": "Owner reported invalid import item codes and incorrect ordering in Sanity.",
+    "assignedInPhotoOrder": true,
+    "previousToCorrected": {
+      "PR-2201": "PR-32",
+      "PR-2202": "PR-33",
+      "PR-2203": "PR-34",
+      "PR-2204": "PR-35",
+      "PR-2205": "PR-36"
+    },
+    "pricingSource": "Owner photo confirmation supersedes the unmatched handwritten sheet rows for these five products."
   }
 }

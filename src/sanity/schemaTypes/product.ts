@@ -300,6 +300,16 @@ export const productType = defineType({
     },
   ],
   preview: {
-    select: { title: "title", media: "gallery.0", subtitle: "category.title" },
+    select: {
+      title: "title",
+      media: "gallery.0",
+      reference: "reference",
+      category: "category.title",
+    },
+    prepare: ({ title, media, reference, category }) => ({
+      title,
+      media,
+      subtitle: [reference, category].filter(Boolean).join(" · "),
+    }),
   },
 });

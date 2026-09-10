@@ -45,16 +45,23 @@ Owner-confirmed defaults are in [gallery-pricing-defaults.json](gallery-pricing-
 | Utensils, up to and including 20 g | ₹250/piece |
 | Utensils, over 20 g | ₹10/g |
 | Phone covers | ₹3,000/piece |
-| Purses, boxes and gifts | Deferred; enquiry only |
+| Purses | Individual product charges: ₹15, ₹35, ₹50, ₹80 or ₹90/g |
+| Boxes and gifts | Deferred; enquiry only |
 
-Purse making charges for PR-1 through PR-31 were saved as individual product
+Purse making charges for all 36 products were activated as individual product
 overrides on 10 September 2026, including the owner's clarification of PR-2 at
-₹35/g. The transcription and application record is in
+₹35/g. The transcription, photo confirmation and application record is in
 [gallery-purse-making-2026-09-10.json](gallery-purse-making-2026-09-10.json).
-The sheet also lists PR-32 through PR-36, which do not match the five other
-website records. Their correspondence is awaiting owner identification from
-photos; do not infer it from product order. Purse pricing remains deferred until
-the category coverage check passes. No category-wide making charge is assumed.
+The owner supplied the final five charges by labelled photo: A, C, D and E use
+₹15/g; B uses ₹90/g. These photo-confirmed charges replace the unmatched sheet
+rows. The five legacy import codes PR-2201 through PR-2205 were corrected to
+PR-32 through PR-36 in A–E order, preserving document IDs and product URLs.
+Purse display order is `2000 + itemNumber * 10`, matching the existing PR-1
+through PR-17 sequence. Mixed-gallery publishing uses that same sequence so
+reimports preserve the ordering; the source manifests and asset mappings carry the
+corrected references. Studio provides **Purses — item code order** and displays
+item codes in product list subtitles. No category-wide making charge is assumed;
+new purses require their own verified making charge before publishing.
 
 Singhasan decorations use the underlying finish's rate. Small painted eyes, lips
 and tilaks still count as plain silver. Steel polish means the reflective dark or

@@ -266,7 +266,10 @@ function getProductDocument(
     })),
     collections: [],
     featured: false,
-    displayOrder: displayOrderBase + product.number,
+    displayOrder:
+      product.categoryId === "category-purse" && /^PR-[1-9]\d*$/.test(product.reference)
+        ? 2_000 + Number(product.reference.slice(3)) * 10
+        : displayOrderBase + product.number,
     reference: product.reference,
   };
   assertProductDocument(document);

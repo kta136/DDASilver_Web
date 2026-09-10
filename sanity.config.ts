@@ -20,6 +20,20 @@ export default defineConfig({
           .title("Catalog")
           .items([
             S.listItem().id("galleryPricing").title("Gallery Pricing").child(S.document().schemaType("galleryPricing").documentId("gallery-pricing")),
+            S.listItem()
+              .id("pursesByItemCode")
+              .title("Purses — item code order")
+              .schemaType("product")
+              .child(
+                S.documentTypeList("product")
+                  .id("pursesByItemCode")
+                  .title("Purses — item code order")
+                  .filter('_type == "product" && category._ref == "category-purse"')
+                  .defaultOrdering([
+                    { field: "displayOrder", direction: "asc" },
+                    { field: "_id", direction: "asc" },
+                  ]),
+              ),
             ...
             S.documentTypeListItems().filter(
               (item) => !["page", "siteSettings", "galleryPricing"].includes(item.getId() ?? ""),

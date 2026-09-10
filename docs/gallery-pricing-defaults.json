@@ -19,7 +19,7 @@
       { "minimumWeightGrams": 0, "finish": "antique", "idolConstruction": "solid", "makingChargePerGram": 15 }
     ]
   },
-  "category-purse": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true },
+  "category-purse": { "source": "Owner-confirmed per-product charges in gallery-purse-making-2026-09-10.json. All 36 purses activated on 2026-09-10; no category-wide making-charge fallback.", "pricingDeferred": false },
   "category-gifts": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true },
   "category-jhula": { "source": "Confirmed by owner on 2026-09-10.", "makingChargePerGram": 15 },
   "category-phone-covers": { "source": "Confirmed by owner on 2026-09-10: making charge, added to silver value.", "makingChargePerPiece": 3000 },
