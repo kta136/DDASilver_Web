@@ -115,7 +115,7 @@ errors and recovery warnings; stale content does not prove Sanity is healthy.
 
 Configure POST `/api/sanity/revalidate`, with the secret matching
 `SANITY_REVALIDATE_SECRET`, and Create, Update and Delete enabled. Include products,
-categories, collections, deities and image assets. Exclude drafts and release
+categories, collections, deities, image assets and Gallery Pricing. Exclude drafts and release
 versions. The handler immediately invalidates dependent catalog queries and the
 sitemap. The 300-second interval covers missed events. Social-image HTTP caching
 is bounded to five minutes, with a one-minute stale window.
@@ -124,7 +124,7 @@ Filter:
 
 ```groq
 coalesce(after()._type, before()._type) in [
-  "product", "category", "collection", "deity", "sanity.imageAsset"
+  "product", "category", "collection", "deity", "sanity.imageAsset", "galleryPricing"
 ]
 && !(coalesce(after()._id, before()._id) in path("drafts.**"))
 && !(coalesce(after()._id, before()._id) in path("versions.**"))
@@ -151,7 +151,9 @@ from the hosted project.
 Follow [product gallery ingestion](product-gallery-ingestion.md): preserve real
 source photos, use the approved background, deliver square 1254 x 1254 PNGs and
 matching validated metadata. AI-assisted retouching must not redesign products.
-Do not add commerce fields such as stock, prices or checkout.
+Gallery pricing uses the separately approved [pricing model](gallery-pricing.md).
+Imports preserve existing pricing and verified finish labels and validate pricing
+coverage before publishing. Do not add stock or checkout fields.
 
 The image CDN provides responsive delivery and stable descriptive filenames.
 Authored alt text, structured data and the image sitemap are preserved. Review

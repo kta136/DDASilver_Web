@@ -52,7 +52,7 @@ enabled for the rates SSE connection.
 | Health check | Dockerfile health check enabled |
 | Include source commit in build | enabled |
 | Coolify Git auto-deploy | disabled |
-| Persistent storage/cache/Redis | Optional catalog recovery volume; see below |
+| Persistent storage/cache/Redis | Dedicated gallery pricing volume required before activation; optional separate catalog recovery volume |
 
 The Docker image is based on the multi-architecture
 `node:24.19.0-bookworm-slim` image and runs the Next.js standalone server as
@@ -88,6 +88,7 @@ context, or printed in logs.
 
 ### Runtime only
 
+- `GALLERY_PRICING_DIR=/app/gallery-pricing` (persistent volume, required for gallery pricing)
 - `SANITY_REVALIDATE_SECRET`
 - `DDAJEWELS_RATES_SNAPSHOT_URL`
 - `DDAJEWELS_RATES_STREAM_URL`
@@ -215,6 +216,16 @@ For recovery across container replacement, mount a writable directory such as
 contain only published query results, with at most 200 entries and a 24-hour age
 limit. Without the volume, recovery lasts only for the current container. This
 cache is not a Sanity backup; a cold outage displays an unavailable state.
+
+Gallery pricing needs a separate non-expiring volume at `/app/gallery-pricing`
+with runtime `GALLERY_PRICING_DIR` set to that path. Make it writable by the image's
+`node` user (UID/GID 1000), and attach the same volume to old and replacement
+containers so the refresh lock and persisted five-minute attempt gate are shared.
+Do not use the catalogue cache's 24-hour retention for this record. Follow the
+[gallery pricing activation checks](gallery-pricing.md#production-activation-and-rollback),
+including a real feed seed and replacement-container recovery. A stale price rate
+is an operational warning, not a failed website liveness check. Two copies on
+this volume protect against file corruption, not loss of the host.
 
 Set `NEXT_PUBLIC_SITE_ENV=production` and the correct public Sanity project/dataset
 at build time. No migration is required to read existing products. Before renaming

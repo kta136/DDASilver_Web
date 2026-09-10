@@ -191,6 +191,25 @@ export type Product = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  pricing?: {
+    mode?: "automatic" | "manual";
+    finish?: "silver" | "gold-polish" | "antique" | "colour" | "steel-polish";
+    finishReviewedAt?: string;
+    finishPhotoAssetId?: string;
+    finishReviewNotes?: string;
+    makingChargePerGram?: number;
+    makingChargePerPiece?: number;
+    manualTotalInr?: number;
+    manualSizes?: Array<{
+      weightGrams?: number;
+      diameterInches?: number;
+      totalInr?: number;
+      _type: "manualSizePrice";
+      _key: string;
+    }>;
+    reviewedAt?: string;
+    reviewDueAt?: string;
+  };
   title?: string;
   slug?: Slug;
   shortDescription?: string;
@@ -252,6 +271,20 @@ export type Category = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  pricingDeferred?: boolean;
+  makingChargePerGram?: number;
+  makingChargePerPiece?: number;
+  makingRules?: Array<{
+    minimumWeightGrams?: number;
+    minimumExclusive?: boolean;
+    finish?: "silver" | "gold-polish" | "antique" | "colour" | "steel-polish";
+    purity?: "91.60" | "92.5" | "99.50" | "99.80";
+    idolConstruction?: "hollow" | "solid" | "semi-solid";
+    makingChargePerGram?: number;
+    makingChargePerPiece?: number;
+    _type: "makingRule";
+    _key: string;
+  }>;
   editorialSections?: Array<{
     heading?: string;
     body?: string;
@@ -275,6 +308,15 @@ export type Category = {
   showOnHomepage?: boolean;
   homepageOrder?: number;
   homepageImageSource?: "product" | "category";
+};
+
+export type GalleryPricing = {
+  _id: string;
+  _type: "galleryPricing";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  enabled?: boolean;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -389,6 +431,7 @@ export type AllSanitySchemaTypes =
   | CollectionReference
   | Product
   | Category
+  | GalleryPricing
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
@@ -400,7 +443,7 @@ export type AllSanitySchemaTypes =
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productsQuery
-// Query: *[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
+// Query: *[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
 export type ProductsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -448,6 +491,34 @@ export type ProductsQueryResult = Array<{
     | Array<never>;
   coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
   updatedAt: string;
+  categoryPricingDeferred: boolean | false;
+  pricing: {
+    mode: "automatic" | "manual" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    manualTotalInr: number | null;
+    reviewedAt: string | null;
+    reviewDueAt: string | null;
+    manualSizes: Array<{
+      weightGrams: number | null;
+      diameterInches: number | null;
+      totalInr: number | null;
+    }> | null;
+  } | null;
+  categoryMakingChargePerGram: number | null;
+  categoryMakingChargePerPiece: number | null;
+  categoryMakingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   images:
     | Array<{
         src: string | null;
@@ -461,7 +532,7 @@ export type ProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productQuery
-// Query: *[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
+// Query: *[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": coalesce(gallery[] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, [])}
 export type ProductQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -509,6 +580,34 @@ export type ProductQueryResult = Array<{
     | Array<never>;
   coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
   updatedAt: string;
+  categoryPricingDeferred: boolean | false;
+  pricing: {
+    mode: "automatic" | "manual" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    manualTotalInr: number | null;
+    reviewedAt: string | null;
+    reviewDueAt: string | null;
+    manualSizes: Array<{
+      weightGrams: number | null;
+      diameterInches: number | null;
+      totalInr: number | null;
+    }> | null;
+  } | null;
+  categoryMakingChargePerGram: number | null;
+  categoryMakingChargePerPiece: number | null;
+  categoryMakingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   images:
     | Array<{
         src: string | null;
@@ -522,7 +621,7 @@ export type ProductQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: featuredProductsQuery
-// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
 export type FeaturedProductsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -570,6 +669,34 @@ export type FeaturedProductsQueryResult = Array<{
     | Array<never>;
   coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
   updatedAt: string;
+  categoryPricingDeferred: boolean | false;
+  pricing: {
+    mode: "automatic" | "manual" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    manualTotalInr: number | null;
+    reviewedAt: string | null;
+    reviewDueAt: string | null;
+    manualSizes: Array<{
+      weightGrams: number | null;
+      diameterInches: number | null;
+      totalInr: number | null;
+    }> | null;
+  } | null;
+  categoryMakingChargePerGram: number | null;
+  categoryMakingChargePerPiece: number | null;
+  categoryMakingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   images: Array<{
     src: string | null;
     alt: string | null;
@@ -581,7 +708,7 @@ export type FeaturedProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: homepageFallbackProductsQuery
-// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
 export type HomepageFallbackProductsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -629,6 +756,34 @@ export type HomepageFallbackProductsQueryResult = Array<{
     | Array<never>;
   coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
   updatedAt: string;
+  categoryPricingDeferred: boolean | false;
+  pricing: {
+    mode: "automatic" | "manual" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    manualTotalInr: number | null;
+    reviewedAt: string | null;
+    reviewDueAt: string | null;
+    manualSizes: Array<{
+      weightGrams: number | null;
+      diameterInches: number | null;
+      totalInr: number | null;
+    }> | null;
+  } | null;
+  categoryMakingChargePerGram: number | null;
+  categoryMakingChargePerPiece: number | null;
+  categoryMakingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   images: Array<{
     src: string | null;
     alt: string | null;
@@ -640,7 +795,7 @@ export type HomepageFallbackProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: relatedProductsQuery
-// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
+// Query: *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}}
 export type RelatedProductsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -688,6 +843,34 @@ export type RelatedProductsQueryResult = Array<{
     | Array<never>;
   coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
   updatedAt: string;
+  categoryPricingDeferred: boolean | false;
+  pricing: {
+    mode: "automatic" | "manual" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    manualTotalInr: number | null;
+    reviewedAt: string | null;
+    reviewDueAt: string | null;
+    manualSizes: Array<{
+      weightGrams: number | null;
+      diameterInches: number | null;
+      totalInr: number | null;
+    }> | null;
+  } | null;
+  categoryMakingChargePerGram: number | null;
+  categoryMakingChargePerPiece: number | null;
+  categoryMakingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   images: Array<{
     src: string | null;
     alt: string | null;
@@ -699,7 +882,7 @@ export type RelatedProductsQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: productPageQuery
-// Query: {  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)] | order(displayOrder asc, _id asc)[$start...$end] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}},  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)])}
+// Query: {  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)] | order(displayOrder asc, _id asc)[$start...$end] {  _id, title, "slug": slug.current, shortDescription, seoTitle,  "categorySlug": category->slug.current, "categoryKind": category->productKind,  "collectionSlugs": coalesce(collections[]->slug.current, []),  "featured": coalesce(featured, false), displayOrder, reference, material, purity,  weightGrams, heightInches, widthInches, depthInches, diameterInches,  singhasanWidthInches, singhasanDepthInches,  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),  utensilType, idolConstruction,  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),  coinShape, "updatedAt": _updatedAt,  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,      manualSizes[]{weightGrams, diameterInches, totalInr}},  "categoryMakingChargePerGram": category->makingChargePerGram,  "categoryMakingChargePerPiece": category->makingChargePerPiece,  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}, "images": gallery[0...1] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}},  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)  && ($category == "" || category->slug.current == $category)  && ($purity == "" || purity == $purity)  && ($idol == "" || idolConstruction == $idol)  && ($deity == "" || $deity in deities[]->slug.current)  && ($shape == "" || coinShape == $shape)  && ($item == "" || utensilType == $item)  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)])}
 export type ProductPageQueryResult = {
   products: Array<{
     _id: string;
@@ -755,6 +938,34 @@ export type ProductPageQueryResult = {
       | Array<never>;
     coinShape: "oval" | "rectangle" | "round" | "scalloped" | "square" | null;
     updatedAt: string;
+    categoryPricingDeferred: boolean | false;
+    pricing: {
+      mode: "automatic" | "manual" | null;
+      makingChargePerGram: number | null;
+      makingChargePerPiece: number | null;
+      finish:
+        "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+      manualTotalInr: number | null;
+      reviewedAt: string | null;
+      reviewDueAt: string | null;
+      manualSizes: Array<{
+        weightGrams: number | null;
+        diameterInches: number | null;
+        totalInr: number | null;
+      }> | null;
+    } | null;
+    categoryMakingChargePerGram: number | null;
+    categoryMakingChargePerPiece: number | null;
+    categoryMakingRules: Array<{
+      minimumWeightGrams: number | null;
+      minimumExclusive: boolean | null;
+      finish:
+        "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+      purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+      idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+      makingChargePerGram: number | null;
+      makingChargePerPiece: number | null;
+    }> | null;
     images: Array<{
       src: string | null;
       alt: string | null;
@@ -768,7 +979,7 @@ export type ProductPageQueryResult = {
 
 // Source: src/sanity/lib/queries.ts
 // Variable: categoriesQuery
-// Query: *[_type == "category"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, displayOrder,  productKind, showOnHomepage, homepageOrder, homepageImageSource,  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "updatedAt": _updatedAt}
+// Query: *[_type == "category"] | order(displayOrder asc, _id asc) {  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")}, displayOrder,  productKind, showOnHomepage, homepageOrder, homepageImageSource,  makingChargePerGram, makingChargePerPiece, makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece},  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {  "src": asset->url, alt,  "width": asset->metadata.dimensions.width,  "height": asset->metadata.dimensions.height,  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")},  "updatedAt": _updatedAt}
 export type CategoriesQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -791,6 +1002,18 @@ export type CategoriesQueryResult = Array<{
   showOnHomepage: boolean | null;
   homepageOrder: number | null;
   homepageImageSource: "category" | "product" | null;
+  makingChargePerGram: number | null;
+  makingChargePerPiece: number | null;
+  makingRules: Array<{
+    minimumWeightGrams: number | null;
+    minimumExclusive: boolean | null;
+    finish:
+      "antique" | "colour" | "gold-polish" | "silver" | "steel-polish" | null;
+    purity: "91.60" | "92.5" | "99.50" | "99.80" | null;
+    idolConstruction: "hollow" | "semi-solid" | "solid" | null;
+    makingChargePerGram: number | null;
+    makingChargePerPiece: number | null;
+  }> | null;
   productCount: number;
   firstProductImage: {
     src: string | null;
@@ -876,13 +1099,13 @@ export type SitemapProductsQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductsQueryResult;
-    '*[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductQueryResult;
-    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': FeaturedProductsQueryResult;
-    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': HomepageFallbackProductsQueryResult;
-    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': RelatedProductsQueryResult;
-    '{\n  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n] | order(displayOrder asc, _id asc)[$start...$end] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}},\n  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n])\n}': ProductPageQueryResult;
-    '*[_type == "category"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, displayOrder,\n  productKind, showOnHomepage, homepageOrder, homepageImageSource,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),\n  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "updatedAt": _updatedAt\n}': CategoriesQueryResult;
+    '*[_type == "product" && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductsQueryResult;
+    '*[_type == "product" && slug.current == $slug] | order(_id asc)[0...1] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": coalesce(gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, [])}': ProductQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && featured == true] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': FeaturedProductsQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url)] | order(displayOrder asc, _id asc)[0...4] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': HomepageFallbackProductsQueryResult;
+    '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}}': RelatedProductsQueryResult;
+    '{\n  "products": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n] | order(displayOrder asc, _id asc)[$start...$end] {\n  _id, title, "slug": slug.current, shortDescription, seoTitle,\n  "categorySlug": category->slug.current, "categoryKind": category->productKind,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "featured": coalesce(featured, false), displayOrder, reference, material, purity,\n  weightGrams, heightInches, widthInches, depthInches, diameterInches,\n  singhasanWidthInches, singhasanDepthInches,\n  "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),\n  utensilType, idolConstruction,\n  "deities": coalesce(deities[]->{title, "slug": slug.current}, []),\n  coinShape, "updatedAt": _updatedAt,\n  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),\n  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,\n      manualSizes[]{weightGrams, diameterInches, totalInr}},\n  "categoryMakingChargePerGram": category->makingChargePerGram,\n  "categoryMakingChargePerPiece": category->makingChargePerPiece,\n  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}\n, "images": gallery[0...1] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}},\n  "total": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current)\n  && ($category == "" || category->slug.current == $category)\n  && ($purity == "" || purity == $purity)\n  && ($idol == "" || idolConstruction == $idol)\n  && ($deity == "" || $deity in deities[]->slug.current)\n  && ($shape == "" || coinShape == $shape)\n  && ($item == "" || utensilType == $item)\n  && (count($terms) == 0 || ([title, shortDescription] + coalesce(deities[]->title, [])) match $terms)\n])\n}': ProductPageQueryResult;
+    '*[_type == "category"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n}, displayOrder,\n  productKind, showOnHomepage, homepageOrder, homepageImageSource,\n  makingChargePerGram, makingChargePerPiece, makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece},\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id]),\n  "firstProductImage": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "updatedAt": _updatedAt\n}': CategoriesQueryResult;
     '*[_type == "collection"] | order(displayOrder asc, _id asc) {\n  _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "heroImage": heroImage {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "productSlugs": *[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref] | order(displayOrder asc, _id asc).slug.current,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ^._id in collections[]._ref]),\n  displayOrder, "updatedAt": _updatedAt\n}': CollectionsQueryResult;
     '*[_type == "category"] {\n  "categorySlug": slug.current,\n  "productCount": count(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id]),\n  "purities": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].purity)[defined(@)],\n  "idolConstructions": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].idolConstruction)[defined(@)],\n  "coinShapes": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].coinShape)[defined(@)],\n  "utensilTypes": array::unique(*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].utensilType)[defined(@)],\n  "deities": (*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && ($collection == "" || $collection in collections[]->slug.current) && category._ref == ^._id].deities[]->{title, "slug": slug.current})[defined(slug)]\n}': CatalogFacetsQueryResult;
     '*[_type == "product" && defined(slug.current) && defined(category->slug.current) && defined(gallery[0].asset->url) && _id > $afterId] | order(_id asc)[0...200] {\n  _id, title, reference, "slug": slug.current,\n  "images": gallery[] {\n  "src": asset->url, alt,\n  "width": asset->metadata.dimensions.width,\n  "height": asset->metadata.dimensions.height,\n  "objectPosition": select(hotspot.x < 0.4 => "left center", hotspot.x > 0.6 => "right center", "center center")\n},\n  "categorySlug": category->slug.current,\n  "collectionSlugs": coalesce(collections[]->slug.current, []),\n  "updatedAt": _updatedAt\n}': SitemapProductsQueryResult;

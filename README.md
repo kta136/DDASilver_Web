@@ -148,6 +148,7 @@ docs/             Product, architecture, integration, and launch documentation
 - [Information architecture and UX](docs/information-architecture.md)
 - [Technical architecture](docs/technical-architecture.md)
 - [Sanity content model](docs/content-model.md)
+- [Gallery pricing, category charges and activation](docs/gallery-pricing.md)
 - [Idol item-code terminology](docs/idol-item-codes.md)
 - [Live-rates integration](docs/rates-integration.md)
 - [Shared-account authentication](docs/authentication.md)

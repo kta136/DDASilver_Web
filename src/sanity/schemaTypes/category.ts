@@ -1,5 +1,8 @@
 import { defineField, defineType } from "sanity";
 import { catalogEditorialField } from "./catalog-editorial";
+import { categoryMakingFields } from "./pricing-fields";
+import { validatePricingWrite } from "@/lib/pricing/sanity-validation";
+import { sanityApiVersion } from "@/sanity/env";
 import {
   catalogLimits,
   catalogSlugSchema,
@@ -10,7 +13,10 @@ export const categoryType = defineType({
   name: "category",
   title: "Category",
   type: "document",
+  validation: (rule) => rule.custom(async (document, context) => !document ? true : validatePricingWrite(
+    context.getClient({ apiVersion: sanityApiVersion }).withConfig({ perspective: "published", useCdn: false }), document)),
   fields: [
+    ...categoryMakingFields,
     catalogEditorialField,
     defineField({
       name: "title",

@@ -2,6 +2,7 @@ import { createReadStream } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { preserveCategoryPricing } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
 const applyChanges = process.argv.includes("--apply");
@@ -198,7 +199,7 @@ async function main() {
   for (const category of categories) {
     const assetId = await getOrUploadImage(category.imagePath, category.title);
 
-    await client.createOrReplace({
+    const document = {
       _id: category._id,
       _type: "category",
       title: category.title,
@@ -220,7 +221,9 @@ async function main() {
         },
         alt: category.alt,
       },
-    });
+    };
+    await preserveCategoryPricing(client, document);
+    await client.createOrReplace(document);
 
     console.log(`Seeded ${category.title} (${category._id})`);
   }

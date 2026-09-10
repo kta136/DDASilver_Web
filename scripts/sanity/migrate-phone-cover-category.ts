@@ -1,4 +1,5 @@
 import { getCliClient } from "sanity/cli";
+import { preserveCategoryPricing, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-09-01" });
 const applyChanges = process.argv.includes("--apply");
@@ -163,8 +164,10 @@ async function main() {
     return;
   }
 
+  await preserveCategoryPricing(client, categoryDocument);
   let transaction = client.transaction().createOrReplace(categoryDocument);
   for (const { id, reference } of phoneCovers) {
+    await validatePricingPatch(client, id, { category: { _type: "reference", _ref: categoryId } });
     const product = productById.get(id)!;
     transaction = transaction
       .patch(id, (patch) =>

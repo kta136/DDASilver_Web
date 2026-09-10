@@ -1,4 +1,5 @@
 import { getCliClient } from "sanity/cli";
+import { preserveCategoryPricing, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-08-09" });
 const applyChanges = process.argv.includes("--apply");
@@ -158,7 +159,7 @@ async function main() {
   }
 
   const utensilCategory = requiredById.get("category-utensils")!;
-  let transaction = client.transaction().createOrReplace({
+  const categoryDocument = {
     ...jhulaCategory,
     image: {
       _type: "image",
@@ -168,11 +169,14 @@ async function main() {
       },
       alt: "Ornate 92.5% silver peacock and floral jhula with suspended seat",
     },
-  });
+  };
+  await preserveCategoryPricing(client, categoryDocument);
+  let transaction = client.transaction().createOrReplace(categoryDocument);
 
   transaction = transaction.patch(utensilCategory._id, (patch) =>
     patch.ifRevisionId(utensilCategory._rev).set({ displayOrder: 7 }),
   );
+  await validatePricingPatch(client, ramMandir._id, { category: { _type: "reference", _ref: "category-idols" }, idolConstruction: "hollow" });
   transaction = transaction.patch(ramMandir._id, (patch) =>
     patch.ifRevisionId(ramMandir._rev).set({
       category: { _type: "reference", _ref: "category-idols" },
@@ -183,6 +187,7 @@ async function main() {
     }),
   );
   for (const product of jhulas) {
+    await validatePricingPatch(client, product._id, { category: { _type: "reference", _ref: "category-jhula" } });
     transaction = transaction.patch(product._id, (patch) =>
       patch.ifRevisionId(product._rev).set({
         category: { _type: "reference", _ref: "category-jhula" },

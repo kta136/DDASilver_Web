@@ -1,4 +1,5 @@
 import { existsSync } from "node:fs";
+import { galleryPricingHealth } from "@/lib/pricing/service";
 
 import { checkRateLimit } from "@/lib/security/rate-limit";
 
@@ -72,6 +73,7 @@ export async function GET(request: Request) {
       checks: {
         application: draining ? "draining" : "ok",
         sanity,
+        pricing: await galleryPricingHealth(),
       },
     },
     {

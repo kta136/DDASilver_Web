@@ -1,4 +1,5 @@
 import { getCliClient } from "sanity/cli";
+import { validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-08-23" });
 const applyChanges = process.argv.includes("--apply");
@@ -139,6 +140,7 @@ async function main() {
   for (const document of productChanges) {
     const product = targetById.get(document._id);
     if (!product) continue;
+    await validatePricingPatch(client, document._id, { purity: targetPurity });
     transaction = transaction.patch(document._id, (patch) =>
       patch.ifRevisionId(document._rev).set({
         purity: targetPurity,

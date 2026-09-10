@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
 const applyChanges = process.argv.includes("--apply");
@@ -171,6 +172,7 @@ async function main() {
   }
 
   for (const { document, shortDescription } of changes) {
+    await validatePricingPatch(client, document._id, { purity: targetPurity });
     await client
       .patch(document._id)
       .ifRevisionId(document._rev)

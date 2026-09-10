@@ -12,6 +12,8 @@ import {
   utensilTypes,
 } from "@/lib/catalog-domain";
 import { sanityApiVersion } from "@/sanity/env";
+import { productPricingField } from "./pricing-fields";
+import { validatePricingWrite } from "@/lib/pricing/sanity-validation";
 
 const options = (values: readonly string[]) =>
   values.map((value) => ({ title: value, value }));
@@ -25,6 +27,7 @@ export const productType = defineType({
     { name: "images", title: "Images" },
     { name: "specifications", title: "Specifications" },
     { name: "organization", title: "Organization" },
+    { name: "pricing", title: "Pricing" },
   ],
   validation: (rule) =>
     rule.custom(async (document, context) => {
@@ -58,9 +61,10 @@ export const productType = defineType({
             message: issues.map((issue) => issue.message).join(" "),
             paths: issues.map((issue) => [issue.field]),
           }
-        : true;
+        : validatePricingWrite(context.getClient({ apiVersion: sanityApiVersion }).withConfig({ perspective: "published", useCdn: false }), document);
     }),
   fields: [
+    productPricingField,
     defineField({
       name: "title",
       title: "Title",

@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
-import Link from "next/link";
+import { PricedProductLink } from "./price-context";
+import { ProductPrice } from "./product-price";
 
 import {
   coinShapeLabels,
@@ -47,7 +48,7 @@ export function ProductCard({
 
   return (
     <article className="group">
-      <Link href={`/products/${product.slug}`} className="block no-underline">
+      <PricedProductLink slug={product.slug} estimate={product.estimate}>
         <div
           className={`relative overflow-hidden bg-[#ece8e3] ${
             compactImage ? "aspect-square" : "aspect-[4/5]"
@@ -78,6 +79,7 @@ export function ProductCard({
             <p className="mt-1 text-xs uppercase tracking-[0.16em] text-ink-muted">
               {details.length > 0 ? details.join(" · ") : "Enquire for details"}
             </p>
+            <ProductPrice slug={product.slug} estimate={product.estimate} />
           </div>
           <ArrowRightIcon
             size={19}
@@ -85,7 +87,7 @@ export function ProductCard({
             aria-hidden="true"
           />
         </div>
-      </Link>
+      </PricedProductLink>
     </article>
   );
 }

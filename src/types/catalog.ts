@@ -1,3 +1,4 @@
+import type { MakingRule, PriceEstimate, ProductPricing } from "@/lib/pricing/model";
 import type {
   CategoryKind,
   productMaterials,
@@ -16,6 +17,9 @@ export type CatalogImage = {
 };
 
 export type Category = {
+  makingChargePerGram?: number | null;
+  makingChargePerPiece?: number | null;
+  makingRules?: MakingRule[] | null;
   _id?: string;
   title: string;
   slug: string;
@@ -67,6 +71,12 @@ export type ProductSizeVariant = {
 };
 
 export type Product = {
+  pricing?: ProductPricing | null;
+  categoryMakingChargePerGram?: number | null;
+  categoryMakingChargePerPiece?: number | null;
+  categoryMakingRules?: MakingRule[] | null;
+  categoryPricingDeferred?: boolean;
+  estimate?: PriceEstimate;
   _id?: string;
   title: string;
   slug: string;

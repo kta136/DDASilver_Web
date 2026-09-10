@@ -1,0 +1,48 @@
+{
+  "category-coin": {
+    "source": "Confirmed by owner on 2026-09-10. Exactly 250 g uses the lower weight bracket.",
+    "makingRules": [
+      { "minimumWeightGrams": 0, "finish": "silver", "makingChargePerGram": 5 },
+      { "minimumWeightGrams": 250, "minimumExclusive": true, "finish": "silver", "makingChargePerGram": 3 },
+      { "minimumWeightGrams": 0, "finish": "gold-polish", "makingChargePerGram": 10 },
+      { "minimumWeightGrams": 250, "minimumExclusive": true, "finish": "gold-polish", "makingChargePerGram": 8 }
+    ]
+  },
+  "category-idols": {
+    "source": "Confirmed by owner on 2026-09-10. Small painted eyes, lips and tilaks count as plain silver. Reflective dark/chrome hollow idols, including gold accents, are steel polish.",
+    "makingRules": [
+      { "minimumWeightGrams": 0, "idolConstruction": "hollow", "makingChargePerGram": 25 },
+      { "minimumWeightGrams": 0, "finish": "steel-polish", "idolConstruction": "hollow", "makingChargePerGram": 30 },
+      { "minimumWeightGrams": 0, "finish": "silver", "idolConstruction": "solid", "makingChargePerGram": 10 },
+      { "minimumWeightGrams": 0, "idolConstruction": "semi-solid", "makingChargePerGram": 15 },
+      { "minimumWeightGrams": 0, "finish": "colour", "idolConstruction": "semi-solid", "makingChargePerGram": 30 },
+      { "minimumWeightGrams": 0, "finish": "antique", "idolConstruction": "solid", "makingChargePerGram": 15 }
+    ]
+  },
+  "category-purse": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true },
+  "category-gifts": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true },
+  "category-jhula": { "source": "Confirmed by owner on 2026-09-10.", "makingChargePerGram": 15 },
+  "category-phone-covers": { "source": "Confirmed by owner on 2026-09-10: making charge, added to silver value.", "makingChargePerPiece": 3000 },
+  "category-utensils": {
+    "source": "Confirmed by owner on 2026-09-10. Exactly 20 g uses ₹250 per piece. These are making charges added to silver value.",
+    "makingRules": [
+      { "minimumWeightGrams": 0, "makingChargePerPiece": 250 },
+      { "minimumWeightGrams": 20, "minimumExclusive": true, "makingChargePerGram": 10 }
+    ]
+  },
+  "category-singhasan": {
+    "source": "Confirmed by owner on 2026-09-10.",
+    "makingRules": [
+      { "minimumWeightGrams": 0, "finish": "silver", "makingChargePerGram": 10 },
+      { "minimumWeightGrams": 0, "finish": "antique", "makingChargePerGram": 15 }
+    ]
+  },
+  "category-hatri": {
+    "source": "Confirmed by owner on 2026-09-10.",
+    "makingRules": [
+      { "minimumWeightGrams": 0, "finish": "silver", "makingChargePerGram": 10 },
+      { "minimumWeightGrams": 0, "finish": "antique", "makingChargePerGram": 15 }
+    ]
+  },
+  "category-boxes": { "source": "Owner deferred pricing on 2026-09-10.", "pricingDeferred": true }
+}

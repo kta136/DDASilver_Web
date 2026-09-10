@@ -88,7 +88,7 @@ describe("catalog read boundary", () => {
     const catalog = await fetchCatalog(
       mockClient([
         productPayload(),
-        { ...productPayload(), slug: "bad", weightGrams: -1 },
+        { ...productPayload(), slug: "bad", title: "" },
       ]),
       { store: createSnapshotStore() },
     );
@@ -99,7 +99,7 @@ describe("catalog read boundary", () => {
       expect.objectContaining({
         document: "bad",
         issues: expect.arrayContaining([
-          expect.objectContaining({ field: "weightGrams" }),
+          expect.objectContaining({ field: "title" }),
         ]),
       }),
     );
@@ -121,6 +121,13 @@ describe("catalog read boundary", () => {
         }),
       ],
     });
+  });
+  it("keeps products visible with unavailable pricing when weights, sizes or pricing fields are corrupt", () => {
+    for (const corrupt of [{ weightGrams: -1 }, { sizeVariants: [{ weightGrams: "unknown" }] }, { pricing: { makingChargePerGram: -1 } }]) {
+      const product = productSchema.parse({ ...productPayload(), ...corrupt });
+      expect(product.title).toBe(productPayload().title);
+      expect(product.pricing).toBeNull();
+    }
   });
   it.each(["91.60", "99.50"])("accepts gold purity %s", async (purity) => {
     const catalog = await fetchCatalog(

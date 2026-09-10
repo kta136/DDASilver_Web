@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { withGalleryPrices } from "@/lib/pricing/service";
 import { draftMode } from "next/headers";
 import { z } from "zod";
 import type { QueryParams } from "next-sanity";
@@ -161,7 +162,7 @@ async function readProductList(
   params: QueryParams = {},
 ) {
   const result = await read(query, params, (raw, previous?: Product[]) =>
-    decodeDocuments(productSchema, raw, "product", previous),
+    decodeDocuments<Product>(productSchema, raw, "product", previous),
   );
   return {
     value: result.value.map(productImageSeo),
@@ -240,11 +241,12 @@ async function findProduct(read: Reader, slug: string) {
   if (!catalogSlugSchema.safeParse(slug).success) return undefined;
   return (await readProductList(read, queries.productQuery, { slug })).value[0];
 }
-export const getProduct = cache(async (slug: string) =>
-  isSanityConfigured
+export const getProduct = cache(async (slug: string) => {
+  const product = await (isSanityConfigured
     ? findProduct(await getReader(), slug)
-    : demoCatalog().products.find((product) => product.slug === slug),
-);
+    : demoCatalog().products.find((product) => product.slug === slug));
+  return product ? (await withGalleryPrices([product]))[0] : undefined;
+});
 export const getPublishedProduct = cache(async (slug: string) =>
   isSanityConfigured
     ? findProduct(publishedReader, slug)
@@ -261,7 +263,7 @@ export const getCollection = cache(async (slug: string) =>
   ),
 );
 export const getRelatedProducts = cache(
-  async (category: string, slug: string) =>
+  async (category: string, slug: string) => withGalleryPrices(
     isSanityConfigured
       ? (
           await readProductList(
@@ -275,7 +277,7 @@ export const getRelatedProducts = cache(
             (product) =>
               product.categorySlug === category && product.slug !== slug,
           )
-          .slice(0, 3),
+          .slice(0, 3)),
 );
 export const getHomepageCatalog = cache(async () => {
   const [navigation, products] = await Promise.all([
@@ -307,7 +309,7 @@ export const getHomepageCatalog = cache(async () => {
   }
   return {
     ...navigation,
-    products: selectedProducts,
+    products: await withGalleryPrices(selectedProducts),
     degraded: navigation.degraded || selectionDegraded,
   };
 });
@@ -435,7 +437,7 @@ async function loadCatalogListing(
         getListingParams(filters, pageNumber, selectedCollection),
         (raw, previous?: { products: Product[]; total: number }) => {
           const envelope = pageEnvelope.parse(raw);
-          const decoded = decodeDocuments(
+          const decoded = decodeDocuments<Product>(
             productSchema,
             envelope.products,
             "product",
@@ -487,16 +489,17 @@ const cachedCatalogListing = cache(
       collection,
     ),
 );
-export function getCatalogListing(
+export async function getCatalogListing(
   searchParams: URLSearchParams,
   defaultCategory = "",
   collection = "",
 ) {
-  return cachedCatalogListing(
+  const listing = await cachedCatalogListing(
     searchParams.toString(),
     defaultCategory,
     collection,
   );
+  return { ...listing, result: { ...listing.result, products: await withGalleryPrices(listing.result.products) } };
 }
 
 const sitemapProductSchema = z.object({

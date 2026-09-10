@@ -5,6 +5,8 @@ import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
 import { assertProductDocument } from "../../src/lib/catalog-domain";
+import { preparePricingWrites } from "../../src/lib/pricing/sanity-validation";
+import type { ProductPricing } from "../../src/lib/pricing/model";
 
 const client = getCliClient({ apiVersion: "2026-07-28" });
 const applyChanges =
@@ -24,6 +26,7 @@ const manifestPath = resolve(
 const assetUploadConcurrency = 3;
 
 type UtensilProduct = {
+  pricing?: ProductPricing;
   number: number;
   id: string;
   title: string;
@@ -342,6 +345,7 @@ async function main() {
         product.utensilType === "tumbler" ? "glass" : product.utensilType;
       return {
         _id: product.id,
+        pricing: product.pricing,
         _type: "product" as const,
         title: product.title,
         slug: { _type: "slug" as const, current: product.slug },
@@ -373,6 +377,7 @@ async function main() {
   );
 
   if (documents.length > 0) {
+    await preparePricingWrites(client, documents);
     let transaction = client.transaction();
     for (const document of documents) {
       assertProductDocument(document, document.utensilType ? "utensil" : "general");

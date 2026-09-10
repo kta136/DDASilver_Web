@@ -12,6 +12,7 @@ import {
 import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import { getProductIdentity } from "@/lib/seo";
 import type { Product } from "@/types/catalog";
+import { ProductPrice } from "./product-price";
 
 type ProductDetailsProps = {
   product: Product;
@@ -202,6 +203,7 @@ export function ProductDetails({
           ) : null}
         </dl>
       ) : null}
+      <ProductPrice slug={product.slug} estimate={product.estimate} details dialog={isDialog} />
       <p
         className={clsx(
           "mt-7 leading-8 text-ink-muted",
@@ -214,8 +216,7 @@ export function ProductDetails({
       <div className="mt-9 border-y border-line py-6">
         <p className="text-sm font-bold">Browse and enquire</p>
         <p className="mt-2 text-sm leading-6 text-ink-muted">
-          Product pricing and availability are not shown online. Confirm
-          availability on WhatsApp with the showroom team.
+          Confirm final pricing and availability on WhatsApp with the showroom team.
         </p>
       </div>
 

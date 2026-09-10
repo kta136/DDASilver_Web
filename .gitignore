@@ -16,6 +16,7 @@
 /test-results/
 /blob-report/
 /tmp/
+/.gallery-pricing/
 
 # next.js
 /.next/

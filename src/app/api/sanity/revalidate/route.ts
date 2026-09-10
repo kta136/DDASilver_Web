@@ -15,6 +15,7 @@ const webhookBodySchema = z.object({
     "sanity.imageAsset",
     "page",
     "siteSettings",
+    "galleryPricing",
   ]),
   _id: z.string().max(200).optional(),
   slug: z.string().max(120).nullish(),
@@ -33,6 +34,7 @@ const typeTags: Record<z.infer<typeof webhookBodySchema>["_type"], string[]> = {
   ],
   page: ["page"],
   siteSettings: ["siteSettings"],
+  galleryPricing: ["galleryPricing", "product", "category"],
 };
 
 export async function POST(request: NextRequest) {

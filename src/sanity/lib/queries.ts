@@ -16,7 +16,13 @@ const productFields = `
   "sizeVariants": coalesce(sizeVariants[]{weightGrams, diameterInches}, []),
   utensilType, idolConstruction,
   "deities": coalesce(deities[]->{title, "slug": slug.current}, []),
-  coinShape, "updatedAt": _updatedAt
+  coinShape, "updatedAt": _updatedAt,
+  "categoryPricingDeferred": coalesce(category->pricingDeferred, false),
+  pricing{mode, makingChargePerGram, makingChargePerPiece, finish, manualTotalInr, reviewedAt, reviewDueAt,
+      manualSizes[]{weightGrams, diameterInches, totalInr}},
+  "categoryMakingChargePerGram": category->makingChargePerGram,
+  "categoryMakingChargePerPiece": category->makingChargePerPiece,
+  "categoryMakingRules": category->makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece}
 `;
 const cardProjection = `{${productFields}, "images": gallery[0...1] ${imageProjection}}`;
 const detailProjection = `{${productFields}, "images": coalesce(gallery[] ${imageProjection}, [])}`;
@@ -57,6 +63,7 @@ export const categoriesQuery =
   defineQuery(`*[_type == "category"] | order(displayOrder asc, _id asc) {
   _id, title, "slug": slug.current, description, editorialSections[]{heading, body}, "image": image ${imageProjection}, displayOrder,
   productKind, showOnHomepage, homepageOrder, homepageImageSource,
+  makingChargePerGram, makingChargePerPiece, makingRules[]{minimumWeightGrams, minimumExclusive, finish, purity, idolConstruction, makingChargePerGram, makingChargePerPiece},
   "productCount": count(*[${publishedProduct} && category._ref == ^._id]),
   "firstProductImage": *[${publishedProduct} && category._ref == ^._id] | order(displayOrder asc, _id asc)[0].gallery[0] ${imageProjection},
   "updatedAt": _updatedAt

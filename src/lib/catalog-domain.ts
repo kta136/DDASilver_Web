@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { productPricingSchema } from "@/lib/pricing/validation";
 
 import {
   catalogLimits,
@@ -61,6 +62,7 @@ const referenceSchema = z.object({
   _ref: z.string().min(1),
 });
 export const productDocumentSchema = z.object({
+  pricing: productPricingSchema.optional(),
   _id: z.string().min(1),
   _type: z.literal("product"),
   title: z.string().trim().min(1).max(catalogLimits.title),
@@ -97,6 +99,7 @@ export const productDocumentSchema = z.object({
 
 export const galleryManifestProductSchema = productDocumentSchema
   .pick({
+    pricing: true,
     title: true,
     shortDescription: true,
     reference: true,

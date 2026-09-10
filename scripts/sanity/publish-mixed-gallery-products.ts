@@ -2,6 +2,8 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import { preparePricingWrites, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
+import type { ProductPricing } from "../../src/lib/pricing/model";
 import { assertProductDocument, catalogLimits, galleryManifestProductSchema, getCategoryKind, type CategoryKind } from "../../src/lib/catalog-domain";
 
 const client = getCliClient({ apiVersion: "2026-08-09" });
@@ -41,6 +43,7 @@ const assetMappingPath = resolveInputPath(
 );
 const displayOrderBase = Number(getArgumentValue("--display-order-base") ?? 5_000);
 type ManifestProduct = {
+  pricing?: ProductPricing;
   number: number;
   originalNumber?: number;
   id: string;
@@ -225,6 +228,7 @@ function getProductDocument(
 ) {
   const document = {
     _id: product.id,
+    pricing: product.pricing,
     _type: "product",
     title: product.title,
     slug: {
@@ -526,12 +530,18 @@ async function main() {
   let transaction = client.transaction();
   for (const { product, action, gallery } of mutations) {
     const document = getProductDocument(product, gallery);
+    await preparePricingWrites(client, [document]);
     transaction =
       action === "REPLACE"
         ? transaction.createOrReplace(document)
         : transaction.create(document);
   }
   for (const { product, existing, assetId, action } of parentGalleryActions) {
+    if (product.updateParentMetadata) {
+      await validatePricingPatch(client, existing._id, {
+        material: product.material ?? "silver", purity: product.purity, weightGrams: product.weightGrams,
+      });
+    }
     transaction = transaction.patch(existing._id, (patch) => {
       let nextPatch = patch.ifRevisionId(existing._rev);
       if (product.updateParentMetadata) {

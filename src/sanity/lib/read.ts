@@ -15,6 +15,7 @@ export const catalogTags = [
   "collection",
   "deity",
   "sanity.imageAsset",
+  "galleryPricing",
 ];
 const snapshots = createSnapshotStore(
   process.env.SANITY_CATALOG_CACHE_DIR?.trim() ||

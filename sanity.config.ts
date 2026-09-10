@@ -18,11 +18,13 @@ export default defineConfig({
       structure: (S) =>
         S.list()
           .title("Catalog")
-          .items(
+          .items([
+            S.listItem().id("galleryPricing").title("Gallery Pricing").child(S.document().schemaType("galleryPricing").documentId("gallery-pricing")),
+            ...
             S.documentTypeListItems().filter(
-              (item) => !["page", "siteSettings"].includes(item.getId() ?? ""),
+              (item) => !["page", "siteSettings", "galleryPricing"].includes(item.getId() ?? ""),
             ),
-          ),
+          ]),
     }),
     visionTool(),
   ],
@@ -30,11 +32,11 @@ export default defineConfig({
     types: schemaTypes,
     templates: (templates) =>
       templates.filter(
-        (template) => !["page", "siteSettings"].includes(template.schemaType),
+        (template) => !["page", "siteSettings", "galleryPricing"].includes(template.schemaType),
       ),
   },
   document: {
     actions: (actions, context) =>
-      ["page", "siteSettings"].includes(context.schemaType) ? [] : actions,
+      ["page", "siteSettings"].includes(context.schemaType) ? [] : context.schemaType === "galleryPricing" ? actions.filter((action) => !["duplicate", "delete", "unpublish"].includes(action.action ?? "")) : actions,
   },
 });

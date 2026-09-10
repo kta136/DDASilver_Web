@@ -1042,6 +1042,168 @@
           "type": "string"
         }
       },
+      "pricing": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "object",
+          "attributes": {
+            "mode": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "union",
+                "of": [
+                  {
+                    "type": "string",
+                    "value": "automatic"
+                  },
+                  {
+                    "type": "string",
+                    "value": "manual"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            "finish": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "union",
+                "of": [
+                  {
+                    "type": "string",
+                    "value": "silver"
+                  },
+                  {
+                    "type": "string",
+                    "value": "gold-polish"
+                  },
+                  {
+                    "type": "string",
+                    "value": "antique"
+                  },
+                  {
+                    "type": "string",
+                    "value": "colour"
+                  },
+                  {
+                    "type": "string",
+                    "value": "steel-polish"
+                  }
+                ]
+              },
+              "optional": true
+            },
+            "finishReviewedAt": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
+            },
+            "finishPhotoAssetId": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
+            },
+            "finishReviewNotes": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
+            },
+            "makingChargePerGram": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "number"
+              },
+              "optional": true
+            },
+            "makingChargePerPiece": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "number"
+              },
+              "optional": true
+            },
+            "manualTotalInr": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "number"
+              },
+              "optional": true
+            },
+            "manualSizes": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "array",
+                "of": {
+                  "type": "object",
+                  "attributes": {
+                    "weightGrams": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "number"
+                      },
+                      "optional": true
+                    },
+                    "diameterInches": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "number"
+                      },
+                      "optional": true
+                    },
+                    "totalInr": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "number"
+                      },
+                      "optional": true
+                    },
+                    "_type": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string",
+                        "value": "manualSizePrice"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "object",
+                    "attributes": {
+                      "_key": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "optional": true
+            },
+            "reviewedAt": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
+            },
+            "reviewDueAt": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              },
+              "optional": true
+            }
+          }
+        },
+        "optional": true
+      },
       "title": {
         "type": "objectAttribute",
         "value": {
@@ -1475,6 +1637,160 @@
           "type": "string"
         }
       },
+      "pricingDeferred": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
+      "makingChargePerGram": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "makingChargePerPiece": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "makingRules": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "minimumWeightGrams": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "number"
+                },
+                "optional": true
+              },
+              "minimumExclusive": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              },
+              "finish": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "silver"
+                    },
+                    {
+                      "type": "string",
+                      "value": "gold-polish"
+                    },
+                    {
+                      "type": "string",
+                      "value": "antique"
+                    },
+                    {
+                      "type": "string",
+                      "value": "colour"
+                    },
+                    {
+                      "type": "string",
+                      "value": "steel-polish"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "purity": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "91.60"
+                    },
+                    {
+                      "type": "string",
+                      "value": "92.5"
+                    },
+                    {
+                      "type": "string",
+                      "value": "99.50"
+                    },
+                    {
+                      "type": "string",
+                      "value": "99.80"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "idolConstruction": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "hollow"
+                    },
+                    {
+                      "type": "string",
+                      "value": "solid"
+                    },
+                    {
+                      "type": "string",
+                      "value": "semi-solid"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "makingChargePerGram": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "number"
+                },
+                "optional": true
+              },
+              "makingChargePerPiece": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "number"
+                },
+                "optional": true
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "makingRule"
+                }
+              }
+            },
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "optional": true
+      },
       "editorialSections": {
         "type": "objectAttribute",
         "value": {
@@ -1667,6 +1983,50 @@
               "value": "category"
             }
           ]
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "galleryPricing",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "galleryPricing"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "enabled": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
         },
         "optional": true
       }

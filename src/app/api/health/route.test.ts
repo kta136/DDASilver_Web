@@ -37,7 +37,7 @@ describe("GET /api/health", () => {
     const payload = await response.json();
 
     expect(response.status).toBe(503);
-    expect(payload.checks).toEqual({
+    expect(payload.checks).toMatchObject({
       application: "ok",
       sanity: "not_configured",
     });

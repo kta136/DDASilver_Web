@@ -5,6 +5,8 @@ import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
 import { assertProductDocument } from "../../src/lib/catalog-domain";
+import { preparePricingWrites, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
+import type { ProductPricing } from "../../src/lib/pricing/model";
 
 const client = getCliClient({ apiVersion: "2026-07-30" });
 
@@ -19,6 +21,7 @@ const measurementsOnly =
   process.env.SANITY_IDOL_MEASUREMENTS_ONLY === "1";
 
 type IdolProduct = {
+  pricing?: ProductPricing;
   number: number;
   id: string;
   codeFamily: string;
@@ -861,6 +864,7 @@ async function syncProductMeasurements(
 
   let transaction = client.transaction();
   for (const { product, measurements } of changes) {
+    await validatePricingPatch(client, product.id, measurements);
     transaction = transaction.patch(product.id, (patch) =>
       patch.set(measurements),
     );
@@ -1227,6 +1231,7 @@ async function main() {
 
       return {
         _id: product.id,
+        pricing: product.pricing,
         _type: "product" as const,
         title: itemName,
         slug: {
@@ -1266,6 +1271,7 @@ async function main() {
 
   if (productDocuments.length > 0) {
     let transaction = client.transaction();
+    await preparePricingWrites(client, productDocuments);
     for (const document of productDocuments) {
       assertProductDocument(document, "idol");
       transaction = transaction.createOrReplace(document);

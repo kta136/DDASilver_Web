@@ -5,6 +5,8 @@ import { basename, resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
 import { assertProductDocument } from "../../src/lib/catalog-domain";
+import { preparePricingWrites } from "../../src/lib/pricing/sanity-validation";
+import type { ProductPricing } from "../../src/lib/pricing/model";
 
 const client = getCliClient({ apiVersion: "2026-07-30" });
 
@@ -30,6 +32,7 @@ type ManagedCoinDesign = {
   alt: string;
 };
 type CoinProduct = {
+  pricing?: ProductPricing;
   weight: number;
   shape: ManagedCoinShape;
   series?: ManagedCoinSeries;
@@ -38,7 +41,7 @@ type CoinProduct = {
   imagePath: string;
 };
 
-const coinProducts = [
+const coinProducts: readonly CoinProduct[] = [
   {
     weight: 10,
     shape: "round",
@@ -782,6 +785,7 @@ async function main() {
 
     const document = {
       _id: productId,
+      pricing: product.pricing,
       _type: "product",
       title,
       slug: {
@@ -812,6 +816,7 @@ async function main() {
       reference: getProductReference(product),
     };
     assertProductDocument(document, "coin");
+    await preparePricingWrites(client, [document]);
     await client.createOrReplace(document);
 
     if (existingProduct) {

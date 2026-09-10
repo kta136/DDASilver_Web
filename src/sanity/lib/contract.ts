@@ -5,6 +5,7 @@ import type {
   CatalogFacetsQueryResult,
 } from "@/sanity/types";
 import { z } from "zod";
+import { decodeMakingCharge, decodeMakingRules, decodePricing } from "@/lib/pricing/validation";
 
 import {
   catalogLimits,
@@ -65,6 +66,9 @@ export const catalogImageSchema = z.object({
 });
 
 export const categorySchema = z.object({
+  makingChargePerGram: z.unknown().optional().transform(decodeMakingCharge),
+  makingChargePerPiece: z.unknown().optional().transform(decodeMakingCharge),
+  makingRules: z.unknown().optional().transform(decodeMakingRules),
   ...identity,
   title: text(80),
   slug,
@@ -91,7 +95,23 @@ export const collectionSchema = z.object({
   productCount: z.number().int().nonnegative().optional(),
 } satisfies Record<keyof CollectionsQueryResult[number], z.ZodType>);
 const deitySchema = z.object({ title: text(80), slug });
-export const productSchema = z.object({
+const validVariants = z.array(sizeVariantSchema).max(catalogLimits.variants);
+export const productSchema = z.preprocess((raw) => {
+  if (!raw || typeof raw !== "object") return raw;
+  const product = raw as Record<string, unknown>;
+  const weight = nullable(weightSchema).safeParse(product.weightGrams);
+  const variants = validVariants.safeParse(product.sizeVariants);
+  if (weight.success && variants.success) return raw;
+  // Corrupted pricing inputs must not remove the product or invent a replacement weight.
+  // The invalid object becomes the calculator's unavailable-price sentinel.
+  return { ...product, weightGrams: weight.success ? weight.data : undefined,
+    sizeVariants: variants.success ? variants.data : [], pricing: { mode: "invalid-inputs" } };
+}, z.object({
+  categoryPricingDeferred: z.boolean().optional(),
+  pricing: z.unknown().optional().transform(decodePricing),
+  categoryMakingChargePerGram: z.unknown().optional().transform(decodeMakingCharge),
+  categoryMakingChargePerPiece: z.unknown().optional().transform(decodeMakingCharge),
+  categoryMakingRules: z.unknown().optional().transform(decodeMakingRules),
   ...identity,
   title: text(catalogLimits.title),
   slug,
@@ -116,12 +136,12 @@ export const productSchema = z.object({
   diameterInches: nullable(dimensionSchema),
   singhasanWidthInches: nullable(dimensionSchema),
   singhasanDepthInches: nullable(dimensionSchema),
-  sizeVariants: z.array(sizeVariantSchema).max(catalogLimits.variants),
+  sizeVariants: validVariants,
   utensilType: nullable(z.enum(utensilTypes)),
   idolConstruction: nullable(z.enum(idolConstructions)),
   deities: z.array(deitySchema).max(catalogLimits.deities),
   coinShape: nullable(z.enum(coinShapes)),
-} satisfies Record<keyof ProductsQueryResult[number], z.ZodType>);
+} satisfies Record<keyof ProductsQueryResult[number], z.ZodType>));
 
 export const facetSchema = z.object({
   categorySlug: slug,

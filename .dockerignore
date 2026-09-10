@@ -25,6 +25,7 @@ test-results
 blob-report
 .preview-logs
 .codex-tmp
+.gallery-pricing
 tmp
 
 # Product-gallery source and working files are not runtime assets

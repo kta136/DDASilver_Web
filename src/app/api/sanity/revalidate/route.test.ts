@@ -20,7 +20,7 @@ afterEach(() => vi.unstubAllEnvs());
 const request = () =>
   new NextRequest("http://localhost/api/sanity/revalidate", { method: "POST" });
 describe("Sanity publish webhook", () => {
-  it.each(["product", "category", "collection", "deity", "sanity.imageAsset"])(
+  it.each(["product", "category", "collection", "deity", "sanity.imageAsset", "galleryPricing"])(
     "invalidates dependent data for %s",
     async (_type) => {
       mocks.parseBody.mockResolvedValue({

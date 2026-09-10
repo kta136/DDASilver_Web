@@ -1,4 +1,5 @@
 import { getCliClient } from "sanity/cli";
+import { preserveCategoryPricing, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 
 const client = getCliClient({ apiVersion: "2026-09-01" });
 const applyChanges = process.argv.includes("--apply");
@@ -409,6 +410,7 @@ async function main() {
       ...categoryFields,
     };
     const existing = categoryById.get(definition.id);
+    await preserveCategoryPricing(client, categoryDocument);
     transaction = existing
       ? transaction.patch(existing._id, (patch) =>
           patch.ifRevisionId(existing._rev).set(categoryFields),
@@ -430,6 +432,7 @@ async function main() {
 
   for (const plan of productPlans) {
     const product = productById.get(plan.id)!;
+    await validatePricingPatch(client, product._id, { category: { _type: "reference", _ref: plan.categoryId } });
     const asset = assetById.get(product.imageAssetId!)!;
     transaction = transaction
       .patch(product._id, (patch) =>
