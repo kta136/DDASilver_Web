@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "runId": "crt-b2b30376407ede765902cb5083420d1f6c611356",
+  "concept": "Create a coherent MOBILE website mockup set derived from this DDA Silver direction. Portrait mobile UI composition, single phone-width page per image, no device frames or desktop screenshot squeezed small. Keep mineral white, midnight green, centered real DDA family logo, sharp Bodoni display and Plex Sans controls, rectangular buttons. Prioritize 1 mobile homepage opening with compact masthead/menu/search, short Silver made meaningful headline, real thali image visible immediately, Explore products action, compact category discovery; 2 mobile catalog with search and Filters control above two readable product columns, names/facts and clear enquiry pricing, all real categories accessible; 3 mobile product detail for DDA 10 Gram Oval Anniversary Silver Coin, 99.80% purity, 10 g oval, complete image and watermark, honest price confirmation, Enquire on WhatsApp action; 4 mobile Live Rates with readable label/value pairs, verified units only, explicit unavailable-source/history states, no invented numbers or chart. Recompose for touch and 390px-class width: no desktop rail or huge tables, readable 16px body, 44px tap targets. No cart, checkout, reviews, promotions, fabricated product facts or showroom imagery. Existing DDAJewels sign-in redirect only. Imagery is concept presentation, not replacement catalog assets.",
+  "aspect": "portrait",
+  "scope": "site",
+  "sitePurpose": "Help customers browse DDA Silver collections, verify rate availability, and enquire about specific pieces.",
+  "statusUpdate": "I’m extending the homepage into a focused mobile shopping journey with collection browsing, an item-specific enquiry route, and a transparent live-rates reference. Each route supports a distinct step from discovery to informed contact.",
+  "approvedScreenSummary": "The approved homepage introduces DDA Silver through the “Silver, made meaningful.” promise, a featured Silver Pooja Thali, search and account/contact access, primary navigation, and collection discovery for Pooja Thali, Coins, Idols, Utensils, and Gifts.",
+  "winnerCanvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "pages": [
+    {
+      "index": 0,
+      "id": "p0-dda-silver-home",
+      "kind": "source",
+      "title": "DDA Silver Home",
+      "pageType": "marketing",
+      "surfaceType": "mobile_app",
+      "purpose": "Continue discovery after the homepage introduction by helping visitors choose a product family relevant to their intended occasion or use.",
+      "startsFromWinner": true,
+      "slots": [
+        "a"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "p1-silver-collections",
+      "kind": "additional",
+      "title": "Silver Collections",
+      "pageType": "directory",
+      "surfaceType": "mobile_app",
+      "purpose": "Let visitors search and filter the available silver categories, then select a concrete product for further information.",
+      "startsFromWinner": false,
+      "slots": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "p2-dda-10-gram-oval-anniversary-silver-coin",
+      "kind": "additional",
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "pageType": "marketing",
+      "surfaceType": "mobile_app",
+      "purpose": "Provide verified product specifics and a direct enquiry path for the selected anniversary coin.",
+      "startsFromWinner": false,
+      "slots": [
+        "d"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "p3-live-silver-rates",
+      "kind": "additional",
+      "title": "Live Silver Rates",
+      "pageType": "documentation",
+      "surfaceType": "mobile_app",
+      "purpose": "Give customers a clear reference for supported silver-rate information without implying unavailable market data.",
+      "startsFromWinner": false,
+      "slots": [
+        "e"
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "slot": "a",
+      "pageIndex": 0,
+      "viewportOrdinal": 2,
+      "status": "pending",
+      "direction": "DDA Silver Home (part 2)",
+      "header": null,
+      "footer": null,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      },
+      "content": "Offer concise paths into Coins, Idols, Utensils, Gifts, and Pooja Thalis, with a short guide for choosing between ritual use, gifting, and collecting. Let visitors open a collection or ask for help identifying the right category."
+    },
+    {
+      "slot": "b",
+      "pageIndex": 1,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "Silver Collections",
+      "header": null,
+      "footer": null,
+      "pageEndsHere": false,
+      "dependsOnSlot": null,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      },
+      "content": "Provide product search and filters for category and intended use, followed by a readable two-column inventory including DDA 10 Gram Oval Anniversary Silver Coin, Lakshmi Silver Coin, Ganesha Idol, engraved tumbler set, and silver keepsake box. Each result states its category, key known fact, and enquiry-based pricing."
+    },
+    {
+      "slot": "c",
+      "pageIndex": 1,
+      "viewportOrdinal": 2,
+      "status": "pending",
+      "direction": "Silver Collections (part 2)",
+      "header": null,
+      "footer": null,
+      "pageEndsHere": true,
+      "dependsOnSlot": "b",
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      },
+      "content": "Keep the selected DDA 10 Gram Oval Anniversary Silver Coin in context and present a concise summary of its 99.80% purity and 10 g oval form, with an action to view its complete product information."
+    },
+    {
+      "slot": "d",
+      "pageIndex": 2,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "header": null,
+      "footer": null,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      },
+      "content": "Show the complete DDA 10 Gram Oval Anniversary Silver Coin with its product watermark, confirmed 99.80% purity, 10 g weight, and oval shape. State that price is confirmed on enquiry rather than displayed as an unverified amount, and offer Enquire on WhatsApp."
+    },
+    {
+      "slot": "e",
+      "pageIndex": 3,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "Live Silver Rates",
+      "header": null,
+      "footer": null,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      },
+      "content": "Present only verified rate labels and units with their current availability status. Clearly explain when a live source is unavailable, when historical comparison is unavailable, and how customers can contact DDA Silver for product-specific price confirmation."
+    }
+  ],
+  "packagePages": [
+    {
+      "index": 0,
+      "id": "p0-dda-silver-home",
+      "kind": "source",
+      "title": "DDA Silver Home",
+      "pageType": "marketing",
+      "surfaceType": "mobile_app",
+      "purpose": "Continue discovery after the homepage introduction by helping visitors choose a product family relevant to their intended occasion or use.",
+      "startsFromWinner": true,
+      "slots": [],
+      "packageLineage": {
+        "pageIndex": 0,
+        "pageId": "p0-dda-silver-home",
+        "viewportOrdinal": 1,
+        "state": "winner"
+      }
+    },
+    {
+      "index": 0,
+      "id": "p0-dda-silver-home-a",
+      "kind": "additional",
+      "title": "DDA Silver Home (part 2)",
+      "pageType": "marketing",
+      "surfaceType": "mobile_app",
+      "purpose": "Offer concise paths into Coins, Idols, Utensils, Gifts, and Pooja Thalis, with a short guide for choosing between ritual use, gifting, and collecting. Let visitors open a collection or ask for help identifying the right category.",
+      "startsFromWinner": false,
+      "slots": [
+        "a"
+      ],
+      "packageLineage": {
+        "pageIndex": 0,
+        "pageId": "p0-dda-silver-home",
+        "viewportOrdinal": 2,
+        "state": "screen",
+        "slot": "a"
+      }
+    },
+    {
+      "index": 1,
+      "id": "p1-silver-collections",
+      "kind": "additional",
+      "title": "Silver Collections",
+      "pageType": "directory",
+      "surfaceType": "mobile_app",
+      "purpose": "Provide product search and filters for category and intended use, followed by a readable two-column inventory including DDA 10 Gram Oval Anniversary Silver Coin, Lakshmi Silver Coin, Ganesha Idol, engraved tumbler set, and silver keepsake box. Each result states its category, key known fact, and enquiry-based pricing.",
+      "startsFromWinner": false,
+      "slots": [
+        "b"
+      ],
+      "packageLineage": {
+        "pageIndex": 1,
+        "pageId": "p1-silver-collections",
+        "viewportOrdinal": 1,
+        "state": "screen",
+        "slot": "b"
+      }
+    },
+    {
+      "index": 1,
+      "id": "p1-silver-collections-c",
+      "kind": "additional",
+      "title": "Silver Collections (part 2)",
+      "pageType": "directory",
+      "surfaceType": "mobile_app",
+      "purpose": "Keep the selected DDA 10 Gram Oval Anniversary Silver Coin in context and present a concise summary of its 99.80% purity and 10 g oval form, with an action to view its complete product information.",
+      "startsFromWinner": false,
+      "slots": [
+        "c"
+      ],
+      "packageLineage": {
+        "pageIndex": 1,
+        "pageId": "p1-silver-collections",
+        "viewportOrdinal": 2,
+        "state": "screen",
+        "slot": "c"
+      }
+    },
+    {
+      "index": 2,
+      "id": "p2-dda-10-gram-oval-anniversary-silver-coin",
+      "kind": "additional",
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "pageType": "marketing",
+      "surfaceType": "mobile_app",
+      "purpose": "Provide verified product specifics and a direct enquiry path for the selected anniversary coin.",
+      "startsFromWinner": false,
+      "slots": [
+        "d"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "p3-live-silver-rates",
+      "kind": "additional",
+      "title": "Live Silver Rates",
+      "pageType": "documentation",
+      "surfaceType": "mobile_app",
+      "purpose": "Give customers a clear reference for supported silver-rate information without implying unavailable market data.",
+      "startsFromWinner": false,
+      "slots": [
+        "e"
+      ]
+    }
+  ]
+}

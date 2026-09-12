@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "runId": "crt-c586f713403c2343e9af848c424bab69e196581e",
+  "concept": "Extend this selected DDA Silver visual direction into a coherent desktop site mockup set. Keep centered family masthead, mineral white, midnight green, dramatic Bodoni typography and precise Plex Sans utilities. Prioritize these distinct pages/states: 1 Products catalog with compact heading, search, filter rail, real category index and three-column product grid; 2 product detail for DDA 10 Gram Oval Anniversary Silver Coin, 99.80% purity, 10 g, oval, complete photograph, reference, price unavailable/confirm on enquiry, WhatsApp action; 3 Live Rates with aligned instrument/value table, units only when verified, source freshness and honest unavailable-history state, no invented chart or numeric quotes; 4 Contact/Our Showroom, actual address MG Road opposite Nagar Nigam Agra Uttar Pradesh 282002, Tuesday-Sunday 12:00-20:00, 0562-4099980, WhatsApp +91 7060001491, directions; 5 homepage continuation with curated objects, guides, rate-page link, showroom invitation and footer; 6 buying-guide article. Include clear Explore products and Enquire actions. All 11 categories remain reachable: Coin, Idols, Purse, Gifts, Boxes, Singhasan, Hatri, Jhula, Utensils, Gold Coins & Bars, Phone Covers. Use rectangular controls, no cart/checkout, no fabricated claims/reviews. Generated staging is not the actual showroom. Retain accurate products and full watermarks; don't invent facts. No new account form: login redirects to DDAJewels.",
+  "aspect": "landscape",
+  "scope": "site",
+  "sitePurpose": "Help visitors explore DDA Silver objects, verify available information, and enquire directly with the showroom.",
+  "statusUpdate": "I’ll extend the homepage into its curated collection, practical guidance, rate access, and showroom invitation, then add focused routes for browsing products, examining a coin, checking live-rate availability, contacting the showroom, and reading a buying guide.",
+  "approvedScreenSummary": "The approved homepage establishes DDA Silver and its central navigation, with a lead message about meaningful silver and a featured Silver Pooja Thali. It also begins collection exploration through All Products and visible Coin, Idols, Utensils, and Gifts examples.",
+  "winnerCanvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "pages": [
+    {
+      "index": 0,
+      "id": "p0-dda-silver-home",
+      "kind": "source",
+      "title": "DDA Silver Home",
+      "pageType": "marketing",
+      "surfaceType": "web_page",
+      "purpose": "Introduce the breadth of DDA Silver and guide visitors toward product discovery and direct enquiry.",
+      "startsFromWinner": true,
+      "slots": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "p1-products",
+      "kind": "additional",
+      "title": "Products",
+      "pageType": "directory",
+      "surfaceType": "web_page",
+      "purpose": "Let visitors search, filter, and browse the complete DDA Silver category range before choosing an item to enquire about.",
+      "startsFromWinner": false,
+      "slots": [
+        "c"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "p2-dda-10-gram-oval-anniversary-silver-coin",
+      "kind": "additional",
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "pageType": "marketing",
+      "surfaceType": "web_page",
+      "purpose": "Present the verified details of one anniversary coin and enable a direct enquiry when pricing is unavailable.",
+      "startsFromWinner": false,
+      "slots": [
+        "d"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "p3-live-rates",
+      "kind": "additional",
+      "title": "Live Rates",
+      "pageType": "documentation",
+      "surfaceType": "web_page",
+      "purpose": "Provide a transparent reference for rate instruments and their current data availability.",
+      "startsFromWinner": false,
+      "slots": [
+        "e"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "p4-our-showroom",
+      "kind": "additional",
+      "title": "Our Showroom",
+      "pageType": "marketing",
+      "surfaceType": "web_page",
+      "purpose": "Give visitors the factual information needed to visit or contact the Agra showroom.",
+      "startsFromWinner": false,
+      "slots": [
+        "f"
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "slot": "a",
+      "pageIndex": 0,
+      "viewportOrdinal": 2,
+      "status": "pending",
+      "direction": "DDA Silver Home (part 2)",
+      "header": false,
+      "footer": false,
+      "pageEndsHere": false,
+      "dependsOnSlot": null,
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Continue with a concise curated selection of distinct silver objects for rituals, gifting, and home use, each leading to its relevant collection. Include a clear route to the full product catalog without repeating the featured thali."
+    },
+    {
+      "slot": "b",
+      "pageIndex": 0,
+      "viewportOrdinal": 3,
+      "status": "pending",
+      "direction": "DDA Silver Home (part 3)",
+      "header": false,
+      "footer": true,
+      "pageEndsHere": true,
+      "dependsOnSlot": "a",
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Offer links to the buying guide and Live Rates, then invite visitors to visit the MG Road showroom or contact the team on WhatsApp. Close the homepage with essential contact details and onward navigation."
+    },
+    {
+      "slot": "c",
+      "pageIndex": 1,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "Products",
+      "header": true,
+      "footer": true,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Provide product search and category filters for all 11 categories: Coin, Idols, Purse, Gifts, Boxes, Singhasan, Hatri, Jhula, Utensils, Gold Coins & Bars, and Phone Covers. Show a representative three-column inventory including a Lakshmi silver coin, Ganesha idol, engraved gift box, silver purse, and phone cover, with product links and enquiry paths."
+    },
+    {
+      "slot": "d",
+      "pageIndex": 2,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "header": true,
+      "footer": true,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Show the complete product photograph and full watermark for DDA 10 Gram Oval Anniversary Silver Coin. State only the supplied specifications: 99.80% purity, 10 g weight, and oval shape; identify its reference, explain that price is available on enquiry, and provide a WhatsApp enquiry action."
+    },
+    {
+      "slot": "e",
+      "pageIndex": 3,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "Live Rates",
+      "header": true,
+      "footer": true,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Present an aligned instrument and value table, adding units only where verified. State source freshness when available; where no historical data is available, say so plainly rather than showing a chart, past quote, or estimated movement. Offer an enquiry route for current confirmation."
+    },
+    {
+      "slot": "f",
+      "pageIndex": 4,
+      "viewportOrdinal": 1,
+      "status": "pending",
+      "direction": "Our Showroom",
+      "header": true,
+      "footer": true,
+      "pageEndsHere": true,
+      "dependsOnSlot": null,
+      "width": 1536,
+      "height": 1024,
+      "canvasDecision": {
+        "provenance": "inherited-from-winner",
+        "sourceCanvas": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "content": "Provide the showroom address: MG Road, opposite Nagar Nigam, Agra, Uttar Pradesh 282002; visiting hours Tuesday–Sunday, 12:00–20:00; telephone 0562-4099980; and WhatsApp +91 7060001491. Include directions and an enquiry action, while clarifying that generated staging is not the actual showroom."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "workflowRevision": "branch-execute-v2",
+  "status": "succeeded",
+  "runKey": "branch:v1:img-fecb6dd34b0a2b370d1ec55dadd01d02:-:cc83b4cb69e0795e:site:branch-execute-v2",
+  "origin": "https://12ui.com",
+  "scope": "site",
+  "concept": "Extend this selected DDA Silver visual direction into a coherent desktop site mockup set. Keep centered family masthead, mineral white, midnight green, dramatic Bodoni typography and precise Plex Sans utilities. Prioritize these distinct pages/states: 1 Products catalog with compact heading, search, filter rail, real category index and three-column product grid; 2 product detail for DDA 10 Gram Oval Anniversary Silver Coin, 99.80% purity, 10 g, oval, complete photograph, reference, price unavailable/confirm on enquiry, WhatsApp action; 3 Live Rates with aligned instrument/value table, units only when verified, source freshness and honest unavailable-history state, no invented chart or numeric quotes; 4 Contact/Our Showroom, actual address MG Road opposite Nagar Nigam Agra Uttar Pradesh 282002, Tuesday-Sunday 12:00-20:00, 0562-4099980, WhatsApp +91 7060001491, directions; 5 homepage continuation with curated objects, guides, rate-page link, showroom invitation and footer; 6 buying-guide article. Include clear Explore products and Enquire actions. All 11 categories remain reachable: Coin, Idols, Purse, Gifts, Boxes, Singhasan, Hatri, Jhula, Utensils, Gold Coins & Bars, Phone Covers. Use rectangular controls, no cart/checkout, no fabricated claims/reviews. Generated staging is not the actual showroom. Retain accurate products and full watermarks; don't invent facts. No new account form: login redirects to DDAJewels.",
+  "conceptSha256": "cc83b4cb69e0795e7bd5f424eefbf137935b299733ecfead2994763403d0d079",
+  "winner": {
+    "kind": "image",
+    "imagePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\draft-run\\candidates\\C.png",
+    "sha256": "fecb6dd34b0a2b370d1ec55dadd01d021603957bf14a9a844934e42cc143412f",
+    "mediaType": "image/png",
+    "width": 1536,
+    "height": 1024
+  },
+  "generationCanvas": {
+    "provenance": "inherited-from-winner",
+    "winner": {
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  "maxScreens": 8,
+  "createdAt": "2026-09-12T09:49:55.654Z",
+  "runId": "crt-c586f713403c2343e9af848c424bab69e196581e",
+  "completedAt": "2026-09-12T09:52:01.350Z",
+  "completionPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-desktop\\branch\\branch.complete.json"
+}

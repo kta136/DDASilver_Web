@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "scope": {
+    "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity",
+    "conversionIds": [],
+    "runIds": []
+  },
+  "search": {
+    "mode": "not_requested",
+    "days": null,
+    "limit": null,
+    "window": null,
+    "truncated": false
+  },
+  "rows": [],
+  "totals": {
+    "runs": 0,
+    "chargedMicros": 0,
+    "listPriceMicros": 0,
+    "providerCostMicros": 0
+  }
+}

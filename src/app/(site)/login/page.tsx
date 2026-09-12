@@ -39,15 +39,15 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
       <div className="site-container grid gap-8 lg:grid-cols-[1fr_30rem] lg:items-start">
         <div>
           <p className="eyebrow">Shared DDA account</p>
-          <h1 className="font-display text-balance mt-4 max-w-4xl text-6xl font-semibold leading-[0.88] sm:text-8xl">
+          <h1 className="font-display text-balance mt-4 max-w-4xl text-5xl font-normal leading-[1.12] sm:text-6xl">
             One account,
             <br />
-            securely handed off.
+            the DDA family.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted">
-            DDAJewels remains responsible for passwords, Google sign-in, signup,
-            and account recovery. DDA Silver receives only a short-lived
-            authorization code and keeps its own secure session.
+            Sign in with your existing DDAJewels account to access your DDA
+            Silver account. You can also create an account or recover your
+            password securely through DDAJewels.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           {errorMessage ? (
             <div
               role="alert"
-              className="mt-5 border border-copper/35 bg-[#fff7f4] p-4 text-sm leading-6 text-ink-muted"
+              className="mt-5 border border-copper/35 bg-[#e6ece7] p-4 text-sm leading-6 text-ink-muted"
             >
               {errorMessage}
             </div>
@@ -86,9 +86,9 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               <ArrowRightIcon size={18} aria-hidden="true" />
             </a>
           ) : (
-            <div className="mt-7 border border-copper/35 bg-[#fff7f4] p-4 text-sm leading-6 text-ink-muted">
-              Shared login is scaffolded but unavailable until the DDAJewels
-              authorization and token endpoints are configured.
+            <div className="mt-7 border border-copper/35 bg-[#e6ece7] p-4 text-sm leading-6 text-ink-muted">
+              Account sign-in is currently unavailable here. Please use
+              DDAJewels for account help or try again later.
             </div>
           )}
           <a

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-12T09:42:58.614Z",
+  "origin": "https://12ui.com",
+  "idempotencyKey": "draft-corpus:v1:493393ed335262a20810df51",
+  "request": {
+    "q": "Create a completely new desktop homepage for DDA SILVER, an Agra silver showroom for Indian families browsing coins, idols, utensils and gifts before enquiring on WhatsApp or visiting. A contemporary Indian design house with the confidence of an art exhibition. Explore genuinely different compositions, not a conventional left-copy/right-photo storefront. Lead direction: midnight green #123B35, mineral white #F2F5F1, silver gray; sharp Bodoni Moda display and IBM Plex Sans utilities. Centered DDA masthead with search/account utilities, then Products, Live Rates, Our Showroom, Guides navigation. Monumental short headline 'Silver, made meaningful.' Build a striking full-width editorial object stage, oversized product-image plates, asymmetric captions and strong negative space. Transition to a light catalog area with a useful category index and readable product cards. Rectangular 2-4px-radius actions, hairline rules, no pill controls, no rounded floating cards. Show visual breadth with silver pooja thali, coins and idols. Preserve actual DDA brand and product facts where supplied. No checkout, offers, reviews, invented history, certifications or fake live rates. This is a full new identity and information architecture, not a reskin. Distinct exhibition, typographic editorial and architectural catalog arrangements should be explored.",
+    "mode": "balanced",
+    "k": 12
+  },
+  "referenceImage": {
+    "sourcePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+    "mediaType": "image/png",
+    "sha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481",
+    "bytes": 1913403
+  }
+}

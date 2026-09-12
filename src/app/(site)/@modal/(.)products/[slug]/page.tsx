@@ -1,3 +1,4 @@
+import { buildWhatsAppProductUrl } from "@/lib/whatsapp";
 import { notFound } from "next/navigation";
 
 import { ProductDetailDialog } from "@/components/catalog/product-detail-dialog";
@@ -40,10 +41,23 @@ export default async function ProductModalPage({
       <ProductDetailDialog
         titleId={titleId}
         productPath={`/products/${product.slug}`}
+        enquiry={
+          <a
+            href={buildWhatsAppProductUrl(product)}
+            target="_blank"
+            rel="noreferrer"
+            className="button-primary w-full no-underline"
+            data-analytics="whatsapp_click"
+            data-analytics-placement="product_detail"
+            data-analytics-product-slug={product.slug}
+          >
+            Confirm availability on WhatsApp
+          </a>
+        }
       >
-        <div className="grid max-h-[calc(100dvh-4rem)] overflow-y-auto lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
+        <div className="product-dialog-content grid max-h-[calc(100dvh-4rem)] overflow-y-auto lg:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)] lg:overflow-hidden">
           <ProductGallery images={product.images} containImages highPriority />
-          <div className="px-5 py-8 sm:px-8 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto lg:px-10 lg:py-12">
+          <div className="product-dialog-details px-5 py-8 sm:px-8 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto lg:px-10 lg:py-12">
             <ProductDetails
               product={product}
               categoryTitle={category?.title}

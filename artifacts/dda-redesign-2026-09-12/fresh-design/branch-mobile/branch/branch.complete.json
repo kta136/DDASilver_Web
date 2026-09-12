@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "status": "partial",
+  "runId": "crt-b2b30376407ede765902cb5083420d1f6c611356",
+  "runKey": "branch:v1:img-fecb6dd34b0a2b370d1ec55dadd01d02:-:51173c51d40dadb7:site:branch-execute-v2",
+  "workflowRevision": "branch-execute-v2",
+  "scope": "site",
+  "concept": "Create a coherent MOBILE website mockup set derived from this DDA Silver direction. Portrait mobile UI composition, single phone-width page per image, no device frames or desktop screenshot squeezed small. Keep mineral white, midnight green, centered real DDA family logo, sharp Bodoni display and Plex Sans controls, rectangular buttons. Prioritize 1 mobile homepage opening with compact masthead/menu/search, short Silver made meaningful headline, real thali image visible immediately, Explore products action, compact category discovery; 2 mobile catalog with search and Filters control above two readable product columns, names/facts and clear enquiry pricing, all real categories accessible; 3 mobile product detail for DDA 10 Gram Oval Anniversary Silver Coin, 99.80% purity, 10 g oval, complete image and watermark, honest price confirmation, Enquire on WhatsApp action; 4 mobile Live Rates with readable label/value pairs, verified units only, explicit unavailable-source/history states, no invented numbers or chart. Recompose for touch and 390px-class width: no desktop rail or huge tables, readable 16px body, 44px tap targets. No cart, checkout, reviews, promotions, fabricated product facts or showroom imagery. Existing DDAJewels sign-in redirect only. Imagery is concept presentation, not replacement catalog assets.",
+  "conceptSha256": "51173c51d40dadb7167cbf093a1e81287c9c39a1fd044bc8fd301cb87d608b80",
+  "origin": "https://12ui.com",
+  "outDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-mobile\\branch",
+  "attemptPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-mobile\\branch\\branch.attempt.json",
+  "planPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-mobile\\branch\\branch.plan.json",
+  "startedAt": "2026-09-12T09:51:58.363Z",
+  "completedAt": "2026-09-12T09:52:48.195Z",
+  "screenCount": 5,
+  "succeededCount": 2,
+  "failedCount": 3,
+  "blockedCount": 0,
+  "pageCount": 6,
+  "logicalPageCount": 4,
+  "convertedPageCount": 0,
+  "screens": [
+    {
+      "slot": "a",
+      "pageIndex": 1,
+      "pageId": "p0-dda-silver-home-a",
+      "viewportOrdinal": 1,
+      "generationPageIndex": 0,
+      "generationViewportOrdinal": 2,
+      "status": "succeeded",
+      "direction": "DDA Silver Home (part 2)",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-mobile\\branch\\screens\\a.png",
+      "sha256": "85af5ea8f7c77f1ee6bccc3f3ac03a2fb2d96f3ce2984cab3f16663306fc9b1e",
+      "bytes": 1958792,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
+    {
+      "slot": "b",
+      "pageIndex": 2,
+      "pageId": "p1-silver-collections",
+      "viewportOrdinal": 1,
+      "generationPageIndex": 1,
+      "status": "succeeded",
+      "direction": "Silver Collections",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\fresh-design\\branch-mobile\\branch\\screens\\b.png",
+      "sha256": "eea70207844c15f7fdbc5ced1fcd9ccb6ec50c7d00daf1678e0d8a0569f55e8f",
+      "bytes": 1695815,
+      "width": 1024,
+      "height": 1536,
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
+    {
+      "slot": "c",
+      "pageIndex": 3,
+      "pageId": "p1-silver-collections-c",
+      "viewportOrdinal": 1,
+      "generationPageIndex": 1,
+      "generationViewportOrdinal": 2,
+      "status": "failed",
+      "direction": "Silver Collections (part 2)",
+      "dependsOnSlot": "b",
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
+    {
+      "slot": "d",
+      "pageIndex": 4,
+      "pageId": "p2-dda-10-gram-oval-anniversary-silver-coin",
+      "viewportOrdinal": 1,
+      "generationPageIndex": 2,
+      "status": "failed",
+      "direction": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    },
+    {
+      "slot": "e",
+      "pageIndex": 5,
+      "pageId": "p3-live-silver-rates",
+      "viewportOrdinal": 1,
+      "generationPageIndex": 3,
+      "status": "failed",
+      "direction": "Live Silver Rates",
+      "canvasDecision": {
+        "provenance": "slot-declared",
+        "sourceCanvas": {
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "id": "p0-dda-silver-home",
+      "kind": "source",
+      "title": "DDA Silver Home",
+      "slots": [],
+      "startsFromWinner": true,
+      "sourcePageIndex": 0,
+      "sourcePageId": "p0-dda-silver-home",
+      "sourceViewportOrdinal": 1
+    },
+    {
+      "index": 1,
+      "id": "p0-dda-silver-home-a",
+      "kind": "additional",
+      "title": "DDA Silver Home (part 2)",
+      "slots": [
+        "a"
+      ],
+      "startsFromWinner": false,
+      "sourcePageIndex": 0,
+      "sourcePageId": "p0-dda-silver-home",
+      "sourceViewportOrdinal": 2
+    },
+    {
+      "index": 2,
+      "id": "p1-silver-collections",
+      "kind": "additional",
+      "title": "Silver Collections",
+      "slots": [
+        "b"
+      ],
+      "startsFromWinner": false,
+      "sourcePageIndex": 1,
+      "sourcePageId": "p1-silver-collections",
+      "sourceViewportOrdinal": 1
+    },
+    {
+      "index": 3,
+      "id": "p1-silver-collections-c",
+      "kind": "additional",
+      "title": "Silver Collections (part 2)",
+      "slots": [
+        "c"
+      ],
+      "startsFromWinner": false,
+      "sourcePageIndex": 1,
+      "sourcePageId": "p1-silver-collections",
+      "sourceViewportOrdinal": 2
+    },
+    {
+      "index": 4,
+      "id": "p2-dda-10-gram-oval-anniversary-silver-coin",
+      "kind": "additional",
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "slots": [
+        "d"
+      ],
+      "startsFromWinner": false,
+      "sourcePageIndex": 2,
+      "sourcePageId": "p2-dda-10-gram-oval-anniversary-silver-coin"
+    },
+    {
+      "index": 5,
+      "id": "p3-live-silver-rates",
+      "kind": "additional",
+      "title": "Live Silver Rates",
+      "slots": [
+        "e"
+      ],
+      "startsFromWinner": false,
+      "sourcePageIndex": 3,
+      "sourcePageId": "p3-live-silver-rates"
+    }
+  ],
+  "notes": [
+    "Dispatch stopped early: insufficient_funds — The free generation allowance is used up and the prepaid wallet needs more balance."
+  ]
+}

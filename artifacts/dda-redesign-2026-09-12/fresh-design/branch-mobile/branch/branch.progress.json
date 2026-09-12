@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "runId": "crt-b2b30376407ede765902cb5083420d1f6c611356",
+  "phase": "terminal",
+  "startedAt": "2026-09-12T09:51:58.363Z",
+  "updatedAt": "2026-09-12T09:52:48.195Z",
+  "screens": [
+    {
+      "slot": "a",
+      "status": "succeeded",
+      "pageIndex": 1,
+      "viewportOrdinal": 1,
+      "generationPageIndex": 0,
+      "generationViewportOrdinal": 2
+    },
+    {
+      "slot": "b",
+      "status": "succeeded",
+      "pageIndex": 2,
+      "viewportOrdinal": 1,
+      "generationPageIndex": 1
+    },
+    {
+      "slot": "c",
+      "status": "pending",
+      "pageIndex": 3,
+      "viewportOrdinal": 1,
+      "generationPageIndex": 1,
+      "generationViewportOrdinal": 2,
+      "waitingOn": "b"
+    },
+    {
+      "slot": "d",
+      "status": "pending",
+      "pageIndex": 4,
+      "viewportOrdinal": 1,
+      "generationPageIndex": 2
+    },
+    {
+      "slot": "e",
+      "status": "pending",
+      "pageIndex": 5,
+      "viewportOrdinal": 1,
+      "generationPageIndex": 3
+    }
+  ],
+  "pageCount": 6,
+  "logicalPageCount": 4
+}

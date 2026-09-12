@@ -50,6 +50,8 @@ import {
   updatePersonalRateView,
 } from "@/lib/rates/personal-view";
 import { initialRateState, rateReducer } from "@/lib/rates/reducer";
+import { siteConfig } from "@/lib/site";
+import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { trackAnalyticsEvent } from "@/lib/analytics-client";
 
 import { RateHistory } from "./rate-history";
@@ -93,8 +95,7 @@ function findMatchingRate<T extends RateItem>(
   );
   return Object.values(values).find((item) => {
     return [item.id, item.name, item.label].some(
-      (value) =>
-        value && normalizedAliases.has(normalizeRateIdentifier(value)),
+      (value) => value && normalizedAliases.has(normalizeRateIdentifier(value)),
     );
   });
 }
@@ -167,9 +168,7 @@ function FlashValue({
   value: number | null;
   variant: "customer" | "market";
 }) {
-  const [direction, setDirection] = useState<"none" | "up" | "down">(
-    "none",
-  );
+  const [direction, setDirection] = useState<"none" | "up" | "down">("none");
   const previous = useRef<number | null | undefined>(undefined);
 
   useEffect(() => {
@@ -262,6 +261,7 @@ function Movement({ item }: { item?: RateItem }) {
 }
 
 export function RateExperience() {
+  const [retryAttempt, setRetryAttempt] = useState(0);
   const [state, dispatch] = useReducer(rateReducer, initialRateState);
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [viewer, setViewer] = useState<RateViewer | null>(null);
@@ -293,9 +293,7 @@ export function RateExperience() {
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  const authorized = Boolean(
-    viewer?.isApproved && viewer.emailVerified,
-  );
+  const authorized = Boolean(viewer?.isApproved && viewer.emailVerified);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -483,10 +481,7 @@ export function RateExperience() {
       const attempt = Math.min(reconnectAttempt.current + 1, 6);
       reconnectAttempt.current = attempt;
       const delay = Math.min(1_000 * 2 ** attempt, 30_000);
-      reconnectTimer = setTimeout(
-        () => void loadSnapshot(true),
-        delay,
-      );
+      reconnectTimer = setTimeout(() => void loadSnapshot(true), delay);
     }
 
     async function loadSnapshot(isReconnect = false) {
@@ -506,14 +501,11 @@ export function RateExperience() {
         );
         if (
           !parsed.success ||
-          !isRateSnapshotFresh(
-            parsed.data.serverTime,
-            now,
-            staleThresholdMs,
-          )
+          !isRateSnapshotFresh(parsed.data.serverTime, now, staleThresholdMs)
         ) {
           throw new Error("Snapshot contract rejected");
         }
+        if (cancelled) return;
         dispatch({
           type: "snapshot",
           snapshot: parsed.data,
@@ -521,6 +513,7 @@ export function RateExperience() {
         });
         void connect();
       } catch {
+        if (cancelled) return;
         dispatch({
           type: "unavailable",
           message:
@@ -550,7 +543,7 @@ export function RateExperience() {
       }
       clearInterval(staleInterval);
     };
-  }, []);
+  }, [retryAttempt]);
 
   const status = state.feedStatus
     ? normalizeFeedStatus(state.feedStatus)
@@ -604,11 +597,12 @@ export function RateExperience() {
   });
   const hasBuyingRates = Boolean(
     viewer?.canViewBuyingPrice &&
-      Object.values(state.items).some(
-        (item) => item.buyingRate !== undefined && item.buyingRate !== null,
-      ),
+    Object.values(state.items).some(
+      (item) => item.buyingRate !== undefined && item.buyingRate !== null,
+    ),
   );
-  const showBuyingRates = hasBuyingRates && personalView.hideBuyingColumn !== true;
+  const showBuyingRates =
+    hasBuyingRates && personalView.hideBuyingColumn !== true;
   const marketRows = buildMarketRows(state.sources);
   const fontSizeStep = clampRateFontSizeStep(personalView.rateFontSizeStep);
   const marketFontSizeStep = clampRateFontSizeStep(
@@ -716,9 +710,7 @@ export function RateExperience() {
                 canViewCharts={viewer?.canViewCharts === true}
                 isEditing={isEditing}
                 settingsOpen={settingsOpen}
-                onToggleCharts={() =>
-                  setChartsOpen((current) => !current)
-                }
+                onToggleCharts={() => setChartsOpen((current) => !current)}
                 onToggleEditing={() => {
                   setIsEditing((current) => !current);
                   trackAnalyticsEvent("rate_expand", {
@@ -740,9 +732,31 @@ export function RateExperience() {
       </p>
 
       {state.connection === "unavailable" ? (
-        <p className={styles.unavailable} role="status">
-          {state.announcement}
-        </p>
+        <div className={styles.unavailable}>
+          <p role="status">{state.announcement}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              className="button-secondary"
+              onClick={() => setRetryAttempt((value) => value + 1)}
+            >
+              Retry live rates
+            </button>
+            <a
+              href={buildGeneralWhatsAppUrl()}
+              target="_blank"
+              rel="noreferrer"
+              className="text-link"
+              data-analytics="whatsapp_click"
+              data-analytics-placement="rates_unavailable"
+            >
+              Ask the showroom
+            </a>
+            <a href={siteConfig.phoneHref} className="text-link">
+              Call {siteConfig.phoneDisplay}
+            </a>
+          </div>
+        </div>
       ) : null}
 
       <section
@@ -954,11 +968,15 @@ export function RateExperience() {
                     </div>
                     <div>
                       <dt>High</dt>
-                      <dd>{formatIndianNumber(extractNumberLike(row.item?.high))}</dd>
+                      <dd>
+                        {formatIndianNumber(extractNumberLike(row.item?.high))}
+                      </dd>
                     </div>
                     <div>
                       <dt>Low</dt>
-                      <dd>{formatIndianNumber(extractNumberLike(row.item?.low))}</dd>
+                      <dd>
+                        {formatIndianNumber(extractNumberLike(row.item?.low))}
+                      </dd>
                     </div>
                   </dl>
                 </article>
@@ -966,102 +984,96 @@ export function RateExperience() {
             })}
           </div>
         ) : (
-        <table className={styles.marketTable} aria-label="Market data table">
-          <caption className="sr-only">Live MCX market data</caption>
-          <thead>
-            <tr>
-              <th scope="col" className={styles.marketNameColumn}>
-                Commodity
-              </th>
-              <th scope="col" className={styles.marketNumberColumn}>
-                Bid
-              </th>
-              <th scope="col" className={styles.marketNumberColumn}>
-                Ask
-              </th>
-              <th scope="col" className={styles.marketNumberColumn}>
-                High
-              </th>
-              <th scope="col" className={styles.marketNumberColumn}>
-                Low
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {marketRows.map((row) => {
-              const expanded = expandedRows.has(row.key);
-              const bid =
-                extractNumberLike(row.item?.bid) ??
-                extractRateValue(row.item);
-              const ask =
-                extractNumberLike(row.item?.ask) ??
-                extractRateValue(row.item);
+          <table className={styles.marketTable} aria-label="Market data table">
+            <caption className="sr-only">Live MCX market data</caption>
+            <thead>
+              <tr>
+                <th scope="col" className={styles.marketNameColumn}>
+                  Commodity
+                </th>
+                <th scope="col" className={styles.marketNumberColumn}>
+                  Bid
+                </th>
+                <th scope="col" className={styles.marketNumberColumn}>
+                  Ask
+                </th>
+                <th scope="col" className={styles.marketNumberColumn}>
+                  High
+                </th>
+                <th scope="col" className={styles.marketNumberColumn}>
+                  Low
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {marketRows.map((row) => {
+                const expanded = expandedRows.has(row.key);
+                const bid =
+                  extractNumberLike(row.item?.bid) ??
+                  extractRateValue(row.item);
+                const ask =
+                  extractNumberLike(row.item?.ask) ??
+                  extractRateValue(row.item);
 
-              return (
-                <tr key={row.key} className={styles.marketRow}>
-                  <th scope="row" className={styles.marketName}>
-                    <button
-                      type="button"
-                      className={styles.marketNameButton}
-                      aria-expanded={expanded}
-                      aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
-                      title={row.label}
-                      onClick={() => toggleRow(row.key)}
+                return (
+                  <tr key={row.key} className={styles.marketRow}>
+                    <th scope="row" className={styles.marketName}>
+                      <button
+                        type="button"
+                        className={styles.marketNameButton}
+                        aria-expanded={expanded}
+                        aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
+                        title={row.label}
+                        onClick={() => toggleRow(row.key)}
+                      >
+                        {row.label}
+                      </button>
+                    </th>
+                    <td className={styles.marketNumber}>
+                      <FlashValue
+                        value={bid}
+                        formatter={formatIndianNumber}
+                        flashStyle={flashStyle}
+                        variant="market"
+                      />
+                      {expanded ? (
+                        <span className={styles.marketInlineRange}>
+                          <span className={styles.marketInlineLabel}>H</span>
+                          {formatIndianNumber(
+                            extractNumberLike(row.item?.high),
+                          )}
+                        </span>
+                      ) : null}
+                    </td>
+                    <td className={styles.marketNumber}>
+                      <FlashValue
+                        value={ask}
+                        formatter={formatIndianNumber}
+                        flashStyle={flashStyle}
+                        variant="market"
+                      />
+                      {expanded ? (
+                        <span className={styles.marketInlineRange}>
+                          <span className={styles.marketInlineLabel}>L</span>
+                          {formatIndianNumber(extractNumberLike(row.item?.low))}
+                        </span>
+                      ) : null}
+                    </td>
+                    <td
+                      className={`${styles.marketNumber} ${styles.marketRange}`}
                     >
-                      {row.label}
-                    </button>
-                  </th>
-                  <td className={styles.marketNumber}>
-                    <FlashValue
-                      value={bid}
-                      formatter={formatIndianNumber}
-                      flashStyle={flashStyle}
-                      variant="market"
-                    />
-                    {expanded ? (
-                      <span className={styles.marketInlineRange}>
-                        <span className={styles.marketInlineLabel}>H</span>
-                        {formatIndianNumber(
-                          extractNumberLike(row.item?.high),
-                        )}
-                      </span>
-                    ) : null}
-                  </td>
-                  <td className={styles.marketNumber}>
-                    <FlashValue
-                      value={ask}
-                      formatter={formatIndianNumber}
-                      flashStyle={flashStyle}
-                      variant="market"
-                    />
-                    {expanded ? (
-                      <span className={styles.marketInlineRange}>
-                        <span className={styles.marketInlineLabel}>L</span>
-                        {formatIndianNumber(
-                          extractNumberLike(row.item?.low),
-                        )}
-                      </span>
-                    ) : null}
-                  </td>
-                  <td
-                    className={`${styles.marketNumber} ${styles.marketRange}`}
-                  >
-                    {formatIndianNumber(
-                      extractNumberLike(row.item?.high),
-                    )}
-                  </td>
-                  <td
-                    className={`${styles.marketNumber} ${styles.marketRange}`}
-                  >
-                    {formatIndianNumber(
-                      extractNumberLike(row.item?.low),
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                      {formatIndianNumber(extractNumberLike(row.item?.high))}
+                    </td>
+                    <td
+                      className={`${styles.marketNumber} ${styles.marketRange}`}
+                    >
+                      {formatIndianNumber(extractNumberLike(row.item?.low))}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         )}
       </section>
 
@@ -1120,7 +1132,9 @@ function RatesHeaderControls({
   onToggleCharts: () => void;
   onToggleEditing: () => void;
 }) {
-  const editLabel = isEditing ? "Finish editing rates table" : "Edit rates table";
+  const editLabel = isEditing
+    ? "Finish editing rates table"
+    : "Edit rates table";
   const chartLabel = chartsOpen
     ? "Hide rate history chart"
     : "Show rate history chart";

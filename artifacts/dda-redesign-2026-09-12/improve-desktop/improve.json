@@ -1,0 +1,90 @@
+{
+  "version": 2,
+  "scope": "page",
+  "createdAt": "2026-09-12T09:28:45.222Z",
+  "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop",
+  "input": {
+    "kind": "image",
+    "value": "D:\\Projects\\DDASilver_Web\\artifacts\\website-screenshots-2026-09-12\\desktop\\home--section-01.png",
+    "sha256": "436ead1d7bcbd4bf4ce83ada67cfc83d83dbdfd92477fd9eab769934ed4c56d9"
+  },
+  "concept": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep only the same product: its name and wordmark, and what it is. The brief decides how much of the page's other text and control copy survives; invent no product facts, features, prices, or data. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+  "direction": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls.",
+  "candidates": 4,
+  "retain": {
+    "include": [
+      "assets"
+    ],
+    "exclude": [
+      "content",
+      "layout",
+      "style"
+    ]
+  },
+  "retainFlag": "assets",
+  "conversionModel": "standard",
+  "responsiveQuality": "standard",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "bootstrap": [],
+  "bootstrapSha256": [],
+  "kitIgnore": {
+    "state": "not-ignored",
+    "relativeOutDir": "artifacts/dda-redesign-2026-09-12/improve-desktop"
+  },
+  "planSourceConvert": false,
+  "pageLimit": 5,
+  "requestedPages": [],
+  "pageConcurrency": 3,
+  "referenceOrder": "current-first",
+  "pages": [],
+  "stages": {
+    "capture": {
+      "settledAt": "2026-09-12T09:28:45.288Z",
+      "replayCount": 1,
+      "priceCeilingUsd": 0,
+      "outcome": "settled"
+    },
+    "draft": {
+      "settledAt": "2026-09-12T09:33:30.998Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0.122,
+      "outcome": "settled"
+    }
+  },
+  "capture": {
+    "sourceImage": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+    "sha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b",
+    "width": 1440,
+    "height": 1000
+  },
+  "draft": {
+    "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw",
+    "runId": "crt-6a22d82bb0a30ecc1ca96d85fdbc6a84d01076f6",
+    "candidates": [
+      {
+        "slot": "A",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\candidates\\A.png",
+        "sha256": "de32bf706a0a1b80b0888bb4393bf1545701ab14144916a03a5f3c9b47572be6"
+      },
+      {
+        "slot": "B",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\candidates\\B.png",
+        "sha256": "f536842e0476522d66aa5379784c6c4ec7aae07cfb9f0b539208d3eae5ede11e"
+      },
+      {
+        "slot": "C",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\candidates\\C.png",
+        "sha256": "f4c7169cb2803ac37b37c073d186b034cb6960dcd83eb7a9ffc2cdf7b77e6449"
+      },
+      {
+        "slot": "D",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\candidates\\D.png",
+        "sha256": "1859f1ccb96122e2bcb0836042758bc531c614f996073a6cfeacd39c41359086"
+      }
+    ]
+  }
+}

@@ -38,10 +38,8 @@ export function ProductDetails({
       <Heading
         id={headingId}
         className={clsx(
-          "font-display text-balance mt-4 font-semibold leading-[0.9]",
-          isDialog
-            ? "text-[clamp(2.75rem,10vw,4.5rem)]"
-            : "text-6xl sm:text-7xl",
+          "font-display text-balance mt-4 font-normal leading-[1.12]",
+          isDialog ? "text-[clamp(2rem,5vw,2.75rem)]" : "text-4xl sm:text-5xl",
         )}
       >
         {getProductIdentity(product)}
@@ -67,7 +65,7 @@ export function ProductDetails({
         <dl className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-line pt-5">
           {product.material ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Material
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -77,7 +75,7 @@ export function ProductDetails({
           ) : null}
           {product.purity ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Purity
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -87,7 +85,7 @@ export function ProductDetails({
           ) : null}
           {product.weightGrams ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Weight
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -97,7 +95,7 @@ export function ProductDetails({
           ) : null}
           {product.heightInches ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Height
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -107,7 +105,7 @@ export function ProductDetails({
           ) : null}
           {product.widthInches ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Width
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -117,7 +115,7 @@ export function ProductDetails({
           ) : null}
           {product.depthInches ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Depth
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -127,7 +125,7 @@ export function ProductDetails({
           ) : null}
           {product.diameterInches ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Diameter
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -137,7 +135,7 @@ export function ProductDetails({
           ) : null}
           {product.singhasanWidthInches && product.singhasanDepthInches ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Singhasan
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -148,7 +146,7 @@ export function ProductDetails({
           ) : null}
           {product.sizeVariants?.length ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Available sizes
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -163,7 +161,7 @@ export function ProductDetails({
           ) : null}
           {product.utensilType ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Product Type
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -173,7 +171,7 @@ export function ProductDetails({
           ) : null}
           {product.idolConstruction ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Idol Construction
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -183,7 +181,7 @@ export function ProductDetails({
           ) : null}
           {product.deities.length > 0 ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 {product.deities.length === 1 ? "Deity" : "Deities"}
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -193,7 +191,7 @@ export function ProductDetails({
           ) : null}
           {product.coinShape ? (
             <div>
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-ink-muted">
+              <dt className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                 Shape
               </dt>
               <dd className="mt-1 text-sm font-semibold">
@@ -203,7 +201,12 @@ export function ProductDetails({
           ) : null}
         </dl>
       ) : null}
-      <ProductPrice slug={product.slug} estimate={product.estimate} details dialog={isDialog} />
+      <ProductPrice
+        slug={product.slug}
+        estimate={product.estimate}
+        details
+        dialog={isDialog}
+      />
       <p
         className={clsx(
           "mt-7 leading-8 text-ink-muted",
@@ -216,7 +219,8 @@ export function ProductDetails({
       <div className="mt-9 border-y border-line py-6">
         <p className="text-sm font-bold">Browse and enquire</p>
         <p className="mt-2 text-sm leading-6 text-ink-muted">
-          Confirm final pricing and availability on WhatsApp with the showroom team.
+          Confirm final pricing and availability on WhatsApp with the showroom
+          team.
         </p>
       </div>
 
@@ -224,7 +228,10 @@ export function ProductDetails({
         href={buildWhatsAppProductUrl(product)}
         target="_blank"
         rel="noreferrer"
-        className="button-primary mt-8 w-full no-underline sm:w-auto"
+        className={clsx(
+          "button-primary mt-8 w-full no-underline sm:w-auto",
+          isDialog && "dialog-inline-enquiry",
+        )}
         data-analytics="whatsapp_click"
         data-analytics-placement="product_detail"
         data-analytics-product-slug={product.slug}

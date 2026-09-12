@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "request": {
+    "q": "Contemporary silver showroom: warm ivory #F7F4EE, charcoal #272823 and restrained copper #8D4938. Compact header, short Cormorant Garamond display copy, precise Manrope utilities. Bring real product photography forward in an asymmetric editorial layout; square uncropped images, thin rules and small-radius buttons. Reduce hero height and category-navigation bulk. Preserve the DDA family identity, existing copy and true product facts; invent no features, claims, offers or products. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep every real piece of content, data, and control the page carries: say the same things, in whatever arrangement serves them best, and invent nothing. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "k": 12
+  },
+  "referenceImage": {
+    "sourcePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+    "mediaType": "image/png",
+    "sha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b",
+    "bytes": 558875
+  },
+  "response": {
+    "setId": "20260912-0",
+    "query": "Contemporary silver showroom: warm ivory #F7F4EE, charcoal #272823 and restrained copper #8D4938. Compact header, short Cormorant Garamond display copy, precise Manrope utilities. Bring real product photography forward in an asymmetric editorial layout; square uncropped images, thin rules and small-radius buttons. Reduce hero height and category-navigation bulk. Preserve the DDA family identity, existing copy and true product facts; invent no features, claims, offers or products. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep every real piece of content, data, and control the page carries: say the same things, in whatever arrangement serves them best, and invent nothing. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "seed": 0,
+    "k": 12,
+    "poolSize": 1000,
+    "coverage": 0.8564981648314982,
+    "truncated": false,
+    "designType": {
+      "key": "general-interface",
+      "label": "general interface",
+      "evidence": "clear hierarchy, recognizable states, coherent navigation, and a primary action",
+      "source": "general-interface"
+    },
+    "items": [
+      {
+        "id": "gen-rtrack-o47-s08-j298-direction-structural",
+        "designId": "f8ea06c02ed936ad146f878d",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f361",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "discovery",
+        "description": null,
+        "relevance": 0.6745877461504941,
+        "relevancePercentile": 0.8564981648314982,
+        "qualityPercentile": 0.44344344344344344,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 1
+        }
+      },
+      {
+        "id": "gen-rtrack-o47-s03-j373-direction-structural",
+        "designId": "ec0b347b7d4b98e853a4f9af",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f295",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "portfolio",
+        "description": null,
+        "relevance": 0.6687510860780019,
+        "relevancePercentile": 0.8122122122122122,
+        "qualityPercentile": 0.5755755755755756,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 2
+        }
+      },
+      {
+        "id": "gen-rtrack-o45-s02-j013-direction-structural",
+        "designId": "f0e1781a3b9874c7c4de3d0e",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f347",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "mobile_app",
+        "description": null,
+        "relevance": 0.6759833700430582,
+        "relevancePercentile": 0.7700283616950284,
+        "qualityPercentile": 0.7007007007007007,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 3
+        }
+      },
+      {
+        "id": "gen-rtrack-o47-s04-j355-direction-structural",
+        "designId": "930af9831dbeadf177cac1a0",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f347",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "pricing",
+        "description": null,
+        "relevance": 0.6793463890612708,
+        "relevancePercentile": 0.7645603937270604,
+        "qualityPercentile": 0.6236236236236237,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 4
+        }
+      },
+      {
+        "id": "gen-rtrack-o42-s02-j457-structural-counterfactual",
+        "designId": "150927bbf8b0b37428801931",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f347",
+        "aspect": "landscape",
+        "width": 1712,
+        "height": 1184,
+        "uiType": "ecommerce",
+        "description": "a craft furniture studio focused on selecting a plan with transparent tradeoffs. a clean square ecommerce interface with its own coherent spatial rhythm",
+        "relevance": 0.6697316422054361,
+        "relevancePercentile": 0.7634551217884551,
+        "qualityPercentile": 0.36236236236236236,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 5
+        }
+      },
+      {
+        "id": "gen-remix-surprise-607c612bb7dc1b1fbbfc6c79",
+        "designId": "e995a4df8dc89d33af8fe390",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f176",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Ecommerce product listing with a clean, modern design. Features a hero section, product cards, and a sidebar with promotions.",
+        "relevance": 0.6748379130364045,
+        "relevancePercentile": 0.7611528194861528,
+        "qualityPercentile": 0.2652652652652653,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 6
+        }
+      },
+      {
+        "id": "gen-rtrack-o44-s01-j482-frontier-system",
+        "designId": "e1cd346fe66d359467c87682",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f361",
+        "aspect": "portrait",
+        "width": 976,
+        "height": 992,
+        "uiType": "analytics",
+        "description": null,
+        "relevance": 0.6825976886288945,
+        "relevancePercentile": 0.742650984317651,
+        "qualityPercentile": 0.17117117117117117,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 7
+        }
+      },
+      {
+        "id": "gen-rtrack-o44-s01-j212-frontier-structure",
+        "designId": "e3138803e8832e7d90120bcb",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f361",
+        "aspect": "portrait",
+        "width": 560,
+        "height": 1200,
+        "uiType": "onboarding",
+        "description": null,
+        "relevance": 0.6785466566368643,
+        "relevancePercentile": 0.7423173173173173,
+        "qualityPercentile": 0.4344344344344344,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 8
+        }
+      },
+      {
+        "id": "gen-remix-surprise-f20eba2976695dab7f879083",
+        "designId": "80c60d58690d4a4b400ffbce",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f079",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "landing",
+        "description": "Elegant landing page with a large serif headline and a detailed still life image. Features a split layout, top navigation, and a grid of content sections below. Muted, earthy colors.",
+        "relevance": 0.6623304084812128,
+        "relevancePercentile": 0.7284868201534868,
+        "qualityPercentile": 0.983983983983984,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 9
+        }
+      },
+      {
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b08-j284-factor-splice",
+        "designId": "749dfeb90ad3e2310c7ce148",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f295",
+        "aspect": "portrait",
+        "width": 864,
+        "height": 1024,
+        "uiType": "commerce",
+        "description": null,
+        "relevance": 0.6762556180226762,
+        "relevancePercentile": 0.7254504504504504,
+        "qualityPercentile": 0.1971971971971972,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 10
+        }
+      },
+      {
+        "id": "gen-rtrack-acq-d-listing-002",
+        "designId": "e56c4a1b7f36cbbcc4c5d638",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f321",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "listing",
+        "description": null,
+        "relevance": 0.6704359099883924,
+        "relevancePercentile": 0.7211294627961294,
+        "qualityPercentile": 0.5025025025025025,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 11
+        }
+      },
+      {
+        "id": "gen-remix-surprise-fd8374b7a8626212232eb934",
+        "designId": "155d717578369b1b30ae487e",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f039",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "web_app",
+        "description": "Elegant web app profile with sidebar navigation, user info, and product/story sections. Minimalist design.",
+        "relevance": 0.6697865516514141,
+        "relevancePercentile": 0.7182599265932599,
+        "qualityPercentile": 0.2912912912912913,
+        "evidence": {
+          "clientQueryId": "corpus-query:c797045ee036ec54d789d905ce1681b7e95e27a288c5183c9e403f17d2d2c935",
+          "rank": 12
+        }
+      }
+    ]
+  }
+}

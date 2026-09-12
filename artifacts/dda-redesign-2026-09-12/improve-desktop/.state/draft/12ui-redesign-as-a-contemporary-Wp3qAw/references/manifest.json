@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-12T09:32:45.439Z",
+  "origin": "https://12ui.com",
+  "idempotencyKey": "draft-corpus:v1:817392c482380342e43768de",
+  "notice": "These are AI generated screens for reference only. Free to use, no warranty.",
+  "request": {
+    "q": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep only the same product: its name and wordmark, and what it is. The brief decides how much of the page's other text and control copy survives; invent no product facts, features, prices, or data. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "k": 12
+  },
+  "referenceImage": {
+    "sourcePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+    "mediaType": "image/png",
+    "sha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b",
+    "bytes": 558875
+  },
+  "response": {
+    "setId": "20260912-0",
+    "query": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep only the same product: its name and wordmark, and what it is. The brief decides how much of the page's other text and control copy survives; invent no product facts, features, prices, or data. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "seed": 0,
+    "k": 12,
+    "poolSize": 1000,
+    "coverage": 0.8357107107107107,
+    "truncated": false,
+    "designType": {
+      "key": "general-interface",
+      "label": "general interface",
+      "evidence": "clear hierarchy, recognizable states, coherent navigation, and a primary action",
+      "source": "general-interface"
+    }
+  },
+  "references": [
+    {
+      "ordinal": 1,
+      "id": "gen-rtrack-o47-s04-j355-direction-structural",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f347",
+      "aspect": "landscape",
+      "relevance": 0.674488724405835,
+      "relevancePercentile": 0.8357107107107107,
+      "qualityPercentile": 0.6116116116116116,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 1
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\01-gen-rtrack-o47-s04-j355-direction-structural.webp",
+      "sha256": "33b842675db5b604c9bd65b0a48c2fcf752d11b679035124d2a653147a0d0604",
+      "bytes": 70608,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 2,
+      "id": "gen-rtrack-o42-s02-j457-structural-counterfactual",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f347",
+      "aspect": "landscape",
+      "relevance": 0.6671713283383301,
+      "relevancePercentile": 0.8142392392392392,
+      "qualityPercentile": 0.33733733733733734,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 2
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\02-gen-rtrack-o42-s02-j457-structural-counterfactual.webp",
+      "sha256": "3a8ed16ef4e85e51280f7a9d0dc8b68fbf95dcb2ea042abe984354b831c43445",
+      "bytes": 71772,
+      "width": 1280,
+      "height": 885
+    },
+    {
+      "ordinal": 3,
+      "id": "gen-rtrack-o47-s08-j298-direction-structural",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f361",
+      "aspect": "landscape",
+      "relevance": 0.6563248280928343,
+      "relevancePercentile": 0.7873957290623956,
+      "qualityPercentile": 0.42542542542542544,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 3
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\03-gen-rtrack-o47-s08-j298-direction-structural.webp",
+      "sha256": "c87a706ea85027aa4000a7078c8dd6f36a8117b27f1be63a108f0446e96236e1",
+      "bytes": 62134,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 4,
+      "id": "gen-rtrack-o45-s02-j013-direction-structural",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f347",
+      "aspect": "landscape",
+      "relevance": 0.6647462965248999,
+      "relevancePercentile": 0.7864948281614947,
+      "qualityPercentile": 0.6836836836836837,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 4
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\04-gen-rtrack-o45-s02-j013-direction-structural.webp",
+      "sha256": "943cda701cc6137bd2b781f3628ef6defa9cae3a5a1444b9e84b48dbb6f1bfeb",
+      "bytes": 77310,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 5,
+      "id": "gen-rtrack-o40-s02-j359-target-board-minimal",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f079",
+      "aspect": "landscape",
+      "relevance": 0.650973806386883,
+      "relevancePercentile": 0.7836920253586921,
+      "qualityPercentile": 0.982982982982983,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 5
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\05-gen-rtrack-o40-s02-j359-target-board-minimal.webp",
+      "sha256": "78b0c5ac457b23422a0a78fca22693c4c16b8c96ba247c523f1bcbb9e9b69d54",
+      "bytes": 64402,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 6,
+      "id": "gen-rtrack-o47-s03-j373-direction-structural",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f295",
+      "aspect": "landscape",
+      "relevance": 0.6589105611642145,
+      "relevancePercentile": 0.7386386386386387,
+      "qualityPercentile": 0.5695695695695696,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 6
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\06-gen-rtrack-o47-s03-j373-direction-structural.webp",
+      "sha256": "df4f2404762404ebbdeeabbecaa622d33bbd1c8e565665f2e83853dfb2b7b488",
+      "bytes": 57774,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 7,
+      "id": "gen-rtrack-o44-s01-j212-frontier-structure",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f361",
+      "aspect": "portrait",
+      "relevance": 0.6693340559161611,
+      "relevancePercentile": 0.7308558558558558,
+      "qualityPercentile": 0.4164164164164164,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 7
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\07-gen-rtrack-o44-s01-j212-frontier-structure.webp",
+      "sha256": "6cbbfa3b6e7f302311cb6402d18ce6d949652150a821dabf71ef34d1382fafc0",
+      "bytes": 95482,
+      "width": 856,
+      "height": 1836
+    },
+    {
+      "ordinal": 8,
+      "id": "gen-rtrack-o52-adaptive-qd-wave-1-b06-j296-factor-splice",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f358",
+      "aspect": "landscape",
+      "relevance": 0.6575012299785185,
+      "relevancePercentile": 0.7301301301301302,
+      "qualityPercentile": 0.34534534534534533,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 8
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\08-gen-rtrack-o52-adaptive-qd-wave-1-b06-j296-factor-splice.webp",
+      "sha256": "bdcb9c870b182891b5a51c6e98f77ee21c32fe7c5e6b9dbc84564a442f7d9096",
+      "bytes": 80080,
+      "width": 1280,
+      "height": 1103
+    },
+    {
+      "ordinal": 9,
+      "id": "gen-rtrack-o47-s07-j115-direction-structural",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f251",
+      "aspect": "landscape",
+      "relevance": 0.6548374378659724,
+      "relevancePercentile": 0.7283450116783451,
+      "qualityPercentile": 0.6716716716716716,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 9
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\09-gen-rtrack-o47-s07-j115-direction-structural.webp",
+      "sha256": "f2c83b83aba2da4e65412efe46316fa8d87eddc59c57ffa84bbbfdf7ebb615ff",
+      "bytes": 98296,
+      "width": 1280,
+      "height": 978
+    },
+    {
+      "ordinal": 10,
+      "id": "gen-rtrack-o44-s01-j482-frontier-system",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f361",
+      "aspect": "portrait",
+      "relevance": 0.6685587621954113,
+      "relevancePercentile": 0.7242575909242576,
+      "qualityPercentile": 0.14914914914914915,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 10
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\10-gen-rtrack-o44-s01-j482-frontier-system.webp",
+      "sha256": "438df2327974b484e299a1006ac95e3bc4ac77f8b893113b375d0680d992df9a",
+      "bytes": 78012,
+      "width": 1234,
+      "height": 1275
+    },
+    {
+      "ordinal": 11,
+      "id": "gen-remix-surprise-607c612bb7dc1b1fbbfc6c79",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f176",
+      "aspect": "landscape",
+      "relevance": 0.6585531343682665,
+      "relevancePercentile": 0.7234484484484485,
+      "qualityPercentile": 0.24624624624624625,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 11
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\11-gen-remix-surprise-607c612bb7dc1b1fbbfc6c79.webp",
+      "sha256": "188ab145aa72704aaa732570ee5fe4efddc8ca0fb59d5e6ae9daeda61e3d8b71",
+      "bytes": 81434,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "ordinal": 12,
+      "id": "gen-rtrack-o52-adaptive-qd-wave-1-b08-j284-factor-splice",
+      "role": "consensus-head",
+      "arm": "combined-consensus",
+      "cell": "r-track-retrieval-clusters-v1:f295",
+      "aspect": "portrait",
+      "relevance": 0.6661158271847545,
+      "relevancePercentile": 0.7230980980980981,
+      "qualityPercentile": 0.17617617617617617,
+      "evidence": {
+        "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+        "rank": 12
+      },
+      "file": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\12-gen-rtrack-o52-adaptive-qd-wave-1-b08-j284-factor-splice.webp",
+      "sha256": "079eb1851add1bc9ea541625f63dab989fd9f5d973db45eefd361a6c5af00cf1",
+      "bytes": 69794,
+      "width": 1152,
+      "height": 1366
+    }
+  ]
+}

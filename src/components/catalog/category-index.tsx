@@ -1,53 +1,60 @@
 import { ArrowRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
-
 import type { Category } from "@/types/catalog";
 
-type CategoryIndexProps = {
-  categories: Category[];
-};
-
-export function CategoryIndex({ categories }: CategoryIndexProps) {
+export function CategoryIndex({ categories }: { categories: Category[] }) {
   return (
-    <nav aria-label="Shop by category" className="border-y border-line bg-white">
-      <ul className="site-container grid sm:grid-cols-2 lg:grid-cols-5">
-        {categories.map((category) => (
-            <li
-              key={category.slug}
-              className="border-b border-line last:border-b-0 sm:border-r sm:[&:nth-child(even)]:border-r-0 lg:border-b-0 lg:[&:nth-child(even)]:border-r lg:last:border-r-0"
-            >
-              <Link
-                href={`/category/${category.slug}`}
-                className="group flex min-h-32 items-center gap-5 px-4 py-5 no-underline min-[90rem]:min-h-40 min-[90rem]:gap-6 min-[90rem]:px-5"
-              >
-                <span className="relative size-20 shrink-0 overflow-hidden rounded-full bg-[#ebe7e2] min-[90rem]:size-28">
-                  <Image
-                    src={category.image.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1440px) 112px, 80px"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    style={{
-                      objectPosition:
-                        category.image.objectPosition ?? "center center",
-                    }}
-                  />
-                </span>
-                <span className="min-w-0">
-                  <span className="font-display block text-2xl font-semibold leading-none min-[90rem]:text-3xl">
-                    {category.title}
+    <section className="collection-index">
+      <div className="site-container collection-layout">
+        <div className="collection-intro">
+          <p className="eyebrow">Explore our collection</p>
+          <h2>
+            Timeless silver.{" "}
+            <span className="collection-heading-line">For every moment.</span>
+          </h2>
+          <p>
+            For daily rituals, thoughtful gifts and the occasions you hold
+            close.
+          </p>
+          <Link href="/products" className="text-link">
+            Discover all silver <ArrowRightIcon size={17} aria-hidden="true" />
+          </Link>
+        </div>
+        <nav aria-label="Shop by category" className="min-w-0">
+          <ul className="collection-panels">
+            {categories.slice(0, 5).map((category) => (
+              <li key={category.slug}>
+                <Link href={`/category/${category.slug}`}>
+                  <span className="collection-photo">
+                    <Image
+                      src={category.image.src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 639px) 43vw, (max-width: 1023px) 28vw, 15vw"
+                      className="object-contain transition-transform duration-300 hover:scale-[1.03]"
+                    />
                   </span>
-                  <ArrowRightIcon
-                    size={20}
-                    className="mt-3 transition-transform group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
-                </span>
-              </Link>
-            </li>
-        ))}
-      </ul>
-    </nav>
+                  <span className="collection-caption">
+                    {category.title}
+                    <ArrowRightIcon size={16} aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {categories.length > 5 ? (
+            <div className="collection-more">
+              <span>Also discover</span>
+              {categories.slice(5).map((category) => (
+                <Link href={`/category/${category.slug}`} key={category.slug}>
+                  {category.title}
+                </Link>
+              ))}
+            </div>
+          ) : null}
+        </nav>
+      </div>
+    </section>
   );
 }

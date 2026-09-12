@@ -1,0 +1,71 @@
+{
+  "conversionId": "866049eb-8b36-4936-8358-16a74a6936fd",
+  "operationExpiresAt": "2026-09-19T11:30:58.202Z",
+  "manifestFile": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\manifest.json",
+  "artifacts": [
+    {
+      "id": "responsive-reference-mobile",
+      "role": "responsive-reference",
+      "mediaType": "image/png",
+      "sha256": "d5c4c86303670ccc1b0b71657ff5cf4b131ad233953328eee38859205d21784d",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=responsive-reference-mobile&expires=1789817458&signature=BsanYYEoOSzDF3157h3I8pjnJqIDgWMym5nihIljXJ0",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\responsive-reference-mobile-d5c4c8630367.png"
+    },
+    {
+      "id": "source",
+      "role": "source",
+      "mediaType": "image/png",
+      "sha256": "762f0cb8253bd0e48b3ecdd24ef1f21455dac355f2eb6b70cecfce35f640e82d",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=source&expires=1789817458&signature=R2um189sDlEIHvvS6F5vVq8k7ifzV1dS50FGARufdG8",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\source-762f0cb8253b.png"
+    },
+    {
+      "id": "upscaled-plate-1",
+      "role": "upscaled-plate",
+      "mediaType": "image/png",
+      "sha256": "3c8eead9cda6d61c89ae0749e14aad055b7c2267062eabc5bbbdb67a74ef274d",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-plate-1&expires=1789817458&signature=HiIMAeLtvgmg_svCgj_9wUAsbBCibcz-gY78nnqWIl4",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-plate-1-3c8eead9cda6.png"
+    },
+    {
+      "id": "upscaled-region-22",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "b9968f2ea841d12055aa42a3e428e4d3f26673c8def097583a8fc5de60d6c058",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-region-22&expires=1789817458&signature=2kJnY9UzcShL49s_d_JIPlU_bWaG5usP4YJz6ls_eZ8",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-region-22-b9968f2ea841.png"
+    },
+    {
+      "id": "upscaled-region-27",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "e41c3e64c36160d19f99da8b73bdcbf846762aa331165364d1e76fe5bcdfdfdc",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-region-27&expires=1789817458&signature=mQL-YFthiMM9QzsdsoR3-LbXIlk3WWOVpjpYrwQvaDA",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-region-27-e41c3e64c361.png"
+    },
+    {
+      "id": "upscaled-region-32",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "d49dd818c1b325439072c704d86136dee75f316de0348c010aa15db4fb81e7f5",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-region-32&expires=1789817458&signature=anaiUzs1kl7bMXHtlgfY8f8_VsaEqssIbLFJvWlqNn4",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-region-32-d49dd818c1b3.png"
+    },
+    {
+      "id": "upscaled-region-37",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "0793404513dc823bd95393b3c9c0a8c1a29ab1ab24575de1e7693d996b9e1dc4",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-region-37&expires=1789817458&signature=izlbo08oBPP2XfrNT3AKWMt5xZOJxJAwFhyjQfcdQwg",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-region-37-0793404513dc.png"
+    },
+    {
+      "id": "upscaled-region-42",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "244739cd610b455123a6ed106d9cd8b94eb8f8b37b9674bea9daedfe37ea995b",
+      "sourceHref": "https://12ui.com/api/v1/convert/866049eb-8b36-4936-8358-16a74a6936fd?artifact=upscaled-region-42&expires=1789817458&signature=58fIh1zW3eDWJ6V0_e_L54NpVDP1G76p8aVZ1g3kIZs",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.html.assets\\upscaled-region-42-244739cd610b.png"
+    }
+  ]
+}

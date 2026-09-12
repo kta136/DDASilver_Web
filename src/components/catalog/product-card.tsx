@@ -17,12 +17,14 @@ type ProductCardProps = {
   product: Product;
   headingLevel?: 2 | 3;
   compactImage?: boolean;
+  highPriority?: boolean;
 };
 
 export function ProductCard({
   product,
   headingLevel = 3,
   compactImage = false,
+  highPriority = false,
 }: ProductCardProps) {
   const image = product.images[0];
   const Heading = headingLevel === 2 ? "h2" : "h3";
@@ -47,11 +49,11 @@ export function ProductCard({
   ].filter(Boolean);
 
   return (
-    <article className="group">
+    <article className="product-card group">
       <PricedProductLink slug={product.slug} estimate={product.estimate}>
         <div
-          className={`relative overflow-hidden bg-[#ece8e3] ${
-            compactImage ? "aspect-square" : "aspect-[4/5]"
+          className={`relative overflow-hidden bg-[#f4f1eb] ${
+            compactImage ? "aspect-square" : "aspect-square"
           }`}
         >
           {image ? (
@@ -59,6 +61,8 @@ export function ProductCard({
               src={image.src}
               alt={image.alt}
               fill
+              loading={highPriority ? "eager" : "lazy"}
+              fetchPriority={highPriority ? "high" : undefined}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className={
                 containImage
@@ -73,10 +77,10 @@ export function ProductCard({
         </div>
         <div className="flex items-start justify-between gap-4 border-b border-line py-4">
           <div>
-            <Heading className="font-display text-2xl font-semibold leading-tight">
+            <Heading className="text-base font-medium leading-snug">
               {getProductIdentity(product)}
             </Heading>
-            <p className="mt-1 text-xs uppercase tracking-[0.16em] text-ink-muted">
+            <p className="mt-2 text-xs leading-5 text-ink-muted">
               {details.length > 0 ? details.join(" · ") : "Enquire for details"}
             </p>
             <ProductPrice slug={product.slug} estimate={product.estimate} />

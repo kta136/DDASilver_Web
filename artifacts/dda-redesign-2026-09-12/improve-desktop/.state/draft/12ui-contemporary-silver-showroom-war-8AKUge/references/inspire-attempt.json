@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-12T09:28:49.692Z",
+  "origin": "https://12ui.com",
+  "idempotencyKey": "draft-corpus:v1:857898360e1663c7e8818823",
+  "request": {
+    "q": "Contemporary silver showroom: warm ivory #F7F4EE, charcoal #272823 and restrained copper #8D4938. Compact header, short Cormorant Garamond display copy, precise Manrope utilities. Bring real product photography forward in an asymmetric editorial layout; square uncropped images, thin rules and small-radius buttons. Reduce hero height and category-navigation bulk. Preserve the DDA family identity, existing copy and true product facts; invent no features, claims, offers or products. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep every real piece of content, data, and control the page carries: say the same things, in whatever arrangement serves them best, and invent nothing. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "k": 12
+  },
+  "referenceImage": {
+    "sourcePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+    "mediaType": "image/png",
+    "sha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b",
+    "bytes": 558875
+  }
+}

@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Website Terms",
   description:
-    "Read the draft terms for browsing the DDA Silver website, viewing reference rates and sending product availability enquiries.",
+    "Read the terms for browsing the DDA Silver website, viewing reference rates and sending product availability enquiries.",
   path: "/terms",
   canonical: false,
   noIndex: true,
@@ -13,10 +13,9 @@ export const metadata = createPageMetadata({
 export default function TermsPage() {
   return (
     <EditorialPage
-      eyebrow="Legal draft"
+      eyebrow="Website information"
       title="Website terms"
-      intro="These draft terms describe the browse-and-enquire nature of the DDA Silver website."
-      notice="Owner and legal review is required before launch. This page is not final legal advice."
+      intro="These terms describe the browse-and-enquire nature of the DDA Silver website."
       sections={[
         {
           title: "Catalog information",
@@ -28,7 +27,7 @@ export default function TermsPage() {
         {
           title: "Availability and pricing",
           paragraphs: [
-            "Prices and inventory are intentionally not displayed. Customers should confirm current details directly with the showroom before relying on a product listing.",
+            "Customers should confirm current product details and availability directly with the showroom before relying on a listing.",
           ],
         },
         {

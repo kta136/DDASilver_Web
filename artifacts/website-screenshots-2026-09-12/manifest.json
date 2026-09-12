@@ -1,0 +1,1003 @@
+{
+  "base": "https://www.ddasilver.com",
+  "capturedAt": "2026-09-12T09:09:31.461Z",
+  "viewports": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "pages": [
+    {
+      "route": "/rates",
+      "url": "https://www.ddasilver.com/rates",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/rates--section-01.png",
+        "desktop/rates--section-02.png"
+      ],
+      "status": 200,
+      "title": "Live Silver Rates in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/rates.png"
+    },
+    {
+      "route": "/rates",
+      "url": "https://www.ddasilver.com/rates",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/rates--section-01.png",
+        "mobile/rates--section-02.png",
+        "mobile/rates--section-03.png"
+      ],
+      "status": 200,
+      "title": "Live Silver Rates in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/rates.png"
+    },
+    {
+      "route": "/",
+      "url": "https://www.ddasilver.com/",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/home--section-01.png",
+        "desktop/home--section-02.png",
+        "desktop/home--section-03.png",
+        "desktop/home--section-04.png"
+      ],
+      "status": 200,
+      "title": "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
+      "brokenImages": [],
+      "file": "desktop/home.png"
+    },
+    {
+      "route": "/products",
+      "url": "https://www.ddasilver.com/products",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/products--section-01.png",
+        "desktop/products--section-02.png",
+        "desktop/products--section-03.png",
+        "desktop/products--section-04.png",
+        "desktop/products--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Products in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/products.png"
+    },
+    {
+      "route": "/",
+      "url": "https://www.ddasilver.com/",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/home--section-01.png",
+        "mobile/home--section-02.png",
+        "mobile/home--section-03.png",
+        "mobile/home--section-04.png",
+        "mobile/home--section-05.png",
+        "mobile/home--section-06.png",
+        "mobile/home--section-07.png",
+        "mobile/home--section-08.png",
+        "mobile/home--section-09.png"
+      ],
+      "status": 200,
+      "title": "DDA Silver | Silver Jewellery, Coins & Live Rates in Agra",
+      "brokenImages": [],
+      "file": "mobile/home.png"
+    },
+    {
+      "route": "/about",
+      "url": "https://www.ddasilver.com/about",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/about--section-01.png",
+        "desktop/about--section-02.png"
+      ],
+      "status": 200,
+      "title": "About Our Agra Silver Showroom | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/about.png"
+    },
+    {
+      "route": "/contact",
+      "url": "https://www.ddasilver.com/contact",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/contact--section-01.png",
+        "desktop/contact--section-02.png"
+      ],
+      "status": 200,
+      "title": "Contact Our Agra Showroom | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/contact.png"
+    },
+    {
+      "route": "/products",
+      "url": "https://www.ddasilver.com/products",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/products--section-01.png",
+        "mobile/products--section-02.png",
+        "mobile/products--section-03.png",
+        "mobile/products--section-04.png",
+        "mobile/products--section-05.png",
+        "mobile/products--section-06.png",
+        "mobile/products--section-07.png",
+        "mobile/products--section-08.png",
+        "mobile/products--section-09.png",
+        "mobile/products--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Products in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/products.png"
+    },
+    {
+      "route": "/about",
+      "url": "https://www.ddasilver.com/about",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/about--section-01.png",
+        "mobile/about--section-02.png",
+        "mobile/about--section-03.png",
+        "mobile/about--section-04.png"
+      ],
+      "status": 200,
+      "title": "About Our Agra Silver Showroom | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/about.png"
+    },
+    {
+      "route": "/contact",
+      "url": "https://www.ddasilver.com/contact",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/contact--section-01.png",
+        "mobile/contact--section-02.png",
+        "mobile/contact--section-03.png",
+        "mobile/contact--section-04.png"
+      ],
+      "status": 200,
+      "title": "Contact Our Agra Showroom | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/contact.png"
+    },
+    {
+      "route": "/guides",
+      "url": "https://www.ddasilver.com/guides",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/guides--section-01.png",
+        "desktop/guides--section-02.png"
+      ],
+      "status": 200,
+      "title": "Silver Buying & Care Guides | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/guides.png"
+    },
+    {
+      "route": "/guides",
+      "url": "https://www.ddasilver.com/guides",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/guides--section-01.png",
+        "mobile/guides--section-02.png",
+        "mobile/guides--section-03.png",
+        "mobile/guides--section-04.png"
+      ],
+      "status": 200,
+      "title": "Silver Buying & Care Guides | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/guides.png"
+    },
+    {
+      "route": "/guides/choosing-silver-gifts",
+      "url": "https://www.ddasilver.com/guides/choosing-silver-gifts",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/guides--choosing-silver-gifts--section-01.png",
+        "desktop/guides--choosing-silver-gifts--section-02.png",
+        "desktop/guides--choosing-silver-gifts--section-03.png"
+      ],
+      "status": 200,
+      "title": "How to choose a silver gift | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/guides--choosing-silver-gifts.png"
+    },
+    {
+      "route": "/guides/understanding-product-details",
+      "url": "https://www.ddasilver.com/guides/understanding-product-details",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/guides--understanding-product-details--section-01.png",
+        "desktop/guides--understanding-product-details--section-02.png",
+        "desktop/guides--understanding-product-details--section-03.png"
+      ],
+      "status": 200,
+      "title": "Understanding silver product details | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/guides--understanding-product-details.png"
+    },
+    {
+      "route": "/guides/choosing-silver-gifts",
+      "url": "https://www.ddasilver.com/guides/choosing-silver-gifts",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/guides--choosing-silver-gifts--section-01.png",
+        "mobile/guides--choosing-silver-gifts--section-02.png",
+        "mobile/guides--choosing-silver-gifts--section-03.png",
+        "mobile/guides--choosing-silver-gifts--section-04.png",
+        "mobile/guides--choosing-silver-gifts--section-05.png"
+      ],
+      "status": 200,
+      "title": "How to choose a silver gift | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/guides--choosing-silver-gifts.png"
+    },
+    {
+      "route": "/guides/caring-for-silver",
+      "url": "https://www.ddasilver.com/guides/caring-for-silver",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/guides--caring-for-silver--section-01.png",
+        "desktop/guides--caring-for-silver--section-02.png",
+        "desktop/guides--caring-for-silver--section-03.png"
+      ],
+      "status": 200,
+      "title": "Caring for your silver piece | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/guides--caring-for-silver.png"
+    },
+    {
+      "route": "/guides/understanding-product-details",
+      "url": "https://www.ddasilver.com/guides/understanding-product-details",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/guides--understanding-product-details--section-01.png",
+        "mobile/guides--understanding-product-details--section-02.png",
+        "mobile/guides--understanding-product-details--section-03.png",
+        "mobile/guides--understanding-product-details--section-04.png",
+        "mobile/guides--understanding-product-details--section-05.png"
+      ],
+      "status": 200,
+      "title": "Understanding silver product details | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/guides--understanding-product-details.png"
+    },
+    {
+      "route": "/guides/caring-for-silver",
+      "url": "https://www.ddasilver.com/guides/caring-for-silver",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/guides--caring-for-silver--section-01.png",
+        "mobile/guides--caring-for-silver--section-02.png",
+        "mobile/guides--caring-for-silver--section-03.png",
+        "mobile/guides--caring-for-silver--section-04.png",
+        "mobile/guides--caring-for-silver--section-05.png"
+      ],
+      "status": 200,
+      "title": "Caring for your silver piece | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/guides--caring-for-silver.png"
+    },
+    {
+      "route": "/category/coin",
+      "url": "https://www.ddasilver.com/category/coin",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--coin--section-01.png",
+        "desktop/category--coin--section-02.png",
+        "desktop/category--coin--section-03.png",
+        "desktop/category--coin--section-04.png",
+        "desktop/category--coin--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Coin in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--coin.png"
+    },
+    {
+      "route": "/category/idols",
+      "url": "https://www.ddasilver.com/category/idols",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--idols--section-01.png",
+        "desktop/category--idols--section-02.png",
+        "desktop/category--idols--section-03.png",
+        "desktop/category--idols--section-04.png",
+        "desktop/category--idols--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Idols in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--idols.png"
+    },
+    {
+      "route": "/category/coin",
+      "url": "https://www.ddasilver.com/category/coin",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--coin--section-01.png",
+        "mobile/category--coin--section-02.png",
+        "mobile/category--coin--section-03.png",
+        "mobile/category--coin--section-04.png",
+        "mobile/category--coin--section-05.png",
+        "mobile/category--coin--section-06.png",
+        "mobile/category--coin--section-07.png",
+        "mobile/category--coin--section-08.png",
+        "mobile/category--coin--section-09.png",
+        "mobile/category--coin--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Coin in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--coin.png"
+    },
+    {
+      "route": "/category/purse",
+      "url": "https://www.ddasilver.com/category/purse",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--purse--section-01.png",
+        "desktop/category--purse--section-02.png",
+        "desktop/category--purse--section-03.png",
+        "desktop/category--purse--section-04.png",
+        "desktop/category--purse--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Purse in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--purse.png"
+    },
+    {
+      "route": "/category/gifts",
+      "url": "https://www.ddasilver.com/category/gifts",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--gifts--section-01.png",
+        "desktop/category--gifts--section-02.png",
+        "desktop/category--gifts--section-03.png",
+        "desktop/category--gifts--section-04.png",
+        "desktop/category--gifts--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Gifts in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--gifts.png"
+    },
+    {
+      "route": "/category/idols",
+      "url": "https://www.ddasilver.com/category/idols",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--idols--section-01.png",
+        "mobile/category--idols--section-02.png",
+        "mobile/category--idols--section-03.png",
+        "mobile/category--idols--section-04.png",
+        "mobile/category--idols--section-05.png",
+        "mobile/category--idols--section-06.png",
+        "mobile/category--idols--section-07.png",
+        "mobile/category--idols--section-08.png",
+        "mobile/category--idols--section-09.png",
+        "mobile/category--idols--section-10.png",
+        "mobile/category--idols--section-11.png"
+      ],
+      "status": 200,
+      "title": "Silver Idols in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--idols.png"
+    },
+    {
+      "route": "/category/purse",
+      "url": "https://www.ddasilver.com/category/purse",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--purse--section-01.png",
+        "mobile/category--purse--section-02.png",
+        "mobile/category--purse--section-03.png",
+        "mobile/category--purse--section-04.png",
+        "mobile/category--purse--section-05.png",
+        "mobile/category--purse--section-06.png",
+        "mobile/category--purse--section-07.png",
+        "mobile/category--purse--section-08.png",
+        "mobile/category--purse--section-09.png",
+        "mobile/category--purse--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Purse in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--purse.png"
+    },
+    {
+      "route": "/category/boxes",
+      "url": "https://www.ddasilver.com/category/boxes",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--boxes--section-01.png",
+        "desktop/category--boxes--section-02.png",
+        "desktop/category--boxes--section-03.png",
+        "desktop/category--boxes--section-04.png",
+        "desktop/category--boxes--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Boxes in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--boxes.png"
+    },
+    {
+      "route": "/category/gifts",
+      "url": "https://www.ddasilver.com/category/gifts",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--gifts--section-01.png",
+        "mobile/category--gifts--section-02.png",
+        "mobile/category--gifts--section-03.png",
+        "mobile/category--gifts--section-04.png",
+        "mobile/category--gifts--section-05.png",
+        "mobile/category--gifts--section-06.png",
+        "mobile/category--gifts--section-07.png",
+        "mobile/category--gifts--section-08.png",
+        "mobile/category--gifts--section-09.png",
+        "mobile/category--gifts--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Gifts in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--gifts.png"
+    },
+    {
+      "route": "/category/singhasan",
+      "url": "https://www.ddasilver.com/category/singhasan",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--singhasan--section-01.png",
+        "desktop/category--singhasan--section-02.png",
+        "desktop/category--singhasan--section-03.png",
+        "desktop/category--singhasan--section-04.png"
+      ],
+      "status": 200,
+      "title": "Silver Singhasan in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--singhasan.png"
+    },
+    {
+      "route": "/category/hatri",
+      "url": "https://www.ddasilver.com/category/hatri",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--hatri--section-01.png",
+        "desktop/category--hatri--section-02.png",
+        "desktop/category--hatri--section-03.png"
+      ],
+      "status": 200,
+      "title": "Silver Hatri in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--hatri.png"
+    },
+    {
+      "route": "/category/singhasan",
+      "url": "https://www.ddasilver.com/category/singhasan",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--singhasan--section-01.png",
+        "mobile/category--singhasan--section-02.png",
+        "mobile/category--singhasan--section-03.png",
+        "mobile/category--singhasan--section-04.png",
+        "mobile/category--singhasan--section-05.png",
+        "mobile/category--singhasan--section-06.png",
+        "mobile/category--singhasan--section-07.png",
+        "mobile/category--singhasan--section-08.png"
+      ],
+      "status": 200,
+      "title": "Silver Singhasan in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--singhasan.png"
+    },
+    {
+      "route": "/category/hatri",
+      "url": "https://www.ddasilver.com/category/hatri",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--hatri--section-01.png",
+        "mobile/category--hatri--section-02.png",
+        "mobile/category--hatri--section-03.png",
+        "mobile/category--hatri--section-04.png",
+        "mobile/category--hatri--section-05.png",
+        "mobile/category--hatri--section-06.png"
+      ],
+      "status": 200,
+      "title": "Silver Hatri in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--hatri.png"
+    },
+    {
+      "route": "/category/jhula",
+      "url": "https://www.ddasilver.com/category/jhula",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--jhula--section-01.png",
+        "desktop/category--jhula--section-02.png",
+        "desktop/category--jhula--section-03.png",
+        "desktop/category--jhula--section-04.png",
+        "desktop/category--jhula--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Jhula in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--jhula.png"
+    },
+    {
+      "route": "/category/boxes",
+      "url": "https://www.ddasilver.com/category/boxes",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--boxes--section-01.png",
+        "mobile/category--boxes--section-02.png",
+        "mobile/category--boxes--section-03.png",
+        "mobile/category--boxes--section-04.png",
+        "mobile/category--boxes--section-05.png",
+        "mobile/category--boxes--section-06.png",
+        "mobile/category--boxes--section-07.png",
+        "mobile/category--boxes--section-08.png",
+        "mobile/category--boxes--section-09.png",
+        "mobile/category--boxes--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Boxes in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--boxes.png"
+    },
+    {
+      "route": "/category/gold",
+      "url": "https://www.ddasilver.com/category/gold",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--gold--section-01.png",
+        "desktop/category--gold--section-02.png",
+        "desktop/category--gold--section-03.png"
+      ],
+      "status": 200,
+      "title": "Gold Coins & Bars in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--gold.png"
+    },
+    {
+      "route": "/category/utensils",
+      "url": "https://www.ddasilver.com/category/utensils",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--utensils--section-01.png",
+        "desktop/category--utensils--section-02.png",
+        "desktop/category--utensils--section-03.png",
+        "desktop/category--utensils--section-04.png",
+        "desktop/category--utensils--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Utensils in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--utensils.png"
+    },
+    {
+      "route": "/category/gold",
+      "url": "https://www.ddasilver.com/category/gold",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--gold--section-01.png",
+        "mobile/category--gold--section-02.png",
+        "mobile/category--gold--section-03.png",
+        "mobile/category--gold--section-04.png",
+        "mobile/category--gold--section-05.png"
+      ],
+      "status": 200,
+      "title": "Gold Coins & Bars in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--gold.png"
+    },
+    {
+      "route": "/category/jhula",
+      "url": "https://www.ddasilver.com/category/jhula",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--jhula--section-01.png",
+        "mobile/category--jhula--section-02.png",
+        "mobile/category--jhula--section-03.png",
+        "mobile/category--jhula--section-04.png",
+        "mobile/category--jhula--section-05.png",
+        "mobile/category--jhula--section-06.png",
+        "mobile/category--jhula--section-07.png",
+        "mobile/category--jhula--section-08.png",
+        "mobile/category--jhula--section-09.png"
+      ],
+      "status": 200,
+      "title": "Silver Jhula in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--jhula.png"
+    },
+    {
+      "route": "/category/utensils",
+      "url": "https://www.ddasilver.com/category/utensils",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--utensils--section-01.png",
+        "mobile/category--utensils--section-02.png",
+        "mobile/category--utensils--section-03.png",
+        "mobile/category--utensils--section-04.png",
+        "mobile/category--utensils--section-05.png",
+        "mobile/category--utensils--section-06.png",
+        "mobile/category--utensils--section-07.png",
+        "mobile/category--utensils--section-08.png",
+        "mobile/category--utensils--section-09.png",
+        "mobile/category--utensils--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Utensils in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--utensils.png"
+    },
+    {
+      "route": "/category/phone-covers",
+      "url": "https://www.ddasilver.com/category/phone-covers",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/category--phone-covers--section-01.png",
+        "desktop/category--phone-covers--section-02.png",
+        "desktop/category--phone-covers--section-03.png"
+      ],
+      "status": 200,
+      "title": "Silver Phone Covers in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/category--phone-covers.png"
+    },
+    {
+      "route": "/category/phone-covers",
+      "url": "https://www.ddasilver.com/category/phone-covers",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/category--phone-covers--section-01.png",
+        "mobile/category--phone-covers--section-02.png",
+        "mobile/category--phone-covers--section-03.png",
+        "mobile/category--phone-covers--section-04.png",
+        "mobile/category--phone-covers--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Phone Covers in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/category--phone-covers.png"
+    },
+    {
+      "route": "/collections/silver-ganesha-idols",
+      "url": "https://www.ddasilver.com/collections/silver-ganesha-idols",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/collections--silver-ganesha-idols--section-01.png",
+        "desktop/collections--silver-ganesha-idols--section-02.png",
+        "desktop/collections--silver-ganesha-idols--section-03.png",
+        "desktop/collections--silver-ganesha-idols--section-04.png",
+        "desktop/collections--silver-ganesha-idols--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Ganesha Idols in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/collections--silver-ganesha-idols.png"
+    },
+    {
+      "route": "/collections/silver-ganesha-idols",
+      "url": "https://www.ddasilver.com/collections/silver-ganesha-idols",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/collections--silver-ganesha-idols--section-01.png",
+        "mobile/collections--silver-ganesha-idols--section-02.png",
+        "mobile/collections--silver-ganesha-idols--section-03.png",
+        "mobile/collections--silver-ganesha-idols--section-04.png",
+        "mobile/collections--silver-ganesha-idols--section-05.png",
+        "mobile/collections--silver-ganesha-idols--section-06.png",
+        "mobile/collections--silver-ganesha-idols--section-07.png",
+        "mobile/collections--silver-ganesha-idols--section-08.png",
+        "mobile/collections--silver-ganesha-idols--section-09.png",
+        "mobile/collections--silver-ganesha-idols--section-10.png"
+      ],
+      "status": 200,
+      "title": "Silver Ganesha Idols in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/collections--silver-ganesha-idols.png"
+    },
+    {
+      "route": "/collections/lakshmi-ganesha-silver-idol-pairs",
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-01.png",
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-02.png",
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-03.png",
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-04.png",
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-05.png",
+        "desktop/collections--lakshmi-ganesha-silver-idol-pairs--section-06.png"
+      ],
+      "status": 200,
+      "title": "Lakshmi–Ganesha Silver Idol Pairs in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/collections--lakshmi-ganesha-silver-idol-pairs.png"
+    },
+    {
+      "route": "/products/dda-10-gram-oval-anniversary-silver-coin",
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-anniversary-silver-coin",
+      "viewport": "desktop",
+      "sections": [],
+      "status": 200,
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/products--dda-10-gram-oval-anniversary-silver-coin.png"
+    },
+    {
+      "route": "/collections/silver-wedding-gifts",
+      "url": "https://www.ddasilver.com/collections/silver-wedding-gifts",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/collections--silver-wedding-gifts--section-01.png",
+        "desktop/collections--silver-wedding-gifts--section-02.png",
+        "desktop/collections--silver-wedding-gifts--section-03.png"
+      ],
+      "status": 200,
+      "title": "Silver Wedding Gifts in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/collections--silver-wedding-gifts.png"
+    },
+    {
+      "route": "/collections/silver-pooja-thali-sets",
+      "url": "https://www.ddasilver.com/collections/silver-pooja-thali-sets",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/collections--silver-pooja-thali-sets--section-01.png",
+        "desktop/collections--silver-pooja-thali-sets--section-02.png",
+        "desktop/collections--silver-pooja-thali-sets--section-03.png",
+        "desktop/collections--silver-pooja-thali-sets--section-04.png",
+        "desktop/collections--silver-pooja-thali-sets--section-05.png",
+        "desktop/collections--silver-pooja-thali-sets--section-06.png"
+      ],
+      "status": 200,
+      "title": "Silver Pooja Thali Sets in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/collections--silver-pooja-thali-sets.png"
+    },
+    {
+      "route": "/collections/lakshmi-ganesha-silver-idol-pairs",
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-01.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-02.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-03.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-04.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-05.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-06.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-07.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-08.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-09.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-10.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-11.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-12.png",
+        "mobile/collections--lakshmi-ganesha-silver-idol-pairs--section-13.png"
+      ],
+      "status": 200,
+      "title": "Lakshmi–Ganesha Silver Idol Pairs in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/collections--lakshmi-ganesha-silver-idol-pairs.png"
+    },
+    {
+      "route": "/products/dda-10-gram-oval-anniversary-silver-coin",
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-anniversary-silver-coin",
+      "viewport": "mobile",
+      "sections": [],
+      "status": 200,
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/products--dda-10-gram-oval-anniversary-silver-coin.png"
+    },
+    {
+      "route": "/products/dda-10-gram-oval-bal-krishna-silver-coin",
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-bal-krishna-silver-coin",
+      "viewport": "desktop",
+      "sections": [],
+      "status": 200,
+      "title": "DDA 10 Gram Oval Bal Krishna Silver Coin | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/products--dda-10-gram-oval-bal-krishna-silver-coin.png"
+    },
+    {
+      "route": "/collections/silver-pooja-thali-sets",
+      "url": "https://www.ddasilver.com/collections/silver-pooja-thali-sets",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/collections--silver-pooja-thali-sets--section-01.png",
+        "mobile/collections--silver-pooja-thali-sets--section-02.png",
+        "mobile/collections--silver-pooja-thali-sets--section-03.png",
+        "mobile/collections--silver-pooja-thali-sets--section-04.png",
+        "mobile/collections--silver-pooja-thali-sets--section-05.png",
+        "mobile/collections--silver-pooja-thali-sets--section-06.png",
+        "mobile/collections--silver-pooja-thali-sets--section-07.png",
+        "mobile/collections--silver-pooja-thali-sets--section-08.png",
+        "mobile/collections--silver-pooja-thali-sets--section-09.png",
+        "mobile/collections--silver-pooja-thali-sets--section-10.png",
+        "mobile/collections--silver-pooja-thali-sets--section-11.png"
+      ],
+      "status": 200,
+      "title": "Silver Pooja Thali Sets in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/collections--silver-pooja-thali-sets.png"
+    },
+    {
+      "route": "/collections/silver-wedding-gifts",
+      "url": "https://www.ddasilver.com/collections/silver-wedding-gifts",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/collections--silver-wedding-gifts--section-01.png",
+        "mobile/collections--silver-wedding-gifts--section-02.png",
+        "mobile/collections--silver-wedding-gifts--section-03.png",
+        "mobile/collections--silver-wedding-gifts--section-04.png",
+        "mobile/collections--silver-wedding-gifts--section-05.png"
+      ],
+      "status": 200,
+      "title": "Silver Wedding Gifts in Agra | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/collections--silver-wedding-gifts.png"
+    },
+    {
+      "route": "/products/dda-10-gram-oval-bal-krishna-silver-coin",
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-bal-krishna-silver-coin",
+      "viewport": "mobile",
+      "sections": [],
+      "status": 200,
+      "title": "DDA 10 Gram Oval Bal Krishna Silver Coin | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/products--dda-10-gram-oval-bal-krishna-silver-coin.png"
+    },
+    {
+      "route": "/privacy",
+      "url": "https://www.ddasilver.com/privacy",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/privacy--section-01.png",
+        "desktop/privacy--section-02.png"
+      ],
+      "status": 200,
+      "title": "Privacy Policy | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/privacy.png"
+    },
+    {
+      "route": "/privacy",
+      "url": "https://www.ddasilver.com/privacy",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/privacy--section-01.png",
+        "mobile/privacy--section-02.png",
+        "mobile/privacy--section-03.png",
+        "mobile/privacy--section-04.png"
+      ],
+      "status": 200,
+      "title": "Privacy Policy | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/privacy.png"
+    },
+    {
+      "route": "/terms",
+      "url": "https://www.ddasilver.com/terms",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/terms--section-01.png",
+        "desktop/terms--section-02.png"
+      ],
+      "status": 200,
+      "title": "Website Terms | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/terms.png"
+    },
+    {
+      "route": "/cookies",
+      "url": "https://www.ddasilver.com/cookies",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/cookies--section-01.png",
+        "desktop/cookies--section-02.png"
+      ],
+      "status": 200,
+      "title": "Cookie Policy | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/cookies.png"
+    },
+    {
+      "route": "/terms",
+      "url": "https://www.ddasilver.com/terms",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/terms--section-01.png",
+        "mobile/terms--section-02.png",
+        "mobile/terms--section-03.png"
+      ],
+      "status": 200,
+      "title": "Website Terms | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/terms.png"
+    },
+    {
+      "route": "/rates-disclaimer",
+      "url": "https://www.ddasilver.com/rates-disclaimer",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/rates-disclaimer--section-01.png",
+        "desktop/rates-disclaimer--section-02.png"
+      ],
+      "status": 200,
+      "title": "Silver Rates Disclaimer | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/rates-disclaimer.png"
+    },
+    {
+      "route": "/cookies",
+      "url": "https://www.ddasilver.com/cookies",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/cookies--section-01.png",
+        "mobile/cookies--section-02.png",
+        "mobile/cookies--section-03.png"
+      ],
+      "status": 200,
+      "title": "Cookie Policy | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/cookies.png"
+    },
+    {
+      "route": "/login",
+      "url": "https://www.ddasilver.com/login",
+      "viewport": "desktop",
+      "sections": [
+        "desktop/login--section-01.png",
+        "desktop/login--section-02.png"
+      ],
+      "status": 200,
+      "title": "Customer Login | DDA Silver",
+      "brokenImages": [],
+      "file": "desktop/login.png"
+    },
+    {
+      "route": "/rates-disclaimer",
+      "url": "https://www.ddasilver.com/rates-disclaimer",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/rates-disclaimer--section-01.png",
+        "mobile/rates-disclaimer--section-02.png",
+        "mobile/rates-disclaimer--section-03.png"
+      ],
+      "status": 200,
+      "title": "Silver Rates Disclaimer | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/rates-disclaimer.png"
+    },
+    {
+      "route": "/login",
+      "url": "https://www.ddasilver.com/login",
+      "viewport": "mobile",
+      "sections": [
+        "mobile/login--section-01.png",
+        "mobile/login--section-02.png",
+        "mobile/login--section-03.png"
+      ],
+      "status": 200,
+      "title": "Customer Login | DDA Silver",
+      "brokenImages": [],
+      "file": "mobile/login.png"
+    }
+  ],
+  "interactiveScreenshots": [
+    "mobile/home--cookie-banner.png",
+    "mobile/home--cookie-preferences.png",
+    "desktop/home--cookie-preferences.png",
+    "mobile/home--menu-open.png"
+  ],
+  "scope": "29 public main, category, collection, guide, policy and login pages, plus two product examples; desktop and mobile. Catalog pagination is represented by its initial page. Authenticated account and Sanity admin screens are excluded."
+}

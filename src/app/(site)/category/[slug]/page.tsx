@@ -92,10 +92,10 @@ export default async function CategoryPage({
             { label: category.title },
           ]}
         />
-        <header className="mt-6 grid gap-4 border-l-2 border-copper pl-5 sm:mt-7 sm:pl-7 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)] lg:items-end lg:gap-12">
+        <header className="mt-6 grid gap-4 border-b border-line pb-8 sm:mt-7 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)] lg:items-end lg:gap-12">
           <div>
             <p className="eyebrow">Category</p>
-            <h1 className="font-display mt-2 text-5xl font-semibold leading-[0.88] sm:text-6xl lg:text-7xl">
+            <h1 className="font-display mt-2 text-4xl font-normal leading-[1.1] sm:text-5xl">
               {category.title}
             </h1>
           </div>

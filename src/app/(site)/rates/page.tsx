@@ -16,7 +16,14 @@ export default async function RatesPage() {
   const snapshot = await getPublicRateSnapshot();
   return (
     <main id="main-content">
-      <h1 className="sr-only">Today&apos;s silver rates in Agra</h1>
+      <div className="rate-page-heading">
+        <p className="eyebrow">The silver market</p>
+        <h1>Today&apos;s silver rates in Agra</h1>
+        <p>
+          Current reference rates. Confirm the final price of your chosen piece
+          with our showroom.
+        </p>
+      </div>
       <RateExperience />
       <PublicRateReference
         key={snapshot?.serverTime ?? "unavailable"}

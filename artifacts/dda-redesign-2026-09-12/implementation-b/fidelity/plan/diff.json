@@ -1,0 +1,2062 @@
+{
+  "generatedAt": "2026-09-12T11:45:33.096Z",
+  "before": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\current.domdoc.json",
+  "after": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\target\\winner.layerdoc.json",
+  "frames": {
+    "lengthScale": 1
+  },
+  "gate": {
+    "passed": true,
+    "lowOverlap": true,
+    "captureIdentity": "matched",
+    "coverage": 0.4807692307692308,
+    "coveragePct": 48.07692307692308,
+    "thresholdPct": 60
+  },
+  "domCoverage": 0.4807692307692308,
+  "designCoverage": 0.5434782608695652,
+  "meta": {
+    "beforeLeafCount": 52,
+    "afterLeafCount": 46,
+    "identityCoverage": 0,
+    "matchCoverage": 0.4807692307692308,
+    "matchStrategy": "content+spatial-fallback",
+    "matchedCount": 25,
+    "plausibleMatchedCount": 25,
+    "changedCount": 25,
+    "unchangedCount": 0,
+    "addedCount": 21,
+    "removedCount": 27,
+    "neighbourRepaired": 0,
+    "neighbourReleased": 1
+  },
+  "matched": [
+    {
+      "beforeIndex": 15,
+      "afterIndex": 3,
+      "matchStrategy": "content",
+      "matchKey": "copy::agra / silver showroom",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.088,
+        0.204,
+        0.1767,
+        0.011
+      ],
+      "before": {
+        "content": "AGRA / SILVER SHOWROOM"
+      },
+      "after": {
+        "content": "AGRA / SILVER SHOWROOM"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "AGRA / SILVER SHOWROOM",
+          "after": "AGRA  /  SILVER SHOWROOM"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.088,
+            0.1638,
+            0.1242,
+            0.0137
+          ],
+          "after": [
+            0.088,
+            0.204,
+            0.1767,
+            0.011
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 11,
+          "after": 13.312000000000001
+        },
+        {
+          "field": "fontWeight",
+          "before": 500,
+          "after": 600
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#dce5df",
+          "after": "#e6e9e5"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(1)>div:nth-child(1)>p:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 16,
+      "afterIndex": 5,
+      "matchStrategy": "content",
+      "matchKey": "copy::silver, made meaningful.",
+      "plausible": true,
+      "changed": true,
+      "kind": "heading",
+      "box": [
+        0.088,
+        0.24,
+        0.276,
+        0.154
+      ],
+      "before": {
+        "content": "Silver, made meaningful."
+      },
+      "after": {
+        "content": "Silver, made meaningful."
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Silver, made meaningful.",
+          "after": "Silver, made\nmeaningful."
+        },
+        {
+          "field": "box",
+          "before": [
+            0.088,
+            0.1867,
+            0.2361,
+            0.1782
+          ],
+          "after": [
+            0.088,
+            0.24,
+            0.276,
+            0.154
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 69.89,
+          "after": 69.632
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "Bodoni Moda",
+          "after": "Cormorant Garamond"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(1)>div:nth-child(1)>h1",
+      "confident": true
+    },
+    {
+      "beforeIndex": 17,
+      "afterIndex": 6,
+      "matchStrategy": "content",
+      "matchKey": "copy::timeless pieces for everyday rituals, memorable occasions and the generations that follow.",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.088,
+        0.436,
+        0.2173,
+        0.065
+      ],
+      "before": {
+        "content": "Timeless pieces for everyday rituals, memorable occasions and the generations that follow."
+      },
+      "after": {
+        "content": "Timeless pieces for everyday rituals, memorable occasions and the generations that follow."
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Timeless pieces for everyday rituals, memorable occasions and the generations that follow.",
+          "after": "Timeless pieces for everyday rituals,\nmemorable occasions and the generations\nthat follow."
+        },
+        {
+          "field": "box",
+          "before": [
+            0.088,
+            0.3781,
+            0.2191,
+            0.0711
+          ],
+          "after": [
+            0.088,
+            0.436,
+            0.2173,
+            0.065
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 16,
+          "after": 16.384
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#dce5df",
+          "after": "#e2e6e2"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": ".hero-description",
+      "confident": true
+    },
+    {
+      "beforeIndex": 3,
+      "afterIndex": 9,
+      "matchStrategy": "content",
+      "matchKey": "copy::search",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.0593,
+        0.045,
+        0.03,
+        0.017
+      ],
+      "before": {
+        "content": "Search"
+      },
+      "after": {
+        "content": "Search"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.0514,
+            0.0405,
+            0.0282,
+            0.0176
+          ],
+          "after": [
+            0.0593,
+            0.045,
+            0.03,
+            0.017
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 14.336
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "center",
+          "after": "left"
+        }
+      ],
+      "selector": ".xl\\:inline",
+      "confident": true
+    },
+    {
+      "beforeIndex": 4,
+      "afterIndex": 10,
+      "matchStrategy": "content",
+      "matchKey": "copy::products",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.282,
+        0.045,
+        0.04,
+        0.012
+      ],
+      "before": {
+        "content": "Products"
+      },
+      "after": {
+        "content": "Products"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.33,
+            0.042,
+            0.0365,
+            0.0176
+          ],
+          "after": [
+            0.282,
+            0.045,
+            0.04,
+            0.012
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 13.312000000000001
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.paddingBottom",
+          "before": "14px"
+        },
+        {
+          "field": "style.paddingTop",
+          "before": "14px"
+        }
+      ],
+      "selector": "body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(1)>a",
+      "confident": true
+    },
+    {
+      "beforeIndex": 5,
+      "afterIndex": 11,
+      "matchStrategy": "content",
+      "matchKey": "copy::live rates",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.352,
+        0.045,
+        0.0453,
+        0.012
+      ],
+      "before": {
+        "content": "Live Rates"
+      },
+      "after": {
+        "content": "Live Rates"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.3874,
+            0.042,
+            0.0416,
+            0.0176
+          ],
+          "after": [
+            0.352,
+            0.045,
+            0.0453,
+            0.012
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 13.312000000000001
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.paddingBottom",
+          "before": "14px"
+        },
+        {
+          "field": "style.paddingTop",
+          "before": "14px"
+        }
+      ],
+      "selector": "body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(2)>a",
+      "confident": true
+    },
+    {
+      "beforeIndex": 11,
+      "afterIndex": 12,
+      "matchStrategy": "content",
+      "matchKey": "copy::our showroom",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.6,
+        0.045,
+        0.0653,
+        0.012
+      ],
+      "before": {
+        "content": "Our Showroom"
+      },
+      "after": {
+        "content": "Our Showroom"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.571,
+            0.042,
+            0.0611,
+            0.0176
+          ],
+          "after": [
+            0.6,
+            0.045,
+            0.0653,
+            0.012
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 13.312000000000001
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.paddingBottom",
+          "before": "14px"
+        },
+        {
+          "field": "style.paddingTop",
+          "before": "14px"
+        }
+      ],
+      "selector": "body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(1)>a",
+      "confident": true
+    },
+    {
+      "beforeIndex": 12,
+      "afterIndex": 13,
+      "matchStrategy": "content",
+      "matchKey": "copy::guides",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.6927,
+        0.045,
+        0.0313,
+        0.012
+      ],
+      "before": {
+        "content": "Guides"
+      },
+      "after": {
+        "content": "Guides"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.6529,
+            0.042,
+            0.0285,
+            0.0176
+          ],
+          "after": [
+            0.6927,
+            0.045,
+            0.0313,
+            0.012
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 13.312000000000001
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.paddingBottom",
+          "before": "14px"
+        },
+        {
+          "field": "style.paddingTop",
+          "before": "14px"
+        }
+      ],
+      "selector": "body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(2)>a",
+      "confident": true
+    },
+    {
+      "beforeIndex": 9,
+      "afterIndex": 14,
+      "matchStrategy": "content",
+      "matchKey": "copy::dda silver",
+      "plausible": false,
+      "changed": true,
+      "kind": "logo",
+      "box": [
+        0.464,
+        0.022,
+        0.0713,
+        0.063
+      ],
+      "before": {
+        "content": "DDA SILVER"
+      },
+      "after": {
+        "content": "DDA SILVER"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "text",
+          "after": "logo"
+        },
+        {
+          "field": "content",
+          "before": "DDA SILVER",
+          "after": "DDA\nSILVER"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.4635,
+            0.0544,
+            0.1086,
+            0.0361
+          ],
+          "after": [
+            0.464,
+            0.022,
+            0.0713,
+            0.063
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 24,
+          "after": 39.936
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "Bodoni Moda",
+          "after": "Cormorant Garamond"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#f3f5f1"
+        }
+      ],
+      "selector": "body>div:nth-child(4)>header>div>div:nth-child(2)>a>span:nth-child(3)>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 21,
+      "afterIndex": 18,
+      "matchStrategy": "content",
+      "matchKey": "copy::explore our collection",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.036,
+        0.624,
+        0.1387,
+        0.011
+      ],
+      "before": {
+        "content": "EXPLORE OUR COLLECTION"
+      },
+      "after": {
+        "content": "EXPLORE OUR COLLECTION"
+      },
+      "deltas": [
+        {
+          "field": "box",
+          "before": [
+            0.0313,
+            0.626,
+            0.1312,
+            0.0146
+          ],
+          "after": [
+            0.036,
+            0.624,
+            0.1387,
+            0.011
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 11.52,
+          "after": 11.264
+        },
+        {
+          "field": "fontWeight",
+          "before": 700,
+          "after": 600
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#092a25",
+          "after": "#44605b"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>div>p:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 22,
+      "afterIndex": 20,
+      "matchStrategy": "content",
+      "matchKey": "copy::timeless silver. for every moment.",
+      "plausible": true,
+      "changed": true,
+      "kind": "heading",
+      "box": [
+        0.0353,
+        0.658,
+        0.1867,
+        0.136
+      ],
+      "before": {
+        "content": "Timeless silver. For every moment."
+      },
+      "after": {
+        "content": "Timeless Silver. For Every Moment."
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Timeless silver. For every moment.",
+          "after": "Timeless\nSilver. For\nEvery Moment."
+        },
+        {
+          "field": "box",
+          "before": [
+            0.0313,
+            0.6546,
+            0.1825,
+            0.1556
+          ],
+          "after": [
+            0.0353,
+            0.658,
+            0.1867,
+            0.136
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 41.47,
+          "after": 48.128
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "Bodoni Moda",
+          "after": "Cormorant Garamond"
+        },
+        {
+          "field": "color",
+          "before": "#172622",
+          "after": "#123d37"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>div>h2",
+      "confident": true
+    },
+    {
+      "beforeIndex": 30,
+      "afterIndex": 33,
+      "matchStrategy": "content",
+      "matchKey": "copy::idols",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.5687,
+        0.85,
+        0.0253,
+        0.011
+      ],
+      "before": {
+        "content": "Idols"
+      },
+      "after": {
+        "content": "IDOLS"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Idols",
+          "after": "IDOLS"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.4194,
+            0.8366,
+            0.1212,
+            0.0176
+          ],
+          "after": [
+            0.5687,
+            0.85,
+            0.0253,
+            0.011
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 11.264
+        },
+        {
+          "field": "fontWeight",
+          "before": 400,
+          "after": 600
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#172622",
+          "after": "#46615c"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.display",
+          "before": "flex"
+        },
+        {
+          "field": "style.gap",
+          "before": "6px"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 45,
+      "afterIndex": 38,
+      "matchStrategy": "content",
+      "matchKey": "copy::utensils",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.7093,
+        0.85,
+        0.046,
+        0.011
+      ],
+      "before": {
+        "content": "Utensils"
+      },
+      "after": {
+        "content": "UTENSILS"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Utensils",
+          "after": "UTENSILS"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.4316,
+            0.9165,
+            0.0284,
+            0.0146
+          ],
+          "after": [
+            0.7093,
+            0.85,
+            0.046,
+            0.011
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 12,
+          "after": 11.264
+        },
+        {
+          "field": "fontWeight",
+          "before": 400,
+          "after": 600
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#172622",
+          "after": "#46615c"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>div>a:nth-child(5)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 36,
+      "afterIndex": 43,
+      "matchStrategy": "content",
+      "matchKey": "copy::gifts",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.8527,
+        0.85,
+        0.028,
+        0.011
+      ],
+      "before": {
+        "content": "Gifts"
+      },
+      "after": {
+        "content": "GIFTS"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "Gifts",
+          "after": "GIFTS"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.7048,
+            0.8366,
+            0.1212,
+            0.0176
+          ],
+          "after": [
+            0.8527,
+            0.85,
+            0.028,
+            0.011
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 11.264
+        },
+        {
+          "field": "fontWeight",
+          "before": 400,
+          "after": 600
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#172622",
+          "after": "#46615c"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        },
+        {
+          "field": "style.display",
+          "before": "flex"
+        },
+        {
+          "field": "style.gap",
+          "before": "6px"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 0,
+      "afterIndex": 0,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:1.000",
+      "plausible": true,
+      "changed": true,
+      "kind": "background",
+      "box": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "before": {},
+      "after": {
+        "content": "off-white page background"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "after": "off-white page background"
+        },
+        {
+          "field": "style.background",
+          "before": "#f2f5f1",
+          "after": "#f0f2f0"
+        }
+      ],
+      "selector": "body",
+      "confident": true
+    },
+    {
+      "beforeIndex": 14,
+      "afterIndex": 1,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.996",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0,
+        0.099,
+        1,
+        0.474
+      ],
+      "before": {},
+      "after": {
+        "content": "hero silver thali arrangement on marble with flowers"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "hero silver thali arrangement on marble with flowers"
+        },
+        {
+          "field": "box",
+          "before": [
+            0,
+            0.0996,
+            1,
+            0.4746
+          ],
+          "after": [
+            0,
+            0.099,
+            1,
+            0.474
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#0b3029"
+        },
+        {
+          "field": "style.display",
+          "before": "flex"
+        }
+      ],
+      "selector": ".home-hero",
+      "confident": true
+    },
+    {
+      "beforeIndex": 1,
+      "afterIndex": 7,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.996",
+      "plausible": false,
+      "changed": true,
+      "kind": "background",
+      "box": [
+        0,
+        0,
+        1,
+        0.1
+      ],
+      "before": {},
+      "after": {
+        "content": "dark green navigation bar"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "background"
+        },
+        {
+          "field": "content",
+          "after": "dark green navigation bar"
+        },
+        {
+          "field": "box",
+          "before": [
+            0,
+            0,
+            1,
+            0.0996
+          ],
+          "after": [
+            0,
+            0,
+            1,
+            0.1
+          ]
+        }
+      ],
+      "selector": ".z-40",
+      "confident": true,
+      "impliedPadding": [
+        {
+          "field": "style.paddingLeft",
+          "before": 48.1,
+          "after": 55.3,
+          "driftPx": 7.2,
+          "basis": "implied from 6 matched children"
+        },
+        {
+          "field": "style.paddingTop",
+          "before": 29,
+          "after": 22.5,
+          "driftPx": -6.5,
+          "basis": "implied from 6 matched children"
+        }
+      ]
+    },
+    {
+      "beforeIndex": 25,
+      "afterIndex": 22,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.884",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0.272,
+        0.635,
+        0.1287,
+        0.202
+      ],
+      "before": {},
+      "after": {
+        "content": "Pooja utensils collection product image"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "Pooja utensils collection product image"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.2656,
+            0.625,
+            0.1323,
+            0.2133
+          ],
+          "after": [
+            0.272,
+            0.635,
+            0.1287,
+            0.202
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#f4f1eb"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(1)>a>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 28,
+      "afterIndex": 27,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.827",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0.422,
+        0.635,
+        0.1233,
+        0.202
+      ],
+      "before": {},
+      "after": {
+        "content": "Coins collection product image"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "Coins collection product image"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.4194,
+            0.625,
+            0.1212,
+            0.1955
+          ],
+          "after": [
+            0.422,
+            0.635,
+            0.1233,
+            0.202
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#f4f1eb"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 31,
+      "afterIndex": 32,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.811",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0.566,
+        0.635,
+        0.1233,
+        0.202
+      ],
+      "before": {},
+      "after": {
+        "content": "Idols collection product image"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "Idols collection product image"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.5621,
+            0.625,
+            0.1212,
+            0.1955
+          ],
+          "after": [
+            0.566,
+            0.635,
+            0.1233,
+            0.202
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#f4f1eb"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(3)>a>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 34,
+      "afterIndex": 37,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.799",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0.7093,
+        0.635,
+        0.124,
+        0.202
+      ],
+      "before": {},
+      "after": {
+        "content": "Utensils collection product image"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "Utensils collection product image"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.7048,
+            0.625,
+            0.1212,
+            0.1955
+          ],
+          "after": [
+            0.7093,
+            0.635,
+            0.124,
+            0.202
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#f4f1eb"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 37,
+      "afterIndex": 42,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.787",
+      "plausible": false,
+      "changed": true,
+      "kind": "photo",
+      "box": [
+        0.8533,
+        0.635,
+        0.1233,
+        0.202
+      ],
+      "before": {},
+      "after": {
+        "content": "Gifts collection product image"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "photo"
+        },
+        {
+          "field": "content",
+          "after": "Gifts collection product image"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.8475,
+            0.625,
+            0.1212,
+            0.1955
+          ],
+          "after": [
+            0.8533,
+            0.635,
+            0.1233,
+            0.202
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#f4f1eb"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>nav>ul>li:nth-child(5)>a>span:nth-child(1)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 19,
+      "afterIndex": 2,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.464",
+      "plausible": false,
+      "changed": true,
+      "kind": "decoration",
+      "box": [
+        0,
+        0.099,
+        0.4653,
+        0.474
+      ],
+      "before": {},
+      "after": {
+        "content": "dark translucent hero copy backdrop"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "panel",
+          "after": "decoration"
+        },
+        {
+          "field": "content",
+          "after": "dark translucent hero copy backdrop"
+        },
+        {
+          "field": "box",
+          "before": [
+            0,
+            0.0996,
+            1,
+            0.4746
+          ],
+          "after": [
+            0,
+            0.099,
+            0.4653,
+            0.474
+          ]
+        },
+        {
+          "field": "style.background",
+          "before": "#efeee5",
+          "after": "rgba(7,38,32,0.72)"
+        },
+        {
+          "field": "style.clipPath",
+          "after": "polygon(0 0, 100% 0, 61% 100%, 0 100%)"
+        }
+      ],
+      "selector": ".home-hero-photo",
+      "confident": true
+    },
+    {
+      "beforeIndex": 23,
+      "afterIndex": 21,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.444",
+      "plausible": true,
+      "changed": true,
+      "kind": "text",
+      "box": [
+        0.036,
+        0.822,
+        0.1727,
+        0.083
+      ],
+      "before": {
+        "content": "For daily rituals, thoughtful gifts and the occasions you hold close."
+      },
+      "after": {
+        "content": "From sacred idols to everyday utensils, from cherished coins to thoughtful gifts — find silver pieces for every occasio…"
+      },
+      "deltas": [
+        {
+          "field": "content",
+          "before": "For daily rituals, thoughtful gifts and the occasions you hold close.",
+          "after": "From sacred idols to everyday utensils,\nfrom cherished coins to thoughtful gifts —\nfind silver pieces for every occasion\nand every generation."
+        },
+        {
+          "field": "box",
+          "before": [
+            0.0313,
+            0.8265,
+            0.1626,
+            0.0408
+          ],
+          "after": [
+            0.036,
+            0.822,
+            0.1727,
+            0.083
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14,
+          "after": 14.336
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans",
+          "after": "Montserrat"
+        },
+        {
+          "field": "color",
+          "before": "#53675e",
+          "after": "#78817e"
+        },
+        {
+          "field": "align",
+          "before": "start",
+          "after": "left"
+        }
+      ],
+      "selector": "#main-content>section:nth-child(2)>div>div>p:nth-child(3)",
+      "confident": true
+    },
+    {
+      "beforeIndex": 2,
+      "afterIndex": 8,
+      "matchStrategy": "spatial",
+      "matchKey": "iou:0.147",
+      "plausible": false,
+      "changed": true,
+      "kind": "icon",
+      "box": [
+        0.036,
+        0.041,
+        0.0153,
+        0.02
+      ],
+      "before": {
+        "content": "Search"
+      },
+      "after": {
+        "content": "search"
+      },
+      "deltas": [
+        {
+          "field": "kind",
+          "before": "button",
+          "after": "icon"
+        },
+        {
+          "field": "content",
+          "before": "Search",
+          "after": "search"
+        },
+        {
+          "field": "box",
+          "before": [
+            0.0313,
+            0.0283,
+            0.0484,
+            0.043
+          ],
+          "after": [
+            0.036,
+            0.041,
+            0.0153,
+            0.02
+          ]
+        },
+        {
+          "field": "fontSizePx",
+          "before": 14
+        },
+        {
+          "field": "fontWeight",
+          "before": 400
+        },
+        {
+          "field": "googleFontFamily",
+          "before": "IBM Plex Sans"
+        },
+        {
+          "field": "color",
+          "before": "#f2f5f1",
+          "after": "#d3dcd8"
+        },
+        {
+          "field": "align",
+          "before": "center"
+        },
+        {
+          "field": "style.display",
+          "before": "flex"
+        },
+        {
+          "field": "style.gap",
+          "before": "10px"
+        }
+      ],
+      "selector": ".header-search",
+      "confident": true
+    }
+  ],
+  "added": [
+    {
+      "kind": "divider",
+      "content": "hero eyebrow line",
+      "box": [
+        0.2793,
+        0.208,
+        0.0407,
+        0.001
+      ]
+    },
+    {
+      "kind": "icon",
+      "content": "user account",
+      "box": [
+        0.902,
+        0.04,
+        0.014,
+        0.022
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "vertical navigation divider",
+      "box": [
+        0.9333,
+        0.037,
+        0.0007,
+        0.028
+      ]
+    },
+    {
+      "kind": "icon",
+      "content": "shopping bag",
+      "box": [
+        0.9533,
+        0.04,
+        0.0127,
+        0.022
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "collection eyebrow line",
+      "box": [
+        0.186,
+        0.629,
+        0.0353,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "POOJA UTENSILS",
+      "box": [
+        0.2727,
+        0.85,
+        0.0813,
+        0.011
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "Pooja utensils label line",
+      "box": [
+        0.2733,
+        0.877,
+        0.024,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "RITUALS & TRADITION",
+      "box": [
+        0.272,
+        0.894,
+        0.0847,
+        0.01
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "collection card divider",
+      "box": [
+        0.41,
+        0.636,
+        0.0013,
+        0.29
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "COINS",
+      "box": [
+        0.4207,
+        0.85,
+        0.0307,
+        0.011
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "Coins label line",
+      "box": [
+        0.4213,
+        0.877,
+        0.024,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "A LASTING VALUE",
+      "box": [
+        0.4207,
+        0.895,
+        0.0667,
+        0.009
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "collection card divider",
+      "box": [
+        0.556,
+        0.636,
+        0.0013,
+        0.29
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "Idols label line",
+      "box": [
+        0.566,
+        0.877,
+        0.024,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "FAITH & BLESSINGS",
+      "box": [
+        0.5653,
+        0.895,
+        0.076,
+        0.009
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "collection card divider",
+      "box": [
+        0.6993,
+        0.636,
+        0.0007,
+        0.29
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "Utensils label line",
+      "box": [
+        0.7093,
+        0.877,
+        0.024,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "FOR EVERYDAY LIVING",
+      "box": [
+        0.7093,
+        0.895,
+        0.106,
+        0.009
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "collection card divider",
+      "box": [
+        0.8433,
+        0.636,
+        0.0007,
+        0.29
+      ]
+    },
+    {
+      "kind": "divider",
+      "content": "Gifts label line",
+      "box": [
+        0.8533,
+        0.877,
+        0.024,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "THOUGHTFUL & TIMELESS",
+      "box": [
+        0.8533,
+        0.895,
+        0.118,
+        0.009
+      ]
+    }
+  ],
+  "removed": [
+    {
+      "kind": "text",
+      "content": "DDA",
+      "box": [
+        0.4702,
+        0.0063,
+        0.0595,
+        0.0664
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "SILVER",
+      "box": [
+        0.4824,
+        0.0669,
+        0.0379,
+        0.0137
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.4635,
+        0.0786,
+        0.0007,
+        0.001
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Deen Dayal Anand Kumar Sarraf",
+      "box": [
+        0.4635,
+        0.0867,
+        0.0715,
+        0.0088
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Login",
+      "box": [
+        0.7905,
+        0.0405,
+        0.0405,
+        0.0186
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Explore products",
+      "box": [
+        0.088,
+        0.4808,
+        0.0989,
+        0.0186
+      ]
+    },
+    {
+      "kind": "photo",
+      "content": "An editorial arrangement of silver tableware on a sunlit stone table",
+      "box": [
+        0,
+        0.0996,
+        1,
+        0.4746
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Discover all silver",
+      "box": [
+        0.0313,
+        0.8935,
+        0.0944,
+        0.0176
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.2656,
+        0.625,
+        0.1323,
+        0.2133
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Coin",
+      "box": [
+        0.2656,
+        0.8545,
+        0.1323,
+        0.0176
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.4194,
+        0.625,
+        0.1212,
+        0.1955
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.5621,
+        0.625,
+        0.1212,
+        0.1955
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Purse",
+      "box": [
+        0.5621,
+        0.8366,
+        0.1212,
+        0.0176
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.7048,
+        0.625,
+        0.1212,
+        0.1955
+      ]
+    },
+    {
+      "kind": "photo",
+      "box": [
+        0.8475,
+        0.625,
+        0.1212,
+        0.1955
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Boxes",
+      "box": [
+        0.8475,
+        0.8366,
+        0.1212,
+        0.0176
+      ]
+    },
+    {
+      "kind": "panel",
+      "box": [
+        0.2656,
+        0.8969,
+        0.7031,
+        0.0361
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Also discover",
+      "box": [
+        0.2656,
+        0.9165,
+        0.0466,
+        0.0146
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Singhasan",
+      "box": [
+        0.3239,
+        0.9165,
+        0.0361,
+        0.0146
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Hatri",
+      "box": [
+        0.3717,
+        0.9165,
+        0.0173,
+        0.0146
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Jhula",
+      "box": [
+        0.4007,
+        0.9165,
+        0.0192,
+        0.0146
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Gold Coins & Bars",
+      "box": [
+        0.4717,
+        0.9165,
+        0.0628,
+        0.0146
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Phone Covers",
+      "box": [
+        0.5462,
+        0.9165,
+        0.048,
+        0.0146
+      ]
+    },
+    {
+      "kind": "panel",
+      "box": [
+        0,
+        0.9848,
+        1,
+        0.7297
+      ]
+    },
+    {
+      "kind": "panel",
+      "box": [
+        0.7872,
+        0.9219,
+        0.1971,
+        0.0547
+      ]
+    },
+    {
+      "kind": "panel",
+      "box": [
+        0.8009,
+        0.9336,
+        0.0208,
+        0.0313
+      ]
+    },
+    {
+      "kind": "text",
+      "content": "Confirm availability on WhatsApp",
+      "box": [
+        0.8296,
+        0.9404,
+        0.1412,
+        0.0176
+      ]
+    }
+  ]
+}

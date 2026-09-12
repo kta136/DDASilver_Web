@@ -1,0 +1,85 @@
+{
+  "title": "DDA Silver — The Silver House",
+  "date": "2026-09-12",
+  "status": "Homepage B selected by user; existing branch studies are C-based",
+  "generator": "12ui Design, operated by the user-requested Luna subagent",
+  "selected": "B",
+  "selectedBy": "user",
+  "selectionScope": "Homepage visual direction; not approval of invented content or unsupported functionality",
+  "recommended": "B",
+  "limitations": "Existing page studies derive from C and have not been regenerated for B. 12ui returned insufficient_funds for three remaining mobile screens. No production implementation or deployment. Generated content requires factual and asset correction.",
+  "items": [
+    {
+      "title": "Homepage B — selected by you",
+      "type": "Desktop",
+      "file": "fresh-design/draft-run/candidates/B.png",
+      "note": "User-selected homepage direction: dark single-row centered masthead, monumental editorial hero and light collection panels. Preserve this composition for future work. Use the actual DDA logo and product assets, add a clear browse action, and replace the unsupported shopping-bag icon with the existing enquiry action."
+    },
+    {
+      "title": "Homepage — collection section",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/a.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Layout study. Generated objects, collection labels and the handcrafted claim are not verified inventory or approved copy."
+    },
+    {
+      "title": "Homepage — resources, showroom and footer",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/b.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Content correction required: generated Bengaluru address, phone numbers, email and showroom interior are false placeholders. Replace with verified Agra details and real imagery."
+    },
+    {
+      "title": "Products — new catalog layout",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/c.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Layout study with all 11 category entries and a three-column grid. Generated product pictures, custom-order claim and footer contact details are not approved. Sort/view controls are proposals, not working features."
+    },
+    {
+      "title": "Product detail — gallery spread",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/d.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Content correction required: generated round Lakshmi coin does not match the real oval Anniversary coin; reference and footer details are wrong. The proposed information hierarchy is the review subject."
+    },
+    {
+      "title": "Rates — table layout study",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/e.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. REJECTED FOR FACTUAL CONTENT. All displayed rates and freshness labels are invented, not current or historical quotes. Use only to discuss layout; replace figures with the real feed or an unavailable state. Footer is also incorrect."
+    },
+    {
+      "title": "Our Showroom — contact layout",
+      "type": "Desktop",
+      "file": "fresh-design/branch-desktop/branch/screens/f.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Main Agra address, hours and phone details follow the brief. Footer contact details are incorrect; interior and map are generated illustrations, not actual premises or reliable directions."
+    },
+    {
+      "title": "Portrait collection discovery study",
+      "type": "Portrait",
+      "file": "fresh-design/branch-mobile/branch/screens/a.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Exploration, not a verified 390px mobile layout. Three columns and small captions require a true phone-width refinement. Product pictures are generated placeholders."
+    },
+    {
+      "title": "Portrait catalog study",
+      "type": "Portrait",
+      "file": "fresh-design/branch-mobile/branch/screens/b.png",
+      "note": "Earlier C-based study; not yet adapted to selected Homepage B. Exploration only. Generated purity, weight, material and handcrafted labels are unverified and some conflict with the real product. Native-style status bar and touch sizing need mobile-web refinement."
+    },
+    {
+      "title": "Alternative homepage — A",
+      "type": "Alternative",
+      "file": "fresh-design/draft-run/candidates/A.png",
+      "note": "Unselected visual exploration. C was the former recommendation, superseded by the user selection of B. Generated assets and copy remain placeholders."
+    },
+    {
+      "title": "Alternative homepage — C",
+      "type": "Alternative",
+      "file": "fresh-design/draft-run/candidates/C.png",
+      "note": "Unselected visual exploration. C was the former recommendation, superseded by the user selection of B. Generated assets and copy remain placeholders."
+    },
+    {
+      "title": "Alternative homepage — D",
+      "type": "Alternative",
+      "file": "fresh-design/draft-run/candidates/D.png",
+      "note": "Unselected visual exploration. C was the former recommendation, superseded by the user selection of B. Generated assets and copy remain placeholders."
+    }
+  ]
+}

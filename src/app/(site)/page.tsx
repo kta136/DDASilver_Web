@@ -10,7 +10,7 @@ import { CategoryIndex } from "@/components/catalog/category-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
 import { getHomepageCategories } from "@/lib/homepage-categories";
-import { createPageMetadata, defaultSocialImage } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { getHomepageCatalog } from "@/sanity/lib/catalog";
@@ -33,68 +33,44 @@ export default async function HomePage() {
 
   return (
     <main id="main-content">
-      <section className="border-b border-line">
-        <div className="grid lg:min-h-[23.5rem] lg:grid-cols-2 min-[90rem]:min-h-[28.25rem]">
-          <div className="flex items-center px-5 py-10 sm:px-10 sm:py-14 lg:px-[clamp(5rem,8vw,7.5rem)] lg:py-6">
-            <div className="max-w-xl">
-              <p className="eyebrow">Heritage. Silver. Trust.</p>
-              <h1 className="font-display text-balance mt-3 text-[clamp(2.85rem,13vw,3.25rem)] font-semibold leading-[0.9] tracking-[-0.035em] lg:text-[clamp(2.9rem,3.65vw,4.5rem)]">
-                DDA Silver,
-                <br />
-                Agra&apos;s trusted family destination for purity, craftsmanship
-                &amp; trust.
-              </h1>
-              <p className="mt-5 max-w-[23rem] text-sm leading-6 text-ink-muted">
-                Discover silver jewellery, coins, pooja pieces, thoughtful
-                gifts, and homeware—selected with care for modern Indian
-                families.
-              </p>
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/products"
-                  className="button-primary home-hero-button no-underline"
-                >
-                  Explore products
-                  <ArrowRightIcon size={18} aria-hidden="true" />
-                </Link>
-                <Link
-                  href="/rates"
-                  className="button-secondary home-hero-button no-underline"
-                >
-                  View live rates
-                  <ArrowRightIcon size={18} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <Link
-            href="/products/multicolor-enamel-petal-thali-set-9in-765g"
-            aria-label="View the multicolor enamel silver pooja thali set"
-            className="relative min-h-[22rem] overflow-hidden bg-[#f7f3ed] sm:min-h-[27rem] lg:min-h-full"
-          >
-            <Image
-              src={defaultSocialImage.src}
-              alt={defaultSocialImage.alt}
-              fill
-              fetchPriority="high"
-              sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-contain"
-              style={{ objectPosition: "center" }}
-            />
+      <section className="home-hero">
+        <div className="home-hero-copy">
+          <p className="eyebrow">Agra / Silver showroom</p>
+          <h1>
+            Silver, made
+            <br />
+            meaningful.
+          </h1>
+          <p className="hero-description">
+            Timeless pieces for everyday rituals, memorable occasions and the
+            generations that follow.
+          </p>
+          <Link href="/products" className="hero-cta">
+            Explore products <ArrowRightIcon size={19} aria-hidden="true" />
           </Link>
+        </div>
+        <div className="home-hero-photo">
+          <Image
+            src="/images/design/homepage-b-editorial.png"
+            alt="An editorial arrangement of silver tableware on a sunlit stone table"
+            fill
+            fetchPriority="high"
+            loading="eager"
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
       <CategoryIndex categories={homepageCategories} />
 
-      <section className="border-b border-line bg-paper-strong">
-        <div className="px-5 py-12 sm:px-10 lg:px-[max(3rem,calc((100vw-90rem)/2))] min-[90rem]:py-6">
+      <section className="section-shell border-b border-line bg-paper-strong">
+        <div className="site-container">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p className="eyebrow">Featured silver</p>
-              <h2 className="font-display mt-3 text-[clamp(2.5rem,2.6vw,2.75rem)] font-semibold leading-none">
-                Timeless pieces, thoughtful details.
+              <h2 className="font-display mt-3 text-[clamp(2.5rem,3.5vw,3.5rem)] font-normal leading-none">
+                Objects to treasure.
               </h2>
             </div>
             <Link
@@ -105,10 +81,32 @@ export default async function HomePage() {
               <ArrowRightIcon size={18} aria-hidden="true" />
             </Link>
           </div>
-          <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 min-[90rem]:mt-4">
+          <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 ">
             {featured.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="rates-invitation">
+        <div className="site-container">
+          <div>
+            <p className="eyebrow">A clearer view of silver</p>
+            <h2>
+              Know the rate.
+              <br />
+              Choose with confidence.
+            </h2>
+          </div>
+          <div>
+            <p>
+              Follow the latest displayed silver rates, then speak with our team
+              about the piece you have in mind.
+            </p>
+            <Link href="/rates" className="hero-cta">
+              View live rates <ArrowRightIcon size={19} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
@@ -117,7 +115,7 @@ export default async function HomePage() {
         <div className="site-container grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <p className="eyebrow">Visit DDA Silver</p>
-            <h2 className="font-display text-balance mt-4 text-6xl font-semibold leading-[0.95]">
+            <h2 className="font-display text-balance mt-4 text-5xl font-normal leading-[1.1]">
               See the collection in Agra.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-ink-muted">
@@ -181,6 +179,26 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="section-shell border-t border-line">
+        <div className="site-container guide-invitation">
+          <div>
+            <p className="eyebrow">The silver journal</p>
+            <h2 className="font-display mt-4 text-4xl sm:text-5xl">
+              A little knowledge. A lasting choice.
+            </h2>
+          </div>
+          <div>
+            <p className="mb-6 leading-7 text-ink-muted">
+              Understand silver purity, care for your pieces and find a gift
+              with meaning.
+            </p>
+            <Link href="/guides" className="text-link">
+              Read our buying guides{" "}
+              <ArrowRightIcon size={18} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
       <AppPromo />
 
       <a

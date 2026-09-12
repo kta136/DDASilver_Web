@@ -11,15 +11,15 @@ export function AppPromo() {
     <section className="section-shell border-t border-line bg-ink text-white">
       <div className="site-container grid items-center gap-10 lg:grid-cols-[1fr_auto]">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d99482]">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c4ceca]">
             DDA Silver app
           </p>
-          <h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[0.95] sm:text-6xl">
+          <h2 className="font-display mt-4 max-w-3xl text-4xl font-normal leading-[1.12] sm:text-5xl">
             Silver rates and showroom discovery, wherever you are.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/70">
-            Use the existing DDA Silver app to check rates, browse gallery
-            updates, and find showroom information.
+            Use the DDA Silver app to check rates, browse gallery updates, and
+            find showroom information.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -27,7 +27,7 @@ export function AppPromo() {
             href={siteConfig.androidUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-14 items-center gap-3 rounded-full border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
+            className="inline-flex min-h-14 items-center gap-3 rounded-sm border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
             data-analytics="app_store_click"
             data-analytics-platform="android"
             data-analytics-placement="home_app_promo"
@@ -40,7 +40,7 @@ export function AppPromo() {
             href={siteConfig.iosUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-14 items-center gap-3 rounded-full border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
+            className="inline-flex min-h-14 items-center gap-3 rounded-sm border border-white/25 px-5 font-semibold no-underline hover:bg-white hover:text-ink"
             data-analytics="app_store_click"
             data-analytics-platform="ios"
             data-analytics-placement="home_app_promo"

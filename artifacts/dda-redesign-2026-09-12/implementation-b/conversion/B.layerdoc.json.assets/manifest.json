@@ -1,0 +1,111 @@
+{
+  "conversionId": "78c229ea-6100-474f-a0f7-a18ac1a5179a",
+  "operationExpiresAt": "2026-09-19T11:30:51.699Z",
+  "manifestFile": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\manifest.json",
+  "artifacts": [
+    {
+      "id": "clean-1",
+      "role": "cleaned-plate",
+      "mediaType": "image/png",
+      "sha256": "149a5afce9eb67c0c14bdb9d5da99a1129f1e87b421ddc7653dd0417bf034062",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=clean-1&expires=1789817451&signature=8sUsTneDkDjUZhHSI6Y3-5sY8coyqhtxLohOfGPvHXU",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\clean-1-149a5afce9eb.png"
+    },
+    {
+      "id": "crop-22",
+      "role": "layer-crop",
+      "mediaType": "image/png",
+      "sha256": "a5723715a6dd4a4f5b7b08260544287af5c436ec6b679aa5cd16a278ced3353f",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=crop-22&expires=1789817451&signature=n88A2YeZQM8XH2DtBjl2qbAiUVarUZ0-9uQYgqg8dkA",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\crop-22-a5723715a6dd.png"
+    },
+    {
+      "id": "crop-27",
+      "role": "layer-crop",
+      "mediaType": "image/png",
+      "sha256": "904fa47123f64504122664228b4898c4c843713e630b35387fa1763ba272a49c",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=crop-27&expires=1789817451&signature=Cz6WvjLvLzPGYnGL_0LTk_knZ9bQM7kDOaeWF_ytOr4",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\crop-27-904fa47123f6.png"
+    },
+    {
+      "id": "crop-32",
+      "role": "layer-crop",
+      "mediaType": "image/png",
+      "sha256": "f260f3b27d1e60c4663602db03e1f939edbf6c8e324d324dd9b42960ab2b9f72",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=crop-32&expires=1789817451&signature=YPdPfV8H2aqhetTNNkiL0JmHCvAIkmiFy8HzLz7iXG8",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\crop-32-f260f3b27d1e.png"
+    },
+    {
+      "id": "crop-37",
+      "role": "layer-crop",
+      "mediaType": "image/png",
+      "sha256": "afc6f20f546ead78cac737fe471cbeec7bd38f5800162509ade9b81e3e944104",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=crop-37&expires=1789817451&signature=G2xthgD-QmxutIohtPmNEhd90tmyjzgMqyTRv6FwAN4",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\crop-37-afc6f20f546e.png"
+    },
+    {
+      "id": "crop-42",
+      "role": "layer-crop",
+      "mediaType": "image/png",
+      "sha256": "9f2a054beb15e8d758d55af4ceb1039e535b2476aeb06eb9bf63724bf2e02ea9",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=crop-42&expires=1789817451&signature=o7tcmk6FJCI2qo5GrzCnfcsxI4fTI_Q-kpAiT1pGcKY",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\crop-42-9f2a054beb15.png"
+    },
+    {
+      "id": "source",
+      "role": "source",
+      "mediaType": "image/png",
+      "sha256": "762f0cb8253bd0e48b3ecdd24ef1f21455dac355f2eb6b70cecfce35f640e82d",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=source&expires=1789817451&signature=FtwKZcJeL9M9PbapMKHCfx7mtSsfdM6qJgHVdLq_IVY",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\source-762f0cb8253b.png"
+    },
+    {
+      "id": "upscaled-plate-1",
+      "role": "upscaled-plate",
+      "mediaType": "image/png",
+      "sha256": "3c8eead9cda6d61c89ae0749e14aad055b7c2267062eabc5bbbdb67a74ef274d",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-plate-1&expires=1789817451&signature=ZJusklv9fgQx-jvtqcozCTtD3wIhxrUH4JPlveX2AHk",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-plate-1-3c8eead9cda6.png"
+    },
+    {
+      "id": "upscaled-region-22",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "b9968f2ea841d12055aa42a3e428e4d3f26673c8def097583a8fc5de60d6c058",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-region-22&expires=1789817451&signature=908bmtiYGqRgtgAYJ6rX18gIVrm4C4h1pHHqPsu0vjI",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-region-22-b9968f2ea841.png"
+    },
+    {
+      "id": "upscaled-region-27",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "e41c3e64c36160d19f99da8b73bdcbf846762aa331165364d1e76fe5bcdfdfdc",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-region-27&expires=1789817451&signature=WNgK9Ooz_lztzXM0q7CQqKElMVK2vCRXw3gKaA93eF4",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-region-27-e41c3e64c361.png"
+    },
+    {
+      "id": "upscaled-region-32",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "d49dd818c1b325439072c704d86136dee75f316de0348c010aa15db4fb81e7f5",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-region-32&expires=1789817451&signature=DsCH1t33MRi0bFLOI4OgvsMBkYnWdBJhklRPBvIYP5w",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-region-32-d49dd818c1b3.png"
+    },
+    {
+      "id": "upscaled-region-37",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "0793404513dc823bd95393b3c9c0a8c1a29ab1ab24575de1e7693d996b9e1dc4",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-region-37&expires=1789817451&signature=WRoKyGX9AVXKP18MzT8dyh778b6pqa1q8hi-clgu-sk",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-region-37-0793404513dc.png"
+    },
+    {
+      "id": "upscaled-region-42",
+      "role": "upscaled-region",
+      "mediaType": "image/png",
+      "sha256": "244739cd610b455123a6ed106d9cd8b94eb8f8b37b9674bea9daedfe37ea995b",
+      "sourceHref": "https://12ui.com/api/v1/convert/78c229ea-6100-474f-a0f7-a18ac1a5179a?artifact=upscaled-region-42&expires=1789817451&signature=rg_5uJ_e6emkHpg2u8tB4NBBSNpJ26PPw8KJrw6d8hQ",
+      "localPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json.assets\\upscaled-region-42-244739cd610b.png"
+    }
+  ]
+}

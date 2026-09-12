@@ -1,0 +1,209 @@
+{
+  "version": 2,
+  "createdAt": "2026-09-12T09:32:54.470Z",
+  "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw",
+  "query": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep only the same product: its name and wordmark, and what it is. The brief decides how much of the page's other text and control copy survives; invent no product facts, features, prices, or data. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+  "mode": "exploratory-redesign",
+  "aspect": "landscape",
+  "referenceMode": "inspiration",
+  "imageProfile": "standard",
+  "retain": {
+    "include": [
+      "assets"
+    ],
+    "exclude": [
+      "content",
+      "layout",
+      "style"
+    ],
+    "source": "subject"
+  },
+  "origin": "https://12ui.com",
+  "redesignSource": {
+    "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+    "sha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b"
+  },
+  "corpus": {
+    "query": "Redesign as a contemporary silver showroom. Short headline: Silver for everyday rituals and lasting gifts. Compact 80px header; asymmetric 5/7 hero with the original photo on its unchanged ivory watermark background; add no props. Cormorant headings, Manrope utilities, copper primary CTA, ink-outline secondary, 4–6px corners. Replace the sprawling category grid with one compact navigator; bring featured products into the opening viewport. Warm paper, charcoal ink, fine copper rules. Keep DDA identity; invent no facts, products or controls. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep only the same product: its name and wordmark, and what it is. The brief decides how much of the page's other text and control copy survives; invent no product facts, features, prices, or data. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+    "mode": "balanced",
+    "setId": "20260912-0",
+    "idempotencyKey": "draft-corpus:v1:817392c482380342e43768de",
+    "manifestPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\manifest.json",
+    "references": [
+      {
+        "ordinal": 1,
+        "id": "gen-rtrack-o47-s04-j355-direction-structural",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\01-gen-rtrack-o47-s04-j355-direction-structural.webp",
+        "sha256": "33b842675db5b604c9bd65b0a48c2fcf752d11b679035124d2a653147a0d0604",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 1
+        }
+      },
+      {
+        "ordinal": 2,
+        "id": "gen-rtrack-o42-s02-j457-structural-counterfactual",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\02-gen-rtrack-o42-s02-j457-structural-counterfactual.webp",
+        "sha256": "3a8ed16ef4e85e51280f7a9d0dc8b68fbf95dcb2ea042abe984354b831c43445",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 2
+        }
+      },
+      {
+        "ordinal": 3,
+        "id": "gen-rtrack-o47-s08-j298-direction-structural",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\03-gen-rtrack-o47-s08-j298-direction-structural.webp",
+        "sha256": "c87a706ea85027aa4000a7078c8dd6f36a8117b27f1be63a108f0446e96236e1",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 3
+        }
+      },
+      {
+        "ordinal": 4,
+        "id": "gen-rtrack-o45-s02-j013-direction-structural",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\04-gen-rtrack-o45-s02-j013-direction-structural.webp",
+        "sha256": "943cda701cc6137bd2b781f3628ef6defa9cae3a5a1444b9e84b48dbb6f1bfeb",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 4
+        }
+      },
+      {
+        "ordinal": 5,
+        "id": "gen-rtrack-o40-s02-j359-target-board-minimal",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\05-gen-rtrack-o40-s02-j359-target-board-minimal.webp",
+        "sha256": "78b0c5ac457b23422a0a78fca22693c4c16b8c96ba247c523f1bcbb9e9b69d54",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 5
+        }
+      },
+      {
+        "ordinal": 6,
+        "id": "gen-rtrack-o47-s03-j373-direction-structural",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\06-gen-rtrack-o47-s03-j373-direction-structural.webp",
+        "sha256": "df4f2404762404ebbdeeabbecaa622d33bbd1c8e565665f2e83853dfb2b7b488",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 6
+        }
+      },
+      {
+        "ordinal": 7,
+        "id": "gen-rtrack-o44-s01-j212-frontier-structure",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\07-gen-rtrack-o44-s01-j212-frontier-structure.webp",
+        "sha256": "6cbbfa3b6e7f302311cb6402d18ce6d949652150a821dabf71ef34d1382fafc0",
+        "aspect": "portrait",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 7
+        }
+      },
+      {
+        "ordinal": 8,
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b06-j296-factor-splice",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\08-gen-rtrack-o52-adaptive-qd-wave-1-b06-j296-factor-splice.webp",
+        "sha256": "bdcb9c870b182891b5a51c6e98f77ee21c32fe7c5e6b9dbc84564a442f7d9096",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 8
+        }
+      },
+      {
+        "ordinal": 9,
+        "id": "gen-rtrack-o47-s07-j115-direction-structural",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\09-gen-rtrack-o47-s07-j115-direction-structural.webp",
+        "sha256": "f2c83b83aba2da4e65412efe46316fa8d87eddc59c57ffa84bbbfdf7ebb615ff",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 9
+        }
+      },
+      {
+        "ordinal": 10,
+        "id": "gen-rtrack-o44-s01-j482-frontier-system",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\10-gen-rtrack-o44-s01-j482-frontier-system.webp",
+        "sha256": "438df2327974b484e299a1006ac95e3bc4ac77f8b893113b375d0680d992df9a",
+        "aspect": "portrait",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 10
+        }
+      },
+      {
+        "ordinal": 11,
+        "id": "gen-remix-surprise-607c612bb7dc1b1fbbfc6c79",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\11-gen-remix-surprise-607c612bb7dc1b1fbbfc6c79.webp",
+        "sha256": "188ab145aa72704aaa732570ee5fe4efddc8ca0fb59d5e6ae9daeda61e3d8b71",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 11
+        }
+      },
+      {
+        "ordinal": 12,
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b08-j284-factor-splice",
+        "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\references\\12-gen-rtrack-o52-adaptive-qd-wave-1-b08-j284-factor-splice.webp",
+        "sha256": "079eb1851add1bc9ea541625f63dab989fd9f5d973db45eefd361a6c5af00cf1",
+        "aspect": "portrait",
+        "evidence": {
+          "clientQueryId": "corpus-query:97fc83911839e04c915adacb40616111a4b11dd997d3ba0ce1fe77794e917227",
+          "rank": 12
+        }
+      }
+    ]
+  },
+  "hosted": {
+    "runId": "crt-6a22d82bb0a30ecc1ca96d85fdbc6a84d01076f6",
+    "idempotencyKey": "draft:hosted-v1:d66aba731fd1ebee7c9329b202e67407",
+    "candidates": [
+      {
+        "id": "A",
+        "slot": "a",
+        "direction": "Asymmetric 5/7 showroom hero, warm ivory paper, charcoal ink, copper accents",
+        "outputPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\A.png",
+        "referenceId": null,
+        "referencePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+        "referenceSha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b"
+      },
+      {
+        "id": "B",
+        "slot": "b",
+        "direction": "Compact editorial storefront, ivory watermark hero, copper rules, featured-products-first",
+        "outputPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\B.png",
+        "referenceId": null,
+        "referencePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+        "referenceSha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b"
+      },
+      {
+        "id": "C",
+        "slot": "c",
+        "direction": "Single-column ritual gallery, warm paper neutrals, ink outlines, restrained copper CTA",
+        "outputPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\C.png",
+        "referenceId": null,
+        "referencePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+        "referenceSha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b"
+      },
+      {
+        "id": "D",
+        "slot": "d",
+        "direction": "Split product-led catalog, charcoal typography, ivory field, compact category navigator",
+        "outputPath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\D.png",
+        "referenceId": null,
+        "referencePath": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\source.png",
+        "referenceSha256": "ac1b667b4bea4c3fe5575f22a872c58f41bfd59a38ce5879324fcad6b7ca2f6b"
+      }
+    ]
+  }
+}

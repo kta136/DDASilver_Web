@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  CaretLeftIcon,
-  CaretRightIcon,
-} from "@phosphor-icons/react";
+import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import Image from "next/image";
 import {
@@ -129,6 +126,7 @@ export function ProductGallery({
               alt={image.alt}
               fill
               fetchPriority={highPriority && index === 0 ? "high" : undefined}
+              loading={highPriority && index === 0 ? "eager" : "lazy"}
               sizes="(max-width: 1024px) 100vw, 58vw"
               className={clsx(
                 containImages ? "object-contain" : "object-cover",

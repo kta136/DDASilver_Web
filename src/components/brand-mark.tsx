@@ -3,14 +3,28 @@ import Link from "next/link";
 
 type BrandMarkProps = {
   compact?: boolean;
+  masthead?: boolean;
 };
 
-export function BrandMark({ compact = false }: BrandMarkProps) {
+export function BrandMark({
+  compact = false,
+  masthead = false,
+}: BrandMarkProps) {
   return (
     <Link
       href="/"
-      className="inline-flex items-center gap-3 no-underline"
+      className={
+        masthead
+          ? "brand-masthead no-underline"
+          : "inline-flex items-center gap-3 no-underline"
+      }
     >
+      {masthead ? (
+        <span className="brand-masthead-type" aria-hidden="true">
+          <span>DDA</span>
+          <span>SILVER</span>
+        </span>
+      ) : null}
       <Image
         src="/brand/dda-family-mark-v1.webp"
         alt=""
@@ -18,10 +32,10 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
         height={346}
         sizes={compact ? "50px" : "(min-width: 1440px) 86px, 62px"}
         data-compact={compact}
-        className="brand-family-mark object-contain"
+        className={masthead ? "sr-only" : "brand-family-mark object-contain"}
       />
       <span
-        className={`flex min-w-0 flex-col justify-center border-l border-line text-ink ${
+        className={`${masthead ? "sr-only" : ""} flex min-w-0 flex-col justify-center border-l border-line text-ink ${
           compact ? "gap-0.5 pl-2.5" : "gap-1 pl-3"
         }`}
       >

@@ -12,8 +12,8 @@
 
 .rateSection {
   --rate-card-bg: var(--paper-strong);
-  --rate-card-border: #eae4da;
-  --rate-row-divider: #f1ece2;
+  --rate-card-border: #d0d9d2;
+  --rate-row-divider: #e6ece7;
   --rate-name-color: var(--ink);
   --rate-value-color: var(--ink);
   --rate-muted-color: var(--ink-muted);
@@ -54,7 +54,7 @@
 .rateTableFrame {
   width: 100%;
   overflow-x: auto;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .rateTable {
@@ -64,7 +64,7 @@
   border: 1px solid var(--rate-card-border);
   border-collapse: separate;
   border-spacing: 0;
-  border-radius: 10px;
+  border-radius: 2px;
   background: var(--rate-card-bg);
   box-shadow: 0 1px 3px rgba(15, 15, 14, 0.06);
   table-layout: fixed;
@@ -304,8 +304,8 @@
 .historyPanel {
   width: 100%;
   padding: clamp(0.9rem, 2vw, 1.25rem);
-  border: 1px solid #eae4da;
-  border-radius: 10px;
+  border: 1px solid #d0d9d2;
+  border-radius: 2px;
   background: var(--paper-strong);
   box-shadow: 0 1px 3px rgba(15, 15, 14, 0.06);
 }
@@ -505,7 +505,9 @@ div.historyState {
   fill: var(--paper);
   stroke: var(--copper-dark);
   stroke-width: 1.75;
-  transition: fill 140ms ease, stroke-width 140ms ease;
+  transition:
+    fill 140ms ease,
+    stroke-width 140ms ease;
   vector-effect: non-scaling-stroke;
 }
 
@@ -676,8 +678,8 @@ div.historyState {
   --source-ink: var(--ink);
   --source-ink-2: var(--ink-muted);
   --source-muted: #6d6863;
-  --source-hairline: #eae4da;
-  --source-hairline-soft: #f1ece2;
+  --source-hairline: #d0d9d2;
+  --source-hairline-soft: #e6ece7;
   --source-surface: var(--paper-strong);
   --source-up: var(--sage);
   --source-down: var(--copper-dark);
@@ -757,7 +759,7 @@ div.historyState {
   border: 1px solid var(--source-hairline);
   border-collapse: separate;
   border-spacing: 0;
-  border-radius: 10px;
+  border-radius: 2px;
   background: var(--source-surface);
   color: var(--source-ink);
   table-layout: fixed;
@@ -849,7 +851,7 @@ div.historyState {
 .marketCard {
   padding: 0.9rem;
   border: 1px solid var(--source-hairline);
-  border-radius: 10px;
+  border-radius: 2px;
   background: var(--source-surface);
   box-shadow: 0 1px 3px rgba(15, 15, 14, 0.04);
 }
@@ -936,7 +938,7 @@ div.historyState {
 
 .drawerHeader {
   padding: 1.15rem 1.25rem;
-  border-bottom: 1px solid #eae4da;
+  border-bottom: 1px solid #d0d9d2;
 }
 
 .drawerEyebrow {
@@ -1071,7 +1073,7 @@ div.historyState {
 
 .drawerFooter {
   padding: 0.9rem 1.25rem;
-  border-top: 1px solid #eae4da;
+  border-top: 1px solid #d0d9d2;
   color: var(--ink-muted);
   font-size: 0.7rem;
 }

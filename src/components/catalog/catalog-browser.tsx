@@ -84,6 +84,7 @@ export function CatalogBrowser({
         : getCatalogFilterAvailability(products, selected),
     [initialPage, products],
   );
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [page, setPage] = useState(initialPage?.page ?? 1);
   const [query, setQuery] = useState(initialFilters?.query ?? "");
   const [category, setCategory] = useState(
@@ -337,10 +338,11 @@ export function CatalogBrowser({
   }
 
   return (
-    <div aria-busy={remote.loading}>
+    <div className="catalog-browser" aria-busy={remote.loading}>
       <div
         className={clsx(
-          "grid gap-3 border-y border-line py-5 md:grid-cols-2",
+          "catalog-filter-grid grid gap-3 border-y border-line py-5 md:grid-cols-2",
+          filtersOpen && "filters-open",
           filterControlCount === 5 &&
             "lg:grid-cols-3 xl:grid-cols-[minmax(14rem,1fr)_repeat(4,minmax(8.5rem,11rem))]",
           filterControlCount === 4 &&
@@ -373,10 +375,18 @@ export function CatalogBrowser({
               }
             }}
             placeholder="Search designs"
-            className="min-h-14 w-full rounded-full border border-line bg-white pr-5 pl-12 text-sm outline-none focus:border-copper"
+            className="min-h-14 w-full rounded-sm border border-line bg-white pr-5 pl-12 text-sm outline-none focus:border-copper"
           />
         </label>
-
+        <button
+          type="button"
+          className="catalog-filter-toggle"
+          aria-expanded={filtersOpen}
+          onClick={() => setFiltersOpen(!filtersOpen)}
+        >
+          {filtersOpen ? "Hide filters" : "Filters"}{" "}
+          <span aria-hidden="true">{filtersOpen ? "−" : "+"}</span>
+        </button>
         <label>
           <span className="sr-only">Filter by category</span>
           <select
@@ -415,7 +425,7 @@ export function CatalogBrowser({
               }
               trackFilter("category", nextCategory);
             }}
-            className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+            className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
           >
             <option value="">All categories</option>
             {availableCategories.map((item) => (
@@ -437,7 +447,7 @@ export function CatalogBrowser({
                 setPurity(nextPurity);
                 trackFilter("purity", nextPurity);
               }}
-              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+              className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All purities</option>
               {availablePurityOptions.map(([value, label]) => (
@@ -462,7 +472,7 @@ export function CatalogBrowser({
                 setIdolConstruction(nextIdolConstruction);
                 trackFilter("idol_construction", nextIdolConstruction);
               }}
-              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+              className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All constructions</option>
               {availableIdolConstructionOptions.map(([value, label]) => (
@@ -485,7 +495,7 @@ export function CatalogBrowser({
                 setDeitySlug(nextDeitySlug);
                 trackFilter("deity", nextDeitySlug);
               }}
-              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+              className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All deities</option>
               {availableDeityOptions.map(([slug, title]) => (
@@ -508,7 +518,7 @@ export function CatalogBrowser({
                 setCoinShape(nextCoinShape);
                 trackFilter("coin_shape", nextCoinShape);
               }}
-              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+              className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All shapes</option>
               {availableCoinShapeOptions.map(([value, label]) => (
@@ -532,7 +542,7 @@ export function CatalogBrowser({
                 setUtensilType(nextUtensilType);
                 trackFilter("utensil_type", nextUtensilType);
               }}
-              className="min-h-14 w-full rounded-full border border-line bg-white px-5 text-sm outline-none focus:border-copper"
+              className="min-h-14 w-full rounded-sm border border-line bg-white px-5 text-sm outline-none focus:border-copper"
             >
               <option value="">All utensil items</option>
               {availableUtensilTypeOptions.map(([value, label]) => (
@@ -595,13 +605,14 @@ export function CatalogBrowser({
         </p>
       ) : null}
       {visibleProducts.length > 0 ? (
-        <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
-          {visibleProducts.map((product) => (
+        <div className="catalog-product-grid mt-7 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          {visibleProducts.map((product, index) => (
             <ProductCard
               key={product.slug}
               product={product}
               headingLevel={2}
               compactImage
+              highPriority={index < 2}
             />
           ))}
         </div>

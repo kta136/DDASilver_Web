@@ -83,7 +83,7 @@ export default async function CollectionPage({
         offset={(listing.result.page - 1) * listing.result.pageSize}
         products={collectionProducts}
       />
-      <section className="grid border-b border-line lg:min-h-[29rem] lg:grid-cols-2">
+      <section className="collection-landing grid border-b border-line lg:min-h-[29rem] lg:grid-cols-2">
         <div className="flex items-center px-5 py-10 sm:px-10 sm:py-12 lg:px-[max(3rem,calc((100vw-90rem)/2))]">
           <div>
             <Breadcrumbs
@@ -94,7 +94,7 @@ export default async function CollectionPage({
               ]}
             />
             <p className="eyebrow mt-7">Collection</p>
-            <h1 className="font-display mt-4 text-6xl font-semibold leading-[0.86] sm:text-7xl">
+            <h1 className="font-display mt-4 text-5xl font-normal leading-[1.1] sm:text-6xl">
               {collection.title}
             </h1>
             <p className="mt-5 max-w-xl text-base leading-8 text-ink-muted">
@@ -108,6 +108,7 @@ export default async function CollectionPage({
             alt={collection.heroImage.alt}
             fill
             fetchPriority="high"
+            loading="eager"
             sizes="(max-width: 1023px) 100vw, 50vw"
             className="object-contain"
             style={{

@@ -5,6 +5,8 @@ import {
   AppleLogoIcon,
   CaretDownIcon,
   ListIcon,
+  MagnifyingGlassIcon,
+  WhatsappLogoIcon,
   SignOutIcon,
   UserCircleIcon,
   XIcon,
@@ -15,22 +17,31 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
+import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { siteConfig } from "@/lib/site";
 
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Live Rates", href: "/rates" },
-  { label: "About", href: "/about" },
+  { label: "Our Showroom", href: "/about" },
+  { label: "Guides", href: "/guides" },
   { label: "Contact", href: "/contact" },
 ];
 
 type AccountState =
   { status: "guest" } | { status: "user"; name: string; authStatus: string };
 
-export function SiteHeader() {
+export function SiteHeader({
+  loginAvailable = true,
+}: {
+  loginAvailable?: boolean;
+}) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchToggle = useRef<HTMLButtonElement>(null);
+  const menuToggle = useRef<HTMLButtonElement>(null);
   const [account, setAccount] = useState<AccountState>({ status: "guest" });
 
   useEffect(() => {
@@ -85,82 +96,70 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="relative z-40 border-b border-line bg-paper/95 backdrop-blur">
-      <div
-        className="bg-ink text-white lg:hidden"
-        data-testid="mobile-app-download-bar"
-      >
-        <div className="site-container flex min-h-12 items-center justify-between gap-3 py-1.5">
-          <p className="min-w-0 text-xs font-semibold leading-tight">
-            Download DDA Silver app
-          </p>
-          <div className="flex shrink-0 items-center gap-2">
-            <a
-              href={siteConfig.androidUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Download DDA Silver for Android"
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
-              data-analytics="app_store_click"
-              data-analytics-platform="android"
-              data-analytics-placement="mobile_app_bar"
-            >
-              <AndroidLogoIcon size={16} aria-hidden="true" />
-              Android
-            </a>
-            <a
-              href={siteConfig.iosUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Download DDA Silver for iPhone"
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
-              data-analytics="app_store_click"
-              data-analytics-platform="ios"
-              data-analytics-placement="mobile_app_bar"
-            >
-              <AppleLogoIcon size={16} aria-hidden="true" />
-              iPhone
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="site-container flex min-h-20 items-center justify-between gap-6 min-[90rem]:min-h-[6.25rem]">
-        <BrandMark />
-
-        <div className="hidden items-center gap-7 lg:flex">
-          <nav aria-label="Primary navigation">
-            <ul className="flex items-center gap-9">
-              {navigation.map((item) => {
-                const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
-
-                return (
+    <header
+      className="site-header relative z-40"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setSearchOpen(false);
+          setIsOpen(false);
+          if (isOpen) menuToggle.current?.focus();
+          else if (searchOpen) searchToggle.current?.focus();
+        }
+      }}
+    >
+      <div className="masthead site-container">
+        <div className="masthead-left">
+          <button
+            ref={searchToggle}
+            type="button"
+            className="header-search"
+            aria-label="Search the collection"
+            aria-expanded={searchOpen}
+            aria-controls="site-search"
+            onClick={() => {
+              setSearchOpen(!searchOpen);
+              setIsOpen(false);
+            }}
+          >
+            <MagnifyingGlassIcon size={21} aria-hidden="true" />
+            <span className="hidden xl:inline">Search</span>
+          </button>
+          <nav aria-label="Primary navigation" className="hidden lg:block">
+            <ul className="flex items-center gap-8">
+              {navigation
+                .filter(
+                  (item) => item.href === "/products" || item.href === "/rates",
+                )
+                .map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      aria-current={isActive ? "page" : undefined}
-                      className={clsx(
-                        "relative py-3 text-sm font-semibold no-underline transition-colors hover:text-copper-dark",
-                        isActive ? "text-ink" : "text-ink-muted",
-                      )}
+                      aria-current={
+                        pathname.startsWith(item.href) ? "page" : undefined
+                      }
                     >
                       {item.label}
-                      {isActive ? (
-                        <span
-                          aria-hidden="true"
-                          className="absolute inset-x-0 bottom-1 h-px bg-copper"
-                        />
-                      ) : null}
                     </Link>
                   </li>
-                );
-              })}
+                ))}
             </ul>
           </nav>
-          <div className="flex items-center gap-2">
+        </div>
+        <div className="masthead-brand">
+          <BrandMark compact masthead />
+        </div>
+        <div className="masthead-right">
+          <nav aria-label="Showroom navigation" className="hidden lg:block">
+            <ul className="flex items-center gap-8">
+              <li>
+                <Link href="/about">Our Showroom</Link>
+              </li>
+              <li>
+                <Link href="/guides">Guides</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="hidden items-center gap-3 lg:flex">
             {pathname.startsWith("/rates") ? (
               <div
                 data-rates-header-actions="desktop"
@@ -172,25 +171,63 @@ export function SiteHeader() {
               />
             ) : null}
             <DesktopAccount
+              loginAvailable={loginAvailable}
               account={account}
               pathname={pathname}
               onLogout={logout}
             />
           </div>
+          <a
+            className="header-enquiry hidden xl:flex"
+            href={buildGeneralWhatsAppUrl()}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Enquire on WhatsApp"
+            data-analytics="whatsapp_click"
+            data-analytics-placement="header"
+          >
+            <WhatsappLogoIcon size={23} aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            className="header-menu lg:hidden"
+            ref={menuToggle}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => {
+              setIsOpen(!isOpen);
+              setSearchOpen(false);
+            }}
+          >
+            {isOpen ? <XIcon size={25} /> : <ListIcon size={25} />}
+          </button>
         </div>
-
-        <button
-          type="button"
-          className="inline-flex size-12 items-center justify-center rounded-full border border-line bg-paper-strong text-ink lg:hidden"
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsOpen((current) => !current)}
-        >
-          {isOpen ? <XIcon size={23} /> : <ListIcon size={23} />}
-        </button>
       </div>
-
+      {searchOpen ? (
+        <form
+          id="site-search"
+          role="search"
+          action="/products"
+          className="site-search site-container"
+        >
+          <label htmlFor="header-query">Find your next meaningful piece</label>
+          <div className="flex gap-3">
+            <input
+              autoFocus
+              id="header-query"
+              type="search"
+              name="q"
+              placeholder="Search coins, idols, utensils…"
+              required
+              className="min-w-0 flex-1"
+            />
+            <button className="button-primary" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      ) : null}
       <nav
         id="mobile-navigation"
         aria-label="Mobile navigation"
@@ -199,11 +236,51 @@ export function SiteHeader() {
           isOpen ? "block" : "hidden",
         )}
       >
+        <div
+          className="bg-ink text-white lg:hidden"
+          data-testid="mobile-app-download-bar"
+        >
+          <div className="site-container flex min-h-12 items-center justify-between gap-3 py-1.5">
+            <p className="min-w-0 text-xs font-semibold leading-tight">
+              Download DDA Silver app
+            </p>
+            <div className="flex shrink-0 items-center gap-2">
+              <a
+                href={siteConfig.androidUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Download DDA Silver for Android"
+                className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
+                data-analytics="app_store_click"
+                data-analytics-platform="android"
+                data-analytics-placement="mobile_app_bar"
+              >
+                <AndroidLogoIcon size={16} aria-hidden="true" />
+                Android
+              </a>
+              <a
+                href={siteConfig.iosUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Download DDA Silver for iPhone"
+                className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 text-[0.6875rem] font-bold text-white no-underline"
+                data-analytics="app_store_click"
+                data-analytics-platform="ios"
+                data-analytics-placement="mobile_app_bar"
+              >
+                <AppleLogoIcon size={16} aria-hidden="true" />
+                iPhone
+              </a>
+            </div>
+          </div>
+        </div>
+
         <ul className="site-container grid">
           <li className="border-b border-line pb-4">
             <div className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
                 <MobileAccount
+                  loginAvailable={loginAvailable}
                   account={account}
                   pathname={pathname}
                   onLogin={() => setIsOpen(false)}
@@ -245,10 +322,12 @@ export function SiteHeader() {
 function DesktopAccount({
   account,
   pathname,
+  loginAvailable,
   onLogout,
 }: {
   account: AccountState;
   pathname: string;
+  loginAvailable: boolean;
   onLogout: () => Promise<void>;
 }) {
   const [open, setOpen] = useState(false);
@@ -275,7 +354,7 @@ function DesktopAccount({
   if (account.status === "guest") {
     return (
       <a
-        href={loginHref(pathname)}
+        href={loginAvailable ? loginHref(pathname) : "/login"}
         rel="nofollow"
         className="inline-flex min-h-11 items-center gap-2 rounded-full border border-copper px-5 py-2 text-sm font-bold text-ink no-underline transition-colors hover:bg-copper hover:text-white"
         data-analytics="login_start"
@@ -327,18 +406,20 @@ function DesktopAccount({
 function MobileAccount({
   account,
   pathname,
+  loginAvailable,
   onLogin,
   onLogout,
 }: {
   account: AccountState;
   pathname: string;
+  loginAvailable: boolean;
   onLogin: () => void;
   onLogout: () => Promise<void>;
 }) {
   if (account.status === "guest") {
     return (
       <a
-        href={loginHref(pathname)}
+        href={loginAvailable ? loginHref(pathname) : "/login"}
         rel="nofollow"
         className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-copper px-5 py-3 font-bold text-white no-underline"
         data-analytics="login_start"

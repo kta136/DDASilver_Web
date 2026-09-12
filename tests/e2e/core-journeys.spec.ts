@@ -13,12 +13,113 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+test("audit fixes keep phone enquiry visible and restore menu focus", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await expect(page.locator(".collection-intro h2")).toHaveText("Timeless silver. For every moment.");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
+  await page.locator('article a[href="/products/dda-10-gram-oval-anniversary-silver-coin"]').click();
+  const dialog = page.getByRole("dialog");
+  const enquiry = dialog.getByRole("link", { name: "Confirm availability on WhatsApp" });
+  await expect(enquiry).toBeVisible();
+  const before = await enquiry.boundingBox();
+  expect(before!.y + before!.height).toBeLessThanOrEqual(844);
+  await page.locator(".product-dialog-content").evaluate((element) => { element.scrollTop = element.scrollHeight; });
+  const after = await enquiry.boundingBox();
+  expect(Math.abs(after!.y - before!.y)).toBeLessThan(2);
+});
+
+test("phone filters expand and desktop category images align", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/products");
+  await expect(page.getByRole("combobox", { name: "Filter by category" })).not.toBeVisible();
+  await page.getByRole("button", { name: "Filters", exact: true }).click();
+  await page.getByRole("combobox", { name: "Filter by category" }).selectOption("coin");
+  await expect(page).toHaveURL(/category=coin/);
+  await page.getByRole("button", { name: "Hide filters" }).click();
+  await expect(page.getByRole("combobox", { name: "Filter by category" })).not.toBeVisible();
+  await page.setViewportSize({ width: 1536, height: 1024 });
+  await page.goto("/");
+  const heights = await page.locator(".collection-photo").evaluateAll((elements) => elements.map(e => e.getBoundingClientRect().height));
+  expect(Math.max(...heights) - Math.min(...heights)).toBeLessThan(1);
+  const hero = page.locator('.home-hero-photo img');
+  await expect(hero).toHaveAttribute("loading", "eager");
+  expect(await hero.evaluate((image) => (image as HTMLImageElement).currentSrc)).toMatch(/homepage-b-editorial-\d+w\.webp/);
+});
+
+test("unavailable rates offer a working retry and showroom contact", async ({ page }) => {
+  let attempts = 0;
+  await page.route("**/api/rates/snapshot", async (route) => {
+    attempts += 1;
+    await route.fulfill({ status: 503, contentType: "application/json", body: '{"error":"unavailable"}' });
+  });
+  await page.goto("/rates");
+  const retry = page.getByRole("button", { name: "Retry live rates" });
+  await expect(retry).toBeVisible();
+  const before = attempts;
+  await retry.click();
+  await expect.poll(() => attempts).toBeGreaterThan(before);
+  await expect(page.getByRole("link", { name: "Ask the showroom" })).toHaveAttribute("href", /wa\.me/);
+});
+
+test("header search submits a reloadable catalog query and closes with Escape", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const toggle = page.getByRole("button", { name: "Search the collection" });
+  await toggle.click();
+  const search = page.getByRole("searchbox", {
+    name: "Find your next meaningful piece",
+  });
+  await expect(search).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(search).not.toBeVisible();
+  await expect(toggle).toBeFocused();
+  await toggle.click();
+  await search.fill("coin");
+  await search.press("Enter");
+  await expect(page).toHaveURL(/\/products\?q=coin/);
+  await expect(
+    page.getByRole("searchbox", { name: "Search products" }),
+  ).toHaveValue("coin");
+  await expect(page.locator("article").first()).toBeVisible();
+});
+
+test("mobile menu and category disclosure remain usable at phone width", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/products");
+  const categories = page.getByRole("button", {
+    name: "Browse categories & collections",
+  });
+  await expect(categories).toHaveAttribute("aria-expanded", "false");
+  await categories.click();
+  await expect(
+    page.getByRole("navigation", { name: "Browse the silver catalog" }),
+  ).toBeVisible();
+  await categories.click();
+  await page.getByRole("button", { name: "Open menu" }).click();
+  const menu = page.getByRole("navigation", { name: "Mobile navigation" });
+  await expect(menu).toBeVisible();
+  await menu.getByRole("link", { name: "Guides", exact: true }).click();
+  await expect(page).toHaveURL(/\/guides$/);
+  await expect(menu).not.toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
 test("discovers a product and opens its enquiry path", async ({ page }) => {
   await page.goto("/");
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /DDA Silver, Agra's trusted family destination/i,
+      name: /Silver, made meaningful/i,
     }),
   ).toBeVisible();
 
@@ -154,9 +255,9 @@ test("approved click analytics send only public taxonomy fields", async ({
       analyticsWindow.capturedAnalytics.push(args);
     };
   });
-  const whatsapp = page
-    .getByRole("link", { name: "Enquire on WhatsApp" })
-    .first();
+  const whatsapp = page.locator(
+    '[data-analytics="whatsapp_click"][data-analytics-placement="home_visit"]',
+  );
   await whatsapp.evaluate((element) => {
     element.addEventListener("click", (event) => event.preventDefault(), {
       once: true,

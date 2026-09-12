@@ -12,6 +12,10 @@ import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 const legalLinks = [
+  { label: "All products", href: "/products" },
+  { label: "Live rates", href: "/rates" },
+  { label: "Our showroom", href: "/about" },
+  { label: "Contact", href: "/contact" },
   { label: "Buying guides", href: "/guides" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
@@ -21,8 +25,8 @@ const legalLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-[#f1eee9]">
-      <div className="site-container grid gap-8 py-10 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-10">
+    <footer className="site-footer border-t border-line">
+      <div className="site-container grid gap-8 py-16 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-10">
         <div>
           <BrandMark compact />
           <p className="mt-6 max-w-md text-sm leading-7 text-ink-muted">
@@ -123,7 +127,7 @@ export function SiteFooter() {
       <div className="border-t border-line">
         <div className="site-container flex flex-col gap-2 py-5 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} DDA Silver. All rights reserved.</p>
-          <p>Browse and enquire. No online sales or stock claims.</p>
+          <p>Selected online. Experienced in our Agra showroom.</p>
         </div>
       </div>
     </footer>

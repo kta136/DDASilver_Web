@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "runId": "crt-6a22d82bb0a30ecc1ca96d85fdbc6a84d01076f6",
+  "completedAt": "2026-09-12T09:33:30.990Z",
+  "candidates": [
+    {
+      "slot": "a",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\A.png",
+      "sha256": "de32bf706a0a1b80b0888bb4393bf1545701ab14144916a03a5f3c9b47572be6",
+      "bytes": 1968246
+    },
+    {
+      "slot": "b",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\B.png",
+      "sha256": "f536842e0476522d66aa5379784c6c4ec7aae07cfb9f0b539208d3eae5ede11e",
+      "bytes": 1739399
+    },
+    {
+      "slot": "c",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\C.png",
+      "sha256": "f4c7169cb2803ac37b37c073d186b034cb6960dcd83eb7a9ffc2cdf7b77e6449",
+      "bytes": 1941230
+    },
+    {
+      "slot": "d",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-redesign-as-a-contemporary-Wp3qAw\\candidates\\D.png",
+      "sha256": "1859f1ccb96122e2bcb0836042758bc531c614f996073a6cfeacd39c41359086",
+      "bytes": 1649055
+    }
+  ]
+}

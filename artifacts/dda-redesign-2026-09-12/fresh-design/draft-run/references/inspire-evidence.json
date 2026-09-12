@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "request": {
+    "q": "Create a completely new desktop homepage for DDA SILVER, an Agra silver showroom for Indian families browsing coins, idols, utensils and gifts before enquiring on WhatsApp or visiting. A contemporary Indian design house with the confidence of an art exhibition. Explore genuinely different compositions, not a conventional left-copy/right-photo storefront. Lead direction: midnight green #123B35, mineral white #F2F5F1, silver gray; sharp Bodoni Moda display and IBM Plex Sans utilities. Centered DDA masthead with search/account utilities, then Products, Live Rates, Our Showroom, Guides navigation. Monumental short headline 'Silver, made meaningful.' Build a striking full-width editorial object stage, oversized product-image plates, asymmetric captions and strong negative space. Transition to a light catalog area with a useful category index and readable product cards. Rectangular 2-4px-radius actions, hairline rules, no pill controls, no rounded floating cards. Show visual breadth with silver pooja thali, coins and idols. Preserve actual DDA brand and product facts where supplied. No checkout, offers, reviews, invented history, certifications or fake live rates. This is a full new identity and information architecture, not a reskin. Distinct exhibition, typographic editorial and architectural catalog arrangements should be explored.",
+    "mode": "balanced",
+    "k": 12
+  },
+  "referenceImage": {
+    "sourcePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+    "mediaType": "image/png",
+    "sha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481",
+    "bytes": 1913403
+  },
+  "response": {
+    "setId": "20260912-0",
+    "query": "Create a completely new desktop homepage for DDA SILVER, an Agra silver showroom for Indian families browsing coins, idols, utensils and gifts before enquiring on WhatsApp or visiting. A contemporary Indian design house with the confidence of an art exhibition. Explore genuinely different compositions, not a conventional left-copy/right-photo storefront. Lead direction: midnight green #123B35, mineral white #F2F5F1, silver gray; sharp Bodoni Moda display and IBM Plex Sans utilities. Centered DDA masthead with search/account utilities, then Products, Live Rates, Our Showroom, Guides navigation. Monumental short headline 'Silver, made meaningful.' Build a striking full-width editorial object stage, oversized product-image plates, asymmetric captions and strong negative space. Transition to a light catalog area with a useful category index and readable product cards. Rectangular 2-4px-radius actions, hairline rules, no pill controls, no rounded floating cards. Show visual breadth with silver pooja thali, coins and idols. Preserve actual DDA brand and product facts where supplied. No checkout, offers, reviews, invented history, certifications or fake live rates. This is a full new identity and information architecture, not a reskin. Distinct exhibition, typographic editorial and architectural catalog arrangements should be explored.",
+    "mode": "balanced",
+    "seed": 0,
+    "k": 12,
+    "poolSize": 1000,
+    "coverage": 0.9107941274607941,
+    "truncated": false,
+    "designType": {
+      "key": "checkout",
+      "label": "checkout page",
+      "evidence": "order summary, identity and payment inputs, trust cues, progress, and one unambiguous completion action",
+      "source": "query-grammar"
+    },
+    "items": [
+      {
+        "id": "gen-remix-surprise-4b7f8c1230b02f771be578c5",
+        "designId": "e6bf2d1f60530eaa9130bed4",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f032",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Minimalist e-commerce page with a featured chair. Earthy tones, elegant typography, and a serene mood.",
+        "relevance": 0.6654217365728269,
+        "relevancePercentile": 0.9107941274607941,
+        "qualityPercentile": 0.5325325325325325,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 1
+        }
+      },
+      {
+        "id": "gen-remix-surprise-7baf70ce85225f397630aa8f",
+        "designId": "b2db1371075305e3845fa745",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f039",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Minimalist dark-themed e-commerce site with lifestyle imagery and collection showcases. Serene and aspirational mood.",
+        "relevance": 0.6488012167122601,
+        "relevancePercentile": 0.8882048715382048,
+        "qualityPercentile": 0.6936936936936937,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 2
+        }
+      },
+      {
+        "id": "gen-remix-surprise-5cac6c423900e8382194dabd",
+        "designId": "b10903b07a9d540b8152eb4f",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f081",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Sophisticated e-commerce site with a dark theme, featuring elegant typography, high-quality imagery, and a minimalist layout for product discovery.",
+        "relevance": 0.6522880955384824,
+        "relevancePercentile": 0.8717550884217551,
+        "qualityPercentile": 0.7777777777777778,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 3
+        }
+      },
+      {
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b08-j038-factor-splice",
+        "designId": "7d119b3852ff03e86b09485a",
+        "role": "consensus-head",
+        "phase": "preserved",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f280",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "trust",
+        "description": null,
+        "relevance": 0.6552813909467158,
+        "relevancePercentile": 0.8565565565565566,
+        "qualityPercentile": 0.5095095095095095,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 4
+        }
+      },
+      {
+        "id": "gen-remix-surprise-6a295f9d79eddaa6a58abd48",
+        "designId": "c5416ea991bdeaa653a076b3",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f039",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "landing_page",
+        "description": "Dark-themed landing page with abstract art and a newsletter signup form. Sophisticated and inviting.",
+        "relevance": 0.6359621744939167,
+        "relevancePercentile": 0.8563229896563229,
+        "qualityPercentile": 0.9319319319319319,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 5
+        }
+      },
+      {
+        "id": "gen-remix-surprise-b53991b8e6f98b0eebfe31a4",
+        "designId": "75edd0d5ee59427c0cbdba11",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f081",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Elegant e-commerce homepage with a hero section, collection cards, and product links. Features a dark, muted palette and lifestyle imagery.",
+        "relevance": 0.6554819196033637,
+        "relevancePercentile": 0.8438271604938272,
+        "qualityPercentile": 0.8098098098098098,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 6
+        }
+      },
+      {
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b11-j410-real-pair-collision",
+        "designId": "fe4c4eb38e66f8ee38402e6e",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f251",
+        "aspect": "landscape",
+        "width": 1152,
+        "height": 880,
+        "uiType": "learning",
+        "description": null,
+        "relevance": 0.6399243044551309,
+        "relevancePercentile": 0.8380880880880881,
+        "qualityPercentile": 0.6716716716716716,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 7
+        }
+      },
+      {
+        "id": "gen-remix-surprise-f20eba2976695dab7f879083",
+        "designId": "80c60d58690d4a4b400ffbce",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f079",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "landing",
+        "description": "Elegant landing page with a large serif headline and a detailed still life image. Features a split layout, top navigation, and a grid of content sections below. Muted, earthy colors.",
+        "relevance": 0.6506932378834874,
+        "relevancePercentile": 0.8325909242575908,
+        "qualityPercentile": 0.9179179179179179,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 8
+        }
+      },
+      {
+        "id": "gen-faithful-ed430d1d999fe33295eedc2d",
+        "designId": "ff7ec2e707488b6bf30b82ae",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f039",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "landing",
+        "description": "Minimalist landing page with elegant typography, serene imagery, and a sophisticated, tranquil mood. Features a hero section and value-highlighting cards.",
+        "relevance": 0.6682844799857759,
+        "relevancePercentile": 0.8268268268268268,
+        "qualityPercentile": 0.8708708708708709,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 9
+        }
+      },
+      {
+        "id": "gen-remix-surprise-9f7fa85c7b55fd95ce0862ff",
+        "designId": "dd065a9472ef319247341754",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f055",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Minimalist e-commerce design with a focus on ceramics. Features curated collections, product listings, and elegant typography. Muted colors create a sophisticated mood.",
+        "relevance": 0.6495194682904603,
+        "relevancePercentile": 0.8255755755755756,
+        "qualityPercentile": 0.3533533533533533,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 10
+        }
+      },
+      {
+        "id": "gen-faithful-9c602e550982bced4c1696ce",
+        "designId": "3dfe2170bbca1d832703c69e",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f055",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Minimalist ecommerce page for handcrafted ceramics. Split layout with hero image and product details. Serene and sophisticated mood.",
+        "relevance": 0.6435366829234415,
+        "relevancePercentile": 0.8255422088755422,
+        "qualityPercentile": 0.5615615615615616,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 11
+        }
+      },
+      {
+        "id": "gen-faithful-ea9ab93b368c640fed2144a8",
+        "designId": "dda0c56f1733755397e28036",
+        "role": "consensus-head",
+        "phase": "frontier",
+        "arm": "combined-consensus",
+        "cell": "r-track-retrieval-clusters-v1:f081",
+        "aspect": "landscape",
+        "width": 1536,
+        "height": 1024,
+        "uiType": "ecommerce",
+        "description": "Minimalist e-commerce landing page with a serene, earthy aesthetic. Features a hero section, navigation, and product showcases.",
+        "relevance": 0.6475258629135288,
+        "relevancePercentile": 0.8024607941274609,
+        "qualityPercentile": 0.5595595595595596,
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 12
+        }
+      }
+    ]
+  }
+}

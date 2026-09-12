@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "scope": {
+    "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop",
+    "conversionIds": [],
+    "runIds": [
+      "crt-6a22d82bb0a30ecc1ca96d85fdbc6a84d01076f6"
+    ]
+  },
+  "search": {
+    "mode": "client_side",
+    "days": 365,
+    "limit": 200,
+    "window": {
+      "days": 365,
+      "start": "2025-09-13T00:00:00.000Z",
+      "end": "2026-09-12T09:33:28.190Z",
+      "unit": "utc_day"
+    },
+    "truncated": false
+  },
+  "rows": [
+    {
+      "runId": "crt-6a22d82bb0a30ecc1ca96d85fdbc6a84d01076f6",
+      "functionality": "draft",
+      "fundingSource": "sponsored",
+      "sponsorshipGrantId": null,
+      "chargedMicros": 0,
+      "listPriceMicros": 0,
+      "providerCostMicros": null,
+      "costEvidence": "provider_reported",
+      "providerCostEvents": 5,
+      "firstEventAt": "2026-09-12T09:32:48.478Z",
+      "lastEventAt": "2026-09-12T09:33:11.901Z"
+    }
+  ],
+  "totals": {
+    "runs": 1,
+    "chargedMicros": 0,
+    "listPriceMicros": 0,
+    "providerCostMicros": null
+  }
+}

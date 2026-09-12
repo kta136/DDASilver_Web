@@ -19,6 +19,11 @@ function getBrandMarkUrl(width: number) {
 }
 
 export default function imageLoader(options: ImageLoaderOptions) {
+  if (options.src === "/images/design/homepage-b-editorial.png") {
+    const width =
+      [480, 768, 1024, 1536].find((value) => value >= options.width) ?? 1536;
+    return `/images/design/homepage-b-editorial-${width}w.webp`;
+  }
   if (options.src === brandMarkSource) {
     return getBrandMarkUrl(options.width);
   }

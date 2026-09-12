@@ -1,0 +1,209 @@
+{
+  "version": 2,
+  "createdAt": "2026-09-12T09:43:26.087Z",
+  "runDir": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7",
+  "query": "Create a completely new desktop homepage for DDA SILVER, an Agra silver showroom for Indian families browsing coins, idols, utensils and gifts before enquiring on WhatsApp or visiting. A contemporary Indian design house with the confidence of an art exhibition. Explore genuinely different compositions, not a conventional left-copy/right-photo storefront. Lead direction: midnight green #123B35, mineral white #F2F5F1, silver gray; sharp Bodoni Moda display and IBM Plex Sans utilities. Centered DDA masthead with search/account utilities, then Products, Live Rates, Our Showroom, Guides navigation. Monumental short headline 'Silver, made meaningful.' Build a striking full-width editorial object stage, oversized product-image plates, asymmetric captions and strong negative space. Transition to a light catalog area with a useful category index and readable product cards. Rectangular 2-4px-radius actions, hairline rules, no pill controls, no rounded floating cards. Show visual breadth with silver pooja thali, coins and idols. Preserve actual DDA brand and product facts where supplied. No checkout, offers, reviews, invented history, certifications or fake live rates. This is a full new identity and information architecture, not a reskin. Distinct exhibition, typographic editorial and architectural catalog arrangements should be explored.",
+  "mode": "exploratory-redesign",
+  "aspect": "landscape",
+  "referenceMode": "inspiration",
+  "imageProfile": "standard",
+  "retain": {
+    "include": [
+      "assets"
+    ],
+    "exclude": [
+      "content",
+      "layout",
+      "style"
+    ],
+    "source": "subject"
+  },
+  "origin": "https://12ui.com",
+  "redesignSource": {
+    "path": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+    "sha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481"
+  },
+  "corpus": {
+    "query": "Create a completely new desktop homepage for DDA SILVER, an Agra silver showroom for Indian families browsing coins, idols, utensils and gifts before enquiring on WhatsApp or visiting. A contemporary Indian design house with the confidence of an art exhibition. Explore genuinely different compositions, not a conventional left-copy/right-photo storefront. Lead direction: midnight green #123B35, mineral white #F2F5F1, silver gray; sharp Bodoni Moda display and IBM Plex Sans utilities. Centered DDA masthead with search/account utilities, then Products, Live Rates, Our Showroom, Guides navigation. Monumental short headline 'Silver, made meaningful.' Build a striking full-width editorial object stage, oversized product-image plates, asymmetric captions and strong negative space. Transition to a light catalog area with a useful category index and readable product cards. Rectangular 2-4px-radius actions, hairline rules, no pill controls, no rounded floating cards. Show visual breadth with silver pooja thali, coins and idols. Preserve actual DDA brand and product facts where supplied. No checkout, offers, reviews, invented history, certifications or fake live rates. This is a full new identity and information architecture, not a reskin. Distinct exhibition, typographic editorial and architectural catalog arrangements should be explored.",
+    "mode": "balanced",
+    "setId": "20260912-0",
+    "idempotencyKey": "draft-corpus:v1:493393ed335262a20810df51",
+    "manifestPath": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\manifest.json",
+    "references": [
+      {
+        "ordinal": 1,
+        "id": "gen-remix-surprise-4b7f8c1230b02f771be578c5",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\01-gen-remix-surprise-4b7f8c1230b02f771be578c5.webp",
+        "sha256": "9444659e6713f9a0f13d3fb55d685d47b4675eaf11495b943b64e583cf87b678",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 1
+        }
+      },
+      {
+        "ordinal": 2,
+        "id": "gen-remix-surprise-7baf70ce85225f397630aa8f",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\02-gen-remix-surprise-7baf70ce85225f397630aa8f.webp",
+        "sha256": "711335c7d7cb5cc8b56060b3c3eb8afe247de5c34396115bdc1b6ebfed853f13",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 2
+        }
+      },
+      {
+        "ordinal": 3,
+        "id": "gen-remix-surprise-5cac6c423900e8382194dabd",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\03-gen-remix-surprise-5cac6c423900e8382194dabd.webp",
+        "sha256": "312496d2de105ea438bcf8f81095e603dbeb520b685aa980e1fbe9812c80ff10",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 3
+        }
+      },
+      {
+        "ordinal": 4,
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b08-j038-factor-splice",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\04-gen-rtrack-o52-adaptive-qd-wave-1-b08-j038-factor-splice.webp",
+        "sha256": "f3c1f814b293191a45a646db73583e07c45540a86860458626e797990f8dc875",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 4
+        }
+      },
+      {
+        "ordinal": 5,
+        "id": "gen-remix-surprise-6a295f9d79eddaa6a58abd48",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\05-gen-remix-surprise-6a295f9d79eddaa6a58abd48.webp",
+        "sha256": "48a832b01124a6da8f2eeb17c588142f0c7935924ebbb2c8d7fbf952f430a6db",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 5
+        }
+      },
+      {
+        "ordinal": 6,
+        "id": "gen-remix-surprise-b53991b8e6f98b0eebfe31a4",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\06-gen-remix-surprise-b53991b8e6f98b0eebfe31a4.webp",
+        "sha256": "83ac5c21e715826307afba8a844d6c9ebd7bc8482e67348a73161362c1229a2a",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 6
+        }
+      },
+      {
+        "ordinal": 7,
+        "id": "gen-rtrack-o52-adaptive-qd-wave-1-b11-j410-real-pair-collision",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\07-gen-rtrack-o52-adaptive-qd-wave-1-b11-j410-real-pair-collision.webp",
+        "sha256": "88c2cd5bae302d152be6a30ba9f46ca1c1b1bb9a6ceb383e591d5cad3293b37b",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 7
+        }
+      },
+      {
+        "ordinal": 8,
+        "id": "gen-remix-surprise-f20eba2976695dab7f879083",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\08-gen-remix-surprise-f20eba2976695dab7f879083.webp",
+        "sha256": "10d2f6d65e725266b7c95ab0206d9930c2e29985d04c8f0d27fd65a40b0b8dc7",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 8
+        }
+      },
+      {
+        "ordinal": 9,
+        "id": "gen-faithful-ed430d1d999fe33295eedc2d",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\09-gen-faithful-ed430d1d999fe33295eedc2d.webp",
+        "sha256": "95ee77029316492c6e7d1ece8b40628fbc545b5eb3849faaee78b0e35e33e89d",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 9
+        }
+      },
+      {
+        "ordinal": 10,
+        "id": "gen-remix-surprise-9f7fa85c7b55fd95ce0862ff",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\10-gen-remix-surprise-9f7fa85c7b55fd95ce0862ff.webp",
+        "sha256": "184a92520a1dd32c86fd95c37a7506daab9cf654a0f67a7e5dfaa4fbac12d3bb",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 10
+        }
+      },
+      {
+        "ordinal": 11,
+        "id": "gen-faithful-9c602e550982bced4c1696ce",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\11-gen-faithful-9c602e550982bced4c1696ce.webp",
+        "sha256": "5f969256b7a8b67355e09c2f30e1c2d81040a24c475c57ae9e3204f900b6cbe1",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 11
+        }
+      },
+      {
+        "ordinal": 12,
+        "id": "gen-faithful-ea9ab93b368c640fed2144a8",
+        "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\references\\12-gen-faithful-ea9ab93b368c640fed2144a8.webp",
+        "sha256": "d6c072f9b25d6454a74b69e7b6e88540995a8415c6bac93fca2e3a06b8270bdd",
+        "aspect": "landscape",
+        "evidence": {
+          "clientQueryId": "corpus-query:17043bf3d83f9a070915144c9bacd1f92bde7bbdcd2a817c2397a2c0ab09d26a",
+          "rank": 12
+        }
+      }
+    ]
+  },
+  "hosted": {
+    "runId": "crt-eaaa15e4d8f1a46dd4eb2d1a4dc200edf7fc6840",
+    "idempotencyKey": "draft:hosted-v1:6ee783969d8938e6a222fa73798512f6",
+    "candidates": [
+      {
+        "id": "A",
+        "slot": "a",
+        "direction": "Monumental object-stage spread, midnight green and mineral white",
+        "outputPath": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\A.png",
+        "referenceId": null,
+        "referencePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+        "referenceSha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481"
+      },
+      {
+        "id": "B",
+        "slot": "b",
+        "direction": "Typographic editorial column, silver gray with deep green accents",
+        "outputPath": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\B.png",
+        "referenceId": null,
+        "referencePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+        "referenceSha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481"
+      },
+      {
+        "id": "C",
+        "slot": "c",
+        "direction": "Architectural catalog grid, mineral white, silver gray, midnight green",
+        "outputPath": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\C.png",
+        "referenceId": null,
+        "referencePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+        "referenceSha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481"
+      },
+      {
+        "id": "D",
+        "slot": "d",
+        "direction": "Asymmetric gallery sequence, midnight green, muted silver, paper white",
+        "outputPath": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\D.png",
+        "referenceId": null,
+        "referencePath": "https://cdn.sanity.io/images/f6i0fy2f/production/58ebdc0bdbaab884ad0e817a97c19f5f8f694c58-1254x1254.png",
+        "referenceSha256": "810d1d19960db922d152c935cbc080d1a601e23466e429068b72844f80e7a481"
+      }
+    ]
+  }
+}

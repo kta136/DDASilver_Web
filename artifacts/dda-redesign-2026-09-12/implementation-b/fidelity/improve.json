@@ -1,0 +1,144 @@
+{
+  "version": 2,
+  "scope": "page",
+  "createdAt": "2026-09-12T11:43:27.712Z",
+  "runDir": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity",
+  "input": {
+    "kind": "url",
+    "value": "http://localhost:3000/"
+  },
+  "target": {
+    "kind": "layerdoc",
+    "value": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\conversion\\B.layerdoc.json",
+    "sha256": "04c371c9689ce950783a76504fcd7de3709a2eb2dce1e466545d34f97890b0cf"
+  },
+  "concept": "a better version of this product's own page. Redesign this existing product interface. Its layout, composition, section order, and proportions are yours to rework: this should read as a new design of the same product, not a retouch of the one it has. Give it a deliberate hierarchy, a real spacing rhythm, typography with range, restrained color, purposeful states, and surfaces and controls that belong to one system. Keep the product's logo, wordmark, and brand imagery as they are. Keep every real piece of content, data, and control the page carries: say the same things, in whatever arrangement serves them best, and invent nothing. These are conservation defaults, not a freeze: the brief above outranks them, and they outrank the page as it stands.",
+  "candidates": 4,
+  "retain": {
+    "include": [
+      "assets",
+      "content"
+    ],
+    "exclude": [
+      "layout",
+      "style"
+    ]
+  },
+  "retainFlag": "assets,content",
+  "conversionModel": "standard",
+  "responsiveQuality": "standard",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fullPage": false,
+  "bootstrap": [
+    "|button:has-text(\"Essential only\")|"
+  ],
+  "bootstrapSha256": [
+    "cc4949e9abda57986145fd8b2e8cba81dff0fcd23674304414ad97ab47b111ca"
+  ],
+  "repo": "D:\\Projects\\DDASilver_Web",
+  "kitIgnore": {
+    "state": "not-ignored",
+    "relativeOutDir": "artifacts/dda-redesign-2026-09-12/implementation-b/fidelity"
+  },
+  "planSourceConvert": false,
+  "pageLimit": 5,
+  "requestedPages": [],
+  "pageConcurrency": 3,
+  "referenceOrder": "current-first",
+  "pages": [],
+  "stages": {
+    "capture": {
+      "settledAt": "2026-09-12T11:45:33.056Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0,
+      "outcome": "settled"
+    },
+    "draft": {
+      "settledAt": "2026-09-12T11:45:33.060Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0,
+      "outcome": "skipped"
+    },
+    "pick": {
+      "settledAt": "2026-09-12T11:45:33.064Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0,
+      "outcome": "skipped"
+    },
+    "convert": {
+      "settledAt": "2026-09-12T11:45:33.088Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0,
+      "outcome": "settled"
+    },
+    "plan": {
+      "settledAt": "2026-09-12T11:45:33.236Z",
+      "replayCount": 0,
+      "priceCeilingUsd": 0,
+      "outcome": "settled"
+    }
+  },
+  "capture": {
+    "sourceImage": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\capture\\source.png",
+    "sha256": "fb3b6d95a4932f40c1b32a85766b6987b3628501814da585e00660e2dfed2c69",
+    "width": 1536,
+    "height": 1024,
+    "domDoc": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\current.domdoc.json",
+    "capturedUrl": "http://localhost:3000/"
+  },
+  "convert": {
+    "layerDoc": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\target\\winner.layerdoc.json",
+    "html": "",
+    "layout": "document",
+    "artifacts": [
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\target\\winner.layerdoc.json"
+    ],
+    "purchaseIds": []
+  },
+  "plan": {
+    "mode": "dom-anchored",
+    "gate": "emitted-low-overlap",
+    "artifacts": [
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\diff.json",
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\changes.md",
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\plan-annotated.md",
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\token-patch.css",
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\assets\\added-015-user-account.svg",
+      "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\implementation-b\\fidelity\\plan\\assets\\added-017-shopping-bag.svg"
+    ],
+    "coverage": {
+      "dom": 0.4807692307692308,
+      "design": 0.5434782608695652
+    },
+    "counts": {
+      "matched": 25,
+      "changed": 25,
+      "added": 21,
+      "removed": 27
+    },
+    "lowOverlap": {
+      "domCoveragePct": 48.07692307692308,
+      "thresholdPct": 60,
+      "captureIdentity": "matched"
+    },
+    "fonts": [
+      {
+        "family": "Cormorant Garamond",
+        "weights": [
+          400
+        ]
+      },
+      {
+        "family": "Montserrat",
+        "weights": [
+          400,
+          600
+        ]
+      }
+    ],
+    "purchaseIds": []
+  }
+}

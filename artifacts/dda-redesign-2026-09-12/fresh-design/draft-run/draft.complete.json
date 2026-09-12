@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "runId": "crt-eaaa15e4d8f1a46dd4eb2d1a4dc200edf7fc6840",
+  "completedAt": "2026-09-12T09:44:56.655Z",
+  "candidates": [
+    {
+      "slot": "a",
+      "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\A.png",
+      "sha256": "6f054ebbe948bdd79af6b545bbb51fb39ad81ded707cbf1ac1041558f0add0c9",
+      "bytes": 2014211
+    },
+    {
+      "slot": "b",
+      "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\B.png",
+      "sha256": "0944f8c8d1be33bc1d312b5939520a772d24ccd7e9606cec71cbdfa024bc3442",
+      "bytes": 1990217
+    },
+    {
+      "slot": "c",
+      "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\C.png",
+      "sha256": "fecb6dd34b0a2b370d1ec55dadd01d021603957bf14a9a844934e42cc143412f",
+      "bytes": 1946528
+    },
+    {
+      "slot": "d",
+      "path": "C:\\Users\\kk\\AppData\\Local\\Temp\\12ui-create-a-completely-new-iGMAj7\\candidates\\D.png",
+      "sha256": "88dce05cdd39228b5f24a2809fa98770b9e2348e818de0e21343b46a23f2224c",
+      "bytes": 2005004
+    }
+  ]
+}

@@ -27,10 +27,10 @@ export function EditorialPage({
     <main id="main-content" className="section-shell">
       <div className="site-container">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: title }]} />
-        <div className="mt-8 grid gap-7 lg:grid-cols-[1fr_30rem] lg:items-end">
+        <div className="editorial-header">
           <div>
             <p className="eyebrow">{eyebrow}</p>
-            <h1 className="font-display text-balance mt-4 text-6xl font-semibold leading-[0.9] sm:text-8xl">
+            <h1 className="font-display text-balance mt-4 text-5xl font-normal leading-[1.12] sm:text-6xl">
               {title}
             </h1>
           </div>
@@ -38,19 +38,31 @@ export function EditorialPage({
         </div>
 
         {notice ? (
-          <p className="mt-8 border border-copper/35 bg-[#fff7f4] p-5 text-sm leading-6 text-ink-muted">
+          <p className="mt-8 border border-copper/35 bg-[#dce5df] p-5 text-sm leading-6 text-ink-muted">
             {notice}
           </p>
         ) : null}
 
-        <div className="mt-10 grid gap-8 border-t border-line pt-10 lg:grid-cols-[18rem_1fr]">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-ink-muted">
-            DDA Silver
-          </p>
+        <div className="editorial-body">
+          <nav aria-label="On this page" className="text-sm">
+            <p className="eyebrow mb-5">On this page</p>
+            <ul className="grid gap-4">
+              {sections.map((section, index) => (
+                <li key={section.title}>
+                  <a
+                    href={`#section-${index + 1}`}
+                    className="text-ink-muted no-underline hover:underline"
+                  >
+                    {section.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <div className="grid max-w-3xl gap-9">
-            {sections.map((section) => (
-              <section key={section.title}>
-                <h2 className="font-display text-4xl font-semibold">
+            {sections.map((section, index) => (
+              <section id={`section-${index + 1}`} key={section.title}>
+                <h2 className="font-display text-3xl font-normal">
                   {section.title}
                 </h2>
                 <div className="mt-4 grid gap-4 text-base leading-8 text-ink-muted">

@@ -16,7 +16,6 @@ export default function RatesDisclaimerPage() {
       eyebrow="Rate information"
       title="Rates disclaimer"
       intro="Live-rate information is supplied by DDAJewels and presented for customer reference."
-      notice="Owner and legal review is required before launch. This page is not final legal advice."
       sections={[
         {
           title: "Source and timing",

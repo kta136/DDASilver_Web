@@ -46,20 +46,58 @@ const contactRows = [
 
 export default function ContactPage() {
   return (
-    <main id="main-content" className="section-shell">
+    <main id="main-content" className="section-shell contact-page">
       <div className="site-container">
         <p className="eyebrow">Contact & visit</p>
         <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_31rem] lg:items-end">
-          <h1 className="font-display text-balance text-6xl font-semibold leading-[0.88] sm:text-8xl">
+          <h1 className="font-display text-balance text-5xl font-normal leading-[1.1] sm:text-6xl">
             Let&apos;s find the right silver piece.
           </h1>
           <p className="text-lg leading-8 text-ink-muted">
-            There is no enquiry form and no customer submission is stored on
-            this website. Contact the showroom directly instead.
+            Visit our Agra showroom to experience the collection, or speak with
+            our team for help choosing a piece and confirming availability.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-8 border-t border-line pt-10 lg:grid-cols-[1fr_1fr]">
+        <nav
+          aria-label="Contact the showroom"
+          className="contact-quick-actions"
+        >
+          <a
+            href={siteConfig.phoneHref}
+            className="button-primary no-underline"
+            data-analytics="phone_click"
+            data-analytics-placement="contact_quick"
+          >
+            Call showroom
+          </a>
+          <a
+            href={buildGeneralWhatsAppUrl()}
+            target="_blank"
+            rel="noreferrer"
+            className="button-secondary no-underline"
+            data-analytics="whatsapp_click"
+            data-analytics-placement="contact_quick"
+          >
+            WhatsApp
+          </a>
+          <a
+            href={siteConfig.mapUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="button-secondary no-underline"
+            data-analytics="map_click"
+            data-analytics-placement="contact_quick"
+          >
+            Directions
+          </a>
+        </nav>
+        <p className="mt-4 text-sm leading-6 text-ink-muted">
+          {siteConfig.address}
+          <br />
+          {siteConfig.hours}
+        </p>
+        <div className="contact-information mt-10 grid gap-8 border-t border-line pt-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid divide-y divide-line border-y border-line">
             {contactRows.map((row) => {
               const Icon = row.icon;
@@ -69,14 +107,14 @@ export default function ContactPage() {
                   href={row.href}
                   target={row.href.startsWith("http") ? "_blank" : undefined}
                   rel={row.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group grid gap-4 py-6 no-underline sm:grid-cols-[8rem_1fr_auto] sm:items-center"
+                  className="contact-information-row group grid gap-4 py-6 no-underline sm:grid-cols-[8rem_1fr_auto] sm:items-center"
                   data-analytics={row.analytics}
                   data-analytics-placement={row.placement}
                 >
                   <span className="text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">
                     {row.label}
                   </span>
-                  <span className="font-display text-3xl font-semibold">
+                  <span className="text-lg font-medium leading-7">
                     {row.value}
                   </span>
                   <Icon

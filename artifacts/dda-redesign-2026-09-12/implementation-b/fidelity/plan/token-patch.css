@@ -1,0 +1,28 @@
+/* Proposed tokens from recurring target deltas. Review names in the owning design system. */
+/* Font: Cormorant Garamond (weights 400). Declared as a token only — this patch loads nothing over the network. Load the family the way this repository already loads fonts: self-host it, or add it to the existing loader. */
+/* Font: Montserrat (weights 400, 600). Declared as a token only — this patch loads nothing over the network. Load the family the way this repository already loads fonts: self-host it, or add it to the existing loader. */
+
+:root {
+  --font-cormorant-garamond: 'Cormorant Garamond', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>p:nth-child(1), #main-content>section:nth-child(2)>div>div>p:nth-child(1), #main-content>section:nth-child(2)>div>div>p:nth-child(3), #main-content>section:nth-child(2)>div>nav>div>a:nth-child(5), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2), .hero-description, .xl\:inline, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(2)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(2)>a */
+  --ui-text-font-family-montserrat: var(--font-montserrat);
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>p:nth-child(1), #main-content>section:nth-child(2)>div>div>p:nth-child(1), #main-content>section:nth-child(2)>div>div>p:nth-child(3), #main-content>section:nth-child(2)>div>nav>div>a:nth-child(5), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2), .hero-description, .xl\:inline, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(2)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(2)>a */
+  --ui-text-text-align-left: left;
+  /* selectors: .xl\:inline, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(2)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(2)>a */
+  --ui-text-color-d3dcd8: #d3dcd8;
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>p:nth-child(1), body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(1)>nav>ul>li:nth-child(2)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(1)>a, body>div:nth-child(4)>header>div>div:nth-child(3)>nav>ul>li:nth-child(2)>a */
+  --ui-text-font-size-13: 13px;
+  /* selectors: #main-content>section:nth-child(2)>div>nav>div>a:nth-child(5), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2) */
+  --ui-text-color-46615c: #46615c;
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>p:nth-child(1), #main-content>section:nth-child(2)>div>div>p:nth-child(1), #main-content>section:nth-child(2)>div>nav>div>a:nth-child(5), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2) */
+  --ui-text-font-weight-600: 600;
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>h1, #main-content>section:nth-child(2)>div>div>h2 */
+  --ui-heading-font-family-cormorant-garamond: var(--font-cormorant-garamond);
+  /* selectors: #main-content>section:nth-child(2)>div>div>p:nth-child(3), .xl\:inline */
+  --ui-text-font-size-14: 14px;
+  /* selectors: #main-content>section:nth-child(2)>div>div>p:nth-child(1), #main-content>section:nth-child(2)>div>nav>div>a:nth-child(5), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(2)>a>span:nth-child(2), #main-content>section:nth-child(2)>div>nav>ul>li:nth-child(4)>a>span:nth-child(2) */
+  --ui-text-font-size-11: 11px;
+  /* selectors: #main-content>section:nth-child(1)>div:nth-child(1)>h1, #main-content>section:nth-child(2)>div>div>h2 */
+  --ui-heading-text-align-left: left;
+}

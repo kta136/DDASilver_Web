@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "runId": "crt-8277efdddedaaa9a47388993a7a12cce6152bade",
+  "completedAt": "2026-09-12T09:29:49.056Z",
+  "candidates": [
+    {
+      "slot": "a",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-contemporary-silver-showroom-war-8AKUge\\candidates\\A.png",
+      "sha256": "747e492b9972321058bfdfbd3ddc6df84caa8fe53b4f555c33972275553ce7dd",
+      "bytes": 1694424
+    },
+    {
+      "slot": "b",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-contemporary-silver-showroom-war-8AKUge\\candidates\\B.png",
+      "sha256": "b518d6bc21384999c3ad9616dfadeda67185bc678a4d08ebaea959d1fa305c01",
+      "bytes": 1718667
+    },
+    {
+      "slot": "c",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-contemporary-silver-showroom-war-8AKUge\\candidates\\C.png",
+      "sha256": "3bad97082c7c4dcbe79c5eb9142a9dfb57fa2ccdb2bc58d7fcbaafa6650b68dc",
+      "bytes": 1732978
+    },
+    {
+      "slot": "d",
+      "path": "D:\\Projects\\DDASilver_Web\\artifacts\\dda-redesign-2026-09-12\\improve-desktop\\.state\\draft\\12ui-contemporary-silver-showroom-war-8AKUge\\candidates\\D.png",
+      "sha256": "39b7fece6f8c22269604493788914c53a5c4b54a8ebda8e3720cc5c57c1f04d5",
+      "bytes": 1741907
+    }
+  ]
+}

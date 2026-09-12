@@ -1,29 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Script from "next/script";
 
 import { AnalyticsEvents } from "@/components/consent/analytics-events";
 import { AnalyticsGate } from "@/components/consent/analytics-gate";
 import { ConsentManager } from "@/components/consent/consent-manager";
 import { isProductionSite, siteConfig } from "@/lib/site";
-import {
-  defaultSocialImage,
-  serializeJsonLd,
-  toAbsoluteUrl,
-} from "@/lib/seo";
+import { defaultSocialImage, serializeJsonLd, toAbsoluteUrl } from "@/lib/seo";
 
 import "./globals.css";
 
-const manrope = Manrope({
+const manrope = Montserrat({
   variable: "--font-manrope",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -82,19 +78,19 @@ export const metadata: Metadata = {
   },
   verification:
     siteConfig.googleSiteVerification || siteConfig.bingSiteVerification
-    ? {
-        google: siteConfig.googleSiteVerification,
-        other: siteConfig.bingSiteVerification
-          ? { "msvalidate.01": siteConfig.bingSiteVerification }
-          : undefined,
-      }
-    : undefined,
+      ? {
+          google: siteConfig.googleSiteVerification,
+          other: siteConfig.bingSiteVerification
+            ? { "msvalidate.01": siteConfig.bingSiteVerification }
+            : undefined,
+        }
+      : undefined,
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f8f6f3",
+  themeColor: "#123b35",
   colorScheme: "light",
 };
 

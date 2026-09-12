@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
-    "Read the draft DDA Silver privacy policy covering website analytics, consent, customer-account boundaries and contact interactions.",
+    "Read the DDA Silver privacy policy covering website analytics, consent, customer-account boundaries and contact interactions.",
   path: "/privacy",
   canonical: false,
   noIndex: true,
@@ -13,10 +13,9 @@ export const metadata = createPageMetadata({
 export default function PrivacyPage() {
   return (
     <EditorialPage
-      eyebrow="Legal draft"
+      eyebrow="Website information"
       title="Privacy"
-      intro="This draft explains the privacy boundaries built into the replacement website."
-      notice="Owner and legal review is required before launch. This page is not final legal advice."
+      intro="How DDA Silver handles website information, privacy preferences and contact with our showroom."
       sections={[
         {
           title: "Information this website does not collect",

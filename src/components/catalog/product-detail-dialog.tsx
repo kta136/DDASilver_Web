@@ -8,12 +8,14 @@ type ProductDetailDialogProps = {
   titleId: string;
   productPath: string;
   children: React.ReactNode;
+  enquiry?: React.ReactNode;
 };
 
 export function ProductDetailDialog({
   titleId,
   productPath,
   children,
+  enquiry,
 }: ProductDetailDialogProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -50,23 +52,26 @@ export function ProductDetailDialog({
     router.back();
   }, [router, unlockBackground]);
 
-  const syncDialogToPath = useCallback((nextPathname: string) => {
-    const dialog = dialogRef.current;
+  const syncDialogToPath = useCallback(
+    (nextPathname: string) => {
+      const dialog = dialogRef.current;
 
-    if (nextPathname === productPath) {
-      isClosingRef.current = false;
-      lockBackground();
-      if (dialog && !dialog.open) {
-        dialog.showModal();
+      if (nextPathname === productPath) {
+        isClosingRef.current = false;
+        lockBackground();
+        if (dialog && !dialog.open) {
+          dialog.showModal();
+        }
+        return;
       }
-      return;
-    }
 
-    if (dialog?.open) {
-      dialog.close();
-    }
-    unlockBackground();
-  }, [lockBackground, productPath, unlockBackground]);
+      if (dialog?.open) {
+        dialog.close();
+      }
+      unlockBackground();
+    },
+    [lockBackground, productPath, unlockBackground],
+  );
 
   useEffect(() => {
     syncDialogToPath(pathname);
@@ -104,7 +109,7 @@ export function ProductDetailDialog({
       }}
       className="mx-auto my-8 max-h-[calc(100dvh-4rem)] w-[calc(100dvw-1rem)] max-w-6xl overflow-visible border-0 bg-transparent p-0 text-ink backdrop:bg-ink/55 backdrop:backdrop-blur-[2px] sm:w-[calc(100dvw-3rem)]"
     >
-      <div className="relative max-h-[calc(100dvh-4rem)] overflow-hidden rounded-[1.25rem] bg-paper shadow-[0_28px_90px_rgba(37,35,33,0.35)]">
+      <div className="product-dialog-frame relative max-h-[calc(100dvh-4rem)] overflow-hidden rounded-[1.25rem] bg-paper shadow-[0_28px_90px_rgba(37,35,33,0.35)]">
         <button
           type="button"
           aria-label="Close product details"
@@ -114,6 +119,9 @@ export function ProductDetailDialog({
           <XIcon size={20} aria-hidden="true" />
         </button>
         {children}
+        {enquiry ? (
+          <div className="product-dialog-enquiry">{enquiry}</div>
+        ) : null}
       </div>
     </dialog>
   );

@@ -16,7 +16,6 @@ export default function CookiesPage() {
       eyebrow="Preference control"
       title="Cookies"
       intro="The website uses a small number of browser-storage and session controls for consent, security, and optional analytics."
-      notice="Owner and legal review is required before launch. This page is not final legal advice."
       sections={[
         {
           title: "Essential storage",
