@@ -20,7 +20,7 @@ test("audit fixes keep phone enquiry visible and restore menu focus", async ({ p
   await page.getByRole("button", { name: "Open menu" }).click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
-  await page.locator('article a[href="/products/dda-10-gram-oval-anniversary-silver-coin"]').click();
+  await page.locator('article a[href^="/products/"]').first().click();
   const dialog = page.getByRole("dialog");
   const enquiry = dialog.getByRole("link", { name: "Confirm availability on WhatsApp" });
   await expect(enquiry).toBeVisible();
@@ -195,6 +195,13 @@ test("keeps catalog filters in a reloadable share URL", async ({ page }) => {
 test("rates never show fabricated zeroes when unconfigured", async ({
   page,
 }) => {
+  await page.route("**/api/rates/snapshot", (route) =>
+    route.fulfill({
+      status: 503,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "The rate service is not configured." }),
+    }),
+  );
   await page.goto("/rates");
   await expect(
     page.getByRole("status").filter({
