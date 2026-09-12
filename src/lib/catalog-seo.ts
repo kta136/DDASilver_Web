@@ -6,6 +6,7 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { getProductIdentity, toAbsoluteUrl } from "@/lib/seo";
+import { automaticOfferValidity } from "@/lib/pricing/freshness";
 import { siteConfig } from "@/lib/site";
 import type { Category, Collection, Product } from "@/types/catalog";
 
@@ -97,17 +98,17 @@ export function getCatalogPageStructuredData({
   };
 }
 
-// The gallery refreshes every five minutes and accepts source data up to 90s old.
-const MAX_OFFER_REFERENCE_AGE_MS = 390_000;
-
 function getProductOffers(product: Product, now: number) {
   const estimate = product.estimate;
-  if (!estimate || estimate.status !== "available" || estimate.lastAvailable) {
+  if (!estimate || estimate.status !== "available") {
     return undefined;
   }
   const asOf = Date.parse(estimate.asOf);
-  if (!Number.isFinite(asOf) || asOf > now ||
-      (estimate.mode === "automatic" && now - asOf > MAX_OFFER_REFERENCE_AGE_MS)) {
+  // lastAvailable describes a refresh failure, not the validity of the saved price.
+  if (
+    !Number.isFinite(asOf) || asOf > now ||
+    (estimate.mode === "automatic" && automaticOfferValidity(estimate.asOf, now).status === "expired")
+  ) {
     return undefined;
   }
 

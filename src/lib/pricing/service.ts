@@ -1,45 +1,12 @@
 import { cache } from "react";
 import { after, connection } from "next/server";
-import { join } from "node:path";
-import { z } from "zod";
-import { isSanityConfigured } from "@/sanity/env";
-import { sanityClient } from "@/sanity/lib/client";
-import { createSanityReader } from "@/sanity/lib/read";
 import type { Product } from "@/types/catalog";
+import { getGalleryPricingSettings, getGalleryRateStore } from "./configuration";
+import { pricingHealth } from "./health";
 import { calculateEstimate } from "./model";
-import { GalleryRateStore } from "./store";
 import { fetchGalleryReference } from "./upstream";
 
-const reader = createSanityReader(sanityClient);
-export const getGalleryPricingSettings = cache(async () => {
-  if (!isSanityConfigured) return { enabled: false };
-  try {
-    const result = await reader(
-      '*[_type == "galleryPricing" && _id == "gallery-pricing"][0]{enabled}',
-      {},
-      (raw) => ({
-        value:
-          raw === null
-            ? { enabled: false }
-            : z.object({ enabled: z.boolean() }).parse(raw),
-      }),
-    );
-    return result.value;
-  } catch {
-    console.warn("[gallery-pricing] Settings unavailable.");
-    return { enabled: false };
-  }
-});
-
-export function getGalleryRateStore() {
-  // Production activation requires an explicit persistent mount. Local development can use an ignored directory.
-  const directory =
-    process.env.GALLERY_PRICING_DIR?.trim() ||
-    (process.env.NEXT_PUBLIC_SITE_ENV !== "production"
-      ? join(process.cwd(), ".gallery-pricing")
-      : "");
-  return directory ? new GalleryRateStore(directory) : null;
-}
+export { getGalleryPricingSettings, getGalleryRateStore } from "./configuration";
 
 const getPricingContext = cache(async () => {
   // Always opt these pages into request-time composition, even before activation.
@@ -83,26 +50,7 @@ export async function withGalleryPrices(
 
 export async function galleryPricingHealth() {
   const store = getGalleryRateStore();
-  const state = store
-    ? await store.read()
-    : { record: null, recovery: "missing" };
-  const reference = state.record?.reference;
-  const age = reference
-    ? Math.max(
-        0,
-        Math.floor((Date.now() - Date.parse(reference.snapshotAsOf)) / 1_000),
-      )
-    : null;
-  return {
-    status: !reference
-      ? "unavailable"
-      : state.record!.refresh.outcome !== "accepted" ||
-          state.recovery === "backup" ||
-          age! > 390
-        ? "degraded"
-        : "ok",
-    snapshotAsOf: reference?.snapshotAsOf ?? null,
-    referenceAgeSeconds: age,
-    nextAttemptAt: state.record?.refresh.nextAttemptAt ?? null,
-  };
+  return pricingHealth(
+    store ? await store.read() : { record: null, recovery: "missing" },
+  );
 }

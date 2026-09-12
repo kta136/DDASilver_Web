@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { Product } from "@/types/catalog";
+import { getProductPageStructuredData } from "@/lib/catalog-seo";
 const mocks = vi.hoisted(() => ({
   after: vi.fn(),
   connection: vi.fn(),
@@ -31,6 +32,40 @@ afterEach(() => {
   mocks.enabled = true;
 });
 describe("request-time price composition", () => {
+  it.each(["failed", "pending"])("keeps valid products independently eligible during a %s refresh", async (outcome) => {
+    vi.stubEnv("GALLERY_PRICING_DIR", "fixture");
+    const now = Date.now();
+    mocks.read.mockResolvedValue({
+      recovery: "primary",
+      record: {
+        reference: { itemId: "silver", unit: "PER_KG", value: 100000, snapshotAsOf: new Date(now - 60_000).toISOString() },
+        refresh: { nextAttemptAt: now + 200_000, outcome },
+      },
+    });
+    const base: Product = {
+      title: "Silver product", slug: "valid", shortDescription: "Silver item", images: [],
+      categorySlug: "coin", collectionSlugs: [], featured: false, displayOrder: 1, deities: [],
+      weightGrams: 10, categoryMakingChargePerGram: 5,
+    };
+    const products = [
+      base,
+      { ...base, slug: "invalid", weightGrams: undefined },
+      { ...base, slug: "gold", material: "gold" as const },
+      { ...base, slug: "deferred", categoryPricingDeferred: true },
+      { ...base, slug: "manual", pricing: { mode: "manual" as const, manualTotalInr: 5000, reviewedAt: "2026-08-01T00:00:00Z" } },
+    ];
+    for (const ordered of [products, [...products].reverse()]) {
+      const priced = await withGalleryPrices(ordered);
+      const schemas = Object.fromEntries(priced.map((product) => [product.slug, getProductPageStructuredData(product, now)]));
+      expect(schemas.valid).toMatchObject({ "@type": "Product", offers: [{ price: "1100.00" }] });
+      expect(schemas.manual).toMatchObject({ "@type": "Product", offers: [{ price: "5000.00" }] });
+      for (const slug of ["invalid", "gold", "deferred"])
+        expect(schemas[slug]["@type"]).toBe("WebPage");
+      expect(priced.find((product) => product.slug === "valid")!.estimate).toMatchObject({ lastAvailable: true });
+    }
+    expect(mocks.after).not.toHaveBeenCalled();
+  });
+
   it("renders the saved estimate immediately and defers the due network refresh until after the response", async () => {
     vi.stubEnv("GALLERY_PRICING_DIR", "fixture");
     const reference = {

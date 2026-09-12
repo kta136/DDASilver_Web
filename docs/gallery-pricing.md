@@ -88,8 +88,13 @@ the accepted rate's original `snapshotAsOf` and separate refresh bookkeeping:
 outside catalogue-cache eviction. The backup protects against file corruption on
 the same volume; it is not a backup on another host.
 
-When due, a request schedules Next.js `after()` work. A cross-process filesystem
-lock covers old and replacement containers sharing that directory. The attempt
+Next.js instrumentation starts a background worker when a Node server has an
+explicit `GALLERY_PRICING_DIR`. It does not run during builds or in Edge runtimes.
+The worker checks the saved reference every 15 seconds, wakes at the persisted
+attempt deadline when sooner, and checks the Studio enable switch at startup and
+every five minutes. It refreshes and retries without page visits. A due request
+also schedules Next.js `after()` work as a fallback. Both paths share a
+cross-process filesystem lock covering old and replacement containers. The attempt
 schedule is persisted before the request to the feed. A failed request therefore
 consumes the same five-minute interval as a successful one. The lock has heartbeat,
 ownership checks and recovery after abandonment.
@@ -100,14 +105,16 @@ freshness (90 seconds), identity, positive value and unit. The gallery accepts o
 the Silver Bank item in `PER_KG`, and refuses a backwards snapshot timestamp. The
 existing cached public reader and live-rates consumers remain unchanged.
 
-Under sustained traffic this feature makes at most one upstream attempt every
-five minutes across the website service, approximately 12 per hour. The rate file
+While pricing is enabled this feature makes at most one upstream attempt every
+five minutes across the website service, approximately 12 per hour, including
+retries after failures. The rate file
 and lock directory must be shared by every process performing these attempts.
 This bound does not describe the separate live-rates feature.
 
 The request that starts a refresh receives the saved rate. A later render receives
-the newly accepted rate. Sparse traffic, an outage or an already-open page can
-produce older prices. There is no browser polling. Saved references never run
+the newly accepted rate. An outage or an already-open page can produce older
+prices; sparse traffic no longer prevents refreshes on the persistent server.
+There is no browser polling. Saved references never run
 through the incoming freshness test again. A product's weight or making-charge
 edit still changes its total during a feed outage using the last validated rate.
 Missing/corrupt product inputs or loss of both rate files produces a price
@@ -134,8 +141,11 @@ results remain Google's decision. Following the owner's 10 September confirmatio
 to use the now-published item prices for SEO, direct product pages include
 `Product` and INR `Offer` markup from the same estimate rendered on that request.
 Each visible size price has its own Offer; variant ranges are not AggregateOffers.
-Missing, invalid, fallback or automatic references older than 390 seconds omit
-offers and use ordinary WebPage markup. Manual review dates are not expiry dates.
+Missing, invalid or automatic references older than 390 seconds omit offers and
+use ordinary WebPage markup. A failed or pending refresh does not suppress a
+still-valid saved price: its original snapshot timestamp, visible amount and
+fallback disclosure are retained. Offer eligibility is checked for each product
+independently. Manual review dates are not expiry dates.
 Stock, reviews and price expiry are not assumed. The existing product URLs, sitemap and canonical URLs
 provide discovery independently of the JavaScript dialog.
 
@@ -195,9 +205,29 @@ finish/photo labels is a no-op. Applying defaults never enables pricing.
    feed failure retains the saved rate and does not fail website liveness.
 
 `/api/health` reports gallery pricing as `ok`, `degraded` or `unavailable` and
-includes the snapshot timestamp and age. These operational warnings do not
-change the website's liveness status or cause restarts. Alert separately on
-missing references, old rates, refresh failures and storage recovery.
+includes the snapshot timestamp, age, refresh outcome, storage recovery, and
+`automaticOffers` with status, expiry timestamp and seconds remaining. Its
+`warnings` array includes `reference-expiring` during the last 60 seconds of the
+existing 390-second offer window, `reference-expired` after it, and applicable
+`reference-unavailable`, `reference-invalid`, `refresh-failed` or `storage-recovery`
+warnings. These operational warnings do not change the website's liveness status
+or cause restarts. A monitor must inspect `checks.pricing`, not just HTTP 200.
+
+The background worker emits structured `pricing-warning` events to server logs
+when warnings change, and `pricing-recovered` when they clear. It evaluates the
+saved state after any due refresh, so a successful refresh resolves the warning
+before it is logged. Unchanged warnings are suppressed within each process;
+replacement containers may report the current warning again. Warning detection
+normally takes up to 15 seconds. A server that starts with an already-expired
+reference reports expiry immediately after its first check. This implementation
+delivers alerts to server logs and the health endpoint; email, messaging and
+external monitor delivery require configuring the chosen monitoring service.
+
+The worker does not block server startup or keep a shutting-down process alive.
+It stops scheduling on the existing container drain marker. Keep the persistent
+Node process and pricing volume available: this is not a serverless scheduler.
+The 390-second offer window, upstream validation, five-minute attempt limit and
+manual-price review policy remain unchanged.
 
 To roll back visibility, disable Gallery Pricing and verify webhook invalidation
 (or allow the existing five-minute catalogue cache fallback). Keep the volume and
@@ -207,7 +237,8 @@ category/finish metadata. An application rollback must retain that same volume.
 
 Tests cover the formula, rate/weight boundaries, explicit zero, fixed making,
 manual dates and variants, incoming-rate rejection, saved-rate retention, failed
-attempt throttling, five independent worker processes, primary corruption,
+attempt throttling, background retries without traffic, expiry warnings and
+recovery, mixed-product offer eligibility, five independent worker processes, primary corruption,
 backup recovery, abandoned locks and lost ownership. Studio/category/import
 validation and server-rendered HTML/dialog consistency have separate checks.
 
