@@ -51,7 +51,7 @@ export default async function ProductModalPage({
             data-analytics-placement="product_detail"
             data-analytics-product-slug={product.slug}
           >
-            Confirm availability on WhatsApp
+            Enquire on WhatsApp
           </a>
         }
       >

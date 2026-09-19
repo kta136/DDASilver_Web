@@ -6,7 +6,6 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { getProductIdentity, toAbsoluteUrl } from "@/lib/seo";
-import { automaticOfferValidity } from "@/lib/pricing/freshness";
 import { siteConfig } from "@/lib/site";
 import type { Category, Collection, Product } from "@/types/catalog";
 
@@ -104,13 +103,26 @@ function getProductOffers(product: Product, now: number) {
     return undefined;
   }
   const asOf = Date.parse(estimate.asOf);
-  // lastAvailable describes a refresh failure, not the validity of the saved price.
+  const validUntil = Date.parse(estimate.validUntil);
+  // A saved automatic estimate remains visible during an upstream outage. Keep
+  // its matching Offer crawlable for exactly as long as the page displays it.
+  // Reject malformed and future-dated estimates rather than publishing an
+  // unverifiable price.
   if (
-    !Number.isFinite(asOf) || asOf > now ||
-    (estimate.mode === "automatic" && automaticOfferValidity(estimate.asOf, now).status === "expired")
+    !Number.isFinite(asOf) ||
+    asOf > now ||
+    !Number.isFinite(validUntil) ||
+    validUntil <= now
   ) {
     return undefined;
   }
+
+  const priceValidUntil = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(validUntil));
 
   const prices = estimate.sizes.length
     ? estimate.sizes.map((size) => ({
@@ -131,7 +143,9 @@ function getProductOffers(product: Product, now: number) {
     name,
     price: amount.toFixed(2),
     priceCurrency: estimate.currency,
+    priceValidUntil,
     url: toAbsoluteUrl(`/products/${product.slug}`),
+    availability: "https://schema.org/InStock",
     seller: { "@id": `${toAbsoluteUrl("/")}#business` },
     description: "Includes making charges and taxes. Final price confirmed on enquiry.",
   }));

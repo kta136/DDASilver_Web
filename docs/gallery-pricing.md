@@ -2,8 +2,9 @@
 
 The website calculates silver product prices from one durable Silver Bank rate
 and the product's weight and making charge. Gallery cards show the rupee amount
-or range only. Opening an item shows the rate snapshot date, any fallback notice,
-and “Includes making charges and taxes. Final price confirmed on enquiry.”
+or range only. Opening an item shows the rate snapshot date, the exact validity
+boundary, any fallback or market-closed notice, and “Includes making charges and
+taxes. Final price confirmed on enquiry.”
 There is no “Approx.” prefix. Manual totals show their own review date instead.
 
 The public `GET /api/catalog/prices` feed supplies the same calculated estimates
@@ -83,10 +84,11 @@ Gold products are outside this feature.
 ## Refresh and outage behaviour
 
 `GALLERY_PRICING_DIR` holds `reference.json` and `reference.backup.json`, including
-the accepted rate's original `snapshotAsOf` and separate refresh bookkeeping:
-`lastAttemptAt`, `nextAttemptAt` and outcome. These records have no expiry and are
-outside catalogue-cache eviction. The backup protects against file corruption on
-the same volume; it is not a backup on another host.
+the accepted rate's original `snapshotAsOf`, market state, `validUntil`, and
+separate refresh bookkeeping: `lastAttemptAt`, `nextAttemptAt` and outcome. The
+files have no storage expiry, but their displayed price is usable only through
+`validUntil`. They are outside catalogue-cache eviction. The backup protects
+against file corruption on the same volume; it is not a backup on another host.
 
 Next.js instrumentation starts a background worker when a Node server has an
 explicit `GALLERY_PRICING_DIR`. It does not run during builds or in Edge runtimes.
@@ -100,10 +102,14 @@ consumes the same five-minute interval as a successful one. The lock has heartbe
 ownership checks and recovery after abandonment.
 
 Each attempt performs one anonymous, uncached (`cache: 'no-store'`) upstream fetch
-with a three-second timeout. The existing public decoder validates feed status,
-freshness (90 seconds), identity, positive value and unit. The gallery accepts only
-the Silver Bank item in `PER_KG`, and refuses a backwards snapshot timestamp. The
-existing cached public reader and live-rates consumers remain unchanged.
+with a three-second timeout. The public boundary validates feed status, freshness
+(90 seconds), identity, positive value and unit. Gallery pricing also accepts a
+fresh server snapshot whose authoritative market session is closed, using its
+`nextOpenAt` as the validity boundary. A live snapshot uses `nextCloseAt`, or the
+end of that India calendar day when an older contract omits a session boundary.
+A bare stale/closed status without the market-session boundary is rejected. The
+gallery accepts only the Silver Bank item in `PER_KG`, and refuses a backwards
+snapshot timestamp. The public 90-second reference table remains live-only.
 
 While pricing is enabled this feature makes at most one upstream attempt every
 five minutes across the website service, approximately 12 per hour, including
@@ -113,12 +119,13 @@ This bound does not describe the separate live-rates feature.
 
 The request that starts a refresh receives the saved rate. A later render receives
 the newly accepted rate. An outage or an already-open page can produce older
-prices; sparse traffic no longer prevents refreshes on the persistent server.
-There is no browser polling. Saved references never run
-through the incoming freshness test again. A product's weight or making-charge
-edit still changes its total during a feed outage using the last validated rate.
-Missing/corrupt product inputs or loss of both rate files produces a price
-unavailable state while preserving the product.
+prices while the saved business-validity window remains open; sparse traffic no
+longer prevents refreshes on the persistent server. There is no browser polling.
+During a verified closure, failed refreshes do not create a false stale-rate
+alert. At `validUntil`, an unrefreshed automatic price is removed from both
+visible HTML and structured data. Missing/corrupt product inputs or loss of both
+rate files likewise produces a price-unavailable state while preserving the
+product.
 
 ## Rendering and crawlability
 
@@ -141,21 +148,27 @@ results remain Google's decision. Following the owner's 10 September confirmatio
 to use the now-published item prices for SEO, direct product pages include
 `Product` and INR `Offer` markup from the same estimate rendered on that request.
 Each visible size price has its own Offer; variant ranges are not AggregateOffers.
-Missing, invalid or automatic references older than 390 seconds omit offers and
-use ordinary WebPage markup. A failed or pending refresh does not suppress a
-still-valid saved price: its original snapshot timestamp, visible amount and
-fallback disclosure are retained. Offer eligibility is checked for each product
-independently. Manual review dates are not expiry dates.
-Stock, reviews and price expiry are not assumed. The existing product URLs, sitemap and canonical URLs
-provide discovery independently of the JavaScript dialog.
+Every Offer includes the owner-confirmed `InStock` status and `priceValidUntil`
+date derived in India time. Product details show the identical amount and exact
+valid-until time. Missing, invalid, future-dated or expired references omit both
+the visible estimate and Offer and use ordinary WebPage markup. A failed or
+pending refresh does not suppress a saved price while its validity window remains
+open. This keeps the HTML and JSON-LD truthful and consistent when a crawler
+arrives during an upstream outage. Offer eligibility is checked for each product
+independently.
+Following the owner's 19 September confirmation that every catalogue item is in
+stock, product details visibly state “In stock” and every generated Offer uses
+`https://schema.org/InStock`. Reviews and ratings are not assumed. The
+existing product URLs, sitemap and canonical URLs provide discovery independently
+of the JavaScript dialog.
 
 ## Studio and publishing
 
 Gallery Pricing is a singleton with an enable switch. Categories own making
 charges, conditional rules and an explicit defer option. Products can override
-making charges or use manual totals, with a review date and an optional next-review
-reminder. Manual prices remain visible after the reminder date and during rate
-feed outages. Multi-size manual products require a total for each size.
+making charges or use manual totals, with a review date and a required valid-until
+time. Manual prices remain visible during rate-feed outages only until that
+boundary. Multi-size manual products require a total for each size.
 
 Verified finish labels include source-photo ID, review time and visual evidence.
 Photo-review manifests are retained in this directory. The application script
@@ -205,10 +218,13 @@ finish/photo labels is a no-op. Applying defaults never enables pricing.
    feed failure retains the saved rate and does not fail website liveness.
 
 `/api/health` reports gallery pricing as `ok`, `degraded` or `unavailable` and
-includes the snapshot timestamp, age, refresh outcome, storage recovery, and
-`automaticOffers` with status, expiry timestamp and seconds remaining. Its
-`warnings` array includes `reference-expiring` during the last 60 seconds of the
-existing 390-second offer window, `reference-expired` after it, and applicable
+includes the snapshot timestamp, age, refresh outcome, market state, price
+validity boundary, storage recovery, and the legacy-named `automaticOffers`
+field. During a verified closure that field reports `market-closed`, the next
+open boundary and seconds remaining. Otherwise it reports operational reference
+freshness. Its `warnings` array includes `reference-expiring` during the last 60
+seconds of the 390-second operational freshness window, `reference-expired`
+after it, and applicable
 `reference-unavailable`, `reference-invalid`, `refresh-failed` or `storage-recovery`
 warnings. These operational warnings do not change the website's liveness status
 or cause restarts. A monitor must inspect `checks.pricing`, not just HTTP 200.
@@ -226,8 +242,10 @@ external monitor delivery require configuring the chosen monitoring service.
 The worker does not block server startup or keep a shutting-down process alive.
 It stops scheduling on the existing container drain marker. Keep the persistent
 Node process and pricing volume available: this is not a serverless scheduler.
-The 390-second offer window, upstream validation, five-minute attempt limit and
-manual-price review policy remain unchanged.
+The 390-second operational window still detects a stale upstream reference when
+the market is not authoritatively closed. Business validity—not that monitoring
+window—controls visible prices and Offers. Upstream validation and the five-minute
+attempt limit remain unchanged.
 
 To roll back visibility, disable Gallery Pricing and verify webhook invalidation
 (or allow the existing five-minute catalogue cache fallback). Keep the volume and

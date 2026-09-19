@@ -60,8 +60,8 @@ export default function AboutPage() {
               <p>
                 This site is designed for discovery and direct conversation.
                 Displayed estimates are a guide. The showroom team confirms
-                final prices, availability and product details on WhatsApp or by
-                phone.
+                final prices, collection arrangements and product details on
+                WhatsApp or by phone.
               </p>
               <p>
                 The DDA family heritage dates to 1977. DDA Silver carries that

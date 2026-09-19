@@ -1,5 +1,11 @@
 # DDA Silver content approval pack
 
+> **Superseded pricing and stock statements:** The original no-price/no-stock
+> assumptions preserved in this approval pack were replaced by the approved
+> gallery-pricing model and the owner's 19 September 2026 confirmation that all
+> published catalogue items are in stock. See
+> [gallery-pricing.md](gallery-pricing.md) for the current implementation.
+
 **Prepared:** 29 July 2026
 **Status:** Awaiting owner and legal approval
 **Purpose:** Present the current public-facing draft copy in one place for

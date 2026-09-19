@@ -65,7 +65,8 @@ The first viewport must not be dominated by rates or app downloads.
 - Category and collection filters.
 - Active-filter summary and clear-all control.
 - Product grid with editor-controlled ordering.
-- No price, stock badge, quick-buy, or shopping-cart affordance.
+- Show approved price estimates on cards; keep stock status on product details.
+  No quick-buy or shopping-cart affordance.
 
 Query parameters:
 
@@ -85,7 +86,8 @@ be bookmarked, shared, and restored after reload or browser navigation.
 - Image gallery with thumbnails and descriptive alt text.
 - Product name and short description.
 - Category and optional collection links.
-- “Confirm availability on WhatsApp” primary action.
+- Visible owner-confirmed “In stock” status and “Enquire on WhatsApp” primary
+  action.
 - Optional related products from the same category or collection.
 - App and rate promotions remain secondary.
 

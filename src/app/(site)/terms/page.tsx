@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Website Terms",
   description:
-    "Read the terms for browsing the DDA Silver website, viewing reference rates and sending product availability enquiries.",
+    "Read the terms for browsing the DDA Silver website, viewing reference rates and sending product enquiries.",
   path: "/terms",
   canonical: false,
   noIndex: true,
@@ -25,9 +25,9 @@ export default function TermsPage() {
           ],
         },
         {
-          title: "Availability and pricing",
+          title: "Product details and pricing",
           paragraphs: [
-            "Customers should confirm current product details and availability directly with the showroom before relying on a listing.",
+            "Catalogue items are listed as in stock. Customers should confirm current product details, final pricing and collection arrangements directly with the showroom before relying on a listing.",
           ],
         },
         {

@@ -29,7 +29,9 @@ const getPricingContext = cache(async () => {
     );
   return {
     reference: stored.record?.reference ?? null,
-    lastAvailable: stored.record?.refresh.outcome !== "accepted",
+    lastAvailable:
+      stored.record?.refresh.outcome !== "accepted" &&
+      stored.record?.reference?.marketStatus !== "closed",
   };
 });
 

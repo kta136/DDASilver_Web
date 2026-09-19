@@ -38,9 +38,9 @@ export const guides = [
         ],
       },
       {
-        title: "Confirm availability and your quotation",
+        title: "Confirm your quotation and collection details",
         paragraphs: [
-          "Tell the showroom your required date and ask about current availability, the final quotation and packaging. Our public rates are reference metal rates, not the price of a finished gift. Delivery, engraving or any other requested service must be confirmed separately.",
+          "Tell the showroom your required date and ask about the final quotation, collection details and packaging. Our public rates are reference metal rates, not the price of a finished gift. Delivery, engraving or any other requested service must be confirmed separately.",
         ],
         links: [{ label: "Contact DDA Silver in Agra", href: "/contact" }],
       },

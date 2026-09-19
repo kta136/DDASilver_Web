@@ -52,16 +52,24 @@ test.describe("production SEO output", () => {
       "@context": "https://schema.org",
       url: `https://www.ddasilver.com${productPath}`,
     });
+    const visiblePrice = html.includes("data-product-price");
+    expect(productSchema?.["@type"] === "Product").toBe(visiblePrice);
     if (productSchema?.["@type"] === "Product") {
-      const offers = productSchema.offers as Array<{ price: string; priceCurrency: string }>;
+      const offers = productSchema.offers as Array<{
+        availability: string;
+        price: string;
+        priceCurrency: string;
+      }>;
       expect(offers.length).toBeGreaterThan(0);
       for (const offer of offers) {
         expect(offer.priceCurrency).toBe("INR");
+        expect(offer.availability).toBe("https://schema.org/InStock");
         expect(Number(offer.price)).toBeGreaterThan(0);
         expect(html).toContain(new Intl.NumberFormat("en-IN", {
           style: "currency", currency: "INR", maximumFractionDigits: 0,
         }).format(Number(offer.price)));
       }
+      expect(html).toContain('data-product-availability="in-stock"');
     } else {
       expect(productSchema?.mainEntity).toMatchObject({ "@type": "Thing" });
     }

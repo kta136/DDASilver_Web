@@ -119,8 +119,8 @@ export default async function HomePage() {
               See the collection in Agra.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-ink-muted">
-              Browse online, then speak with the showroom team to confirm
-              availability and plan your visit.
+              Browse in-stock designs online, then speak with the showroom team
+              about final pricing and plan your visit.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -205,7 +205,7 @@ export default async function HomePage() {
         href={buildGeneralWhatsAppUrl()}
         target="_blank"
         rel="noreferrer"
-        aria-label="Confirm availability on WhatsApp"
+        aria-label="Enquire on WhatsApp"
         className="fixed right-4 bottom-4 z-30 inline-flex min-h-14 items-center gap-3 rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink no-underline shadow-[0_12px_35px_rgba(37,35,33,0.18)] transition-transform hover:-translate-y-0.5 sm:right-6 sm:bottom-6 sm:px-5"
         data-analytics="whatsapp_click"
         data-analytics-placement="floating"
@@ -214,7 +214,7 @@ export default async function HomePage() {
           <WhatsappLogoIcon size={20} weight="fill" aria-hidden="true" />
         </span>
         <span className="hidden sm:inline">
-          Confirm availability on WhatsApp
+          Enquire on WhatsApp
         </span>
       </a>
     </main>

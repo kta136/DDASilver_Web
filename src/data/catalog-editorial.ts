@@ -10,7 +10,7 @@ export const categoryEditorial: Record<string, CatalogEditorialSection[]> = {
     },
     {
       heading: "Compare the details before requesting a quote",
-      body: "Use the purity and shape filters to narrow the range. Weight and purity describe different properties, and a bullion reference rate is not a finished coin quotation. Send the product link or reference to the showroom and ask about current availability, the final quote and any packaging you need for your occasion.",
+      body: "Use the purity and shape filters to narrow the range. Weight and purity describe different properties, and a bullion reference rate is not a finished coin quotation. Send the product link or reference to the showroom and ask about the final quote, collection details and any packaging you need for your occasion.",
     },
   ],
   idols: [
@@ -40,7 +40,7 @@ export const categoryEditorial: Record<string, CatalogEditorialSection[]> = {
     },
     {
       heading: "Choose a piece for your occasion",
-      body: "For wedding or festive use, consider how the purse will be carried and how its finish complements the outfit. Ask the showroom about the exact item, current availability, care and packaging before making a decision. Decorative details can require different handling from an undecorated silver surface.",
+      body: "For wedding or festive use, consider how the purse will be carried and how its finish complements the outfit. Ask the showroom about the exact item, final pricing, care and packaging before making a decision. Decorative details can require different handling from an undecorated silver surface.",
     },
   ],
   gifts: [
@@ -70,7 +70,7 @@ export const categoryEditorial: Record<string, CatalogEditorialSection[]> = {
     },
     {
       heading: "Check the item and final quotation",
-      body: "A published reference metal rate is not a final price for a finished coin or bar. Ask the showroom to confirm availability, the item's documentation, the final quotation and any applicable charges before purchase. Do not infer hallmarking, certification or a resale promise from a catalog photograph.",
+      body: "A published reference metal rate is not a final price for a finished coin or bar. Ask the showroom to confirm the item's documentation, the final quotation, collection arrangements and any applicable charges before purchase. Do not infer hallmarking, certification or a resale promise from a catalog photograph.",
     },
   ],
 };
@@ -104,7 +104,7 @@ export const curatedCollections = [
       },
       {
         heading: "Confirm what is included",
-        body: "Use the product link to ask about the exact pair, any base or accessories, current availability and the final quotation. If you need an individual Ganesha idol instead, browse the separate Ganesha selection or use the deity filter in the idol catalog.",
+        body: "Use the product link to ask about the exact pair, any base or accessories, collection arrangements and the final quotation. If you need an individual Ganesha idol instead, browse the separate Ganesha selection or use the deity filter in the idol catalog.",
       },
     ],
   },

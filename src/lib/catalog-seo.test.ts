@@ -167,18 +167,21 @@ describe("catalog SEO helpers", () => {
     estimate: {
       status: "available", mode: "automatic", currency: "INR",
       minimum: 5500, maximum: 5500, asOf: new Date(now - 60_000).toISOString(),
+      validUntil: new Date(now + 2 * 86_400_000).toISOString(),
       lastAvailable: false, sizes: [],
     },
   };
 
-  it("uses the displayed rupee price without inventing reviews or stock", () => {
+  it("uses the displayed rupee price with the owner-confirmed stock status", () => {
     const schema = getProductPageStructuredData(pricedProduct, now);
     expect(schema).toMatchObject({
       "@type": "Product",
       offers: [{ "@type": "Offer", price: "5500.00", priceCurrency: "INR",
-        url: "http://localhost:3000/products/silver-coin" }],
+        url: "http://localhost:3000/products/silver-coin",
+        priceValidUntil: "2026-09-12",
+        availability: "https://schema.org/InStock" }],
     });
-    expect(JSON.stringify(schema)).not.toMatch(/"(?:availability|review|aggregateRating|priceValidUntil)":/);
+    expect(JSON.stringify(schema)).not.toMatch(/"(?:review|aggregateRating)":/);
   });
 
   it("publishes each visible size price without using AggregateOffer", () => {
@@ -191,20 +194,25 @@ describe("catalog SEO helpers", () => {
       ],
     } }, now);
     expect("offers" in schema && schema.offers).toMatchObject([
-      { name: "50 g / 4 in", price: "5500.00" },
-      { name: "100 g / 6 in", price: "9900.00" },
+      { name: "50 g / 4 in", price: "5500.00", availability: "https://schema.org/InStock" },
+      { name: "100 g / 6 in", price: "9900.00", availability: "https://schema.org/InStock" },
     ]);
     expect(JSON.stringify(schema)).not.toContain("AggregateOffer");
   });
 
-  it("omits unavailable, stale and malformed prices", () => {
+  it("keeps old displayed prices while omitting unavailable and malformed prices", () => {
     const estimate = pricedProduct.estimate!;
     if (estimate.status !== "available") throw new Error("Expected priced fixture");
+    expect(getProductPageStructuredData({ ...product, estimate: {
+      ...estimate, asOf: new Date(now - 390_001).toISOString(),
+    } }, now)).toMatchObject({
+      "@type": "Product", offers: [{ price: "5500.00" }],
+    });
     for (const value of [
       { status: "unavailable" as const },
-      { ...estimate, asOf: new Date(now - 390_001).toISOString() },
       { ...estimate, asOf: "invalid" },
       { ...estimate, asOf: new Date(now + 1).toISOString() },
+      { ...estimate, validUntil: new Date(now).toISOString() },
       { ...estimate, minimum: 0, maximum: 0 },
       { ...estimate, minimum: Number.NaN },
       { ...estimate, maximum: 9900 },
@@ -215,7 +223,7 @@ describe("catalog SEO helpers", () => {
     }
   });
 
-  it("keeps fresh saved offers through refresh failures without extending their expiry", () => {
+  it("keeps saved offers through refresh failures while their prices remain visible", () => {
     const estimate = pricedProduct.estimate!;
     if (estimate.status !== "available") throw new Error("Expected priced fixture");
     const fallback = { ...product, estimate: { ...estimate, lastAvailable: true } };
@@ -223,7 +231,9 @@ describe("catalog SEO helpers", () => {
     expect(getProductPageStructuredData(fallback, asOf + 390_000)).toMatchObject({
       "@type": "Product", offers: [{ price: "5500.00" }],
     });
-    expect(getProductPageStructuredData(fallback, asOf + 390_001)["@type"]).toBe("WebPage");
+    expect(getProductPageStructuredData(fallback, asOf + 86_400_000)).toMatchObject({
+      "@type": "Product", offers: [{ price: "5500.00" }],
+    });
     expect(fallback.estimate.lastAvailable).toBe(true);
   });
 
@@ -234,6 +244,7 @@ describe("catalog SEO helpers", () => {
       { ...product, slug: "no-price" },
       { ...product, slug: "expired", estimate: { ...estimate, asOf: new Date(now - 390_001).toISOString() } },
       { ...product, slug: "valid-cached", estimate: { ...estimate, lastAvailable: true } },
+      { ...product, slug: "validity-expired", estimate: { ...estimate, validUntil: new Date(now - 1).toISOString() } },
       { ...product, slug: "manual", estimate: { ...estimate, mode: "manual", asOf: "2026-08-01T10:00:00Z" } },
       { ...product, slug: "unavailable", estimate: { status: "unavailable" } },
       { ...product, slug: "invalid", estimate: { ...estimate, minimum: 0 } },
@@ -241,7 +252,7 @@ describe("catalog SEO helpers", () => {
     for (const ordered of [products, [...products].reverse()]) {
       const results = Object.fromEntries(ordered.map((item) => [item.slug, getProductPageStructuredData(item, now)["@type"]]));
       expect(results).toEqual({
-        "no-price": "WebPage", expired: "WebPage", "valid-cached": "Product",
+        "no-price": "WebPage", expired: "Product", "valid-cached": "Product", "validity-expired": "WebPage",
         manual: "Product", unavailable: "WebPage", invalid: "WebPage",
       });
     }

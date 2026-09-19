@@ -55,7 +55,8 @@ export default function ContactPage() {
           </h1>
           <p className="text-lg leading-8 text-ink-muted">
             Visit our Agra showroom to experience the collection, or speak with
-            our team for help choosing a piece and confirming availability.
+            our team for help choosing an in-stock piece and confirming final
+            pricing.
           </p>
         </div>
 

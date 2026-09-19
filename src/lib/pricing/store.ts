@@ -31,7 +31,13 @@ export function validReference(value: unknown): value is SilverReference {
     Number.isFinite(r.value) &&
     r.value > 0 &&
     typeof r.snapshotAsOf === "string" &&
-    Number.isFinite(Date.parse(r.snapshotAsOf))
+    Number.isFinite(Date.parse(r.snapshotAsOf)) &&
+    (r.marketStatus === undefined ||
+      r.marketStatus === "live" ||
+      r.marketStatus === "closed") &&
+    (r.validUntil === undefined ||
+      (typeof r.validUntil === "string" &&
+        Number.isFinite(Date.parse(r.validUntil))))
   );
 }
 function validRecord(value: unknown): value is PricingRecord {

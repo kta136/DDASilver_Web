@@ -24,7 +24,11 @@ export async function fetchGalleryReference(): Promise<SilverReference | null> {
       signal: AbortSignal.timeout(3_000),
     });
     if (!response.ok) return null;
-    const snapshot = decodePublicRateSnapshot(await readBoundedJson(response));
+    const snapshot = decodePublicRateSnapshot(
+      await readBoundedJson(response),
+      Date.now(),
+      { allowClosed: true },
+    );
     const item = snapshot?.items.find(
       (item) =>
         item.id === SILVER_BANK_ID && item.unit === "PER_KG" && item.value > 0,
@@ -35,6 +39,8 @@ export async function fetchGalleryReference(): Promise<SilverReference | null> {
           unit: "PER_KG",
           value: item.value,
           snapshotAsOf: snapshot.serverTime,
+          marketStatus: snapshot.marketStatus,
+          validUntil: snapshot.validUntil,
         }
       : null;
   } catch {

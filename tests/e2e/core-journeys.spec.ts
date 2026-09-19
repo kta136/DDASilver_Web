@@ -22,7 +22,7 @@ test("audit fixes keep phone enquiry visible and restore menu focus", async ({ p
   await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
   await page.locator('article a[href^="/products/"]').first().click();
   const dialog = page.getByRole("dialog");
-  const enquiry = dialog.getByRole("link", { name: "Confirm availability on WhatsApp" });
+  const enquiry = dialog.getByRole("link", { name: "Enquire on WhatsApp" });
   await expect(enquiry).toBeVisible();
   const before = await enquiry.boundingBox();
   expect(before!.y + before!.height).toBeLessThanOrEqual(844);
@@ -137,7 +137,7 @@ test("discovers a product and opens its enquiry path", async ({ page }) => {
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
   await expect(
-    dialog.getByRole("link", { name: "Confirm availability on WhatsApp" }),
+    dialog.getByRole("link", { name: "Enquire on WhatsApp" }),
   ).toHaveAttribute("href", /wa\.me/);
   await expect(
     page.getByRole("searchbox", { name: "Search products" }),

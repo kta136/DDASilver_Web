@@ -18,6 +18,8 @@ describe("public reference HTML", () => {
     try {
       const snapshot = {
         serverTime: new Date().toISOString(),
+        marketStatus: "live" as const,
+        validUntil: new Date(Date.now() + 3_600_000).toISOString(),
         items: [
           {
             id: "public-silver",

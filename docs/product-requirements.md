@@ -45,8 +45,10 @@ gifts, and home or tableware products.
 
 ## Non-goals
 
-- Product prices or price calculations.
-- Real-time product inventory or stock promises.
+- Checkout pricing or online transactions; displayed showroom estimates remain
+  subject to final confirmation.
+- Per-item real-time inventory management. The owner confirmed the published
+  catalogue as in stock on 19 September 2026.
 - Cart, checkout, payment, shipping, returns, or order management.
 - Customer enquiry forms or storing enquiry submissions.
 - Saved products, wishlists, member profiles, or purchase history.
@@ -102,10 +104,11 @@ be verified before production.
 
 - Show title, category, optional collections, short description, and an
   accessible image gallery.
-- Show “Confirm availability on WhatsApp.”
+- Show the owner-confirmed “In stock” status and an “Enquire on WhatsApp” action.
 - Generate a WhatsApp message containing the product title, optional internal
   reference, and canonical URL.
-- Do not show price, stock, weight, variant, shipping, or checkout controls.
+- Show verified product facts and the approved displayed estimate where
+  available. Do not add shipping, cart or checkout controls.
 
 ### Live rates
 

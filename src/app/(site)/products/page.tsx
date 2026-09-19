@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/seo";
 import { getCatalogListing } from "@/sanity/lib/catalog";
 
 const productsDescription =
-  "Explore silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp for availability.";
+  "Explore in-stock silver jewellery, coins, idols, gifts and utensils from DDA Silver in Agra. Browse the collection and enquire on WhatsApp.";
 
 type ProductsPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;

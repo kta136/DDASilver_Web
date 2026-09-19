@@ -4,6 +4,7 @@ import {
   normalizeFeedStatus,
   rateSnapshotSchema,
 } from "@/lib/rates/contract";
+import { z } from "zod";
 import {
   isAllowedDdaJewelsUrl,
   readBoundedJson,
@@ -11,8 +12,26 @@ import {
 
 export type PublicRateSnapshot = {
   serverTime: string;
+  marketStatus: "live" | "closed";
+  validUntil: string;
   items: { id: string; name: string; unit: string; value: number }[];
 };
+
+const marketSessionSchema = z.object({
+  phase: z.string().trim().min(1).max(40),
+  isOpen: z.boolean(),
+  nextOpenAt: z.string().datetime({ offset: true }).nullable().optional(),
+  nextCloseAt: z.string().datetime({ offset: true }).nullable().optional(),
+});
+
+const marketEnvelopeSchema = z.object({
+  feedStatus: z.object({
+    marketSession: marketSessionSchema.optional(),
+    marketState: z
+      .object({ marketSession: marketSessionSchema.optional() })
+      .optional(),
+  }),
+});
 
 const publicItems: Record<string, { name: string; unit: string }> = {
   // Public DDAJewels item IDs verified against the anonymous feed, 2026-08-26.
@@ -25,16 +44,44 @@ const publicItems: Record<string, { name: string; unit: string }> = {
 export function decodePublicRateSnapshot(
   raw: unknown,
   now = Date.now(),
+  { allowClosed = false }: { allowClosed?: boolean } = {},
 ): PublicRateSnapshot | null {
   const parsed = rateSnapshotSchema.safeParse(raw);
   if (!parsed.success) return null;
   const snapshot = parsed.data;
+  const envelope = marketEnvelopeSchema.safeParse(raw);
+  const session = envelope.success
+    ? envelope.data.feedStatus.marketSession ??
+      envelope.data.feedStatus.marketState?.marketSession
+    : undefined;
+  const normalizedStatus = normalizeFeedStatus(snapshot.feedStatus);
+  const marketStatus =
+    session?.isOpen === false && session.phase === "closed"
+      ? "closed"
+      : normalizedStatus;
   if (
     snapshot.view !== "default" ||
-    normalizeFeedStatus(snapshot.feedStatus) !== "live" ||
+    (marketStatus !== "live" && !(allowClosed && marketStatus === "closed")) ||
     !isRateSnapshotFresh(snapshot.serverTime, now)
   )
     return null;
+  const sessionBoundary =
+    marketStatus === "closed" ? session?.nextOpenAt : session?.nextCloseAt;
+  const boundaryTime = Date.parse(sessionBoundary ?? "");
+  const fallbackLiveBoundary = new Date(
+    new Date(snapshot.serverTime).toLocaleDateString("en-CA", {
+      timeZone: "Asia/Kolkata",
+    }) + "T23:59:59.999+05:30",
+  ).toISOString();
+  const validUntil =
+    Number.isFinite(boundaryTime) && boundaryTime > now
+      ? new Date(boundaryTime).toISOString()
+      : marketStatus === "live" && Date.parse(fallbackLiveBoundary) > now
+        ? fallbackLiveBoundary
+        : null;
+  // A closed-market price is valid only when the authoritative feed supplies
+  // the next opening boundary. Never retain it indefinitely on a bare status.
+  if (!validUntil) return null;
   const items = snapshot.items.flatMap((item) => {
     const allowed = publicItems[item.id];
     const value = extractRateValue(item);
@@ -43,7 +90,14 @@ export function decodePublicRateSnapshot(
     // future private fields from the upstream contract into a public page.
     return [{ id: item.id, name: allowed.name, unit: allowed.unit, value }];
   });
-  return items.length ? { serverTime: snapshot.serverTime, items } : null;
+  return items.length
+    ? {
+        serverTime: snapshot.serverTime,
+        marketStatus,
+        validUntil,
+        items,
+      }
+    : null;
 }
 
 export async function getPublicRateSnapshot(): Promise<PublicRateSnapshot | null> {

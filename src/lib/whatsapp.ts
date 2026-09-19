@@ -17,7 +17,7 @@ export function buildWhatsAppProductUrl(
   const message = [
     `Hello DDA Silver, I would like to enquire about ${product.title}${reference}.`,
     productUrl,
-    "Please confirm availability on WhatsApp.",
+    "Please confirm the final price and collection details.",
   ].join("\n");
 
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;

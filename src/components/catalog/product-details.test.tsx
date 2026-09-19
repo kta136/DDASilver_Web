@@ -29,9 +29,13 @@ describe("<ProductDetails />", () => {
     expect(screen.getByText(`Reference ${product.reference}`)).toBeInTheDocument();
     expect(screen.getByText(product.shortDescription)).toBeInTheDocument();
     expect(screen.getByText("92.5%")).toBeInTheDocument();
+    expect(screen.getByText("In stock")).toHaveAttribute(
+      "data-product-availability",
+      "in-stock",
+    );
     expect(
       screen.getByRole("link", {
-        name: "Confirm availability on WhatsApp",
+        name: "Enquire on WhatsApp",
       }),
     ).toHaveAttribute("href", expect.stringMatching(/^https:\/\/wa\.me\//));
   });

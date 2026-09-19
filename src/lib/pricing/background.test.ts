@@ -26,6 +26,8 @@ function fixture() {
       reference: {
         itemId: SILVER_BANK_ID, unit: "PER_KG", value: 100_000,
         snapshotAsOf: new Date(now - 60_000).toISOString(),
+        marketStatus: "live",
+        validUntil: new Date(now + 86_400_000).toISOString(),
       },
       refresh: { lastAttemptAt: now - REFRESH_INTERVAL_MS, nextAttemptAt: now, outcome: "accepted" },
     },

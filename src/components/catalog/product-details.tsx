@@ -49,6 +49,12 @@ export function ProductDetails({
           Reference {product.reference}
         </p>
       ) : null}
+      <p
+        className="mt-4 text-sm font-semibold text-ink"
+        data-product-availability="in-stock"
+      >
+        In stock
+      </p>
       {product.material ||
       product.purity ||
       product.weightGrams ||
@@ -219,8 +225,8 @@ export function ProductDetails({
       <div className="mt-9 border-y border-line py-6">
         <p className="text-sm font-bold">Browse and enquire</p>
         <p className="mt-2 text-sm leading-6 text-ink-muted">
-          Confirm final pricing and availability on WhatsApp with the showroom
-          team.
+          Confirm final pricing and collection details on WhatsApp with the
+          showroom team.
         </p>
       </div>
 
@@ -237,7 +243,7 @@ export function ProductDetails({
         data-analytics-product-slug={product.slug}
       >
         <WhatsappLogoIcon size={20} aria-hidden="true" />
-        Confirm availability on WhatsApp
+        Enquire on WhatsApp
       </a>
       <p className="mt-4 text-xs leading-5 text-ink-muted">
         Your message includes this product title, reference, and page link.

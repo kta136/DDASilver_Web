@@ -27,7 +27,7 @@ export default function RatesDisclaimerPage() {
         {
           title: "No transaction guarantee",
           paragraphs: [
-            "A displayed rate does not guarantee a transaction price or product availability. Confirm applicable rates and terms directly with the showroom.",
+            "A displayed rate does not guarantee a finished-product transaction price or reserve an item. Confirm applicable rates, final pricing and collection arrangements directly with the showroom.",
           ],
         },
         {

@@ -18,6 +18,7 @@ const old: PriceEstimate = {
   mode: "automatic",
   currency: "INR",
   asOf: "2026-09-01T09:00:00Z",
+  validUntil: "2026-09-30T18:29:59.999Z",
   lastAvailable: true,
   sizes: [],
 };
@@ -49,15 +50,31 @@ describe("server-supplied visible pricing", () => {
   });
 
   it("includes amount and absolute date in HTML without JavaScript", () => {
+    const now = Date.parse("2026-09-10T10:00:00Z");
     const html = renderToStaticMarkup(
       <ProductPrice slug="coin" estimate={old} details />,
     );
+    const schema = getProductPageStructuredData({
+      ...fallbackProducts[0],
+      estimate: old,
+    }, now);
     expect(html).toContain("₹1,050");
     expect(html).not.toContain("Approx");
     expect(html).toContain('dateTime="2026-09-01T09:00:00Z"');
+    expect(html).toContain('dateTime="2026-09-30T18:29:59.999Z"');
+    expect(html).toContain("Price valid until");
     expect(html).toContain("Includes making charges and taxes");
     expect(html).toContain("last available silver rate");
     expect(html).not.toContain("Offer");
+    expect(schema).toMatchObject({
+      "@type": "Product",
+      offers: [{
+        price: "1050.00",
+        priceCurrency: "INR",
+        priceValidUntil: "2026-09-30",
+        availability: "https://schema.org/InStock",
+      }],
+    });
   });
   it("renders a crawlable gallery amount without the detail disclosures", () => {
     const html = renderToStaticMarkup(

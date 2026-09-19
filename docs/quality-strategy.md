@@ -51,7 +51,8 @@ IDs, stream tickets, free-form WhatsApp text, or internal customer identifiers.
 - Open Graph and social images.
 - Breadcrumb structured data.
 - Organization/LocalBusiness structured data using verified facts.
-- Product structured data without fake offers, prices, ratings, or stock.
+- Product structured data with the matching displayed Offer price and the
+  owner-confirmed `InStock` status; never fabricate ratings or reviews.
 - Search Console verification and sitemap submission.
 - Redirect inventory for indexed legacy URLs.
 

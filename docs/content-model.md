@@ -153,7 +153,9 @@ source photos, use the approved background, deliver square 1254 x 1254 PNGs and
 matching validated metadata. AI-assisted retouching must not redesign products.
 Gallery pricing uses the separately approved [pricing model](gallery-pricing.md).
 Imports preserve existing pricing and verified finish labels and validate pricing
-coverage before publishing. Do not add stock or checkout fields.
+coverage before publishing. The owner-confirmed catalogue-wide `InStock` status
+is implemented in the product presentation and Offer markup rather than as an
+unmaintained per-item field. Do not add checkout fields.
 
 The image CDN provides responsive delivery and stable descriptive filenames.
 Authored alt text, structured data and the image sitemap are preserved. Review

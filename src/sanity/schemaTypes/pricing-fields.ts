@@ -209,19 +209,24 @@ export const productPricingField = defineField({
     }),
     defineField({
       name: "reviewDueAt",
-      title: "Next manual price review",
+      title: "Manual price valid until",
       type: "datetime",
       description:
-        "A reminder only. The price remains visible after this date.",
+        "Required for manual totals. The visible price and Offer are removed after this time.",
       validation: (rule) =>
-        rule
-          .custom(
-            (value) =>
-              !value ||
-              Date.parse(value) >= Date.now() ||
-              "This manual price is due for review.",
+        rule.custom((value, context) => {
+          const parent = context.parent as
+            | { mode?: string; reviewedAt?: string }
+            | undefined;
+          if (parent?.mode !== "manual") return true;
+          if (!value) return "Enter when this manual price stops being valid.";
+          if (
+            parent.reviewedAt &&
+            Date.parse(value) <= Date.parse(parent.reviewedAt)
           )
-          .warning(),
+            return "The validity time must be after the review time.";
+          return true;
+        }),
     }),
   ],
 });

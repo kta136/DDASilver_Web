@@ -48,6 +48,17 @@ export function ProductPrice({
               : "Silver rate snapshot: "}
             <time dateTime={value.asOf}>{formatPriceDate(value.asOf)}</time>
           </p>
+          <p className="mt-2 text-xs leading-5 text-ink-muted">
+            Price valid until: {" "}
+            <time dateTime={value.validUntil} data-price-valid-until>
+              {formatPriceDate(value.validUntil)}
+            </time>
+          </p>
+          {value.marketStatus === "closed" ? (
+            <p className="mt-2 text-xs text-ink-muted">
+              Market closed; this uses the latest published silver rate.
+            </p>
+          ) : null}
           {value.lastAvailable ? (
             <p className="mt-2 text-xs text-ink-muted">
               Based on the last available silver rate shown above.

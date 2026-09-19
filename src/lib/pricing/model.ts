@@ -54,6 +54,8 @@ export type PriceEstimate =
       minimum: number;
       maximum: number;
       asOf: string;
+      validUntil: string;
+      marketStatus?: "live" | "closed";
       lastAvailable: boolean;
       sizes: { weightGrams: number; diameterInches: number; amount: number }[];
     }
@@ -64,6 +66,10 @@ export type SilverReference = {
   unit: "PER_KG";
   value: number;
   snapshotAsOf: string;
+  /** Optional only for reading the pre-validity durable record during rollout. */
+  marketStatus?: "live" | "closed";
+  /** Exact instant through which DDA is willing to honour this reference. */
+  validUntil?: string;
 };
 
 export function isGold(product: PricingProduct) {
@@ -158,6 +164,12 @@ export function pricingIssues(product: PricingProduct): string[] {
   if (pricing.mode === "manual") {
     if (!pricing.reviewedAt || !Number.isFinite(Date.parse(pricing.reviewedAt)))
       return ["Enter the manual price review date."];
+    if (
+      !pricing.reviewDueAt ||
+      !Number.isFinite(Date.parse(pricing.reviewDueAt)) ||
+      Date.parse(pricing.reviewDueAt) <= Date.parse(pricing.reviewedAt)
+    )
+      return ["Enter a manual price validity date after the review date."];
     if (variants.length) {
       if (
         variants.some(
@@ -201,12 +213,21 @@ export function calculateEstimate(
   product: PricingProduct,
   reference: SilverReference | null,
   lastAvailable = false,
+  now = Date.now(),
 ): PriceEstimate | undefined {
   if (isGold(product) || product.categoryPricingDeferred) return undefined;
   if (pricingIssues(product).length) return { status: "unavailable" };
   const pricing = product.pricing ?? {};
   const mode = pricing.mode ?? "automatic";
-  if (mode === "automatic" && (!reference || !positive(reference.value)))
+  const validUntil =
+    mode === "manual" ? pricing.reviewDueAt : reference?.validUntil;
+  const validUntilTime = Date.parse(validUntil ?? "");
+  if (
+    !validUntil ||
+    !Number.isFinite(validUntilTime) ||
+    validUntilTime <= now ||
+    (mode === "automatic" && (!reference || !positive(reference.value)))
+  )
     return { status: "unavailable" };
   const automaticTotal = (weight: number) =>
     (weight * reference!.value) / 1_000 + makingTotal(product, weight)!;
@@ -240,6 +261,10 @@ export function calculateEstimate(
     minimum: Math.min(...totals),
     maximum: Math.max(...totals),
     asOf: mode === "manual" ? pricing.reviewedAt! : reference!.snapshotAsOf,
+    validUntil,
+    ...(mode === "automatic" && reference?.marketStatus
+      ? { marketStatus: reference.marketStatus }
+      : {}),
     lastAvailable: mode === "automatic" && lastAvailable,
     sizes,
   };

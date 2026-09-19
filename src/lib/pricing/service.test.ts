@@ -38,7 +38,7 @@ describe("request-time price composition", () => {
     mocks.read.mockResolvedValue({
       recovery: "primary",
       record: {
-        reference: { itemId: "silver", unit: "PER_KG", value: 100000, snapshotAsOf: new Date(now - 60_000).toISOString() },
+        reference: { itemId: "silver", unit: "PER_KG", value: 100000, snapshotAsOf: new Date(now - 60_000).toISOString(), marketStatus: "live", validUntil: new Date(now + 86_400_000).toISOString() },
         refresh: { nextAttemptAt: now + 200_000, outcome },
       },
     });
@@ -52,7 +52,7 @@ describe("request-time price composition", () => {
       { ...base, slug: "invalid", weightGrams: undefined },
       { ...base, slug: "gold", material: "gold" as const },
       { ...base, slug: "deferred", categoryPricingDeferred: true },
-      { ...base, slug: "manual", pricing: { mode: "manual" as const, manualTotalInr: 5000, reviewedAt: "2026-08-01T00:00:00Z" } },
+      { ...base, slug: "manual", pricing: { mode: "manual" as const, manualTotalInr: 5000, reviewedAt: "2026-08-01T00:00:00Z", reviewDueAt: new Date(now + 86_400_000).toISOString() } },
     ];
     for (const ordered of [products, [...products].reverse()]) {
       const priced = await withGalleryPrices(ordered);
@@ -73,6 +73,8 @@ describe("request-time price composition", () => {
       unit: "PER_KG",
       value: 100000,
       snapshotAsOf: "2026-01-01T00:00:00Z",
+      marketStatus: "live" as const,
+      validUntil: new Date(Date.now() + 86_400_000).toISOString(),
     };
     mocks.read.mockResolvedValue({
       recovery: "primary",

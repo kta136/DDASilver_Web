@@ -61,6 +61,7 @@ describe("pricing coverage safeguards", () => {
     const pricing = {
       mode: "manual",
       reviewedAt: "2026-09-01T00:00:00Z",
+      reviewDueAt: "2026-10-01T00:00:00Z",
       manualTotalInr: 1000,
     };
     const client = {

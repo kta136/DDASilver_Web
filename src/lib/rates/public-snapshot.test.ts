@@ -5,12 +5,21 @@ import {
 } from "./public-snapshot";
 
 function payload() {
+  const now = Date.now();
   return {
     schemaVersion: 1,
     view: "default",
-    serverTime: new Date().toISOString(),
+    serverTime: new Date(now).toISOString(),
     sequence: 1,
-    feedStatus: { status: "live" },
+    feedStatus: {
+      status: "live",
+      marketSession: {
+        phase: "open",
+        isOpen: true,
+        nextOpenAt: null,
+        nextCloseAt: new Date(now + 3_600_000).toISOString(),
+      },
+    },
     items: [
       {
         itemId: "cmomrj7er000004l5137q5fx4",
@@ -39,6 +48,9 @@ describe("public HTML rate snapshot boundary", () => {
         value: 123456,
       },
     ]);
+    expect(decodePublicRateSnapshot(payload())).toMatchObject({
+      marketStatus: "live",
+    });
     const wrongUnit = payload();
     wrongUnit.items[0].unit = "PER_GRAM";
     expect(decodePublicRateSnapshot(wrongUnit)).toBeNull();
@@ -69,6 +81,45 @@ describe("public HTML rate snapshot boundary", () => {
       }),
     ).toBeNull();
     expect(decodePublicRateSnapshot({})).toBeNull();
+  });
+  it("accepts an authoritative closed-market snapshot only for durable gallery pricing", () => {
+    const now = Date.now();
+    const closed = {
+      ...payload(),
+      serverTime: new Date(now).toISOString(),
+      feedStatus: {
+        status: "stale",
+        marketSession: {
+          phase: "closed",
+          isOpen: false,
+          nextOpenAt: new Date(now + 86_400_000).toISOString(),
+          nextCloseAt: null,
+        },
+      },
+    };
+    expect(decodePublicRateSnapshot(closed, now)).toBeNull();
+    expect(
+      decodePublicRateSnapshot(closed, now, { allowClosed: true }),
+    ).toMatchObject({
+      marketStatus: "closed",
+      validUntil: new Date(now + 86_400_000).toISOString(),
+    });
+    expect(
+      decodePublicRateSnapshot(
+        {
+          ...closed,
+          feedStatus: {
+            ...closed.feedStatus,
+            marketSession: {
+              ...closed.feedStatus.marketSession,
+              nextOpenAt: null,
+            },
+          },
+        },
+        now,
+        { allowClosed: true },
+      ),
+    ).toBeNull();
   });
   it("uses an anonymous fixed endpoint without inherited view or session headers", async () => {
     vi.stubEnv(

@@ -7,7 +7,15 @@ const payload = () => ({
   view: "default",
   serverTime: new Date().toISOString(),
   sequence: 1,
-  feedStatus: { status: "live" },
+  feedStatus: {
+    status: "live",
+    marketSession: {
+      phase: "open",
+      isOpen: true,
+      nextOpenAt: null,
+      nextCloseAt: new Date(Date.now() + 3_600_000).toISOString(),
+    },
+  },
   items: [
     {
       itemId: SILVER_BANK_ID,
@@ -35,6 +43,7 @@ describe("gallery upstream acceptance", () => {
       value: 100_000,
       unit: "PER_KG",
       itemId: SILVER_BANK_ID,
+      marketStatus: "live",
     });
     const [url, options] = fetcher.mock.calls[0];
     expect(String(url)).toBe(
@@ -49,7 +58,7 @@ describe("gallery upstream acceptance", () => {
     expect(options).not.toHaveProperty("next");
     expect(options.signal).toBeInstanceOf(AbortSignal);
   });
-  it("rejects stale, private, zero, non-live and malformed responses", async () => {
+  it("rejects stale, private, zero, unbounded closed and malformed responses", async () => {
     vi.stubEnv("DDAJEWELS_RATES_SNAPSHOT_URL", "https://rates.ddajewels.com/");
     const fetcher = vi.fn();
     vi.stubGlobal("fetch", fetcher);
@@ -67,5 +76,33 @@ describe("gallery upstream acceptance", () => {
       new DOMException("Timed out", "TimeoutError"),
     );
     expect(await fetchGalleryReference()).toBeNull();
+  });
+  it("accepts the last published price while the authoritative market session is closed", async () => {
+    vi.stubEnv("DDAJEWELS_RATES_SNAPSHOT_URL", "https://rates.ddajewels.com/");
+    const now = Date.now();
+    const nextOpenAt = new Date(now + 86_400_000).toISOString();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        Response.json({
+          ...payload(),
+          serverTime: new Date(now).toISOString(),
+          feedStatus: {
+            status: "stale",
+            marketSession: {
+              phase: "closed",
+              isOpen: false,
+              nextOpenAt,
+              nextCloseAt: null,
+            },
+          },
+        }),
+      ),
+    );
+    expect(await fetchGalleryReference()).toMatchObject({
+      itemId: SILVER_BANK_ID,
+      marketStatus: "closed",
+      validUntil: nextOpenAt,
+    });
   });
 });

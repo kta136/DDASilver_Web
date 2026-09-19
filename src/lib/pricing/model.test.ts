@@ -14,6 +14,8 @@ const reference: SilverReference = {
   unit: "PER_KG",
   value: 100_123.45,
   snapshotAsOf: "2026-01-01T10:00:00Z",
+  marketStatus: "live",
+  validUntil: "2099-01-01T00:00:00Z",
 };
 const product: PricingProduct = {
   weightGrams: 10,
@@ -171,7 +173,7 @@ describe("gallery pricing", () => {
       }),
     ).not.toEqual([]);
   });
-  it("keeps manual totals visible past the review due date and without a rate", () => {
+  it("removes manual totals after their validity date", () => {
     const manual: PricingProduct = {
       pricing: {
         mode: "manual",
@@ -180,11 +182,15 @@ describe("gallery pricing", () => {
         reviewDueAt: "2020-02-01T00:00:00Z",
       },
     };
-    expect(calculateEstimate(manual, null, true)).toMatchObject({
+    expect(calculateEstimate(manual, null, true, Date.parse("2020-01-15T00:00:00Z"))).toMatchObject({
       minimum: 1200,
       mode: "manual",
       asOf: "2020-01-01T00:00:00Z",
+      validUntil: "2020-02-01T00:00:00Z",
       lastAvailable: false,
+    });
+    expect(calculateEstimate(manual, null, true, Date.parse("2020-02-01T00:00:00Z"))).toEqual({
+      status: "unavailable",
     });
     expect(
       calculateEstimate(
@@ -202,6 +208,7 @@ describe("gallery pricing", () => {
       pricing: {
         mode: "manual",
         reviewedAt: reference.snapshotAsOf,
+        reviewDueAt: reference.validUntil,
         manualSizes: [{ weightGrams: 10, diameterInches: 1, totalInr: 549.99 }],
       },
     };
@@ -243,6 +250,7 @@ describe("gallery pricing", () => {
           mode: "manual",
           manualTotalInr: total,
           reviewedAt: reference.snapshotAsOf,
+          reviewDueAt: reference.validUntil,
         },
       },
       null,
