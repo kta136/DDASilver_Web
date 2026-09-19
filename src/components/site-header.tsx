@@ -23,6 +23,7 @@ import { siteConfig } from "@/lib/site";
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
+  { label: "Payal Brands", href: "/silver-payal-brands" },
   { label: "Live Rates", href: "/rates" },
   { label: "Our Showroom", href: "/about" },
   { label: "Guides", href: "/guides" },
@@ -125,10 +126,13 @@ export function SiteHeader({
             <span className="hidden xl:inline">Search</span>
           </button>
           <nav aria-label="Primary navigation" className="hidden lg:block">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-4 xl:gap-8">
               {navigation
                 .filter(
-                  (item) => item.href === "/products" || item.href === "/rates",
+                  (item) =>
+                    item.href === "/products" ||
+                    item.href === "/silver-payal-brands" ||
+                    item.href === "/rates",
                 )
                 .map((item) => (
                   <li key={item.href}>
@@ -150,7 +154,7 @@ export function SiteHeader({
         </div>
         <div className="masthead-right">
           <nav aria-label="Showroom navigation" className="hidden lg:block">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-4 xl:gap-8">
               <li>
                 <Link href="/about">Our Showroom</Link>
               </li>

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildGeneralWhatsAppUrl,
+  buildWhatsAppPayalBrandUrl,
   buildWhatsAppProductUrl,
 } from "@/lib/whatsapp";
 
@@ -30,5 +31,26 @@ describe("WhatsApp URLs", () => {
   it("creates a general enquiry without personal data", () => {
     const url = new URL(buildGeneralWhatsAppUrl());
     expect(url.searchParams.get("text")).toContain("exploring your silver");
+  });
+
+  it.each(["Anand", "MD", "AGB", "DDA", "AKS"])("builds a %s payal enquiry with the page URL", (brand) => {
+    const url = new URL(
+      buildWhatsAppPayalBrandUrl(brand, "https://www.ddasilver.com"),
+    );
+
+    expect(url.hostname).toBe("wa.me");
+    expect(url.pathname).toBe("/917060001491");
+    expect(url.searchParams.get("text")).toContain(`${brand} silver payals`);
+    expect(url.searchParams.get("text")).toContain("current designs and pricing");
+    expect(url.searchParams.get("text")).toContain(
+      "https://www.ddasilver.com/silver-payal-brands",
+    );
+  });
+
+  it("creates a general payal enquiry when no brand is selected", () => {
+    const url = new URL(buildWhatsAppPayalBrandUrl());
+    expect(url.searchParams.get("text")?.split("\n")[0]).toBe(
+      "Hello DDA Silver, I would like to enquire about silver payals.",
+    );
   });
 });

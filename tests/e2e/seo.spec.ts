@@ -6,6 +6,48 @@ test.describe("production SEO output", () => {
     "Production crawl output is intentionally disabled in preview mode.",
   );
 
+  test("makes silver payal brands discoverable without inventing product offers", async ({
+    request,
+  }) => {
+    const response = await request.get("/silver-payal-brands", {
+      headers: { "User-Agent": "Googlebot" },
+    });
+    const html = await response.text();
+    const pageUrl = "https://www.ddasilver.com/silver-payal-brands";
+    expect(response.status()).toBe(200);
+    expect(response.headers()["x-robots-tag"] ?? "").not.toContain("noindex");
+    expect(html).toContain("Silver Payal &amp; Anklet Brands | DDA Silver");
+    expect(html).toContain(`<link rel="canonical" href="${pageUrl}"`);
+    expect(html).toContain('<meta name="robots" content="index, follow"');
+    expect(html).toContain("silver anklets");
+
+    const schemas = [...html.matchAll(
+      /<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+    )].map((match) => JSON.parse(match[1]) as Record<string, unknown>);
+    const collection = schemas.find((schema) => schema["@type"] === "CollectionPage");
+    expect(collection).toMatchObject({
+      url: pageUrl,
+      publisher: { "@id": "https://www.ddasilver.com/#business" },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: 5,
+        itemListElement: ["Anand", "MD", "AGB", "DDA", "AKS"].map((brand, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: `${brand} silver payal`,
+          url: `${pageUrl}#${brand.toLowerCase()}`,
+        })),
+      },
+    });
+    expect(schemas.some((schema) => schema["@type"] === "BreadcrumbList")).toBe(true);
+    expect(JSON.stringify(schemas)).not.toMatch(/"(?:offers|aggregateRating|review)":/);
+    const sitemap = await (await request.get("/sitemap.xml")).text();
+    expect(sitemap).toContain(`<loc>${pageUrl}</loc>`);
+    const home = await (await request.get("/")).text();
+    expect(home).toContain('href="/silver-payal-brands"');
+    expect(home).toContain("Explore silver payal brands");
+  });
+
   test("serves indexable product metadata, structured data, and social images", async ({
     request,
   }) => {

@@ -12,6 +12,7 @@ import { getSitemapCatalog } from "@/sanity/lib/catalog";
 const staticRoutes = [
   "",
   "/products",
+  "/silver-payal-brands",
   "/rates",
   "/about",
   "/contact",

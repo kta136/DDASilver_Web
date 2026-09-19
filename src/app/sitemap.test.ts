@@ -105,6 +105,13 @@ describe("sitemap metadata route", () => {
         lastModified: "2026-08-20T10:00:00.000Z",
       }),
     );
+    expect(entries).toContainEqual(
+      expect.objectContaining({
+        url: "http://localhost:3000/silver-payal-brands",
+        changeFrequency: "monthly",
+        priority: 0.7,
+      }),
+    );
     expect(entries.map((entry) => entry.url)).not.toContain(
       "http://localhost:3000/category/purse",
     );

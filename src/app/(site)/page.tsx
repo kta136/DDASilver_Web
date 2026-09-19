@@ -64,6 +64,28 @@ export default async function HomePage() {
 
       <CategoryIndex categories={homepageCategories} />
 
+      <section className="border-b border-line bg-paper-strong py-10 sm:py-12">
+        <div className="site-container flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Silver payal</p>
+            <h2 className="font-display mt-3 text-4xl font-normal leading-tight sm:text-5xl">
+              Explore silver payal brands.
+            </h2>
+            <p className="mt-4 leading-7 text-ink-muted">
+              Meet Anand, MD, AGB, DDA and AKS, then enquire about current
+              designs, sizes, weights, purity details and pricing.
+            </p>
+          </div>
+          <Link
+            href="/silver-payal-brands"
+            className="inline-flex shrink-0 items-center gap-3 border-b border-copper pb-2 text-sm font-bold no-underline"
+          >
+            Explore silver payal brands
+            <ArrowRightIcon size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       <section className="section-shell border-b border-line bg-paper-strong">
         <div className="site-container">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">

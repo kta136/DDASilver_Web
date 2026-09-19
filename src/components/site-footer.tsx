@@ -13,6 +13,7 @@ import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 const legalLinks = [
   { label: "All products", href: "/products" },
+  { label: "Payal brands", href: "/silver-payal-brands" },
   { label: "Live rates", href: "/rates" },
   { label: "Our showroom", href: "/about" },
   { label: "Contact", href: "/contact" },
