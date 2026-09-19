@@ -1,4 +1,7 @@
 .pageShell {
+  --rate-number-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
   display: flex;
   width: 100%;
   max-width: 1200px;
@@ -18,7 +21,7 @@
   --rate-value-color: var(--ink);
   --rate-muted-color: var(--ink-muted);
   --rate-font-scale: 1;
-  --rate-value-font: var(--font-manrope), system-ui, sans-serif;
+  --rate-value-font: var(--rate-number-font);
   --rate-table-max-width: 920px;
   --rate-cell-py: calc(0.9rem * var(--rate-font-scale));
   --rate-cell-px: 1.1rem;
@@ -38,9 +41,9 @@
     calc(1.1rem * var(--rate-font-scale))
   );
   --rate-value-col-width: clamp(
-    118px,
+    128px,
     calc(30% * var(--rate-font-scale)),
-    calc(180px * var(--rate-font-scale))
+    calc(200px * var(--rate-font-scale))
   );
   --rate-move-col-width: calc(120px * var(--rate-font-scale));
 
@@ -134,7 +137,8 @@
   color: var(--rate-value-color);
   font-family: var(--rate-value-font);
   font-size: var(--rate-value-size);
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.015em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   overflow: hidden;
@@ -151,7 +155,8 @@
     calc(2.2vw * var(--rate-font-scale)),
     calc(1.45rem * var(--rate-font-scale))
   );
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.015em;
   font-variant-numeric: tabular-nums;
   text-align: right;
   white-space: nowrap;
@@ -583,8 +588,10 @@ div.historyState {
   min-width: 92px;
   padding: var(--rate-cell-py) var(--rate-cell-px) var(--rate-cell-py) 0.75rem;
   color: var(--rate-move-color);
+  font-family: var(--rate-value-font);
   font-size: var(--rate-move-size);
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.015em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   overflow: hidden;
@@ -687,7 +694,7 @@ div.historyState {
   --source-closed: #5f7f76;
   --source-accent: var(--copper-dark);
   --source-table-font-scale: 0.82;
-  --source-value-font: var(--font-manrope), system-ui, sans-serif;
+  --source-value-font: var(--rate-number-font);
 
   width: min(100%, 920px);
   align-self: center;
@@ -762,7 +769,7 @@ div.historyState {
   border-radius: 2px;
   background: var(--source-surface);
   color: var(--source-ink);
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .marketTable thead th {
@@ -836,10 +843,12 @@ div.historyState {
     calc(2.35vw * var(--source-table-font-scale)),
     calc(1.875rem * var(--source-table-font-scale))
   );
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.015em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   text-align: right;
+  white-space: nowrap;
 }
 
 .marketCards {
@@ -891,7 +900,8 @@ div.historyState {
   color: var(--source-ink);
   font-family: var(--source-value-font);
   font-size: 1.08rem;
-  font-weight: 750;
+  font-weight: 600;
+  letter-spacing: 0.015em;
   font-variant-numeric: tabular-nums;
   text-overflow: ellipsis;
 }
@@ -1093,7 +1103,7 @@ div.historyState {
   display: none;
   margin-top: 2px;
   color: var(--source-ink-2);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--source-value-font);
   font-size: calc(1.045rem * var(--source-table-font-scale));
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
@@ -1141,8 +1151,8 @@ div.historyState {
 
   .rateSection {
     --rate-cell-py: 0.6rem;
-    --rate-value-col-width: 140px;
-    --rate-move-col-width: 92px;
+    --rate-value-col-width: calc(140px * var(--rate-font-scale));
+    --rate-move-col-width: calc(92px * var(--rate-font-scale));
   }
 
   .rateName {
@@ -1162,7 +1172,7 @@ div.historyState {
   }
 
   .rateTable[data-buying="false"][data-editing="false"] {
-    min-width: 0;
+    min-width: calc(290px * var(--rate-font-scale));
   }
 
   .historyHeadingRow {

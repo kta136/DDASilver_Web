@@ -619,7 +619,7 @@ export function RateExperience() {
       ? 'ui-serif, Georgia, Cambria, "Times New Roman", serif'
       : fontFamily === "mono"
         ? 'ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace'
-        : "var(--font-manrope), system-ui, sans-serif";
+        : "var(--rate-number-font)";
   const rateSectionStyle = {
     "--rate-font-scale": fontScale,
     "--rate-value-font": valueFontFamily,
@@ -984,96 +984,98 @@ export function RateExperience() {
             })}
           </div>
         ) : (
-          <table className={styles.marketTable} aria-label="Market data table">
-            <caption className="sr-only">Live MCX market data</caption>
-            <thead>
-              <tr>
-                <th scope="col" className={styles.marketNameColumn}>
-                  Commodity
-                </th>
-                <th scope="col" className={styles.marketNumberColumn}>
-                  Bid
-                </th>
-                <th scope="col" className={styles.marketNumberColumn}>
-                  Ask
-                </th>
-                <th scope="col" className={styles.marketNumberColumn}>
-                  High
-                </th>
-                <th scope="col" className={styles.marketNumberColumn}>
-                  Low
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {marketRows.map((row) => {
-                const expanded = expandedRows.has(row.key);
-                const bid =
-                  extractNumberLike(row.item?.bid) ??
-                  extractRateValue(row.item);
-                const ask =
-                  extractNumberLike(row.item?.ask) ??
-                  extractRateValue(row.item);
+          <div className={styles.rateTableFrame}>
+            <table className={styles.marketTable} aria-label="Market data table">
+              <caption className="sr-only">Live MCX market data</caption>
+              <thead>
+                <tr>
+                  <th scope="col" className={styles.marketNameColumn}>
+                    Commodity
+                  </th>
+                  <th scope="col" className={styles.marketNumberColumn}>
+                    Bid
+                  </th>
+                  <th scope="col" className={styles.marketNumberColumn}>
+                    Ask
+                  </th>
+                  <th scope="col" className={styles.marketNumberColumn}>
+                    High
+                  </th>
+                  <th scope="col" className={styles.marketNumberColumn}>
+                    Low
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {marketRows.map((row) => {
+                  const expanded = expandedRows.has(row.key);
+                  const bid =
+                    extractNumberLike(row.item?.bid) ??
+                    extractRateValue(row.item);
+                  const ask =
+                    extractNumberLike(row.item?.ask) ??
+                    extractRateValue(row.item);
 
-                return (
-                  <tr key={row.key} className={styles.marketRow}>
-                    <th scope="row" className={styles.marketName}>
-                      <button
-                        type="button"
-                        className={styles.marketNameButton}
-                        aria-expanded={expanded}
-                        aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
-                        title={row.label}
-                        onClick={() => toggleRow(row.key)}
+                  return (
+                    <tr key={row.key} className={styles.marketRow}>
+                      <th scope="row" className={styles.marketName}>
+                        <button
+                          type="button"
+                          className={styles.marketNameButton}
+                          aria-expanded={expanded}
+                          aria-label={`${expanded ? "Hide" : "Show"} ${row.label} high and low`}
+                          title={row.label}
+                          onClick={() => toggleRow(row.key)}
+                        >
+                          {row.label}
+                        </button>
+                      </th>
+                      <td className={styles.marketNumber}>
+                        <FlashValue
+                          value={bid}
+                          formatter={formatIndianNumber}
+                          flashStyle={flashStyle}
+                          variant="market"
+                        />
+                        {expanded ? (
+                          <span className={styles.marketInlineRange}>
+                            <span className={styles.marketInlineLabel}>H</span>
+                            {formatIndianNumber(
+                              extractNumberLike(row.item?.high),
+                            )}
+                          </span>
+                        ) : null}
+                      </td>
+                      <td className={styles.marketNumber}>
+                        <FlashValue
+                          value={ask}
+                          formatter={formatIndianNumber}
+                          flashStyle={flashStyle}
+                          variant="market"
+                        />
+                        {expanded ? (
+                          <span className={styles.marketInlineRange}>
+                            <span className={styles.marketInlineLabel}>L</span>
+                            {formatIndianNumber(extractNumberLike(row.item?.low))}
+                          </span>
+                        ) : null}
+                      </td>
+                      <td
+                        className={`${styles.marketNumber} ${styles.marketRange}`}
                       >
-                        {row.label}
-                      </button>
-                    </th>
-                    <td className={styles.marketNumber}>
-                      <FlashValue
-                        value={bid}
-                        formatter={formatIndianNumber}
-                        flashStyle={flashStyle}
-                        variant="market"
-                      />
-                      {expanded ? (
-                        <span className={styles.marketInlineRange}>
-                          <span className={styles.marketInlineLabel}>H</span>
-                          {formatIndianNumber(
-                            extractNumberLike(row.item?.high),
-                          )}
-                        </span>
-                      ) : null}
-                    </td>
-                    <td className={styles.marketNumber}>
-                      <FlashValue
-                        value={ask}
-                        formatter={formatIndianNumber}
-                        flashStyle={flashStyle}
-                        variant="market"
-                      />
-                      {expanded ? (
-                        <span className={styles.marketInlineRange}>
-                          <span className={styles.marketInlineLabel}>L</span>
-                          {formatIndianNumber(extractNumberLike(row.item?.low))}
-                        </span>
-                      ) : null}
-                    </td>
-                    <td
-                      className={`${styles.marketNumber} ${styles.marketRange}`}
-                    >
-                      {formatIndianNumber(extractNumberLike(row.item?.high))}
-                    </td>
-                    <td
-                      className={`${styles.marketNumber} ${styles.marketRange}`}
-                    >
-                      {formatIndianNumber(extractNumberLike(row.item?.low))}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                        {formatIndianNumber(extractNumberLike(row.item?.high))}
+                      </td>
+                      <td
+                        className={`${styles.marketNumber} ${styles.marketRange}`}
+                      >
+                        {formatIndianNumber(extractNumberLike(row.item?.low))}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
       </section>
 
