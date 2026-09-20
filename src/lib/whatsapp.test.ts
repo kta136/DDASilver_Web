@@ -33,7 +33,14 @@ describe("WhatsApp URLs", () => {
     expect(url.searchParams.get("text")).toContain("exploring your silver");
   });
 
-  it.each(["Anand", "MD", "AGB", "DDA", "AKS"])("builds a %s payal enquiry with the page URL", (brand) => {
+  it.each([
+    ["Anand", "anand"],
+    ["MD", "md"],
+    ["AGB", "agb"],
+    ["DDA 92.5", "dda"],
+    ["AKS", "aks"],
+    ["AND", "and"],
+  ])("builds a %s payal enquiry with the page URL", (brand, slug) => {
     const url = new URL(
       buildWhatsAppPayalBrandUrl(brand, "https://www.ddasilver.com"),
     );
@@ -43,7 +50,7 @@ describe("WhatsApp URLs", () => {
     expect(url.searchParams.get("text")).toContain(`${brand} silver payals`);
     expect(url.searchParams.get("text")).toContain("current designs and pricing");
     expect(url.searchParams.get("text")).toContain(
-      "https://www.ddasilver.com/silver-payal-brands",
+      `https://www.ddasilver.com/silver-payal-brands/${slug}`,
     );
   });
 

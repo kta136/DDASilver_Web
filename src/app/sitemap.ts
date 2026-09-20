@@ -1,5 +1,9 @@
 import type { MetadataRoute } from "next";
 import { guides } from "@/data/guides";
+import {
+  getSilverPayalBrandPath,
+  silverPayalBrands,
+} from "@/data/silver-payal-brands";
 
 import {
   getPopulatedCategories,
@@ -18,6 +22,7 @@ const staticRoutes = [
   "/contact",
   "/guides",
   ...guides.map(({ slug }) => `/guides/${slug}`),
+  ...silverPayalBrands.map(({ slug }) => getSilverPayalBrandPath(slug)),
 ];
 
 function getLatestModified(...candidates: Array<string | undefined>) {

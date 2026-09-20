@@ -1,8 +1,5 @@
 import { RateExperience } from "@/components/rates/rate-experience";
 import { createPageMetadata } from "@/lib/seo";
-import { connection } from "next/server";
-import { getPublicRateSnapshot } from "@/lib/rates/public-snapshot";
-import { PublicRateReference } from "@/components/rates/public-rate-snapshot";
 
 export const metadata = createPageMetadata({
   title: "Live Silver Rates in Agra",
@@ -11,9 +8,7 @@ export const metadata = createPageMetadata({
   path: "/rates",
 });
 
-export default async function RatesPage() {
-  await connection();
-  const snapshot = await getPublicRateSnapshot();
+export default function RatesPage() {
   return (
     <main id="main-content">
       <div className="rate-page-heading">
@@ -25,10 +20,6 @@ export default async function RatesPage() {
         </p>
       </div>
       <RateExperience />
-      <PublicRateReference
-        key={snapshot?.serverTime ?? "unavailable"}
-        snapshot={snapshot}
-      />
     </main>
   );
 }

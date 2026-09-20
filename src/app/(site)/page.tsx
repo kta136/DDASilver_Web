@@ -72,8 +72,9 @@ export default async function HomePage() {
               Explore silver payal brands.
             </h2>
             <p className="mt-4 leading-7 text-ink-muted">
-              Meet Anand, MD, AGB, DDA and AKS, then enquire about current
-              designs, sizes, weights, purity details and pricing.
+              Meet Anand, MD, AGB, DDA 92.5, AKS and AND, then explore each
+              brand’s page or enquire about current designs, sizes, weights,
+              purity details and pricing.
             </p>
           </div>
           <Link

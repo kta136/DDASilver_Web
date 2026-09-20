@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import { silverPayalBrands } from "@/data/silver-payal-brands";
 
 type WhatsAppProduct = {
   title: string;
@@ -33,8 +34,17 @@ export function buildWhatsAppPayalBrandUrl(
   brand?: string,
   siteUrl = siteConfig.url,
 ) {
-  const pageUrl = new URL("/silver-payal-brands", siteUrl).toString();
   const normalizedBrand = brand?.trim();
+  const matchedBrand = normalizedBrand
+    ? silverPayalBrands.find(
+        (candidate) =>
+          candidate.name.toLowerCase() === normalizedBrand.toLowerCase(),
+      )
+    : undefined;
+  const pagePath = matchedBrand
+    ? `/silver-payal-brands/${matchedBrand.slug}`
+    : "/silver-payal-brands";
+  const pageUrl = new URL(pagePath, siteUrl).toString();
   const itemName = normalizedBrand
     ? `${normalizedBrand} silver payals`
     : "silver payals";

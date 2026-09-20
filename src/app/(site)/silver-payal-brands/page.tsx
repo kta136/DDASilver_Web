@@ -2,9 +2,14 @@ import {
   ArrowRightIcon,
   WhatsappLogoIcon,
 } from "@phosphor-icons/react/ssr";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import {
+  getSilverPayalBrandPath,
+  silverPayalBrands,
+} from "@/data/silver-payal-brands";
 import { buildWhatsAppPayalBrandUrl } from "@/lib/whatsapp";
 import { siteConfig } from "@/lib/site";
 import {
@@ -13,22 +18,9 @@ import {
   toAbsoluteUrl,
 } from "@/lib/seo";
 
-type SilverPayalBrand = {
-  name: string;
-  slug: string;
-};
-
-const silverPayalBrands = [
-  { name: "Anand", slug: "anand" },
-  { name: "MD", slug: "md" },
-  { name: "AGB", slug: "agb" },
-  { name: "DDA", slug: "dda" },
-  { name: "AKS", slug: "aks" },
-] satisfies readonly SilverPayalBrand[];
-
 const pageTitle = "Silver Payal & Anklet Brands";
 const pageDescription =
-  "Explore Anand, MD, AGB, DDA and AKS silver payal brands at DDA Silver. Enquire on WhatsApp for available anklet designs and prices from our Agra showroom.";
+  "Explore Anand, MD, AGB, DDA 92.5, AKS and AND silver payal brands at DDA Silver. Enquire on WhatsApp for available anklet designs and prices from our Agra showroom.";
 const pageUrl = toAbsoluteUrl("/silver-payal-brands");
 
 export const metadata = createPageMetadata({
@@ -56,7 +48,7 @@ const collectionPageSchema = {
       "@type": "ListItem",
       position: index + 1,
       name: `${brand.name} silver payal`,
-      url: `${pageUrl}#${brand.slug}`,
+      url: toAbsoluteUrl(getSilverPayalBrandPath(brand.slug)),
     })),
   },
 };
@@ -92,7 +84,7 @@ const faqs = [
   {
     question: "Which silver payal brands can I ask about?",
     answer:
-      "You can enquire about Anand, MD, AGB, DDA and AKS silver payal brands through DDA Silver.",
+      "You can enquire about Anand, MD, AGB, DDA 92.5, AKS and AND silver payal brands through DDA Silver.",
   },
   {
     question: "How do I choose the right silver payal size?",
@@ -140,9 +132,9 @@ export default function SilverPayalBrandsPage() {
             </h1>
             <p className="mt-7 max-w-xl text-base leading-8 text-ink-muted sm:text-lg">
               Explore silver payal, also known as silver anklets, from Anand,
-              MD, AGB, DDA and AKS at DDA Silver. Share the size, style or weight
-              you have in mind and our Agra showroom team can help you compare
-              current designs and pricing.
+              MD, AGB, DDA 92.5, AKS and AND at DDA Silver. Share the size,
+              style or weight you have in mind and our Agra showroom team can
+              help you compare current designs and pricing.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -167,20 +159,20 @@ export default function SilverPayalBrandsPage() {
           >
             <div className="w-full border-y border-white/25 py-10">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#dce5df]">
-                Five names to explore
+                Six names to explore
               </p>
               <p className="mt-7 font-display text-4xl leading-tight sm:text-5xl">
                 Silver payal, considered with care.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-white/20 pt-6 font-display text-3xl text-[#dce5df] sm:grid-cols-3">
                 {silverPayalBrands.map((brand) => (
-                  <a
+                  <Link
                     key={brand.slug}
-                    href={`#${brand.slug}`}
+                    href={getSilverPayalBrandPath(brand.slug)}
                     className="no-underline transition-colors hover:text-white"
                   >
                     {brand.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -193,7 +185,7 @@ export default function SilverPayalBrandsPage() {
           <div className="max-w-2xl">
             <p className="eyebrow">The brands</p>
             <h2 className="font-display mt-4 text-4xl font-normal leading-tight sm:text-5xl">
-              Five starting points for your next payal.
+              Six starting points for your next payal.
             </h2>
             <p className="mt-5 leading-7 text-ink-muted">
               Choose a name to start an enquiry. We can discuss the designs,
@@ -206,30 +198,53 @@ export default function SilverPayalBrandsPage() {
               <li
                 key={brand.slug}
                 id={brand.slug}
-                className="flex min-h-64 flex-col border border-line bg-paper-strong p-7 transition-colors hover:border-copper sm:p-8"
+                className="flex min-h-[26rem] flex-col border border-line bg-paper-strong p-7 transition-colors hover:border-copper sm:p-8"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted">
                   Brand {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="font-display mt-10 text-5xl font-normal text-ink">
-                  {brand.name}
+                <div className="mt-6 flex h-40 items-center justify-center border-y border-line bg-white px-5 py-4">
+                  <Image
+                    src={brand.logo.src}
+                    alt={brand.logo.alt}
+                    width={brand.logo.width}
+                    height={brand.logo.height}
+                    className="max-h-full w-auto object-contain"
+                    unoptimized
+                  />
+                </div>
+                <h3 className="font-display mt-6 text-4xl font-normal text-ink">
+                  <Link
+                    href={getSilverPayalBrandPath(brand.slug)}
+                    className="no-underline hover:text-copper-dark"
+                  >
+                    {brand.name}
+                  </Link>
                 </h3>
-                <div className="mt-auto pt-10">
+                <div className="mt-auto pt-7">
                   <p className="text-sm leading-6 text-ink-muted">
                     Enquire about {brand.name} silver payal designs, sizes,
                     weights and current pricing.
                   </p>
-                  <a
-                    href={buildWhatsAppPayalBrandUrl(brand.name)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex min-h-11 items-center gap-2 border-b border-copper pb-2 text-sm font-bold text-ink no-underline hover:text-copper-dark"
-                    data-analytics="whatsapp_click"
-                    data-analytics-placement={`payal_brand_${brand.slug}`}
-                  >
-                    Enquire about {brand.name}
-                    <ArrowRightIcon size={17} aria-hidden="true" />
-                  </a>
+                  <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                    <Link
+                      href={getSilverPayalBrandPath(brand.slug)}
+                      className="inline-flex min-h-11 items-center gap-2 border-b border-copper pb-2 text-sm font-bold text-ink no-underline hover:text-copper-dark"
+                    >
+                      Explore {brand.name} payal
+                      <ArrowRightIcon size={17} aria-hidden="true" />
+                    </Link>
+                    <a
+                      href={buildWhatsAppPayalBrandUrl(brand.name)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-11 items-center border-b border-line pb-2 text-sm font-bold text-ink no-underline hover:text-copper-dark"
+                      data-analytics="whatsapp_click"
+                      data-analytics-placement={`payal_brand_${brand.slug}`}
+                    >
+                      WhatsApp enquiry
+                    </a>
+                  </div>
                 </div>
               </li>
             ))}
