@@ -532,12 +532,20 @@ export function RateExperience({
           throw new Error("Snapshot unavailable");
         }
         const now = receivedAt();
+        // Validate against the response clock so device clock drift cannot
+        // make a fresh snapshot appear to be from the future.
+        const responseTime = Date.parse(response.headers.get("date") ?? "");
+        const validationTime = Number.isFinite(responseTime) ? responseTime : now;
         const parsed = rateSnapshotSchema.safeParse(
           await readBoundedJson(response, maximumSnapshotBytes),
         );
         if (
           !parsed.success ||
-          !isRateSnapshotFresh(parsed.data.serverTime, now, staleThresholdMs)
+          !isRateSnapshotFresh(
+            parsed.data.serverTime,
+            validationTime,
+            staleThresholdMs,
+          )
         ) {
           throw new Error("Snapshot contract rejected");
         }

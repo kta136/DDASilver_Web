@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { RateExperience } from "./rate-experience";
@@ -62,34 +62,37 @@ describe("RateExperience authorized feature parity", () => {
           });
         }
         if (url.includes("/api/rates/snapshot")) {
-          return Response.json({
-            schemaVersion: 1,
-            view: "default",
-            serverTime: new Date().toISOString(),
-            sequence: 100,
-            items: [
-              {
-                itemId: "gold-cash",
-                name: "Gold Cash",
-                unit: "PER_10_GRAM",
-                finalRate: 146000,
-                movementValue: 250,
-                movementDirection: "UP",
-                buyingRate: 144000,
-                premiumTotal: 500,
-              },
-              {
-                itemId: "silver-bank",
-                name: "Silver Bank",
-                unit: "PER_KG",
-                finalRate: 222000,
-                movementValue: 100,
-                movementDirection: "DOWN",
-                buyingRate: 220000,
-              },
-            ],
-            feedStatus: { status: "live" },
-          });
+          return Response.json(
+            {
+              schemaVersion: 1,
+              view: "default",
+              serverTime: new Date().toISOString(),
+              sequence: 100,
+              items: [
+                {
+                  itemId: "gold-cash",
+                  name: "Gold Cash",
+                  unit: "PER_10_GRAM",
+                  finalRate: 146000,
+                  movementValue: 250,
+                  movementDirection: "UP",
+                  buyingRate: 144000,
+                  premiumTotal: 500,
+                },
+                {
+                  itemId: "silver-bank",
+                  name: "Silver Bank",
+                  unit: "PER_KG",
+                  finalRate: 222000,
+                  movementValue: 100,
+                  movementDirection: "DOWN",
+                  buyingRate: 220000,
+                },
+              ],
+              feedStatus: { status: "live" },
+            },
+            { headers: { Date: new Date().toUTCString() } },
+          );
         }
         throw new Error(`Unexpected request: ${url}`);
       }),
@@ -97,7 +100,23 @@ describe("RateExperience authorized feature parity", () => {
   });
 
   afterEach(() => {
+    cleanup();
+    vi.restoreAllMocks();
     vi.unstubAllGlobals();
+  });
+
+  it("accepts a fresh snapshot when the device clock is behind", async () => {
+    const serverNow = Date.now();
+    vi.spyOn(Date, "now").mockReturnValue(serverNow - 45_000);
+
+    render(<RateExperience />);
+
+    expect(await screen.findByText("Gold Cash")).toBeVisible();
+    expect(
+      screen.queryByText(
+        "No valid rate snapshot is available. Values are intentionally not shown.",
+      ),
+    ).toBeNull();
   });
 
   it("shows approved-only rows and exposes Jewels display and chart controls", async () => {
