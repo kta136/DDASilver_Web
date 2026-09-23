@@ -50,6 +50,7 @@ import {
   updatePersonalRateView,
 } from "@/lib/rates/personal-view";
 import { initialRateState, rateReducer } from "@/lib/rates/reducer";
+import type { PublicRateSnapshot } from "@/lib/rates/public-snapshot";
 import { siteConfig } from "@/lib/site";
 import { buildGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { trackAnalyticsEvent } from "@/lib/analytics-client";
@@ -260,9 +261,42 @@ function Movement({ item }: { item?: RateItem }) {
   );
 }
 
-export function RateExperience() {
+function initialStateFromPublicSnapshot(
+  publicSnapshot: PublicRateSnapshot | null,
+) {
+  if (!publicSnapshot) return initialRateState;
+
+  const items = publicSnapshot.items.map((item) => ({
+    id: item.id,
+    name: item.name,
+    unit: item.unit,
+    value: item.value,
+  }));
+  const updatedAt = Date.parse(publicSnapshot.serverTime);
+  return {
+    ...initialRateState,
+    view: "default",
+    serverTime: publicSnapshot.serverTime,
+    items: Object.fromEntries(items.map((item) => [item.id, item])),
+    itemUpdatedAt: Object.fromEntries(items.map((item) => [item.id, updatedAt])),
+    feedStatus: publicSnapshot.marketStatus,
+    connection: "connecting" as const,
+    lastValidEventAt: updatedAt,
+    announcement: "Showing current public rates while connecting to live updates.",
+  };
+}
+
+export function RateExperience({
+  publicSnapshot = null,
+}: {
+  publicSnapshot?: PublicRateSnapshot | null;
+}) {
   const [retryAttempt, setRetryAttempt] = useState(0);
-  const [state, dispatch] = useReducer(rateReducer, initialRateState);
+  const [state, dispatch] = useReducer(
+    rateReducer,
+    publicSnapshot,
+    initialStateFromPublicSnapshot,
+  );
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [viewer, setViewer] = useState<RateViewer | null>(null);
   const [personalView, setPersonalView] = useState<PersonalRateView>(
@@ -473,18 +507,19 @@ export function RateExperience() {
       };
     }
 
-    function scheduleReconnect() {
+    function scheduleReconnect(showReconnecting = true) {
       if (cancelled) {
         return;
       }
-      dispatch({ type: "reconnecting" });
+      if (showReconnecting) dispatch({ type: "reconnecting" });
       const attempt = Math.min(reconnectAttempt.current + 1, 6);
       reconnectAttempt.current = attempt;
       const delay = Math.min(1_000 * 2 ** attempt, 30_000);
-      reconnectTimer = setTimeout(() => void loadSnapshot(true), delay);
+      if (reconnectTimer) clearTimeout(reconnectTimer);
+      reconnectTimer = setTimeout(() => void loadSnapshot(), delay);
     }
 
-    async function loadSnapshot(isReconnect = false) {
+    async function loadSnapshot() {
       dispatch({ type: "connecting" });
       try {
         const response = await fetch(snapshotUrl, {
@@ -516,12 +551,11 @@ export function RateExperience() {
         if (cancelled) return;
         dispatch({
           type: "unavailable",
-          message:
-            "No valid rate snapshot is available. Values are intentionally not shown.",
+          message: "Live rates are temporarily unavailable. Retrying automatically.",
         });
-        if (isReconnect) {
-          scheduleReconnect();
-        }
+        // The first request can fail transiently too; keep retrying in the
+        // background while the manual retry remains available.
+        scheduleReconnect(false);
       }
     }
 

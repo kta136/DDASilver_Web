@@ -1,4 +1,7 @@
+import { connection } from "next/server";
+
 import { RateExperience } from "@/components/rates/rate-experience";
+import { getPublicRateSnapshot } from "@/lib/rates/public-snapshot";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -8,7 +11,11 @@ export const metadata = createPageMetadata({
   path: "/rates",
 });
 
-export default function RatesPage() {
+export default async function RatesPage() {
+  // Check freshness for each request rather than freezing a rate at build time.
+  await connection();
+  const publicSnapshot = await getPublicRateSnapshot();
+
   return (
     <main id="main-content">
       <div className="rate-page-heading">
@@ -19,7 +26,7 @@ export default function RatesPage() {
           with our showroom.
         </p>
       </div>
-      <RateExperience />
+      <RateExperience publicSnapshot={publicSnapshot} />
     </main>
   );
 }

@@ -158,4 +158,69 @@ describe("RateExperience authorized feature parity", () => {
     expect(screen.getByRole("button", { name: "Custom" })).toBeVisible();
     await screen.findByText("Latest");
   });
+
+  it("shows the public snapshot immediately and recovers after the first live request fails", async () => {
+    let snapshotRequests = 0;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.includes("/api/auth/me")) return Response.json({ user: null });
+        if (url.includes("/api/rates/snapshot")) {
+          snapshotRequests += 1;
+          if (snapshotRequests === 1) {
+            return Response.json({ error: "temporary" }, { status: 503 });
+          }
+          return Response.json({
+            schemaVersion: 1,
+            view: "default",
+            serverTime: new Date().toISOString(),
+            sequence: 101,
+            items: [
+              {
+                itemId: "cmomrj7er000004l5137q5fx4",
+                name: "Silver Bank",
+                unit: "PER_KG",
+                finalRate: 243125,
+                movementValue: 125,
+                movementDirection: "DOWN",
+              },
+            ],
+            feedStatus: { status: "live" },
+          });
+        }
+        throw new Error(`Unexpected request: ${url}`);
+      }),
+    );
+
+    render(
+      <RateExperience
+        publicSnapshot={{
+          serverTime: new Date().toISOString(),
+          marketStatus: "live",
+          validUntil: new Date(Date.now() + 60_000).toISOString(),
+          items: [
+            {
+              id: "cmomrj7er000004l5137q5fx4",
+              name: "Silver Bank",
+              unit: "PER_KG",
+              value: 243000,
+            },
+          ],
+        }}
+      />,
+    );
+
+    expect(screen.getByText("₹2,43,000")).toBeVisible();
+    expect(
+      (
+        await screen.findAllByText(
+          "Live rates are temporarily unavailable. Retrying automatically.",
+        )
+      ).length,
+    ).toBeGreaterThan(0);
+    expect(screen.getByText("₹2,43,000")).toBeVisible();
+    expect(await screen.findByText("₹2,43,125", {}, { timeout: 4_000 })).toBeVisible();
+    expect(snapshotRequests).toBe(2);
+  });
 });
