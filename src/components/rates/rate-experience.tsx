@@ -313,6 +313,7 @@ export function RateExperience({
   );
   const [draggedRateId, setDraggedRateId] = useState<string | null>(null);
   const reconnectAttempt = useRef(0);
+  const hasValidSnapshot = useRef(Boolean(publicSnapshot));
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
 
   useEffect(() => {
@@ -541,6 +542,7 @@ export function RateExperience({
           throw new Error("Snapshot contract rejected");
         }
         if (cancelled) return;
+        hasValidSnapshot.current = true;
         dispatch({
           type: "snapshot",
           snapshot: parsed.data,
@@ -551,7 +553,9 @@ export function RateExperience({
         if (cancelled) return;
         dispatch({
           type: "unavailable",
-          message: "Live rates are temporarily unavailable. Retrying automatically.",
+          message: hasValidSnapshot.current
+            ? "Live rates are temporarily unavailable. Retrying automatically."
+            : "No valid rate snapshot is available. Values are intentionally not shown.",
         });
         // The first request can fail transiently too; keep retrying in the
         // background while the manual retry remains available.
