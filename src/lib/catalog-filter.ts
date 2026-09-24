@@ -6,9 +6,14 @@ import type {
   ProductPurity,
   UtensilType,
 } from "@/types/catalog";
+import {
+  sortCatalogProducts,
+  type CatalogSortState,
+} from "@/lib/catalog-sort";
 
 export type CatalogFilters = {
   query?: string;
+  sort?: CatalogSortState;
   category?: string;
   purity?: ProductPurity | "";
   idolConstruction?: IdolConstruction | "";
@@ -102,7 +107,7 @@ export function filterProducts(products: Product[], filters: CatalogFilters) {
   const query = filters.query?.trim().toLocaleLowerCase("en-IN");
   const queryTerms = query?.split(/\s+/).filter(Boolean) ?? [];
 
-  return products
+  const matching = products
     .filter((product) => {
       if (filters.category && product.categorySlug !== filters.category) {
         return false;
@@ -147,6 +152,7 @@ export function filterProducts(products: Product[], filters: CatalogFilters) {
       return queryTerms.every((term) =>
         words.some((word) => word.startsWith(term)),
       );
-    })
-    .toSorted((a, b) => a.displayOrder - b.displayOrder);
+    });
+
+  return sortCatalogProducts(matching, filters.sort ?? "");
 }

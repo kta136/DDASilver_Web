@@ -14,13 +14,14 @@ describe("catalog URL state", () => {
   it("accepts known filters and ignores unknown values", () => {
     const parsed = parseCatalogSearchParams(
       new URLSearchParams(
-        "q=bracelet&category=idols&collection=unknown&purity=92.5&idol=solid&deity=shiva&shape=round",
+        "q=bracelet&sort=price-desc&category=idols&collection=unknown&purity=92.5&idol=solid&deity=shiva&shape=round",
       ),
       options,
     );
 
     expect(parsed).toEqual({
       query: "bracelet",
+      sort: "price-desc",
       category: "idols",
       purity: "92.5",
       idolConstruction: "solid",
@@ -28,6 +29,22 @@ describe("catalog URL state", () => {
       coinShape: "",
       utensilType: "",
     });
+  });
+
+  it("ignores unsupported sort values and round-trips supported values", () => {
+    const unsupported = parseCatalogSearchParams(
+      new URLSearchParams("sort=discount"),
+      options,
+    );
+    expect(unsupported.sort).toBe("");
+
+    const supported = parseCatalogSearchParams(
+      new URLSearchParams("category=coin&sort=weight-asc"),
+      options,
+    );
+    expect(serializeCatalogFilters(supported).toString()).toBe(
+      "sort=weight-asc&category=coin",
+    );
   });
 
   it("round-trips the utensil item filter", () => {

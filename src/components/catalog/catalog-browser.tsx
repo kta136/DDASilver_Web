@@ -11,6 +11,7 @@ import {
 } from "react";
 
 import { getCategoryKind } from "@/lib/catalog-taxonomy";
+import type { CatalogSortState } from "@/lib/catalog-sort";
 import { useCatalogPage } from "@/components/catalog/use-catalog-page";
 import { ProductCard } from "@/components/catalog/product-card";
 import {
@@ -87,6 +88,9 @@ export function CatalogBrowser({
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [page, setPage] = useState(initialPage?.page ?? 1);
   const [query, setQuery] = useState(initialFilters?.query ?? "");
+  const [sort, setSort] = useState<CatalogSortState>(
+    initialFilters?.sort ?? "",
+  );
   const [category, setCategory] = useState(
     initialFilters?.category ?? initialCategory,
   );
@@ -189,6 +193,7 @@ export function CatalogBrowser({
     () =>
       filterProducts(products, {
         query: deferredQuery,
+        sort,
         category,
         purity,
         idolConstruction,
@@ -199,6 +204,7 @@ export function CatalogBrowser({
     [
       products,
       deferredQuery,
+      sort,
       category,
       purity,
       idolConstruction,
@@ -210,6 +216,7 @@ export function CatalogBrowser({
 
   const filters = {
     query,
+    sort,
     category,
     purity,
     idolConstruction,
@@ -260,6 +267,7 @@ export function CatalogBrowser({
         ),
       );
       setQuery(next.query);
+      setSort(next.sort);
       setCategory(next.category);
       setPurity(
         next.purity && availability.purities.has(next.purity)
@@ -300,6 +308,7 @@ export function CatalogBrowser({
 
     const filters: CatalogFilters = {
       query,
+      sort,
       category,
       purity,
       idolConstruction,
@@ -326,6 +335,7 @@ export function CatalogBrowser({
     idolConstruction,
     purity,
     query,
+    sort,
     syncUrl,
     utensilType,
   ]);
@@ -555,34 +565,54 @@ export function CatalogBrowser({
         ) : null}
       </div>
 
-      <div className="mt-6 flex items-center justify-between gap-5">
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
         <p className="text-sm text-ink-muted" aria-live="polite">
           {total} {total === 1 ? "design" : "designs"}
         </p>
-        {query ||
-        category ||
-        purity ||
-        idolConstruction ||
-        deitySlug ||
-        coinShape ||
-        utensilType ? (
-          <button
-            type="button"
-            className="text-sm font-semibold underline decoration-line-strong"
-            onClick={() => {
-              setPage(1);
-              setQuery("");
-              setCategory("");
-              setPurity("");
-              setIdolConstruction("");
-              setDeitySlug("");
-              setCoinShape("");
-              setUtensilType("");
-            }}
-          >
-            Clear filters
-          </button>
-        ) : null}
+        <div className="flex flex-wrap items-center gap-4">
+          <label className="flex items-center gap-3 text-sm text-ink-muted">
+            <span>Sort by</span>
+            <select
+              aria-label="Sort products"
+              value={sort}
+              onChange={(event) => {
+                setPage(1);
+                setSort(event.target.value as CatalogSortState);
+              }}
+              className="min-h-12 w-full min-w-52 rounded-sm border border-line bg-white px-4 text-sm text-ink outline-none focus:border-copper sm:w-auto"
+            >
+              <option value="">Recommended</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="weight-asc">Weight: low to high</option>
+              <option value="weight-desc">Weight: high to low</option>
+            </select>
+          </label>
+          {query ||
+          category ||
+          purity ||
+          idolConstruction ||
+          deitySlug ||
+          coinShape ||
+          utensilType ? (
+            <button
+              type="button"
+              className="text-sm font-semibold underline decoration-line-strong"
+              onClick={() => {
+                setPage(1);
+                setQuery("");
+                setCategory("");
+                setPurity("");
+                setIdolConstruction("");
+                setDeitySlug("");
+                setCoinShape("");
+                setUtensilType("");
+              }}
+            >
+              Clear filters
+            </button>
+          ) : null}
+        </div>
       </div>
 
       {remote.loading ? (

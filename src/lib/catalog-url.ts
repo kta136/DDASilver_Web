@@ -13,6 +13,10 @@ import type {
   ProductPurity,
   UtensilType,
 } from "@/types/catalog";
+import {
+  catalogSortValues,
+  type CatalogSortState,
+} from "@/lib/catalog-sort";
 
 const purities = new Set<ProductPurity>(productPurities);
 const idolConstructions = new Set<IdolConstruction>(constructionValues);
@@ -27,6 +31,7 @@ export type CatalogUrlOptions = {
 
 export type CatalogUrlState = {
   query: string;
+  sort: CatalogSortState;
   category: string;
   purity: ProductPurity | "";
   idolConstruction: IdolConstruction | "";
@@ -71,6 +76,7 @@ export function parseCatalogSearchParams(
 
   return {
     query: (searchParams.get("q") ?? "").trim().slice(0, 80),
+    sort: allowedValue(searchParams.get("sort"), new Set(catalogSortValues)),
     category,
     purity: allowedValue(searchParams.get("purity"), purities),
     idolConstruction:
@@ -99,6 +105,7 @@ export function serializeCatalogFilters(
   const next = new URLSearchParams(current);
   const entries = {
     q: filters.query?.trim().slice(0, 80) ?? "",
+    sort: filters.sort ?? "",
     category: filters.category ?? "",
     collection: "",
     purity: filters.purity ?? "",

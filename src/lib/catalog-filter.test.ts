@@ -143,4 +143,95 @@ describe("catalog filtering", () => {
     const results = filterProducts(fallbackProducts.toReversed(), {});
     expect(results[0]?.displayOrder).toBe(1);
   });
+
+  it("sorts the full matching list by weight and leaves missing weights last", () => {
+    const products = [
+      { ...fallbackProducts[0]!, slug: "heavy", weightGrams: 50 },
+      { ...fallbackProducts[1]!, slug: "unknown", weightGrams: undefined },
+      { ...fallbackProducts[2]!, slug: "light", weightGrams: 5 },
+    ];
+
+    expect(
+      filterProducts(products, { sort: "weight-asc" }).map(
+        (product) => product.slug,
+      ),
+    ).toEqual(["light", "heavy", "unknown"]);
+    expect(
+      filterProducts(products, { sort: "weight-desc" }).map(
+        (product) => product.slug,
+      ),
+    ).toEqual(["heavy", "light", "unknown"]);
+  });
+
+  it("sorts available prices by their displayed minimum and keeps unavailable last", () => {
+    const products = [
+      {
+        ...fallbackProducts[0]!,
+        slug: "price-range",
+        estimate: {
+          status: "available" as const,
+          mode: "automatic" as const,
+          currency: "INR" as const,
+          minimum: 1000,
+          maximum: 2000,
+          asOf: "2026-09-01T00:00:00.000Z",
+          validUntil: "2026-10-01T00:00:00.000Z",
+          lastAvailable: false,
+          sizes: [],
+        },
+      },
+      {
+        ...fallbackProducts[1]!,
+        slug: "price-500",
+        estimate: {
+          status: "available" as const,
+          mode: "automatic" as const,
+          currency: "INR" as const,
+          minimum: 500,
+          maximum: 500,
+          asOf: "2026-09-01T00:00:00.000Z",
+          validUntil: "2026-10-01T00:00:00.000Z",
+          lastAvailable: false,
+          sizes: [],
+        },
+      },
+      {
+        ...fallbackProducts[2]!,
+        slug: "unpriced",
+        estimate: { status: "unavailable" as const },
+      },
+    ];
+
+    expect(
+      filterProducts(products, { sort: "price-asc" }).map(
+        (product) => product.slug,
+      ),
+    ).toEqual(["price-500", "price-range", "unpriced"]);
+    expect(
+      filterProducts(products, { sort: "price-desc" }).map(
+        (product) => product.slug,
+      ),
+    ).toEqual(["price-range", "price-500", "unpriced"]);
+  });
+
+  it("uses the lightest variant weight for weight sorting", () => {
+    const products = [
+      {
+        ...fallbackProducts[0]!,
+        slug: "variants",
+        weightGrams: undefined,
+        sizeVariants: [
+          { weightGrams: 450, diameterInches: 4 },
+          { weightGrams: 350, diameterInches: 3 },
+        ],
+      },
+      { ...fallbackProducts[1]!, slug: "middle", weightGrams: 400 },
+    ];
+
+    expect(
+      filterProducts(products, { sort: "weight-asc" }).map(
+        (product) => product.slug,
+      ),
+    ).toEqual(["variants", "middle"]);
+  });
 });

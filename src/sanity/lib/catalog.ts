@@ -20,6 +20,7 @@ import {
   getFacetAvailability,
   type CatalogFilters,
 } from "@/lib/catalog-filter";
+import { sortCatalogProducts } from "@/lib/catalog-sort";
 import { parseCatalogSearchParams } from "@/lib/catalog-url";
 import { getCatalogImageWithSeo } from "@/lib/sanity-image";
 import { getProductSeoName } from "@/lib/seo";
@@ -51,6 +52,7 @@ export type Catalog = {
   source: "sanity" | "stale" | "fallback";
 };
 export const CATALOG_PAGE_SIZE = 24;
+const CATALOG_SORT_BATCH_SIZE = 200;
 type Reader = ReturnType<typeof createSanityReader>;
 const publishedReader = createSanityReader(sanityClient);
 const previewReader = createSanityReader(sanityPreviewClient, { draft: true });
@@ -428,13 +430,18 @@ async function loadCatalogListing(
     Math.min(100_000, Math.floor(Number(params.get("page")) || 1)),
   );
   let products: Product[];
+  let productsForSorting: Product[] | undefined;
   let total: number;
   let degraded = navigation.degraded || Boolean(facetResult.degraded);
   if (read) {
-    const fetchPage = (pageNumber: number) =>
+    const fetchRange = (start: number, end: number) =>
       read(
         queries.productPageQuery,
-        getListingParams(filters, pageNumber, selectedCollection),
+        {
+          ...getListingParams(filters, 1, selectedCollection),
+          start,
+          end,
+        },
         (raw, previous?: { products: Product[]; total: number }) => {
           const envelope = pageEnvelope.parse(raw);
           const decoded = decodeDocuments<Product>(
@@ -449,26 +456,64 @@ async function loadCatalogListing(
           };
         },
       );
-    let result = await fetchPage(page);
-    const lastPage = Math.max(
-      1,
-      Math.ceil(result.value.total / CATALOG_PAGE_SIZE),
-    );
-    if (page > lastPage) {
-      page = lastPage;
-      result = await fetchPage(page);
+
+    if (filters.sort) {
+      productsForSorting = [];
+      total = 0;
+      for (
+        let start = 0;
+        start === 0 || start < total;
+        start += CATALOG_SORT_BATCH_SIZE
+      ) {
+        const result = await fetchRange(
+          start,
+          start + CATALOG_SORT_BATCH_SIZE,
+        );
+        productsForSorting.push(...result.value.products);
+        total = result.value.total;
+        degraded ||= Boolean(result.degraded);
+      }
+      const lastPage = Math.max(
+        1,
+        Math.ceil(total / CATALOG_PAGE_SIZE),
+      );
+      page = Math.min(page, lastPage);
+      products = [];
+    } else {
+      const fetchPage = (pageNumber: number) =>
+        fetchRange(
+          (pageNumber - 1) * CATALOG_PAGE_SIZE,
+          pageNumber * CATALOG_PAGE_SIZE,
+        );
+      let result = await fetchPage(page);
+      const lastPage = Math.max(
+        1,
+        Math.ceil(result.value.total / CATALOG_PAGE_SIZE),
+      );
+      if (page > lastPage) {
+        page = lastPage;
+        result = await fetchPage(page);
+      }
+      products = result.value.products.map(productImageSeo);
+      total = result.value.total;
+      degraded ||= Boolean(result.degraded);
     }
-    products = result.value.products.map(productImageSeo);
-    total = result.value.total;
-    degraded ||= Boolean(result.degraded);
   } else {
-    const matching = filterProducts(demoProducts, filters);
+    const matching = filterProducts(demoProducts, {
+      ...filters,
+      sort: "",
+    });
     total = matching.length;
     page = Math.min(page, Math.max(1, Math.ceil(total / CATALOG_PAGE_SIZE)));
-    products = matching.slice(
-      (page - 1) * CATALOG_PAGE_SIZE,
-      page * CATALOG_PAGE_SIZE,
-    );
+    if (filters.sort) {
+      productsForSorting = matching;
+      products = [];
+    } else {
+      products = matching.slice(
+        (page - 1) * CATALOG_PAGE_SIZE,
+        page * CATALOG_PAGE_SIZE,
+      );
+    }
   }
   const result: CatalogPage = {
     products,
@@ -478,7 +523,7 @@ async function loadCatalogListing(
     facets: facetResult.value,
     degraded,
   };
-  return { ...navigation, filters, result };
+  return { ...navigation, filters, result, productsForSorting };
 }
 
 const cachedCatalogListing = cache(
@@ -499,7 +544,35 @@ export async function getCatalogListing(
     defaultCategory,
     collection,
   );
-  return { ...listing, result: { ...listing.result, products: await withGalleryPrices(listing.result.products) } };
+  const { productsForSorting, ...publicListing } = listing;
+  if (productsForSorting) {
+    const sortableProducts = listing.filters.sort.startsWith("price-")
+      ? await withGalleryPrices(productsForSorting)
+      : productsForSorting;
+    const ordered = sortCatalogProducts(
+      sortableProducts,
+      listing.filters.sort,
+    );
+    const start = (listing.result.page - 1) * listing.result.pageSize;
+    const pageProducts = ordered
+      .slice(start, start + listing.result.pageSize)
+      .map(productImageSeo);
+    return {
+      ...publicListing,
+      result: {
+        ...listing.result,
+        products: await withGalleryPrices(pageProducts),
+      },
+    };
+  }
+
+  return {
+    ...publicListing,
+    result: {
+      ...listing.result,
+      products: await withGalleryPrices(listing.result.products),
+    },
+  };
 }
 
 const sitemapProductSchema = z.object({

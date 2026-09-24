@@ -249,6 +249,47 @@ describe("paginated catalog browsing", () => {
       screen.queryByRole("heading", { name: second.title }),
     ).not.toBeInTheDocument();
   });
+
+  it("stores the sort choice in the URL and resets the page", async () => {
+    window.history.replaceState(null, "", "/products?category=coin&page=2");
+    const fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ ...initialPage, page: 1 }),
+    });
+    vi.stubGlobal("fetch", fetch);
+    render(
+      <CatalogBrowser
+        products={[coin]}
+        categories={fallbackCategories}
+        initialCategory="coin"
+        initialFilters={{
+          query: "",
+          sort: "",
+          category: "coin",
+          purity: "",
+          idolConstruction: "",
+          deitySlug: "",
+          coinShape: "",
+          utensilType: "",
+        }}
+        initialPage={{ ...initialPage, page: 2 }}
+        syncUrl
+      />,
+    );
+
+    fireEvent.change(screen.getByRole("combobox", { name: "Sort products" }), {
+      target: { value: "price-asc" },
+    });
+
+    await waitFor(() =>
+      expect(fetch.mock.calls[0]?.[0]).toContain(
+        "sort=price-asc&category=coin&page=1",
+      ),
+    );
+    expect(window.location.search).toContain("sort=price-asc");
+    expect(window.location.search).not.toContain("page=2");
+  });
+
   it("shows an actionable error, retries, and resets pagination when filters change", async () => {
     const fetch = vi
       .fn()
