@@ -52,7 +52,7 @@ export async function generateMetadata({
   }
 
   return createPageMetadata({
-    title: `${brand.name} Silver Payal in Agra`,
+    title: `${brand.name} ${brand.productLabel} in Agra`,
     description: brand.metaDescription,
     path: getSilverPayalBrandPath(brand.slug),
     image: brand.logo,
@@ -70,7 +70,7 @@ const enquiryDetails = [
     number: "02",
     title: "Size and fit",
     description:
-      "Share your ankle measurement or preferred size so the showroom team can discuss a suitable fit.",
+      "Share the relevant measurement or preferred size so the showroom team can discuss a suitable fit.",
   },
   {
     number: "03",
@@ -120,7 +120,7 @@ export default async function SilverPayalBrandPage({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": `${pageUrl}#collection-page`,
-    name: `${brand.name} Silver Payal in Agra`,
+    name: `${brand.name} ${brand.productLabel} in Agra`,
     description: brand.metaDescription,
     url: pageUrl,
     image: {
@@ -139,23 +139,23 @@ export default async function SilverPayalBrandPage({
     },
     mainEntity: {
       "@type": "Thing",
-      name: `${brand.name} silver payal`,
+      name: `${brand.name} ${brand.productLabel.toLowerCase()}`,
       description: brand.introduction,
       image: toAbsoluteUrl(brand.logo.src),
     },
   };
   const faqs = [
     {
-      question: `Where can I enquire about ${brand.name} payal in Agra?`,
-      answer: `Contact DDA Silver at ${siteConfig.address} or use the WhatsApp enquiry on this page to ask about current ${brand.name} payal designs.`,
+      question: `Where can I enquire about ${brand.name} ${brand.productLabel.toLowerCase()} in Agra?`,
+      answer: `Contact DDA Silver at ${siteConfig.address} or use the WhatsApp enquiry on this page to ask about current ${brand.name} ${brand.productLabel.toLowerCase()} designs.`,
     },
     {
-      question: `What should I confirm before choosing ${brand.name} payal?`,
+      question: `What should I confirm before choosing ${brand.name} ${brand.productLabel.toLowerCase()}?`,
       answer:
         "Confirm the size, weight, purity or hallmark details, current price and what is included for the specific piece under discussion.",
     },
     {
-      question: `Are ${brand.name} payal designs and prices shown online?`,
+      question: `Are ${brand.name} ${brand.productLabel.toLowerCase()} designs and prices shown online?`,
       answer:
         "This page introduces the brand and enquiry route. Current designs, availability and prices should be confirmed directly with the DDA Silver showroom team.",
     },
@@ -175,15 +175,17 @@ export default async function SilverPayalBrandPage({
             items={[
               { label: "Home", href: "/" },
               { label: "Payal brands", href: "/silver-payal-brands" },
-              { label: `${brand.name} payal` },
+              { label: `${brand.name} ${brand.productLabel.toLowerCase()}` },
             ]}
           />
         </div>
         <div className="site-container grid gap-10 py-12 lg:min-h-[32rem] lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20 lg:py-16">
           <div>
-            <p className="eyebrow">{brand.name} payal / Agra</p>
+            <p className="eyebrow">
+              {brand.name} {brand.productLabel.toLowerCase()} / Agra
+            </p>
             <h1 className="font-display mt-6 max-w-3xl text-balance text-5xl font-normal leading-[0.98] tracking-[-0.025em] text-ink sm:text-6xl lg:text-7xl">
-              {brand.name} Silver Payal
+              {brand.name} {brand.productLabel}
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-ink-muted sm:text-lg">
               {brand.introduction}
@@ -231,9 +233,10 @@ export default async function SilverPayalBrandPage({
               {brand.identity}
             </h2>
             <p className="mt-6 leading-7 text-ink-muted">
-              DDA Silver does not publish a fixed stock list or price for this
-              brand on this page. Enquire with the showroom team for the latest
-              information about the exact piece you are considering.
+              {brand.name} is owned by Deen Dayal Anand Kumar Sarraf (DDA),
+              and its products are manufactured in-house by us. The range has{" "}
+              {brand.silverPurity}% silver purity. Enquire with our showroom for
+              current designs and the size, weight and price of a specific piece.
             </p>
           </div>
           <div>
@@ -294,7 +297,7 @@ export default async function SilverPayalBrandPage({
           <div>
             <p className="eyebrow">Questions, answered</p>
             <h2 className="font-display mt-4 text-4xl font-normal leading-tight sm:text-5xl">
-              Before you enquire about {brand.name} payal.
+              Before you enquire about {brand.name} {brand.productLabel.toLowerCase()}.
             </h2>
           </div>
           <div className="border-t border-line">
@@ -336,7 +339,7 @@ export default async function SilverPayalBrandPage({
                   href={getSilverPayalBrandPath(candidate.slug)}
                   className="group flex min-h-28 items-center justify-between gap-4 px-5 py-6 font-display text-2xl no-underline hover:bg-paper-strong hover:text-copper-dark"
                 >
-                  {candidate.name} payal
+                  {candidate.name}
                   <ArrowRightIcon
                     size={18}
                     aria-hidden="true"
@@ -356,7 +359,7 @@ export default async function SilverPayalBrandPage({
               Current availability
             </p>
             <h2 className="font-display mt-4 text-4xl font-normal leading-tight sm:text-5xl">
-              Ask about {brand.name} payal today.
+              Ask about {brand.name} {brand.productLabel.toLowerCase()} today.
             </h2>
             <p className="mt-5 max-w-xl leading-7 text-[#dce5df]">
               Share the size or style you have in mind and ask the showroom team

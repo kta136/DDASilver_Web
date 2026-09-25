@@ -47,7 +47,7 @@ const collectionPageSchema = {
     itemListElement: silverPayalBrands.map((brand, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: `${brand.name} silver payal`,
+      name: `${brand.name} ${brand.productLabel.toLowerCase()}`,
       url: toAbsoluteUrl(getSilverPayalBrandPath(brand.slug)),
     })),
   },
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "Which silver payal brands can I ask about?",
     answer:
-      "You can enquire about Anand, MD, AGB, DDA 92.5, AKS and AND silver payal brands through DDA Silver.",
+      "All six brands offer payal. They are owned by DDA (Deen Dayal Anand Kumar Sarraf), and their products are manufactured in-house by DDA. Anand and AND also offer chains. DDA 92.5 covers chains, bracelets, rings, payal, fancy jewellery and necklaces.",
   },
   {
     question: "How do I choose the right silver payal size?",
@@ -131,10 +131,10 @@ export default function SilverPayalBrandsPage() {
               Silver Payal &amp; Anklet Brands
             </h1>
             <p className="mt-7 max-w-xl text-base leading-8 text-ink-muted sm:text-lg">
-              Explore silver payal, also known as silver anklets, from Anand,
-              MD, AGB, DDA 92.5, AKS and AND at DDA Silver. Share the size,
-              style or weight you have in mind and our Agra showroom team can
-              help you compare current designs and pricing.
+              Anand, MD, AGB, DDA 92.5, AKS and AND are owned by Deen Dayal
+              Anand Kumar Sarraf (DDA), with products manufactured in-house.
+              Explore our payal ranges, Anand and AND chains, and DDA 92.5
+              jewellery at our Agra showroom.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -223,15 +223,16 @@ export default function SilverPayalBrandsPage() {
                 </h3>
                 <div className="mt-auto pt-7">
                   <p className="text-sm leading-6 text-ink-muted">
-                    Enquire about {brand.name} silver payal designs, sizes,
-                    weights and current pricing.
+                    {brand.productLabel} with {brand.silverPurity}% silver
+                    purity, manufactured by DDA. Enquire about current designs
+                    and pricing.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
                     <Link
                       href={getSilverPayalBrandPath(brand.slug)}
                       className="inline-flex min-h-11 items-center gap-2 border-b border-copper pb-2 text-sm font-bold text-ink no-underline hover:text-copper-dark"
                     >
-                      Explore {brand.name} payal
+                      Explore {brand.name}
                       <ArrowRightIcon size={17} aria-hidden="true" />
                     </Link>
                     <a

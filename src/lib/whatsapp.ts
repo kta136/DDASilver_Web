@@ -45,9 +45,11 @@ export function buildWhatsAppPayalBrandUrl(
     ? `/silver-payal-brands/${matchedBrand.slug}`
     : "/silver-payal-brands";
   const pageUrl = new URL(pagePath, siteUrl).toString();
-  const itemName = normalizedBrand
-    ? `${normalizedBrand} silver payals`
-    : "silver payals";
+  const itemName = matchedBrand
+    ? `${matchedBrand.name} ${matchedBrand.productLabel.toLowerCase()}`
+    : normalizedBrand
+      ? `${normalizedBrand} silver payals`
+      : "silver payals";
   const message = [
     `Hello DDA Silver, I would like to enquire about ${itemName}.`,
     "Please share current designs and pricing, along with available sizes, weights and purity details.",

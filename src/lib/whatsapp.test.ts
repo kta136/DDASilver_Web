@@ -34,20 +34,20 @@ describe("WhatsApp URLs", () => {
   });
 
   it.each([
-    ["Anand", "anand"],
-    ["MD", "md"],
-    ["AGB", "agb"],
-    ["DDA 92.5", "dda"],
-    ["AKS", "aks"],
-    ["AND", "and"],
-  ])("builds a %s payal enquiry with the page URL", (brand, slug) => {
+    ["Anand", "anand", "silver payal & chains"],
+    ["MD", "md", "silver payal"],
+    ["AGB", "agb", "silver payal"],
+    ["DDA 92.5", "dda", "silver jewellery"],
+    ["AKS", "aks", "silver payal"],
+    ["AND", "and", "silver payal & chains"],
+  ])("builds a %s enquiry with its product range and page URL", (brand, slug, productRange) => {
     const url = new URL(
       buildWhatsAppPayalBrandUrl(brand, "https://www.ddasilver.com"),
     );
 
     expect(url.hostname).toBe("wa.me");
     expect(url.pathname).toBe("/917060001491");
-    expect(url.searchParams.get("text")).toContain(`${brand} silver payals`);
+    expect(url.searchParams.get("text")).toContain(`${brand} ${productRange}`);
     expect(url.searchParams.get("text")).toContain("current designs and pricing");
     expect(url.searchParams.get("text")).toContain(
       `https://www.ddasilver.com/silver-payal-brands/${slug}`,

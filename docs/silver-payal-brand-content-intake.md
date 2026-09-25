@@ -1,33 +1,43 @@
-# Silver payal brand content intake
+# Silver brand content: confirmed facts and remaining intake
 
-The six published brand landing pages already have indexed URLs and working
-enquiry content. Keep their current paths and copy while the showroom verifies
-whether each logo and name describes silver payal, a different product range,
-or a broader collection.
+## Owner confirmation â€” 25 September 2026
 
-Before adding brand-specific copy or linking products to a brand, collect these
-facts from the showroom or brand owner:
+The owner confirmed these facts in the website content conversation, including
+follow-up confirmation of Anand/AND chains and DDA 92.5 purity:
 
-- The official name, spelling, and any expansion of the initials.
-- The brand owner or manufacturer, and how the brand relates to DDA Silver.
-- The product types the brand actually covers and the features that distinguish
-  it from the other listed brands.
-- Current purity, hallmarking, size, weight, and reference information, with a
-  source for each claim and confirmation of which details can change by item.
-- The published product slugs that are approved for this brand, checked against
-  the current catalog and the exact physical items.
-- Original showroom or manufacturer photographs with permission to use them,
-  plus the source filenames and the matched product references.
+- All six brand names are standalone brand names; do not invent expansions.
+- All six are owned by DDA (Deen Dayal Anand Kumar Sarraf).
+- Products for all six brands are manufactured in-house by DDA.
 
-There is a specific point to resolve for **DDA 92.5**: its current logo says
-“Fancy Chain & Bracelet Collection”, while the existing public page is titled
-“DDA 92.5 Silver Payal”. Confirm the actual product range and relationship to
-payal before expanding this page. Do not infer the relationship from the logo,
-the route, or the brand name alone.
+| Brand | Product range | Silver purity |
+| --- | --- | --- |
+| Anand | Payal and chains | 70% |
+| MD | Payal | 45% |
+| AGB | Payal | 40% |
+| DDA 92.5 | Chains, bracelets, rings, payal, fancy jewellery and necklaces | 92.5% across the range |
+| AKS | Payal | 45% |
+| AND | Payal and chains | 60% |
 
-The static brand configuration supports optional `editorialSections` and
-`productSlugs`. Leave these fields empty until the facts and product mapping
-are verified. The page renders only configured editorial content and product
-slugs that resolve to published catalog products. New product photos must go
-through the approved [gallery ingestion workflow](product-gallery-ingestion.md)
-before they are presented as product photography.
+DDA 92.5 is a broader jewellery range, so its page title, metadata,
+structured data and enquiry text must not describe it as payal only.
+Retain the existing indexed paths, including `/silver-payal-brands/dda`.
+The DDA 92.5 logo's chain/bracelet wording describes only part of its range.
+The owner confirmed that the current AND-70 logo should remain in use,
+while the page explicitly states 60% silver purity. Do not infer purity
+from the number in the logo.
+
+## Still needed before adding further claims or product galleries
+
+- Distinctive design, construction and finish details for each brand.
+- Hallmarking or certification details and evidence, if these are to be claimed.
+  The confirmed percentages alone do not establish hallmarking.
+- Approved existing website product links or references matched to each brand.
+- Item-specific sizes, weights and available variants for featured products.
+- Original showroom/manufacturer photos with publication permission, source
+  filenames and matched product references.
+
+Do not infer product-to-brand mappings from appearance, names or purity.
+The configuration supports optional `editorialSections` and `productSlugs`;
+add only verified facts and links resolving to published catalog products.
+New product photos must follow the approved
+[gallery ingestion workflow](product-gallery-ingestion.md).

@@ -1,6 +1,8 @@
 export type SilverPayalBrand = {
   name: string;
   slug: string;
+  productLabel: string;
+  silverPurity: number;
   logo: {
     src: string;
     alt: string;
@@ -18,92 +20,104 @@ export const silverPayalBrands = [
   {
     name: "Anand",
     slug: "anand",
+    productLabel: "Silver Payal & Chains",
+    silverPurity: 70,
     logo: {
       src: "/images/payal-brands/anand-70.webp",
       alt: "Anand-70 Exclusive Payal Collection logo",
       width: 720,
       height: 240,
     },
-    identity: "Anand-70 is presented as an Exclusive Payal Collection.",
+    identity: "Anand, a DDA brand.",
     introduction:
-      "Looking for Anand payal or Anand silver anklets? Ask the DDA Silver showroom team about current Anand-70 designs and compare the available sizes, weights, purity details and pricing before you decide.",
+      "Discover Anand payal and chains, manufactured by DDA with 70% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore Anand silver payal at DDA Silver in Agra. Enquire about current Anand-70 designs, sizes, weights, purity details and prices.",
+      "Explore Anand payal and chains with 70% silver purity, manufactured by DDA (Deen Dayal Anand Kumar Sarraf). Enquire at DDA Silver in Agra.",
   },
   {
     name: "MD",
     slug: "md",
+    productLabel: "Silver Payal",
+    silverPurity: 45,
     logo: {
       src: "/images/payal-brands/md-fancy-payal.webp",
       alt: "MD Fancy Payal logo",
       width: 720,
       height: 540,
     },
-    identity: "MD is presented as MD Fancy Payal.",
+    identity: "MD, a DDA brand.",
     introduction:
-      "Looking for MD payal or MD Fancy Payal? DDA Silver can help you check the current designs available to discuss and compare their sizes, weights, purity details and pricing.",
+      "Discover MD payal, manufactured by DDA with 45% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore MD silver payal and MD Fancy Payal at DDA Silver in Agra. Ask about current designs, sizes, weights, purity details and prices.",
+      "Explore MD payal with 45% silver purity, manufactured by DDA (Deen Dayal Anand Kumar Sarraf). Enquire at DDA Silver in Agra.",
   },
   {
     name: "AGB",
     slug: "agb",
+    productLabel: "Silver Payal",
+    silverPurity: 40,
     logo: {
       src: "/images/payal-brands/agb-dda-silver.webp",
       alt: "AGB, a product of DDA Silver, logo",
       width: 720,
       height: 540,
     },
-    identity: "AGB is presented as a product of DDA Silver.",
+    identity: "AGB, a DDA brand.",
     introduction:
-      "Looking for AGB payal? Start with an enquiry to DDA Silver for the latest AGB silver payal designs available to discuss, then compare size, weight, purity details and current pricing.",
+      "Discover AGB payal, manufactured by DDA with 40% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore AGB silver payal at DDA Silver in Agra. Enquire about current AGB designs, sizes, weights, purity details and prices.",
+      "Explore AGB payal with 40% silver purity, manufactured by DDA (Deen Dayal Anand Kumar Sarraf). Enquire at DDA Silver in Agra.",
   },
   {
     name: "DDA 92.5",
     slug: "dda",
+    productLabel: "Silver Jewellery",
+    silverPurity: 92.5,
     logo: {
       src: "/images/payal-brands/dda-925.webp",
       alt: "DDA 92.5 Fancy Chain and Bracelet Collection logo",
       width: 720,
       height: 360,
     },
-    identity: "DDA 92.5 is presented as a Fancy Chain & Bracelet Collection.",
+    identity: "DDA 92.5, a DDA brand.",
     introduction:
-      "Looking for DDA 92.5 payal? Ask the Agra showroom team about current DDA 92.5 designs and compare the available sizes, weights, purity details and pricing for the pieces under discussion.",
+      "Discover DDA 92.5 chains, bracelets, rings, payal, fancy jewellery and necklaces, manufactured by DDA with 92.5% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore DDA 92.5 silver payal in Agra. Ask the DDA Silver showroom about current designs, sizes, weights, purity details and prices.",
+      "Explore DDA 92.5 silver jewellery: chains, bracelets, rings, payal and necklaces with 92.5% silver purity. Manufactured by DDA. Enquire in Agra.",
   },
   {
     name: "AKS",
     slug: "aks",
+    productLabel: "Silver Payal",
+    silverPurity: 45,
     logo: {
       src: "/images/payal-brands/aks-gola-payal.webp",
       alt: "AKS Gola Payal logo",
       width: 600,
       height: 600,
     },
-    identity: "AKS is presented as AKS Gola Payal.",
+    identity: "AKS, a DDA brand.",
     introduction:
-      "Looking for AKS payal or AKS Gola Payal? Enquire with DDA Silver to check current designs and compare the sizes, weights, purity details and pricing available to discuss.",
+      "Discover AKS payal, manufactured by DDA with 45% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore AKS silver payal and AKS Gola Payal at DDA Silver in Agra. Ask about current designs, sizes, weights, purity details and prices.",
+      "Explore AKS payal with 45% silver purity, manufactured by DDA (Deen Dayal Anand Kumar Sarraf). Enquire at DDA Silver in Agra.",
   },
   {
     name: "AND",
     slug: "and",
+    productLabel: "Silver Payal & Chains",
+    silverPurity: 60,
     logo: {
       src: "/images/payal-brands/and-70.webp",
       alt: "AND-70, a product of DDA, logo",
       width: 720,
       height: 540,
     },
-    identity: "AND-70 is presented as a product of DDA.",
+    identity: "AND, a DDA brand.",
     introduction:
-      "Looking for AND payal or AND-70 silver anklets? Ask DDA Silver about the current AND designs available to discuss, including their sizes, weights, purity details and pricing.",
+      "Discover AND payal and chains, manufactured by DDA with 60% silver purity. Visit our Agra showroom or enquire about current designs, sizes, weights and pricing.",
     metaDescription:
-      "Explore AND silver payal and AND-70 anklets at DDA Silver in Agra. Enquire about current designs, sizes, weights, purity details and prices.",
+      "Explore AND payal and chains with 60% silver purity, manufactured by DDA (Deen Dayal Anand Kumar Sarraf). Enquire at DDA Silver in Agra.",
   },
 ] as const satisfies readonly SilverPayalBrand[];
 
