@@ -16,7 +16,9 @@ test.beforeEach(async ({ page }) => {
 test("audit fixes keep phone enquiry visible and restore menu focus", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.locator(".collection-intro h2")).toHaveText("Timeless silver. For every moment.");
+  await expect(
+    page.locator(".collection-index").first().locator(".collection-intro h2"),
+  ).toHaveText("Timeless silver. For every moment.");
   await page.getByRole("button", { name: "Open menu" }).click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
@@ -47,6 +49,37 @@ test("phone filters expand and desktop category images align", async ({ page }) 
   const hero = page.locator('.home-hero-photo img');
   await expect(hero).toHaveAttribute("loading", "eager");
   expect(await hero.evaluate((image) => (image as HTMLImageElement).currentSrc)).toMatch(/homepage-b-editorial-\d+w\.webp/);
+});
+
+test("category clear and override survive a reload", async ({ page }) => {
+  const getCategoryFilter = async () => {
+    const category = page.getByRole("combobox", {
+      name: "Filter by category",
+    });
+    if (!(await category.isVisible())) {
+      await page.getByRole("button", { name: "Filters", exact: true }).click();
+    }
+    return category;
+  };
+
+  await page.goto("/category/coin?category=");
+  let category = await getCategoryFilter();
+  await expect(category).toHaveValue("");
+  await expect(page).toHaveURL(/\/category\/coin\?category=$/);
+  await page.reload();
+  category = await getCategoryFilter();
+  await expect(category).toHaveValue("");
+  await expect(page).toHaveURL(/\/category\/coin\?category=$/);
+
+  await page.goto("/category/coin");
+  category = await getCategoryFilter();
+  await expect(category).toHaveValue("coin");
+  await category.selectOption("idols");
+  await expect(page).toHaveURL(/\/category\/coin\?category=idols$/);
+  await page.reload();
+  category = await getCategoryFilter();
+  await expect(category).toHaveValue("idols");
+  await expect(page).toHaveURL(/\/category\/coin\?category=idols$/);
 });
 
 test("unavailable rates offer a working retry and showroom contact", async ({ page }) => {

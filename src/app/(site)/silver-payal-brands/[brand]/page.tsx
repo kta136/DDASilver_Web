@@ -8,6 +8,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CatalogEditorial } from "@/components/catalog/catalog-editorial";
+import { ProductCard } from "@/components/catalog/product-card";
 import {
   getSilverPayalBrand,
   getSilverPayalBrandPath,
@@ -20,6 +22,8 @@ import {
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { buildWhatsAppPayalBrandUrl } from "@/lib/whatsapp";
+import { getPublishedProduct } from "@/sanity/lib/catalog";
+import type { Product } from "@/types/catalog";
 
 type SilverPayalBrandPageProps = {
   params: Promise<{ brand: string }>;
@@ -96,6 +100,21 @@ export default async function SilverPayalBrandPage({
   const pageUrl = toAbsoluteUrl(pagePath);
   const otherBrands = silverPayalBrands.filter(
     (candidate) => candidate.slug !== brand.slug,
+  );
+  const brandProductResults = await Promise.all(
+    (brand.productSlugs ?? []).map(async (productSlug) => {
+      try {
+        return await getPublishedProduct(productSlug);
+      } catch {
+        console.warn(
+          `[payal brands] Optional published product unavailable: ${productSlug}`,
+        );
+        return undefined;
+      }
+    }),
+  );
+  const brandProducts = brandProductResults.filter(
+    (product): product is Product => Boolean(product),
   );
   const pageSchema = {
     "@context": "https://schema.org",
@@ -243,6 +262,32 @@ export default async function SilverPayalBrandPage({
           </div>
         </div>
       </section>
+
+      {brand.editorialSections?.length ? (
+        <section className="border-y border-line bg-paper-strong">
+          <div className="site-container">
+            <CatalogEditorial sections={[...brand.editorialSections]} />
+          </div>
+        </section>
+      ) : null}
+
+      {brandProducts.length ? (
+        <section className="section-shell">
+          <div className="site-container">
+            <div className="max-w-2xl">
+              <p className="eyebrow">Selected designs</p>
+              <h2 className="font-display mt-4 text-4xl font-normal leading-tight sm:text-5xl">
+                Selected designs.
+              </h2>
+            </div>
+            <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-3 lg:grid-cols-4">
+              {brandProducts.map((product) => (
+                <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-y border-line bg-paper-strong py-16 sm:py-20">
         <div className="site-container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">

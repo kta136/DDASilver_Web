@@ -126,7 +126,11 @@ test.describe("production SEO output", () => {
     );
 
     expect(productResponse.ok()).toBe(true);
+    expect(productResponse.headers()["x-robots-tag"] ?? "").not.toContain(
+      "noindex",
+    );
     expect(html).toMatch(/<title>[^<]+ \| DDA Silver<\/title>/);
+    expect(html).not.toContain('name="robots" content="noindex');
     expect(canonical).toBe(`https://www.ddasilver.com${productPath}`);
     expect(socialImage).toMatch(
       /^https:\/\/www\.ddasilver\.com\/api\/og\/product\//,
@@ -163,6 +167,7 @@ test.describe("production SEO output", () => {
     });
 
     expect(socialImageResponse.ok()).toBe(true);
+    expect(socialImageResponse.headers()["x-robots-tag"]).toBe("noindex");
     expect(socialImageResponse.headers()["content-type"]).toContain(
       "image/png",
     );
@@ -207,10 +212,58 @@ test.describe("production SEO output", () => {
     expect(filteredCatalog).toContain("max-image-preview:large");
   });
 
+  test("keeps category defaults and explicit clears stable across reload and history", async ({
+    page,
+  }) => {
+    await page.goto("/category/purse");
+    const category = page.getByRole("combobox", {
+      name: "Filter by category",
+    });
+    await expect(category).toHaveValue("purse");
+    await expect(page).toHaveURL(/\/category\/purse$/);
+
+    await page.getByRole("link", { name: "Next" }).click();
+    await expect(page.getByText(/Page 2 of/)).toBeVisible();
+    await expect(page).toHaveURL(/\/category\/purse\?page=2$/);
+    await page.goBack();
+    await expect(page.getByText(/Page 1 of/)).toBeVisible();
+    await expect(category).toHaveValue("purse");
+    await page.goForward();
+    await expect(page.getByText(/Page 2 of/)).toBeVisible();
+    await expect(category).toHaveValue("purse");
+
+    await page.goto("/category/purse?category=");
+    await expect(category).toHaveValue("");
+    await page.reload();
+    await expect(category).toHaveValue("");
+    await expect(page).toHaveURL(/\/category\/purse\?category=$/);
+
+    await page.goto("/category/purse?category=coin");
+    await expect(category).toHaveValue("coin");
+    await page.reload();
+    await expect(category).toHaveValue("coin");
+    await expect(page).toHaveURL(/\/category\/purse\?category=coin$/);
+  });
+
   test("renders real featured products and crawlable buying guides", async ({
     request,
   }) => {
     const home = await (await request.get("/")).text();
+    for (const slug of [
+      "silver-ganesha-idols",
+      "lakshmi-ganesha-silver-idol-pairs",
+      "silver-pooja-thali-sets",
+      "silver-wedding-gifts",
+    ]) {
+      expect(home).toContain(`href="/collections/${slug}"`);
+    }
+    for (const slug of [
+      "choosing-silver-gifts",
+      "understanding-product-details",
+      "caring-for-silver",
+    ]) {
+      expect(home).toContain(`href="/guides/${slug}"`);
+    }
     expect(home).not.toContain(
       "Concept image of an ornate engraved silver bowl",
     );
@@ -222,6 +275,21 @@ test.describe("production SEO output", () => {
     ).text();
     expect(guide).toContain("How to choose a silver gift");
     expect(guide).toContain('href="/collections/silver-wedding-gifts"');
+    const productDetailsGuide = await (
+      await request.get("/guides/understanding-product-details")
+    ).text();
+    expect(productDetailsGuide).toContain(
+      "/products/butterfly-relief-silver-bottle",
+    );
+    expect(productDetailsGuide).toContain(
+      "Butterfly Relief Silver Bottle — 92.5% purity, 340 g, height 10 in",
+    );
+    expect(productDetailsGuide).toContain(
+      "/products/mini-concentric-line-silver-plate",
+    );
+    expect(productDetailsGuide).toContain(
+      "Mini Concentric-Line Silver Plate — 99.80% purity, 50 g, diameter 4 in",
+    );
     const gold = await (await request.get("/category/gold")).text();
     expect(gold).toContain("Gold Coins &amp; Bars in Agra | DDA Silver");
     expect(gold).not.toContain("Silver Gold Coins");

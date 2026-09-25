@@ -1,0 +1,4109 @@
+{
+  "checkedAt": "2026-09-25T06:32:59.517Z",
+  "method": "BFS from homepage through actual HTML anchors only, relative URLs resolved against source page, no sitemap seeding; pagination allowed, filters excluded. Product URLs recorded as linked leaves, product HTTP not retested.",
+  "sitemapCount": 662,
+  "pages": [
+    {
+      "url": "https://www.ddasilver.com/",
+      "depth": 0,
+      "from": null,
+      "status": 200,
+      "canonical": "https://www.ddasilver.com"
+    },
+    {
+      "url": "https://www.ddasilver.com/products",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/rates",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/rates"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/contact",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/contact"
+    },
+    {
+      "url": "https://www.ddasilver.com/about",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/about"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/guides"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/purse",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/coin"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/singhasan",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gifts",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/boxes",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/hatri",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/jhula",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/phone-covers",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gold",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-ganesha-idols",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-wedding-gifts",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/collections/silver-wedding-gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-pooja-thali-sets",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/md",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/md"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/anand",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/anand"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/aks",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/aks"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/dda",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/dda"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/agb",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/agb"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/understanding-product-details",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/guides/understanding-product-details"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/choosing-silver-gifts",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/guides/choosing-silver-gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/and",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/silver-payal-brands/and"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/caring-for-silver",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/guides/caring-for-silver"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/purse?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gifts?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/boxes?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/coin",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/products?page=3",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/products?page=4",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/products?page=5",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/products?page=6",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=8",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/products?page=7",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=8",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=9",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=9",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/products?page=8",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=10",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=10",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/products?page=9",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=11",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/products?page=10",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=11"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=12",
+      "depth": 12,
+      "from": "https://www.ddasilver.com/products?page=11",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=12"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=13",
+      "depth": 13,
+      "from": "https://www.ddasilver.com/products?page=12",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=13"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=14",
+      "depth": 14,
+      "from": "https://www.ddasilver.com/products?page=13",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=14"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=15",
+      "depth": 15,
+      "from": "https://www.ddasilver.com/products?page=14",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=15"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=16",
+      "depth": 16,
+      "from": "https://www.ddasilver.com/products?page=15",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=16"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=17",
+      "depth": 17,
+      "from": "https://www.ddasilver.com/products?page=16",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=17"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=18",
+      "depth": 18,
+      "from": "https://www.ddasilver.com/products?page=17",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=18"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=19",
+      "depth": 19,
+      "from": "https://www.ddasilver.com/products?page=18",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=19"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=20",
+      "depth": 20,
+      "from": "https://www.ddasilver.com/products?page=19",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=20"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=21",
+      "depth": 21,
+      "from": "https://www.ddasilver.com/products?page=20",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=21"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=22",
+      "depth": 22,
+      "from": "https://www.ddasilver.com/products?page=21",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=22"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=23",
+      "depth": 23,
+      "from": "https://www.ddasilver.com/products?page=22",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=23"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=24",
+      "depth": 24,
+      "from": "https://www.ddasilver.com/products?page=23",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=24"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=25",
+      "depth": 25,
+      "from": "https://www.ddasilver.com/products?page=24",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=25"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=26",
+      "depth": 26,
+      "from": "https://www.ddasilver.com/products?page=25",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=26"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=27",
+      "depth": 27,
+      "from": "https://www.ddasilver.com/products?page=26",
+      "status": 200,
+      "canonical": "https://www.ddasilver.com/products?page=27"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.ddasilver.com/products",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/rates",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/about",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/contact",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/purse",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gifts",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/boxes",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/singhasan",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/hatri",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/jhula",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gold",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/phone-covers",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-anniversary-silver-coin",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-silver-idol-with-arch",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-panel-silver-purse-405g",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/multicolor-enamel-petal-thali-set-9in-765g",
+      "depth": 1,
+      "from": "https://www.ddasilver.com/"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-ganesha-idols",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-pooja-thali-sets",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/silver-wedding-gifts",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-20-gram-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-50-gram-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-100-gram-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-250-gram-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-20-gram-oval-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-25-gram-oval-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-50-gram-oval-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-100-gram-oval-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-20-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-50-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-100-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-250-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-500-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-1000-gram-rectangle-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-20-gram-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-50-gram-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-100-gram-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-250-gram-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-square-lakshmi-ganesh-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-tree-of-life-silver-coin",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/products"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/anand",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/md",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/agb",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/dda",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/aks",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/silver-payal-brands/and",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/silver-payal-brands"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/choosing-silver-gifts",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/understanding-product-details",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides"
+    },
+    {
+      "url": "https://www.ddasilver.com/guides/caring-for-silver",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/guides"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bal-krishna-laddu-gopal-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kneeling-bal-krishna-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/four-arm-ganesha-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/khatu-shyam-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-silver-idol-with-yellow-dhoti",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/colored-bal-krishna-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/colored-crawling-bal-krishna-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kuber-silver-idol-on-throne",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/meditating-shiva-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/colored-meditating-shiva-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/panchmukhi-hanuman-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/sai-baba-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/colored-panchmukhi-hanuman-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-narayan-silver-idol-on-sheshnag",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/saraswati-silver-idol-with-veena",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/crawling-bal-krishna-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-kuber-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bal-krishna-silver-idol-with-butter-pot",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-guru-nanak-silver-idol",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-with-peacock",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-bal-krishna-silver-idol-with-butter-pot",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-with-peacock",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-elephant-floral-silver-purse-400g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/blue-stone-vertical-silver-purse-600g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-tone-floral-silver-purse-730g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/jeweled-medallion-silver-clutch-500g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/red-fabric-silver-potli-purse-298g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/woven-silver-tote-purse-330g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/green-stone-silver-clutch-600g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/embossed-floral-silver-handbag-390g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/beaded-oval-silver-clutch-380g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/orange-brocade-silver-potli-purse-295g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/teal-brocade-silver-potli-purse-300g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/geometric-silver-clutch-400g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-floral-silver-purse-390g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/paisley-floral-silver-purse-440g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-panel-silver-clutch-400g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/pink-red-jeweled-silver-clutch-500g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/figurative-silver-clutch-380g",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-purple-fringe-silver-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-lattice-green-fringe-silver-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-floral-pink-fringe-silver-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/green-stone-floral-chain-silver-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/white-stone-peacock-fringe-silver-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-floral-silver-clutch-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-lattice-pearl-fringe-silver-clutch-purse",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/purse?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/purse"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/coin"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/scalloped-floral-round-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/petite-pointed-floral-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-floral-fan-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-peacock-floral-elephant-foot-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/openwork-arch-floral-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-peacock-bolster-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tiered-floral-crown-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-peacock-canopy-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/chrysanthemum-tree-round-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tiered-leaf-floral-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-fan-two-tier-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/pink-accent-floral-round-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-back-silver-singhasan-with-decorative-tree",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-peacock-round-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-back-silver-singhasan",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/singhasan"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/om-shubh-labh-gold-accent-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shubh-om-gold-panel-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/swastik-om-gold-accent-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shubh-om-fine-line-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/auspicious-script-gold-neck-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/om-swastik-gold-band-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-swastik-om-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-gold-neck-swastik-om-silver-nariyal",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/horse-drawn-carriage-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/vintage-automobile-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/village-water-carrier-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-peacock-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/paired-swan-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/eagle-in-flight-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/hollow-gun-silver-display-set",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/paired-falcon-silver-sculptures",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/deer-pair-silver-sculptures",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/walking-leopard-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/embossed-ceremonial-silver-gada",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/vintage-pickup-truck-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/camel-cart-silver-sculpture",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-green-stone-silver-sindoor-dani",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/devotional-scene-topper-silver-sindoor-dani",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/venkateswara-topper-silver-sindoor-dani",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/gifts?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/pink-rose-enamel-rectangular-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-enamel-leaf-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-peacock-enamel-octagonal-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rose-antique-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-relief-antique-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/pink-blue-enamel-medallion-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/multicolour-enamel-arched-floral-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/antique-rose-cluster-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-flower-scroll-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/diamond-floral-antique-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-peacock-floral-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/double-heart-butterfly-enamel-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-foot-floral-relief-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/blue-enamel-garden-panel-square-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/red-enamel-geometric-square-silver-gift-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/plain-nine-piece-silver-jain-pooja-box-set",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-and-pink-crest-octagonal-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-floral-octagonal-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-jewel-octagonal-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/domed-enamel-octagonal-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/square-medallion-octagonal-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-floral-rectangular-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/faceted-floral-footed-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-lattice-oval-silver-box",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/boxes?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/boxes"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/two-tier-arched-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-two-tier-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/three-tier-six-cup-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-crown-three-tier-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/domed-single-chamber-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/om-flag-domed-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/petite-pointed-dome-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-om-flag-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-om-flag-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/two-tier-four-cup-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gemstone-three-tier-silver-hatri",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/hatri"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fine-line-mini-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/double-band-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/triple-band-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/polished-rim-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/brushed-linear-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/multi-ring-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/minimal-band-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-line-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-brushed-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/straight-rim-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/satin-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-brushed-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mid-band-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-classic-silver-tumbler",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-linear-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/double-line-mini-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/brushed-rim-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fine-band-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-linear-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/polished-rim-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/deep-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-line-silver-bowl",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=2",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/utensils"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-peacock-floral-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-leaf-crest-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-arch-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-peacock-singhasan-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-floral-arch-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/leaf-bar-four-column-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/loop-support-peacock-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-flower-tree-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/broad-base-peacock-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-arch-layered-peacock-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bird-foot-peacock-floral-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-foot-scaled-peacock-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/domed-mandap-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-arch-peacock-rail-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/grand-peacock-floral-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-ornate-peacock-floral-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-foot-twin-peacock-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-arch-floral-seat-silver-jhula",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/jhula"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-floral-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/cow-and-calf-floral-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/crowned-tiger-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-vine-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-medallion-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/two-bird-floral-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/standing-deity-custom-fit-silver-phone-cover",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/phone-covers"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-fine-gold-bar-1g-995",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-classical-profile-fine-gold-bar-5g-995",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-classical-profile-fine-gold-bar-10g-995",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-queen-victoria-gold-coin-8g-916",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-queen-victoria-gold-coin-4g-916",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/packaged-classical-profile-fine-gold-bar-2g-995",
+      "depth": 2,
+      "from": "https://www.ddasilver.com/category/gold"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-four-arm-ganesha-silver-idol-on-lotus",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ganesha-silver-idol-with-pink-turban",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-silver-idol-with-silver-turban",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ganesha-silver-idol-on-lotus-orange-dhoti",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-seated-ganesha-silver-idol-yellow-dhoti",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/four-arm-ganesha-silver-idol-on-lotus",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-four-arm-ganesha-silver-idol-yellow-dhoti",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-four-arm-ganesha-silver-idol-red-stole",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ganesha-silver-idol-on-mushak",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/five-ganesha-silver-idol-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/auspicious-elephant-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-silver-idol-riding-mushak",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-silver-idol-cobra-hood",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/panchmukhi-ganesha-semi-solid-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/celestial-arch-ganesha-semi-solid-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/grand-seated-ganesha-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-throne-ganesha-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-ganesha-idols"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/engraved-wedding-scroll-holder",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-wedding-gifts"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/leaf-rim-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-handle-floral-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/butterfly-floral-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lotus-rim-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/swastika-floral-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-floral-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/turquoise-enamel-lobed-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-feather-enamel-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/red-lotus-enamel-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fan-petal-enamel-puja-thali-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/red-enamel-floral-thali-set-12in-930g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/blue-enamel-floral-thali-set-12in-1123g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-openwork-thali-set-8in-225g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-tone-vessel-floral-thali-set-9in-275g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-embossed-thali-set-8in-400g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-scroll-ghungroo-thali-set-10in-500g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/leaf-petal-thali-set-10in-400g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lotus-ghungroo-thali-set-6in-150g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/blue-teal-enamel-thali-set-10in-765g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-scroll-leaf-rim-thali-set-11in-950g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-flower-thali-set-10in-500g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-butterfly-thali-set-8in-475g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/silver-pooja-thali-sets"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-lotus-bases-40g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-floral-arches",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-miniature-thrones-15g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-compact-lotus-bases",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-miniature-lakshmi-ganesha-silver-idol-pair",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-beaded-halos",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-yellow-20g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-red-35g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-orange-35g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-golden-yellow",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-painted-garlands-55g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-green-yellow-130g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-lakshmi-ganesha-silver-idol-pair-tiered-lotus-bases",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-mint-green",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-crimson-red",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-ornate-thrones",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-tall-lotus-pedestals",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-owl-mouse-105g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-modak",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-red-green-garlands",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-owl-mouse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-silver-idol-pair-round-pedestals",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-radha-krishna-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-oval-bal-krishna-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-shiva-parvati-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-ganesha-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-hanuman-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-guru-nanak-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-seated-shiva-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dda-10-gram-round-mahavir-silver-coin",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/products?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-peacock-floral-silver-clutch-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/scroll-vine-round-handle-silver-clutch-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/honeycomb-floral-round-handle-silver-clutch-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/vertical-floral-panel-silver-clutch-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/scallop-pattern-silver-clutch-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-birds-pearl-fringe-silver-shoulder-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/jeweled-peacock-tassel-silver-handbag",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/woven-lattice-two-tone-silver-purse-400g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/openwork-scroll-silver-purse-450g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-motif-silver-purse-400g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-red-stone-antique-silver-purse",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/purse?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-durga-silver-idol-on-lion",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-jagannath-balabhadra-subhadra-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-with-om-blanket",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shivling-silver-idol-with-cobra",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/saraswati-silver-idol-on-lotus-with-veena",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-standing-radha-krishna-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-crawling-bal-krishna-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-standing-lakshmi-narayan-silver-idol-set",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-with-yellow-blanket",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-laughing-buddha-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-shiva-family-silver-idol-with-nandi",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/maharaja-agrasen-silver-idol-on-throne",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-crawling-bal-krishna-silver-idol-250g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/yashoda-with-bal-krishna-silver-idol",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/idols?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ceremonial-peacock-boat-silver-sculpture",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ruby-stone-stacked-pot-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-deity-floral-lid-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-ruby-stone-egg-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/paduka-ruby-accent-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/om-purple-stone-rectangular-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/purple-stone-devotional-cylinder-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-purple-stone-oval-silver-sindoor-dani",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/gifts?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-floral-hammered-silver-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/round-footed-silver-keepsake-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/pink-stone-enamel-floral-silver-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/peacock-footed-octagonal-silver-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-floral-rectangular-silver-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-floral-fan-shaped-silver-box",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/boxes?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/benjamin-franklin-rectangular-silver-bar-5g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-round-silver-coin-5g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-all-silver-round-coin-5g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-10g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-20g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-25g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-50g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-100g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-10g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-20g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-25g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-50g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-two-tone-oval-coin-50g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bal-krishna-two-tone-oval-coin-50g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/queen-elizabeth-tree-of-life-square-coin-50g",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/coin?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-riding-elephants",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-circular-halos",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-lotus-bases-large",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-square-seats",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-drum-seats",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-lotus-seats",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-blue-base-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-ganesha-lotus-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/round-base-lakshmi-ganesha-semi-solid-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/purple-throne-lakshmi-ganesha-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-arch-lakshmi-ganesha-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lotus-base-lakshmi-ganesha-semi-solid-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/footed-platform-lakshmi-ganesha-silver-idols",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/collections/lakshmi-ganesha-silver-idol-pairs?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/products?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-serving-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-serving-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-serving-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/straight-sided-mini-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/triple-line-mini-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/straight-sided-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/deep-straight-sided-silver-bowl",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-floral-mini-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/beaded-scroll-mini-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/linear-scroll-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-scroll-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-engraved-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/smooth-rounded-handle-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/broad-tapered-handle-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-rounded-handle-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-serving-silver-spoon",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/medium-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/deep-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/grand-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/extra-large-concentric-line-silver-plate",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=3",
+      "depth": 3,
+      "from": "https://www.ddasilver.com/category/utensils?page=2"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/queen-elizabeth-tree-of-life-square-coin-100g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/queen-elizabeth-tree-of-life-square-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/queen-elizabeth-tree-of-life-square-coin-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bal-krishna-two-tone-oval-coin-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/bal-krishna-two-tone-oval-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tree-of-life-scalloped-silver-coin-25g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-all-silver-oval-coin-25g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-all-silver-oval-coin-25g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tree-of-life-scalloped-silver-coin-50g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tree-of-life-round-silver-coin-50g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tree-of-life-round-silver-coin-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-all-silver-oval-coin-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-all-silver-oval-coin-50g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classical-profile-rectangular-silver-bar-100g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classical-profile-rectangular-silver-bar-50g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classical-profile-rectangular-silver-bar-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classical-profile-rectangular-silver-bar-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classical-profile-rectangular-silver-bar-5g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mahavir-navkar-mantra-round-silver-coin",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-ram-mandir-round-silver-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/durga-on-lion-round-silver-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ganesha-under-arch-round-silver-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/hanuman-carrying-mountain-round-silver-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-seated-round-silver-coin-10g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/coin?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/coin?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-lakshmi-narayan-silver-idol-on-sheshnag-125g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/saraswati-silver-idol-on-swan-with-veena",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/auspicious-owl-silver-idol",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ganesha-silver-idol-worshipping-shivling",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-with-flute-15g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-with-flute-15g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-standing-radha-krishna-silver-idol-yellow",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-standing-radha-krishna-silver-idol-red-green",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-with-cow",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-with-flute-on-lotus",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-seated-radha-krishna-silver-idol",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-standing-radha-krishna-silver-idol-on-lotus",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-pair",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-radha-krishna-silver-idol-20g",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/idols?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/products?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/durga-silver-idol-tiger-decorative-arch",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lord-rama-silver-idol-ram-mandir",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-silver-idol-arch-shivling",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-durga-silver-idol-lion-160g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-crimson-blanket",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/idols?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/srinathji-round-silver-coin-10g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiv-parivar-round-silver-coin-10g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kaaba-allah-calligraphy-round-silver-coin-10g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kaaba-786-round-silver-coin",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/khatu-shyam-oval-silver-coin",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/srinathji-oval-silver-coin-10g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-15g-single-face",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-15g-single-face",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-all-silver-oval-coin-15g-single-face",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-all-silver-oval-coin-single-face",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-all-silver-oval-coin-5g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-all-silver-oval-coin-5g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-two-tone-oval-coin-5g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/george-v-two-tone-oval-coin-5g",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/coin?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/eleven-inch-concentric-line-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twelve-inch-concentric-line-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/thirteen-inch-concentric-line-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-raised-centre-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-triple-ring-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/broad-rim-three-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/stepped-rim-three-and-half-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ringed-four-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ringed-five-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-six-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-six-and-half-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-seven-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-seven-and-half-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-nine-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-ten-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/twin-line-eleven-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-rim-eleven-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-twelve-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-thirteen-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/raised-rim-fourteen-inch-silver-plate",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-linear-band-silver-jug",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/double-band-silver-jug",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-linear-silver-jug",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-double-band-silver-jug",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=4",
+      "depth": 4,
+      "from": "https://www.ddasilver.com/category/utensils?page=3"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lidded-linear-silver-jug",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-lidded-linear-silver-jug",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/broad-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/low-profile-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/classic-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/curved-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/four-inch-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-neck-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/five-inch-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/broad-five-inch-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-six-inch-rounded-silver-kalash",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=5",
+      "depth": 5,
+      "from": "https://www.ddasilver.com/category/utensils?page=4"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/products?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-kamdhenu-silver-idol-textured-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-golden-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-diamond-pattern-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-ornate-gold-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-red-saddle-cloth",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-kamdhenu-silver-idol-floral-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mini-kamdhenu-silver-idol-gold-saddle-cloth",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-beaded-blanket-bells",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-green-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-woven-texture-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-cloud-base",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-silver-idol-sculpted-cloud-base",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kamdhenu-silver-idol-floral-om-blanket-large",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/grand-painted-kamdhenu-silver-idol-floral-om-blanket",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ram-darbar-silver-idol-set-yellow-compact",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-silver-idol-set-golden-highlights",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ram-darbar-silver-idol-set-round-bases",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-ram-darbar-silver-idol-set-lotus-bases",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-painted-ram-darbar-silver-idol-set-lotus-bases",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/grand-painted-ram-darbar-silver-idol-set",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/durga-silver-idol-lion-golden-highlights-large",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-durga-silver-idol-lion-red-green",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-rama-sita-silver-idol-pair",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-silver-idol-set-rectangular-bases",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/idols?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/antique-floral-lattice-lidded-silver-jar",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/open-top-floral-relief-square-silver-jar",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/red-accent-floral-medallion-square-silver-jar",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/glass-floral-band-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/faceted-floral-panel-square-silver-jar",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/butterfly-relief-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fluted-shoulder-floral-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/leaf-scroll-engraved-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/arched-botanical-panel-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/elephant-vine-engraved-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/rectangular-scroll-panel-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/plain-polished-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/plain-brushed-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/faceted-leaf-panel-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/embossed-leaf-border-silver-dining-thali-set",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/frosted-engraved-silver-wine-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/antique-floral-border-silver-dining-thali-set",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/blackdog-floral-panel-silver-wine-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/enamel-peacock-elephant-silver-bottle",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/scrollwork-glass-lid-silver-sindoor-dani",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/plain-glass-lid-silver-sindoor-dani",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fluted-floral-lidded-silver-sindoor-dani",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-plain-glass-lid-silver-sindoor-dani",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=6",
+      "depth": 6,
+      "from": "https://www.ddasilver.com/category/utensils?page=5"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-ram-darbar-silver-idol-set-red-yellow",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-flute-gold-accents",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/large-radha-krishna-silver-idol-pair-lotus-bases",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-radha-krishna-silver-idol-pair-peacock",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-yellow-pink-tall",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-radha-krishna-silver-idol-flute-lotus",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-red-yellow",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-cow-yellow",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-silver-idol-layered-lotus",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/radha-krishna-silver-idol-flute-double-lotus",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-radha-krishna-silver-idol-flute",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-silver-idol-nandi-shivling",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-shiva-family-silver-idol-nandi-shivling",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kuber-silver-idol-throne-yellow",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/standing-hanuman-silver-idol-mace",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kneeling-hanuman-silver-idol-mace",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-hanuman-silver-idol-mace-compact",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-hanuman-silver-idol-trio",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/saraswati-silver-idol-veena-round-base",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-bal-krishna-silver-idol-butter-pot-large",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/auspicious-fish-silver-figurine",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/idols?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/products?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/wide-scrollwork-glass-lid-silver-sindoor-dani",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-crystal-knob-silver-sindoor-dani",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-relief-silver-kalash",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-relief-silver-glass-pair",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/four-bowl-square-silver-serving-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/handled-four-bowl-silver-serving-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/six-bowl-rectangular-silver-serving-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/six-bowl-flared-silver-serving-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/leaf-base-pedestal-silver-serving-bowl",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/turquoise-floral-five-piece-condiment-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/two-bowl-handled-silver-serving-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/crystal-knob-five-piece-condiment-set",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-relief-covered-silver-serving-bowl",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/utensils?page=7",
+      "depth": 7,
+      "from": "https://www.ddasilver.com/category/utensils?page=6"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=8",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/products?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-gold-fin-fish-silver-figurine",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-fish-silver-figurine-pair",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-turtle-silver-figurine-pair",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-tulsi-pedestal-silver-idol",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/rama-silver-idol-ornate-arch",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-rama-silver-idol-bow",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-compact-rama-silver-idol-bow",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-narayan-silver-idol-pair-lotus-bases",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-durga-silver-idol-lion-arched-halo",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/durga-silver-idol-lion-arched-halo",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-makhan-chor-bal-krishna-oval-base",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/makhan-chor-bal-krishna-oval-base",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-seated-bal-krishna-butter-pot",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-bal-krishna-butter-pot",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-crawling-bal-krishna-laddoo-large",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/satin-crawling-bal-krishna-laddoo-large",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/dark-accent-crawling-bal-krishna-laddoo",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/miniature-gold-accent-crawling-bal-krishna",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kneeling-bal-krishna-laddoo",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-kneeling-bal-krishna-yellow-dhoti",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-rama-sita-silver-idol-pair",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-rama-silver-idol-tall-arch",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-rama-silver-idol-tall-arch",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=8",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/idols?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-medallion-four-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/engraved-vine-six-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/fluted-floral-bird-handle-four-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/scrollwork-two-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lattice-floral-four-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/hammered-six-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gilded-arch-four-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/floral-band-six-glass-silver-lemon-set",
+      "depth": 8,
+      "from": "https://www.ddasilver.com/category/utensils?page=7"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=9",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/products?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/rama-silver-idol-tall-arch",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mahavir-silver-idol-arched-shrine",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-buddha-silver-idol-lotus-pedestal",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-shivling-silver-idol-tripundra",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/br-ambedkar-silver-figurine-book",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-br-ambedkar-silver-figurine-book",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-durga-silver-idol-on-tiger-raised-base",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-with-owl-and-mouse",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-with-matching-arches",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-silver-idol-with-ganesha-and-nandi",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-narayan-silver-idol-beneath-sheshnag-canopy",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-on-ornate-high-back-seats",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-on-layered-lotus-bases",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-silver-idol-pair-on-wide-lotus-bases",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/crawling-bal-krishna-silver-idol-with-butter-ball",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-cow-calf-silver-idol-with-diamond-blanket",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/crawling-radharani-silver-idol",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/silver-jain-temple-miniature-red-flag",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-ram-darbar-silver-idol-set",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-blanket-auspicious-elephant-silver-figurine",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-blanket-nandi-silver-idol",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kaila-devi-silver-devotional-bust-pair-gold-halos",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-auspicious-turtle-silver-figurine",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-shivling-silver-idol",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=9",
+      "depth": 9,
+      "from": "https://www.ddasilver.com/category/idols?page=8"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/solid-saraswati-silver-idol-on-lotus-with-veena",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/venkateswara-arch-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/engraved-auspicious-silver-fish-figurine",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/panchmukhi-hanuman-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/tall-gold-accent-radha-krishna-silver-idol-pair",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-standing-krishna-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-standing-radha-krishna-silver-idol-pair",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kali-over-shiva-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-radha-krishna-silver-idol-with-flute",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/saraswati-veena-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/gold-accent-kuber-silver-idol-on-throne",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/compact-radha-krishna-silver-idol-with-flute",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/reclining-vishnu-on-sheshnag-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-shiva-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kneeling-hanuman-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/standing-lakshmi-narayan-semi-solid-silver-idols",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-reclining-nandi-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ram-darbar-silver-idol-tableau",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-annapurna-semi-solid-silver-idol",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/category/idols?page=10",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/category/idols?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=10",
+      "depth": 10,
+      "from": "https://www.ddasilver.com/products?page=9"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/kamdhenu-with-calf-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/reclining-vishnu-lakshmi-sheshnag-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/jeweled-durga-tiger-arch-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/mountain-and-mace-hanuman-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/painted-radha-krishna-semi-solid-silver-idols",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/laddu-gopal-butter-pot-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/laddu-gopal-crawling-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/cobra-and-nandi-shivling-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/ornate-laddu-gopal-crawling-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/seated-kuber-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/petite-laddu-gopal-crawling-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/parshvanath-cobra-hood-semi-solid-silver-idol",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products/shiva-family-silver-idol-tableau",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/category/idols?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=11",
+      "depth": 11,
+      "from": "https://www.ddasilver.com/products?page=10"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=12",
+      "depth": 12,
+      "from": "https://www.ddasilver.com/products?page=11"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=13",
+      "depth": 13,
+      "from": "https://www.ddasilver.com/products?page=12"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=14",
+      "depth": 14,
+      "from": "https://www.ddasilver.com/products?page=13"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=15",
+      "depth": 15,
+      "from": "https://www.ddasilver.com/products?page=14"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=16",
+      "depth": 16,
+      "from": "https://www.ddasilver.com/products?page=15"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=17",
+      "depth": 17,
+      "from": "https://www.ddasilver.com/products?page=16"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=18",
+      "depth": 18,
+      "from": "https://www.ddasilver.com/products?page=17"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=19",
+      "depth": 19,
+      "from": "https://www.ddasilver.com/products?page=18"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=20",
+      "depth": 20,
+      "from": "https://www.ddasilver.com/products?page=19"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=21",
+      "depth": 21,
+      "from": "https://www.ddasilver.com/products?page=20"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=22",
+      "depth": 22,
+      "from": "https://www.ddasilver.com/products?page=21"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=23",
+      "depth": 23,
+      "from": "https://www.ddasilver.com/products?page=22"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=24",
+      "depth": 24,
+      "from": "https://www.ddasilver.com/products?page=23"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=25",
+      "depth": 25,
+      "from": "https://www.ddasilver.com/products?page=24"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=26",
+      "depth": 26,
+      "from": "https://www.ddasilver.com/products?page=25"
+    },
+    {
+      "url": "https://www.ddasilver.com/products?page=27",
+      "depth": 27,
+      "from": "https://www.ddasilver.com/products?page=26"
+    }
+  ],
+  "missing": [],
+  "errors": []
+}

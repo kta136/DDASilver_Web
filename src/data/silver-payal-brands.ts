@@ -10,6 +10,8 @@ export type SilverPayalBrand = {
   identity: string;
   introduction: string;
   metaDescription: string;
+  editorialSections?: readonly { heading: string; body: string }[];
+  productSlugs?: readonly string[];
 };
 
 export const silverPayalBrands = [
@@ -105,7 +107,9 @@ export const silverPayalBrands = [
   },
 ] as const satisfies readonly SilverPayalBrand[];
 
-export function getSilverPayalBrand(slug: string) {
+export function getSilverPayalBrand(
+  slug: string,
+): SilverPayalBrand | undefined {
   return silverPayalBrands.find((brand) => brand.slug === slug);
 }
 

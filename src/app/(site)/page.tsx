@@ -7,8 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CategoryIndex } from "@/components/catalog/category-index";
+import { CollectionIndex } from "@/components/catalog/collection-index";
 import { ProductCard } from "@/components/catalog/product-card";
 import { AppPromo } from "@/components/home/app-promo";
+import { guides } from "@/data/guides";
+import { getHomepageCollections } from "@/lib/homepage-collections";
 import { getHomepageCategories } from "@/lib/homepage-categories";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -27,6 +30,7 @@ export default async function HomePage() {
   const catalog = await getHomepageCatalog();
   const { categories, products } = catalog;
   const homepageCategories = getHomepageCategories(categories);
+  const homepageCollections = getHomepageCollections(catalog.collections);
   const featured = [...products]
     .sort((a, b) => a.displayOrder - b.displayOrder)
     .slice(0, 4);
@@ -63,6 +67,7 @@ export default async function HomePage() {
       </section>
 
       <CategoryIndex categories={homepageCategories} />
+      <CollectionIndex collections={homepageCollections} />
 
       <section className="border-b border-line bg-paper-strong py-10 sm:py-12">
         <div className="site-container flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -215,8 +220,17 @@ export default async function HomePage() {
               Understand silver purity, care for your pieces and find a gift
               with meaning.
             </p>
-            <Link href="/guides" className="text-link">
-              Read our buying guides{" "}
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {guides.map((guide) => (
+                <li key={guide.slug}>
+                  <Link href={`/guides/${guide.slug}`}>
+                    {guide.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/guides" className="text-link mt-6">
+              Browse all buying guides{" "}
               <ArrowRightIcon size={18} aria-hidden="true" />
             </Link>
           </div>

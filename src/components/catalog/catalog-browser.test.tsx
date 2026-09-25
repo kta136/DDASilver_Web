@@ -240,7 +240,7 @@ describe("paginated catalog browsing", () => {
     await screen.findByRole("heading", { name: second.title });
     expect(fetch.mock.calls[0][0]).toContain("page=2");
     expect(screen.getByText("Page 2 of 2")).toBeInTheDocument();
-    window.history.replaceState(null, "", "/products?category=coin");
+    window.history.replaceState(null, "", "/products");
     fireEvent.popState(window);
     await waitFor(() =>
       expect(screen.getByText("Page 1 of 2")).toBeInTheDocument(),
@@ -287,7 +287,94 @@ describe("paginated catalog browsing", () => {
       ),
     );
     expect(window.location.search).toContain("sort=price-asc");
+    expect(window.location.search).not.toContain("category=");
     expect(window.location.search).not.toContain("page=2");
+  });
+
+  it("keeps an explicit category clear through URL sync and popstate", async () => {
+    window.history.replaceState(null, "", "/category/coin");
+    const fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ ...initialPage, page: 1 }),
+    });
+    vi.stubGlobal("fetch", fetch);
+    render(
+      <CatalogBrowser
+        products={[coin]}
+        categories={fallbackCategories}
+        initialCategory="coin"
+        initialFilters={{
+          query: "",
+          sort: "",
+          category: "coin",
+          purity: "",
+          idolConstruction: "",
+          deitySlug: "",
+          coinShape: "",
+          utensilType: "",
+        }}
+        initialPage={initialPage}
+        syncUrl
+      />,
+    );
+
+    await waitFor(() => expect(window.location.search).toBe(""));
+    window.history.replaceState(null, "", "/category/coin?category=");
+    fireEvent.popState(window);
+
+    await waitFor(() =>
+      expect(
+        screen.getByRole("combobox", { name: "Filter by category" }),
+      ).toHaveValue(""),
+    );
+    expect(window.location.search).toBe("?category=");
+  });
+
+  it("restores an omitted route-default category and its valid shape filter on popstate", async () => {
+    window.history.replaceState(null, "", "/category/coin?category=");
+    const fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => initialPage,
+    });
+    vi.stubGlobal("fetch", fetch);
+    render(
+      <CatalogBrowser
+        products={[coin]}
+        categories={fallbackCategories}
+        initialCategory="coin"
+        initialFilters={{
+          query: "",
+          sort: "",
+          category: "",
+          purity: "",
+          idolConstruction: "",
+          deitySlug: "",
+          coinShape: "",
+          utensilType: "",
+        }}
+        initialPage={initialPage}
+        syncUrl
+      />,
+    );
+
+    window.history.replaceState(null, "", "/category/coin?shape=round");
+    fireEvent.popState(window);
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole("combobox", { name: "Filter by category" }),
+      ).toHaveValue("coin");
+      expect(
+        screen.getByRole("combobox", {
+          name: "Filter by coin or bar shape",
+        }),
+      ).toHaveValue("round");
+    });
+    await waitFor(() => expect(window.location.search).toBe("?shape=round"));
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+    expect(fetch.mock.calls.at(-1)?.[0]).toContain(
+      "category=coin&shape=round",
+    );
   });
 
   it("shows an actionable error, retries, and resets pagination when filters change", async () => {

@@ -51,6 +51,10 @@ export const guides = [
     title: "Understanding silver product details",
     intro:
       "Purity, weight, dimensions and construction answer different questions. Use the recorded specifications together when comparing pieces in the DDA Silver catalog.",
+    productExampleSlugs: [
+      "butterfly-relief-silver-bottle",
+      "mini-concentric-line-silver-plate",
+    ],
     sections: [
       {
         title: "Purity is not the item's weight",

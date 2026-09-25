@@ -27,6 +27,7 @@ export type CatalogUrlOptions = {
   categorySlugs: readonly string[];
   deitySlugs?: readonly string[];
   categoryKinds?: Record<string, CategoryKind>;
+  defaultCategory?: string;
 };
 
 export type CatalogUrlState = {
@@ -57,7 +58,9 @@ export function toCatalogSearchParams(
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(values)) {
     const first = Array.isArray(value) ? value[0] : value;
-    if (first) params.set(key, first);
+    if (first !== undefined && (first !== "" || key === "category")) {
+      params.set(key, first);
+    }
   }
   return params;
 }
@@ -68,7 +71,11 @@ export function parseCatalogSearchParams(
 ): CatalogUrlState {
   const categorySlugs = new Set(options.categorySlugs);
   const deitySlugs = new Set(options.deitySlugs ?? []);
-  const category = allowedValue(searchParams.get("category"), categorySlugs);
+  const categoryValue = searchParams.get("category");
+  const category = allowedValue(
+    categoryValue === null ? (options.defaultCategory ?? null) : categoryValue,
+    categorySlugs,
+  );
   const kind = getCategoryKind({
     slug: category,
     productKind: options.categoryKinds?.[category],
@@ -122,6 +129,36 @@ export function serializeCatalogFilters(
       next.delete(key);
     }
   }
+
+  return next;
+}
+
+export function serializeCatalogBrowserUrl(
+  filters: CatalogFilters,
+  options: {
+    current?: URLSearchParams;
+    defaultCategory?: string;
+    page: number;
+  },
+) {
+  const next = serializeCatalogFilters(filters, options.current);
+  const category = filters.category?.trim() ?? "";
+  const defaultCategory = options.defaultCategory ?? "";
+
+  if (category && category === defaultCategory) {
+    next.delete("category");
+  } else if (!category && defaultCategory) {
+    // An empty value is meaningful on a category route: it clears that route's
+    // default category and must survive refresh and server navigation.
+    next.set("category", "");
+  } else if (category) {
+    next.set("category", category);
+  } else {
+    next.delete("category");
+  }
+
+  if (options.page > 1) next.set("page", String(options.page));
+  else next.delete("page");
 
   return next;
 }

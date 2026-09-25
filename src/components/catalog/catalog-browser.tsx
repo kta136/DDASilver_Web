@@ -28,6 +28,7 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import {
+  serializeCatalogBrowserUrl,
   parseCatalogSearchParams,
   serializeCatalogFilters,
   type CatalogUrlState,
@@ -240,9 +241,10 @@ export function CatalogBrowser({
     : 1;
 
   function pageHref(nextPage: number) {
-    const params = serializeCatalogFilters(filters);
-    params.set("page", String(nextPage));
-    if (initialCategory && !category) params.set("category", "");
+    const params = serializeCatalogBrowserUrl(filters, {
+      defaultCategory: initialCategory,
+      page: nextPage,
+    });
     return `?${params}`;
   }
 
@@ -254,7 +256,7 @@ export function CatalogBrowser({
     const onPopState = () => {
       const next = parseCatalogSearchParams(
         new URLSearchParams(window.location.search),
-        urlOptions,
+        { ...urlOptions, defaultCategory: initialCategory },
       );
       const availability = getAvailability(next.category);
       setPage(
@@ -299,7 +301,7 @@ export function CatalogBrowser({
 
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [getAvailability, syncUrl, urlOptions]);
+  }, [getAvailability, initialCategory, syncUrl, urlOptions]);
 
   useEffect(() => {
     if (!syncUrl) {
@@ -316,13 +318,11 @@ export function CatalogBrowser({
       coinShape,
       utensilType,
     };
-    const next = serializeCatalogFilters(
-      filters,
-      new URLSearchParams(window.location.search),
-    );
-    if (initialCategory && !category) next.set("category", "");
-    if (page > 1) next.set("page", String(page));
-    else next.delete("page");
+    const next = serializeCatalogBrowserUrl(filters, {
+      current: new URLSearchParams(window.location.search),
+      defaultCategory: initialCategory,
+      page,
+    });
     const search = next.toString();
     const nextUrl = `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`;
     window.history.replaceState(null, "", nextUrl);

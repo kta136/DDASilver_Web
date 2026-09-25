@@ -22,6 +22,7 @@ export async function GET(
     ...productSocialImageSize,
     headers: {
       "Cache-Control": CACHE_CONTROL,
+      "X-Robots-Tag": "noindex",
     },
   });
 }
