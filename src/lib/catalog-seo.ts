@@ -6,6 +6,7 @@ import {
   utensilTypeLabels,
 } from "@/lib/catalog-labels";
 import { getProductIdentity, toAbsoluteUrl } from "@/lib/seo";
+import { merchantReturnPolicyId } from "@/lib/merchant-policy";
 import { siteConfig } from "@/lib/site";
 import type { Category, Collection, Product } from "@/types/catalog";
 
@@ -143,9 +144,14 @@ function getProductOffers(product: Product, now: number) {
     name,
     price: amount.toFixed(2),
     priceCurrency: estimate.currency,
+    validFrom: new Date(asOf).toISOString(),
+    validThrough: new Date(validUntil).toISOString(),
     priceValidUntil,
     url: toAbsoluteUrl(`/products/${product.slug}`),
     availability: "https://schema.org/InStock",
+    availableDeliveryMethod: "https://schema.org/OnSitePickup",
+    availableAtOrFrom: { "@id": `${toAbsoluteUrl("/")}#business` },
+    hasMerchantReturnPolicy: { "@id": merchantReturnPolicyId },
     seller: { "@id": `${toAbsoluteUrl("/")}#business` },
     description: "Includes making charges and taxes. Final price confirmed on enquiry.",
   }));

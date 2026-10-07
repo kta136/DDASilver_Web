@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { ProductDiscovery } from "@/components/catalog/product-discovery";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
@@ -114,7 +116,12 @@ export default async function CategoryPage({
           />
         </div>
         {listing.result.page === 1 ? (
-          <CatalogEditorial sections={category.editorialSections} />
+          <>
+            <CatalogEditorial sections={category.editorialSections} />
+            <Suspense fallback={null}>
+              <ProductDiscovery category={category.slug} />
+            </Suspense>
+          </>
         ) : null}
       </div>
     </main>

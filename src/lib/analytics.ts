@@ -1,6 +1,7 @@
 export const analyticsEventNames = [
   "catalog_search",
   "catalog_filter",
+  "catalog_browse",
   "product_view",
   "whatsapp_click",
   "phone_click",
@@ -18,6 +19,7 @@ export type AnalyticsParameters = Record<string, AnalyticsParameterValue>;
 const allowedParameters: Record<AnalyticsEventName, readonly string[]> = {
   catalog_search: ["query_length", "result_count"],
   catalog_filter: ["filter_type", "public_slug"],
+  catalog_browse: ["placement", "category_slug", "collection_slug"],
   product_view: ["product_slug", "category_slug"],
   whatsapp_click: ["placement", "product_slug"],
   phone_click: ["placement"],

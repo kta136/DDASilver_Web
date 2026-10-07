@@ -54,6 +54,12 @@ export const homepageFallbackProductsQuery = defineQuery(
 export const relatedProductsQuery = defineQuery(
   `*[${publishedProduct} && category->slug.current == $category && slug.current != $slug] | order(displayOrder asc, _id asc)[0...3] ${cardProjection}`,
 );
+export const discoveryProductsQuery = defineQuery(
+  `*[${publishedProduct} && slug.current in $slugs
+    && ($category == "" || category->slug.current == $category)
+    && ($collection == "" || $collection in collections[]->slug.current)]
+    | order(displayOrder asc, _id asc)[0...40] ${cardProjection}`,
+);
 export const productPageQuery = defineQuery(`{
   "products": *[${listingFilter}] | order(displayOrder asc, _id asc)[$start...$end] ${cardProjection},
   "total": count(*[${listingFilter}])

@@ -18,6 +18,7 @@ const legalLinks = [
   { label: "Our showroom", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Buying guides", href: "/guides" },
+  { label: "Collection & returns", href: "/collection-and-returns" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
   { label: "Rates disclaimer", href: "/rates-disclaimer" },

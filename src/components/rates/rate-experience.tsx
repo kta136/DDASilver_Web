@@ -35,6 +35,7 @@ import {
   marketRateDefinitions,
 } from "@/lib/rates/definitions";
 import { formatIndianNumber } from "@/lib/rates/format";
+import { getRateUpdateTime } from "@/lib/rates/update-time";
 import {
   clampRateFontSizeStep,
   createPersonalRateView,
@@ -623,6 +624,7 @@ export function RateExperience({
           : "Delayed";
 
   const defaultCustomerRows = buildCustomerRows(state.items);
+  const rateUpdateTime = getRateUpdateTime(state.itemUpdatedAt);
   const availableRateIds = defaultCustomerRows.map((row) => row.key);
   const effectivePersonalView = reconcilePersonalRateView(
     personalView,
@@ -776,6 +778,14 @@ export function RateExperience({
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {state.announcement}
       </p>
+      {rateUpdateTime ? (
+        <p className="text-sm leading-6 text-ink-muted" data-rate-updated-at>
+          Last updated: <time dateTime={rateUpdateTime.dateTime}>{rateUpdateTime.label}</time>
+          {state.isStale || state.connection === "unavailable" || state.connection === "reconnecting"
+            ? " · Updates delayed"
+            : status === "closed" ? " · Market closed" : null}
+        </p>
+      ) : null}
 
       {state.connection === "unavailable" ? (
         <div className={styles.unavailable}>
@@ -798,7 +808,7 @@ export function RateExperience({
             >
               Ask the showroom
             </a>
-            <a href={siteConfig.phoneHref} className="text-link">
+            <a href={siteConfig.phoneHref} className="text-link" data-analytics="phone_click" data-analytics-placement="rates_unavailable">
               Call {siteConfig.phoneDisplay}
             </a>
           </div>

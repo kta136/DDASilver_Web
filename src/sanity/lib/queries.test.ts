@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import {
   catalogFacetsQuery,
   collectionsQuery,
+  discoveryProductsQuery,
   productPageQuery,
   productQuery,
   featuredProductsQuery,
@@ -70,6 +71,14 @@ async function run(
   ).get();
 }
 describe("GROQ catalog queries", () => {
+  it("links selected products only within their actual category and collection", async () => {
+    const filters = { slugs: ["silver-bowl-25", "silver-bowl-2", "missing"], category: "serveware", collection: "gifts" };
+    const result = await run(discoveryProductsQuery, filters);
+    expect(result.map((item: { slug: string }) => item.slug)).toEqual(["silver-bowl-2", "silver-bowl-25"]);
+    expect(await run(discoveryProductsQuery, { ...filters, category: "coin" })).toEqual([]);
+    expect(await run(discoveryProductsQuery, { ...filters, collection: "other" })).toEqual([]);
+    expect(await run(discoveryProductsQuery, { ...filters, slugs: [] })).toEqual([]);
+  });
   it("provides four real published cards when no products are featured", async () => {
     expect(await run(featuredProductsQuery)).toEqual([]);
     const fallback = await run(homepageFallbackProductsQuery);

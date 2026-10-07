@@ -31,6 +31,13 @@ export default function TermsPage() {
           ],
         },
         {
+          title: "Collection, returns and exchanges",
+          paragraphs: [
+            "Showroom collection only. Returns or exchanges are accepted, subject to conditions. Confirm the applicable terms for your selected item with our showroom before purchase.",
+          ],
+          links: [{ label: "Collection and returns information", href: "/collection-and-returns" }],
+        },
+        {
           title: "External links",
           paragraphs: [
             "Links to WhatsApp, maps, app stores, DDAJewels, and other services open external platforms. Their availability and terms are controlled by those platforms.",

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { ProductDiscovery } from "@/components/catalog/product-discovery";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
@@ -128,7 +130,12 @@ export default async function CollectionPage({
             syncUrl
           />
           {listing.result.page === 1 ? (
-            <CatalogEditorial sections={collection.editorialSections} />
+            <>
+              <CatalogEditorial sections={collection.editorialSections} />
+              <Suspense fallback={null}>
+                <ProductDiscovery collection={collection.slug} />
+              </Suspense>
+            </>
           ) : null}
         </div>
       </section>

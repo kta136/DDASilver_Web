@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { discoveryProductSlugs } from "@/data/catalog-discovery";
 import { withGalleryPrices } from "@/lib/pricing/service";
 import { draftMode } from "next/headers";
 import { z } from "zod";
@@ -281,6 +282,19 @@ export const getRelatedProducts = cache(
           )
           .slice(0, 3)),
 );
+export const getDiscoveryProducts = cache(async (category = "", collection = "") => {
+  if (isSanityConfigured) {
+    return (await readProductList(await getReader(), queries.discoveryProductsQuery, {
+      slugs: [...discoveryProductSlugs], category, collection,
+    })).value;
+  }
+  const selected = new Set<string>(discoveryProductSlugs);
+  return demoCatalog().products.filter((product) =>
+    selected.has(product.slug) &&
+    (!category || product.categorySlug === category) &&
+    (!collection || product.collectionSlugs.includes(collection)),
+  );
+});
 export const getHomepageCatalog = cache(async () => {
   const [navigation, products] = await Promise.all([
     getCatalogNavigation(),

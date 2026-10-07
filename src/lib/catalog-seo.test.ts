@@ -179,9 +179,15 @@ describe("catalog SEO helpers", () => {
       offers: [{ "@type": "Offer", price: "5500.00", priceCurrency: "INR",
         url: "http://localhost:3000/products/silver-coin",
         priceValidUntil: "2026-09-12",
+        validFrom: "2026-09-10T09:59:00.000Z",
+        validThrough: "2026-09-12T10:00:00.000Z",
+        availableDeliveryMethod: "https://schema.org/OnSitePickup",
+        availableAtOrFrom: { "@id": "http://localhost:3000/#business" },
+        hasMerchantReturnPolicy: { "@id": "http://localhost:3000/collection-and-returns#returns" },
         availability: "https://schema.org/InStock" }],
     });
     expect(JSON.stringify(schema)).not.toMatch(/"(?:review|aggregateRating)":/);
+    expect(JSON.stringify(schema)).not.toMatch(/"(?:shippingDetails|merchantReturnDays|returnFees)":/);
   });
 
   it("publishes each visible size price without using AggregateOffer", () => {

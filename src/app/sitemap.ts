@@ -20,6 +20,7 @@ const staticRoutes = [
   "/rates",
   "/about",
   "/contact",
+  "/collection-and-returns",
   "/guides",
   ...guides.map(({ slug }) => `/guides/${slug}`),
   ...silverPayalBrands.map(({ slug }) => getSilverPayalBrandPath(slug)),

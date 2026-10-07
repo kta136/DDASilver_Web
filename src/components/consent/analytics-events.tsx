@@ -24,6 +24,7 @@ export function AnalyticsEvents() {
         "placement",
         "productSlug",
         "categorySlug",
+        "collectionSlug",
         "platform",
         "sourceName",
       ] as const;

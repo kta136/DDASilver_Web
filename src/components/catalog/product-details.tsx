@@ -225,9 +225,12 @@ export function ProductDetails({
       <div className="mt-9 border-y border-line py-6">
         <p className="text-sm font-bold">Browse and enquire</p>
         <p className="mt-2 text-sm leading-6 text-ink-muted">
-          Confirm final pricing and collection details on WhatsApp with the
-          showroom team.
+          Showroom collection only in Agra. Confirm final pricing and collection
+          details with our team. Returns or exchanges are accepted, subject to conditions.
         </p>
+        <Link href="/collection-and-returns" className="mt-3 inline-block py-2 text-sm underline underline-offset-4">
+          Collection, returns & exchanges
+        </Link>
       </div>
 
       <a

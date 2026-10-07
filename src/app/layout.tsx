@@ -5,6 +5,7 @@ import Script from "next/script";
 import { AnalyticsEvents } from "@/components/consent/analytics-events";
 import { AnalyticsGate } from "@/components/consent/analytics-gate";
 import { ConsentManager } from "@/components/consent/consent-manager";
+import { merchantReturnPolicy } from "@/lib/merchant-policy";
 import { isProductionSite, siteConfig } from "@/lib/site";
 import { defaultSocialImage, serializeJsonLd, toAbsoluteUrl } from "@/lib/seo";
 
@@ -119,6 +120,7 @@ const localBusinessSchema = {
       logo: toAbsoluteUrl("/brand/dda-family-mark-v1-256w.png"),
       image: toAbsoluteUrl(defaultSocialImage.src),
       telephone: siteConfig.phoneHref.replace("tel:", ""),
+      hasMerchantReturnPolicy: merchantReturnPolicy,
       hasMap: siteConfig.mapUrl,
       address: {
         "@type": "PostalAddress",
