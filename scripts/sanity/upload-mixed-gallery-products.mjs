@@ -83,6 +83,7 @@ const supportedSeedDeityIds = new Set([
   "deity-kaila-devi",
   "deity-auspicious-elephant",
   "deity-auspicious-turtle",
+  "deity-tesu",
 ]);
 
 function getArgumentValue(name) {

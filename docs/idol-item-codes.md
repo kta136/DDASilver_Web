@@ -70,6 +70,8 @@ only in the product description.
 | `ND` | Nandi | All standalone Nandi designs |
 | `KD` | Kaila Devi | All Kaila Devi designs |
 | `TR` | Auspicious Turtle | All auspicious turtle figurine designs |
+| `TS` | Tulsi | All Tulsi pedestal designs |
+| `TE` | Tesu | All Tesu deity designs |
 | `UN` | Unconfirmed design | Provisional only; publish-blocked until the owner identifies the family |
 
 `HN` is the only Hanuman code. Do not create separate codes for Panchmukhi,
@@ -274,6 +276,7 @@ Families without a prior solid reservation begin at `SM-<FAMILY>-1`.
 | 142 | `HM-SR-4` | HM-SR-4 — Saraswati Silver Idol with Veena on Round Base |
 | 143 | `HM-BK-11` | HM-BK-11 — Painted Bal Krishna Silver Idol with Butter Pot |
 | 144 | `HM-FS-1` | HM-FS-1 — Auspicious Fish Silver Figurine |
+| 145 | `SSM-TE-1` | SSM-TE-1 — Tesu Silver Deity with Ornate Arch |
 
 ## Sanity implementation
 

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2026-09-25",
+  "sourceFolder": "C:\\Users\\kk\\Desktop\\New folder",
+  "sourceCount": 3,
+  "originalSourceCount": 3,
+  "finalImageCount": 3,
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+  "promptAuditPath": "public/images/gallery-ingestion/new-folder-2026-09-25/prompt-audit.md",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "publishBlockers": [],
+  "purityConfirmation": {
+    "value": "92.5",
+    "scope": "All three products",
+    "source": "Owner-confirmed in conversation",
+    "confirmedOn": "2026-09-25"
+  },
+  "categoryCounts": {
+    "category-phone-covers": 1,
+    "category-gifts": 1,
+    "category-idols": 1
+  },
+  "imageValidation": {
+    "format": "PNG",
+    "width": 1254,
+    "height": 1254,
+    "validatedImageCount": 3,
+    "opaqueImageCount": 3,
+    "approvedBackgroundVisualReviewCount": 3
+  },
+  "generationMethod": "Built-in ImageGen using the approved two-preview treatment. The Tesu deity cutout was composited onto the exact approved background with sharp; the phone-cover and hookah results use the approved branded gallery treatment.",
+  "products": [
+    {
+      "number": 1,
+      "id": "product-dda-phone-cover-ph-08-floral-relief-silver-phone-cover",
+      "reference": "PH-08",
+      "referenceFamily": "phone-cover",
+      "title": "Floral Relief Silver Phone Cover",
+      "slug": "floral-relief-silver-phone-cover",
+      "shortDescription": "An ornate silver phone cover with a dark panel and raised floral relief. Weight: 30 g. Purity: 92.5%.",
+      "alt": "Silver phone cover with a dark back panel, camera area and raised floral relief.",
+      "categoryId": "category-phone-covers",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 30,
+      "suppliedSizeLabel": "Weight 30gm",
+      "sourcePath": "C:\\Users\\kk\\Desktop\\New folder\\WhatsApp Image 2026-09-18 at 2.01.26 PM.jpeg",
+      "sourceSha256": "B037D99B35A3ADB23158973C099E933CC0A1251CC337EE3D2C2E2F891C96B57E",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/01-floral-relief-silver-phone-cover.png",
+      "publishBlockers": [],
+      "dimensionRequirementWaivedByOwner": true
+    },
+    {
+      "number": 2,
+      "id": "product-dda-gift-nf20260925-02-ornate-silver-hookah",
+      "reference": "DDA-GF-NF20260925-02",
+      "referenceFamily": "gifts",
+      "title": "Ornate Silver Hookah with Pierced Crown",
+      "slug": "ornate-silver-hookah-pierced-crown",
+      "shortDescription": "A tall silver hookah with a pierced crown, engraved stem, bulbous base and blue hose with tan grip. Weight: 1,000 g. Height: 2 in. Purity: 92.5%.",
+      "alt": "Tall silver hookah with pierced crown, engraved stem, bulbous base and blue hose.",
+      "categoryId": "category-gifts",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 1000,
+      "suppliedSizeLabel": "Height 2 inch; Weight 1kg; 15pgm meking",
+      "sourcePath": "C:\\Users\\kk\\Desktop\\New folder\\WhatsApp Image 2026-09-25 at 5.13.16 PM.jpeg",
+      "sourceSha256": "749B71833AF7099E0280AA6BCBC617C1B36D7ACA8C8D42505ADA25463940BB57",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/02-ornate-silver-hookah.png",
+      "publishBlockers": [],
+      "heightInches": 2
+    },
+    {
+      "number": 3,
+      "id": "product-dda-idol-tesu-silver-ornate-arch",
+      "referenceFamily": "idol",
+      "title": "SSM-TE-1 — Tesu Silver Deity with Ornate Arch",
+      "slug": "tesu-silver-deity-ornate-arch",
+      "shortDescription": "A semi-solid silver Tesu deity with a seated central figure, ornate arched frame and carved supports. Weight: 366 g. Height: 19 in. Purity: 92.5%.",
+      "alt": "Seated Tesu deity framed by an ornate silver arch with carved supports.",
+      "categoryId": "category-idols",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 366,
+      "pricing": {
+        "mode": "automatic",
+        "makingChargePerGram": 15
+      },
+      "heightInches": 19,
+      "suppliedSizeLabel": "19 inch height; 366gm; 15 p.gm meking",
+      "sourcePath": "C:\\Users\\kk\\Desktop\\New folder\\WhatsApp Image 2026-09-25 at 5.13.34 PM.jpeg",
+      "sourceSha256": "6F2AF543F43960913378C620CD9273909564FF73D9AE977D81FDB7A787379351",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/03-tesu-silver-deity-ornate-arch.png",
+      "publishBlockers": [],
+      "deityIds": [
+        "deity-tesu"
+      ],
+      "idolConstruction": "semi-solid",
+      "reference": "SSM-TE-1"
+    }
+  ]
+}

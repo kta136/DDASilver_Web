@@ -128,6 +128,10 @@ overall jhula dimension.
 Use `category-jhula` for every Jhula product. Sindoor Dani and other gift items
 remain in `category-gifts`. Jhula references use the sequential `JH-NN` format.
 
+If the owner explicitly waives physical dimensions for a phone cover, set
+`dimensionRequirementWaivedByOwner: true` in the manifest and leave its
+dimension fields empty. Do not infer a measurement.
+
 Catalog item cards display height and width independently when their dedicated
 fields are present. A missing field stays hidden; do not insert placeholder or
 inferred values merely to fill the card metadata line.

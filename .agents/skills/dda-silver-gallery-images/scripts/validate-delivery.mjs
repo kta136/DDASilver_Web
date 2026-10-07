@@ -87,6 +87,7 @@ function writeReviewCsv(outputPath) {
     "depthInches",
     "diameterInches",
     "suppliedSizeLabel",
+    "dimensionRequirementWaivedByOwner",
     "idolConstruction",
     "deityIds",
     "shortDescription",
@@ -128,6 +129,7 @@ for (const [index, product] of products.entries()) {
   const label = `product ${product.number ?? index + 1}`;
   const blockers = blockerText(product.publishBlockers);
   productBlockerCount += product.publishBlockers?.length ?? 0;
+  const dimensionsWaivedByOwner = product.dimensionRequirementWaivedByOwner === true;
 
   if (product.number !== index + 1) errors.push(`${label}: number must equal ${index + 1}`);
   for (const field of ["id", "title", "slug", "shortDescription", "alt", "categoryId", "material", "sourcePath", "imagePath"]) {
@@ -164,7 +166,10 @@ for (const [index, product] of products.entries()) {
   const hasDimension = ["heightInches", "widthInches", "depthInches", "diameterInches"].some((field) =>
     positiveNumber(product[field]),
   );
-  if (!hasDimension && !blockers.includes("dimension")) {
+  if (dimensionsWaivedByOwner && product.categoryId !== "category-phone-covers") {
+    errors.push(`${label}: owner dimension waiver is only valid for phone covers`);
+  }
+  if (!hasDimension && !dimensionsWaivedByOwner && !blockers.includes("dimension")) {
     errors.push(`${label}: a missing physical dimension requires an explicit blocker`);
   }
 

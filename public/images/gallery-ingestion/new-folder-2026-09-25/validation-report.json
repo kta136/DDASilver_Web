@@ -1,0 +1,17 @@
+{
+  "batchId": "new-folder-2026-09-25",
+  "validatedAt": "2026-09-25T14:03:45.685Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 3,
+    "products": 3,
+    "verifiedSources": 3,
+    "validImages": 3,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}

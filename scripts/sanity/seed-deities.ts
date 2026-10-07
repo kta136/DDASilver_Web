@@ -136,6 +136,7 @@ const deities = [
     slug: "auspicious-turtle",
     displayOrder: 34,
   },
+  { _id: "deity-tesu", title: "Tesu", slug: "tesu", displayOrder: 35 },
 ] as const;
 
 const requestedIds = idsValue

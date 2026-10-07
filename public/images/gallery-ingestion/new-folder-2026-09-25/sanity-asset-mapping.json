@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "batchId": "new-folder-2026-09-25",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-09-25T13:59:57.459Z",
+  "productCount": 3,
+  "uniqueAssetCount": 3,
+  "uploadedAssetCount": 3,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-phone-cover-ph-08-floral-relief-silver-phone-cover",
+      "reference": "PH-08",
+      "title": "Floral Relief Silver Phone Cover",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/01-floral-relief-silver-phone-cover.png",
+      "sha1hash": "3853368e08730ca0a005bdff3a5eb31e70cb5034",
+      "sanityAssetId": "image-3853368e08730ca0a005bdff3a5eb31e70cb5034-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/3853368e08730ca0a005bdff3a5eb31e70cb5034-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-gift-nf20260925-02-ornate-silver-hookah",
+      "reference": "DDA-GF-NF20260925-02",
+      "title": "Ornate Silver Hookah with Pierced Crown",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/02-ornate-silver-hookah.png",
+      "sha1hash": "9a49d57f2f8d533aea80a5cea3ff552a729ef2c2",
+      "sanityAssetId": "image-9a49d57f2f8d533aea80a5cea3ff552a729ef2c2-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/9a49d57f2f8d533aea80a5cea3ff552a729ef2c2-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-idol-tesu-silver-ornate-arch",
+      "reference": "SSM-TE-1",
+      "title": "SSM-TE-1 — Tesu Silver Deity with Ornate Arch",
+      "imagePath": "public/images/gallery-ingestion/new-folder-2026-09-25/images/03-tesu-silver-deity-ornate-arch.png",
+      "sha1hash": "6fbf035502f849c7f8a8af18ebfd81de4af4fe27",
+      "sanityAssetId": "image-6fbf035502f849c7f8a8af18ebfd81de4af4fe27-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6fbf035502f849c7f8a8af18ebfd81de4af4fe27-1254x1254.png"
+    }
+  ]
+}
