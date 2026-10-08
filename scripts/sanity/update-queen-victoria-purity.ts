@@ -1,5 +1,6 @@
 import { getCliClient } from "sanity/cli";
 import { validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
+import goldReferenceMapping from "./gold-reference-mapping.json";
 
 const client = getCliClient({ apiVersion: "2026-08-23" });
 const applyChanges = process.argv.includes("--apply");
@@ -9,14 +10,12 @@ const targetCategoryDescription =
 const products = [
   {
     id: "product-dda-desktop-files-20260822-072",
-    reference: "DDA-GOLD-20260822-072",
     slug: "packaged-queen-victoria-gold-coin-8g-916",
     shortDescription:
       "A 8 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
   },
   {
     id: "product-dda-desktop-files-20260822-075",
-    reference: "DDA-GOLD-20260822-075",
     slug: "packaged-queen-victoria-gold-coin-4g-916",
     shortDescription:
       "A 4 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
@@ -86,8 +85,10 @@ function assertCompleteProducts(documents: ProductDocument[]) {
     if (!document) {
       throw new Error(`Queen Victoria product not found: ${target.id}`);
     }
+    const identity = goldReferenceMapping.products.find(({ id }) => id === target.id);
     if (
-      document.reference !== target.reference ||
+      !identity ||
+      ![identity.reference, identity.legacyReference].includes(document.reference ?? "") ||
       document.slug !== target.slug
     ) {
       throw new Error(`Identity mismatch for Queen Victoria product: ${target.id}`);

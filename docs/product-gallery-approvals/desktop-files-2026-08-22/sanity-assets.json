@@ -542,7 +542,7 @@
     {
       "number": 54,
       "productId": "product-dda-desktop-files-20260822-054",
-      "reference": "DDA-GOLD-20260822-054",
+      "reference": "GB-1",
       "title": "DDA 1 Gram Packaged Fine Gold Bar",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/054-packaged-fine-gold-bar-1g-995.png",
       "sha1hash": "55a735b164d54719502e6d8f90245ee316d4bc81",
@@ -632,7 +632,7 @@
     {
       "number": 63,
       "productId": "product-dda-desktop-files-20260822-063",
-      "reference": "DDA-GOLD-20260822-063",
+      "reference": "GB-3",
       "title": "DDA 5 Gram Packaged Classical Profile Fine Gold Bar",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/063-packaged-classical-profile-fine-gold-bar-5g-995.png",
       "sha1hash": "7ceff3b538996c67eecaf926637275f85ca326ab",
@@ -712,7 +712,7 @@
     {
       "number": 71,
       "productId": "product-dda-desktop-files-20260822-071",
-      "reference": "DDA-GOLD-20260822-071",
+      "reference": "GB-4",
       "title": "DDA 10 Gram Packaged Classical Profile Fine Gold Bar",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/071-packaged-classical-profile-fine-gold-bar-10g-995.png",
       "sha1hash": "1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7",
@@ -722,7 +722,7 @@
     {
       "number": 72,
       "productId": "product-dda-desktop-files-20260822-072",
-      "reference": "DDA-GOLD-20260822-072",
+      "reference": "GC-2",
       "title": "DDA 8 Gram Packaged Queen Victoria Gold Coin",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/072-packaged-queen-victoria-gold-coin-8g-916.png",
       "sha1hash": "d02df9053aac0832ecf3d80825517510e7aebdcf",
@@ -752,7 +752,7 @@
     {
       "number": 75,
       "productId": "product-dda-desktop-files-20260822-075",
-      "reference": "DDA-GOLD-20260822-075",
+      "reference": "GC-1",
       "title": "DDA 4 Gram Packaged Queen Victoria Gold Coin",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/075-packaged-queen-victoria-gold-coin-4g-916.png",
       "sha1hash": "749247fd7c55fe1dd7a1d44dcfa9abef028d49d5",
@@ -762,7 +762,7 @@
     {
       "number": 76,
       "productId": "product-dda-desktop-files-20260822-076",
-      "reference": "DDA-GOLD-20260822-076",
+      "reference": "GB-2",
       "title": "DDA 2 Gram Packaged Classical Profile Fine Gold Bar",
       "imagePath": "public/images/gallery-ingestion/desktop-files-2026-08-22/076-packaged-classical-profile-fine-gold-bar-2g-995.png",
       "sha1hash": "c0a33470e37c75c1d16c5fb1b9516e689ba8fd04",

@@ -101,11 +101,20 @@ const alternateParentNumber = new Map([
   [69, 60],
   [77, 65],
 ]);
+// Issued codes are fixed by source record; never renumber them on regeneration.
+const goldReferences = new Map(
+  JSON.parse(fs.readFileSync(path.join(projectRoot, "scripts/sanity/gold-reference-mapping.json"), "utf8"))
+    .products.map(({ number, reference }) => [number, reference]),
+);
 
 function referenceFor(item) {
   if (item.kind === "purse") return `PR-${purseNumbers.get(item.n)}`;
   if (item.kind === "utensil") return `DDA-UT-PT-${utensilNumbers.get(item.n)}`;
-  if (item.kind === "gold") return `DDA-GOLD-20260822-${String(item.n).padStart(3, "0")}`;
+  if (item.kind === "gold") {
+    const reference = goldReferences.get(item.n);
+    if (!reference) throw new Error(`Assign a canonical gold reference for source record ${item.n}.`);
+    return reference;
+  }
   return `DDA-COIN-20260822-${String(item.n).padStart(3, "0")}`;
 }
 

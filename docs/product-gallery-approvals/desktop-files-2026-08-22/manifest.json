@@ -1098,7 +1098,7 @@
     {
       "number": 54,
       "id": "product-dda-desktop-files-20260822-054",
-      "reference": "DDA-GOLD-20260822-054",
+      "reference": "GB-1",
       "title": "DDA 1 Gram Packaged Fine Gold Bar",
       "slug": "packaged-fine-gold-bar-1g-995",
       "shortDescription": "A 1 gram gold piece featuring a sealed assay-style pack and rectangular fine-gold bar. Owner-confirmed purity is 99.50%.",
@@ -1296,7 +1296,7 @@
     {
       "number": 63,
       "id": "product-dda-desktop-files-20260822-063",
-      "reference": "DDA-GOLD-20260822-063",
+      "reference": "GB-3",
       "title": "DDA 5 Gram Packaged Classical Profile Fine Gold Bar",
       "slug": "packaged-classical-profile-fine-gold-bar-5g-995",
       "shortDescription": "A 5 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",
@@ -1474,7 +1474,7 @@
     {
       "number": 71,
       "id": "product-dda-desktop-files-20260822-071",
-      "reference": "DDA-GOLD-20260822-071",
+      "reference": "GB-4",
       "title": "DDA 10 Gram Packaged Classical Profile Fine Gold Bar",
       "slug": "packaged-classical-profile-fine-gold-bar-10g-995",
       "shortDescription": "A 10 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",
@@ -1495,7 +1495,7 @@
     {
       "number": 72,
       "id": "product-dda-desktop-files-20260822-072",
-      "reference": "DDA-GOLD-20260822-072",
+      "reference": "GC-2",
       "title": "DDA 8 Gram Packaged Queen Victoria Gold Coin",
       "slug": "packaged-queen-victoria-gold-coin-8g-916",
       "shortDescription": "A 8 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
@@ -1560,7 +1560,7 @@
     {
       "number": 75,
       "id": "product-dda-desktop-files-20260822-075",
-      "reference": "DDA-GOLD-20260822-075",
+      "reference": "GC-1",
       "title": "DDA 4 Gram Packaged Queen Victoria Gold Coin",
       "slug": "packaged-queen-victoria-gold-coin-4g-916",
       "shortDescription": "A 4 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
@@ -1581,7 +1581,7 @@
     {
       "number": 76,
       "id": "product-dda-desktop-files-20260822-076",
-      "reference": "DDA-GOLD-20260822-076",
+      "reference": "GB-2",
       "title": "DDA 2 Gram Packaged Classical Profile Fine Gold Bar",
       "slug": "packaged-classical-profile-fine-gold-bar-2g-995",
       "shortDescription": "A 2 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",

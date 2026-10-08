@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { getCliClient } from "sanity/cli";
+import goldReferenceMapping from "./gold-reference-mapping.json";
 import { preparePricingWrites, validatePricingPatch } from "../../src/lib/pricing/sanity-validation";
 import type { ProductPricing } from "../../src/lib/pricing/model";
 import { assertProductDocument, catalogLimits, galleryManifestProductSchema, getCategoryKind, type CategoryKind } from "../../src/lib/catalog-domain";
@@ -267,9 +268,10 @@ function getProductDocument(
     collections: [],
     featured: false,
     displayOrder:
-      product.categoryId === "category-purse" && /^PR-[1-9]\d*$/.test(product.reference)
+      goldReferenceMapping.products.find(({ id }) => id === product.id)?.displayOrder ??
+      (product.categoryId === "category-purse" && /^PR-[1-9]\d*$/.test(product.reference)
         ? 2_000 + Number(product.reference.slice(3)) * 10
-        : displayOrderBase + product.number,
+        : displayOrderBase + product.number),
     reference: product.reference,
   };
   assertProductDocument(document);

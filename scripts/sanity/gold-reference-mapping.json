@@ -1,0 +1,72 @@
+{
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "products": [
+    {
+      "number": 75,
+      "id": "product-dda-desktop-files-20260822-075",
+      "legacyReference": "DDA-GOLD-20260822-075",
+      "reference": "GC-1",
+      "displayOrder": 5075,
+      "slug": "packaged-queen-victoria-gold-coin-4g-916",
+      "weightGrams": 4,
+      "coinShape": "round",
+      "purity": "91.60"
+    },
+    {
+      "number": 72,
+      "id": "product-dda-desktop-files-20260822-072",
+      "legacyReference": "DDA-GOLD-20260822-072",
+      "reference": "GC-2",
+      "displayOrder": 5076,
+      "slug": "packaged-queen-victoria-gold-coin-8g-916",
+      "weightGrams": 8,
+      "coinShape": "round",
+      "purity": "91.60"
+    },
+    {
+      "number": 54,
+      "id": "product-dda-desktop-files-20260822-054",
+      "legacyReference": "DDA-GOLD-20260822-054",
+      "reference": "GB-1",
+      "displayOrder": 5054,
+      "slug": "packaged-fine-gold-bar-1g-995",
+      "weightGrams": 1,
+      "coinShape": "rectangle",
+      "purity": "99.50"
+    },
+    {
+      "number": 76,
+      "id": "product-dda-desktop-files-20260822-076",
+      "legacyReference": "DDA-GOLD-20260822-076",
+      "reference": "GB-2",
+      "displayOrder": 5063,
+      "slug": "packaged-classical-profile-fine-gold-bar-2g-995",
+      "weightGrams": 2,
+      "coinShape": "rectangle",
+      "purity": "99.50"
+    },
+    {
+      "number": 63,
+      "id": "product-dda-desktop-files-20260822-063",
+      "legacyReference": "DDA-GOLD-20260822-063",
+      "reference": "GB-3",
+      "displayOrder": 5071,
+      "slug": "packaged-classical-profile-fine-gold-bar-5g-995",
+      "weightGrams": 5,
+      "coinShape": "rectangle",
+      "purity": "99.50"
+    },
+    {
+      "number": 71,
+      "id": "product-dda-desktop-files-20260822-071",
+      "legacyReference": "DDA-GOLD-20260822-071",
+      "reference": "GB-4",
+      "displayOrder": 5072,
+      "slug": "packaged-classical-profile-fine-gold-bar-10g-995",
+      "weightGrams": 10,
+      "coinShape": "rectangle",
+      "purity": "99.50"
+    }
+  ]
+}
