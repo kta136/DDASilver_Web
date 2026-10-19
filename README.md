@@ -124,6 +124,17 @@ files other than `.env.example` are excluded from Git.
 | `npm run sanity:upload-idols` | Preview the 19-product idol import without writes |
 | `npm run sanity:upload-idols:apply` | Upload and publish missing idol products |
 | `npm run sanity:upload-idols:overwrite` | Replace existing script-managed idol products |
+| `npm run seo:indexnow` | Preview the sitemap URLs that would be sent to IndexNow |
+| `npm run seo:indexnow -- --apply --since=2d` | Send URLs modified in the last two days to IndexNow |
+
+`seo:indexnow` tells Bing and the other IndexNow engines which pages changed.
+It reads the live `https://www.ddasilver.com/sitemap.xml`, is a dry run until
+`--apply` is added, and accepts `--since=` (an ISO date or a lookback such as
+`36h`) or repeated `--url=` values. Before sending, it checks that production
+serves the public key file in `public/`, so run it only after that file is
+deployed. The `IndexNow` workflow runs `--apply --since=2d` daily so Sanity
+edits are submitted without a deploy; start it by hand with an empty `since`
+to submit every sitemap URL.
 
 The Sanity catalog import utilities are defined in `package.json`. Commands
 ending in `:apply` write to the configured Sanity dataset and should only be

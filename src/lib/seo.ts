@@ -5,6 +5,8 @@ import { siteConfig } from "@/lib/site";
 import type { CatalogImage, Product } from "@/types/catalog";
 
 const MAX_DESCRIPTION_LENGTH = 160;
+// Bing flags longer titles and search results cut them off.
+const MAX_TITLE_LENGTH = 70;
 
 export const productSocialImageSize = {
   width: 1200,
@@ -125,9 +127,11 @@ export function createPageMetadata({
 }: PageMetadataOptions): Metadata {
   const pageTitle = title.replace(/\s+/g, " ").trim();
   const metaDescription = truncateSeoText(description, MAX_DESCRIPTION_LENGTH);
-  const renderedTitle = absoluteTitle
-    ? pageTitle
-    : `${pageTitle} | ${siteConfig.name}`;
+  const brandedTitle = `${pageTitle} | ${siteConfig.name}`;
+  // Drop the brand suffix rather than cut a distinguishing ending such as a weight.
+  const useAbsoluteTitle =
+    absoluteTitle || brandedTitle.length > MAX_TITLE_LENGTH;
+  const renderedTitle = useAbsoluteTitle ? pageTitle : brandedTitle;
   const pageUrl = toAbsoluteUrl(path);
   const imageUrl = toAbsoluteUrl(image.src);
   const socialImage = {
@@ -138,7 +142,7 @@ export function createPageMetadata({
   };
 
   return {
-    title: absoluteTitle ? { absolute: pageTitle } : pageTitle,
+    title: useAbsoluteTitle ? { absolute: pageTitle } : pageTitle,
     description: metaDescription,
     alternates: canonical ? { canonical: path } : undefined,
     openGraph: {

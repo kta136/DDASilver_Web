@@ -42,13 +42,26 @@ describe("SEO helpers", () => {
   it("preserves distinguishing title endings instead of hard-truncating them", () => {
     const title =
       "Painted Lakshmi Ganesha Silver Idol Pair on Lotus Bases, 40 g";
-    expect(
-      createPageMetadata({
-        title,
-        description: "A silver idol pair.",
-        path: "/products/pair",
-      }).title,
-    ).toBe(title);
+    const metadata = createPageMetadata({
+      title,
+      description: "A silver idol pair.",
+      path: "/products/pair",
+    });
+    // With " | DDA Silver" the title would pass 70 characters, so the suffix goes.
+    expect(metadata.title).toEqual({ absolute: title });
+    expect(metadata.openGraph).toMatchObject({ title });
+  });
+
+  it("keeps the brand suffix when the full title stays within 70 characters", () => {
+    const metadata = createPageMetadata({
+      title: "Seated Guru Nanak Silver Idol, 14 g",
+      description: "A silver idol.",
+      path: "/products/guru-nanak",
+    });
+    expect(metadata.title).toBe("Seated Guru Nanak Silver Idol, 14 g");
+    expect(metadata.openGraph).toMatchObject({
+      title: "Seated Guru Nanak Silver Idol, 14 g | DDA Silver",
+    });
   });
 
   it("distinguishes product sizes without repeating a weight already in the name", () => {

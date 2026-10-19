@@ -1,0 +1,43 @@
+name: IndexNow
+
+# Tells Bing and the other IndexNow engines which www.ddasilver.com pages
+# changed, so catalogue edits made in Sanity are crawled without a deploy.
+on:
+  schedule:
+    # 03:45 IST daily. A two-day lookback covers one missed run.
+    - cron: "15 22 * * *"
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Submit sitemap URLs modified since this ISO date or lookback (e.g. 2d). Leave empty to submit every URL."
+        required: false
+        type: string
+        default: "2d"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    name: Submit changed URLs
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+        with:
+          sparse-checkout: scripts/seo
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24.19.0
+
+      - name: Submit to IndexNow
+        env:
+          SINCE: ${{ github.event_name == 'schedule' && '2d' || inputs.since }}
+        run: node scripts/seo/indexnow.mjs --apply ${SINCE:+--since=$SINCE}

@@ -25,9 +25,11 @@ export function BrandMark({
           <span>SILVER</span>
         </span>
       ) : null}
+      {/* The visible or sr-only name below labels the link; the mark adds nothing to it. */}
       <Image
         src="/brand/dda-family-mark-v1.webp"
-        alt=""
+        alt="DDA Silver family mark"
+        aria-hidden="true"
         width={402}
         height={346}
         sizes={compact ? "50px" : "(min-width: 1440px) 86px, 62px"}

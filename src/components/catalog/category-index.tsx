@@ -26,10 +26,10 @@ export function CategoryIndex({ categories }: { categories: Category[] }) {
             {categories.slice(0, 5).map((category) => (
               <li key={category.slug}>
                 <Link href={`/category/${category.slug}`}>
-                  <span className="collection-photo">
+                  <span className="collection-photo" aria-hidden="true">
                     <Image
                       src={category.image.src}
-                      alt=""
+                      alt={category.image.alt}
                       fill
                       sizes="(max-width: 639px) 43vw, (max-width: 1023px) 28vw, 15vw"
                       className="object-contain transition-transform duration-300 hover:scale-[1.03]"

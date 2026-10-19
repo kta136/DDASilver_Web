@@ -28,10 +28,10 @@ export function CollectionIndex({
             {collections.map((collection) => (
               <li key={collection.slug}>
                 <Link href={`/collections/${collection.slug}`}>
-                  <span className="collection-photo">
+                  <span className="collection-photo" aria-hidden="true">
                     <Image
                       src={collection.heroImage.src}
-                      alt=""
+                      alt={collection.heroImage.alt}
                       fill
                       sizes="(max-width: 639px) 43vw, (max-width: 1023px) 28vw, 15vw"
                       className="object-contain transition-transform duration-300 hover:scale-[1.03]"

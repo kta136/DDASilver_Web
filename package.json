@@ -70,6 +70,7 @@
     "sanity:order-gold-products": "sanity exec scripts/sanity/normalize-gold-references.ts --with-user-token -- --display-order",
     "sanity:order-gold-products:apply": "sanity exec scripts/sanity/normalize-gold-references.ts --with-user-token -- --display-order --apply",
     "check": "npm run lint && npm run typecheck && npm run test:run && npm run build",
+    "seo:indexnow": "node scripts/seo/indexnow.mjs",
     "sanity:typegen": "sanity schema extract --path ./src/sanity/schema.json --force && sanity typegen generate",
     "pricing:defaults": "sanity exec scripts/sanity/gallery-pricing.ts --with-user-token",
     "pricing:defaults:apply": "sanity exec scripts/sanity/gallery-pricing.ts --with-user-token -- --apply",
