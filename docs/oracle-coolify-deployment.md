@@ -55,7 +55,7 @@ enabled for the rates SSE connection.
 | Persistent storage/cache/Redis | Dedicated gallery pricing volume required before activation; optional separate catalog recovery volume |
 
 The Docker image is based on the multi-architecture
-`node:24.19.0-bookworm-slim` image and runs the Next.js standalone server as
+`node:24.22.1-bookworm-slim` image and runs the Next.js standalone server as
 the image's non-root `node` user. A pinned multi-architecture BusyBox stage
 contributes only the static `wget` applet required by Coolify's generated
 container health probe; the final application base remains Debian. `SOURCE_COMMIT` becomes
@@ -108,7 +108,7 @@ service-token variables.
 ## Release flow
 
 1. A commit is pushed to `main`.
-2. GitHub Actions installs Node 24.19 and dependencies with `npm ci`.
+2. GitHub Actions installs Node 24.22.1 and dependencies with `npm ci`.
 3. The deployment workflow runs `npm run check`.
 4. Only after those checks pass, the workflow calls the authenticated Coolify
    deployment webhook.

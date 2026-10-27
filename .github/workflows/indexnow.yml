@@ -35,7 +35,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v7.0.0
         with:
-          node-version: 24.19.0
+          node-version: 24.22.1
 
       - name: Submit to IndexNow
         env:
