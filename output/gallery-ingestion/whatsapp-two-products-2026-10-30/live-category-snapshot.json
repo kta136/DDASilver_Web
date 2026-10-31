@@ -1,0 +1,78 @@
+{
+  "query": "*[_type == \"category\" && _id in [\"category-purse\", \"category-singhasan\", \"category-hatri\", \"category-gifts\"]]{_id,title,productKind,makingChargePerGram,makingChargePerPiece,makingRules,pricingDeferred}",
+  "result": [
+    {
+      "_id": "category-gifts",
+      "makingChargePerGram": null,
+      "makingChargePerPiece": null,
+      "makingRules": null,
+      "pricingDeferred": true,
+      "productKind": null,
+      "title": "Gifts"
+    },
+    {
+      "_id": "category-hatri",
+      "makingChargePerGram": null,
+      "makingChargePerPiece": null,
+      "makingRules": [
+        {
+          "_key": "making-0",
+          "_type": "makingRule",
+          "finish": "silver",
+          "makingChargePerGram": 10,
+          "minimumWeightGrams": 0
+        },
+        {
+          "_key": "making-1",
+          "_type": "makingRule",
+          "finish": "antique",
+          "makingChargePerGram": 15,
+          "minimumWeightGrams": 0
+        }
+      ],
+      "pricingDeferred": false,
+      "productKind": "general",
+      "title": "Hatri"
+    },
+    {
+      "_id": "category-purse",
+      "makingChargePerGram": null,
+      "makingChargePerPiece": null,
+      "makingRules": null,
+      "pricingDeferred": false,
+      "productKind": null,
+      "title": "Purse"
+    },
+    {
+      "_id": "category-singhasan",
+      "makingChargePerGram": null,
+      "makingChargePerPiece": null,
+      "makingRules": [
+        {
+          "_key": "making-0",
+          "_type": "makingRule",
+          "finish": "silver",
+          "makingChargePerGram": 10,
+          "minimumWeightGrams": 0
+        },
+        {
+          "_key": "making-1",
+          "_type": "makingRule",
+          "finish": "antique",
+          "makingChargePerGram": 15,
+          "minimumWeightGrams": 0
+        }
+      ],
+      "pricingDeferred": false,
+      "productKind": "general",
+      "title": "Singhasan"
+    }
+  ],
+  "syncTags": [
+    "s1:WQmjlw",
+    "s1:QEa8ZA",
+    "s1:xK5p4g",
+    "s1:+7hZjw"
+  ],
+  "ms": 3
+}

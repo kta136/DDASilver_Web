@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-10T13:10:17.057Z",
+  "metadataAndFilePreflight": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "4948e7",
+      "wall_time_seconds": 0.5001311,
+      "exit_code": 0,
+      "original_token_count": 393,
+      "output": "{\n  \"batchId\": \"whatsapp-idols-2026-10-10\",\n  \"validatedAt\": \"2026-10-10T13:07:36.913Z\",\n  \"deliveryValid\": true,\n  \"readyForSanityAssetUpload\": true,\n  \"readyForProductPublish\": true,\n  \"counts\": {\n    \"sources\": 4,\n    \"products\": 4,\n    \"verifiedSources\": 4,\n    \"validImages\": 4,\n    \"manifestBlockers\": 0,\n    \"productBlockers\": 0\n  },\n  \"errors\": [],\n  \"warnings\": []\n}\nMixed gallery dry run (no Sanity writes)\n┌──────────────────┬────────┐\n│ (index)          │ Values │\n├──────────────────┼────────┤\n│ products         │ 4      │\n│ productDocuments │ 4      │\n│ alternateImages  │ 0      │\n│ validImages      │ 4      │\n│ coins            │ 0      │\n│ gold             │ 0      │\n│ gifts            │ 0      │\n│ boxes            │ 0      │\n│ singhasans       │ 0      │\n│ hatris           │ 0      │\n│ phoneCovers      │ 0      │\n│ jhulas           │ 0      │\n│ purses           │ 0      │\n│ idols            │ 4      │\n│ utensils         │ 0      │\n│ manifestBlockers │ 0      │\n│ productBlockers  │ 0      │\n└──────────────────┴────────┘\nValidated 4 prospective image asset uploads.\nValidated 4 prospective product documents across Coin, Gold, Gifts, Jhula, Purse, Idols and Utensils.\nDry run complete. No network request, asset upload, product mutation or publication occurred.\n"
+    }
+  },
+  "assetDryRun": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "155f70",
+      "wall_time_seconds": 5.5983523,
+      "exit_code": 0,
+      "original_token_count": 117,
+      "output": "\n> dda-silver-web@0.1.0 sanity:upload-mixed-gallery-assets\n> sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token\n\nTarget: f6i0fy2f/production\nManifest: public\\images\\gallery-ingestion\\whatsapp-idols-2026-10-10\\sanity-gallery-manifest.json\nImages: 4; unique files: 4; existing assets: 0; missing assets: 4\nDry run only. No Sanity assets were written.\nRun `npm run sanity:upload-mixed-gallery-assets:apply` to upload the missing image assets.\n"
+    }
+  },
+  "assetUploadStart": {
+    "chunk_id": "4bb6cd",
+    "wall_time_seconds": 10.0047161,
+    "session_id": 30086,
+    "original_token_count": 147,
+    "output": "\n> dda-silver-web@0.1.0 sanity:upload-mixed-gallery-assets:apply\n> sanity exec scripts/sanity/upload-mixed-gallery-assets.ts --with-user-token -- --apply\n\nTarget: f6i0fy2f/production\nManifest: public\\images\\gallery-ingestion\\whatsapp-idols-2026-10-10\\sanity-gallery-manifest.json\nImages: 4; unique files: 4; existing assets: 0; missing assets: 4\nUploaded SSM-LG-9: image-db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254-png\nUploaded SSM-LG-10: image-054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254-png\nUploaded SSM-LG-8: image-744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254-png\n"
+  },
+  "assetUploadCompletion": {
+    "chunk_id": "dffeec",
+    "wall_time_seconds": 0.000017,
+    "exit_code": 0,
+    "original_token_count": 73,
+    "output": "Uploaded SSM-LG-11: image-8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254-png\nUpload verified: 4 product images map to 4 Sanity assets.\nAsset mapping: public\\images\\gallery-ingestion\\whatsapp-idols-2026-10-10\\sanity-assets.json\nNo product documents were created, changed, or published.\n"
+  },
+  "documentDryRun": {
+    "exitCode": 0,
+    "result": "4 CREATE rows; no schema, asset, taxonomy, reference or slug conflicts."
+  },
+  "publicationStart": {
+    "chunk_id": "268454",
+    "wall_time_seconds": 10.0035464,
+    "session_id": 34106,
+    "original_token_count": 560,
+    "output": "\n> dda-silver-web@0.1.0 sanity:publish-mixed-gallery-products:apply\n> sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token -- --apply\n\nTarget: f6i0fy2f/production; batch: whatsapp-idols-2026-10-10; source images: 4; new product candidates: 4\n┌─────────┬──────────┬─────────────┬────────────────────────────────────────────────────────────────────────────────┬──────────────────┐\n│ (index) │ action   │ reference   │ title                                                                          │ category         │\n├─────────┼──────────┼─────────────┼────────────────────────────────────────────────────────────────────────────────┼──────────────────┤\n│ 0       │ 'CREATE' │ 'SSM-LG-8'  │ 'Lakshmi Ganesha Silver Idol Pair with Tiered Canopies and Round Floral Bases' │ 'category-idols' │\n│ 1       │ 'CREATE' │ 'SSM-LG-9'  │ 'Lakshmi Ganesha Silver Idol Pair on Compact Elephant-Foot Thrones'            │ 'category-idols' │\n│ 2       │ 'CREATE' │ 'SSM-LG-10' │ 'Lakshmi Ganesha Silver Idol Pair on Broad Elephant-Foot Thrones'              │ 'category-idols' │\n│ 3       │ 'CREATE' │ 'SSM-LG-11' │ 'Lakshmi Ganesha Silver Idol Pair with Ornate Halos on Lotus Bases'            │ 'category-idols' │\n└─────────┴──────────┴─────────────┴────────────────────────────────────────────────────────────────────────────────┴──────────────────┘\n"
+  },
+  "publicationCompletion": {
+    "chunk_id": "bb5e31",
+    "wall_time_seconds": 0.0000123,
+    "exit_code": 0,
+    "original_token_count": 22,
+    "output": "Published 4 new products, replaced 0, and updated 0 existing gallery parent products.\n"
+  }
+}

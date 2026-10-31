@@ -1,0 +1,444 @@
+{
+  "checkedAt": "2026-10-09T11:29:17.809Z",
+  "status": "passed",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "productCount": 13,
+  "uniqueAssetCount": 13,
+  "references": [
+    "PR-37",
+    "PR-38",
+    "PR-39",
+    "PR-40",
+    "PR-41",
+    "PR-42",
+    "PR-43",
+    "PR-44",
+    "PR-45",
+    "PR-46",
+    "PR-47",
+    "PR-48",
+    "PR-49"
+  ],
+  "purity": "92.5",
+  "makingChargePerGram": 90,
+  "errors": [],
+  "products": [
+    {
+      "_id": "product-dda-desktop-20261009-diamond-lattice-floral-enamel-silver-handbag-360g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver handbag with an engraved round handle, gold-tone diamond lattice, pastel enamel flowers and a ring clasp.",
+          "asset": {
+            "_id": "image-6da2e00a92064e2c9b9b333b72fd749a804200fe-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "6da2e00a92064e2c9b9b333b72fd749a804200fe",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/6da2e00a92064e2c9b9b333b72fd749a804200fe-1254x1254.png"
+          },
+          "assetId": "image-6da2e00a92064e2c9b9b333b72fd749a804200fe-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-42",
+      "slug": "diamond-lattice-floral-enamel-silver-handbag-360g",
+      "title": "Diamond Lattice Floral Enamel Silver Handbag",
+      "weightGrams": 360
+    },
+    {
+      "_id": "product-dda-desktop-20261009-floral-diamond-lattice-silver-clutch-340g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Rectangular silver clutch with floral diamond lattice, a curved flap, long textured clasp and fine shoulder chain.",
+          "asset": {
+            "_id": "image-2d1a2f1eca78c2668a791c2b00b62013bffe044a-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "2d1a2f1eca78c2668a791c2b00b62013bffe044a",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/2d1a2f1eca78c2668a791c2b00b62013bffe044a-1254x1254.png"
+          },
+          "assetId": "image-2d1a2f1eca78c2668a791c2b00b62013bffe044a-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-45",
+      "slug": "floral-diamond-lattice-silver-clutch-340g",
+      "title": "Floral Diamond Lattice Silver Clutch",
+      "weightGrams": 340
+    },
+    {
+      "_id": "product-dda-desktop-20261009-gold-tone-leaf-pearl-drop-silver-handbag-585g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver handbag with a round handle, textured panels, gold-tone leaves, a magenta ornament and pearl-coloured drops.",
+          "asset": {
+            "_id": "image-344da943be6a01de9b5942577f23bad4df16e958-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "344da943be6a01de9b5942577f23bad4df16e958",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/344da943be6a01de9b5942577f23bad4df16e958-1254x1254.png"
+          },
+          "assetId": "image-344da943be6a01de9b5942577f23bad4df16e958-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-48",
+      "slug": "gold-tone-leaf-pearl-drop-silver-handbag-585g",
+      "title": "Gold-Tone Leaf and Pearl-Drop Silver Handbag",
+      "weightGrams": 585
+    },
+    {
+      "_id": "product-dda-desktop-20261009-green-stone-floral-scroll-silver-shoulder-purse-416g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver shoulder purse with scroll foliage, green floral stone clusters, pale teardrop accents and purple bead edging.",
+          "asset": {
+            "_id": "image-26c2a963a8d1982851f4c2d4778643be6b30e955-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "26c2a963a8d1982851f4c2d4778643be6b30e955",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/26c2a963a8d1982851f4c2d4778643be6b30e955-1254x1254.png"
+          },
+          "assetId": "image-26c2a963a8d1982851f4c2d4778643be6b30e955-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-44",
+      "slug": "green-stone-floral-scroll-silver-shoulder-purse-416g",
+      "title": "Green Stone Floral Scroll Silver Shoulder Purse",
+      "weightGrams": 416
+    },
+    {
+      "_id": "product-dda-desktop-20261009-green-stone-fringe-silver-shoulder-purse-615g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver shoulder purse with diamond lattice, a green teardrop centre, floral ornaments and a white and magenta bead fringe.",
+          "asset": {
+            "_id": "image-f26e9229b476b555702dcc408cfbc58fc21ebbcf-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "f26e9229b476b555702dcc408cfbc58fc21ebbcf",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/f26e9229b476b555702dcc408cfbc58fc21ebbcf-1254x1254.png"
+          },
+          "assetId": "image-f26e9229b476b555702dcc408cfbc58fc21ebbcf-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-41",
+      "slug": "green-stone-fringe-silver-shoulder-purse-615g",
+      "title": "Green Stone Fringe Silver Shoulder Purse",
+      "weightGrams": 615
+    },
+    {
+      "_id": "product-dda-desktop-20261009-heart-shaped-floral-silver-purse-366g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Heart-shaped silver purse with pastel floral enamel, raised flowers, a green butterfly, ring clasp and pale-blue beaded strap.",
+          "asset": {
+            "_id": "image-b9e650ac845d41af16916a67876371e216770d99-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "b9e650ac845d41af16916a67876371e216770d99",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b9e650ac845d41af16916a67876371e216770d99-1254x1254.png"
+          },
+          "assetId": "image-b9e650ac845d41af16916a67876371e216770d99-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-47",
+      "slug": "heart-shaped-floral-silver-purse-366g",
+      "title": "Heart-Shaped Floral Silver Purse",
+      "weightGrams": 366
+    },
+    {
+      "_id": "product-dda-desktop-20261009-multicolour-floral-enamel-silver-handbag-400g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver handbag with a round handle, pastel floral enamel, gold-tone corner flowers and a ring clasp.",
+          "asset": {
+            "_id": "image-e143ab5425eb8e80efba886681d358f17c495376-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "e143ab5425eb8e80efba886681d358f17c495376",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e143ab5425eb8e80efba886681d358f17c495376-1254x1254.png"
+          },
+          "assetId": "image-e143ab5425eb8e80efba886681d358f17c495376-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-37",
+      "slug": "multicolour-floral-enamel-silver-handbag-400g",
+      "title": "Multicolour Floral Enamel Silver Handbag",
+      "weightGrams": 400
+    },
+    {
+      "_id": "product-dda-desktop-20261009-orange-lilac-floral-silver-handbag-340g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver handbag with an engraved arch handle, orange and lilac flowers, green leaves, a long floral clasp and pink bead tassels.",
+          "asset": {
+            "_id": "image-903e60a1c93b50be84d0df62972909c2527ef999-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "903e60a1c93b50be84d0df62972909c2527ef999",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/903e60a1c93b50be84d0df62972909c2527ef999-1254x1254.png"
+          },
+          "assetId": "image-903e60a1c93b50be84d0df62972909c2527ef999-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-46",
+      "slug": "orange-lilac-floral-silver-handbag-340g",
+      "title": "Orange and Lilac Floral Silver Handbag",
+      "weightGrams": 340
+    },
+    {
+      "_id": "product-dda-desktop-20261009-pastel-panel-floral-silver-handbag-515g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Round-handle silver handbag with pink and pale-blue floral panels, green bead drops and a burgundy beaded strap.",
+          "asset": {
+            "_id": "image-8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854-1254x1254.png"
+          },
+          "assetId": "image-8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-40",
+      "slug": "pastel-panel-floral-silver-handbag-515g",
+      "title": "Pastel Panel Floral Silver Handbag",
+      "weightGrams": 515
+    },
+    {
+      "_id": "product-dda-desktop-20261009-peacock-chain-tassel-silver-handbag-630g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Round-handle silver handbag with textured panels, peacock ornaments, a central pendant, pink drops and gold-tone chain tassels.",
+          "asset": {
+            "_id": "image-eaf5a813b219a29576f52a9912c120d7131bfedd-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "eaf5a813b219a29576f52a9912c120d7131bfedd",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/eaf5a813b219a29576f52a9912c120d7131bfedd-1254x1254.png"
+          },
+          "assetId": "image-eaf5a813b219a29576f52a9912c120d7131bfedd-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-49",
+      "slug": "peacock-chain-tassel-silver-handbag-630g",
+      "title": "Peacock and Chain Tassel Silver Handbag",
+      "weightGrams": 630
+    },
+    {
+      "_id": "product-dda-desktop-20261009-peacock-relief-tassel-silver-handbag-500g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Round-handle silver handbag with peacock relief, gold-tone flowers, a coloured centre ornament and chain and bead tassels.",
+          "asset": {
+            "_id": "image-8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41-1254x1254.png"
+          },
+          "assetId": "image-8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-43",
+      "slug": "peacock-relief-tassel-silver-handbag-500g",
+      "title": "Peacock Relief Tassel Silver Handbag",
+      "weightGrams": 500
+    },
+    {
+      "_id": "product-dda-desktop-20261009-raised-flower-silver-shoulder-purse-258g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Rectangular silver purse with raised flowers, a ring clasp, shoulder chain and white and magenta bead tassels.",
+          "asset": {
+            "_id": "image-139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a-1254x1254.png"
+          },
+          "assetId": "image-139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-38",
+      "slug": "raised-flower-silver-shoulder-purse-258g",
+      "title": "Raised Flower Silver Shoulder Purse",
+      "weightGrams": 258
+    },
+    {
+      "_id": "product-dda-desktop-20261009-vine-enamel-peacock-ornament-silver-clutch-459g",
+      "categoryId": "category-purse",
+      "gallery": [
+        {
+          "alt": "Silver clutch with enamel vines, a floral clasp and a peacock ornament with a blue oval centre and coloured beads.",
+          "asset": {
+            "_id": "image-b680936bc2d12db93f681a379b0fa7a74f100f00-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "b680936bc2d12db93f681a379b0fa7a74f100f00",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b680936bc2d12db93f681a379b0fa7a74f100f00-1254x1254.png"
+          },
+          "assetId": "image-b680936bc2d12db93f681a379b0fa7a74f100f00-1254x1254-png"
+        }
+      ],
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-39",
+      "slug": "vine-enamel-peacock-ornament-silver-clutch-459g",
+      "title": "Vine Enamel Silver Clutch with Peacock Ornament",
+      "weightGrams": 459
+    }
+  ]
+}

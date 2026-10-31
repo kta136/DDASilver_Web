@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-09T11:29:57.598Z",
+  "dryRun": {
+    "chunk_id": "166a83",
+    "wall_time_seconds": 5.5020684,
+    "exit_code": 0,
+    "original_token_count": 748,
+    "output": "\n> dda-silver-web@0.1.0 sanity:publish-mixed-gallery-products\n> sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token\n\nTarget: f6i0fy2f/production; batch: desktop-images-2026-10-09; source images: 13; new product candidates: 13\n┌─────────┬──────────┬───────────┬───────────────────────────────────────────────────┬──────────────────┐\n│ (index) │ action   │ reference │ title                                             │ category         │\n├─────────┼──────────┼───────────┼───────────────────────────────────────────────────┼──────────────────┤\n│ 0       │ 'CREATE' │ 'PR-37'   │ 'Multicolour Floral Enamel Silver Handbag'        │ 'category-purse' │\n│ 1       │ 'CREATE' │ 'PR-38'   │ 'Raised Flower Silver Shoulder Purse'             │ 'category-purse' │\n│ 2       │ 'CREATE' │ 'PR-39'   │ 'Vine Enamel Silver Clutch with Peacock Ornament' │ 'category-purse' │\n│ 3       │ 'CREATE' │ 'PR-40'   │ 'Pastel Panel Floral Silver Handbag'              │ 'category-purse' │\n│ 4       │ 'CREATE' │ 'PR-41'   │ 'Green Stone Fringe Silver Shoulder Purse'        │ 'category-purse' │\n│ 5       │ 'CREATE' │ 'PR-42'   │ 'Diamond Lattice Floral Enamel Silver Handbag'    │ 'category-purse' │\n│ 6       │ 'CREATE' │ 'PR-43'   │ 'Peacock Relief Tassel Silver Handbag'            │ 'category-purse' │\n│ 7       │ 'CREATE' │ 'PR-44'   │ 'Green Stone Floral Scroll Silver Shoulder Purse' │ 'category-purse' │\n│ 8       │ 'CREATE' │ 'PR-45'   │ 'Floral Diamond Lattice Silver Clutch'            │ 'category-purse' │\n│ 9       │ 'CREATE' │ 'PR-46'   │ 'Orange and Lilac Floral Silver Handbag'          │ 'category-purse' │\n│ 10      │ 'CREATE' │ 'PR-47'   │ 'Heart-Shaped Floral Silver Purse'                │ 'category-purse' │\n│ 11      │ 'CREATE' │ 'PR-48'   │ 'Gold-Tone Leaf and Pearl-Drop Silver Handbag'    │ 'category-purse' │\n│ 12      │ 'CREATE' │ 'PR-49'   │ 'Peacock and Chain Tassel Silver Handbag'         │ 'category-purse' │\n└─────────┴──────────┴───────────┴───────────────────────────────────────────────────┴──────────────────┘\nDry run complete. No Sanity documents were written.\nRun `npm run sanity:publish-mixed-gallery-products:apply` to publish the CREATE rows.\n"
+  },
+  "publicationStart": {
+    "chunk_id": "77ad9c",
+    "wall_time_seconds": 10.0045005,
+    "session_id": 97837,
+    "original_token_count": 718,
+    "output": "\n> dda-silver-web@0.1.0 sanity:publish-mixed-gallery-products:apply\n> sanity exec scripts/sanity/publish-mixed-gallery-products.ts --with-user-token -- --apply\n\nTarget: f6i0fy2f/production; batch: desktop-images-2026-10-09; source images: 13; new product candidates: 13\n┌─────────┬──────────┬───────────┬───────────────────────────────────────────────────┬──────────────────┐\n│ (index) │ action   │ reference │ title                                             │ category         │\n├─────────┼──────────┼───────────┼───────────────────────────────────────────────────┼──────────────────┤\n│ 0       │ 'CREATE' │ 'PR-37'   │ 'Multicolour Floral Enamel Silver Handbag'        │ 'category-purse' │\n│ 1       │ 'CREATE' │ 'PR-38'   │ 'Raised Flower Silver Shoulder Purse'             │ 'category-purse' │\n│ 2       │ 'CREATE' │ 'PR-39'   │ 'Vine Enamel Silver Clutch with Peacock Ornament' │ 'category-purse' │\n│ 3       │ 'CREATE' │ 'PR-40'   │ 'Pastel Panel Floral Silver Handbag'              │ 'category-purse' │\n│ 4       │ 'CREATE' │ 'PR-41'   │ 'Green Stone Fringe Silver Shoulder Purse'        │ 'category-purse' │\n│ 5       │ 'CREATE' │ 'PR-42'   │ 'Diamond Lattice Floral Enamel Silver Handbag'    │ 'category-purse' │\n│ 6       │ 'CREATE' │ 'PR-43'   │ 'Peacock Relief Tassel Silver Handbag'            │ 'category-purse' │\n│ 7       │ 'CREATE' │ 'PR-44'   │ 'Green Stone Floral Scroll Silver Shoulder Purse' │ 'category-purse' │\n│ 8       │ 'CREATE' │ 'PR-45'   │ 'Floral Diamond Lattice Silver Clutch'            │ 'category-purse' │\n│ 9       │ 'CREATE' │ 'PR-46'   │ 'Orange and Lilac Floral Silver Handbag'          │ 'category-purse' │\n│ 10      │ 'CREATE' │ 'PR-47'   │ 'Heart-Shaped Floral Silver Purse'                │ 'category-purse' │\n│ 11      │ 'CREATE' │ 'PR-48'   │ 'Gold-Tone Leaf and Pearl-Drop Silver Handbag'    │ 'category-purse' │\n│ 12      │ 'CREATE' │ 'PR-49'   │ 'Peacock and Chain Tassel Silver Handbag'         │ 'category-purse' │\n└─────────┴──────────┴───────────┴───────────────────────────────────────────────────┴──────────────────┘\n"
+  },
+  "publicationCompletion": {
+    "chunk_id": "2bc0b1",
+    "wall_time_seconds": 1.8824338,
+    "exit_code": 0,
+    "original_token_count": 22,
+    "output": "Published 13 new products, replaced 0, and updated 0 existing gallery parent products.\n"
+  }
+}

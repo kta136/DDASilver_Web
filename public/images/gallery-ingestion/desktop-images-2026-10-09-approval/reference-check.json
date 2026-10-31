@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-09T10:01:19.608Z",
+  "query": "*[_type == \"product\" && (category._ref == \"category-purse\" || reference match \"PR-*\")]{_id,reference,title}",
+  "readOnly": true,
+  "publishedDocumentCount": 36,
+  "maxPurseReference": 36,
+  "provisionalNextReferences": [
+    "PR-37",
+    "PR-38"
+  ],
+  "requiresRecheckBeforePublication": true
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "batchId": "whatsapp-two-products-2026-10-30",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-10-30T09:18:16.357Z",
+  "productCount": 2,
+  "uniqueAssetCount": 2,
+  "uploadedAssetCount": 2,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+      "reference": "PR-50",
+      "title": "Twin Peacock Enamel Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/01-twin-peacock-enamel-silver-purse.png",
+      "sha1hash": "e67a8ec3a9110aa8c1487079fd06d6e926ceaec5",
+      "sanityAssetId": "image-e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+      "reference": "SG-27",
+      "title": "Om Ganesha Silver Singhasan with Elephant Base",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/02-om-ganesha-silver-shrine-elephant-base.png",
+      "sha1hash": "d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52",
+      "sanityAssetId": "image-d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254.png"
+    }
+  ]
+}

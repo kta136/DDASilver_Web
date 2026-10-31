@@ -1,0 +1,17 @@
+{
+  "batchId": "whatsapp-two-products-2026-10-30",
+  "validatedAt": "2026-10-30T09:19:59.016Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 3,
+    "products": 2,
+    "verifiedSources": 2,
+    "validImages": 2,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}

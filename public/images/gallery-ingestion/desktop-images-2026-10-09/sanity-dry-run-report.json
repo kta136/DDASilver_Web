@@ -1,0 +1,9 @@
+{
+  "command": "node --import tsx scripts/sanity/upload-mixed-gallery-products.mjs --manifest=public/images/gallery-ingestion/desktop-images-2026-10-09/sanity-gallery-manifest.json",
+  "exitCode": 0,
+  "output": "Mixed gallery dry run (no Sanity writes)\n┌──────────────────┬────────┐\n│ (index)          │ Values │\n├──────────────────┼────────┤\n│ products         │ 13     │\n│ productDocuments │ 13     │\n│ alternateImages  │ 0      │\n│ validImages      │ 13     │\n│ coins            │ 0      │\n│ gold             │ 0      │\n│ gifts            │ 0      │\n│ boxes            │ 0      │\n│ singhasans       │ 0      │\n│ hatris           │ 0      │\n│ phoneCovers      │ 0      │\n│ jhulas           │ 0      │\n│ purses           │ 13     │\n│ idols            │ 0      │\n│ utensils         │ 0      │\n│ manifestBlockers │ 0      │\n│ productBlockers  │ 0      │\n└──────────────────┴────────┘\nValidated 13 prospective image asset uploads.\nValidated 13 prospective product documents across Coin, Gold, Gifts, Jhula, Purse, Idols and Utensils.\nDry run complete. No network request, asset upload, product mutation or publication occurred.\n",
+  "noSanityWrites": true,
+  "valid": true,
+  "productCount": 13,
+  "assetCount": 13
+}

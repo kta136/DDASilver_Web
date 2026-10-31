@@ -1,0 +1,81 @@
+{
+  "query": "*[_type == \"product\" && reference in [\"PR-50\", \"SG-27\"]]{_id,_createdAt,_updatedAt,title,reference,\"slug\":slug.current,shortDescription,\"categoryId\":category._ref,material,purity,weightGrams,heightInches,widthInches,depthInches,diameterInches,singhasanWidthInches,singhasanDepthInches,pricing,gallery[]{alt,\"asset\":asset->{_id,url,sha1hash,\"width\":metadata.dimensions.width,\"height\":metadata.dimensions.height}}}",
+  "result": [
+    {
+      "_createdAt": "2026-10-30T09:18:40Z",
+      "_id": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+      "_updatedAt": "2026-10-30T09:18:40Z",
+      "categoryId": "category-singhasan",
+      "depthInches": null,
+      "diameterInches": null,
+      "gallery": [
+        {
+          "alt": "Ornate silver singhasan with gold-tone Om panel, Ganesha crest, three pointed finials, carved columns and elephant base.",
+          "asset": {
+            "_id": "image-d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254-png",
+            "height": 1254,
+            "sha1hash": "d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254.png",
+            "width": 1254
+          }
+        }
+      ],
+      "heightInches": null,
+      "material": "silver",
+      "pricing": {
+        "finish": "antique",
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "SG-27",
+      "shortDescription": "A 92.5% silver singhasan with a gold-tone Om back panel, Ganesha crest, three finials, ornate columns, floral scrollwork and an elephant-supported stepped base. Weight: 5,616 g.",
+      "singhasanDepthInches": null,
+      "singhasanWidthInches": null,
+      "slug": "om-ganesha-silver-shrine-elephant-base",
+      "title": "Om Ganesha Silver Singhasan with Elephant Base",
+      "weightGrams": 5616,
+      "widthInches": null
+    },
+    {
+      "_createdAt": "2026-10-30T09:18:40Z",
+      "_id": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+      "_updatedAt": "2026-10-30T09:18:40Z",
+      "categoryId": "category-purse",
+      "depthInches": null,
+      "diameterInches": null,
+      "gallery": [
+        {
+          "alt": "Silver purse with two blue-and-green enamel peacocks, clear stone borders, a teardrop clasp and braided handle.",
+          "asset": {
+            "_id": "image-e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254-png",
+            "height": 1254,
+            "sha1hash": "e67a8ec3a9110aa8c1487079fd06d6e926ceaec5",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254.png",
+            "width": 1254
+          }
+        }
+      ],
+      "heightInches": null,
+      "material": "silver",
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "PR-50",
+      "shortDescription": "A 92.5% silver purse with facing blue-and-green enamel peacocks, gold-tone floral details, clear stone borders and a braided handle. Weight: 660 g.",
+      "singhasanDepthInches": null,
+      "singhasanWidthInches": null,
+      "slug": "twin-peacock-enamel-silver-purse",
+      "title": "Twin Peacock Enamel Silver Purse",
+      "weightGrams": 660,
+      "widthInches": null
+    }
+  ],
+  "syncTags": [
+    "s1:irBxjw",
+    "s1:I1F64g",
+    "s1:+wYG5Q"
+  ],
+  "ms": 6
+}

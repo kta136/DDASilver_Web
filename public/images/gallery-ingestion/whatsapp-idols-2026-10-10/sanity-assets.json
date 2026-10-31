@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "batchId": "whatsapp-idols-2026-10-10",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-10-10T13:08:09.690Z",
+  "productCount": 4,
+  "uniqueAssetCount": 4,
+  "uploadedAssetCount": 4,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-whatsapp-20261010-lakshmi-ganesha-tiered-canopy-round-base-pair",
+      "reference": "SSM-LG-8",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Tiered Canopies and Round Floral Bases",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/01-lakshmi-ganesha-tiered-canopy-round-base-pair.png",
+      "sha1hash": "744ff85a73d6ee3b4b684e87ff1485831447142f",
+      "sanityAssetId": "image-744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-whatsapp-20261010-lakshmi-ganesha-compact-elephant-foot-throne-pair",
+      "reference": "SSM-LG-9",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Compact Elephant-Foot Thrones",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/02-lakshmi-ganesha-compact-elephant-foot-throne-pair.png",
+      "sha1hash": "db64e92b201739b5f7bd56661c017cc61f5d990b",
+      "sanityAssetId": "image-db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-whatsapp-20261010-lakshmi-ganesha-broad-elephant-foot-throne-pair",
+      "reference": "SSM-LG-10",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Broad Elephant-Foot Thrones",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/03-lakshmi-ganesha-broad-elephant-foot-throne-pair.png",
+      "sha1hash": "054036947b4cfe67e1bb5422a2d6a97e7dba2650",
+      "sanityAssetId": "image-054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-whatsapp-20261010-lakshmi-ganesha-ornate-halo-lotus-pair",
+      "reference": "SSM-LG-11",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Ornate Halos on Lotus Bases",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/04-lakshmi-ganesha-ornate-halo-lotus-pair.png",
+      "sha1hash": "8a6a2deb940550fcb2376cd35ebaaa7037390a54",
+      "sanityAssetId": "image-8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254.png"
+    }
+  ]
+}

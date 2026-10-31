@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-10-30T09:21:50.782Z",
+  "items": [
+    {
+      "id": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+      "slug": "om-ganesha-silver-shrine-elephant-base",
+      "estimate": {
+        "status": "available",
+        "mode": "automatic",
+        "currency": "INR",
+        "minimum": 1154300,
+        "maximum": 1154300,
+        "asOf": "2026-10-30T09:18:30.103Z",
+        "validUntil": "2026-10-30T18:00:00Z",
+        "marketStatus": "live",
+        "lastAvailable": false,
+        "sizes": []
+      }
+    },
+    {
+      "id": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+      "slug": "twin-peacock-enamel-silver-purse",
+      "estimate": {
+        "status": "available",
+        "mode": "automatic",
+        "currency": "INR",
+        "minimum": 185100,
+        "maximum": 185100,
+        "asOf": "2026-10-30T09:18:30.103Z",
+        "validUntil": "2026-10-30T18:00:00Z",
+        "marketStatus": "live",
+        "lastAvailable": false,
+        "sizes": []
+      }
+    }
+  ]
+}

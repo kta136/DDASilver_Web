@@ -1,0 +1,42 @@
+[
+  {
+    "reference": "SSM-LG-8",
+    "title": "Lakshmi Ganesha Silver Idol Pair with Tiered Canopies and Round Floral Bases",
+    "weightGrams": 315,
+    "heightInches": 3,
+    "construction": "semi-solid",
+    "purity": "92.5",
+    "labourInrPerGram": 15,
+    "labourTotalInr": 4725
+  },
+  {
+    "reference": "SSM-LG-9",
+    "title": "Lakshmi Ganesha Silver Idol Pair on Compact Elephant-Foot Thrones",
+    "weightGrams": 124,
+    "heightInches": 2.5,
+    "construction": "semi-solid",
+    "purity": "92.5",
+    "labourInrPerGram": 15,
+    "labourTotalInr": 1860
+  },
+  {
+    "reference": "SSM-LG-10",
+    "title": "Lakshmi Ganesha Silver Idol Pair on Broad Elephant-Foot Thrones",
+    "weightGrams": 380,
+    "heightInches": 4,
+    "construction": "semi-solid",
+    "purity": "92.5",
+    "labourInrPerGram": 15,
+    "labourTotalInr": 5700
+  },
+  {
+    "reference": "SSM-LG-11",
+    "title": "Lakshmi Ganesha Silver Idol Pair with Ornate Halos on Lotus Bases",
+    "weightGrams": 150,
+    "heightInches": 2.5,
+    "construction": "semi-solid",
+    "purity": "92.5",
+    "labourInrPerGram": 15,
+    "labourTotalInr": 2250
+  }
+]

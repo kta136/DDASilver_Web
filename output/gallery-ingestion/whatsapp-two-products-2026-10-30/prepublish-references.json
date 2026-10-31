@@ -1,0 +1,322 @@
+[
+  {
+    "_id": "product-dda-desktop-20261009-diamond-lattice-floral-enamel-silver-handbag-360g",
+    "reference": "PR-42",
+    "slug": "diamond-lattice-floral-enamel-silver-handbag-360g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-floral-diamond-lattice-silver-clutch-340g",
+    "reference": "PR-45",
+    "slug": "floral-diamond-lattice-silver-clutch-340g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-gold-tone-leaf-pearl-drop-silver-handbag-585g",
+    "reference": "PR-48",
+    "slug": "gold-tone-leaf-pearl-drop-silver-handbag-585g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-green-stone-floral-scroll-silver-shoulder-purse-416g",
+    "reference": "PR-44",
+    "slug": "green-stone-floral-scroll-silver-shoulder-purse-416g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-green-stone-fringe-silver-shoulder-purse-615g",
+    "reference": "PR-41",
+    "slug": "green-stone-fringe-silver-shoulder-purse-615g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-heart-shaped-floral-silver-purse-366g",
+    "reference": "PR-47",
+    "slug": "heart-shaped-floral-silver-purse-366g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-multicolour-floral-enamel-silver-handbag-400g",
+    "reference": "PR-37",
+    "slug": "multicolour-floral-enamel-silver-handbag-400g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-orange-lilac-floral-silver-handbag-340g",
+    "reference": "PR-46",
+    "slug": "orange-lilac-floral-silver-handbag-340g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-pastel-panel-floral-silver-handbag-515g",
+    "reference": "PR-40",
+    "slug": "pastel-panel-floral-silver-handbag-515g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-peacock-chain-tassel-silver-handbag-630g",
+    "reference": "PR-49",
+    "slug": "peacock-chain-tassel-silver-handbag-630g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-peacock-relief-tassel-silver-handbag-500g",
+    "reference": "PR-43",
+    "slug": "peacock-relief-tassel-silver-handbag-500g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-raised-flower-silver-shoulder-purse-258g",
+    "reference": "PR-38",
+    "slug": "raised-flower-silver-shoulder-purse-258g"
+  },
+  {
+    "_id": "product-dda-desktop-20261009-vine-enamel-peacock-ornament-silver-clutch-459g",
+    "reference": "PR-39",
+    "slug": "vine-enamel-peacock-ornament-silver-clutch-459g"
+  },
+  {
+    "_id": "product-dda-desktop-files-20260822-011",
+    "reference": "PR-32",
+    "slug": "floral-panel-silver-purse-405g"
+  },
+  {
+    "_id": "product-dda-desktop-files-20260822-012",
+    "reference": "PR-33",
+    "slug": "woven-lattice-two-tone-silver-purse-400g"
+  },
+  {
+    "_id": "product-dda-desktop-files-20260822-013",
+    "reference": "PR-34",
+    "slug": "openwork-scroll-silver-purse-450g"
+  },
+  {
+    "_id": "product-dda-desktop-files-20260822-014",
+    "reference": "PR-35",
+    "slug": "peacock-motif-silver-purse-400g"
+  },
+  {
+    "_id": "product-dda-gift-sg-12-scalloped-floral-round-silver-singhasan",
+    "reference": "SG-12",
+    "slug": "scalloped-floral-round-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-13-twin-peacock-floral-elephant-foot-silver-singhasan",
+    "reference": "SG-13",
+    "slug": "twin-peacock-floral-elephant-foot-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-14-petite-pointed-floral-silver-singhasan",
+    "reference": "SG-14",
+    "slug": "petite-pointed-floral-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-15-compact-floral-fan-silver-singhasan",
+    "reference": "SG-15",
+    "slug": "compact-floral-fan-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-16-openwork-arch-floral-silver-singhasan",
+    "reference": "SG-16",
+    "slug": "openwork-arch-floral-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-17-twin-peacock-bolster-silver-singhasan",
+    "reference": "SG-17",
+    "slug": "twin-peacock-bolster-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-18-tiered-floral-crown-silver-singhasan",
+    "reference": "SG-18",
+    "slug": "tiered-floral-crown-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-19-gold-accent-peacock-canopy-silver-singhasan",
+    "reference": "SG-19",
+    "slug": "gold-accent-peacock-canopy-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-20-chrysanthemum-tree-round-silver-singhasan",
+    "reference": "SG-20",
+    "slug": "chrysanthemum-tree-round-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-21-tiered-leaf-floral-silver-singhasan",
+    "reference": "SG-21",
+    "slug": "tiered-leaf-floral-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-22-peacock-fan-two-tier-silver-singhasan",
+    "reference": "SG-22",
+    "slug": "peacock-fan-two-tier-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-23-pink-accent-floral-round-silver-singhasan",
+    "reference": "SG-23",
+    "slug": "pink-accent-floral-round-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-24-twin-peacock-round-silver-singhasan",
+    "reference": "SG-24",
+    "slug": "twin-peacock-round-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-gift-sg-25-floral-back-silver-singhasan",
+    "reference": "SG-25",
+    "slug": "floral-back-silver-singhasan"
+  },
+  {
+    "_id": "product-dda-img-20260830-20",
+    "reference": "PR-36",
+    "slug": "peacock-red-stone-antique-silver-purse"
+  },
+  {
+    "_id": "product-dda-img-20260902-18",
+    "reference": "SG-26",
+    "slug": "floral-back-silver-singhasan-with-decorative-tree"
+  },
+  {
+    "_id": "product-dda-purse-01-ornate-elephant-floral",
+    "reference": "PR-1",
+    "slug": "ornate-elephant-floral-silver-purse-400g"
+  },
+  {
+    "_id": "product-dda-purse-02-blue-stone-vertical",
+    "reference": "PR-2",
+    "slug": "blue-stone-vertical-silver-purse-600g"
+  },
+  {
+    "_id": "product-dda-purse-03-gold-tone-floral",
+    "reference": "PR-3",
+    "slug": "gold-tone-floral-silver-purse-730g"
+  },
+  {
+    "_id": "product-dda-purse-04-jeweled-medallion-clutch",
+    "reference": "PR-4",
+    "slug": "jeweled-medallion-silver-clutch-500g"
+  },
+  {
+    "_id": "product-dda-purse-05-red-fabric-potli",
+    "reference": "PR-5",
+    "slug": "red-fabric-silver-potli-purse-298g"
+  },
+  {
+    "_id": "product-dda-purse-06-woven-silver-tote",
+    "reference": "PR-6",
+    "slug": "woven-silver-tote-purse-330g"
+  },
+  {
+    "_id": "product-dda-purse-07-green-stone-clutch",
+    "reference": "PR-7",
+    "slug": "green-stone-silver-clutch-600g"
+  },
+  {
+    "_id": "product-dda-purse-08-embossed-floral-handbag",
+    "reference": "PR-8",
+    "slug": "embossed-floral-silver-handbag-390g"
+  },
+  {
+    "_id": "product-dda-purse-09-beaded-oval-clutch",
+    "reference": "PR-9",
+    "slug": "beaded-oval-silver-clutch-380g"
+  },
+  {
+    "_id": "product-dda-purse-10-orange-brocade-potli",
+    "reference": "PR-10",
+    "slug": "orange-brocade-silver-potli-purse-295g"
+  },
+  {
+    "_id": "product-dda-purse-11-teal-brocade-potli",
+    "reference": "PR-11",
+    "slug": "teal-brocade-silver-potli-purse-300g"
+  },
+  {
+    "_id": "product-dda-purse-12-geometric-silver-clutch",
+    "reference": "PR-12",
+    "slug": "geometric-silver-clutch-400g"
+  },
+  {
+    "_id": "product-dda-purse-13-elephant-floral",
+    "reference": "PR-13",
+    "slug": "elephant-floral-silver-purse-390g"
+  },
+  {
+    "_id": "product-dda-purse-14-paisley-floral",
+    "reference": "PR-14",
+    "slug": "paisley-floral-silver-purse-440g"
+  },
+  {
+    "_id": "product-dda-purse-15-ornate-panel-clutch",
+    "reference": "PR-15",
+    "slug": "ornate-panel-silver-clutch-400g"
+  },
+  {
+    "_id": "product-dda-purse-16-pink-red-jeweled-clutch",
+    "reference": "PR-16",
+    "slug": "pink-red-jeweled-silver-clutch-500g"
+  },
+  {
+    "_id": "product-dda-purse-17-figurative-silver-clutch",
+    "reference": "PR-17",
+    "slug": "figurative-silver-clutch-380g"
+  },
+  {
+    "_id": "product-dda-purse-pr-18-peacock-purple-fringe-silver-purse",
+    "reference": "PR-18",
+    "slug": "peacock-purple-fringe-silver-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-19-gold-lattice-green-fringe-silver-purse",
+    "reference": "PR-19",
+    "slug": "gold-lattice-green-fringe-silver-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-20-elephant-floral-pink-fringe-silver-purse",
+    "reference": "PR-20",
+    "slug": "elephant-floral-pink-fringe-silver-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-21-green-stone-floral-chain-silver-purse",
+    "reference": "PR-21",
+    "slug": "green-stone-floral-chain-silver-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-22-white-stone-purple-fringe-silver-purse",
+    "reference": "PR-22",
+    "slug": "white-stone-peacock-fringe-silver-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-23-peacock-floral-silver-clutch-purse",
+    "reference": "PR-23",
+    "slug": "peacock-floral-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-24-gold-lattice-pearl-fringe-silver-clutch-purse",
+    "reference": "PR-24",
+    "slug": "gold-lattice-pearl-fringe-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-25-elephant-peacock-floral-silver-clutch-purse",
+    "reference": "PR-25",
+    "slug": "elephant-peacock-floral-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-26-scroll-vine-round-handle-silver-clutch-purse",
+    "reference": "PR-26",
+    "slug": "scroll-vine-round-handle-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-27-honeycomb-floral-silver-clutch-purse",
+    "reference": "PR-27",
+    "slug": "honeycomb-floral-round-handle-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-28-vertical-floral-panel-silver-clutch-purse",
+    "reference": "PR-28",
+    "slug": "vertical-floral-panel-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-29-scallop-pattern-silver-clutch-purse",
+    "reference": "PR-29",
+    "slug": "scallop-pattern-silver-clutch-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-30-enamel-birds-pearl-fringe-silver-shoulder-purse",
+    "reference": "PR-30",
+    "slug": "enamel-birds-pearl-fringe-silver-shoulder-purse"
+  },
+  {
+    "_id": "product-dda-purse-pr-31-jeweled-peacock-tassel-silver-handbag",
+    "reference": "PR-31",
+    "slug": "jeweled-peacock-tassel-silver-handbag"
+  }
+]

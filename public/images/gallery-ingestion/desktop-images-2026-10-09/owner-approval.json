@@ -1,0 +1,12 @@
+{
+  "approvedOn": "2026-10-09",
+  "purity": "92.5",
+  "labourInrPerGram": 90,
+  "approvedSourceNumbers": [
+    1,
+    3
+  ],
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+  "scope": "Continue all13 image and metadata preparation after two approved samples",
+  "supersededApprovalStagePurity": "92"
+}

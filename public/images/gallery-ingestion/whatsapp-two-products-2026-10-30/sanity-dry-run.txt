@@ -1,0 +1,25 @@
+Mixed gallery dry run (no Sanity writes)
+┌──────────────────┬────────┐
+│ (index)          │ Values │
+├──────────────────┼────────┤
+│ products         │ 2      │
+│ productDocuments │ 2      │
+│ alternateImages  │ 0      │
+│ validImages      │ 2      │
+│ coins            │ 0      │
+│ gold             │ 0      │
+│ gifts            │ 0      │
+│ boxes            │ 0      │
+│ singhasans       │ 1      │
+│ hatris           │ 0      │
+│ phoneCovers      │ 0      │
+│ jhulas           │ 0      │
+│ purses           │ 1      │
+│ idols            │ 0      │
+│ utensils         │ 0      │
+│ manifestBlockers │ 0      │
+│ productBlockers  │ 0      │
+└──────────────────┴────────┘
+Validated 2 prospective image asset uploads.
+Validated 2 prospective product documents across Coin, Gold, Gifts, Jhula, Purse, Idols and Utensils.
+Dry run complete. No network request, asset upload, product mutation or publication occurred.

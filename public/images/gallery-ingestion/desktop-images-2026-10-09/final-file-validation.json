@@ -1,0 +1,128 @@
+{
+  "valid": true,
+  "sourceCount": 13,
+  "sourceHashesUnchanged": true,
+  "productCount": 13,
+  "selectedImageCount": 13,
+  "sourceToImageMappingOneToOne": true,
+  "approvedPreviewHashesMatch": true,
+  "outputs": [
+    {
+      "number": 1,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "9800EA9404C5BDFA0A26796B73915D064B423C8060B55A79CC4971ADEFA91D30"
+    },
+    {
+      "number": 2,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/02-raised-flower-silver-shoulder-purse-258g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "A9FBD6687F8F9A32F82ACDCB2F4EAB692660D8CCA642C552B419027381978C31"
+    },
+    {
+      "number": 3,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/03-vine-enamel-peacock-ornament-silver-clutch-459g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "79B26B52B8C80C436C6F87D1A162006EF58238ED037AC799AB4FDA148DCEF3FC"
+    },
+    {
+      "number": 4,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/04-pastel-panel-floral-silver-handbag-515g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "AE238EFCE1AE047F0E6E5706FA4467F45E0FC38592A7F2E7F74E97B3B97B8D86"
+    },
+    {
+      "number": 5,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/05-green-stone-fringe-silver-shoulder-purse-615g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "1970BBF2854BB75B6938DC2F18B444A330E0B4EFBF8EDCECACE799B9381CC330"
+    },
+    {
+      "number": 6,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/06-diamond-lattice-floral-enamel-silver-handbag-360g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "AA19B3B1047066A014D66E843A7CD53D5DCF7AC3002577018EAF1DCE1F8753AD"
+    },
+    {
+      "number": 7,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/07-peacock-relief-tassel-silver-handbag-500g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "3EE2D215522668FBFCC664E2BB43F276C9BAA69C359600FF21C727725398D619"
+    },
+    {
+      "number": 8,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/08-green-stone-floral-scroll-silver-shoulder-purse-416g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "C70956AFD7022CDC7C708DB437C8EB002560F6559EDA202AEFDC49643270621F"
+    },
+    {
+      "number": 9,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/09-floral-diamond-lattice-silver-clutch-340g-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "3A7926839F1C84E969275CB8403E5F7FEF6655C98174444FA6CBE0CF4BA7875D"
+    },
+    {
+      "number": 10,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/10-orange-lilac-floral-silver-handbag-340g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "8678F07F1DFEA1E81F90D7EB00428CF7E6F3A5A873B9C04687EFC0148DB9E87B"
+    },
+    {
+      "number": 11,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/11-heart-shaped-floral-silver-purse-366g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "B60510A52AA95C698C1BD980288B8132B327DA1D1B586783AC8C8B28A5D6C6B4"
+    },
+    {
+      "number": 12,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/12-gold-tone-leaf-pearl-drop-silver-handbag-585g-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "E65D93C334539380E2777799DAF299BEC1CC098ABC1956116BD4C96694503578"
+    },
+    {
+      "number": 13,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/13-peacock-chain-tassel-silver-handbag-630g.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "sha256": "1236EC3CE09F79BF04EE3F69FE30B22D2A2A89DEC64A05B9DE2C40FF0F576F51"
+    }
+  ]
+}

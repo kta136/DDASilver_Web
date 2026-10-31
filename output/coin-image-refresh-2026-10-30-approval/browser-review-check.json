@@ -1,0 +1,11 @@
+{
+  "status": "fulfilled",
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"title\":\"DDA Silver · Coin image review\",\"cards\":86,\"images\":172,\"decoded\":172,\"broken\":[],\"searchMatches\":2,\"horizontalOverflow\":false}\n```"
+      }
+    ]
+  }
+}

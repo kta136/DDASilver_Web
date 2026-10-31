@@ -115,6 +115,20 @@ The delivery manifest must declare its status rather than implying it is ready:
 Run the relevant uploader in dry-run mode before calling the batch ready. Do
 not upload or publish until the user authorizes that external write.
 
+Existing-gallery refreshes may use preserved PNG sources as well as JPEGs.
+Count both formats in `originalSourceCount` and list any unused source images
+in `excludedSources`. For an image-only attachment, set
+`recordType: "alternateGalleryImage"`, `createProduct: false`, the existing
+`parentProductId` and `parentReference`, and `updateParentMetadata: false`.
+Missing dimensions on an existing product do not block an image-only attachment;
+retain them as review notes without inventing or changing measurements.
+
+The mixed-gallery publisher appends alternate images by default. Set
+`galleryPosition: "first"` to prepend a refreshed cover and provide a unique
+`galleryKey` when the existing gallery already uses the default reference key.
+The publisher checks gallery limits, key uniqueness, and the current document
+revision before applying the attachment.
+
 The product schema supports `weightGrams`, `heightInches`, `widthInches`,
 `depthInches`, `diameterInches`, `singhasanWidthInches`,
 `singhasanDepthInches`, and structured `sizeVariants` containing verified

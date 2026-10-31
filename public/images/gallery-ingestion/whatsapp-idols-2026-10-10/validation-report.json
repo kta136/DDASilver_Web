@@ -1,0 +1,17 @@
+{
+  "batchId": "whatsapp-idols-2026-10-10",
+  "validatedAt": "2026-10-10T13:10:18.985Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 4,
+    "products": 4,
+    "verifiedSources": 4,
+    "validImages": 4,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}

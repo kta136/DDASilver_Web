@@ -1,0 +1,3117 @@
+{
+  "query": "*[_type == \"product\" && !(_id in path(\"drafts.**\")) && category._ref in [\"category-coin\",\"category-gold\"]] | order(category._ref asc, displayOrder asc, weightGrams asc){_id,title,reference,\"slug\":slug.current,\"categoryId\":category._ref,material,purity,weightGrams,coinShape,displayOrder,shortDescription,gallery[]{_key,alt,crop,hotspot,\"asset\":asset->{_id,url,originalFilename,\"dimensions\":metadata.dimensions}}}",
+  "result": [
+    {
+      "_id": "product-dda-silver-coin-10g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 10,
+      "gallery": [
+        {
+          "_key": "coin-10g-front-back",
+          "alt": "Front and reverse views of the 10 gram round DDA silver coin",
+          "asset": {
+            "_id": "image-b548608bb701e9fc0c1999635f22acce3ad4f0eb-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b548608bb701e9fc0c1999635f22acce3ad4f0eb-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G",
+      "shortDescription": "A round 10 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-10-gram-silver-coin",
+      "title": "DDA 10 Gram Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-silver-coin-20g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 20,
+      "gallery": [
+        {
+          "_key": "coin-20g-front-back",
+          "alt": "Front and reverse views of the 20 gram round DDA silver coin",
+          "asset": {
+            "_id": "image-9b0bf9ae943b98ec0ac71e738751c4ca4c37a642-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-20g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/9b0bf9ae943b98ec0ac71e738751c4ca4c37a642-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-20G",
+      "shortDescription": "A round 20 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-20-gram-silver-coin",
+      "title": "DDA 20 Gram Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-silver-coin-50g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 30,
+      "gallery": [
+        {
+          "_key": "coin-50g-front-back",
+          "alt": "Front and reverse views of the 50 gram round DDA silver coin",
+          "asset": {
+            "_id": "image-8442af56950316cf46a48a3d5b2da6af27355deb-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-50g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8442af56950316cf46a48a3d5b2da6af27355deb-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-50G",
+      "shortDescription": "A round 50 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-50-gram-silver-coin",
+      "title": "DDA 50 Gram Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-silver-coin-100g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 40,
+      "gallery": [
+        {
+          "_key": "coin-100g-front-back",
+          "alt": "Front and reverse views of the 100 gram round DDA silver coin",
+          "asset": {
+            "_id": "image-15fff89c4a25c5102fd8b94067e6043a901fc3ad-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-100g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/15fff89c4a25c5102fd8b94067e6043a901fc3ad-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-100G",
+      "shortDescription": "A round 100 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-100-gram-silver-coin",
+      "title": "DDA 100 Gram Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-silver-coin-250g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 50,
+      "gallery": [
+        {
+          "_key": "coin-250g-front-back",
+          "alt": "Front and reverse views of the 250 gram round DDA silver coin",
+          "asset": {
+            "_id": "image-6682f4800462920687f03c433d4a37597138e8df-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-250g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/6682f4800462920687f03c433d4a37597138e8df-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-250G",
+      "shortDescription": "A round 250 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-250-gram-silver-coin",
+      "title": "DDA 250 Gram Silver Coin",
+      "weightGrams": 250
+    },
+    {
+      "_id": "product-dda-silver-oval-coin-10g",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 60,
+      "gallery": [
+        {
+          "_key": "coin-oval-10g-front-back",
+          "alt": "Front and reverse views of the 10 gram oval DDA silver coin",
+          "asset": {
+            "_id": "image-4976730e6a5ae97ba9861c75ee61bbe560bb2df1-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/4976730e6a5ae97ba9861c75ee61bbe560bb2df1-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-OVAL-10G",
+      "shortDescription": "A oval 10 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-10-gram-oval-silver-coin",
+      "title": "DDA 10 Gram Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-silver-oval-coin-20g",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 70,
+      "gallery": [
+        {
+          "_key": "coin-oval-20g-front-back",
+          "alt": "Front and reverse views of the 20 gram oval DDA silver coin",
+          "asset": {
+            "_id": "image-c85fc097fa73a511c6b0387d5a4a8ef04e2ba7ab-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-20g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c85fc097fa73a511c6b0387d5a4a8ef04e2ba7ab-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-OVAL-20G",
+      "shortDescription": "A oval 20 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-20-gram-oval-silver-coin",
+      "title": "DDA 20 Gram Oval Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-silver-oval-coin-25g",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 80,
+      "gallery": [
+        {
+          "_key": "coin-oval-25g-front-back",
+          "alt": "Front and reverse views of the 25 gram oval DDA silver coin",
+          "asset": {
+            "_id": "image-7de86053504eaaa5b3d291d433d3a83dea282e71-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-25g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/7de86053504eaaa5b3d291d433d3a83dea282e71-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-OVAL-25G",
+      "shortDescription": "A oval 25 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-25-gram-oval-silver-coin",
+      "title": "DDA 25 Gram Oval Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-silver-oval-coin-50g",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 90,
+      "gallery": [
+        {
+          "_key": "coin-oval-50g-front-back",
+          "alt": "Front and reverse views of the 50 gram oval DDA silver coin",
+          "asset": {
+            "_id": "image-a19e2d16570e689c980a3e9b3b41367338a6a680-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-50g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/a19e2d16570e689c980a3e9b3b41367338a6a680-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-OVAL-50G",
+      "shortDescription": "A oval 50 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-50-gram-oval-silver-coin",
+      "title": "DDA 50 Gram Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-silver-oval-coin-100g",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 100,
+      "gallery": [
+        {
+          "_key": "coin-oval-100g-front-back",
+          "alt": "Front and reverse views of the 100 gram oval DDA silver coin",
+          "asset": {
+            "_id": "image-cdb7f4dfd772b7f4bcc0a73dedff96c71ecd84d4-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-100g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/cdb7f4dfd772b7f4bcc0a73dedff96c71ecd84d4-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-OVAL-100G",
+      "shortDescription": "A oval 100 gram DDA silver coin in 99.80% purity, shown with its portrait front and engraved reverse together.",
+      "slug": "dda-100-gram-oval-silver-coin",
+      "title": "DDA 100 Gram Oval Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-10g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 110,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-10g-front-back",
+          "alt": "Front and reverse views of the 10 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-ed18db4fd1fdd60ad280f7e94a966a9b2f97df3b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/ed18db4fd1fdd60ad280f7e94a966a9b2f97df3b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-10G",
+      "shortDescription": "A 10 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-10-gram-rectangle-silver-coin",
+      "title": "DDA 10 Gram Rectangle Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-20g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 120,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-20g-front-back",
+          "alt": "Front and reverse views of the 20 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-498a0aec78f4b3de835d1ce940ea34f0b9458be8-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-20g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/498a0aec78f4b3de835d1ce940ea34f0b9458be8-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-20G",
+      "shortDescription": "A 20 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-20-gram-rectangle-silver-coin",
+      "title": "DDA 20 Gram Rectangle Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-50g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 130,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-50g-front-back",
+          "alt": "Front and reverse views of the 50 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-e87e3741e3f1fbe96c42744b8f90828e0326edba-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-50g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e87e3741e3f1fbe96c42744b8f90828e0326edba-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-50G",
+      "shortDescription": "A 50 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-50-gram-rectangle-silver-coin",
+      "title": "DDA 50 Gram Rectangle Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-100g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 140,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-100g-front-back",
+          "alt": "Front and reverse views of the 100 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-3905b831d6b95d3e98cacf47842ba667de364668-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-100g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3905b831d6b95d3e98cacf47842ba667de364668-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-100G",
+      "shortDescription": "A 100 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-100-gram-rectangle-silver-coin",
+      "title": "DDA 100 Gram Rectangle Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-250g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 150,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-250g-front-back",
+          "alt": "Front and reverse views of the 250 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-bad09b962c0a56f28c052eccf42f200dc28e26b9-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-250g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/bad09b962c0a56f28c052eccf42f200dc28e26b9-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-250G",
+      "shortDescription": "A 250 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-250-gram-rectangle-silver-coin",
+      "title": "DDA 250 Gram Rectangle Silver Coin",
+      "weightGrams": 250
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-500g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 160,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-500g-front-back",
+          "alt": "Front and reverse views of the 500 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-7489b5afc70ba17fc42a75b5b685bf94103c0885-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-500g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/7489b5afc70ba17fc42a75b5b685bf94103c0885-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-500G",
+      "shortDescription": "A 500 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-500-gram-rectangle-silver-coin",
+      "title": "DDA 500 Gram Rectangle Silver Coin",
+      "weightGrams": 500
+    },
+    {
+      "_id": "product-dda-silver-rectangle-coin-1000g",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 170,
+      "gallery": [
+        {
+          "_key": "coin-rectangle-1000g-front-back",
+          "alt": "Front and reverse views of the 1000 gram rectangle DDA silver coin",
+          "asset": {
+            "_id": "image-31e2798a0f8005b024b5b0a409723f5548c96f34-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-rectangle-1000g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/31e2798a0f8005b024b5b0a409723f5548c96f34-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-RECTANGLE-1000G",
+      "shortDescription": "A 1000 gram rectangular DDA silver coin in 99.80% purity, shown with its front and reverse together.",
+      "slug": "dda-1000-gram-rectangle-silver-coin",
+      "title": "DDA 1000 Gram Rectangle Silver Coin",
+      "weightGrams": 1000
+    },
+    {
+      "_id": "product-dda-lakshmi-ganesh-silver-coin-10g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 180,
+      "gallery": [
+        {
+          "_key": "coin-lakshmi-ganesh-10g-front-back",
+          "alt": "Front and reverse views of the 10 gram round DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-e5e698dbcee5bdf5acc5ac5aa65e9ca19ae33f06-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-lakshmi-ganesh-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e5e698dbcee5bdf5acc5ac5aa65e9ca19ae33f06-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-LAKSHMI-GANESH-10G",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity featuring Lakshmi and Ganesh, shown with its front and reverse together.",
+      "slug": "dda-10-gram-lakshmi-ganesh-silver-coin",
+      "title": "DDA 10 Gram Lakshmi Ganesh Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-lakshmi-ganesh-silver-coin-20g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 190,
+      "gallery": [
+        {
+          "_key": "coin-lakshmi-ganesh-20g-front-back",
+          "alt": "Front and reverse views of the 20 gram round DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-a3e54f6270a55ce08f615a9c65e455292abdce0f-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-lakshmi-ganesh-20g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/a3e54f6270a55ce08f615a9c65e455292abdce0f-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-LAKSHMI-GANESH-20G",
+      "shortDescription": "A 20 gram round DDA silver coin in 99.80% purity featuring Lakshmi and Ganesh, shown with its front and reverse together.",
+      "slug": "dda-20-gram-lakshmi-ganesh-silver-coin",
+      "title": "DDA 20 Gram Lakshmi Ganesh Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-lakshmi-ganesh-silver-coin-50g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 200,
+      "gallery": [
+        {
+          "_key": "coin-lakshmi-ganesh-50g-front-back",
+          "alt": "Front and reverse views of the 50 gram round DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-627024a11f89997b88359610f4d890fa9f3c3256-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-lakshmi-ganesh-50g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/627024a11f89997b88359610f4d890fa9f3c3256-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-LAKSHMI-GANESH-50G",
+      "shortDescription": "A 50 gram round DDA silver coin in 99.80% purity featuring Lakshmi and Ganesh, shown with its front and reverse together.",
+      "slug": "dda-50-gram-lakshmi-ganesh-silver-coin",
+      "title": "DDA 50 Gram Lakshmi Ganesh Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-lakshmi-ganesh-silver-coin-100g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 210,
+      "gallery": [
+        {
+          "_key": "coin-lakshmi-ganesh-100g-front-back",
+          "alt": "Front and reverse views of the 100 gram round DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-103e090b4e0924788d8c80f2535d27ddaac4c4a5-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-lakshmi-ganesh-100g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/103e090b4e0924788d8c80f2535d27ddaac4c4a5-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-LAKSHMI-GANESH-100G",
+      "shortDescription": "A 100 gram round DDA silver coin in 99.80% purity featuring Lakshmi and Ganesh, shown with its front and reverse together.",
+      "slug": "dda-100-gram-lakshmi-ganesh-silver-coin",
+      "title": "DDA 100 Gram Lakshmi Ganesh Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-lakshmi-ganesh-silver-coin-250g",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 220,
+      "gallery": [
+        {
+          "_key": "coin-lakshmi-ganesh-250g-front-back",
+          "alt": "Front and reverse views of the 250 gram round DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-3645a151cdcbfabc88a5b630156955e1172df7ed-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-lakshmi-ganesh-250g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3645a151cdcbfabc88a5b630156955e1172df7ed-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-LAKSHMI-GANESH-250G",
+      "shortDescription": "A 250 gram round DDA silver coin in 99.80% purity featuring Lakshmi and Ganesh, shown with its front and reverse together.",
+      "slug": "dda-250-gram-lakshmi-ganesh-silver-coin",
+      "title": "DDA 250 Gram Lakshmi Ganesh Silver Coin",
+      "weightGrams": 250
+    },
+    {
+      "_id": "product-dda-10g-square-lakshmi-ganesh-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "square",
+      "displayOrder": 230,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-square-lakshmi-ganesh-silver-coin-front-back",
+          "alt": "Front and reverse views of the square 10 gram DDA Lakshmi Ganesh silver coin",
+          "asset": {
+            "_id": "image-69ac9b7cadbcb8d3ef3484b76e3e9bd48c7de6d3-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-square-lakshmi-ganesh-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/69ac9b7cadbcb8d3ef3484b76e3e9bd48c7de6d3-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-SQUARE-LAKSHMI-GANESH",
+      "shortDescription": "A 10 gram square DDA silver coin in 99.80% purity, featuring Lakshmi and Ganesh on the front and a Tree of Life reverse.",
+      "slug": "dda-10-gram-square-lakshmi-ganesh-silver-coin",
+      "title": "DDA 10 Gram Square Lakshmi Ganesh Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-tree-of-life-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 240,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-tree-of-life-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Tree of Life silver coin",
+          "asset": {
+            "_id": "image-efb8b5c439fab993cbd66ba5c165d3f2b5d4730b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-tree-of-life-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/efb8b5c439fab993cbd66ba5c165d3f2b5d4730b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-TREE-OF-LIFE",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring a Tree of Life design with its branded reverse.",
+      "slug": "dda-10-gram-round-tree-of-life-silver-coin",
+      "title": "DDA 10 Gram Round Tree of Life Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-oval-radha-krishna-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 250,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-oval-radha-krishna-silver-coin-front-back",
+          "alt": "Front and reverse views of the oval 10 gram DDA Radha Krishna silver coin",
+          "asset": {
+            "_id": "image-c6bb2dbe2a6706c3d76cc492121b8f00eba37349-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-radha-krishna-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c6bb2dbe2a6706c3d76cc492121b8f00eba37349-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-OVAL-RADHA-KRISHNA",
+      "shortDescription": "A 10 gram oval DDA silver coin in 99.80% purity, featuring Radha and Krishna with its ornamental reverse.",
+      "slug": "dda-10-gram-oval-radha-krishna-silver-coin",
+      "title": "DDA 10 Gram Oval Radha Krishna Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-oval-bal-krishna-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 260,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-oval-bal-krishna-silver-coin-front-back",
+          "alt": "Front and reverse views of the oval 10 gram DDA Bal Krishna silver coin",
+          "asset": {
+            "_id": "image-7d662297567a7687fb9e03727cc64e48f13f810f-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-bal-krishna-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/7d662297567a7687fb9e03727cc64e48f13f810f-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-OVAL-BAL-KRISHNA",
+      "shortDescription": "A 10 gram oval DDA silver coin in 99.80% purity, featuring Bal Krishna with its ornamental reverse.",
+      "slug": "dda-10-gram-oval-bal-krishna-silver-coin",
+      "title": "DDA 10 Gram Oval Bal Krishna Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-oval-anniversary-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 270,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-oval-anniversary-silver-coin-front-back",
+          "alt": "Front and reverse views of the oval 10 gram DDA Happy Anniversary silver coin",
+          "asset": {
+            "_id": "image-3ab9784f4057aaaa841a41bbf02ef2cef1b7931a-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-oval-anniversary-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3ab9784f4057aaaa841a41bbf02ef2cef1b7931a-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-OVAL-ANNIVERSARY",
+      "shortDescription": "A 10 gram oval DDA silver coin in 99.80% purity, featuring a couple and Happy Anniversary design with its reverse.",
+      "slug": "dda-10-gram-oval-anniversary-silver-coin",
+      "title": "DDA 10 Gram Oval Anniversary Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-shiva-parvati-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 280,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-shiva-parvati-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Shiva Parvati silver coin",
+          "asset": {
+            "_id": "image-5d1659e148927176dd10553403a8b7f60c074c06-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-shiva-parvati-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/5d1659e148927176dd10553403a8b7f60c074c06-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-SHIVA-PARVATI",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring Shiva and Parvati with its branded reverse.",
+      "slug": "dda-10-gram-round-shiva-parvati-silver-coin",
+      "title": "DDA 10 Gram Round Shiva Parvati Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-ganesha-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 290,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-ganesha-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Ganesha silver coin",
+          "asset": {
+            "_id": "image-c30a1f79554165e17c8fbe38dbafdce449edebe9-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-ganesha-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c30a1f79554165e17c8fbe38dbafdce449edebe9-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-GANESHA",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring Ganesha with its branded reverse.",
+      "slug": "dda-10-gram-round-ganesha-silver-coin",
+      "title": "DDA 10 Gram Round Ganesha Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-hanuman-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 300,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-hanuman-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Hanuman silver coin",
+          "asset": {
+            "_id": "image-26e944b69f4039539617a85fbb86455c1f081c92-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-hanuman-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/26e944b69f4039539617a85fbb86455c1f081c92-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-HANUMAN",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring Hanuman with its branded reverse.",
+      "slug": "dda-10-gram-round-hanuman-silver-coin",
+      "title": "DDA 10 Gram Round Hanuman Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-guru-nanak-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 310,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-guru-nanak-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Guru Nanak silver coin",
+          "asset": {
+            "_id": "image-e77c20c863c9e80e0adf4f07aed0db48d65be765-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-guru-nanak-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e77c20c863c9e80e0adf4f07aed0db48d65be765-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-GURU-NANAK",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring Guru Nanak with its branded reverse.",
+      "slug": "dda-10-gram-round-guru-nanak-silver-coin",
+      "title": "DDA 10 Gram Round Guru Nanak Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-seated-shiva-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 320,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-seated-shiva-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA seated Shiva silver coin",
+          "asset": {
+            "_id": "image-3bce08871849b74c2e9b58cb0d4d6bb4c9acd311-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-shiva-seated-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3bce08871849b74c2e9b58cb0d4d6bb4c9acd311-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-SEATED-SHIVA",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring a seated Shiva design with its branded reverse.",
+      "slug": "dda-10-gram-round-seated-shiva-silver-coin",
+      "title": "DDA 10 Gram Round Seated Shiva Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-10g-round-mahavir-silver-coin",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 330,
+      "gallery": [
+        {
+          "_key": "product-dda-10g-round-mahavir-silver-coin-front-back",
+          "alt": "Front and reverse views of the round 10 gram DDA Mahavir silver coin",
+          "asset": {
+            "_id": "image-7963175abd6220f6210a5578f1264e8e3e1275a5-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "silver-coin-round-mahavir-10g-front-back-neutral-watermark.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/7963175abd6220f6210a5578f1264e8e3e1275a5-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": null,
+      "purity": "99.80",
+      "reference": "DDA-COIN-10G-ROUND-MAHAVIR",
+      "shortDescription": "A 10 gram round DDA silver coin in 99.80% purity, featuring Mahavir with its branded reverse.",
+      "slug": "dda-10-gram-round-mahavir-silver-coin",
+      "title": "DDA 10 Gram Round Mahavir Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-001",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5001,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-001",
+          "alt": "DDA 5 Gram Benjamin Franklin Rectangular Silver Bar showing a Benjamin Franklin portrait and historic-building reverse",
+          "asset": {
+            "_id": "image-d6ff65f44bc63dfbc8a4112996665ae01c6e3f76-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "001-benjamin-franklin-rectangular-silver-bar-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/d6ff65f44bc63dfbc8a4112996665ae01c6e3f76-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-001",
+      "shortDescription": "A 5 gram silver piece featuring a Benjamin Franklin portrait and historic-building reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "benjamin-franklin-rectangular-silver-bar-5g",
+      "title": "DDA 5 Gram Benjamin Franklin Rectangular Silver Bar",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-002",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5002,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-002",
+          "alt": "DDA 5 Gram George V Two-Tone Round Silver Coin showing a gold-tone George V portrait and ornamental reverse",
+          "asset": {
+            "_id": "image-9948b0154a38195edce6c006edfadea57cd8b2f6-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "002-george-v-two-tone-round-silver-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/9948b0154a38195edce6c006edfadea57cd8b2f6-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-002",
+      "shortDescription": "A 5 gram silver piece featuring a gold-tone George V portrait and ornamental reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-round-silver-coin-5g",
+      "title": "DDA 5 Gram George V Two-Tone Round Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-003",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5003,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-003",
+          "alt": "DDA 5 Gram George V Round Silver Coin showing an all-silver George V portrait and ornamental reverse",
+          "asset": {
+            "_id": "image-ea35d9ded009342d73dbbc3fe3738d5dac8098f3-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "003-george-v-all-silver-round-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/ea35d9ded009342d73dbbc3fe3738d5dac8098f3-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-003",
+      "shortDescription": "A 5 gram silver piece featuring an all-silver George V portrait and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "george-v-all-silver-round-coin-5g",
+      "title": "DDA 5 Gram George V Round Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-004",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5004,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-004",
+          "alt": "DDA 10 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait and decorative reverse",
+          "asset": {
+            "_id": "image-17972178d9798fb9f09205bec8b4d66291ed60e9-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "004-george-v-two-tone-oval-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/17972178d9798fb9f09205bec8b4d66291ed60e9-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-004",
+      "shortDescription": "A 10 gram silver piece featuring an oval gold-tone George V portrait and decorative reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-10g",
+      "title": "DDA 10 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-005",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5005,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-005",
+          "alt": "DDA 20 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait and decorative reverse",
+          "asset": {
+            "_id": "image-a55cbd481eb97d561cca3c0fd60ae8fe496ed413-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "005-george-v-two-tone-oval-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/a55cbd481eb97d561cca3c0fd60ae8fe496ed413-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-005",
+      "shortDescription": "A 20 gram silver piece featuring an oval gold-tone George V portrait and decorative reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-20g",
+      "title": "DDA 20 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-006",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5006,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-006",
+          "alt": "DDA 25 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait and decorative reverse",
+          "asset": {
+            "_id": "image-02aa4b990b40296e8e688e6473bade7f506b3231-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "006-george-v-two-tone-oval-coin-25g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/02aa4b990b40296e8e688e6473bade7f506b3231-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-006",
+      "shortDescription": "A 25 gram silver piece featuring an oval gold-tone George V portrait and decorative reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-25g",
+      "title": "DDA 25 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-007",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5007,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-007",
+          "alt": "DDA 50 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait and decorative reverse",
+          "asset": {
+            "_id": "image-fb85e6cc96df53f50114d9e2e825619a451c424a-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "007-george-v-two-tone-oval-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/fb85e6cc96df53f50114d9e2e825619a451c424a-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-007",
+      "shortDescription": "A 50 gram silver piece featuring an oval gold-tone George V portrait and decorative reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-50g",
+      "title": "DDA 50 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-008",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5008,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-008",
+          "alt": "DDA 100 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait and decorative reverse",
+          "asset": {
+            "_id": "image-6eb7e66180a3332b67ad6f59f2929f477497a3ac-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "008-george-v-two-tone-oval-coin-100g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/6eb7e66180a3332b67ad6f59f2929f477497a3ac-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-008",
+      "shortDescription": "A 100 gram silver piece featuring an oval gold-tone George V portrait and decorative reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-100g",
+      "title": "DDA 100 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-009",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5009,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-009",
+          "alt": "DDA 10 Gram Radha Krishna Two-Tone Oval Silver Coin showing Radha and Krishna beside a cow, peacock, and tree",
+          "asset": {
+            "_id": "image-33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "009-radha-krishna-two-tone-oval-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-009",
+      "shortDescription": "A 10 gram silver piece featuring Radha and Krishna beside a cow, peacock, and tree. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-10g",
+      "title": "DDA 10 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-010",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5010,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-010",
+          "alt": "DDA 20 Gram Radha Krishna Two-Tone Oval Silver Coin showing Radha and Krishna beside a cow, peacock, and tree",
+          "asset": {
+            "_id": "image-8949ec83147cd00c058001fb7e6356e777f1051b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "010-radha-krishna-two-tone-oval-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8949ec83147cd00c058001fb7e6356e777f1051b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-010",
+      "shortDescription": "A 20 gram silver piece featuring Radha and Krishna beside a cow, peacock, and tree. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-20g",
+      "title": "DDA 20 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-015",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5015,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-015",
+          "alt": "DDA 25 Gram Radha Krishna Two-Tone Oval Silver Coin showing Radha and Krishna beside a cow, peacock, and tree",
+          "asset": {
+            "_id": "image-c86f0926c2881729d656c3357abb74e3a0ee446b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "015-radha-krishna-two-tone-oval-coin-25g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c86f0926c2881729d656c3357abb74e3a0ee446b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-015",
+      "shortDescription": "A 25 gram silver piece featuring Radha and Krishna beside a cow, peacock, and tree. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-25g",
+      "title": "DDA 25 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-016",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5016,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-016",
+          "alt": "DDA 50 Gram Radha Krishna Two-Tone Oval Silver Coin showing Radha and Krishna beside a cow, peacock, and tree",
+          "asset": {
+            "_id": "image-bf22561dca9581d38a434e50239787d9517cf191-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "016-radha-krishna-two-tone-oval-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/bf22561dca9581d38a434e50239787d9517cf191-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-016",
+      "shortDescription": "A 50 gram silver piece featuring Radha and Krishna beside a cow, peacock, and tree. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-50g",
+      "title": "DDA 50 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-017",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5017,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-017",
+          "alt": "DDA 50 Gram Ram Darbar Two-Tone Oval Silver Coin showing a gold-tone Ram Darbar scene with an ornamental reverse",
+          "asset": {
+            "_id": "image-a105955c87bc068333d339022f2820038dc5d240-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "017-ram-darbar-two-tone-oval-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/a105955c87bc068333d339022f2820038dc5d240-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-017",
+      "shortDescription": "A 50 gram silver piece featuring a gold-tone Ram Darbar scene with an ornamental reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "ram-darbar-two-tone-oval-coin-50g",
+      "title": "DDA 50 Gram Ram Darbar Two-Tone Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-018",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5018,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-018",
+          "alt": "DDA 50 Gram Bal Krishna Two-Tone Oval Silver Coin showing crawling Bal Krishna with a bowl and flute",
+          "asset": {
+            "_id": "image-0d8d12ce3e2ace836bacec528e88a1b7c17edc9d-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "018-bal-krishna-two-tone-oval-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/0d8d12ce3e2ace836bacec528e88a1b7c17edc9d-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-018",
+      "shortDescription": "A 50 gram silver piece featuring crawling Bal Krishna with a bowl and flute. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "bal-krishna-two-tone-oval-coin-50g",
+      "title": "DDA 50 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-019",
+      "categoryId": "category-coin",
+      "coinShape": "square",
+      "displayOrder": 5019,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-019",
+          "alt": "DDA 50 Gram Queen Elizabeth Tree of Life Square Silver Coin showing a Queen Elizabeth II portrait and Tree of Life reverse",
+          "asset": {
+            "_id": "image-d54dcc1ff05bf29a63867a6b93b5be39802f0e20-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "019-queen-elizabeth-tree-of-life-square-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/d54dcc1ff05bf29a63867a6b93b5be39802f0e20-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-019",
+      "shortDescription": "A 50 gram silver piece featuring a Queen Elizabeth II portrait and Tree of Life reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "queen-elizabeth-tree-of-life-square-coin-50g",
+      "title": "DDA 50 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-020",
+      "categoryId": "category-coin",
+      "coinShape": "square",
+      "displayOrder": 5020,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-020",
+          "alt": "DDA 100 Gram Queen Elizabeth Tree of Life Square Silver Coin showing a Queen Elizabeth II portrait and Tree of Life reverse",
+          "asset": {
+            "_id": "image-07391502dd55454141700dd787bc079845ec46d4-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "020-queen-elizabeth-tree-of-life-square-coin-100g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/07391502dd55454141700dd787bc079845ec46d4-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-020",
+      "shortDescription": "A 100 gram silver piece featuring a Queen Elizabeth II portrait and Tree of Life reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "queen-elizabeth-tree-of-life-square-coin-100g",
+      "title": "DDA 100 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-021",
+      "categoryId": "category-coin",
+      "coinShape": "square",
+      "displayOrder": 5021,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-021",
+          "alt": "DDA 10 Gram Queen Elizabeth Tree of Life Square Silver Coin showing a Queen Elizabeth II portrait and Tree of Life reverse",
+          "asset": {
+            "_id": "image-13f78b521f26162798939112014f67b4819a640e-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "021-queen-elizabeth-tree-of-life-square-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/13f78b521f26162798939112014f67b4819a640e-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-021",
+      "shortDescription": "A 10 gram silver piece featuring a Queen Elizabeth II portrait and Tree of Life reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "queen-elizabeth-tree-of-life-square-coin-10g",
+      "title": "DDA 10 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-022",
+      "categoryId": "category-coin",
+      "coinShape": "square",
+      "displayOrder": 5022,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-022",
+          "alt": "DDA 20 Gram Queen Elizabeth Tree of Life Square Silver Coin showing a Queen Elizabeth II portrait and Tree of Life reverse",
+          "asset": {
+            "_id": "image-396b92a02e42372a054c7e2dbcc51b5eb9f85698-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "022-queen-elizabeth-tree-of-life-square-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/396b92a02e42372a054c7e2dbcc51b5eb9f85698-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-022",
+      "shortDescription": "A 20 gram silver piece featuring a Queen Elizabeth II portrait and Tree of Life reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "queen-elizabeth-tree-of-life-square-coin-20g",
+      "title": "DDA 20 Gram Queen Elizabeth Tree of Life Square Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-023",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5023,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-023",
+          "alt": "DDA 20 Gram Bal Krishna Two-Tone Oval Silver Coin showing crawling Bal Krishna with a bowl and flute",
+          "asset": {
+            "_id": "image-e6d33432563ff0d7387024c82a12e5d39d53def2-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "023-bal-krishna-two-tone-oval-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e6d33432563ff0d7387024c82a12e5d39d53def2-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-023",
+      "shortDescription": "A 20 gram silver piece featuring crawling Bal Krishna with a bowl and flute. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "bal-krishna-two-tone-oval-coin-20g",
+      "title": "DDA 20 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-024",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5024,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-024",
+          "alt": "DDA 10 Gram Bal Krishna Two-Tone Oval Silver Coin showing crawling Bal Krishna with a bowl and flute",
+          "asset": {
+            "_id": "image-3305397c69ffba3b24dcf954aa931a0836c01a91-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "024-bal-krishna-two-tone-oval-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3305397c69ffba3b24dcf954aa931a0836c01a91-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-024",
+      "shortDescription": "A 10 gram silver piece featuring crawling Bal Krishna with a bowl and flute. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "bal-krishna-two-tone-oval-coin-10g",
+      "title": "DDA 10 Gram Bal Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-025",
+      "categoryId": "category-coin",
+      "coinShape": "scalloped",
+      "displayOrder": 5025,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-025",
+          "alt": "DDA 25 Gram Scalloped Tree of Life Silver Coin showing a flower-shaped scalloped edge and Tree of Life design",
+          "asset": {
+            "_id": "image-45be26d8a796d6fa9cde1a985788a6d6e2e62df9-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "025-tree-of-life-scalloped-silver-coin-25g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/45be26d8a796d6fa9cde1a985788a6d6e2e62df9-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-025",
+      "shortDescription": "A 25 gram silver piece featuring a flower-shaped scalloped edge and Tree of Life design. Owner-confirmed purity is 99.80%.",
+      "slug": "tree-of-life-scalloped-silver-coin-25g",
+      "title": "DDA 25 Gram Scalloped Tree of Life Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-026",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5026,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-026",
+          "alt": "DDA 25 Gram Radha Krishna Oval Silver Coin showing an all-silver Radha Krishna scene and ornamental reverse",
+          "asset": {
+            "_id": "image-d0b0099c38f153e997cddbebbdf286e481361bd8-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "026-radha-krishna-all-silver-oval-coin-25g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/d0b0099c38f153e997cddbebbdf286e481361bd8-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-026",
+      "shortDescription": "A 25 gram silver piece featuring an all-silver Radha Krishna scene and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "radha-krishna-all-silver-oval-coin-25g",
+      "title": "DDA 25 Gram Radha Krishna Oval Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-027",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5027,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-027",
+          "alt": "DDA 25 Gram Ram Darbar Oval Silver Coin showing an all-silver Ram Darbar scene and ornamental reverse",
+          "asset": {
+            "_id": "image-2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "027-ram-darbar-all-silver-oval-coin-25g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-027",
+      "shortDescription": "A 25 gram silver piece featuring an all-silver Ram Darbar scene and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "ram-darbar-all-silver-oval-coin-25g",
+      "title": "DDA 25 Gram Ram Darbar Oval Silver Coin",
+      "weightGrams": 25
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-028",
+      "categoryId": "category-coin",
+      "coinShape": "scalloped",
+      "displayOrder": 5028,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-028",
+          "alt": "DDA 50 Gram Scalloped Tree of Life Silver Coin showing a flower-shaped scalloped edge and Tree of Life design",
+          "asset": {
+            "_id": "image-b4b7becca65e7786b28cb5c69741592b76d4b4ee-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "028-tree-of-life-scalloped-silver-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b4b7becca65e7786b28cb5c69741592b76d4b4ee-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-028",
+      "shortDescription": "A 50 gram silver piece featuring a flower-shaped scalloped edge and Tree of Life design. Owner-confirmed purity is 99.80%.",
+      "slug": "tree-of-life-scalloped-silver-coin-50g",
+      "title": "DDA 50 Gram Scalloped Tree of Life Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-029",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5029,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-029",
+          "alt": "DDA 50 Gram Round Tree of Life Silver Coin showing a round Tree of Life face and branded reverse",
+          "asset": {
+            "_id": "image-b03e326cab2e2d448e149fda7f3f3d4acfd83f9a-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "029-tree-of-life-round-silver-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b03e326cab2e2d448e149fda7f3f3d4acfd83f9a-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-029",
+      "shortDescription": "A 50 gram silver piece featuring a round Tree of Life face and branded reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "tree-of-life-round-silver-coin-50g",
+      "title": "DDA 50 Gram Round Tree of Life Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-030",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5030,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-030",
+          "alt": "DDA 20 Gram Round Tree of Life Silver Coin showing a round Tree of Life face and branded reverse",
+          "asset": {
+            "_id": "image-166949cef055b9543d8c4aaa2fd88c036150be40-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "030-tree-of-life-round-silver-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/166949cef055b9543d8c4aaa2fd88c036150be40-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-030",
+      "shortDescription": "A 20 gram silver piece featuring a round Tree of Life face and branded reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "tree-of-life-round-silver-coin-20g",
+      "title": "DDA 20 Gram Round Tree of Life Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-031",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5031,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-031",
+          "alt": "DDA 20 Gram Radha Krishna Oval Silver Coin showing an all-silver Radha Krishna scene and ornamental reverse",
+          "asset": {
+            "_id": "image-b74255ce4828bec1a11ae681aba07b0c48ab3e6b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "031-radha-krishna-all-silver-oval-coin-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/b74255ce4828bec1a11ae681aba07b0c48ab3e6b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-031",
+      "shortDescription": "A 20 gram silver piece featuring an all-silver Radha Krishna scene and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "radha-krishna-all-silver-oval-coin-20g",
+      "title": "DDA 20 Gram Radha Krishna Oval Silver Coin",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-032",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5032,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-032",
+          "alt": "DDA 50 Gram Radha Krishna Oval Silver Coin showing an all-silver Radha Krishna scene and ornamental reverse",
+          "asset": {
+            "_id": "image-8d42275a78a457c77bd87b009de8e48575eecd0b-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "032-radha-krishna-all-silver-oval-coin-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8d42275a78a457c77bd87b009de8e48575eecd0b-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-032",
+      "shortDescription": "A 50 gram silver piece featuring an all-silver Radha Krishna scene and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "radha-krishna-all-silver-oval-coin-50g",
+      "title": "DDA 50 Gram Radha Krishna Oval Silver Coin",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-033",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5033,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-033",
+          "alt": "DDA 100 Gram Classical Profile Rectangular Silver Bar showing a classical-profile portrait and ornate rectangular border",
+          "asset": {
+            "_id": "image-ad694a9e31d54f9117d17049c7e3eb492c1d3dcd-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "033-classical-profile-rectangular-silver-bar-100g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/ad694a9e31d54f9117d17049c7e3eb492c1d3dcd-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-033",
+      "shortDescription": "A 100 gram silver piece featuring a classical-profile portrait and ornate rectangular border. Owner-confirmed purity is 99.80%.",
+      "slug": "classical-profile-rectangular-silver-bar-100g",
+      "title": "DDA 100 Gram Classical Profile Rectangular Silver Bar",
+      "weightGrams": 100
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-034",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5034,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-034",
+          "alt": "DDA 50 Gram Classical Profile Rectangular Silver Bar showing a classical-profile portrait and ornate rectangular border",
+          "asset": {
+            "_id": "image-4bd859a6c8fcd174acdaf405297c3c613d6b2ef7-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "034-classical-profile-rectangular-silver-bar-50g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/4bd859a6c8fcd174acdaf405297c3c613d6b2ef7-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-034",
+      "shortDescription": "A 50 gram silver piece featuring a classical-profile portrait and ornate rectangular border. Owner-confirmed purity is 99.80%.",
+      "slug": "classical-profile-rectangular-silver-bar-50g",
+      "title": "DDA 50 Gram Classical Profile Rectangular Silver Bar",
+      "weightGrams": 50
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-035",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5035,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-035",
+          "alt": "DDA 20 Gram Classical Profile Rectangular Silver Bar showing a classical-profile portrait and ornate rectangular border",
+          "asset": {
+            "_id": "image-c980f2ae4efa14534e92f32a2873146033da0e7c-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "035-classical-profile-rectangular-silver-bar-20g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c980f2ae4efa14534e92f32a2873146033da0e7c-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-035",
+      "shortDescription": "A 20 gram silver piece featuring a classical-profile portrait and ornate rectangular border. Owner-confirmed purity is 99.80%.",
+      "slug": "classical-profile-rectangular-silver-bar-20g",
+      "title": "DDA 20 Gram Classical Profile Rectangular Silver Bar",
+      "weightGrams": 20
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-036",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5036,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-036",
+          "alt": "DDA 10 Gram Classical Profile Rectangular Silver Bar showing a classical-profile portrait and ornate rectangular border",
+          "asset": {
+            "_id": "image-dfe4b00facfe18d0243480a82cca9f107e2252fb-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "036-classical-profile-rectangular-silver-bar-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/dfe4b00facfe18d0243480a82cca9f107e2252fb-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-036",
+      "shortDescription": "A 10 gram silver piece featuring a classical-profile portrait and ornate rectangular border. Owner-confirmed purity is 99.80%.",
+      "slug": "classical-profile-rectangular-silver-bar-10g",
+      "title": "DDA 10 Gram Classical Profile Rectangular Silver Bar",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-037",
+      "categoryId": "category-coin",
+      "coinShape": "rectangle",
+      "displayOrder": 5037,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-037",
+          "alt": "DDA 5 Gram Classical Profile Rectangular Silver Bar showing a classical-profile portrait and ornate rectangular border",
+          "asset": {
+            "_id": "image-73b05bcd87b81870ab291b9ba64f88ce8625b64f-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "037-classical-profile-rectangular-silver-bar-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/73b05bcd87b81870ab291b9ba64f88ce8625b64f-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-037",
+      "shortDescription": "A 5 gram silver piece featuring a classical-profile portrait and ornate rectangular border. Owner-confirmed purity is 99.80%.",
+      "slug": "classical-profile-rectangular-silver-bar-5g",
+      "title": "DDA 5 Gram Classical Profile Rectangular Silver Bar",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-038",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5038,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-038",
+          "alt": "DDA Mahavir Navkar Mantra Round Silver Coin showing Mahavir imagery encircled by Navkar Mantra lettering",
+          "asset": {
+            "_id": "image-2df729e02cc59289bddf6d68edbf344a097b5158-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "038-mahavir-navkar-mantra-round-silver-coin.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/2df729e02cc59289bddf6d68edbf344a097b5158-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-038",
+      "shortDescription": "A 10 gram silver piece featuring Mahavir imagery encircled by Navkar Mantra lettering. Owner-confirmed purity is 99.80%.",
+      "slug": "mahavir-navkar-mantra-round-silver-coin",
+      "title": "DDA Mahavir Navkar Mantra Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-039",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5039,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-039",
+          "alt": "DDA 10 Gram Ram Darbar Ram Mandir Round Silver Coin showing Ram Darbar on one face and the Ayodhya Ram Mandir on the other",
+          "asset": {
+            "_id": "image-820a4d10cd24618f2bf00c4bca5ea38949658ece-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "039-ram-darbar-ram-mandir-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/820a4d10cd24618f2bf00c4bca5ea38949658ece-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-039",
+      "shortDescription": "A 10 gram silver piece featuring Ram Darbar on one face and the Ayodhya Ram Mandir on the other. Owner-confirmed purity is 99.80%.",
+      "slug": "ram-darbar-ram-mandir-round-silver-coin-10g",
+      "title": "DDA 10 Gram Ram Darbar Ram Mandir Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-040",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5040,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-040",
+          "alt": "DDA 10 Gram Durga on Lion Round Silver Coin showing Durga riding a lion with a decorative reverse",
+          "asset": {
+            "_id": "image-397c4f8c63d44a87eb4b1f30032460cfa1f5de85-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "040-durga-on-lion-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/397c4f8c63d44a87eb4b1f30032460cfa1f5de85-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-040",
+      "shortDescription": "A 10 gram silver piece featuring Durga riding a lion with a decorative reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "durga-on-lion-round-silver-coin-10g",
+      "title": "DDA 10 Gram Durga on Lion Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-041",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5041,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-041",
+          "alt": "DDA 10 Gram Ganesha Under Arch Round Silver Coin showing Ganesha seated beneath an ornamental arch",
+          "asset": {
+            "_id": "image-be4912200ca2dc16da89f82096ff6f00bb64c202-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "041-ganesha-under-arch-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/be4912200ca2dc16da89f82096ff6f00bb64c202-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-041",
+      "shortDescription": "A 10 gram silver piece featuring Ganesha seated beneath an ornamental arch. Owner-confirmed purity is 99.80%.",
+      "slug": "ganesha-under-arch-round-silver-coin-10g",
+      "title": "DDA 10 Gram Ganesha Under Arch Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-042",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5042,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-042",
+          "alt": "DDA 10 Gram Hanuman Carrying Mountain Round Silver Coin showing Hanuman carrying the mountain in raised relief",
+          "asset": {
+            "_id": "image-eddfc82c1fa6a870031371c2ac82135f30ecdd70-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "042-hanuman-carrying-mountain-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/eddfc82c1fa6a870031371c2ac82135f30ecdd70-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-042",
+      "shortDescription": "A 10 gram silver piece featuring Hanuman carrying the mountain in raised relief. Owner-confirmed purity is 99.80%.",
+      "slug": "hanuman-carrying-mountain-round-silver-coin-10g",
+      "title": "DDA 10 Gram Hanuman Carrying Mountain Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-043",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5043,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-043",
+          "alt": "DDA 10 Gram Seated Shiva Round Silver Coin showing Shiva seated in meditation with a decorative reverse",
+          "asset": {
+            "_id": "image-06f8f39e847c698bb3581ba452de0a0462cb99b3-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "043-shiva-seated-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/06f8f39e847c698bb3581ba452de0a0462cb99b3-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-043",
+      "shortDescription": "A 10 gram silver piece featuring Shiva seated in meditation with a decorative reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "shiva-seated-round-silver-coin-10g",
+      "title": "DDA 10 Gram Seated Shiva Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-044",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5044,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-044",
+          "alt": "DDA 10 Gram Srinathji Round Silver Coin showing Srinathji in raised relief with an ornamental border",
+          "asset": {
+            "_id": "image-e894929259a73e49405d00175581df05b2c53c5c-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "044-srinathji-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e894929259a73e49405d00175581df05b2c53c5c-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-044",
+      "shortDescription": "A 10 gram silver piece featuring Srinathji in raised relief with an ornamental border. Owner-confirmed purity is 99.80%.",
+      "slug": "srinathji-round-silver-coin-10g",
+      "title": "DDA 10 Gram Srinathji Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-045",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5045,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-045",
+          "alt": "DDA 10 Gram Shiv Parivar Round Silver Coin showing the Shiv Parivar family scene in raised relief",
+          "asset": {
+            "_id": "image-5380260aad949244a85cd01ae53b126d32bf5d9c-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "045-shiv-parivar-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/5380260aad949244a85cd01ae53b126d32bf5d9c-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-045",
+      "shortDescription": "A 10 gram silver piece featuring the Shiv Parivar family scene in raised relief. Owner-confirmed purity is 99.80%.",
+      "slug": "shiv-parivar-round-silver-coin-10g",
+      "title": "DDA 10 Gram Shiv Parivar Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-046",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5046,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-046",
+          "alt": "DDA 10 Gram Kaaba and Allah Calligraphy Round Silver Coin showing the Kaaba on one face and Arabic Allah calligraphy on the other",
+          "asset": {
+            "_id": "image-ee0202ac57092204b946ab21679a6ee208e7f9ad-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "046-kaaba-allah-calligraphy-round-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/ee0202ac57092204b946ab21679a6ee208e7f9ad-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-046",
+      "shortDescription": "A 10 gram silver piece featuring the Kaaba on one face and Arabic Allah calligraphy on the other. Owner-confirmed purity is 99.80%.",
+      "slug": "kaaba-allah-calligraphy-round-silver-coin-10g",
+      "title": "DDA 10 Gram Kaaba and Allah Calligraphy Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-047",
+      "categoryId": "category-coin",
+      "coinShape": "round",
+      "displayOrder": 5047,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-047",
+          "alt": "DDA Kaaba and 786 Round Silver Coin showing the Kaaba, crescent and star, and 786 motifs",
+          "asset": {
+            "_id": "image-bc828070d3c7a1320adeea4e4715630bd4dc8635-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "047-kaaba-786-round-silver-coin.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/bc828070d3c7a1320adeea4e4715630bd4dc8635-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-047",
+      "shortDescription": "A 10 gram silver piece featuring the Kaaba, crescent and star, and 786 motifs. Owner-confirmed purity is 99.80%.",
+      "slug": "kaaba-786-round-silver-coin",
+      "title": "DDA Kaaba and 786 Round Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-048",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5048,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-048",
+          "alt": "DDA Khatu Shyam Oval Silver Coin showing Khatu Shyam imagery with Hindi lettering and an ornamental border",
+          "asset": {
+            "_id": "image-ad51fc7d0ffe34009731c6d4121689c0d4eea95f-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "048-khatu-shyam-oval-silver-coin.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/ad51fc7d0ffe34009731c6d4121689c0d4eea95f-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-048",
+      "shortDescription": "A 10 gram silver piece featuring Khatu Shyam imagery with Hindi lettering and an ornamental border. Owner-confirmed purity is 99.80%.",
+      "slug": "khatu-shyam-oval-silver-coin",
+      "title": "DDA Khatu Shyam Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-049",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5049,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-049",
+          "alt": "DDA 10 Gram Srinathji Oval Silver Coin showing Srinathji in an oval devotional composition",
+          "asset": {
+            "_id": "image-f9156c73077e2803d589f71b6cb22a7968e5b0ca-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "049-srinathji-oval-silver-coin-10g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/f9156c73077e2803d589f71b6cb22a7968e5b0ca-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-049",
+      "shortDescription": "A 10 gram silver piece featuring Srinathji in an oval devotional composition. Owner-confirmed purity is 99.80%.",
+      "slug": "srinathji-oval-silver-coin-10g",
+      "title": "DDA 10 Gram Srinathji Oval Silver Coin",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-050",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5050,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-050",
+          "alt": "DDA 15 Gram George V Two-Tone Oval Silver Coin Front showing a single-face gold-tone George V portrait",
+          "asset": {
+            "_id": "image-759076c528678fb7ac7b58ba0d557f5c9c42d1fb-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "050-george-v-two-tone-oval-coin-15g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/759076c528678fb7ac7b58ba0d557f5c9c42d1fb-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-050",
+      "shortDescription": "A 15 gram silver piece featuring a single-face gold-tone George V portrait. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-15g-single-face",
+      "title": "DDA 15 Gram George V Two-Tone Oval Silver Coin Front",
+      "weightGrams": 15
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-051",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5051,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-051",
+          "alt": "DDA 15 Gram Radha Krishna Two-Tone Oval Silver Coin Front showing a single-face gold-tone Radha Krishna composition",
+          "asset": {
+            "_id": "image-1239c493c16f53ac12bc5b478b23869e12049833-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "051-radha-krishna-two-tone-oval-coin-15g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/1239c493c16f53ac12bc5b478b23869e12049833-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-051",
+      "shortDescription": "A 15 gram silver piece featuring a single-face gold-tone Radha Krishna composition. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-15g-single-face",
+      "title": "DDA 15 Gram Radha Krishna Two-Tone Oval Silver Coin Front",
+      "weightGrams": 15
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-052",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5052,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-052",
+          "alt": "DDA 15 Gram George V Oval Silver Coin Front showing a single-face all-silver George V portrait",
+          "asset": {
+            "_id": "image-40e6a17518d639ad0402aa786df5c0699e87d02f-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "052-george-v-all-silver-oval-coin-15g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/40e6a17518d639ad0402aa786df5c0699e87d02f-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-052",
+      "shortDescription": "A 15 gram silver piece featuring a single-face all-silver George V portrait. Owner-confirmed purity is 99.80%.",
+      "slug": "george-v-all-silver-oval-coin-15g-single-face",
+      "title": "DDA 15 Gram George V Oval Silver Coin Front",
+      "weightGrams": 15
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-053",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5053,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-053",
+          "alt": "DDA Radha Krishna Oval Silver Coin Front showing a single-face all-silver Radha Krishna composition",
+          "asset": {
+            "_id": "image-abe8269d26197385754bbfc28afb7caba9e997b4-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "053-radha-krishna-all-silver-oval-coin-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/abe8269d26197385754bbfc28afb7caba9e997b4-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-053",
+      "shortDescription": "A 10 gram silver piece featuring a single-face all-silver Radha Krishna composition. Owner-confirmed purity is 99.80%.",
+      "slug": "radha-krishna-all-silver-oval-coin-single-face",
+      "title": "DDA Radha Krishna Oval Silver Coin Front",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-060",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5060,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-060",
+          "alt": "DDA 5 Gram George V Oval Silver Coin showing an all-silver George V portrait and floral reverse",
+          "asset": {
+            "_id": "image-2e0e6343412795590b99e2fb5ccc9dd7024b1e97-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "060-george-v-all-silver-oval-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/2e0e6343412795590b99e2fb5ccc9dd7024b1e97-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        },
+        {
+          "_key": "gallery-dda-coin-20260822-069",
+          "alt": "DDA 5 Gram George V Oval Silver Coin Front showing a single-face all-silver George V portrait",
+          "asset": {
+            "_id": "image-e717f085d75765efd2d3e8a2dcea1ee40d4c5d32-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "069-george-v-all-silver-oval-coin-5g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/e717f085d75765efd2d3e8a2dcea1ee40d4c5d32-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-060",
+      "shortDescription": "A 5 gram silver piece featuring an all-silver George V portrait and floral reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "george-v-all-silver-oval-coin-5g",
+      "title": "DDA 5 Gram George V Oval Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-065",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5065,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-065",
+          "alt": "DDA 5 Gram Radha Krishna Oval Silver Coin showing an all-silver Radha Krishna face and ornamental reverse",
+          "asset": {
+            "_id": "image-962668d336a7aba45e40d9b13818919f2139e1b9-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "065-radha-krishna-all-silver-oval-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/962668d336a7aba45e40d9b13818919f2139e1b9-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        },
+        {
+          "_key": "gallery-dda-coin-20260822-077",
+          "alt": "DDA 5 Gram Radha Krishna Oval Silver Coin Front with Unclear Mark showing a single-face all-silver Radha Krishna composition",
+          "asset": {
+            "_id": "image-043696e89341aee5e7d9ac93db435fa2fa3c4d59-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "077-radha-krishna-all-silver-oval-coin-5g-single-face-unclear-purity.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/043696e89341aee5e7d9ac93db435fa2fa3c4d59-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-065",
+      "shortDescription": "A 5 gram silver piece featuring an all-silver Radha Krishna face and ornamental reverse. Owner-confirmed purity is 99.80%.",
+      "slug": "radha-krishna-all-silver-oval-coin-5g",
+      "title": "DDA 5 Gram Radha Krishna Oval Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-067",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5067,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-067",
+          "alt": "DDA 5 Gram Radha Krishna Two-Tone Oval Silver Coin showing a gold-tone Radha Krishna face and ornamental reverse",
+          "asset": {
+            "_id": "image-9d8b65a1a53ecf77db2f76d51293d832fa6aeb91-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "067-radha-krishna-two-tone-oval-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/9d8b65a1a53ecf77db2f76d51293d832fa6aeb91-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        },
+        {
+          "_key": "gallery-dda-coin-20260822-058",
+          "alt": "DDA 5 Gram Radha Krishna Two-Tone Oval Silver Coin Front showing a single-face gold-tone Radha Krishna composition",
+          "asset": {
+            "_id": "image-a2b293d40f401ef89eb3e2b7a85a0d215135da24-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "058-radha-krishna-two-tone-oval-coin-5g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/a2b293d40f401ef89eb3e2b7a85a0d215135da24-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-067",
+      "shortDescription": "A 5 gram silver piece featuring a gold-tone Radha Krishna face and ornamental reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "radha-krishna-two-tone-oval-coin-5g",
+      "title": "DDA 5 Gram Radha Krishna Two-Tone Oval Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-070",
+      "categoryId": "category-coin",
+      "coinShape": "oval",
+      "displayOrder": 5070,
+      "gallery": [
+        {
+          "_key": "gallery-dda-coin-20260822-070",
+          "alt": "DDA 5 Gram George V Two-Tone Oval Silver Coin showing an oval gold-tone George V portrait paired with a patterned reverse",
+          "asset": {
+            "_id": "image-4e2e66f90085e7cf0891d8236eb20b201f558570-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "070-george-v-two-tone-oval-coin-5g.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/4e2e66f90085e7cf0891d8236eb20b201f558570-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        },
+        {
+          "_key": "gallery-dda-coin-20260822-068",
+          "alt": "DDA 5 Gram George V Two-Tone Oval Silver Coin Front showing a single-face gold-tone George V portrait",
+          "asset": {
+            "_id": "image-3398c493b3438846ac5e4b29821064ff9fbe3b6e-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "068-george-v-two-tone-oval-coin-5g-single-face.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/3398c493b3438846ac5e4b29821064ff9fbe3b6e-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "silver",
+      "purity": "99.80",
+      "reference": "DDA-COIN-20260822-070",
+      "shortDescription": "A 5 gram silver piece featuring an oval gold-tone George V portrait paired with a patterned reverse. Owner-confirmed purity is 99.80%. The gold-polished details are a surface finish on the silver coin.",
+      "slug": "george-v-two-tone-oval-coin-5g",
+      "title": "DDA 5 Gram George V Two-Tone Oval Silver Coin",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-054",
+      "categoryId": "category-gold",
+      "coinShape": "rectangle",
+      "displayOrder": 5054,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-054",
+          "alt": "DDA 1 Gram Packaged Fine Gold Bar showing a sealed assay-style pack and rectangular fine-gold bar",
+          "asset": {
+            "_id": "image-55a735b164d54719502e6d8f90245ee316d4bc81-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "054-packaged-fine-gold-bar-1g-995.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/55a735b164d54719502e6d8f90245ee316d4bc81-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "99.50",
+      "reference": "GB-1",
+      "shortDescription": "A 1 gram gold piece featuring a sealed assay-style pack and rectangular fine-gold bar. Owner-confirmed purity is 99.50%.",
+      "slug": "packaged-fine-gold-bar-1g-995",
+      "title": "DDA 1 Gram Packaged Fine Gold Bar",
+      "weightGrams": 1
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-076",
+      "categoryId": "category-gold",
+      "coinShape": "rectangle",
+      "displayOrder": 5063,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-076",
+          "alt": "DDA 2 Gram Packaged Classical Profile Fine Gold Bar showing a classical-profile rectangular bar in a sealed assay-style pack",
+          "asset": {
+            "_id": "image-c0a33470e37c75c1d16c5fb1b9516e689ba8fd04-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "076-packaged-classical-profile-fine-gold-bar-2g-995.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/c0a33470e37c75c1d16c5fb1b9516e689ba8fd04-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "99.50",
+      "reference": "GB-2",
+      "shortDescription": "A 2 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",
+      "slug": "packaged-classical-profile-fine-gold-bar-2g-995",
+      "title": "DDA 2 Gram Packaged Classical Profile Fine Gold Bar",
+      "weightGrams": 2
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-063",
+      "categoryId": "category-gold",
+      "coinShape": "rectangle",
+      "displayOrder": 5071,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-063",
+          "alt": "DDA 5 Gram Packaged Classical Profile Fine Gold Bar showing a classical-profile rectangular bar in a sealed assay-style pack",
+          "asset": {
+            "_id": "image-7ceff3b538996c67eecaf926637275f85ca326ab-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "063-packaged-classical-profile-fine-gold-bar-5g-995.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/7ceff3b538996c67eecaf926637275f85ca326ab-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "99.50",
+      "reference": "GB-3",
+      "shortDescription": "A 5 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",
+      "slug": "packaged-classical-profile-fine-gold-bar-5g-995",
+      "title": "DDA 5 Gram Packaged Classical Profile Fine Gold Bar",
+      "weightGrams": 5
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-071",
+      "categoryId": "category-gold",
+      "coinShape": "rectangle",
+      "displayOrder": 5072,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-071",
+          "alt": "DDA 10 Gram Packaged Classical Profile Fine Gold Bar showing a classical-profile rectangular bar in a sealed assay-style pack",
+          "asset": {
+            "_id": "image-1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "071-packaged-classical-profile-fine-gold-bar-10g-995.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "99.50",
+      "reference": "GB-4",
+      "shortDescription": "A 10 gram gold piece featuring a classical-profile rectangular bar in a sealed assay-style pack. Owner-confirmed purity is 99.50%.",
+      "slug": "packaged-classical-profile-fine-gold-bar-10g-995",
+      "title": "DDA 10 Gram Packaged Classical Profile Fine Gold Bar",
+      "weightGrams": 10
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-075",
+      "categoryId": "category-gold",
+      "coinShape": "round",
+      "displayOrder": 5075,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-075",
+          "alt": "DDA 4 Gram Packaged Queen Victoria Gold Coin showing a round Queen Victoria portrait coin in a sealed assay-style pack",
+          "asset": {
+            "_id": "image-749247fd7c55fe1dd7a1d44dcfa9abef028d49d5-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "075-packaged-queen-victoria-gold-coin-4g-916.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/749247fd7c55fe1dd7a1d44dcfa9abef028d49d5-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "91.60",
+      "reference": "GC-1",
+      "shortDescription": "A 4 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
+      "slug": "packaged-queen-victoria-gold-coin-4g-916",
+      "title": "DDA 4 Gram Packaged Queen Victoria Gold Coin",
+      "weightGrams": 4
+    },
+    {
+      "_id": "product-dda-desktop-files-20260822-072",
+      "categoryId": "category-gold",
+      "coinShape": "round",
+      "displayOrder": 5076,
+      "gallery": [
+        {
+          "_key": "gallery-dda-gold-20260822-072",
+          "alt": "DDA 8 Gram Packaged Queen Victoria Gold Coin showing a round Queen Victoria portrait coin in a sealed assay-style pack",
+          "asset": {
+            "_id": "image-d02df9053aac0832ecf3d80825517510e7aebdcf-1254x1254-png",
+            "dimensions": {
+              "_type": "sanity.imageDimensions",
+              "aspectRatio": 1,
+              "height": 1254,
+              "width": 1254
+            },
+            "originalFilename": "072-packaged-queen-victoria-gold-coin-8g-916.png",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/d02df9053aac0832ecf3d80825517510e7aebdcf-1254x1254.png"
+          },
+          "crop": null,
+          "hotspot": null
+        }
+      ],
+      "material": "gold",
+      "purity": "91.60",
+      "reference": "GC-2",
+      "shortDescription": "A 8 gram gold piece featuring a round Queen Victoria portrait coin in a sealed assay-style pack. Owner-confirmed purity is 91.60%.",
+      "slug": "packaged-queen-victoria-gold-coin-8g-916",
+      "title": "DDA 8 Gram Packaged Queen Victoria Gold Coin",
+      "weightGrams": 8
+    }
+  ],
+  "syncTags": [
+    "s1:jI17QQ",
+    "s1:HxXhmg",
+    "s1:fOQzCA",
+    "s1:fQCDrQ",
+    "s1:eH6zcw",
+    "s1:hq4v4A",
+    "s1:SvUtpA",
+    "s1:HDTTnQ",
+    "s1:03kn2w",
+    "s1:oWLrYQ",
+    "s1:x7lORA",
+    "s1:WIvAQg",
+    "s1:SsBuzg",
+    "s1:FdB14g",
+    "s1:KXIzfA",
+    "s1:wDiYtQ",
+    "s1:fVoWrg",
+    "s1:LVeXdw",
+    "s1:f7VYOw",
+    "s1:q+RPHg",
+    "s1:pixXIg",
+    "s1:PYmDUA",
+    "s1:LG85OQ",
+    "s1:+ZnXcQ",
+    "s1:haoy/g",
+    "s1:GlYjdQ",
+    "s1:pl6xXA",
+    "s1:KRHQNg",
+    "s1:WBqf2Q",
+    "s1:ASvkdw",
+    "s1:r/flVQ",
+    "s1:BRV+Lw",
+    "s1:p1X51Q",
+    "s1:pl000A",
+    "s1:D8RYfw",
+    "s1:Y1IZ8Q",
+    "s1:kcUFXA",
+    "s1:6S5lSA",
+    "s1:XarxWg",
+    "s1:v9kkhg",
+    "s1:FC9LSw",
+    "s1:F05bWQ",
+    "s1:lDRFGQ",
+    "s1:SSQcJA",
+    "s1:PBmcHQ",
+    "s1:x6mleA",
+    "s1:p9gSFA",
+    "s1:irBxjw",
+    "s1:ENjFLQ",
+    "s1:CmogvQ",
+    "s1:au40VA",
+    "s1:m/APBA",
+    "s1:myshhQ",
+    "s1:f9uEdA",
+    "s1:c3jYXg",
+    "s1:Xsox0A",
+    "s1:zHV22g",
+    "s1:hvkTyA",
+    "s1:/YQndA",
+    "s1:zU4hZw",
+    "s1:TCR8hg",
+    "s1:cYTkfA",
+    "s1:3cd2Kg",
+    "s1:fBWdFA",
+    "s1:yAZOyw",
+    "s1:noRdXw",
+    "s1:TV5XhA",
+    "s1:2yBMvQ",
+    "s1:+AN/XQ",
+    "s1:q76GDw",
+    "s1:KCaRXw",
+    "s1:cIjzvA",
+    "s1:QeSVCQ",
+    "s1:XQazrQ",
+    "s1:2tdSVA",
+    "s1:ArKemA",
+    "s1:PFuGPA",
+    "s1:aUJwmg",
+    "s1:U1/Jtw",
+    "s1:TwKi4Q",
+    "s1:bi0A1w",
+    "s1:6HnW3g",
+    "s1:k0Ydtw",
+    "s1:XJAAVA",
+    "s1:s6Zumw",
+    "s1:0QfDkA",
+    "s1:7dBfqA",
+    "s1:ATg0Iw",
+    "s1:xyqOvg",
+    "s1:mrHbNg",
+    "s1:ijEkzw",
+    "s1:2VzSig",
+    "s1:AzduDw",
+    "s1:V6OESg",
+    "s1:bwoNNg",
+    "s1:sueC2Q",
+    "s1:Tiv5pA"
+  ],
+  "ms": 31
+}

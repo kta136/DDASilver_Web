@@ -1,0 +1,41 @@
+{
+  "stage": "Both previews approved; full batch continuing",
+  "coordinatingAgent": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh"
+  },
+  "generationTool": "built-in image_gen",
+  "sourceImagesInspected": 13,
+  "generatedPreviewCount": 2,
+  "remainingSourceCount": 11,
+  "previewSourceNumbers": [
+    1,
+    3
+  ],
+  "previewWeightsGrams": [
+    400,
+    459
+  ],
+  "purityPercent": 92.5,
+  "labourInrPerGram": 90,
+  "originalSourcesUnchanged": true,
+  "dimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "fullyDecodedCount": 2
+  },
+  "visualReview": "Two independent source-based edits reviewed against originals for product outline, proportions, handle/clasp position, major decorative features, enamel colours, clean background, safe margins and legible DDA Silver lockup. Owner visual approval pending.",
+  "technicalAssetReadiness": true,
+  "uploadAuthorizedForCurrentPhase": false,
+  "published": false,
+  "productPublishReady": true,
+  "publicationBlockers": [],
+  "validatorPolicyMismatch": "Resolved: helper now honors optional purse dimensions.",
+  "sourceCropNote": "Source #2 (258 g) has its shoulder chain outside the photo edges. It was deferred and source #3 (459 g) selected for the second preview to avoid inventing unseen chain geometry.",
+  "manifestPath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/sanity-gallery-manifest.json",
+  "reviewCsvPath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/gallery-review.csv",
+  "promptAuditPath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/imagegen-prompts.md",
+  "dryRunReportPath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/sanity-dry-run-report.json",
+  "supersededBy": "public/images/gallery-ingestion/desktop-images-2026-10-09/sanity-gallery-manifest.json"
+}

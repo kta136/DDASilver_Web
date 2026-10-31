@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "batchId": "desktop-images-2026-10-09-approval",
+  "stage": "approved-preview-archive",
+  "sourceFolder": "C:\\Users\\kk\\Desktop\\images",
+  "sourceCount": 2,
+  "originalSourceCount": 13,
+  "finalImageCount": 2,
+  "categoryId": "category-purse",
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/img-2026-08-30-approval/images/01-pink-rose-enamel-rectangular-silver-gift-box-7x5.png",
+  "promptAuditPath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/imagegen-prompts.md",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "visualApprovalStatus": "approved",
+  "assetUploadAuthorized": false,
+  "purityConfirmation": {
+    "value": "92.5",
+    "scope": "All 13 products",
+    "source": "Owner correction: 92.5% purity for all",
+    "confirmedOn": "2026-10-09",
+    "supersedes": "Prior 92% value in approval-stage records"
+  },
+  "labourConfirmation": {
+    "currency": "INR",
+    "perGram": 90,
+    "scope": "All 13 source products",
+    "source": "Owner confirmed in conversation",
+    "confirmedOn": "2026-10-09"
+  },
+  "agent": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "xhigh"
+  },
+  "generationMethod": "Built-in image_gen compositing with real source photograph, approved DDA Silver background and approved catalogue treatment reference.",
+  "publishBlockers": [],
+  "validationNotes": [
+    "Purse dimensions are optional under the documented policy; the delivery helper now implements that policy.",
+    "Current final-batch metadata and source-order references are in the superseding full manifest."
+  ],
+  "excludedSources": [
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.20.14 PM.jpeg",
+      "sourceSha256": "720FC2BBBC4458F4BF9B0970359A45B7F7F9B29B0B45B384CF4513C54C910EF3",
+      "bytes": 288962,
+      "reason": "Deferred until sample approval; photographed shoulder chain is cropped at source edges."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.21.57 PM.jpeg",
+      "sourceSha256": "F82F554CC33FFE4C1D2F7A8106EA51FC616531FD9051D8516055A45F83296248",
+      "bytes": 294519,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.23.11 PM.jpeg",
+      "sourceSha256": "AFC42DD312BCCF0C70C734E747097FDB163B434678EE57A128DC22251CCF5655",
+      "bytes": 352169,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.24.30 PM.jpeg",
+      "sourceSha256": "091D24950DA30776F3A66E85797AB2623D459C08D31DA440CCBFA2B0F401C3C8",
+      "bytes": 307407,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.25.11 PM.jpeg",
+      "sourceSha256": "104F717B0580C2267C6B7DD0E558C02D4E9E76E2145D711FA14E9A3927F50F2B",
+      "bytes": 390481,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.27.38 PM.jpeg",
+      "sourceSha256": "B3001A4E5637D948BFE608A7EB516ADCFF3E8CF8E7C5A0AEF67C46B7C9C6F441",
+      "bytes": 199080,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.29.17 PM.jpeg",
+      "sourceSha256": "123E3EB71DEE7DF697FB86FB082E97028CD4310A1EF3E546B4A06380CDAD23A4",
+      "bytes": 338210,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.30.27 PM.jpeg",
+      "sourceSha256": "2A9B02C55407D8A8E49DF5EC96DF6DD356B5FC0D996BBD78904921AE0228B72C",
+      "bytes": 308617,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.32.13 PM.jpeg",
+      "sourceSha256": "6391B712EBAB9EAB6F11BAE11C2D3022A2FA6AD2BC7543C8DFC2C200DC468078",
+      "bytes": 314237,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.34.19 PM.jpeg",
+      "sourceSha256": "69E8CCD3D9B473916A111F7F41A2E11B1E542D00B204727ECCFC617B768AB6E3",
+      "bytes": 383400,
+      "reason": "Deferred until owner approves the two previews."
+    },
+    {
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.35.22 PM.jpeg",
+      "sourceSha256": "CBCCBA2BA3C34AC714A311A220001082C3656FC5E804DA6B197F4E26EA9AD7A7",
+      "bytes": 388204,
+      "reason": "Deferred until owner approves the two previews."
+    }
+  ],
+  "products": [
+    {
+      "number": 1,
+      "sourceNumber": 1,
+      "title": "Multicolour Floral Enamel Silver Handbag",
+      "slug": "multicolour-floral-enamel-silver-handbag-400g",
+      "weightGrams": 400,
+      "shortDescription": "A 92.5% silver handbag with a round handle, multicolour floral enamel, gold-tone borders and ring clasp. Weight: 400 g.",
+      "alt": "Silver handbag with a round handle, pastel floral enamel, gold-tone corner flowers and a ring clasp.",
+      "id": "product-dda-desktop-20261009-multicolour-floral-enamel-silver-handbag-400g",
+      "reference": "PR-37",
+      "referenceFamily": "purse",
+      "referenceStatus": "provisional-live-catalog-checked",
+      "categoryId": "category-purse",
+      "material": "silver",
+      "purity": "92.5",
+      "pricing": {
+        "mode": "automatic",
+        "makingChargePerGram": 90
+      },
+      "labourCurrency": "INR",
+      "purityEvidence": "Owner correction on 2026-10-09: 92.5% purity for all.",
+      "labourEvidence": "Owner message on 2026-10-09: Labour is 90/gm.",
+      "suppliedSizeLabel": "400gm",
+      "dimensionPolicy": "Physical dimensions optional for category-purse per docs/product-gallery-ingestion.md; none supplied or inferred.",
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.19.13 PM.jpeg",
+      "sourceSha256": "1EBB93A21D146CD559A984B1B39FA32A41275313CE5DE1E03185C55FF70973A2",
+      "bytes": 289407,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+      "publishBlockers": []
+    },
+    {
+      "number": 2,
+      "sourceNumber": 3,
+      "title": "Vine Enamel Silver Clutch with Peacock Ornament",
+      "slug": "vine-enamel-peacock-ornament-silver-clutch-459g",
+      "weightGrams": 459,
+      "shortDescription": "A 92.5% silver clutch with coloured enamel vines, a curved flap and a peacock ornament with a blue oval centre and bead drops. Weight: 459 g.",
+      "alt": "Silver clutch with enamel vines, curved flap, floral clasp and a peacock ornament with a blue oval centre and coloured beads.",
+      "id": "product-dda-desktop-20261009-vine-enamel-peacock-ornament-silver-clutch-459g",
+      "reference": "PR-39",
+      "referenceFamily": "purse",
+      "referenceStatus": "provisional-live-catalog-checked",
+      "categoryId": "category-purse",
+      "material": "silver",
+      "purity": "92.5",
+      "pricing": {
+        "mode": "automatic",
+        "makingChargePerGram": 90
+      },
+      "labourCurrency": "INR",
+      "purityEvidence": "Owner correction on 2026-10-09: 92.5% purity for all.",
+      "labourEvidence": "Owner message on 2026-10-09: Labour is 90/gm.",
+      "suppliedSizeLabel": "459gm",
+      "dimensionPolicy": "Physical dimensions optional for category-purse per docs/product-gallery-ingestion.md; none supplied or inferred.",
+      "sourcePath": "C:\\Users\\kk\\Desktop\\images\\WhatsApp Image 2026-10-09 at 2.20.55 PM.jpeg",
+      "sourceSha256": "D7123DB28398999F84CA231717D020E8A9CBAB7CCFC31621EE80264A728991C5",
+      "bytes": 341154,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/02-vine-enamel-peacock-ornament-silver-clutch-459g.png",
+      "publishBlockers": []
+    }
+  ],
+  "assetReadinessMeaning": "Technical file readiness only; owner visual approval and upload authorization remain pending.",
+  "imageValidation": {
+    "images": [
+      {
+        "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+        "width": 1254,
+        "height": 1254,
+        "format": "png",
+        "decoded": true
+      },
+      {
+        "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/02-vine-enamel-peacock-ornament-silver-clutch-459g.png",
+        "width": 1254,
+        "height": 1254,
+        "format": "png",
+        "decoded": true
+      }
+    ],
+    "all13SourceHashesUnchanged": true
+  },
+  "supersededBy": "public/images/gallery-ingestion/desktop-images-2026-10-09/sanity-gallery-manifest.json"
+}

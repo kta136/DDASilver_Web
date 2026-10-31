@@ -1,0 +1,167 @@
+{
+  "checkedAt": "2026-10-10T13:09:12.699Z",
+  "status": "passed",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "productCount": 4,
+  "uniqueAssetCount": 4,
+  "errors": [],
+  "products": [
+    {
+      "_id": "product-dda-whatsapp-20261010-lakshmi-ganesha-broad-elephant-foot-throne-pair",
+      "categoryId": "category-idols",
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "gallery": [
+        {
+          "alt": "Lakshmi and Ganesha silver idols beneath ornate canopies, seated on broad square scrollwork thrones with elephant-shaped feet.",
+          "asset": {
+            "_id": "image-054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "054036947b4cfe67e1bb5422a2d6a97e7dba2650",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254.png"
+          },
+          "assetId": "image-054036947b4cfe67e1bb5422a2d6a97e7dba2650-1254x1254-png"
+        }
+      ],
+      "heightInches": 4,
+      "idolConstruction": "semi-solid",
+      "pricing": {
+        "makingChargePerGram": 15,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "SSM-LG-10",
+      "shortDescription": "A semi-solid Lakshmi Ganesha pair in 92.5% silver with scrolling arches and tiered canopies on broad square thrones with elephant-shaped feet. Pair weight: 380 g. Height: 4 in.",
+      "slug": "lakshmi-ganesha-broad-elephant-foot-throne-pair",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Broad Elephant-Foot Thrones",
+      "weightGrams": 380
+    },
+    {
+      "_id": "product-dda-whatsapp-20261010-lakshmi-ganesha-compact-elephant-foot-throne-pair",
+      "categoryId": "category-idols",
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "gallery": [
+        {
+          "alt": "Lakshmi and Ganesha silver idols under tiered canopies on compact square scrollwork thrones with elephant-shaped feet.",
+          "asset": {
+            "_id": "image-db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "db64e92b201739b5f7bd56661c017cc61f5d990b",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254.png"
+          },
+          "assetId": "image-db64e92b201739b5f7bd56661c017cc61f5d990b-1254x1254-png"
+        }
+      ],
+      "heightInches": 2.5,
+      "idolConstruction": "semi-solid",
+      "pricing": {
+        "makingChargePerGram": 15,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "SSM-LG-9",
+      "shortDescription": "A semi-solid Lakshmi Ganesha pair in 92.5% silver on compact square thrones with scrollwork sides, elephant-shaped feet and tiered canopies. Pair weight: 124 g. Height: 2.5 in.",
+      "slug": "lakshmi-ganesha-compact-elephant-foot-throne-pair",
+      "title": "Lakshmi Ganesha Silver Idol Pair on Compact Elephant-Foot Thrones",
+      "weightGrams": 124
+    },
+    {
+      "_id": "product-dda-whatsapp-20261010-lakshmi-ganesha-ornate-halo-lotus-pair",
+      "categoryId": "category-idols",
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "gallery": [
+        {
+          "alt": "Lakshmi and Ganesha silver idols with ornate crowns and circular halos, seated on layered lotus bases.",
+          "asset": {
+            "_id": "image-8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "8a6a2deb940550fcb2376cd35ebaaa7037390a54",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254.png"
+          },
+          "assetId": "image-8a6a2deb940550fcb2376cd35ebaaa7037390a54-1254x1254-png"
+        }
+      ],
+      "heightInches": 2.5,
+      "idolConstruction": "semi-solid",
+      "pricing": {
+        "makingChargePerGram": 15,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "SSM-LG-11",
+      "shortDescription": "A semi-solid Lakshmi Ganesha pair in 92.5% silver with ornate crowns, circular halos, necklaces and layered lotus bases. Pair weight: 150 g. Height: 2.5 in.",
+      "slug": "lakshmi-ganesha-ornate-halo-lotus-pair",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Ornate Halos on Lotus Bases",
+      "weightGrams": 150
+    },
+    {
+      "_id": "product-dda-whatsapp-20261010-lakshmi-ganesha-tiered-canopy-round-base-pair",
+      "categoryId": "category-idols",
+      "deityIds": [
+        "deity-lakshmi",
+        "deity-ganesha"
+      ],
+      "gallery": [
+        {
+          "alt": "Lakshmi and Ganesha silver idols beneath scrolling arches and tiered canopies, each on a round floral base.",
+          "asset": {
+            "_id": "image-744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254-png",
+            "metadata": {
+              "dimensions": {
+                "_type": "sanity.imageDimensions",
+                "aspectRatio": 1,
+                "height": 1254,
+                "width": 1254
+              }
+            },
+            "sha1hash": "744ff85a73d6ee3b4b684e87ff1485831447142f",
+            "url": "https://cdn.sanity.io/images/f6i0fy2f/production/744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254.png"
+          },
+          "assetId": "image-744ff85a73d6ee3b4b684e87ff1485831447142f-1254x1254-png"
+        }
+      ],
+      "heightInches": 3,
+      "idolConstruction": "semi-solid",
+      "pricing": {
+        "makingChargePerGram": 15,
+        "mode": "automatic"
+      },
+      "purity": "92.5",
+      "reference": "SSM-LG-8",
+      "shortDescription": "A semi-solid Lakshmi Ganesha pair in 92.5% silver, with scrolling arches, tiered canopies and round floral bases. Pair weight: 315 g. Height: 3 in.",
+      "slug": "lakshmi-ganesha-tiered-canopy-round-base-pair",
+      "title": "Lakshmi Ganesha Silver Idol Pair with Tiered Canopies and Round Floral Bases",
+      "weightGrams": 315
+    }
+  ]
+}

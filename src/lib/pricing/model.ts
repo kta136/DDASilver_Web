@@ -204,9 +204,13 @@ export function pricingIssues(product: PricingProduct): string[] {
   return issues;
 }
 
-/** Round the completed item total to the nearest ₹100; ₹50 ties round up. */
-function roundItemTotal(amount: number) {
-  return Math.round(amount / 100) * 100;
+function isCoin(product: PricingProduct) {
+  return product.categoryKind === "coin" || product.categorySlug === "coin";
+}
+
+/** Round the completed item total to the nearest ₹50 for coins and ₹100 otherwise; ties round up. */
+function roundItemTotal(amount: number, step: number) {
+  return Math.round(amount / step) * step;
 }
 
 export function calculateEstimate(
@@ -231,6 +235,7 @@ export function calculateEstimate(
     return { status: "unavailable" };
   const automaticTotal = (weight: number) =>
     (weight * reference!.value) / 1_000 + makingTotal(product, weight)!;
+  const step = isCoin(product) ? 50 : 100;
   const sizes = (product.sizeVariants ?? []).map((variant) => ({
     ...variant,
     amount: roundItemTotal(
@@ -241,6 +246,7 @@ export function calculateEstimate(
               size.diameterInches === variant.diameterInches,
           )!.totalInr
         : automaticTotal(variant.weightGrams),
+      step,
     ),
   }));
   const totals = sizes.length
@@ -250,6 +256,7 @@ export function calculateEstimate(
           mode === "manual"
             ? pricing.manualTotalInr!
             : automaticTotal(product.weightGrams!),
+          step,
         ),
       ];
   if (totals.some((amount) => !Number.isSafeInteger(amount) || amount <= 0))

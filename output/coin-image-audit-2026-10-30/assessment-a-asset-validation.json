@@ -1,0 +1,962 @@
+[
+  {
+    "index": 1,
+    "slug": "dda-10-gram-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1921978,
+    "sha1": "b548608bb701e9fc0c1999635f22acce3ad4f0eb"
+  },
+  {
+    "index": 2,
+    "slug": "dda-20-gram-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2254066,
+    "sha1": "9b0bf9ae943b98ec0ac71e738751c4ca4c37a642"
+  },
+  {
+    "index": 3,
+    "slug": "dda-50-gram-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2007153,
+    "sha1": "8442af56950316cf46a48a3d5b2da6af27355deb"
+  },
+  {
+    "index": 4,
+    "slug": "dda-100-gram-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2009053,
+    "sha1": "15fff89c4a25c5102fd8b94067e6043a901fc3ad"
+  },
+  {
+    "index": 5,
+    "slug": "dda-250-gram-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2142943,
+    "sha1": "6682f4800462920687f03c433d4a37597138e8df"
+  },
+  {
+    "index": 6,
+    "slug": "dda-10-gram-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1826135,
+    "sha1": "4976730e6a5ae97ba9861c75ee61bbe560bb2df1"
+  },
+  {
+    "index": 7,
+    "slug": "dda-20-gram-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1905152,
+    "sha1": "c85fc097fa73a511c6b0387d5a4a8ef04e2ba7ab"
+  },
+  {
+    "index": 8,
+    "slug": "dda-25-gram-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2052682,
+    "sha1": "7de86053504eaaa5b3d291d433d3a83dea282e71"
+  },
+  {
+    "index": 9,
+    "slug": "dda-50-gram-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1767366,
+    "sha1": "a19e2d16570e689c980a3e9b3b41367338a6a680"
+  },
+  {
+    "index": 10,
+    "slug": "dda-100-gram-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2372194,
+    "sha1": "cdb7f4dfd772b7f4bcc0a73dedff96c71ecd84d4"
+  },
+  {
+    "index": 11,
+    "slug": "dda-10-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1527580,
+    "sha1": "ed18db4fd1fdd60ad280f7e94a966a9b2f97df3b"
+  },
+  {
+    "index": 12,
+    "slug": "dda-20-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1322004,
+    "sha1": "498a0aec78f4b3de835d1ce940ea34f0b9458be8"
+  },
+  {
+    "index": 13,
+    "slug": "dda-50-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1550650,
+    "sha1": "e87e3741e3f1fbe96c42744b8f90828e0326edba"
+  },
+  {
+    "index": 14,
+    "slug": "dda-100-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1326473,
+    "sha1": "3905b831d6b95d3e98cacf47842ba667de364668"
+  },
+  {
+    "index": 15,
+    "slug": "dda-250-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1440173,
+    "sha1": "bad09b962c0a56f28c052eccf42f200dc28e26b9"
+  },
+  {
+    "index": 16,
+    "slug": "dda-500-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2088513,
+    "sha1": "7489b5afc70ba17fc42a75b5b685bf94103c0885"
+  },
+  {
+    "index": 17,
+    "slug": "dda-1000-gram-rectangle-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2261794,
+    "sha1": "31e2798a0f8005b024b5b0a409723f5548c96f34"
+  },
+  {
+    "index": 18,
+    "slug": "dda-10-gram-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 921110,
+    "sha1": "e5e698dbcee5bdf5acc5ac5aa65e9ca19ae33f06"
+  },
+  {
+    "index": 19,
+    "slug": "dda-20-gram-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 954602,
+    "sha1": "a3e54f6270a55ce08f615a9c65e455292abdce0f"
+  },
+  {
+    "index": 20,
+    "slug": "dda-50-gram-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1045345,
+    "sha1": "627024a11f89997b88359610f4d890fa9f3c3256"
+  },
+  {
+    "index": 21,
+    "slug": "dda-100-gram-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1176643,
+    "sha1": "103e090b4e0924788d8c80f2535d27ddaac4c4a5"
+  },
+  {
+    "index": 22,
+    "slug": "dda-250-gram-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1091643,
+    "sha1": "3645a151cdcbfabc88a5b630156955e1172df7ed"
+  },
+  {
+    "index": 23,
+    "slug": "dda-10-gram-square-lakshmi-ganesh-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1504335,
+    "sha1": "69ac9b7cadbcb8d3ef3484b76e3e9bd48c7de6d3"
+  },
+  {
+    "index": 24,
+    "slug": "dda-10-gram-round-tree-of-life-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1186061,
+    "sha1": "efb8b5c439fab993cbd66ba5c165d3f2b5d4730b"
+  },
+  {
+    "index": 25,
+    "slug": "dda-10-gram-oval-radha-krishna-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1787527,
+    "sha1": "c6bb2dbe2a6706c3d76cc492121b8f00eba37349"
+  },
+  {
+    "index": 26,
+    "slug": "dda-10-gram-oval-bal-krishna-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2168895,
+    "sha1": "7d662297567a7687fb9e03727cc64e48f13f810f"
+  },
+  {
+    "index": 27,
+    "slug": "dda-10-gram-oval-anniversary-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2027643,
+    "sha1": "3ab9784f4057aaaa841a41bbf02ef2cef1b7931a"
+  },
+  {
+    "index": 28,
+    "slug": "dda-10-gram-round-shiva-parvati-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1619172,
+    "sha1": "5d1659e148927176dd10553403a8b7f60c074c06"
+  },
+  {
+    "index": 29,
+    "slug": "dda-10-gram-round-ganesha-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1634757,
+    "sha1": "c30a1f79554165e17c8fbe38dbafdce449edebe9"
+  },
+  {
+    "index": 30,
+    "slug": "dda-10-gram-round-hanuman-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1562995,
+    "sha1": "26e944b69f4039539617a85fbb86455c1f081c92"
+  },
+  {
+    "index": 31,
+    "slug": "dda-10-gram-round-guru-nanak-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1637573,
+    "sha1": "e77c20c863c9e80e0adf4f07aed0db48d65be765"
+  },
+  {
+    "index": 32,
+    "slug": "dda-10-gram-round-seated-shiva-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1511810,
+    "sha1": "3bce08871849b74c2e9b58cb0d4d6bb4c9acd311"
+  },
+  {
+    "index": 33,
+    "slug": "dda-10-gram-round-mahavir-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1635668,
+    "sha1": "7963175abd6220f6210a5578f1264e8e3e1275a5"
+  },
+  {
+    "index": 34,
+    "slug": "benjamin-franklin-rectangular-silver-bar-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1615859,
+    "sha1": "d6ff65f44bc63dfbc8a4112996665ae01c6e3f76"
+  },
+  {
+    "index": 35,
+    "slug": "george-v-two-tone-round-silver-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1683715,
+    "sha1": "9948b0154a38195edce6c006edfadea57cd8b2f6"
+  },
+  {
+    "index": 36,
+    "slug": "george-v-all-silver-round-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1624732,
+    "sha1": "ea35d9ded009342d73dbbc3fe3738d5dac8098f3"
+  },
+  {
+    "index": 37,
+    "slug": "george-v-two-tone-oval-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1765621,
+    "sha1": "17972178d9798fb9f09205bec8b4d66291ed60e9"
+  },
+  {
+    "index": 38,
+    "slug": "george-v-two-tone-oval-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1701739,
+    "sha1": "a55cbd481eb97d561cca3c0fd60ae8fe496ed413"
+  },
+  {
+    "index": 39,
+    "slug": "george-v-two-tone-oval-coin-25g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1834821,
+    "sha1": "02aa4b990b40296e8e688e6473bade7f506b3231"
+  },
+  {
+    "index": 40,
+    "slug": "george-v-two-tone-oval-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1702358,
+    "sha1": "fb85e6cc96df53f50114d9e2e825619a451c424a"
+  },
+  {
+    "index": 41,
+    "slug": "george-v-two-tone-oval-coin-100g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1843714,
+    "sha1": "6eb7e66180a3332b67ad6f59f2929f477497a3ac"
+  },
+  {
+    "index": 42,
+    "slug": "radha-krishna-two-tone-oval-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1676034,
+    "sha1": "33cb1f4ef8e2bf7675aa2dec43051e5f05bc31f0"
+  },
+  {
+    "index": 43,
+    "slug": "radha-krishna-two-tone-oval-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1993178,
+    "sha1": "8949ec83147cd00c058001fb7e6356e777f1051b"
+  },
+  {
+    "index": 44,
+    "slug": "radha-krishna-two-tone-oval-coin-25g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 2039849,
+    "sha1": "c86f0926c2881729d656c3357abb74e3a0ee446b"
+  },
+  {
+    "index": 45,
+    "slug": "radha-krishna-two-tone-oval-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1763551,
+    "sha1": "bf22561dca9581d38a434e50239787d9517cf191"
+  },
+  {
+    "index": 46,
+    "slug": "ram-darbar-two-tone-oval-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1934900,
+    "sha1": "a105955c87bc068333d339022f2820038dc5d240"
+  },
+  {
+    "index": 47,
+    "slug": "bal-krishna-two-tone-oval-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1503385,
+    "sha1": "0d8d12ce3e2ace836bacec528e88a1b7c17edc9d"
+  },
+  {
+    "index": 48,
+    "slug": "queen-elizabeth-tree-of-life-square-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1670591,
+    "sha1": "d54dcc1ff05bf29a63867a6b93b5be39802f0e20"
+  },
+  {
+    "index": 49,
+    "slug": "queen-elizabeth-tree-of-life-square-coin-100g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1620814,
+    "sha1": "07391502dd55454141700dd787bc079845ec46d4"
+  },
+  {
+    "index": 50,
+    "slug": "queen-elizabeth-tree-of-life-square-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1499578,
+    "sha1": "13f78b521f26162798939112014f67b4819a640e"
+  },
+  {
+    "index": 51,
+    "slug": "queen-elizabeth-tree-of-life-square-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1678806,
+    "sha1": "396b92a02e42372a054c7e2dbcc51b5eb9f85698"
+  },
+  {
+    "index": 52,
+    "slug": "bal-krishna-two-tone-oval-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1619100,
+    "sha1": "e6d33432563ff0d7387024c82a12e5d39d53def2"
+  },
+  {
+    "index": 53,
+    "slug": "bal-krishna-two-tone-oval-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1585315,
+    "sha1": "3305397c69ffba3b24dcf954aa931a0836c01a91"
+  },
+  {
+    "index": 54,
+    "slug": "tree-of-life-scalloped-silver-coin-25g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1692624,
+    "sha1": "45be26d8a796d6fa9cde1a985788a6d6e2e62df9"
+  },
+  {
+    "index": 55,
+    "slug": "radha-krishna-all-silver-oval-coin-25g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1783341,
+    "sha1": "d0b0099c38f153e997cddbebbdf286e481361bd8"
+  },
+  {
+    "index": 56,
+    "slug": "ram-darbar-all-silver-oval-coin-25g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1574156,
+    "sha1": "2e4b9645946c9d40270a9b78fb38c9e3fa75cd4a"
+  },
+  {
+    "index": 57,
+    "slug": "tree-of-life-scalloped-silver-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1637236,
+    "sha1": "b4b7becca65e7786b28cb5c69741592b76d4b4ee"
+  },
+  {
+    "index": 58,
+    "slug": "tree-of-life-round-silver-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1442628,
+    "sha1": "b03e326cab2e2d448e149fda7f3f3d4acfd83f9a"
+  },
+  {
+    "index": 59,
+    "slug": "tree-of-life-round-silver-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1515359,
+    "sha1": "166949cef055b9543d8c4aaa2fd88c036150be40"
+  },
+  {
+    "index": 60,
+    "slug": "radha-krishna-all-silver-oval-coin-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1652913,
+    "sha1": "b74255ce4828bec1a11ae681aba07b0c48ab3e6b"
+  },
+  {
+    "index": 61,
+    "slug": "radha-krishna-all-silver-oval-coin-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1837931,
+    "sha1": "8d42275a78a457c77bd87b009de8e48575eecd0b"
+  },
+  {
+    "index": 62,
+    "slug": "classical-profile-rectangular-silver-bar-100g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1607374,
+    "sha1": "ad694a9e31d54f9117d17049c7e3eb492c1d3dcd"
+  },
+  {
+    "index": 63,
+    "slug": "classical-profile-rectangular-silver-bar-50g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1413674,
+    "sha1": "4bd859a6c8fcd174acdaf405297c3c613d6b2ef7"
+  },
+  {
+    "index": 64,
+    "slug": "classical-profile-rectangular-silver-bar-20g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1491497,
+    "sha1": "c980f2ae4efa14534e92f32a2873146033da0e7c"
+  },
+  {
+    "index": 65,
+    "slug": "classical-profile-rectangular-silver-bar-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1615259,
+    "sha1": "dfe4b00facfe18d0243480a82cca9f107e2252fb"
+  },
+  {
+    "index": 66,
+    "slug": "classical-profile-rectangular-silver-bar-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1493325,
+    "sha1": "73b05bcd87b81870ab291b9ba64f88ce8625b64f"
+  },
+  {
+    "index": 67,
+    "slug": "mahavir-navkar-mantra-round-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1596428,
+    "sha1": "2df729e02cc59289bddf6d68edbf344a097b5158"
+  },
+  {
+    "index": 68,
+    "slug": "ram-darbar-ram-mandir-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1741380,
+    "sha1": "820a4d10cd24618f2bf00c4bca5ea38949658ece"
+  },
+  {
+    "index": 69,
+    "slug": "durga-on-lion-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1598882,
+    "sha1": "397c4f8c63d44a87eb4b1f30032460cfa1f5de85"
+  },
+  {
+    "index": 70,
+    "slug": "ganesha-under-arch-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1642075,
+    "sha1": "be4912200ca2dc16da89f82096ff6f00bb64c202"
+  },
+  {
+    "index": 71,
+    "slug": "hanuman-carrying-mountain-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1481836,
+    "sha1": "eddfc82c1fa6a870031371c2ac82135f30ecdd70"
+  },
+  {
+    "index": 72,
+    "slug": "shiva-seated-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1554018,
+    "sha1": "06f8f39e847c698bb3581ba452de0a0462cb99b3"
+  },
+  {
+    "index": 73,
+    "slug": "srinathji-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1475103,
+    "sha1": "e894929259a73e49405d00175581df05b2c53c5c"
+  },
+  {
+    "index": 74,
+    "slug": "shiv-parivar-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1551447,
+    "sha1": "5380260aad949244a85cd01ae53b126d32bf5d9c"
+  },
+  {
+    "index": 75,
+    "slug": "kaaba-allah-calligraphy-round-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1504215,
+    "sha1": "ee0202ac57092204b946ab21679a6ee208e7f9ad"
+  },
+  {
+    "index": 76,
+    "slug": "kaaba-786-round-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1511362,
+    "sha1": "bc828070d3c7a1320adeea4e4715630bd4dc8635"
+  },
+  {
+    "index": 77,
+    "slug": "khatu-shyam-oval-silver-coin",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1563729,
+    "sha1": "ad51fc7d0ffe34009731c6d4121689c0d4eea95f"
+  },
+  {
+    "index": 78,
+    "slug": "srinathji-oval-silver-coin-10g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1734159,
+    "sha1": "f9156c73077e2803d589f71b6cb22a7968e5b0ca"
+  },
+  {
+    "index": 79,
+    "slug": "george-v-two-tone-oval-coin-15g-single-face",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1694545,
+    "sha1": "759076c528678fb7ac7b58ba0d557f5c9c42d1fb"
+  },
+  {
+    "index": 80,
+    "slug": "radha-krishna-two-tone-oval-coin-15g-single-face",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1681570,
+    "sha1": "1239c493c16f53ac12bc5b478b23869e12049833"
+  },
+  {
+    "index": 81,
+    "slug": "george-v-all-silver-oval-coin-15g-single-face",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1687710,
+    "sha1": "40e6a17518d639ad0402aa786df5c0699e87d02f"
+  },
+  {
+    "index": 82,
+    "slug": "radha-krishna-all-silver-oval-coin-single-face",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1692789,
+    "sha1": "abe8269d26197385754bbfc28afb7caba9e997b4"
+  },
+  {
+    "index": 83,
+    "slug": "george-v-all-silver-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1858324,
+    "sha1": "2e0e6343412795590b99e2fb5ccc9dd7024b1e97"
+  },
+  {
+    "index": 84,
+    "slug": "george-v-all-silver-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1530055,
+    "sha1": "e717f085d75765efd2d3e8a2dcea1ee40d4c5d32"
+  },
+  {
+    "index": 85,
+    "slug": "radha-krishna-all-silver-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1744174,
+    "sha1": "962668d336a7aba45e40d9b13818919f2139e1b9"
+  },
+  {
+    "index": 86,
+    "slug": "radha-krishna-all-silver-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1577698,
+    "sha1": "043696e89341aee5e7d9ac93db435fa2fa3c4d59"
+  },
+  {
+    "index": 87,
+    "slug": "radha-krishna-two-tone-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1571349,
+    "sha1": "9d8b65a1a53ecf77db2f76d51293d832fa6aeb91"
+  },
+  {
+    "index": 88,
+    "slug": "radha-krishna-two-tone-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1415446,
+    "sha1": "a2b293d40f401ef89eb3e2b7a85a0d215135da24"
+  },
+  {
+    "index": 89,
+    "slug": "george-v-two-tone-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1904879,
+    "sha1": "4e2e66f90085e7cf0891d8236eb20b201f558570"
+  },
+  {
+    "index": 90,
+    "slug": "george-v-two-tone-oval-coin-5g",
+    "category": "category-coin",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1731750,
+    "sha1": "3398c493b3438846ac5e4b29821064ff9fbe3b6e"
+  },
+  {
+    "index": 91,
+    "slug": "packaged-fine-gold-bar-1g-995",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1477994,
+    "sha1": "55a735b164d54719502e6d8f90245ee316d4bc81"
+  },
+  {
+    "index": 92,
+    "slug": "packaged-classical-profile-fine-gold-bar-2g-995",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1458338,
+    "sha1": "c0a33470e37c75c1d16c5fb1b9516e689ba8fd04"
+  },
+  {
+    "index": 93,
+    "slug": "packaged-classical-profile-fine-gold-bar-5g-995",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1489637,
+    "sha1": "7ceff3b538996c67eecaf926637275f85ca326ab"
+  },
+  {
+    "index": 94,
+    "slug": "packaged-classical-profile-fine-gold-bar-10g-995",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1672093,
+    "sha1": "1fca7b9e072a0e2fc1113c12269a9e1d5e0d0ca7"
+  },
+  {
+    "index": 95,
+    "slug": "packaged-queen-victoria-gold-coin-4g-916",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1614572,
+    "sha1": "749247fd7c55fe1dd7a1d44dcfa9abef028d49d5"
+  },
+  {
+    "index": 96,
+    "slug": "packaged-queen-victoria-gold-coin-8g-916",
+    "category": "category-gold",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "bytes": 1633746,
+    "sha1": "d02df9053aac0832ecf3d80825517510e7aebdcf"
+  }
+]

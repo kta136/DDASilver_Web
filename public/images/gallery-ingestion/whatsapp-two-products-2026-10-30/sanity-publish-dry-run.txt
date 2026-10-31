@@ -1,0 +1,9 @@
+Target: f6i0fy2f/production; batch: whatsapp-two-products-2026-10-30; source images: 2; new product candidates: 2
+┌─────────┬──────────┬───────────┬──────────────────────────────────────────────────┬──────────────────────┐
+│ (index) │ action   │ reference │ title                                            │ category             │
+├─────────┼──────────┼───────────┼──────────────────────────────────────────────────┼──────────────────────┤
+│ 0       │ 'CREATE' │ 'PR-50'   │ 'Twin Peacock Enamel Silver Purse'               │ 'category-purse'     │
+│ 1       │ 'CREATE' │ 'SG-27'   │ 'Om Ganesha Silver Singhasan with Elephant Base' │ 'category-singhasan' │
+└─────────┴──────────┴───────────┴──────────────────────────────────────────────────┴──────────────────────┘
+Dry run complete. No Sanity documents were written.
+Run `npm run sanity:publish-mixed-gallery-products:apply` to publish the CREATE rows.

@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-09T11:27:49.747Z",
+  "readOnly": true,
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "existingPurseCount": 36,
+  "highestExistingReference": "PR-36",
+  "allocatedReferences": [
+    "PR-37",
+    "PR-38",
+    "PR-39",
+    "PR-40",
+    "PR-41",
+    "PR-42",
+    "PR-43",
+    "PR-44",
+    "PR-45",
+    "PR-46",
+    "PR-47",
+    "PR-48",
+    "PR-49"
+  ],
+  "duplicateIdSlugReferenceFound": false,
+  "requiresRecheckBeforePublication": false,
+  "existingBatchCount": 0
+}

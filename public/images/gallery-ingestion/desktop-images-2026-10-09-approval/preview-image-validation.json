@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "batchId": "desktop-images-2026-10-09-approval",
+  "editor": "Built-in image_gen",
+  "selectedSourceNumbers": [
+    1,
+    3
+  ],
+  "imageCount": 2,
+  "allPng1254Square": true,
+  "mechanicalResizingPerformed": false,
+  "manualImageCompositingPerformed": false,
+  "outputs": [
+    {
+      "previewNumber": 1,
+      "sourceNumber": 1,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+      "generatedMasterPath": "C:/Users/kk/.codex/generated_images/01a1201a-4f88-7333-862d-3e076b55c547/exec-de8c78f5-d3d4-4ced-9297-f6e6429166bb.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "readable": true,
+      "sha256": "9800ea9404c5bdfa0a26796b73915d064b423c8060b55a79cc4971adefa91d30",
+      "visualQa": "Complete selected product visible; source label removed; handbag silhouette, handle, ring clasp, palette and major decorations retained; branded background and DDA Silver text legible. Await owner review."
+    },
+    {
+      "previewNumber": 2,
+      "sourceNumber": 3,
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/02-vine-enamel-peacock-ornament-silver-clutch-459g.png",
+      "generatedMasterPath": "C:/Users/kk/.codex/generated_images/01a1201a-4f88-7333-862d-3e076b55c547/exec-843d89f7-d4bc-4bbe-8359-81989fe673e7.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "readable": true,
+      "sha256": "79b26b52b8c80c436c6f87d1a162006ef58238ed037ac799ab4fda148dcef3fc",
+      "visualQa": "Complete selected product visible; source label removed; clutch silhouette, curved flap, centred clasp, enamel vine palette and upper-right bird/stone/bead ornament retained; branded background and DDA Silver text legible. Await owner review."
+    }
+  ],
+  "sanityWritePerformed": false,
+  "remainingSourceCount": 11
+}

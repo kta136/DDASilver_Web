@@ -1,0 +1,45 @@
+{
+  "validatedOn": "2026-10-30",
+  "images": [
+    {
+      "number": 1,
+      "path": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/01-twin-peacock-enamel-silver-purse.png",
+      "format": "png",
+      "width": 1254,
+      "height": 1254,
+      "opaque": true,
+      "fullDecode": true,
+      "sha256": "0D261710B4B8D7D3E5C8C07E5FDC73CAF41D40E3D474C94B63066325000BF81C",
+      "matchesGeneratedOriginal": true
+    },
+    {
+      "number": 2,
+      "path": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/02-om-ganesha-silver-shrine-elephant-base.png",
+      "format": "png",
+      "width": 1254,
+      "height": 1254,
+      "opaque": true,
+      "fullDecode": true,
+      "sha256": "08D19B8733A0D7FB242B2AB23E7EEFEE1F303488EFB45BD45C2B3CF6B5CBC560",
+      "matchesGeneratedOriginal": true
+    }
+  ],
+  "sources": [
+    {
+      "name": "WhatsApp Image 2026-10-29 at 11.52.37 AM.jpeg",
+      "originalUnchanged": true,
+      "archiveMatchesOriginal": true
+    },
+    {
+      "name": "WhatsApp Image 2026-10-29 at 11.54.09 AM (1).jpeg",
+      "originalUnchanged": true,
+      "archiveMatchesOriginal": true
+    },
+    {
+      "name": "WhatsApp Image 2026-10-29 at 11.54.09 AM.jpeg",
+      "originalUnchanged": true,
+      "archiveMatchesOriginal": true
+    }
+  ],
+  "passed": true
+}

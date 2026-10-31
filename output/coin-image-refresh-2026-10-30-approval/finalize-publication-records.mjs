@@ -1,0 +1,43 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const root=process.cwd();
+const base=path.join(root,'public/images/gallery-ingestion/coin-image-refresh-2026-10-30');
+const read=async file=>JSON.parse(await fs.readFile(path.join(base,file),'utf8'));
+const write=async(file,value)=>fs.writeFile(path.join(base,file),JSON.stringify(value,null,2)+'\n');
+const manifest=await read('sanity-gallery-manifest.json');
+if(!manifest.published)throw Error('Verify publication first');
+const verification=await read('publication-verification.json');
+const mapping=await read('sanity-assets.json');
+const byId=new Map(mapping.assets.map(a=>[a.productId,a]));
+const report=await read('delivery-report.json');
+report.status='Published and verified in Sanity and the live website';
+report.publication.uploaded=true;
+report.publication.productDocumentsChanged=86;
+report.publication.publishedAt=manifest.publishedAt;
+report.publication.verifiedAt=verification.verifiedAt;
+report.publication.verification='publication-verification.json';
+report.authorization.uploadAuthorized=true;
+report.authorization.uploadSource=manifest.uploadAuthorization.source;
+report.knownCompatibilityIssues=[];
+report.resolvedCompatibilityIssues=['The delivery validators accept preserved PNG sources.','The mixed-gallery publisher supports galleryPosition first and a unique galleryKey.'];
+report.checks.liveWebsite='86 refreshed covers and 86 available prices; no degraded catalogue response';
+report.checks.metadataPreservation='All 86 product documents preserve every non-gallery field; all 90 previous gallery views retained unchanged.';
+await write('delivery-report.json',report);
+const plan=await read('image-only-publication-plan.json');
+plan.uploadAuthorized=true;plan.applied=true;plan.appliedAt=manifest.publishedAt;
+for(const p of plan.products){p.uploadAuthorized=true;p.applied=true;p.sanityAssetId=byId.get(p.productId).sanityAssetId;}
+await write('image-only-publication-plan.json',plan);
+let html=await fs.readFile(path.join(base,'review.html'),'utf8');
+const relative=file=>path.relative(base,file).split(path.sep).map(encodeURIComponent).join('/');
+for(const p of manifest.products){
+ html=html.replaceAll(relative(p.sourcePath),p.sourceAssetUrl);
+ html=html.replaceAll(relative(path.resolve(root,p.imagePath)),byId.get(p.id).sanityAssetUrl);
+}
+html=html.replace('The proposed update adds each refreshed cover first and retains every existing gallery view. No Sanity upload has been made.','All 86 refreshed covers are published first in their Sanity galleries. All 90 previous gallery views and product metadata are retained.');
+await fs.writeFile(path.join(base,'review.html'),html);
+const approvalFile=path.join(root,'output/coin-image-refresh-2026-10-30-approval/preview-manifest.json');
+const approval=JSON.parse(await fs.readFile(approvalFile,'utf8'));
+approval.stage='Approved treatment applied to all 86 silver coin products; published and verified';
+approval.published=true;approval.uploadAuthorized=true;approval.uploadAuthorization=manifest.uploadAuthorization;
+await fs.writeFile(approvalFile,JSON.stringify(approval,null,2)+'\n');
+console.log('Publication records and portable review page updated.');

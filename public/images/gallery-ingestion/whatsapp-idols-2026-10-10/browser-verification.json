@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-10T13:10:51.511Z",
+  "liveProduct": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://www.ddasilver.com/products/lakshmi-ganesha-tiered-canopy-round-base-pair\",\"title\":\"Lakshmi Ganesha Silver Idol Pair with Tiered Canopies and Round Floral Bases, 315 g | DDA Silver\",\"codePresent\":true,\"purityPresent\":true,\"weightPresent\":true,\"heightPresent\":true,\"semiSolidPresent\":true,\"imageLoaded\":true,\"imageAlt\":\"Lakshmi and Ganesha silver idols beneath scrolling arches and tiered canopies, each on a round floral base.\"}\n```"
+      }
+    ]
+  },
+  "reviewPage": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"cards\":4,\"images\":[{\"alt\":\"Lakshmi and Ganesha silver idols beneath scrolling arches and tiered canopies, each on a round floral base.\",\"width\":1254,\"height\":1254,\"loaded\":true},{\"alt\":\"Lakshmi and Ganesha silver idols under tiered canopies on compact square scrollwork thrones with elephant-shaped feet.\",\"width\":1254,\"height\":1254,\"loaded\":true},{\"alt\":\"Lakshmi and Ganesha silver idols beneath ornate canopies, seated on broad square scrollwork thrones with elephant-shaped feet.\",\"width\":1254,\"height\":1254,\"loaded\":true},{\"alt\":\"Lakshmi and Ganesha silver idols with ornate crowns and circular halos, seated on layered lotus bases.\",\"width\":1254,\"height\":1254,\"loaded\":true}],\"liveLinks\":[\"https://www.ddasilver.com/products/lakshmi-ganesha-tiered-canopy-round-base-pair\",\"https://www.ddasilver.com/products/lakshmi-ganesha-compact-elephant-foot-throne-pair\",\"https://www.ddasilver.com/products/lakshmi-ganesha-broad-elephant-foot-throne-pair\",\"https://www.ddasilver.com/products/lakshmi-ganesha-ornate-halo-lotus-pair\"],\"horizontalOverflow\":false}\n```"
+      }
+    ]
+  }
+}

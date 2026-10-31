@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "batchId": "desktop-images-2026-10-09",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "uploadedAt": "2026-10-09T11:28:28.580Z",
+  "productCount": 13,
+  "uniqueAssetCount": 13,
+  "uploadedAssetCount": 13,
+  "reusedAssetCount": 0,
+  "assets": [
+    {
+      "number": 1,
+      "productId": "product-dda-desktop-20261009-multicolour-floral-enamel-silver-handbag-400g",
+      "reference": "PR-37",
+      "title": "Multicolour Floral Enamel Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+      "sha1hash": "e143ab5425eb8e80efba886681d358f17c495376",
+      "sanityAssetId": "image-e143ab5425eb8e80efba886681d358f17c495376-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e143ab5425eb8e80efba886681d358f17c495376-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "productId": "product-dda-desktop-20261009-raised-flower-silver-shoulder-purse-258g",
+      "reference": "PR-38",
+      "title": "Raised Flower Silver Shoulder Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/02-raised-flower-silver-shoulder-purse-258g.png",
+      "sha1hash": "139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a",
+      "sanityAssetId": "image-139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/139c9dea3fd9bb3be69cd8c78c85cda17ba3cd9a-1254x1254.png"
+    },
+    {
+      "number": 3,
+      "productId": "product-dda-desktop-20261009-vine-enamel-peacock-ornament-silver-clutch-459g",
+      "reference": "PR-39",
+      "title": "Vine Enamel Silver Clutch with Peacock Ornament",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/03-vine-enamel-peacock-ornament-silver-clutch-459g.png",
+      "sha1hash": "b680936bc2d12db93f681a379b0fa7a74f100f00",
+      "sanityAssetId": "image-b680936bc2d12db93f681a379b0fa7a74f100f00-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b680936bc2d12db93f681a379b0fa7a74f100f00-1254x1254.png"
+    },
+    {
+      "number": 4,
+      "productId": "product-dda-desktop-20261009-pastel-panel-floral-silver-handbag-515g",
+      "reference": "PR-40",
+      "title": "Pastel Panel Floral Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/04-pastel-panel-floral-silver-handbag-515g.png",
+      "sha1hash": "8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854",
+      "sanityAssetId": "image-8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8ca8048a0f1e9bfdcfd5538b1a7eaaa3f19c2854-1254x1254.png"
+    },
+    {
+      "number": 5,
+      "productId": "product-dda-desktop-20261009-green-stone-fringe-silver-shoulder-purse-615g",
+      "reference": "PR-41",
+      "title": "Green Stone Fringe Silver Shoulder Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/05-green-stone-fringe-silver-shoulder-purse-615g.png",
+      "sha1hash": "f26e9229b476b555702dcc408cfbc58fc21ebbcf",
+      "sanityAssetId": "image-f26e9229b476b555702dcc408cfbc58fc21ebbcf-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/f26e9229b476b555702dcc408cfbc58fc21ebbcf-1254x1254.png"
+    },
+    {
+      "number": 6,
+      "productId": "product-dda-desktop-20261009-diamond-lattice-floral-enamel-silver-handbag-360g",
+      "reference": "PR-42",
+      "title": "Diamond Lattice Floral Enamel Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/06-diamond-lattice-floral-enamel-silver-handbag-360g.png",
+      "sha1hash": "6da2e00a92064e2c9b9b333b72fd749a804200fe",
+      "sanityAssetId": "image-6da2e00a92064e2c9b9b333b72fd749a804200fe-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/6da2e00a92064e2c9b9b333b72fd749a804200fe-1254x1254.png"
+    },
+    {
+      "number": 7,
+      "productId": "product-dda-desktop-20261009-peacock-relief-tassel-silver-handbag-500g",
+      "reference": "PR-43",
+      "title": "Peacock Relief Tassel Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/07-peacock-relief-tassel-silver-handbag-500g.png",
+      "sha1hash": "8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41",
+      "sanityAssetId": "image-8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/8c97e7ca25d1c98ae29f5adb2604ae1ae8a34a41-1254x1254.png"
+    },
+    {
+      "number": 8,
+      "productId": "product-dda-desktop-20261009-green-stone-floral-scroll-silver-shoulder-purse-416g",
+      "reference": "PR-44",
+      "title": "Green Stone Floral Scroll Silver Shoulder Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/08-green-stone-floral-scroll-silver-shoulder-purse-416g.png",
+      "sha1hash": "26c2a963a8d1982851f4c2d4778643be6b30e955",
+      "sanityAssetId": "image-26c2a963a8d1982851f4c2d4778643be6b30e955-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/26c2a963a8d1982851f4c2d4778643be6b30e955-1254x1254.png"
+    },
+    {
+      "number": 9,
+      "productId": "product-dda-desktop-20261009-floral-diamond-lattice-silver-clutch-340g",
+      "reference": "PR-45",
+      "title": "Floral Diamond Lattice Silver Clutch",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/09-floral-diamond-lattice-silver-clutch-340g-v2.png",
+      "sha1hash": "2d1a2f1eca78c2668a791c2b00b62013bffe044a",
+      "sanityAssetId": "image-2d1a2f1eca78c2668a791c2b00b62013bffe044a-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/2d1a2f1eca78c2668a791c2b00b62013bffe044a-1254x1254.png"
+    },
+    {
+      "number": 10,
+      "productId": "product-dda-desktop-20261009-orange-lilac-floral-silver-handbag-340g",
+      "reference": "PR-46",
+      "title": "Orange and Lilac Floral Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/10-orange-lilac-floral-silver-handbag-340g.png",
+      "sha1hash": "903e60a1c93b50be84d0df62972909c2527ef999",
+      "sanityAssetId": "image-903e60a1c93b50be84d0df62972909c2527ef999-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/903e60a1c93b50be84d0df62972909c2527ef999-1254x1254.png"
+    },
+    {
+      "number": 11,
+      "productId": "product-dda-desktop-20261009-heart-shaped-floral-silver-purse-366g",
+      "reference": "PR-47",
+      "title": "Heart-Shaped Floral Silver Purse",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/11-heart-shaped-floral-silver-purse-366g.png",
+      "sha1hash": "b9e650ac845d41af16916a67876371e216770d99",
+      "sanityAssetId": "image-b9e650ac845d41af16916a67876371e216770d99-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/b9e650ac845d41af16916a67876371e216770d99-1254x1254.png"
+    },
+    {
+      "number": 12,
+      "productId": "product-dda-desktop-20261009-gold-tone-leaf-pearl-drop-silver-handbag-585g",
+      "reference": "PR-48",
+      "title": "Gold-Tone Leaf and Pearl-Drop Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/12-gold-tone-leaf-pearl-drop-silver-handbag-585g-v2.png",
+      "sha1hash": "344da943be6a01de9b5942577f23bad4df16e958",
+      "sanityAssetId": "image-344da943be6a01de9b5942577f23bad4df16e958-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/344da943be6a01de9b5942577f23bad4df16e958-1254x1254.png"
+    },
+    {
+      "number": 13,
+      "productId": "product-dda-desktop-20261009-peacock-chain-tassel-silver-handbag-630g",
+      "reference": "PR-49",
+      "title": "Peacock and Chain Tassel Silver Handbag",
+      "imagePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/images/13-peacock-chain-tassel-silver-handbag-630g.png",
+      "sha1hash": "eaf5a813b219a29576f52a9912c120d7131bfedd",
+      "sanityAssetId": "image-eaf5a813b219a29576f52a9912c120d7131bfedd-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/eaf5a813b219a29576f52a9912c120d7131bfedd-1254x1254.png"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-30T09:28:06.076Z",
+  "status": "passed",
+  "products": [
+    {
+      "reference": "PR-50",
+      "title": "Twin Peacock Enamel Silver Purse",
+      "url": "https://www.ddasilver.com/products/twin-peacock-enamel-silver-purse",
+      "priceInr": 185200,
+      "priceSnapshot": "2026-10-30T09:23:30.131Z",
+      "validUntil": "2026-10-30T18:00:00Z",
+      "imageUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254.png/twin-peacock-enamel-silver-purse.png",
+      "imageAlt": "Silver purse with two blue-and-green enamel peacocks, clear stone borders, a teardrop clasp and braided handle.",
+      "categoryListingVerified": true,
+      "desktopPageVerified": true,
+      "mobilePageVerified": true,
+      "imageFullyVisible": true,
+      "brandingVisible": true,
+      "mobileHorizontalOverflow": false
+    },
+    {
+      "reference": "SG-27",
+      "title": "Om Ganesha Silver Singhasan with Elephant Base",
+      "url": "https://www.ddasilver.com/products/om-ganesha-silver-shrine-elephant-base",
+      "priceInr": 1154900,
+      "priceSnapshot": "2026-10-30T09:23:30.131Z",
+      "validUntil": "2026-10-30T18:00:00Z",
+      "imageUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254.png/om-ganesha-silver-shrine-elephant-base.png",
+      "imageAlt": "Ornate silver singhasan with gold-tone Om panel, Ganesha crest, three pointed finials, carved columns and elephant base.",
+      "categoryListingVerified": true,
+      "desktopPageVerified": true,
+      "mobilePageVerified": true,
+      "imageFullyVisible": true,
+      "brandingVisible": true,
+      "mobileHorizontalOverflow": false
+    }
+  ],
+  "purity": "92.5",
+  "purseMakingChargePerGram": 90,
+  "singhasanDimensionsBlank": true,
+  "priceConsistency": "Product pages, catalogue listings, public price feed and Product structured data agree for each rate snapshot. Prices refreshed during the check as the silver rate changed.",
+  "nonBlockingObservation": "The test browser could not resolve the Cloudflare Insights analytics beacon hostname. Product pages, images and application requests returned HTTP 200."
+}

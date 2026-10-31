@@ -1,0 +1,19 @@
+{
+  "documentedWaiverPassed": true,
+  "cases": [
+    {
+      "case": "no-waiver",
+      "rejected": true,
+      "errors": [
+        "product 2: a missing physical dimension requires an explicit blocker"
+      ]
+    },
+    {
+      "case": "undocumented-waiver",
+      "rejected": true,
+      "errors": [
+        "product 2: owner dimension waiver requires a phone cover or an explicitly documented Singhasan instruction"
+      ]
+    }
+  ]
+}

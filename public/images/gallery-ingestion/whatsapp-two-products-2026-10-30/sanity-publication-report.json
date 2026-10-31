@@ -1,0 +1,38 @@
+{
+  "batchId": "whatsapp-two-products-2026-10-30",
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "verifiedAt": "2026-10-30T09:19:58.943Z",
+  "publishedProductCount": 2,
+  "verifiedImageCount": 2,
+  "passed": true,
+  "products": [
+    {
+      "reference": "PR-50",
+      "productId": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+      "verified": true,
+      "imageCount": 1,
+      "purity": "92.5",
+      "weightGrams": 660,
+      "categoryId": "category-purse",
+      "pricing": {
+        "makingChargePerGram": 90,
+        "mode": "automatic"
+      }
+    },
+    {
+      "reference": "SG-27",
+      "productId": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+      "verified": true,
+      "imageCount": 1,
+      "purity": "92.5",
+      "weightGrams": 5616,
+      "categoryId": "category-singhasan",
+      "pricing": {
+        "finish": "antique",
+        "mode": "automatic"
+      },
+      "dimensionsBlank": true
+    }
+  ]
+}

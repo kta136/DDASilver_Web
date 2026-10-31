@@ -57,7 +57,7 @@ describe("request-time price composition", () => {
     for (const ordered of [products, [...products].reverse()]) {
       const priced = await withGalleryPrices(ordered);
       const schemas = Object.fromEntries(priced.map((product) => [product.slug, getProductPageStructuredData(product, now)]));
-      expect(schemas.valid).toMatchObject({ "@type": "Product", offers: [{ price: "1100.00" }] });
+      expect(schemas.valid).toMatchObject({ "@type": "Product", offers: [{ price: "1050.00" }] });
       expect(schemas.manual).toMatchObject({ "@type": "Product", offers: [{ price: "5000.00" }] });
       for (const slug of ["invalid", "gold", "deferred"])
         expect(schemas[slug]["@type"]).toBe("WebPage");

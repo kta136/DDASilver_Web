@@ -398,7 +398,7 @@ function validateManifest(manifest, manifestPath) {
 
     const sourcePath = path.resolve(product.sourcePath ?? "");
     if (!fs.existsSync(sourcePath)) errors.push(`${label}: source file is missing: ${product.sourcePath}`);
-    else if (!/\.jpe?g$/i.test(sourcePath)) errors.push(`${label}: source must be a JPEG`);
+    else if (!/\.(?:jpe?g|png)$/i.test(sourcePath)) errors.push(`${label}: source must be a JPEG or PNG`);
     mappedSourcePaths.add(sourcePath.toLowerCase());
 
     const imagePath = path.resolve(projectRoot, product.imagePath ?? "");
@@ -423,11 +423,11 @@ function validateManifest(manifest, manifestPath) {
   if (manifest.sourceFolder && fs.existsSync(manifest.sourceFolder)) {
     const sourceFiles = fs
       .readdirSync(manifest.sourceFolder, { withFileTypes: true })
-      .filter((entry) => entry.isFile() && /\.jpe?g$/i.test(entry.name))
+      .filter((entry) => entry.isFile() && /\.(?:jpe?g|png)$/i.test(entry.name))
       .map((entry) => path.join(manifest.sourceFolder, entry.name).toLowerCase());
     const expectedOriginalCount = manifest.originalSourceCount ?? manifest.sourceCount;
     if (sourceFiles.length !== expectedOriginalCount) {
-      errors.push(`source folder contains ${sourceFiles.length} JPEGs, expected ${expectedOriginalCount}`);
+      errors.push(`source folder contains ${sourceFiles.length} JPEG/PNG images, expected ${expectedOriginalCount}`);
     }
     const excludedSourcePaths = new Set(
       (manifest.excludedSources ?? []).map((row) =>
@@ -436,7 +436,7 @@ function validateManifest(manifest, manifestPath) {
     );
     for (const sourceFile of sourceFiles) {
       if (!mappedSourcePaths.has(sourceFile) && !excludedSourcePaths.has(sourceFile)) {
-        errors.push(`source JPEG is not mapped or excluded: ${sourceFile}`);
+        errors.push(`source image is not mapped or excluded: ${sourceFile}`);
       }
     }
   } else {

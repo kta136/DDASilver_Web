@@ -1,0 +1,3319 @@
+{
+  "purse": {
+    "products": [
+      {
+        "categoryPricingDeferred": false,
+        "pricing": {
+          "mode": "automatic",
+          "makingChargePerGram": 90
+        },
+        "_id": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+        "updatedAt": "2026-10-30T09:18:40Z",
+        "title": "Twin Peacock Enamel Silver Purse",
+        "slug": "twin-peacock-enamel-silver-purse",
+        "shortDescription": "A 92.5% silver purse with facing blue-and-green enamel peacocks, gold-tone floral details, clear stone borders and a braided handle. Weight: 660 g.",
+        "images": [
+          {
+            "src": "https://cdn.sanity.io/images/f6i0fy2f/production/e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254.png/twin-peacock-enamel-silver-purse.png",
+            "alt": "Silver purse with two blue-and-green enamel peacocks, clear stone borders, a teardrop clasp and braided handle.",
+            "width": 1254,
+            "height": 1254,
+            "objectPosition": "center center"
+          }
+        ],
+        "categorySlug": "purse",
+        "collectionSlugs": [],
+        "featured": false,
+        "displayOrder": 2500,
+        "reference": "PR-50",
+        "material": "silver",
+        "purity": "92.5",
+        "weightGrams": 660,
+        "sizeVariants": [],
+        "deities": [],
+        "estimate": {
+          "status": "available",
+          "mode": "automatic",
+          "currency": "INR",
+          "minimum": 185200,
+          "maximum": 185200,
+          "asOf": "2026-10-30T09:23:30.131Z",
+          "validUntil": "2026-10-30T18:00:00Z",
+          "marketStatus": "live",
+          "lastAvailable": false,
+          "sizes": []
+        }
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "pageSize": 24,
+    "facets": [
+      {
+        "categorySlug": "boxes",
+        "productCount": 30,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "coin",
+        "productCount": 86,
+        "purities": [
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [
+          "oval",
+          "round",
+          "square",
+          "rectangle",
+          "scalloped"
+        ],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "gifts",
+        "productCount": 34,
+        "purities": [
+          "92.5",
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "gold",
+        "productCount": 6,
+        "purities": [
+          "99.50",
+          "91.60"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [
+          "rectangle",
+          "round"
+        ],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "hatri",
+        "productCount": 11,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "idols",
+        "productCount": 240,
+        "purities": [
+          "99.80",
+          "92.5"
+        ],
+        "idolConstructions": [
+          "hollow",
+          "semi-solid",
+          "solid"
+        ],
+        "deities": [
+          {
+            "title": "B. R. Ambedkar",
+            "slug": "br-ambedkar"
+          },
+          {
+            "title": "B. R. Ambedkar",
+            "slug": "br-ambedkar"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Khatu Shyam",
+            "slug": "khatu-shyam"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Sai Baba",
+            "slug": "sai-baba"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Mahavir",
+            "slug": "mahavir"
+          },
+          {
+            "title": "Buddha",
+            "slug": "buddha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Guru Nanak",
+            "slug": "guru-nanak"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Jagannath",
+            "slug": "jagannath"
+          },
+          {
+            "title": "Balabhadra",
+            "slug": "balabhadra"
+          },
+          {
+            "title": "Subhadra",
+            "slug": "subhadra"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Laughing Buddha",
+            "slug": "laughing-buddha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Maharaja Agrasen",
+            "slug": "maharaja-agrasen"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Annapurna",
+            "slug": "annapurna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Kali",
+            "slug": "kali"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Parshvanath",
+            "slug": "parshvanath"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Tesu",
+            "slug": "tesu"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Lakshman",
+            "slug": "lakshman"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Auspicious Elephant",
+            "slug": "auspicious-elephant"
+          },
+          {
+            "title": "Nandi",
+            "slug": "nandi"
+          },
+          {
+            "title": "Kaila Devi",
+            "slug": "kaila-devi"
+          },
+          {
+            "title": "Auspicious Turtle",
+            "slug": "auspicious-turtle"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          }
+        ],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "jewellery",
+        "productCount": 0,
+        "purities": [],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "jhula",
+        "productCount": 18,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "phone-covers",
+        "productCount": 8,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "purse",
+        "productCount": 50,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "singhasan",
+        "productCount": 16,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "utensils",
+        "productCount": 154,
+        "purities": [
+          "92.5",
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": [
+          "pooja-thali-set",
+          "handi",
+          "jar",
+          "bottle",
+          "bowl",
+          "jug",
+          "glass",
+          "spoon",
+          "plate",
+          "kalash"
+        ]
+      }
+    ],
+    "degraded": false
+  },
+  "singhasan": {
+    "products": [
+      {
+        "categoryPricingDeferred": false,
+        "pricing": {
+          "mode": "automatic",
+          "finish": "antique"
+        },
+        "categoryMakingRules": [
+          {
+            "minimumWeightGrams": 0,
+            "finish": "silver",
+            "makingChargePerGram": 10
+          },
+          {
+            "minimumWeightGrams": 0,
+            "finish": "antique",
+            "makingChargePerGram": 15
+          }
+        ],
+        "_id": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+        "updatedAt": "2026-10-30T09:18:40Z",
+        "title": "Om Ganesha Silver Singhasan with Elephant Base",
+        "slug": "om-ganesha-silver-shrine-elephant-base",
+        "shortDescription": "A 92.5% silver singhasan with a gold-tone Om back panel, Ganesha crest, three finials, ornate columns, floral scrollwork and an elephant-supported stepped base. Weight: 5,616 g.",
+        "images": [
+          {
+            "src": "https://cdn.sanity.io/images/f6i0fy2f/production/d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254.png/om-ganesha-silver-shrine-elephant-base.png",
+            "alt": "Ornate silver singhasan with gold-tone Om panel, Ganesha crest, three pointed finials, carved columns and elephant base.",
+            "width": 1254,
+            "height": 1254,
+            "objectPosition": "center center"
+          }
+        ],
+        "categorySlug": "singhasan",
+        "categoryKind": "general",
+        "collectionSlugs": [],
+        "featured": false,
+        "displayOrder": 5002,
+        "reference": "SG-27",
+        "material": "silver",
+        "purity": "92.5",
+        "weightGrams": 5616,
+        "sizeVariants": [],
+        "deities": [],
+        "estimate": {
+          "status": "available",
+          "mode": "automatic",
+          "currency": "INR",
+          "minimum": 1154900,
+          "maximum": 1154900,
+          "asOf": "2026-10-30T09:23:30.131Z",
+          "validUntil": "2026-10-30T18:00:00Z",
+          "marketStatus": "live",
+          "lastAvailable": false,
+          "sizes": []
+        }
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "pageSize": 24,
+    "facets": [
+      {
+        "categorySlug": "boxes",
+        "productCount": 30,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "coin",
+        "productCount": 86,
+        "purities": [
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [
+          "oval",
+          "round",
+          "square",
+          "rectangle",
+          "scalloped"
+        ],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "gifts",
+        "productCount": 34,
+        "purities": [
+          "92.5",
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "gold",
+        "productCount": 6,
+        "purities": [
+          "99.50",
+          "91.60"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [
+          "rectangle",
+          "round"
+        ],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "hatri",
+        "productCount": 11,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "idols",
+        "productCount": 240,
+        "purities": [
+          "99.80",
+          "92.5"
+        ],
+        "idolConstructions": [
+          "hollow",
+          "semi-solid",
+          "solid"
+        ],
+        "deities": [
+          {
+            "title": "B. R. Ambedkar",
+            "slug": "br-ambedkar"
+          },
+          {
+            "title": "B. R. Ambedkar",
+            "slug": "br-ambedkar"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Khatu Shyam",
+            "slug": "khatu-shyam"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Sai Baba",
+            "slug": "sai-baba"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Mahavir",
+            "slug": "mahavir"
+          },
+          {
+            "title": "Buddha",
+            "slug": "buddha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Guru Nanak",
+            "slug": "guru-nanak"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Jagannath",
+            "slug": "jagannath"
+          },
+          {
+            "title": "Balabhadra",
+            "slug": "balabhadra"
+          },
+          {
+            "title": "Subhadra",
+            "slug": "subhadra"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Laughing Buddha",
+            "slug": "laughing-buddha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Maharaja Agrasen",
+            "slug": "maharaja-agrasen"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Annapurna",
+            "slug": "annapurna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Kali",
+            "slug": "kali"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Parshvanath",
+            "slug": "parshvanath"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Tesu",
+            "slug": "tesu"
+          },
+          {
+            "title": "Durga",
+            "slug": "durga"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kamdhenu",
+            "slug": "kamdhenu"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Lakshman",
+            "slug": "lakshman"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Auspicious Elephant",
+            "slug": "auspicious-elephant"
+          },
+          {
+            "title": "Nandi",
+            "slug": "nandi"
+          },
+          {
+            "title": "Kaila Devi",
+            "slug": "kaila-devi"
+          },
+          {
+            "title": "Auspicious Turtle",
+            "slug": "auspicious-turtle"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Saraswati",
+            "slug": "saraswati"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Kuber",
+            "slug": "kuber"
+          },
+          {
+            "title": "Radha",
+            "slug": "radha"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Vishnu",
+            "slug": "vishnu"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Rama",
+            "slug": "rama"
+          },
+          {
+            "title": "Sita",
+            "slug": "sita"
+          },
+          {
+            "title": "Hanuman",
+            "slug": "hanuman"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Krishna",
+            "slug": "krishna"
+          },
+          {
+            "title": "Shiva",
+            "slug": "shiva"
+          },
+          {
+            "title": "Parvati",
+            "slug": "parvati"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Kartikeya",
+            "slug": "kartikeya"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          },
+          {
+            "title": "Lakshmi",
+            "slug": "lakshmi"
+          },
+          {
+            "title": "Ganesha",
+            "slug": "ganesha"
+          }
+        ],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "jewellery",
+        "productCount": 0,
+        "purities": [],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "jhula",
+        "productCount": 18,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "phone-covers",
+        "productCount": 8,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "purse",
+        "productCount": 50,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "singhasan",
+        "productCount": 16,
+        "purities": [
+          "92.5"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": []
+      },
+      {
+        "categorySlug": "utensils",
+        "productCount": 154,
+        "purities": [
+          "92.5",
+          "99.80"
+        ],
+        "idolConstructions": [],
+        "deities": [],
+        "coinShapes": [],
+        "utensilTypes": [
+          "pooja-thali-set",
+          "handi",
+          "jar",
+          "bottle",
+          "bowl",
+          "jug",
+          "glass",
+          "spoon",
+          "plate",
+          "kalash"
+        ]
+      }
+    ],
+    "degraded": false
+  }
+}

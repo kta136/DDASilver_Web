@@ -17,6 +17,13 @@ export default defineConfig({
     command:
       `npm run build && npm run start -- --hostname 127.0.0.1 --port ${port}`,
     url: baseURL,
+    // These journeys exercise an unconfigured feed. Do not let a developer's
+    // .env.local provide server-rendered rates or a live stream during tests.
+    env: {
+      DDAJEWELS_RATES_SNAPSHOT_URL: "",
+      DDAJEWELS_RATES_STREAM_URL: "",
+      DDAJEWELS_RATE_TICKET_URL: "",
+    },
     reuseExistingServer: false,
     timeout: 180_000,
   },

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "batchId": "whatsapp-two-products-2026-10-30",
+  "preparedOn": "2026-10-30",
+  "stage": "published",
+  "sourceFolder": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-10-30 at 2.25.29 PM",
+  "sourceCount": 2,
+  "originalSourceCount": 3,
+  "finalImageCount": 2,
+  "sourceCountNote": "Three original photographs depict two products. sourceCount is the count of primary product photographs used for generation; the third photograph is a corroborating view of product 2.",
+  "approvedBackgroundPath": "public/images/product-backgrounds/dda-silver-warm-ivory-watermark-1254.png",
+  "approvedTreatmentReferencePath": "public/images/gallery-ingestion/desktop-images-2026-10-09-approval/images/01-multicolour-floral-enamel-silver-handbag-400g.png",
+  "treatmentApprovalEvidencePath": "public/images/gallery-ingestion/desktop-images-2026-10-09/sanity-gallery-manifest.json",
+  "promptAuditPath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/imagegen-prompts.md",
+  "sourceInventoryPath": "output/gallery-ingestion/whatsapp-two-products-2026-10-30/source-inventory.json",
+  "liveCatalogSnapshotPath": "output/gallery-ingestion/whatsapp-two-products-2026-10-30/live-catalog-snapshot.json",
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "assetUploadAuthorized": true,
+  "productPublishAuthorized": true,
+  "publishBlockers": [],
+  "purityConfirmation": {
+    "value": "92.5",
+    "scope": "Both products",
+    "source": "Owner reply: Both items are 92.5%",
+    "confirmedOn": "2026-10-30"
+  },
+  "weightEvidence": "Product 1 source overlay: 660gm. Product 2 primary source overlay: 5616gm. Neither label states net silver weight; values are recorded as supplied product weights.",
+  "generationMethod": "Built-in image_gen. One independent edit per product using three labelled references: original photograph, exact approved DDA Silver background, and newer approved handbag treatment. No CLI fallback or post-generation resizing used.",
+  "visualReview": {
+    "completeProductsVisible": true,
+    "externalLabelsRemoved": true,
+    "brandingPresent": true,
+    "sourceDesignsCompared": true,
+    "reviewedOn": "2026-10-30",
+    "ownerApprovalOfThisBatch": true,
+    "ownerApprovalEvidence": "Owner instructed upload of both prepared products on 2026-10-30."
+  },
+  "referenceAllocation": {
+    "status": "Published references",
+    "checkedOn": "2026-10-30",
+    "projectId": "f6i0fy2f",
+    "dataset": "production",
+    "highestObservedPurseReference": "PR-49",
+    "highestObservedSinghasanReference": "SG-26",
+    "note": "PR-50 and SG-27 are published and verified in Sanity production.",
+    "checkedAt": "2026-10-30T09:18:01.515Z",
+    "prepublicationSnapshotPath": "output/gallery-ingestion/whatsapp-two-products-2026-10-30/prepublish-references.json"
+  },
+  "excludedSources": [
+    {
+      "sourcePath": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-10-30 at 2.25.29 PM/WhatsApp Image 2026-10-29 at 11.54.09 AM (1).jpeg",
+      "sourceSha256": "915DB56EABE11EDF631E7DD78439ECF0A412BD9ACF2FC5AF6E95F6DD71B0C26F",
+      "reason": "Alternate photograph of product 2, retained unchanged as corroborating source. Not a third product.",
+      "parentProductNumber": 2
+    }
+  ],
+  "products": [
+    {
+      "number": 1,
+      "id": "product-dda-whatsapp20261030-twin-peacock-enamel-silver-purse",
+      "reference": "PR-50",
+      "referenceFamily": "purse",
+      "referenceStatus": "published",
+      "title": "Twin Peacock Enamel Silver Purse",
+      "slug": "twin-peacock-enamel-silver-purse",
+      "shortDescription": "A 92.5% silver purse with facing blue-and-green enamel peacocks, gold-tone floral details, clear stone borders and a braided handle. Weight: 660 g.",
+      "alt": "Silver purse with two blue-and-green enamel peacocks, clear stone borders, a teardrop clasp and braided handle.",
+      "categoryId": "category-purse",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 660,
+      "dimensionsStatus": "Not supplied; purse dimensions are optional under the gallery ingestion policy.",
+      "suppliedSizeLabel": "660gm",
+      "sourcePath": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-10-30 at 2.25.29 PM/WhatsApp Image 2026-10-29 at 11.52.37 AM.jpeg",
+      "sourceSha256": "782F707CC2DBA2E5861792C28E456C77B8C40EEC6CCF98023BDDFC3FC855C207",
+      "imagePath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/01-twin-peacock-enamel-silver-purse.png",
+      "generatedImagePath": "C:/Users/kk/.codex/generated_images/01a18c06-3417-7fe1-a190-2953773efe06/exec-663f2d0c-ad3e-4c85-bae3-7e22a8578db5.png",
+      "publishBlockers": [],
+      "pricing": {
+        "mode": "automatic",
+        "makingChargePerGram": 90
+      },
+      "makingChargeConfirmation": {
+        "currency": "INR",
+        "perGram": 90,
+        "confirmedOn": "2026-10-30",
+        "source": "Owner correction: Purse is 90/gm",
+        "supersedes": "Earlier owner reply of Rs 50/gm"
+      },
+      "sanityAssetId": "image-e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/e67a8ec3a9110aa8c1487079fd06d6e926ceaec5-1254x1254.png"
+    },
+    {
+      "number": 2,
+      "id": "product-dda-whatsapp20261030-om-ganesha-silver-shrine-elephant-base",
+      "reference": "SG-27",
+      "referenceFamily": "singhasan",
+      "referenceStatus": "published",
+      "title": "Om Ganesha Silver Singhasan with Elephant Base",
+      "slug": "om-ganesha-silver-shrine-elephant-base",
+      "shortDescription": "A 92.5% silver singhasan with a gold-tone Om back panel, Ganesha crest, three finials, ornate columns, floral scrollwork and an elephant-supported stepped base. Weight: 5,616 g.",
+      "alt": "Ornate silver singhasan with gold-tone Om panel, Ganesha crest, three pointed finials, carved columns and elephant base.",
+      "categoryId": "category-singhasan",
+      "categoryStatus": "Owner-confirmed on 2026-10-30: Singhasan.",
+      "material": "silver",
+      "purity": "92.5",
+      "weightGrams": 5616,
+      "dimensionsStatus": "Intentionally blank for now per explicit owner instruction on 2026-10-30.",
+      "pricing": {
+        "mode": "automatic",
+        "finish": "antique"
+      },
+      "pricingEvidence": "Antique finish is based on visible dark recessed scrollwork; the live Singhasan category defines the applicable finish-based making rule. No product-specific charge invented.",
+      "suppliedSizeLabel": "5616gm",
+      "sourcePath": "C:/Users/kk/Desktop/WhatsApp Unknown 2026-10-30 at 2.25.29 PM/WhatsApp Image 2026-10-29 at 11.54.09 AM.jpeg",
+      "sourceSha256": "15BD34ACCD6F51B2FC526C736775072E3EDA2532854C499A3C5F0FF2A57C5268",
+      "supportingSourcePaths": [
+        "C:/Users/kk/Desktop/WhatsApp Unknown 2026-10-30 at 2.25.29 PM/WhatsApp Image 2026-10-29 at 11.54.09 AM (1).jpeg"
+      ],
+      "imagePath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/images/02-om-ganesha-silver-shrine-elephant-base.png",
+      "generatedImagePath": "C:/Users/kk/.codex/generated_images/01a18c06-3417-7fe1-a190-2953773efe06/exec-c6d8d170-46c4-4b81-9d17-328a003b5d0e.png",
+      "publishBlockers": [],
+      "categoryConfirmation": {
+        "source": "Owner reply: Singhasan",
+        "confirmedOn": "2026-10-30"
+      },
+      "dimensionRequirementWaivedByOwner": true,
+      "dimensionWaiverConfirmation": {
+        "source": "Leave the Singhasan dimensions blank for now and upload both products to Sanity.",
+        "confirmedOn": "2026-10-30",
+        "scope": "This Singhasan product only; leave all physical dimension fields absent until verified measurements are supplied."
+      },
+      "sanityAssetId": "image-d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/f6i0fy2f/production/d1a10e3ce6e0ffa9ced3adb69866932c8f7ccb52-1254x1254.png"
+    }
+  ],
+  "publicationAuthorization": {
+    "source": "Leave the Singhasan dimensions blank for now and upload both products to Sanity.",
+    "confirmedOn": "2026-10-30"
+  },
+  "publishedAt": "2026-10-30T09:18:40Z",
+  "publicationVerifiedAt": "2026-10-30T09:19:58.943Z",
+  "publicationReportPath": "public/images/gallery-ingestion/whatsapp-two-products-2026-10-30/sanity-publication-report.json"
+}

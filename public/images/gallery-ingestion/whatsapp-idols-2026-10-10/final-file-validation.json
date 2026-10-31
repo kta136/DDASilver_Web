@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-10T13:10:18.905Z",
+  "status": "passed",
+  "sourceCount": 4,
+  "imageCount": 4,
+  "allSourcesUnchanged": true,
+  "allImagesDecoded": true,
+  "products": [
+    {
+      "number": 1,
+      "reference": "SSM-LG-8",
+      "sourceUnchanged": true,
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/01-lakshmi-ganesha-tiered-canopy-round-base-pair.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "imageSha256": "A535FAF7EF70482D5D9E3DF8A5DEC49269E802DA1CCB2C8B2CA59C0E9EC88B98"
+    },
+    {
+      "number": 2,
+      "reference": "SSM-LG-9",
+      "sourceUnchanged": true,
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/02-lakshmi-ganesha-compact-elephant-foot-throne-pair.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "imageSha256": "3327CF63416F92CD5EF9200388511856C82C47025B55321338B49D53AF4CB462"
+    },
+    {
+      "number": 3,
+      "reference": "SSM-LG-10",
+      "sourceUnchanged": true,
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/03-lakshmi-ganesha-broad-elephant-foot-throne-pair.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "imageSha256": "8C0C503A860A7421FE8A5CC9EAA3266FF79C52255A9D4B58AEBC15B5521E2DE9"
+    },
+    {
+      "number": 4,
+      "reference": "SSM-LG-11",
+      "sourceUnchanged": true,
+      "imagePath": "public/images/gallery-ingestion/whatsapp-idols-2026-10-10/images/04-lakshmi-ganesha-ornate-halo-lotus-pair.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "decoded": true,
+      "imageSha256": "331FC5FF364F6CA3CAD1CA018447900B53A9B4AC306E420B8CCFA64AD3340EB6"
+    }
+  ]
+}

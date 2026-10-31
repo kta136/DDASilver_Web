@@ -1,0 +1,10 @@
+{
+  "status": "fulfilled",
+  "value": {
+    "chunk_id": "8965d9",
+    "wall_time_seconds": 0.3940093,
+    "exit_code": 0,
+    "original_token_count": 106,
+    "output": "{\n  \"batchId\": \"coin-image-refresh-2026-10-30\",\n  \"validatedAt\": \"2026-10-30T15:57:15.213Z\",\n  \"deliveryValid\": true,\n  \"readyForSanityAssetUpload\": true,\n  \"readyForProductPublish\": false,\n  \"counts\": {\n    \"sources\": 0,\n    \"products\": 86,\n    \"verifiedSources\": 86,\n    \"validImages\": 86,\n    \"manifestBlockers\": 2,\n    \"productBlockers\": 86\n  },\n  \"errors\": [],\n  \"warnings\": [\n    \"88 publish blockers remain\"\n  ]\n}\n"
+  }
+}

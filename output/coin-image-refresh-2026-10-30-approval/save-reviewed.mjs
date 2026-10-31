@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import sharp from 'sharp';
+const root=process.cwd();
+const base=path.join(root,'public/images/gallery-ingestion/coin-image-refresh-2026-10-30');
+const manifestPath=path.join(base,'sanity-gallery-manifest.json');
+const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+const promptPath=path.join(base,'imagegen-prompts.json');
+const audit=JSON.parse(fs.readFileSync(promptPath,'utf8'));
+const batch=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+for(const row of batch){
+ const product=manifest.products.find(p=>p.number===row.number);
+ if(!product) throw new Error('Unknown product');
+ const destination=path.resolve(root,product.imagePath);
+ if(!destination.startsWith(base+path.sep)) throw new Error('Destination escapes batch');
+ const sourceHash=crypto.createHash('sha256').update(fs.readFileSync(product.sourcePath)).digest('hex').toUpperCase();
+ if(sourceHash!==product.sourceSha256)throw new Error('Source changed');
+ const meta=await sharp(row.generatedPath).metadata();
+ if(meta.format!=='png'||meta.width!==1254||meta.height!==1254)throw new Error('Expected 1254 PNG');
+ await sharp(row.generatedPath).raw().toBuffer();
+ if(fs.existsSync(destination))throw new Error('Refusing to overwrite '+destination);
+ fs.copyFileSync(row.generatedPath,destination);
+ product.status='visually-reviewed';
+ product.generatedPath=row.generatedPath;
+ product.imageSha256=crypto.createHash('sha256').update(fs.readFileSync(destination)).digest('hex').toUpperCase();
+ product.imageDimensions={width:1254,height:1254,format:'png',fullyDecoded:true};
+ product.visualReviewNotes=row.reviewNotes||'Compared with its source: selected face, overall shape, principal design, visible lettering, complete perimeter, framing and branding reviewed. AI-assisted edit; not a pixel-identical cutout.';
+ audit.prompts.push({number:row.number,slug:product.slug,prompt:row.prompt,generatedPath:row.generatedPath,imagePath:product.imagePath});
+}
+fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
+fs.writeFileSync(promptPath,JSON.stringify(audit,null,2)+'\n');
+const completed=manifest.products.filter(p=>p.status!=='queued').length;
+console.log(JSON.stringify({completed,total:manifest.products.length,remaining:manifest.products.length-completed}));

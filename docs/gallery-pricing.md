@@ -22,8 +22,9 @@ lock, so it does not create a second rate sampler.
 Making is either weight multiplied by the per-gram charge or one fixed per-piece
 charge. The owner supplied tax-inclusive making charges: do not add tax again or
 apply an additional purity multiplier. Calculate each weight/diameter variant
-independently, round the final totals to the nearest ₹100 (₹50 ties round up), and
-show a range when the rounded totals differ. This also applies to manual totals
+independently, round the final totals to the nearest ₹100 (₹50 ties round up), or
+to the nearest ₹50 for coins (₹25 ties round up), and show a range when the
+rounded totals differ. This also applies to manual totals
 and every manual size price, consistently across cards, details and the public
 price feed. A product override takes priority over category rules. Zero is
 a valid making charge; a missing value is not zero.

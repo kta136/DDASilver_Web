@@ -1,0 +1,17 @@
+{
+  "batchId": "coin-image-refresh-2026-10-30",
+  "validatedAt": "2026-10-30T16:14:23.612Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 96,
+    "products": 86,
+    "verifiedSources": 86,
+    "validImages": 86,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}

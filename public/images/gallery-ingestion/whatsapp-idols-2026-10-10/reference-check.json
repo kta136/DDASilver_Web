@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-10T12:54:00.257Z",
+  "readOnly": true,
+  "projectId": "f6i0fy2f",
+  "dataset": "production",
+  "liveHighestReference": "SSM-LG-7",
+  "localHighestIssuedReference": "SSM-LG-7",
+  "allocatedReferences": [
+    "SSM-LG-8",
+    "SSM-LG-9",
+    "SSM-LG-10",
+    "SSM-LG-11"
+  ],
+  "conflicts": [],
+  "existingBatchCount": 0,
+  "taxonomy": [
+    {
+      "_id": "category-idols",
+      "_type": "category",
+      "productKind": null,
+      "slug": "idols",
+      "title": "Idols"
+    },
+    {
+      "_id": "deity-ganesha",
+      "_type": "deity",
+      "productKind": null,
+      "slug": "ganesha",
+      "title": "Ganesha"
+    },
+    {
+      "_id": "deity-lakshmi",
+      "_type": "deity",
+      "productKind": null,
+      "slug": "lakshmi",
+      "title": "Lakshmi"
+    }
+  ]
+}

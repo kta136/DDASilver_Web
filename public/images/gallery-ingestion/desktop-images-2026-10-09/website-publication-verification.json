@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-10-09T11:29:42.453Z",
+  "passed": true,
+  "productCount": 13,
+  "products": [
+    {
+      "reference": "PR-37",
+      "url": "https://www.ddasilver.com/products/multicolour-floral-enamel-silver-handbag-400g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 400
+    },
+    {
+      "reference": "PR-38",
+      "url": "https://www.ddasilver.com/products/raised-flower-silver-shoulder-purse-258g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 258
+    },
+    {
+      "reference": "PR-39",
+      "url": "https://www.ddasilver.com/products/vine-enamel-peacock-ornament-silver-clutch-459g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 459
+    },
+    {
+      "reference": "PR-40",
+      "url": "https://www.ddasilver.com/products/pastel-panel-floral-silver-handbag-515g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 515
+    },
+    {
+      "reference": "PR-41",
+      "url": "https://www.ddasilver.com/products/green-stone-fringe-silver-shoulder-purse-615g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 615
+    },
+    {
+      "reference": "PR-42",
+      "url": "https://www.ddasilver.com/products/diamond-lattice-floral-enamel-silver-handbag-360g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 360
+    },
+    {
+      "reference": "PR-43",
+      "url": "https://www.ddasilver.com/products/peacock-relief-tassel-silver-handbag-500g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 500
+    },
+    {
+      "reference": "PR-44",
+      "url": "https://www.ddasilver.com/products/green-stone-floral-scroll-silver-shoulder-purse-416g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 416
+    },
+    {
+      "reference": "PR-45",
+      "url": "https://www.ddasilver.com/products/floral-diamond-lattice-silver-clutch-340g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 340
+    },
+    {
+      "reference": "PR-46",
+      "url": "https://www.ddasilver.com/products/orange-lilac-floral-silver-handbag-340g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 340
+    },
+    {
+      "reference": "PR-47",
+      "url": "https://www.ddasilver.com/products/heart-shaped-floral-silver-purse-366g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 366
+    },
+    {
+      "reference": "PR-48",
+      "url": "https://www.ddasilver.com/products/gold-tone-leaf-pearl-drop-silver-handbag-585g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 585
+    },
+    {
+      "reference": "PR-49",
+      "url": "https://www.ddasilver.com/products/peacock-chain-tassel-silver-handbag-630g",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "titlePresent": true,
+      "sanityImagePresent": true,
+      "weightGrams": 630
+    }
+  ]
+}

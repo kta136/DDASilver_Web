@@ -1,0 +1,49 @@
+{
+  "purseWithoutDimensionsAccepted": true,
+  "utensilWithoutDimensionsRejected": true,
+  "usesRealImagesAndSourceHashes": true,
+  "checks": {
+    "purse": {
+      "exitCode": 0,
+      "report": {
+        "batchId": "desktop-images-2026-10-09-approval",
+        "validatedAt": "2026-10-09T10:10:31.048Z",
+        "deliveryValid": true,
+        "readyForSanityAssetUpload": true,
+        "readyForProductPublish": true,
+        "counts": {
+          "sources": 13,
+          "products": 2,
+          "verifiedSources": 2,
+          "validImages": 2,
+          "manifestBlockers": 0,
+          "productBlockers": 0
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    "utensil": {
+      "exitCode": 1,
+      "report": {
+        "batchId": "desktop-images-2026-10-09-approval",
+        "validatedAt": "2026-10-09T10:10:31.104Z",
+        "deliveryValid": false,
+        "readyForSanityAssetUpload": true,
+        "readyForProductPublish": true,
+        "counts": {
+          "sources": 13,
+          "products": 2,
+          "verifiedSources": 2,
+          "validImages": 2,
+          "manifestBlockers": 0,
+          "productBlockers": 0
+        },
+        "errors": [
+          "product 1: a missing physical dimension requires an explicit blocker"
+        ],
+        "warnings": []
+      }
+    }
+  }
+}

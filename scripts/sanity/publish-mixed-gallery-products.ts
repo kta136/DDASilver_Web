@@ -85,6 +85,8 @@ type ManifestProduct = {
   parentProductId?: string;
   parentReference?: string;
   updateParentMetadata?: boolean;
+  galleryPosition?: "first" | "last";
+  galleryKey?: string;
 };
 
 type Manifest = {
@@ -182,6 +184,12 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
 
   for (const product of manifest.products) {
     galleryManifestProductSchema.parse(product);
+    if (product.galleryPosition !== undefined && !["first", "last"].includes(product.galleryPosition)) {
+      throw new Error(`${product.reference}: invalid galleryPosition.`);
+    }
+    if (product.galleryKey !== undefined && !/^[A-Za-z0-9_-]+$/.test(product.galleryKey)) {
+      throw new Error(`${product.reference}: invalid galleryKey.`);
+    }
     if (product.publishBlockers.length > 0) {
       throw new Error(`${product.reference} still has publish blockers.`);
     }
@@ -213,7 +221,7 @@ function validateBatch(manifest: Manifest, mapping: AssetMapping) {
 
 function getGalleryImage(product: ManifestProduct, assetId: string) {
   return {
-    _key: `gallery-${product.reference.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    _key: product.galleryKey ?? `gallery-${product.reference.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
     _type: "image",
     asset: {
       _type: "reference",
@@ -505,6 +513,7 @@ async function main() {
         action,
         reference: existing.reference,
         imageRecord: product.reference,
+        position: product.galleryPosition ?? "last",
         title: existing.title,
       })),
     );
@@ -566,9 +575,11 @@ async function main() {
         });
       }
       if (action === "ATTACH") {
-        nextPatch = nextPatch
-          .setIfMissing({ gallery: [] })
-          .append("gallery", [getGalleryImage(product, assetId)]);
+        nextPatch = nextPatch.setIfMissing({ gallery: [] });
+        const images = [getGalleryImage(product, assetId)];
+        nextPatch = product.galleryPosition === "first"
+          ? nextPatch.prepend("gallery", images)
+          : nextPatch.append("gallery", images);
       }
       return nextPatch;
     });

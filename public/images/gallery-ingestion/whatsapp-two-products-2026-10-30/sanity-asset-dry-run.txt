@@ -1,0 +1,5 @@
+Target: f6i0fy2f/production
+Manifest: public\images\gallery-ingestion\whatsapp-two-products-2026-10-30\sanity-gallery-manifest.json
+Images: 2; unique files: 2; existing assets: 0; missing assets: 2
+Dry run only. No Sanity assets were written.
+Run `npm run sanity:upload-mixed-gallery-assets:apply` to upload the missing image assets.

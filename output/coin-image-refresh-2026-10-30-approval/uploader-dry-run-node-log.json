@@ -1,0 +1,10 @@
+{
+  "status": "fulfilled",
+  "value": {
+    "chunk_id": "5cbfe0",
+    "wall_time_seconds": 0.4057361,
+    "exit_code": 1,
+    "original_token_count": 372,
+    "output": "(node:25820) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Projects/DDASilver_Web/src/lib/catalog-domain.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to \\\\?\\D:\\Projects\\DDASilver_Web\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nnode:internal/modules/package_json_reader:331\r\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\r\n        ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find package '@/lib' imported from D:\\Projects\\DDASilver_Web\\src\\lib\\catalog-domain.ts\r\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:331:9)\r\n    at packageResolve (node:internal/modules/esm/resolve:784:25)\r\n    at moduleResolve (node:internal/modules/esm/resolve:873:18)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33) {\r\n  code: 'ERR_MODULE_NOT_FOUND'\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+  }
+}

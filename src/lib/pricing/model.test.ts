@@ -78,6 +78,7 @@ describe("gallery pricing", () => {
   );
   it("requires a verified finish and handles each size separately across a weight boundary", () => {
     const coin: PricingProduct = {
+      categoryKind: "coin",
       categoryMakingRules: decodeMakingRules(
         defaults["category-coin"].makingRules,
       ),
@@ -93,8 +94,8 @@ describe("gallery pricing", () => {
       calculateEstimate({ ...coin, pricing: { finish: "silver" } }, reference),
     ).toMatchObject({
       minimum: 26300,
-      maximum: 51600,
-      sizes: [{ amount: 26300 }, { amount: 51600 }],
+      maximum: 51550,
+      sizes: [{ amount: 26300 }, { amount: 51550 }],
     });
   });
   it.each([
@@ -256,6 +257,38 @@ describe("gallery pricing", () => {
       null,
     );
     for (const estimate of [automatic, manual]) {
+      expect(estimate).toMatchObject({ minimum: rounded, maximum: rounded });
+    }
+  });
+  it.each([
+    [1000, 1000],
+    [1024.99, 1000],
+    [1025, 1050],
+    [1049.99, 1050],
+    [1074.99, 1050],
+    [1075, 1100],
+  ])("rounds automatic and manual coin totals of ₹%s to ₹%s", (total, rounded) => {
+    const estimates = [{ categoryKind: "coin" }, { categorySlug: "coin" }].flatMap(
+      (category) => [
+        calculateEstimate(
+          { ...category, weightGrams: 1, categoryMakingChargePerPiece: 0 },
+          { ...reference, value: total * 1000 },
+        ),
+        calculateEstimate(
+          {
+            ...category,
+            pricing: {
+              mode: "manual",
+              manualTotalInr: total,
+              reviewedAt: reference.snapshotAsOf,
+              reviewDueAt: reference.validUntil,
+            },
+          },
+          null,
+        ),
+      ],
+    );
+    for (const estimate of estimates) {
       expect(estimate).toMatchObject({ minimum: rounded, maximum: rounded });
     }
   });

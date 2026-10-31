@@ -166,10 +166,17 @@ for (const [index, product] of products.entries()) {
   const hasDimension = ["heightInches", "widthInches", "depthInches", "diameterInches"].some((field) =>
     positiveNumber(product[field]),
   );
-  if (dimensionsWaivedByOwner && product.categoryId !== "category-phone-covers") {
-    errors.push(`${label}: owner dimension waiver is only valid for phone covers`);
+  const documentedSinghasanWaiver = product.categoryId === "category-singhasan"
+    && typeof product.dimensionWaiverConfirmation?.source === "string"
+    && product.dimensionWaiverConfirmation.source.trim().length > 0;
+  if (dimensionsWaivedByOwner && product.categoryId !== "category-phone-covers" && !documentedSinghasanWaiver) {
+    errors.push(`${label}: owner dimension waiver requires a phone cover or an explicitly documented Singhasan instruction`);
   }
-  if (!hasDimension && !dimensionsWaivedByOwner && !blockers.includes("dimension")) {
+  const existingImageOnly = product.recordType === "alternateGalleryImage"
+    && product.createProduct === false && product.updateParentMetadata === false
+    && typeof product.parentProductId === "string" && product.parentProductId.length > 0
+    && typeof product.parentReference === "string" && product.parentReference.length > 0;
+  if (!hasDimension && !existingImageOnly && product.categoryId !== "category-purse" && !dimensionsWaivedByOwner && !blockers.includes("dimension")) {
     errors.push(`${label}: a missing physical dimension requires an explicit blocker`);
   }
 
@@ -211,9 +218,9 @@ if (imagePaths.size !== products.length) errors.push("image mapping is not one-t
 if (manifest.sourceFolder && fs.existsSync(manifest.sourceFolder)) {
   const sourceCount = fs
     .readdirSync(manifest.sourceFolder, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && /\.jpe?g$/i.test(entry.name)).length;
+    .filter((entry) => entry.isFile() && /\.(?:jpe?g|png)$/i.test(entry.name)).length;
   if (sourceCount !== manifest.originalSourceCount) {
-    errors.push(`source folder contains ${sourceCount} JPEGs, expected ${manifest.originalSourceCount}`);
+    errors.push(`source folder contains ${sourceCount} JPEG/PNG images, expected ${manifest.originalSourceCount}`);
   }
 } else {
   errors.push(`sourceFolder is missing: ${manifest.sourceFolder}`);

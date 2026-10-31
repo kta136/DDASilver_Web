@@ -1,0 +1,51 @@
+{
+  "batchId": "coin-image-refresh-2026-10-30",
+  "status": "Published and verified in Sanity and the live website",
+  "counts": {
+    "products": 86,
+    "refreshedCovers": 86,
+    "unchangedSources": 86,
+    "existingGalleryViewsToRetain": 90,
+    "goldProductsChanged": 0
+  },
+  "checks": {
+    "imageDimensions": "All 86 are 1254 x 1254 PNG",
+    "fullDecode": "86 passed",
+    "sourceSha256": "86 passed",
+    "assetUploadDryRun": "Passed; 86 unique new assets; no writes",
+    "browserReview": "86 comparison cards; all 172 images decoded; search passed; no horizontal overflow",
+    "liveWebsite": "86 refreshed covers and 86 available prices; no degraded catalogue response",
+    "metadataPreservation": "All 86 product documents preserve every non-gallery field; all 90 previous gallery views retained unchanged."
+  },
+  "publication": {
+    "uploaded": true,
+    "productDocumentsChanged": 86,
+    "scope": "Prepend a refreshed cover to each existing silver coin gallery; retain all existing views and metadata",
+    "plan": "image-only-publication-plan.json",
+    "manifest": "sanity-gallery-manifest.json",
+    "review": "review.html",
+    "publishedAt": "2026-10-30T16:17:50Z",
+    "verifiedAt": "2026-10-31T05:49:43.914Z",
+    "verification": "publication-verification.json"
+  },
+  "knownCompatibilityIssues": [],
+  "metadataContext": [
+    "No physical dimensions exist on the 86 current Sanity documents. Preserve that state for an image-only update; verify dimensions before a full product republication.",
+    "Existing catalogue purity is 99.80 while some photographed stamps show 999/9999. No purity, weight or pricing change is included."
+  ],
+  "reviewNotes": [
+    "One short 5g Benjamin Franklin bar uses a single front cover because the stacked attempts distorted its proportions. Its original two-sided photo is retained.",
+    "Edits are AI-assisted and visually reviewed against their individual sources; they are not pixel-identical cutouts."
+  ],
+  "authorization": {
+    "previewTreatmentApproved": true,
+    "uploadAuthorized": true,
+    "source": "User message: approved",
+    "instruction": ".agents/skills/dda-silver-gallery-images/SKILL.md: Approval of previews does not by itself authorize a Sanity write.",
+    "uploadSource": "User: Push all to main, and upload to sanity"
+  },
+  "resolvedCompatibilityIssues": [
+    "The delivery validators accept preserved PNG sources.",
+    "The mixed-gallery publisher supports galleryPosition first and a unique galleryKey."
+  ]
+}

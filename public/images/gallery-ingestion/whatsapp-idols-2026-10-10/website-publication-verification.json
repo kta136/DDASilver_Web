@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-10T13:09:07.507Z",
+  "passed": true,
+  "productCount": 4,
+  "products": [
+    {
+      "reference": "SSM-LG-8",
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-tiered-canopy-round-base-pair",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "descriptionPresent": true,
+      "correctImagePresent": true,
+      "passed": true
+    },
+    {
+      "reference": "SSM-LG-9",
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-compact-elephant-foot-throne-pair",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "descriptionPresent": true,
+      "correctImagePresent": true,
+      "passed": true
+    },
+    {
+      "reference": "SSM-LG-10",
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-broad-elephant-foot-throne-pair",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "descriptionPresent": true,
+      "correctImagePresent": true,
+      "passed": true
+    },
+    {
+      "reference": "SSM-LG-11",
+      "url": "https://www.ddasilver.com/products/lakshmi-ganesha-ornate-halo-lotus-pair",
+      "status": 200,
+      "codePresent": true,
+      "purityPresent": true,
+      "descriptionPresent": true,
+      "correctImagePresent": true,
+      "passed": true
+    }
+  ]
+}

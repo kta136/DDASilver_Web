@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-30T14:17:48.620Z",
+  "selectedPreviews": 2,
+  "allPng1254Square": true,
+  "allFullyDecoded": true,
+  "sourceHashesMatchPublishedAssets": true,
+  "ownerApprovalPending": true,
+  "publicationAttempted": false,
+  "products": [
+    {
+      "slug": "dda-50-gram-rectangle-silver-coin",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "sourceMatchesPublishedAsset": true
+    },
+    {
+      "slug": "dda-10-gram-lakshmi-ganesh-silver-coin",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "sourceMatchesPublishedAsset": true
+    }
+  ]
+}

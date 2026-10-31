@@ -1,0 +1,17 @@
+{
+  "batchId": "desktop-images-2026-10-09",
+  "validatedAt": "2026-10-09T11:30:30.739Z",
+  "deliveryValid": true,
+  "readyForSanityAssetUpload": true,
+  "readyForProductPublish": true,
+  "counts": {
+    "sources": 13,
+    "products": 13,
+    "verifiedSources": 13,
+    "validImages": 13,
+    "manifestBlockers": 0,
+    "productBlockers": 0
+  },
+  "errors": [],
+  "warnings": []
+}
